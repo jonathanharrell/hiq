@@ -1,0 +1,44 @@
+table {
+  width: 100%;
+  & caption {
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+th,
+td {
+  padding: 0.5em 0.75em;
+  border: 0 solid var(--border-color);
+  border-bottom-width: 1px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: var(--font-weight-bold);
+}
+
+thead {
+  & td,
+  & th {
+    border-bottom-width: 2px;
+  }
+}
+
+tfoot {
+  & td,
+  & th {
+    border-bottom-width: 2px;
+  }
+}
+
+tbody {
+  & tr:last-child {
+    & td,
+    & th {
+      border-bottom-width: 0;
+    }
+  }
+}

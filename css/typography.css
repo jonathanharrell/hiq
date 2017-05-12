@@ -1,0 +1,103 @@
+html {
+  /* font smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  /* base font family */
+  font-family: var(--base-font-family);
+
+  /* responsive base font size */
+  font-size: responsive;
+  min-font-size: var(--min-font-size);
+  max-font-size: var(--max-font-size);
+  lower-font-range: var(--lower-font-range);
+  upper-font-range: var(--upper-font-range);
+
+  /* base line height */
+  line-height: var(--base-line-height);
+
+  /* responsive letter spacing */
+  letter-spacing: responsive;
+  min-letter-spacing: var(--min-letter-spacing);
+  max-letter-spacing: var(--max-letter-spacing);
+  lower-letter-spacing-range: var(--lower-letter-spacing-range);
+  upper-letter-spacing-range: var(--upper-letter-spacing-range);
+}
+
+/* heading line height */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  line-height: var(--heading-line-height);
+}
+
+/* heading sizes and spacing */
+h1 {
+  font-size: var(--font-size-1);
+}
+
+h2 {
+  font-size: var(--font-size-2);
+}
+
+h3 {
+  font-size: var(--font-size-3);
+}
+
+h4 {
+  font-size: var(--font-size-4);
+}
+
+h5 {
+  font-size: var(--font-size-5);
+}
+
+h6 {
+  font-size: var(--font-size-6);
+}
+
+/* small font size */
+small {
+  font-size: var(--font-size-small);
+}
+
+/* block spacing */
+p,
+dl,
+ol,
+ul,
+blockquote,
+pre,
+table {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+/* definition list styling */
+dt {
+  font-weight: var(--font-weight-bold);
+}
+
+/* list spacing */
+ol,
+ul {
+  margin-left: 1em;
+}
+
+/* unordered list bullets */
+ul {
+  list-style: disc;
+}
+
+/* code formatting */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-family-monospace);
+}

@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "extends": "standard",
+  "rules": {
+    "allow-parens": 0,
+    "indent": [1, 4, {"SwitchCase": 1}]
+  }
+}

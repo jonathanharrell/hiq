@@ -1,0 +1,11 @@
+.container {
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-horizontal-padding);
+}
+
+article,
+section,
+nav {
+  margin: 1rem 0;
+}

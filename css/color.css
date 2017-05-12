@@ -1,0 +1,23 @@
+body {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  transition: color var(--speed) var(--easing);
+  cursor: pointer;
+  &:hover {
+    color: var(--link-hover-color);
+  }
+  &:active {
+    color: color(var(--link-hover-color) shade(50%));
+  }
+  &:visited {
+    color: var(--link-visited-color);
+  }
+}
+
+mark {
+  background-color: var(--mark-color);
+}

@@ -1,0 +1,58 @@
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: var(--border-radius);
+  outline: 0;
+  color: var(--text-color);
+  background-color: var(--gray-lighter);
+  transition: background-color var(--speed) var(--easing);
+  cursor: pointer;
+  &:not(:disabled):hover {
+    color: var(--text-color);
+    background-color: color(var(--background-color) shade(15%));
+  }
+  &:focus {
+    background-color: var(--gray-light);
+  }
+  &:visited {
+    color: var(--text-color);
+  }
+  &:disabled {
+    color: color(var(--disabled-color));
+    background-color: color(var(--gray-lightest));
+    cursor: not-allowed;
+  }
+}
+
+button[role="switch"] {
+  display: inline-block;
+  position: relative;
+  width: 48px;
+  height: 24px;
+  border-radius: 1.5rem;
+  &::before {
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    pointer-events: none;
+    content: '';
+  }
+  & + span {
+    display: inline-block;
+    height: 24px;
+    vertical-align: top;
+    padding: 0 12px;
+  }
+}
