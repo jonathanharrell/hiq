@@ -175,10 +175,6 @@
             <canvas>canvas</canvas>
             <meter value="2" min="0" max="10">2 out of 10</meter>
             <progress max="100" value="80">progress</progress>
-            <svg width="100px" height="100px">
-                <circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle>
-            </svg>
-            <iframe src="" height="300"></iframe>
         </div>
     </section>
     <section class="forms">
@@ -213,15 +209,6 @@
                     <p>
                         <label>Number Input</label>
                         <input type="number" placeholder="Enter a Number">
-                    </p>
-                    <p class="form-group is-error">
-                        <label>Error</label>
-                        <input type="text" placeholder="Text Input" aria-describedby="error-message">
-                        <span id="error-message" class="input-help">Error message</span>
-                    </p>
-                    <p class="form-group is-success">
-                        <label>Success</label>
-                        <input type="text" placeholder="Text Input">
                     </p>
                     <p>
                         <label>Text area</label>
@@ -267,11 +254,6 @@
                         <label for="coffee">Any time I'm drinking coffee</label>
                     </div>
                 </fieldset>
-                <p role="search">
-                    <label for="search" class="visually-hidden">Search the site</label>
-                    <input type="search" name="search" id="search" placeholder="search for..." />
-                    <button type="submit"><span class="visually-hidden">Perform</span>Search</button>
-                </p>
                 <p>
                     <input type="submit" value="Submit">
                     <input type="button" value="Button">
@@ -287,83 +269,7 @@
                 <p>
                     <a href="#" type="button" role="button" aria-pressed="false">Link as button</a>
                 </p>
-                <p>
-                    <button type="button" aria-labelledby="toggle-label" aria-checked="false" role="switch"></button>
-                    <span id="toggle-label">Toggle Label</span>
-                </p>
             </form>
-        </div>
-    </section>
-    <section class="navigation">
-        <div class="container">
-            <p>Over the past three weeks there have been 15 reports or black bears getting themselves trapped in vehicles. There are several ways to prevent this from happening to you. <a href="#" aria-label="Learn more about trapped black bears" class="read-more">Read More</a></p>
-            <nav aria-label="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Parent</a></li>
-                    <li class="breadcrumb-item"><a href="#" aria-current="page">Child</a></li>
-                </ol>
-            </nav>
-            <nav class="navbar" role="navigation" aria-label="Main Menu">
-                <h2 class="visually-hidden">Main Menu</h2>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">More Information</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </nav>
-            <button id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
-                <span class="visually-hidden">Main Menu</span>
-                <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100">
-                    <g class="svg-menu-toggle">
-                        <path class="line line-1" d="M5 13h90v14H5z"/>
-                        <path class="line line-2" d="M5 43h90v14H5z"/>
-                        <path class="line line-3" d="M5 73h90v14H5z"/>
-                    </g>
-                </svg>
-            </button>
-            <nav aria-label="pagination">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="previous">
-                            <span class="visually-hidden">Previous set of pages</span>
-                            <span aria-hidden="true" role="presentation">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <span class="visually-hidden">page </span>1
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <span class="visually-hidden">page </span>2
-                        </a>
-                    </li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#" aria-current="page">
-                            <span class="visually-hidden">page</span>3
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <span class="visually-hidden">page </span>4
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <span class="visually-hidden">page </span>5
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span class="visually-hidden">Next set of pages</span>
-                            <span aria-hidden="true" role="presentation">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </section>
 </body>

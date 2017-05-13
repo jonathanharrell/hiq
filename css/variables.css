@@ -26,6 +26,7 @@
   --heading-line-height: 1.2;
 
   /* letter spacing variables */
+  /* stylelint-disable-next-line length-zero-no-unit */
   --min-letter-spacing: 0rem;
   --max-letter-spacing: 0.005rem;
   --lower-letter-spacing-range: 26rem;

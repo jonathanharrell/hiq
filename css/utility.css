@@ -1,0 +1,20 @@
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+.caret {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 0.45rem solid var(--text-color);
+  border-right: 0.4rem solid transparent;
+  border-left: 0.4rem solid transparent;
+}

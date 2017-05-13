@@ -3,8 +3,8 @@
     position: absolute;
     width: 0;
     height: 0;
-    margin-left: 0.35rem;
     margin-top: 0.35rem;
+    margin-left: 0.35rem;
     border: 0.35rem solid transparent;
     border-left-color: inherit;
     content: '';
@@ -42,12 +42,17 @@
       padding: 0 1rem;
       color: var(--text-color);
       transition: background-color var(--speed) var(--easing);
-      &:hover,
+      &:hover {
+        background-color: var(--gray-lighter);
+      }
       &:focus,
       &:active {
-        color: white;
-        background-color: var(--color-primary);
+        background-color: var(--gray-light);
       }
+    }
+    &.active a {
+      color: white;
+      background-color: var(--color-primary);
     }
   }
 }
@@ -63,5 +68,34 @@
     opacity: 1;
     transform: rotate(0) translateY(0) translateX(0);
     transition: transform var(--speed) var(--easing), opacity var(--speed) var(--easing);
+  }
+}
+
+.pagination {
+  & ul {
+    display: flex;
+    margin: 0;
+    list-style: none;
+    & li {
+      & a {
+        display: inline-flex;
+        align-items: center;
+        height: 2.5rem;
+        padding: 0 1rem;
+        color: var(--text-color);
+        background-color: var(--background-color);
+        &:hover {
+          background-color: var(--gray-lighter);
+        }
+        &:focus,
+        &:active {
+          background-color: var(--gray-light);
+        }
+      }
+      &.active a {
+        color: white;
+        background-color: var(--color-primary);
+      }
+    }
   }
 }

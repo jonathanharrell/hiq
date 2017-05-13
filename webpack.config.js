@@ -11,7 +11,6 @@ const inProduction = (process.env.NODE_ENV === 'production')
 module.exports = {
     entry: {
         hiq: [
-            './js/hiq.js',
             './css/hiq.css'
         ]
     },

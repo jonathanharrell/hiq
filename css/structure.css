@@ -9,3 +9,24 @@ section,
 nav {
   margin: 1rem 0;
 }
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1rem 0;
+  border: none;
+  background-color: var(--border-color);
+}
+
+/* Media/Embeds */
+figure,
+audio,
+canvas,
+meter,
+progress,
+iframe {
+  display: block;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

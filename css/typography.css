@@ -25,6 +25,7 @@ html {
 }
 
 /* heading line height */
+
 h1,
 h2,
 h3,
@@ -36,6 +37,7 @@ h6 {
 }
 
 /* heading sizes and spacing */
+
 h1 {
   font-size: var(--font-size-1);
 }
@@ -100,4 +102,15 @@ kbd,
 samp,
 pre {
   font-family: var(--font-family-monospace);
+  background-color: var(--background-color);
+}
+
+code,
+kbd,
+samp {
+  padding: 0.25rem 0.5rem;
+}
+
+pre {
+  padding: 1rem;
 }
