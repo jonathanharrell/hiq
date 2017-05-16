@@ -1,3 +1,9 @@
+:root {
+  --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
+  --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
+  --viewport-difference: calc(100vw - var(--lower-font-range));
+}
+
 html {
   /* font smoothing */
   -moz-osx-font-smoothing: grayscale;
@@ -7,21 +13,15 @@ html {
   font-family: var(--base-font-family);
 
   /* responsive base font size */
-  font-size: responsive;
-  min-font-size: var(--min-font-size);
-  max-font-size: var(--max-font-size);
-  lower-font-range: var(--lower-font-range);
-  upper-font-range: var(--upper-font-range);
+  font-size: calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
 
   /* base line height */
   line-height: var(--base-line-height);
 
-  /* responsive letter spacing */
-  letter-spacing: responsive;
-  min-letter-spacing: var(--min-letter-spacing);
-  max-letter-spacing: var(--max-letter-spacing);
-  lower-letter-spacing-range: var(--lower-letter-spacing-range);
-  upper-letter-spacing-range: var(--upper-letter-spacing-range);
+  /* set upper font range limit */
+  @media (--upper-font-range) {
+    font-size: var(--max-font-size);
+  }
 }
 
 /* heading line height */

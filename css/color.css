@@ -11,7 +11,7 @@ a {
     color: var(--link-hover-color);
   }
   &:active {
-    color: color(var(--link-hover-color) shade(50%));
+    color: color(blue shade(50%));
   }
   &:visited {
     color: var(--link-visited-color);

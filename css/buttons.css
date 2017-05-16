@@ -16,7 +16,7 @@ input[type="reset"] {
   cursor: pointer;
   &:not(:disabled):hover {
     color: var(--text-color);
-    background-color: color(var(--background-color) shade(15%));
+    background-color: color(rgba(0, 0, 0, 0.05) shade(15%));
   }
   &:focus {
     background-color: var(--gray-light);
@@ -25,8 +25,8 @@ input[type="reset"] {
     color: var(--text-color);
   }
   &:disabled {
-    color: color(var(--disabled-color));
-    background-color: color(var(--gray-lightest));
+    color: var(--disabled-color);
+    background-color: var(--gray-lightest);
     cursor: not-allowed;
   }
 }

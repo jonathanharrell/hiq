@@ -16,10 +16,14 @@
   /* base font size variables */
   --min-font-size: 1rem;
   --max-font-size: 1.15rem;
+  --unitless-min-font-size: 1;
+  --unitless-max-font-size: 1.15;
 
-  /* viewport widths when min/max font sizes will apply */
+  /* viewport widths in rem when min/max font sizes will apply */
   --lower-font-range: 26rem;
   --upper-font-range: 80rem;
+  --unitless-lower-font-range: 26;
+  --unitless-upper-font-range: 80;
 
   /* base unitless line heights */
   --base-line-height: 1.4;
@@ -52,14 +56,13 @@
   /* color variables */
 
   /* gray palette */
-  --gray-base: black;
-  --gray-darkest: color(var(--gray-base) tint(5%));
-  --gray-darker: color(var(--gray-base) tint(10%));
-  --gray-dark: color(var(--gray-base) tint(25%));
-  --gray: color(var(--gray-base) tint(50%));
-  --gray-light: color(var(--gray-base) tint(75%));
-  --gray-lighter: color(var(--gray-base) tint(90%));
-  --gray-lightest: color(var(--gray-base) tint(95%));
+  --gray-darkest: rgba(0, 0, 0, 0.95);
+  --gray-darker: rgba(0, 0, 0, 0.9);
+  --gray-dark: rgba(0, 0, 0, 0.75);
+  --gray: rgba(0, 0, 0, 0.5);
+  --gray-light: rgba(0, 0, 0, 0.25);
+  --gray-lighter: rgba(0, 0, 0, 0.1);
+  --gray-lightest: rgba(0, 0, 0, 0.05);
 
   /* semantic palette */
   --color-primary: blue;
@@ -70,8 +73,8 @@
   /* applied colors */
   --text-color: var(--gray-darker);
   --link-color: var(--color-primary);
-  --link-hover-color: color(var(--link-color) shade(50%));
-  --link-visited-color: color(var(--link-color) tint(50%));
+  --link-hover-color: color(blue shade(50%));
+  --link-visited-color: color(blue tint(50%));
   --page-background-color: white;
   --background-color: var(--gray-lightest);
   --border-color: var(--gray-light);
@@ -85,3 +88,6 @@
   --speed: 0.1s;
   --easing: ease-out;
 }
+
+/* custom media queries */
+@custom-media --upper-font-range (width >= 80rem);
