@@ -1,7 +1,7 @@
 # Hi-Q
 A simple CSS foundation with responsive typography and input styling, built with PostCSS.
 
-<img src="https://raw.githubusercontent.com/jonathanharrell/hiq/master/hiq.png" alt="HiQ" width="250" height="250" />
+<img src="https://raw.githubusercontent.com/jonathanharrell/hiq/blob/master/hiq.png" alt="HiQ" width="250" height="250" />
 
 In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles. Enter HiQ.
 
