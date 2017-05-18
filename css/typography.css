@@ -1,3 +1,4 @@
+/* responsive typography utility variables */
 :root {
   --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
   --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
@@ -25,7 +26,6 @@ html {
 }
 
 /* heading line height */
-
 h1,
 h2,
 h3,
@@ -37,30 +37,12 @@ h6 {
 }
 
 /* heading sizes and spacing */
-
-h1 {
-  font-size: var(--font-size-1);
-}
-
-h2 {
-  font-size: var(--font-size-2);
-}
-
-h3 {
-  font-size: var(--font-size-3);
-}
-
-h4 {
-  font-size: var(--font-size-4);
-}
-
-h5 {
-  font-size: var(--font-size-5);
-}
-
-h6 {
-  font-size: var(--font-size-6);
-}
+h1 { font-size: var(--font-size-1); }
+h2 { font-size: var(--font-size-2); }
+h3 { font-size: var(--font-size-3); }
+h4 { font-size: var(--font-size-4); }
+h5 { font-size: var(--font-size-5); }
+h6 { font-size: var(--font-size-6); }
 
 /* small font size */
 small {

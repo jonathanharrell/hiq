@@ -1,15 +1,18 @@
+/* wrapper div */
 .container {
   max-width: var(--max-container-width);
   margin: 0 auto;
   padding: 0 var(--container-horizontal-padding);
 }
 
+/* semantic elements */
 article,
 section,
 nav {
   margin: 1rem 0;
 }
 
+/* horizontal rule */
 hr {
   display: block;
   height: 1px;
@@ -18,7 +21,7 @@ hr {
   background-color: var(--border-color);
 }
 
-/* Media/Embeds */
+/* media/embeds */
 figure,
 audio,
 canvas,

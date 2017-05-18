@@ -1,3 +1,4 @@
+/* button styling */
 button,
 [role="button"],
 input[type="submit"],
@@ -16,7 +17,7 @@ input[type="reset"] {
   cursor: pointer;
   &:not(:disabled):hover {
     color: var(--text-color);
-    background-color: color(rgba(0, 0, 0, 0.05) shade(15%));
+    background-color: color(#f2f2f2 shade(15%)); /* eventually use custom property here */
   }
   &:focus {
     background-color: var(--gray-light);

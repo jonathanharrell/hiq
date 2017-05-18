@@ -13,6 +13,12 @@
   --font-family-monospace: "Roboto Mono", monospace;
   --base-font-family: var(--font-family-sans-serif);
 
+  /*
+  NOTE:
+  currently variables are required twice, with and without units, in order to make calc() work
+  eventually, this should use something like strip() to remove units in the calculation
+   */
+
   /* base font size variables */
   --min-font-size: 1rem;
   --max-font-size: 1.15rem;
@@ -55,14 +61,20 @@
 
   /* color variables */
 
+  /*
+  NOTE:
+  currently, color() function requires actual color values, not custom properties
+  eventually, this should use custom properties in color function to create additional values
+   */
+
   /* gray palette */
-  --gray-darkest: rgba(0, 0, 0, 0.95);
-  --gray-darker: rgba(0, 0, 0, 0.9);
-  --gray-dark: rgba(0, 0, 0, 0.75);
-  --gray: rgba(0, 0, 0, 0.5);
-  --gray-light: rgba(0, 0, 0, 0.25);
-  --gray-lighter: rgba(0, 0, 0, 0.1);
-  --gray-lightest: rgba(0, 0, 0, 0.05);
+  --gray-darkest: hsl(0, 0%, 5%);
+  --gray-darker: hsl(0, 0%, 10%);
+  --gray-dark: hsl(0, 0%, 25%);
+  --gray: hsl(0, 0%, 50%);
+  --gray-light: hsl(0, 0%, 75%);
+  --gray-lighter: hsl(0, 0%, 90%);
+  --gray-lightest: hsl(0, 0%, 95%);
 
   /* semantic palette */
   --color-primary: blue;
@@ -73,8 +85,9 @@
   /* applied colors */
   --text-color: var(--gray-darker);
   --link-color: var(--color-primary);
-  --link-hover-color: color(blue shade(50%));
-  --link-visited-color: color(blue tint(50%));
+  --link-hover-color: color(blue shade(50%)); /* eventually use custom property here */
+  --link-active-color: color(blue shade(50%)); /* eventually use custom property here */
+  --link-visited-color: color(blue tint(50%)); /* eventually use custom property here */
   --page-background-color: white;
   --background-color: var(--gray-lightest);
   --border-color: var(--gray-light);
@@ -90,4 +103,4 @@
 }
 
 /* custom media queries */
-@custom-media --upper-font-range (width >= 80rem);
+@custom-media --upper-font-range (width >= 80rem); /* eventually use custom property here */

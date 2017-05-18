@@ -1,13 +1,18 @@
 /* reset */
 @import '../node_modules/blanq-slate/blanq-slate.css';
 
-/* imports */
+/* custom properties */
 @import 'variables.css';
+
+/* utility classes */
 @import 'utility.css';
+
+/* base styles */
 @import 'structure.css';
 @import 'typography.css';
 @import 'color.css';
+
+/* element styles */
 @import 'tables.css';
 @import 'forms.css';
 @import 'buttons.css';
-@import 'navigation.css';

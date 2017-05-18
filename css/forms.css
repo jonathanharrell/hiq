@@ -1,3 +1,4 @@
+/* general form styling */
 fieldset {
   padding: 0;
   border: 0;
@@ -22,6 +23,7 @@ textarea {
   outline: 0;
 }
 
+/* text input styling */
 input[type="text"],
 input[type="password"],
 input[type="url"],
@@ -74,6 +76,7 @@ textarea {
   }
 }
 
+/* select element styling */
 select {
   display: block;
   width: 100%;
@@ -102,6 +105,7 @@ select {
   }
 }
 
+/* checkbox styling */
 .checkbox {
   position: relative;
   & label {
@@ -121,7 +125,6 @@ select {
       content: "";
     }
   }
-
   & input[type="checkbox"] {
     position: absolute;
     top: 0;
@@ -154,6 +157,7 @@ select {
   }
 }
 
+/* radio button styling */
 .radio {
   position: relative;
   & label {
@@ -217,6 +221,7 @@ meter {
   }
 }
 
+/* progress element styling */
 progress {
   &[value] {
     width: 100%;
@@ -231,4 +236,77 @@ progress {
   &::-moz-progress-bar {
     background-color: var(--color-primary);
   }
+}
+
+/* range input styling */
+
+/* range input utility variables */
+:root {
+  --range-input-thumb-width: 24px;
+  --range-input-thumb-height: 24px;
+  --range-input-thumb-border-radius: 50%;
+  --range-input-thumb-background: var(--gray);
+  --range-input-track-width: 100%;
+  --range-input-track-height: 10px;
+  --range-input-track-background: var(--gray-lighter);
+}
+
+input[type=range] {
+  width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: var(--range-input-thumb-width);
+  height: var(--range-input-thumb-height);
+  margin-top: -7px;
+  border-radius: var(--range-input-thumb-border-radius);
+  background: var(--range-input-thumb-background);
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: var(--range-input-thumb-width);
+  height: var(--range-input-thumb-height);
+  border-radius: var(--range-input-thumb-border-radius);
+  background: var(--range-input-thumb-background);
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  width: var(--range-input-thumb-width);
+  height: var(--range-input-thumb-height);
+  border-radius: var(--range-input-thumb-border-radius);
+  background: var(--range-input-thumb-background);
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: var(--range-input-track-width);
+  height: var(--range-input-track-height);
+  background: var(--range-input-track-background);
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-track {
+  width: var(--range-input-track-width);
+  height: var(--range-input-track-height);
+  background: var(--range-input-track-background);
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: var(--range-input-track-width);
+  height: var(--range-input-track-height);
+  border-color: transparent;
+  color: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: var(--range-input-track-background);
+}
+
+input[type=range]::-ms-fill-upper {
+  background: var(--range-input-track-background);
 }

@@ -1,3 +1,6 @@
+/*
+class the visually hides elements but keeps them accessible to screen readers
+ */
 .visually-hidden {
   clip: rect(0 0 0 0);
   position: absolute;
@@ -10,6 +13,9 @@
   white-space: nowrap;
 }
 
+/*
+class to add carets to selects and dropdowns
+ */
 .caret {
   display: block;
   width: 0;

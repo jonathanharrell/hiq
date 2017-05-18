@@ -1,3 +1,4 @@
+/* applying color variables */
 body {
   color: var(--text-color);
 }
@@ -11,7 +12,7 @@ a {
     color: var(--link-hover-color);
   }
   &:active {
-    color: color(blue shade(50%));
+    color: var(--link-active-color);
   }
   &:visited {
     color: var(--link-visited-color);
