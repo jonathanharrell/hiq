@@ -3,8 +3,6 @@ const path = require('path')
 const glob = require('glob')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
-const PurifyCSSPlugin = require('purifycss-webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const inProduction = (process.env.NODE_ENV === 'production')
 
@@ -28,38 +26,15 @@ module.exports = {
                     fallback: 'style-loader',
                     use: 'css-loader?importLoaders=1,url=false!postcss-loader'
                 })
-            },
-
-            {
-                test: /\.(eot|ttf|woff|woff2)$/,
-                loaders: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'fonts/[name].[ext]'
-                        }
-                    }
-                ]
             }
         ]
     },
 
     plugins: [
-        new CleanWebpackPlugin(['dist'], {
-            root: __dirname,
-            verbose: true,
-            dry: false
-        }),
-
-        new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin((inProduction ? '[name].min.css' : '[name].css')),
 
         new StyleLintPlugin({
             files: ['**/*.css']
-        }),
-
-        new PurifyCSSPlugin({
-            paths: glob.sync(path.join(__dirname, '**/*.html')),
-            minimize: inProduction
         }),
 
         new webpack.LoaderOptionsPlugin({

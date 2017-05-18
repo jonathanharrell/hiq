@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = (ctx) => ({
     plugins: [
         require('postcss-import')(),
         require('postcss-strip-units'),
@@ -6,10 +6,9 @@ module.exports = {
             features: {
                 rem: {html: false},
                 customProperties: {
-                    preserve: true,
-                    appendVariables: true
+                    preserve: ctx.env === 'production' ? false : true
                 }
             }
         })
     ]
-}
+})

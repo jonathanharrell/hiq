@@ -77,21 +77,21 @@
   --gray-lightest: hsl(0, 0%, 95%);
 
   /* semantic palette */
-  --color-primary: blue;
-  --color-success: green;
-  --color-warning: orange;
-  --color-error: red;
+  --color-primary: #3f51b5;
+  --color-success: #4caf50;
+  --color-warning: #ff5722;
+  --color-error: #f44336;
 
   /* applied colors */
   --text-color: var(--gray-darker);
   --link-color: var(--color-primary);
-  --link-hover-color: color(blue shade(50%)); /* eventually use custom property here */
-  --link-active-color: color(blue shade(50%)); /* eventually use custom property here */
-  --link-visited-color: color(blue tint(50%)); /* eventually use custom property here */
+  --link-hover-color: color(#3f51b5 shade(50%)); /* eventually use custom property here */
+  --link-active-color: color(#3f51b5 shade(50%)); /* eventually use custom property here */
+  --link-visited-color: color(#3f51b5 tint(50%)); /* eventually use custom property here */
   --page-background-color: white;
   --background-color: var(--gray-lightest);
   --border-color: var(--gray-light);
-  --mark-color: yellow;
+  --mark-color: #ffeb3b;
   --disabled-color: var(--gray-light);
 
   /* border-radius */
