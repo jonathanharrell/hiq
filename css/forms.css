@@ -249,6 +249,7 @@ progress {
   --range-input-track-width: 100%;
   --range-input-track-height: 10px;
   --range-input-track-background: var(--gray-lighter);
+  --range-input-track-focus-background: var(--gray-light);
 }
 
 input[type=range] {
@@ -260,15 +261,19 @@ input[type=range]::-webkit-slider-thumb {
   height: var(--range-input-thumb-height);
   margin-top: -7px;
   border-radius: var(--range-input-thumb-border-radius);
-  background: var(--range-input-thumb-background);
+  background-color: var(--range-input-thumb-background);
   cursor: pointer;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color: var(--range-input-track-focus-background);
 }
 
 input[type=range]::-moz-range-thumb {
   width: var(--range-input-thumb-width);
   height: var(--range-input-thumb-height);
   border-radius: var(--range-input-thumb-border-radius);
-  background: var(--range-input-thumb-background);
+  background-color: var(--range-input-thumb-background);
   cursor: pointer;
 }
 
@@ -276,21 +281,21 @@ input[type=range]::-ms-thumb {
   width: var(--range-input-thumb-width);
   height: var(--range-input-thumb-height);
   border-radius: var(--range-input-thumb-border-radius);
-  background: var(--range-input-thumb-background);
+  background-color: var(--range-input-thumb-background);
   cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
   width: var(--range-input-track-width);
   height: var(--range-input-track-height);
-  background: var(--range-input-track-background);
+  background-color: var(--range-input-track-background);
   cursor: pointer;
 }
 
 input[type=range]::-moz-range-track {
   width: var(--range-input-track-width);
   height: var(--range-input-track-height);
-  background: var(--range-input-track-background);
+  background-color: var(--range-input-track-background);
   cursor: pointer;
 }
 
@@ -299,14 +304,22 @@ input[type=range]::-ms-track {
   height: var(--range-input-track-height);
   border-color: transparent;
   color: transparent;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
 }
 
 input[type=range]::-ms-fill-lower {
-  background: var(--range-input-track-background);
+  background-color: var(--range-input-track-background);
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background-color: var(--range-input-track-focus-background);
 }
 
 input[type=range]::-ms-fill-upper {
-  background: var(--range-input-track-background);
+  background-color: var(--range-input-track-background);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background-color: var(--range-input-track-focus-background);
 }

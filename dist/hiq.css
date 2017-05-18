@@ -940,6 +940,8 @@ progress::-moz-progress-bar {
   --range-input-track-height: 10px;
   --range-input-track-background: hsl(0, 0%, 90%);
   --range-input-track-background: var(--gray-lighter);
+  --range-input-track-focus-background: hsl(0, 0%, 75%);
+  --range-input-track-focus-background: var(--gray-light);
 }
 
 input[type=range] {
@@ -954,9 +956,14 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -7px;
   border-radius: 50%;
   border-radius: var(--range-input-thumb-border-radius);
-  background: hsl(0, 0%, 50%);
-  background: var(--range-input-thumb-background);
+  background-color: hsl(0, 0%, 50%);
+  background-color: var(--range-input-thumb-background);
   cursor: pointer;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color: hsl(0, 0%, 75%);
+  background-color: var(--range-input-track-focus-background);
 }
 
 input[type=range]::-moz-range-thumb {
@@ -966,8 +973,8 @@ input[type=range]::-moz-range-thumb {
   height: var(--range-input-thumb-height);
   border-radius: 50%;
   border-radius: var(--range-input-thumb-border-radius);
-  background: hsl(0, 0%, 50%);
-  background: var(--range-input-thumb-background);
+  background-color: hsl(0, 0%, 50%);
+  background-color: var(--range-input-thumb-background);
   cursor: pointer;
 }
 
@@ -978,8 +985,8 @@ input[type=range]::-ms-thumb {
   height: var(--range-input-thumb-height);
   border-radius: 50%;
   border-radius: var(--range-input-thumb-border-radius);
-  background: hsl(0, 0%, 50%);
-  background: var(--range-input-thumb-background);
+  background-color: hsl(0, 0%, 50%);
+  background-color: var(--range-input-thumb-background);
   cursor: pointer;
 }
 
@@ -988,8 +995,8 @@ input[type=range]::-webkit-slider-runnable-track {
   width: var(--range-input-track-width);
   height: 10px;
   height: var(--range-input-track-height);
-  background: hsl(0, 0%, 90%);
-  background: var(--range-input-track-background);
+  background-color: hsl(0, 0%, 90%);
+  background-color: var(--range-input-track-background);
   cursor: pointer;
 }
 
@@ -998,8 +1005,8 @@ input[type=range]::-moz-range-track {
   width: var(--range-input-track-width);
   height: 10px;
   height: var(--range-input-track-height);
-  background: hsl(0, 0%, 90%);
-  background: var(--range-input-track-background);
+  background-color: hsl(0, 0%, 90%);
+  background-color: var(--range-input-track-background);
   cursor: pointer;
 }
 
@@ -1010,18 +1017,28 @@ input[type=range]::-ms-track {
   height: var(--range-input-track-height);
   border-color: transparent;
   color: transparent;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
 }
 
 input[type=range]::-ms-fill-lower {
-  background: hsl(0, 0%, 90%);
-  background: var(--range-input-track-background);
+  background-color: hsl(0, 0%, 90%);
+  background-color: var(--range-input-track-background);
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background-color: hsl(0, 0%, 75%);
+  background-color: var(--range-input-track-focus-background);
 }
 
 input[type=range]::-ms-fill-upper {
-  background: hsl(0, 0%, 90%);
-  background: var(--range-input-track-background);
+  background-color: hsl(0, 0%, 90%);
+  background-color: var(--range-input-track-background);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background-color: hsl(0, 0%, 75%);
+  background-color: var(--range-input-track-focus-background);
 }
 
 /* button styling */
@@ -1159,4 +1176,5 @@ button:disabled,[role="button"]:disabled,input[type="submit"]:disabled,input[typ
   --range-input-track-width: 100%;
   --range-input-track-height: 10px;
   --range-input-track-background: hsl(0, 0%, 90%);
+  --range-input-track-focus-background: hsl(0, 0%, 75%);
 }

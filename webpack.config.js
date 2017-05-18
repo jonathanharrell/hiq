@@ -40,33 +40,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-
-            {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                loaders: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'img/[name].[ext]'
-                        }
-                    },
-
-                    'img-loader'
-                ]
-            },
-
-            {
-                test: /\.js$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                exclude: /node_modules/
-            },
-
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
             }
         ]
     },
@@ -104,10 +77,4 @@ module.exports = {
             notify: false
         })
     ]
-}
-
-if (inProduction) {
-    module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin()
-    )
 }
