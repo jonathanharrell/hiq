@@ -74,9 +74,7 @@ ul,
 blockquote,
 pre,
 table {
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 }
 
 /* definition list styling */
@@ -95,6 +93,16 @@ ul {
   list-style: disc;
 }
 
+/* blockquote */
+blockquote p {
+  &::before {
+    content: '\201c';
+  }
+  &::after {
+    content: '\201d';
+  }
+}
+
 /* code formatting */
 code,
 kbd,
@@ -111,5 +119,6 @@ samp {
 }
 
 pre {
+  overflow: scroll;
   padding: 1rem;
 }

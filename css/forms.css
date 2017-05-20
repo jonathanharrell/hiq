@@ -1,5 +1,6 @@
 /* general form styling */
 fieldset {
+  margin-bottom: 1rem;
   padding: 0;
   border: 0;
   &:not(:last-child) {

@@ -365,9 +365,7 @@ canvas,
 meter,
 progress,
 iframe {
-  display: block
-}
-figure:not(:last-child), audio:not(:last-child), canvas:not(:last-child), meter:not(:last-child), progress:not(:last-child), iframe:not(:last-child) {
+  display: block;
   margin-bottom: 16px;
   margin-bottom: 1rem;
 }
@@ -462,8 +460,6 @@ ul,
 blockquote,
 pre,
 table {
-}
-p:not(:last-child), dl:not(:last-child), ol:not(:last-child), ul:not(:last-child), blockquote:not(:last-child), pre:not(:last-child), table:not(:last-child) {
   margin-bottom: 16px;
   margin-bottom: 1rem;
 }

@@ -23,13 +23,15 @@ hr {
 
 /* media/embeds */
 figure,
+img,
 audio,
+video,
 canvas,
 meter,
 progress,
 iframe {
   display: block;
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
 }
