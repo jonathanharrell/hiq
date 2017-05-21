@@ -398,8 +398,9 @@ html {
   font-family: var(--base-font-family);
 
   /* responsive base font size */
-  font-size: calc(100% + 0.15 * (100vw - 26rem) / 54);
-  font-size: calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: calc(1em + 0.15 * (100vw - 26rem) / 54);
+  font-size: calc(1em + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -webkit-calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
 
   /* base line height */
   line-height: 1.4;
@@ -871,8 +872,9 @@ select:disabled + .caret {
   background-color: hsl(0, 0%, 95%);
   background-color: var(--gray-lightest);
 }
-/* meter element styling – currently only works in Webkit browsers */
+/* meter element styling – currently only works in Webkit browsers and Firefox */
 meter {
+  -webkit-appearance: meter;
   width: 100%;
   background: hsl(0, 0%, 90%);
   background: var(--gray-lighter)
@@ -937,6 +939,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 24px;
   height: var(--range-input-thumb-height);
   margin-top: -7px;
+  border-color: transparent;
   border-radius: 50%;
   border-radius: var(--range-input-thumb-border-radius);
   background-color: hsl(0, 0%, 50%);
@@ -952,6 +955,7 @@ input[type=range]::-moz-range-thumb {
   width: var(--range-input-thumb-width);
   height: 24px;
   height: var(--range-input-thumb-height);
+  border-color: transparent;
   border-radius: 50%;
   border-radius: var(--range-input-thumb-border-radius);
   background-color: hsl(0, 0%, 50%);
@@ -963,6 +967,7 @@ input[type=range]::-ms-thumb {
   width: var(--range-input-thumb-width);
   height: 24px;
   height: var(--range-input-thumb-height);
+  border-color: transparent;
   border-radius: 50%;
   border-radius: var(--range-input-thumb-border-radius);
   background-color: hsl(0, 0%, 50%);
@@ -1000,16 +1005,14 @@ input[type=range]::-ms-track {
   width: var(--range-input-track-width);
   height: 10px;
   height: var(--range-input-track-height);
+  border-width: 24px;
+  border-width: var(--range-input-thumb-height);
   border-color: transparent;
   color: transparent;
   background-color: transparent;
   transition: background-color 0.1s ease-out;
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
-}
-input[type=range]:focus::-ms-track {
-  background-color: hsl(0, 0%, 75%);
-  background-color: var(--range-input-track-focus-background);
 }
 input[type=range]::-ms-fill-lower {
   background-color: hsl(0, 0%, 90%);

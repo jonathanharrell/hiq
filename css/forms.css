@@ -211,8 +211,9 @@ select {
   }
 }
 
-/* meter element styling – currently only works in Webkit browsers */
+/* meter element styling – currently only works in Webkit browsers and Firefox */
 meter {
+  -webkit-appearance: meter;
   width: 100%;
   background: var(--gray-lighter);
   &::-webkit-meter-bar {
@@ -268,6 +269,7 @@ input[type=range]::-webkit-slider-thumb {
   width: var(--range-input-thumb-width);
   height: var(--range-input-thumb-height);
   margin-top: -7px;
+  border-color: transparent;
   border-radius: var(--range-input-thumb-border-radius);
   background-color: var(--range-input-thumb-background);
   cursor: pointer;
@@ -280,6 +282,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 input[type=range]::-moz-range-thumb {
   width: var(--range-input-thumb-width);
   height: var(--range-input-thumb-height);
+  border-color: transparent;
   border-radius: var(--range-input-thumb-border-radius);
   background-color: var(--range-input-thumb-background);
   cursor: pointer;
@@ -288,6 +291,7 @@ input[type=range]::-moz-range-thumb {
 input[type=range]::-ms-thumb {
   width: var(--range-input-thumb-width);
   height: var(--range-input-thumb-height);
+  border-color: transparent;
   border-radius: var(--range-input-thumb-border-radius);
   background-color: var(--range-input-thumb-background);
   cursor: pointer;
@@ -316,15 +320,12 @@ input[type=range]:focus::-moz-range-track {
 input[type=range]::-ms-track {
   width: var(--range-input-track-width);
   height: var(--range-input-track-height);
+  border-width: var(--range-input-thumb-height);
   border-color: transparent;
   color: transparent;
   background-color: transparent;
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
-}
-
-input[type=range]:focus::-ms-track {
-  background-color: var(--range-input-track-focus-background);
 }
 
 input[type=range]::-ms-fill-lower {
