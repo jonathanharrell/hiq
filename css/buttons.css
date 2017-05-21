@@ -4,8 +4,7 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   width: auto;
   height: 2.5rem;
   padding: 0 0.75rem;
@@ -15,6 +14,10 @@ input[type="reset"] {
   background-color: var(--gray-lighter);
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
+  @supports (display: inline-flex) {
+    display: inline-flex;
+    align-items: center;
+  }
   &:not(:disabled):hover {
     color: var(--text-color);
     background-color: color(#f2f2f2 shade(15%)); /* eventually use custom property here */

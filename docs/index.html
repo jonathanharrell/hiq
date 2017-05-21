@@ -5,26 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="dist/hiq.css">
+    <link rel="stylesheet" href="../dist/hiq.css">
     <style>
+        .container {
+            width: 100%;
+            max-width: 60rem;
+        }
+
         body > header {
             display: flex;
             align-items: center;
-            height: 3rem;
-            padding: 0 5vw;
         }
 
-        body > nav {
-            margin: 1.5rem 0 3rem;
+        body > header nav {
+            margin: 1.5rem 0 0;
         }
 
-        body > nav a {
+        body > header nav a {
             display: inline-block;
             margin: 0 1rem 1rem 0;
+            font-weight: 500;
         }
 
-        .container {
-            max-width: 56rem;
+        body > header nav a img {
+            display: inline;
+            margin: 0;
+        }
+
+        .banner {
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            color: #fff;
+            background: linear-gradient(0deg, #1dbaff, #0032a0);
+        }
+
+        .banner h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .banner .lead {
+            font-size: 2.75rem;
+            line-height: 1.2;
+            font-weight: 500;
         }
 
         section header {
@@ -61,12 +84,17 @@
         }
 
         @media (min-width: 700px) {
-            body > nav {
-                margin: 2rem 0 4rem;
+            body > header nav {
+                margin-top: 1.5rem;
             }
 
-            body > nav a {
-                margin: 0 1.5rem 1.5rem 0;
+            body > header nav a {
+                margin: 0 1.5rem 1rem 0;
+            }
+
+            .banner {
+                margin-bottom: 6rem;
+                padding: 4.5rem 0;
             }
 
             .element {
@@ -88,21 +116,29 @@
 </head>
 <body>
 <header>
-    Hi-Q
-</header>
-<nav>
     <div class="container">
-        <a href="#typography">Typography</a>
-        <a href="#lists">Lists</a>
-        <a href="#dividers">Dividers</a>
-        <a href="#tables">Tables</a>
-        <a href="#code">Code</a>
-        <a href="#media">Media</a>
-        <a href="#progress">Progress</a>
-        <a href="#buttons">Buttons</a>
-        <a href="#forms">Forms</a>
+        <nav>
+            <a href="#typography">Typography</a>
+            <a href="#lists">Lists</a>
+            <a href="#dividers">Dividers</a>
+            <a href="#tables">Tables</a>
+            <a href="#code">Code</a>
+            <a href="#media">Media</a>
+            <a href="#progress">Progress</a>
+            <a href="#buttons">Buttons</a>
+            <a href="#forms">Forms</a>
+            <a href="https://github.com/jonathanharrell/hiq">
+                <img src="../github.svg" alt="Github" width="24" height="24">
+            </a>
+        </nav>
     </div>
-</nav>
+</header>
+<section class="banner">
+    <div class="container">
+        <h1>Hi-Q</h1>
+        <p class="lead">A simple CSS foundation with responsive typography and input styling.</p>
+    </div>
+</section>
 <section class="typography" id="typography">
     <div class="container">
         <header>
@@ -597,7 +633,7 @@
             <p class="label">Button elements</p>
             <div>
                 <p>
-                    <button type="submit">Submit&gt;</button>
+                    <button type="submit">Submit</button>
                     <button type="button">Button</button>
                     <button type="reset">Reset</button>
                     <button type="button" disabled>Disabled</button>

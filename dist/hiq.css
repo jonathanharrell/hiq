@@ -398,8 +398,10 @@ html {
   font-family: var(--base-font-family);
 
   /* responsive base font size */
-  font-size: calc(1em + 0.15 * (100vw - 26rem) / 54);
-  font-size: calc(1em + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: calc(1rem + 0.15 * (100vw - 26rem) / 54);
+  font-size: calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -ms-calc(1rem + 0.15 * (100vw - 26rem) / 54);
+  font-size: -ms-calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
   font-size: -webkit-calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
 
   /* base line height */
@@ -514,7 +516,7 @@ samp {
   padding: 0.25rem 0.5rem;
 }
 pre {
-  overflow: scroll;
+  overflow: auto;
   padding: 16px;
   padding: 1rem;
 }
@@ -782,6 +784,10 @@ select:disabled + .caret {
   position: absolute;
   top: 0;
   left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 .checkbox input[type="checkbox"]:focus + label::before {
   background-color: hsl(0, 0%, 75%);
@@ -843,6 +849,9 @@ select:disabled + .caret {
   position: absolute;
   top: 0;
   left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 .radio input[type="radio"]:focus + label::before {
   background-color: hsl(0, 0%, 75%);
@@ -1036,12 +1045,7 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: inline-block;
   width: auto;
   height: 40px;
   height: 2.5rem;
@@ -1058,6 +1062,20 @@ input[type="reset"] {
   transition: background-color var(--speed) var(--easing);
   cursor: pointer
 }
+@supports ((display: -webkit-inline-box) or (display: inline-flex)) {
+  button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  }
 button:not(:disabled):hover, [role="button"]:not(:disabled):hover, input[type="submit"]:not(:disabled):hover, input[type="button"]:not(:disabled):hover, input[type="reset"]:not(:disabled):hover {
   color: hsl(0, 0%, 10%);
   color: var(--text-color);

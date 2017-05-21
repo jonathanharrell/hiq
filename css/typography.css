@@ -14,7 +14,8 @@ html {
   font-family: var(--base-font-family);
 
   /* responsive base font size */
-  font-size: calc(1em + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -ms-calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
   font-size: -webkit-calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
 
   /* base line height */
@@ -120,6 +121,6 @@ samp {
 }
 
 pre {
-  overflow: scroll;
+  overflow: auto;
   padding: 1rem;
 }
