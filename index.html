@@ -8,20 +8,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="dist/hiq.min.css">
     <style>
+        body > header {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            padding: 0 5vw;
+        }
+
+        body > nav {
+            margin: 1.5rem 0 3rem;
+        }
+
+        body > nav a {
+            display: inline-block;
+            margin: 0 1rem 1rem 0;
+        }
+
         .container {
-            max-width: 50rem;
+            max-width: 56rem;
         }
 
         section header {
             margin: 2rem 0;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid hsl(0, 0%, 90%);
         }
 
         section header h2 {
             margin-bottom: 0.5rem;
             padding-right: 2rem;
             font-size: 1.75rem;
-            color: #ccc;
+            color: hsl(0, 0%, 50%);
         }
 
         .label {
@@ -30,11 +46,11 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 500;
-            color: #ccc;
+            color: hsl(0, 0%, 75%);
         }
 
         .element {
-            margin: 0 0 1.5rem;
+            margin: 0 0 1rem;
         }
 
         .element .label + div {
@@ -46,6 +62,14 @@
         }
 
         @media (min-width: 700px) {
+            body > nav {
+                margin: 2rem 0 4rem;
+            }
+
+            body > nav a {
+                margin: 0 1.5rem 1.5rem 0;
+            }
+
             .element {
                 display: flex;
                 align-items: baseline;
@@ -64,7 +88,23 @@
     </style>
 </head>
 <body>
-<section class="typography">
+<header>
+    Hi-Q
+</header>
+<nav>
+    <div class="container">
+        <a href="#typography">Typography</a>
+        <a href="#lists">Lists</a>
+        <a href="#dividers">Dividers</a>
+        <a href="#tables">Tables</a>
+        <a href="#code">Code</a>
+        <a href="#media">Media</a>
+        <a href="#progress">Progress</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#forms">Forms</a>
+    </div>
+</nav>
+<section class="typography" id="typography">
     <div class="container">
         <header>
             <h2>Typography</h2>
@@ -270,7 +310,7 @@
         </section>
     </div>
 </section>
-<section class="lists">
+<section class="lists" id="lists">
     <div class="container">
         <header>
             <h2>Lists</h2>
@@ -320,7 +360,7 @@
         </section>
     </div>
 </section>
-<section class="horizontal-rules">
+<section class="dividers" id="dividers">
     <div class="container">
         <header>
             <h2>Dividers</h2>
@@ -334,7 +374,7 @@
         </section>
     </div>
 </section>
-<section class="tables">
+<section class="tables" id="tables">
     <div class="container">
         <header>
             <h2>Tables</h2>
@@ -435,7 +475,7 @@
         </section>
     </div>
 </section>
-<section class="code">
+<section class="code" id="code">
     <div class="container">
         <header>
             <h2>Code</h2>
@@ -476,7 +516,7 @@
         </section>
     </div>
 </section>
-<section class="embedded">
+<section class="media" id="media">
     <div class="container">
         <header>
             <h2>Media</h2>
@@ -528,7 +568,7 @@
         </section>
     </div>
 </section>
-<section class="progress">
+<section class="progress" id="progress">
     <div class="container">
         <header>
             <h2>Progress</h2>
@@ -549,7 +589,7 @@
         </section>
     </div>
 </section>
-<section class="buttons">
+<section class="buttons" id="buttons">
     <div class="container">
         <header>
             <h2>Buttons</h2>
@@ -580,7 +620,7 @@
         </section>
     </div>
 </section>
-<section class="forms">
+<section class="forms" id="forms">
     <div class="container">
         <header>
             <h2>Forms</h2>

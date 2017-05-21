@@ -15,6 +15,12 @@ td {
   border-bottom-width: 1px;
   text-align: left;
   vertical-align: top;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
 }
 
 th {
