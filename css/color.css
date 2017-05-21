@@ -1,6 +1,7 @@
 /* applying color variables */
 body {
   color: var(--text-color);
+  background-color: var(--page-background-color);
 }
 
 a {

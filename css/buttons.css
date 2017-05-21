@@ -1,4 +1,8 @@
 /* button styling */
+:root {
+  --button-hover-color: color(hsl(0, 0%, 75%) shade(15%)); /* eventually use custom property here */
+}
+
 button,
 [role="button"],
 input[type="submit"],
@@ -20,7 +24,7 @@ input[type="reset"] {
   }
   &:not(:disabled):hover {
     color: var(--text-color);
-    background-color: color(#f2f2f2 shade(15%)); /* eventually use custom property here */
+    background-color: var(--button-hover-color);
   }
   &:focus {
     background-color: var(--gray-light);

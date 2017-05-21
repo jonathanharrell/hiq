@@ -126,5 +126,3 @@ Color is defined with a palette of grays and a semantic palette:
 ```
 
 Colors are then applied to various elements with additional custom properties.
-
-NOTE: Due to current limitations, custom properties cannot be used in conjunction with the color() function. Hopefully this will be remedied in the future.

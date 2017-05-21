@@ -37,6 +37,7 @@ input[type="number"] {
   height: 2.5rem;
   padding: 0 0.75rem;
   border: 1px solid var(--border-color);
+  color: var(--text-color);
   &::placeholder {
     color: var(--gray);
   }
@@ -60,6 +61,7 @@ textarea {
   height: auto;
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--border-color);
+  color: var(--text-color);
   &::placeholder {
     color: var(--gray);
   }
@@ -84,6 +86,7 @@ select {
   height: 2.5rem;
   padding: 0 0.75rem;
   border: 1px solid var(--border-color);
+  color: var(--text-color);
   &:focus {
     border: 1px solid var(--color-primary);
   }

@@ -524,6 +524,8 @@ pre {
 body {
   color: hsl(0, 0%, 10%);
   color: var(--text-color);
+  background-color: white;
+  background-color: var(--page-background-color);
 }
 a {
   text-decoration: none;
@@ -640,7 +642,9 @@ input[type="number"] {
   padding: 0 12px;
   padding: 0 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
-  border: 1px solid var(--border-color)
+  border: 1px solid var(--border-color);
+  color: hsl(0, 0%, 10%);
+  color: var(--text-color)
 }
 input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder {
   color: hsl(0, 0%, 50%);
@@ -684,7 +688,9 @@ textarea {
   padding: 8px 12px;
   padding: 0.5rem 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
-  border: 1px solid var(--border-color)
+  border: 1px solid var(--border-color);
+  color: hsl(0, 0%, 10%);
+  color: var(--text-color)
 }
 textarea::-webkit-input-placeholder {
   color: hsl(0, 0%, 50%);
@@ -730,7 +736,9 @@ select {
   padding: 0 12px;
   padding: 0 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
-  border: 1px solid var(--border-color)
+  border: 1px solid var(--border-color);
+  color: hsl(0, 0%, 10%);
+  color: var(--text-color)
 }
 select:focus {
   border: 1px solid #0032a0;
@@ -1040,6 +1048,9 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: var(--range-input-track-focus-background);
 }
 /* button styling */
+:root {
+  --button-hover-color: rgb(162, 162, 162); /* eventually use custom property here */
+}
 button,
 [role="button"],
 input[type="submit"],
@@ -1079,7 +1090,8 @@ input[type="reset"] {
 button:not(:disabled):hover, [role="button"]:not(:disabled):hover, input[type="submit"]:not(:disabled):hover, input[type="button"]:not(:disabled):hover, input[type="reset"]:not(:disabled):hover {
   color: hsl(0, 0%, 10%);
   color: var(--text-color);
-  background-color: rgb(206, 206, 206);/* eventually use custom property here */
+  background-color: rgb(162, 162, 162);
+  background-color: var(--button-hover-color);
 }
 button:focus, [role="button"]:focus, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus {
   background-color: hsl(0, 0%, 75%);
