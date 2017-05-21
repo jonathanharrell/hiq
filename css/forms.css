@@ -213,11 +213,18 @@ select {
 
 /* meter element styling – currently only works in Webkit browsers */
 meter {
-  -webkit-appearance: meter;
+  width: 100%;
+  background: var(--gray-lighter);
   &::-webkit-meter-bar {
     background: var(--gray-lighter);
   }
+  &::-moz-meter-bar {
+    background: var(--gray-lighter);
+  }
   &::-webkit-meter-optimum-value {
+    background: var(--color-primary);
+  }
+  &:-moz-meter-optimum::-moz-meter-bar {
     background: var(--color-primary);
   }
 }
@@ -302,6 +309,10 @@ input[type=range]::-moz-range-track {
   cursor: pointer;
 }
 
+input[type=range]:focus::-moz-range-track {
+  background-color: var(--range-input-track-focus-background);
+}
+
 input[type=range]::-ms-track {
   width: var(--range-input-track-width);
   height: var(--range-input-track-height);
@@ -310,6 +321,10 @@ input[type=range]::-ms-track {
   background-color: transparent;
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
+}
+
+input[type=range]:focus::-ms-track {
+  background-color: var(--range-input-track-focus-background);
 }
 
 input[type=range]::-ms-fill-lower {

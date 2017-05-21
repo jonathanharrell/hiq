@@ -100,6 +100,7 @@ select {
   height: auto;
   padding: 0;
   border: none;
+  border-radius: 0;
   box-shadow: none;
   font-family: inherit;
   font-size: inherit;
@@ -153,13 +154,19 @@ input[type="search"]::-webkit-search-results-decoration {
 /* Remove default styling for meter elements */
 meter {
   -webkit-appearance: none;
+  -moz-appearance: none;
 }
+/* Remove default styling for progress elements */
 progress {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: none;
 }
-/* Remove default styling for progress elements */
+/* Remove default styling for range inputs */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
@@ -270,7 +277,7 @@ input[type=range]::-ms-track {
   --gray-lightest: hsl(0, 0%, 95%);
 
   /* semantic palette */
-  --color-primary: #3f51b5;
+  --color-primary: #0032a0;
   --color-success: #4caf50;
   --color-warning: #ff5722;
   --color-error: #f44336;
@@ -278,11 +285,10 @@ input[type=range]::-ms-track {
   /* applied colors */
   --text-color: hsl(0, 0%, 10%);
   --text-color: var(--gray-darker);
-  --link-color: #3f51b5;
+  --link-color: #0032a0;
   --link-color: var(--color-primary);
-  --link-hover-color: rgb(32, 41, 91); /* eventually use custom property here */
-  --link-active-color: rgb(32, 41, 91); /* eventually use custom property here */
-  --link-visited-color: rgb(159, 168, 218); /* eventually use custom property here */
+  --link-hover-color: rgb(0, 25, 80); /* eventually use custom property here */
+  --link-active-color: rgb(0, 25, 80); /* eventually use custom property here */
   --page-background-color: white;
   --background-color: hsl(0, 0%, 95%);
   --background-color: var(--gray-lightest);
@@ -360,12 +366,16 @@ hr {
 }
 /* media/embeds */
 figure,
+img,
 audio,
+video,
 canvas,
 meter,
 progress,
 iframe {
   display: block;
+  width: 100%;
+  max-width: 100%;
   margin-bottom: 16px;
   margin-bottom: 1rem;
 }
@@ -477,6 +487,15 @@ ul {
 ul {
   list-style: disc;
 }
+/* blockquote */
+blockquote p {
+}
+blockquote p::before {
+  content: '\201C';
+}
+blockquote p::after {
+  content: '\201D';
+}
 /* code formatting */
 code,
 kbd,
@@ -494,6 +513,7 @@ samp {
   padding: 0.25rem 0.5rem;
 }
 pre {
+  overflow: scroll;
   padding: 16px;
   padding: 1rem;
 }
@@ -504,23 +524,19 @@ body {
 }
 a {
   text-decoration: none;
-  color: #3f51b5;
+  color: #0032a0;
   color: var(--link-color);
   transition: color 0.1s ease-out;
   transition: color var(--speed) var(--easing);
   cursor: pointer
 }
 a:hover {
-  color: rgb(32, 41, 91);
+  color: rgb(0, 25, 80);
   color: var(--link-hover-color);
 }
 a:active {
-  color: rgb(32, 41, 91);
+  color: rgb(0, 25, 80);
   color: var(--link-active-color);
-}
-a:visited {
-  color: rgb(159, 168, 218);
-  color: var(--link-visited-color);
 }
 mark {
   background-color: #ffeb3b;
@@ -545,7 +561,13 @@ td {
   border: 0 solid var(--border-color);
   border-bottom-width: 1px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: top
+}
+th:first-child, td:first-child {
+  padding-left: 0;
+}
+th:last-child, td:last-child {
+  padding-right: 0;
 }
 th {
   font-weight: 700;
@@ -573,6 +595,8 @@ tbody tr:last-child td,
 }
 /* general form styling */
 fieldset {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   padding: 0;
   border: 0
 }
@@ -628,7 +652,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, input[type
   color: var(--gray);
 }
 input[type="text"]:focus, input[type="password"]:focus, input[type="url"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="number"]:focus {
-  border: 1px solid #3f51b5;
+  border: 1px solid #0032a0;
   border: 1px solid var(--color-primary);
 }
 input[type="text"]:disabled, input[type="password"]:disabled, input[type="url"]:disabled, input[type="email"]:disabled, input[type="tel"]:disabled, input[type="search"]:disabled, input[type="number"]:disabled {
@@ -672,7 +696,7 @@ textarea::placeholder {
   color: var(--gray);
 }
 textarea:focus {
-  border: 1px solid #3f51b5;
+  border: 1px solid #0032a0;
   border: 1px solid var(--color-primary);
 }
 textarea:disabled {
@@ -706,7 +730,7 @@ select {
   border: 1px solid var(--border-color)
 }
 select:focus {
-  border: 1px solid #3f51b5;
+  border: 1px solid #0032a0;
   border: 1px solid var(--color-primary);
 }
 select:disabled {
@@ -763,7 +787,7 @@ select:disabled + .caret {
   background-color: var(--gray-light);
 }
 .checkbox input[type="checkbox"]:checked + label::before {
-  background-color: #3f51b5;
+  background-color: #0032a0;
   background-color: var(--color-primary);
 }
 .checkbox input[type="checkbox"]:checked + label::after {
@@ -824,7 +848,7 @@ select:disabled + .caret {
   background-color: var(--gray-light);
 }
 .radio input[type="radio"]:checked + label::before {
-  background-color: #3f51b5;
+  background-color: #0032a0;
   background-color: var(--color-primary);
 }
 .radio input[type="radio"]:checked + label::after {
@@ -849,14 +873,24 @@ select:disabled + .caret {
 }
 /* meter element styling – currently only works in Webkit browsers */
 meter {
-  -webkit-appearance: meter
+  width: 100%;
+  background: hsl(0, 0%, 90%);
+  background: var(--gray-lighter)
 }
 meter::-webkit-meter-bar {
   background: hsl(0, 0%, 90%);
   background: var(--gray-lighter);
 }
+meter::-moz-meter-bar {
+  background: hsl(0, 0%, 90%);
+  background: var(--gray-lighter);
+}
 meter::-webkit-meter-optimum-value {
-  background: #3f51b5;
+  background: #0032a0;
+  background: var(--color-primary);
+}
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: #0032a0;
   background: var(--color-primary);
 }
 /* progress element styling */
@@ -872,11 +906,11 @@ progress::-webkit-progress-bar {
   background-color: var(--gray-lighter);
 }
 progress::-webkit-progress-value {
-  background-color: #3f51b5;
+  background-color: #0032a0;
   background-color: var(--color-primary);
 }
 progress::-moz-progress-bar {
-  background-color: #3f51b5;
+  background-color: #0032a0;
   background-color: var(--color-primary);
 }
 /* range input styling */
@@ -957,6 +991,10 @@ input[type=range]::-moz-range-track {
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
 }
+input[type=range]:focus::-moz-range-track {
+  background-color: hsl(0, 0%, 75%);
+  background-color: var(--range-input-track-focus-background);
+}
 input[type=range]::-ms-track {
   width: 100%;
   width: var(--range-input-track-width);
@@ -968,6 +1006,10 @@ input[type=range]::-ms-track {
   transition: background-color 0.1s ease-out;
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
+}
+input[type=range]:focus::-ms-track {
+  background-color: hsl(0, 0%, 75%);
+  background-color: var(--range-input-track-focus-background);
 }
 input[type=range]::-ms-fill-lower {
   background-color: hsl(0, 0%, 90%);
