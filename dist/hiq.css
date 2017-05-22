@@ -283,8 +283,8 @@ input[type=range]::-ms-track {
   --color-error: #f44336;
 
   /* applied colors */
-  --text-color: hsl(0, 0%, 10%);
-  --text-color: var(--gray-darker);
+  --text-color: hsl(0, 0%, 25%);
+  --text-color: var(--gray-dark);
   --link-color: #0032a0;
   --link-color: var(--color-primary);
   --link-hover-color: rgb(0, 25, 80); /* eventually use custom property here */
@@ -329,8 +329,8 @@ class to add carets to selects and dropdowns
   display: block;
   width: 0;
   height: 0;
-  border-top: 7.2px solid hsl(0, 0%, 10%);
-  border-top: 0.45rem solid hsl(0, 0%, 10%);
+  border-top: 7.2px solid hsl(0, 0%, 25%);
+  border-top: 0.45rem solid hsl(0, 0%, 25%);
   border-top: 7.2px solid var(--text-color);
   border-top: 0.45rem solid var(--text-color);
   border-right: 6.4px solid transparent;
@@ -522,7 +522,7 @@ pre {
 }
 /* applying color variables */
 body {
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: white;
   background-color: var(--page-background-color);
@@ -643,7 +643,7 @@ input[type="number"] {
   padding: 0 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
   border: 1px solid var(--border-color);
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color)
 }
 input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder {
@@ -689,7 +689,7 @@ textarea {
   padding: 0.5rem 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
   border: 1px solid var(--border-color);
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color)
 }
 textarea::-webkit-input-placeholder {
@@ -737,7 +737,7 @@ select {
   padding: 0 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
   border: 1px solid var(--border-color);
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color)
 }
 select:focus {
@@ -1065,7 +1065,7 @@ input[type="reset"] {
   border-radius: 4px;
   border-radius: var(--border-radius);
   outline: 0;
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: hsl(0, 0%, 90%);
   background-color: var(--gray-lighter);
@@ -1088,7 +1088,7 @@ input[type="reset"] {
   }
   }
 button:not(:disabled):hover, [role="button"]:not(:disabled):hover, input[type="submit"]:not(:disabled):hover, input[type="button"]:not(:disabled):hover, input[type="reset"]:not(:disabled):hover {
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: rgb(162, 162, 162);
   background-color: var(--button-hover-color);
@@ -1098,7 +1098,7 @@ button:focus, [role="button"]:focus, input[type="submit"]:focus, input[type="but
   background-color: var(--gray-light);
 }
 button:visited, [role="button"]:visited, input[type="submit"]:visited, input[type="button"]:visited, input[type="reset"]:visited {
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 25%);
   color: var(--text-color);
 }
 button:disabled, [role="button"]:disabled, input[type="submit"]:disabled, input[type="button"]:disabled, input[type="reset"]:disabled {

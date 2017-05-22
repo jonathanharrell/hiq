@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../dist/hiq.css">
+    <title>HiQ - A simple CSS foundation</title>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/jonathanharrell/hiq/master/dist/hiq.css">
     <style>
         .container {
             width: 100%;
@@ -25,18 +25,26 @@
             display: inline-block;
             margin: 0 1rem 1rem 0;
             font-weight: 500;
+            color: hsl(0, 0%, 25%);
         }
 
-        body > header nav a img {
-            display: inline;
-            margin: 0;
+        body > header nav a:hover {
+            color: #0032a0;
+        }
+
+        .github {
+            fill: hsl(0, 0%, 25%);
+        }
+
+        .github:hover {
+            fill: #0032a0;
         }
 
         .banner {
             margin-bottom: 3rem;
             padding: 3rem 0;
-            color: #fff;
-            background: linear-gradient(0deg, #1dbaff, #0032a0);
+            color: hsl(0, 0%, 25%);
+            background-color: hsl(0, 0%, 95%);
         }
 
         .banner h1 {
@@ -81,6 +89,7 @@
 
         pre {
             font-size: 0.85rem;
+            color: hsl(0, 0%, 25%);
         }
 
         @media (min-width: 700px) {
@@ -128,7 +137,15 @@
             <a href="#buttons">Buttons</a>
             <a href="#forms">Forms</a>
             <a href="https://github.com/jonathanharrell/hiq">
-                <img src="../github.svg" alt="Github" width="24" height="24">
+                <svg width="24px" height="24px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal" font-family="FontAwesome" letter-spacing="6.48000145" font-size="32">
+                        <g class="github" transform="translate(-318.000000, -105.000000)" fill="#0032A0">
+                            <text style="mix-blend-mode: multiply;">
+                                <tspan x="318.662856" y="134"></tspan>
+                            </text>
+                        </g>
+                    </g>
+                </svg>
             </a>
         </nav>
     </div>
@@ -137,11 +154,6 @@
     <div class="container">
         <h1>Hi-Q</h1>
         <p class="lead">A simple CSS foundation with responsive typography and input styling.</p>
-    </div>
-</section>
-<section class="theme-switch">
-    <div class="container">
-        <button class="switch-theme">Switch Theme</button>
     </div>
 </section>
 <section class="typography" id="typography">
@@ -884,27 +896,5 @@
         </form>
     </div>
 </section>
-<script>
-    var theme = 'light';
-    var themeSwitchButton = document.querySelector('.switch-theme');
-    themeSwitchButton.addEventListener('click', switchTheme);
-
-    function switchTheme() {
-        document.documentElement.style.setProperty('--gray-darkest', 'hsl(0, 0%, 95%)');
-        document.documentElement.style.setProperty('--gray-darker', 'hsl(0, 0%, 90%)');
-        document.documentElement.style.setProperty('--gray-dark', 'hsl(0, 0%, 75%)');
-        document.documentElement.style.setProperty('--gray', 'hsl(0, 0%, 50%)');
-        document.documentElement.style.setProperty('--gray-light', 'hsl(0, 0%, 25%)');
-        document.documentElement.style.setProperty('--gray-lighter', 'hsl(0, 0%, 10%)');
-        document.documentElement.style.setProperty('--gray-lightest', 'hsl(0, 0%, 5%)');
-        document.documentElement.style.setProperty('--color-primary', '#1dbaff');
-        document.documentElement.style.setProperty('--page-background-color', 'black');
-        document.documentElement.style.setProperty('--link-hover-color', 'color(#1dbaff shade(50%))');
-        document.documentElement.style.setProperty('--link-active-color', 'color(#1dbaff shade(50%))');
-        document.documentElement.style.setProperty('--button-hover-color', 'hsl(0, 0%, 25%)');
-
-        document.querySelector('.banner').style.background = 'linear-gradient(0deg, hsl(0, 0%, 25%), hsl(0, 0%, 10%))';
-    }
-</script>
 </body>
 </html>

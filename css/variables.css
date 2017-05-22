@@ -83,7 +83,7 @@
   --color-error: #f44336;
 
   /* applied colors */
-  --text-color: var(--gray-darker);
+  --text-color: var(--gray-dark);
   --link-color: var(--color-primary);
   --link-hover-color: color(#0032a0 shade(50%)); /* eventually use custom property here */
   --link-active-color: color(#0032a0 shade(50%)); /* eventually use custom property here */
