@@ -1,5 +1,5 @@
 # Hi-Q
-A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss) and [cssnext](http://cssnext.io/).
+A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss) and [cssnext](http://cssnext.io/). See the [demo page](https://github.com/jonathanharrell/hiq/blob/master/dist/hiq.css).
 
 <img src="https://raw.githubusercontent.com/jonathanharrell/hiq/master/hiq.png" alt="HiQ" width="250" height="250" />
 
