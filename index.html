@@ -705,7 +705,7 @@
                 <div>
                     <p>
                         <label for="text">Text Input</label>
-                        <input type="text" id="text" name="text" placeholder="Text Input" required>
+                        <input type="text" id="text" name="text" placeholder="Enter text" required>
                     </p>
                     <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
 &lt;input type=&quot;text&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
@@ -716,7 +716,7 @@
                 <div>
                     <p>
                         <label for="disabled">Disabled Input</label>
-                        <input type="text" id="disabled" name="disabled" placeholder="Text Input" disabled>
+                        <input type="text" id="disabled" name="disabled" placeholder="Enter text" disabled>
                     </p>
                     <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
 &lt;input type=&quot;text&quot; id=&quot;...&quot; name=&quot;...&quot; disabled&gt;</code></pre>
@@ -727,7 +727,7 @@
                 <div>
                     <p>
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Type your Password">
+                        <input type="password" id="password" name="password" placeholder="••••••••">
                     </p>
                     <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
 &lt;input type=&quot;password&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
@@ -771,7 +771,7 @@
                 <div>
                     <p>
                         <label for="search">Search</label>
-                        <input type="search" id="search" name="search" placeholder="Enter Search Term">
+                        <input type="search" id="search" name="search" placeholder="Enter search term">
                     </p>
                     <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
 &lt;input type=&quot;search&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
@@ -782,14 +782,14 @@
                 <div>
                     <p>
                         <label>Number Input</label>
-                        <input type="number" placeholder="Enter a Number">
+                        <input type="number" placeholder="1234">
                     </p>
                     <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
 &lt;input type=&quot;number&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
-                <p class="label">Text area</p>
+                <p class="label">Enter text</p>
                 <div>
                     <p>
                         <label for="textarea">Text area</label>
@@ -830,20 +830,14 @@
                 <p class="label">Checkbox</p>
                 <div>
                     <fieldset>
-                        <legend>Who is your favorite 19th century scientist?</legend>
+                        <legend>Fieldset legend</legend>
                         <div class="checkbox">
-                            <input id="bell" type="checkbox" name="scientist" value="bell"/>
-                            <label for="bell">Alexander Graham Bell</label>
-                            <input id="edison" type="checkbox" name="scientist" value="edison"/>
-                            <label for="edison">Thomas Edison</label>
-                            <input id="morse" type="checkbox" name="scientist" value="morse"/>
-                            <label for="morse">Samuel Morse</label>
-                            <input id="nobel" type="checkbox" name="scientist" value="nobel"/>
-                            <label for="nobel">Alfred Nobel</label>
-                            <input id="pasteur" type="checkbox" name="scientist" value="pasteur"/>
-                            <label for="pasteur">Louis Pasteur</label>
-                            <input id="tesla" type="checkbox" name="scientist" value="tesla" disabled/>
-                            <label for="tesla">Nikola Tesla</label>
+                            <input type="checkbox" name="day" id="check-option1" value="option1"/>
+                            <label for="check-option1">Option 1</label>
+                            <input type="checkbox" name="day" id="check-option2" value="option2"/>
+                            <label for="check-option2">Option 2</label>
+                            <input type="checkbox" name="day" id="check-option3" value="option3" disabled/>
+                            <label for="check-option3">Option 3</label>
                         </div>
                     </fieldset>
                     <pre><code>&lt;fieldset&gt;
@@ -859,14 +853,14 @@
                 <p class="label">Radio</p>
                 <div>
                     <fieldset>
-                        <legend>What is the best time of day?</legend>
+                        <legend>Fieldset legend</legend>
                         <div class="radio">
-                            <input type="radio" name="day" id="morning" value="morning"/>
-                            <label for="morning">Morning</label>
-                            <input type="radio" name="day" id="night" value="night"/>
-                            <label for="night">Night</label>
-                            <input type="radio" name="day" id="coffee" value="coffee" disabled/>
-                            <label for="coffee">Any time I'm drinking coffee</label>
+                            <input type="radio" name="day" id="radio-option1" value="option1"/>
+                            <label for="radio-option1">Option 1</label>
+                            <input type="radio" name="day" id="radio-option2" value="option2"/>
+                            <label for="radio-option2">Option 2</label>
+                            <input type="radio" name="day" id="radio-option3" value="option3" disabled/>
+                            <label for="radio-option3">Option 3</label>
                         </div>
                     </fieldset>
                     <pre><code>&lt;fieldset&gt;
