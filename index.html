@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HiQ - A simple CSS foundation</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
     <link rel="stylesheet" href="dist/hiq.css">
     <style>
         .container {
@@ -92,6 +95,14 @@
             color: hsl(0, 0%, 25%);
         }
 
+        pre code {
+            padding: 0;
+        }
+
+        body > footer {
+            margin: 6rem 0 3rem;
+        }
+
         @media (min-width: 700px) {
             body > header nav {
                 margin-top: 1.5rem;
@@ -165,42 +176,42 @@
             <p class="label">Heading 1</p>
             <div>
                 <h1>Heading 1</h1>
-                <pre>&lt;h1&gt;...&lt;/h1&gt;</pre>
+                <pre><code>&lt;h1&gt;...&lt;/h1&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Heading 2</p>
             <div>
                 <h2>Heading 2</h2>
-                <pre>&lt;h2&gt;...&lt;/h2&gt;</pre>
+                <pre><code>&lt;h2&gt;...&lt;/h2&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Heading 3</p>
             <div>
                 <h3>Heading 3</h3>
-                <pre>&lt;h3&gt;...&lt;/h3&gt;</pre>
+                <pre><code>&lt;h3&gt;...&lt;/h3&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Heading 4</p>
             <div>
                 <h4>Heading 4</h4>
-                <pre>&lt;h4&gt;...&lt;/h4&gt;</pre>
+                <pre><code>&lt;h4&gt;...&lt;/h4&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Heading 5</p>
             <div>
                 <h5>Heading 5</h5>
-                <pre>&lt;h5&gt;...&lt;/h5&gt;</pre>
+                <pre><code>&lt;h5&gt;...&lt;/h5&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Heading 6</p>
             <div>
                 <h6>Heading 6</h6>
-                <pre>&lt;h6&gt;...&lt;/h6&gt;</pre>
+                <pre><code>&lt;h6&gt;...&lt;/h6&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -209,7 +220,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit venenatis ipsum, ut commodo nibh
                     dignissim at. Nulla facilisi. In sollicitudin, nisl egestas finibus mollis, nisi tortor cursus augue, sit
                     amet rutrum urna est eu erat. Curabitur suscipit nisi nulla. Suspendisse potenti. Suspendisse vitae commodo turpis, at maximus massa. Proin ante elit, posuere quis quam in, tristique egestas risus. Aliquam eu est at magna aliquet tempor.</p>
-                <pre>&lt;p&gt;...&lt;/p&gt;</pre>
+                <pre><code>&lt;p&gt;...&lt;/p&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -220,101 +231,101 @@
                         document, that is set off from the main text as a paragraph, or block of text.</p>
                     <cite>— Said no one, ever.</cite>
                 </blockquote>
-                <pre>&lt;blockquote&gt;
+                <pre><code>&lt;blockquote&gt;
     &lt;p&gt;...&lt;/p&gt;
     &lt;cite&gt;&mdash; ...&lt;/cite&gt;
-&lt;/blockquote&gt;</pre>
+&lt;/blockquote&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Link</p>
             <div>
                 <p><a href="#">This is a text link</a>.</p>
-                <pre>&lt;a&gt;...&lt;/a&gt;</pre>
+                <pre><code>&lt;a&gt;...&lt;/a&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Strong</p>
             <div>
                 <p><strong>Strong is used to indicate strong importance.</strong></p>
-                <pre>&lt;strong&gt;...&lt;/strong&gt;</pre>
+                <pre><code>&lt;strong&gt;...&lt;/strong&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Emphasis</p>
             <div>
                 <p><em>This text has added emphasis.</em></p>
-                <pre>&lt;em&gt;...&lt;/em&gt;</pre>
+                <pre><code>&lt;em&gt;...&lt;/em&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Bold</p>
             <div>
                 <p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
-                <pre>&lt;b&gt;...&lt;/b&gt;</pre>
+                <pre><code>&lt;b&gt;...&lt;/b&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Italic</p>
             <div>
                 <p>The <i>i element</i> is text that is offset from the normal text.</p>
-                <pre>&lt;i&gt;...&lt;/i&gt;</pre>
+                <pre><code>&lt;i&gt;...&lt;/i&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Underline</p>
             <div>
                 <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.</p>
-                <pre>&lt;u&gt;...&lt;/u&gt;</pre>
+                <pre><code>&lt;u&gt;...&lt;/u&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Deleted</p>
             <div>
                 <p><del>This text is deleted.</del></p>
-                <pre>&lt;del&gt;...&lt;/del&gt;</pre>
+                <pre><code>&lt;del&gt;...&lt;/del&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Inserted</p>
             <div>
                 <p><ins>This text is inserted.</ins></p>
-                <pre>&lt;ins&gt;...&lt;/ins&gt;</pre>
+                <pre><code>&lt;ins&gt;...&lt;/ins&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Strikethrough</p>
             <div>
                 <p><s>This text has a strikethrough</s>.</p>
-                <pre>&lt;s&gt;...&lt;/s&gt;</pre>
+                <pre><code>&lt;s&gt;...&lt;/s&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Superscript</p>
             <div>
                 <p>Superscript<sup>®</sup>.</p>
-                <pre>&lt;sup&gt;...&lt;/sup&gt;</pre>
+                <pre><code>&lt;sup&gt;...&lt;/sup&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Subscript</p>
             <div>
                 <p>Subscript for things like H<sub>2</sub>O.</p>
-                <pre>&lt;sub&gt;...&lt;/sub&gt;</pre>
+                <pre><code>&lt;sub&gt;...&lt;/sub&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Small</p>
             <div>
                 <p><small>This small text is small for for fine print, etc.</small></p>
-                <pre>&lt;small&gt;...&lt;/small&gt;</pre>
+                <pre><code>&lt;small&gt;...&lt;/small&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Abbreviation</p>
             <div>
                 <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
-                <pre>&lt;abbr&gt;...&lt;/abbr&gt;</pre>
+                <pre><code>&lt;abbr&gt;...&lt;/abbr&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -322,42 +333,42 @@
             <div>
                 <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline
                     quotation.</q></p>
-                <pre>&lt;q cite="..."&gt;...&lt;/q&gt;</pre>
+                <pre><code>&lt;q cite="..."&gt;...&lt;/q&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Citation</p>
             <div>
                 <p><cite>This is a citation.</cite></p>
-                <pre>&lt;cite&gt;...&lt;/cite&gt;</pre>
+                <pre><code>&lt;cite&gt;...&lt;/cite&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Definition</p>
             <div>
                 <p>The <dfn>dfn element</dfn> indicates a definition.</p>
-                <pre>&lt;dfn&gt;...&lt;/dfn&gt;</pre>
+                <pre><code>&lt;dfn&gt;...&lt;/dfn&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Highlight</p>
             <div>
                 <p>The <mark>mark element</mark> indicates a highlight.</p>
-                <pre>&lt;mark&gt;...&lt;/mark&gt;</pre>
+                <pre><code>&lt;mark&gt;...&lt;/mark&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Variable</p>
             <div>
                 <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
-                <pre>&lt;var&gt;...&lt;/var&gt;</pre>
+                <pre><code>&lt;var&gt;...&lt;/var&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Time</p>
             <div>
                 <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
-                <pre>&lt;time datetime="..."&gt;...&lt;/time&gt;</pre>
+                <pre><code>&lt;time datetime="..."&gt;...&lt;/time&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -374,10 +385,10 @@
                     <dt>Definition List Title</dt>
                     <dd>This is a definition list division.</dd>
                 </dl>
-                <pre>&lt;dl&gt;
+                <pre><code>&lt;dl&gt;
     &lt;dt&gt;...&lt;/dt&gt;
     &lt;dd&gt;...&lt;/dd&gt;
-&lt;/dl&gt;</pre>
+&lt;/dl&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -388,11 +399,11 @@
                     <li>List Item 2</li>
                     <li>List Item 3</li>
                 </ol>
-                <pre>&lt;ol&gt;
+                <pre><code>&lt;ol&gt;
     &lt;li&gt;...&lt;/li&gt;
     &lt;li&gt;...&lt;/li&gt;
     &lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</pre>
+&lt;/ol&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -403,11 +414,11 @@
                     <li>List Item 2</li>
                     <li>List Item 3</li>
                 </ul>
-                <pre>&lt;ul&gt;
+                <pre><code>&lt;ul&gt;
     &lt;li&gt;...&lt;/li&gt;
     &lt;li&gt;...&lt;/li&gt;
     &lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;</pre>
+&lt;/ul&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -421,7 +432,7 @@
             <p class="label">Horizontal Rule</p>
             <div>
                 <hr>
-                <pre>&lt;hr&gt;</pre>
+                <pre><code>&lt;hr&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -446,7 +457,7 @@
                         <td>Party Town USA</td>
                     </tr>
                 </table>
-                <pre>&lt;table&gt;
+                <pre><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;th&gt;...&lt;/th&gt;
         &lt;th&gt;...&lt;/th&gt;
@@ -457,7 +468,7 @@
         &lt;td&gt;...&lt;/td&gt;
         &lt;td&gt;...&lt;/td&gt;
     &lt;/tr&gt;
-&lt;/table&gt;</pre>
+&lt;/table&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -508,7 +519,7 @@
                         <td>porpora</td>
                     </tr>
                 </table>
-                <pre>&lt;table&gt;
+                <pre><code>&lt;table&gt;
     &lt;caption&gt;...&lt;/caption&gt;
     &lt;tr&gt;
         &lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;
@@ -522,7 +533,7 @@
         &lt;td&gt;...&lt;/td&gt;
         &lt;td&gt;...&lt;/td&gt;
     &lt;/tr&gt;
-&lt;/table&gt;</pre>
+&lt;/table&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -536,21 +547,21 @@
             <p class="label">Keyboard input</p>
             <div>
                 <p><kbd>Cmd</kbd></p>
-                <pre>&lt;kbd&gt;...&lt;/kbd&gt;</pre>
+                <pre><code>&lt;kbd&gt;...&lt;/kbd&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Inline code</p>
             <div>
                 <p><code>&lt;div&gt;code&lt;/div&gt;</code></p>
-                <pre>&lt;code&gt;...&lt;/code&gt;</pre>
+                <pre><code>&lt;code&gt;...&lt;/code&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Sample output</p>
             <div>
                 <p><samp>This is sample output from a computer program.</samp></p>
-                <pre>&lt;samp&gt;...&lt;/samp&gt;</pre>
+                <pre><code>&lt;samp&gt;...&lt;/samp&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -563,7 +574,7 @@
   P Q R S T U V W X Y Z [ \ ] ^ _
   ` a b c d e f g h i j k l m n o
   p q r s t u v w x y z { | } ~ </pre>
-                <pre>&lt;pre&gt;...&lt;/pre&gt;</pre>
+                <pre><code>&lt;pre&gt;...&lt;/pre&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -577,7 +588,7 @@
             <p class="label">Image</p>
             <div>
                 <p><img src="https://placehold.it/600x400" alt="Image alt text"></p>
-                <pre>&lt;img src="..." alt="..."&gt;</pre>
+                <pre><code>&lt;img src="..." alt="..."&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -586,9 +597,9 @@
                 <figure>
                     <img src="https://placehold.it/600x400" alt="Image alt text">
                 </figure>
-                <pre>&lt;figure&gt;
+                <pre><code>&lt;figure&gt;
     &lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;
-&lt;/figure&gt;</pre>
+&lt;/figure&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -598,24 +609,24 @@
                     <img src="https://placehold.it/600x400" alt="Image alt text">
                     <figcaption>Here is a caption for this image.</figcaption>
                 </figure>
-                <pre>&lt;figure&gt;
+                <pre><code>&lt;figure&gt;
     &lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;
     &lt;figcaption&gt;...&lt;/figcaption&gt;
-&lt;/figure&gt;</pre>
+&lt;/figure&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Audio</p>
             <div>
                 <audio controls="">audio</audio>
-                <pre>&lt;audio&gt;...&lt;/audio&gt;</pre>
+                <pre><code>&lt;audio&gt;...&lt;/audio&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Video</p>
             <div>
                 <video controls="" poster="https://placehold.it/600x400">video</video>
-                <pre>&lt;video&gt;...&lt;/video&gt;</pre>
+                <pre><code>&lt;video&gt;...&lt;/video&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -629,14 +640,14 @@
             <p class="label">Meter element</p>
             <div>
                 <meter value="5" min="0" max="10">2 out of 10</meter>
-                <pre>&lt;meter value="..." min="..." max="..."&gt;...&lt;/meter&gt;</pre>
+                <pre><code>&lt;meter value="..." min="..." max="..."&gt;...&lt;/meter&gt;</code></pre>
             </div>
         </section>
         <section class="element">
             <p class="label">Progress element</p>
             <div>
                 <progress value="50" max="100">progress</progress>
-                <pre>&lt;progress value="..." min="..."&gt;...&lt;/progress&gt;</pre>
+                <pre><code>&lt;progress value="..." min="..."&gt;...&lt;/progress&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -655,10 +666,10 @@
                     <button type="reset">Reset</button>
                     <button type="button" disabled>Disabled</button>
                 </p>
-                <pre>&lt;button type=&quot;submit&quot;&gt;...&lt;/button&gt;
+                <pre><code>&lt;button type=&quot;submit&quot;&gt;...&lt;/button&gt;
 &lt;button type=&quot;button&quot;&gt;...&lt;/button&gt;
 &lt;button type=&quot;reset&quot;&gt;...&lt;/button&gt;
-&lt;button type=&quot;button&quot; disabled&gt;...&lt;/button&gt;</pre>
+&lt;button type=&quot;button&quot; disabled&gt;...&lt;/button&gt;</code></pre>
             </div>
         </section>
         <section class="element">
@@ -667,7 +678,7 @@
                 <p>
                     <a href="#" type="button" role="button" aria-pressed="false">Link as button</a>
                 </p>
-                <pre>&lt;a href="#" role="button"&gt;...&lt;/a&gt;</pre>
+                <pre><code>&lt;a href="#" role="button"&gt;...&lt;/a&gt;</code></pre>
             </div>
         </section>
     </div>
@@ -684,9 +695,9 @@
                     <fieldset>
                         <legend>Input fields</legend>
                     </fieldset>
-                    <pre>&lt;fieldset&gt;
+                    <pre><code>&lt;fieldset&gt;
     &lt;legend&gt;...&lt;/legend&gt;
-&lt;/fieldset&gt;</pre>
+&lt;/fieldset&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -696,8 +707,8 @@
                         <label for="text">Text Input</label>
                         <input type="text" id="text" name="text" placeholder="Text Input" required>
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;text&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -707,8 +718,8 @@
                         <label for="disabled">Disabled Input</label>
                         <input type="text" id="disabled" name="disabled" placeholder="Text Input" disabled>
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;text&quot; id=&quot;...&quot; name=&quot;...&quot; disabled&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;...&quot; name=&quot;...&quot; disabled&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -718,8 +729,8 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Type your Password">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;password&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;password&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -729,8 +740,8 @@
                         <label for="url">Web Address</label>
                         <input type="url" id="url" name="url" placeholder="http://yoursite.com">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;url&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;url&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -740,8 +751,8 @@
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="name@email.com">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;email&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;email&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -751,8 +762,8 @@
                         <label for="tel">Phone Number</label>
                         <input type="tel" id="tel" name="tel" placeholder="(999) 999-9999">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;tel&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;tel&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -762,8 +773,8 @@
                         <label for="search">Search</label>
                         <input type="search" id="search" name="search" placeholder="Enter Search Term">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;search&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;search&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -773,8 +784,8 @@
                         <label>Number Input</label>
                         <input type="number" placeholder="Enter a Number">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;number&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -784,8 +795,8 @@
                         <label for="textarea">Text area</label>
                         <textarea id="textarea" name="textarea" rows="5" placeholder="Text area"></textarea>
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;textarea id=&quot;...&quot; name=&quot;...&quot; rows=&quot;...&quot;&gt;&lt;/textarea&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;textarea id=&quot;...&quot; name=&quot;...&quot; rows=&quot;...&quot;&gt;&lt;/textarea&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -802,7 +813,7 @@
                         </select>
                         <span class="caret"></span>
                     </p>
-                    <pre>&lt;p class=&quot;select&quot;&gt;
+                    <pre><code>&lt;p class=&quot;select&quot;&gt;
     &lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
     &lt;select id=&quot;...&quot; name=&quot;...&quot;&gt;
         &lt;optgroup label=&quot;...&quot;&gt;
@@ -812,7 +823,7 @@
         &lt;/optgroup&gt;
     &lt;/select&gt;
     &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-&lt;/p&gt;</pre>
+&lt;/p&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -835,13 +846,13 @@
                             <label for="tesla">Nikola Tesla</label>
                         </div>
                     </fieldset>
-                    <pre>&lt;fieldset&gt;
+                    <pre><code>&lt;fieldset&gt;
     &lt;legend&gt;...&lt;/legend&gt;
     &lt;div class=&quot;checkbox&quot;&gt;
         &lt;input type=&quot;checkbox&quot; id=&quot;...&quot; name=&quot;...&quot; value=&quot;...&quot;/&gt;
         &lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
     &lt;/div&gt;
-&lt;/fieldset&gt;</pre>
+&lt;/fieldset&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -858,13 +869,13 @@
                             <label for="coffee">Any time I'm drinking coffee</label>
                         </div>
                     </fieldset>
-                    <pre>&lt;fieldset&gt;
+                    <pre><code>&lt;fieldset&gt;
     &lt;legend&gt;...&lt;/legend&gt;
     &lt;div class=&quot;radio&quot;&gt;
         &lt;input type=&quot;radio&quot; id=&quot;...&quot; name=&quot;...&quot; value=&quot;...&quot;/&gt;
         &lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
     &lt;/div&gt;
-&lt;/fieldset&gt;</pre>
+&lt;/fieldset&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -874,8 +885,8 @@
                         <label for="range">Range</label>
                         <input type="range" id="range" name="range" min="100" max="500" step="10">
                     </p>
-                    <pre>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
-&lt;input type=&quot;range&quot; id=&quot;...&quot; name=&quot;...&quot; min=&quot;...&quot; max=&quot;...&quot; step=&quot;...&quot;&gt;</pre>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;range&quot; id=&quot;...&quot; name=&quot;...&quot; min=&quot;...&quot; max=&quot;...&quot; step=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">
@@ -887,14 +898,28 @@
                         <input type="reset" value="Reset">
                         <input type="submit" value="Disabled" disabled>
                     </p>
-                    <pre>&lt;input type=&quot;submit&quot; value=&quot;...&quot;&gt;
+                    <pre><code>&lt;input type=&quot;submit&quot; value=&quot;...&quot;&gt;
 &lt;input type=&quot;button&quot; value=&quot;...&quot;&gt;
 &lt;input type=&quot;reset&quot; value=&quot;...&quot;&gt;
-&lt;input type=&quot;submit&quot; value=&quot;...&quot; disabled&gt;</pre>
+&lt;input type=&quot;submit&quot; value=&quot;...&quot; disabled&gt;</code></pre>
                 </div>
             </section>
         </form>
     </div>
 </section>
+<footer>
+    <div class="container">
+        Built and maintained by <a href="https://twitter.com/HarrellofDurham">Jonathan Harrell</a>.
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>
+<script>
+    const codeSnippets = document.querySelectorAll('pre code');
+    Array.from(codeSnippets).forEach(code => {
+        const text = code.textContent;
+        const highlightedText = Prism.highlight(text, Prism.languages.html);
+        code.innerHTML = highlightedText;
+    })
+</script>
 </body>
 </html>
