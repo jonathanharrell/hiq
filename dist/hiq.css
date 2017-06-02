@@ -171,8 +171,6 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 input[type=range]::-ms-track {
-  border-color: transparent;
-  color: transparent;
   background: transparent;
 }
 ::-moz-progress-bar {

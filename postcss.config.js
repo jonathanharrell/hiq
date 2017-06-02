@@ -8,6 +8,7 @@ module.exports = (ctx) => ({
                     preserve: ctx.env === 'production' ? false : true
                 }
             }
-        })
+        }),
+        require('postcss-discard-duplicates')()
     ]
 })
