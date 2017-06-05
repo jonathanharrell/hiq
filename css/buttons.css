@@ -22,7 +22,7 @@ input[type="reset"] {
     display: inline-flex;
     align-items: center;
   }
-  &:not(:disabled):hover {
+  &:hover {
     color: var(--text-color);
     background-color: var(--button-hover-color);
   }
@@ -32,7 +32,9 @@ input[type="reset"] {
   &:visited {
     color: var(--text-color);
   }
-  &:disabled {
+  &:disabled,
+  &:hover:disabled,
+  &:visited:disabled {
     color: var(--disabled-color);
     background-color: var(--gray-lightest);
     cursor: not-allowed;

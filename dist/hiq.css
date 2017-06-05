@@ -243,6 +243,9 @@ input[type=range]::-ms-track {
   --font-size-5: 1rem;
   --font-size-6: 14px;
   --font-size-6: 0.875rem;
+  --font-size-base: 16px;
+  --font-size-base: 1rem;
+  --font-size-base: var(--font-size-5);
   --font-size-large: 24px;
   --font-size-large: 1.5rem;
   --font-size-large: var(--font-size-4);
@@ -343,7 +346,10 @@ class to add carets to selects and dropdowns
   max-width: var(--max-container-width);
   margin: 0 auto;
   padding: 0 5vw;
-  padding: 0 var(--container-horizontal-padding);
+  padding: 0 var(--container-horizontal-padding)
+}
+.container.is-fluid {
+  max-width: none;
 }
 /* semantic elements */
 article,
@@ -1085,7 +1091,7 @@ input[type="reset"] {
             align-items: center;
   }
   }
-button:not(:disabled):hover, [role="button"]:not(:disabled):hover, input[type="submit"]:not(:disabled):hover, input[type="button"]:not(:disabled):hover, input[type="reset"]:not(:disabled):hover {
+button:hover, [role="button"]:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: rgb(162, 162, 162);
@@ -1099,7 +1105,21 @@ button:visited, [role="button"]:visited, input[type="submit"]:visited, input[typ
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
 }
-button:disabled, [role="button"]:disabled, input[type="submit"]:disabled, input[type="button"]:disabled, input[type="reset"]:disabled {
+button:disabled,
+  button:hover:disabled,
+  button:visited:disabled,
+  [role="button"]:disabled,
+  [role="button"]:hover:disabled,
+  [role="button"]:visited:disabled,
+  input[type="submit"]:disabled,
+  input[type="submit"]:hover:disabled,
+  input[type="submit"]:visited:disabled,
+  input[type="button"]:disabled,
+  input[type="button"]:hover:disabled,
+  input[type="button"]:visited:disabled,
+  input[type="reset"]:disabled,
+  input[type="reset"]:hover:disabled,
+  input[type="reset"]:visited:disabled {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   background-color: hsl(0, 0%, 95%);

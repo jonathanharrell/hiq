@@ -3,6 +3,9 @@
   max-width: var(--max-container-width);
   margin: 0 auto;
   padding: 0 var(--container-horizontal-padding);
+  &.is-fluid {
+    max-width: none;
+  }
 }
 
 /* semantic elements */
