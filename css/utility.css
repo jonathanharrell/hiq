@@ -1,16 +1,22 @@
 /*
 class the visually hides elements but keeps them accessible to screen readers
  */
+:root {
+  --visually-hidden: {
+    clip: rect(0 0 0 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+  }
+}
+
 .visually-hidden {
-  clip: rect(0 0 0 0);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
+  @apply --visually-hidden;
 }
 
 /*

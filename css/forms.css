@@ -353,3 +353,14 @@ input[type=range]::-ms-fill-upper {
 input[type=range]:focus::-ms-fill-upper {
   background-color: var(--range-input-track-focus-background);
 }
+
+/* file input styling */
+input[type="file"] {
+  @apply --visually-hidden;
+}
+
+input[type="file"] + label {
+  @apply --button;
+  font-weight: normal;
+}
+

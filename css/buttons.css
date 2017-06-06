@@ -1,6 +1,40 @@
 /* button styling */
 :root {
   --button-hover-color: color(hsl(0, 0%, 75%) shade(15%)); /* eventually use custom property here */
+
+  --button: {
+    display: inline-block;
+    width: auto;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    border-radius: var(--border-radius);
+    outline: 0;
+    color: var(--text-color);
+    background-color: var(--gray-lighter);
+    transition: background-color var(--speed) var(--easing);
+    cursor: pointer;
+    @supports (display: inline-flex) {
+      display: inline-flex;
+      align-items: center;
+    }
+    &:hover {
+      color: var(--text-color);
+      background-color: var(--button-hover-color);
+    }
+    &:focus {
+      background-color: var(--gray-light);
+    }
+    &:visited {
+      color: var(--text-color);
+    }
+    &:disabled,
+    &:hover:disabled,
+    &:visited:disabled {
+      color: var(--disabled-color);
+      background-color: var(--gray-lightest);
+      cursor: not-allowed;
+    }
+  }
 }
 
 button,
@@ -8,35 +42,5 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  display: inline-block;
-  width: auto;
-  height: 2.5rem;
-  padding: 0 0.75rem;
-  border-radius: var(--border-radius);
-  outline: 0;
-  color: var(--text-color);
-  background-color: var(--gray-lighter);
-  transition: background-color var(--speed) var(--easing);
-  cursor: pointer;
-  @supports (display: inline-flex) {
-    display: inline-flex;
-    align-items: center;
-  }
-  &:hover {
-    color: var(--text-color);
-    background-color: var(--button-hover-color);
-  }
-  &:focus {
-    background-color: var(--gray-light);
-  }
-  &:visited {
-    color: var(--text-color);
-  }
-  &:disabled,
-  &:hover:disabled,
-  &:visited:disabled {
-    color: var(--disabled-color);
-    background-color: var(--gray-lightest);
-    cursor: not-allowed;
-  }
+  @apply --button;
 }

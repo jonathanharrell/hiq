@@ -602,6 +602,81 @@ tbody tr:last-child td,
     tbody tr:last-child th {
   border-bottom-width: 0;
 }
+/* button styling */
+:root {
+  --button-hover-color: rgb(162, 162, 162) /* eventually use custom property here */
+}
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  height: 2.5rem;
+  padding: 0 12px;
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  border-radius: var(--border-radius);
+  outline: 0;
+  color: hsl(0, 0%, 25%);
+  color: var(--text-color);
+  background-color: hsl(0, 0%, 90%);
+  background-color: var(--gray-lighter);
+  transition: background-color 0.1s ease-out;
+  transition: background-color var(--speed) var(--easing);
+  cursor: pointer;
+}
+@supports ((display: -webkit-inline-box) or (display: inline-flex)) {
+  button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+button:hover, [role="button"]:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+  color: hsl(0, 0%, 25%);
+  color: var(--text-color);
+  background-color: rgb(162, 162, 162);
+  background-color: var(--button-hover-color);
+}
+button:focus, [role="button"]:focus, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus {
+  background-color: hsl(0, 0%, 75%);
+  background-color: var(--gray-light);
+}
+button:visited, [role="button"]:visited, input[type="submit"]:visited, input[type="button"]:visited, input[type="reset"]:visited {
+  color: hsl(0, 0%, 25%);
+  color: var(--text-color);
+}
+button:disabled,
+    button:hover:disabled,
+    button:visited:disabled,
+    [role="button"]:disabled,
+    [role="button"]:hover:disabled,
+    [role="button"]:visited:disabled,
+    input[type="submit"]:disabled,
+    input[type="submit"]:hover:disabled,
+    input[type="submit"]:visited:disabled,
+    input[type="button"]:disabled,
+    input[type="button"]:hover:disabled,
+    input[type="button"]:visited:disabled,
+    input[type="reset"]:disabled,
+    input[type="reset"]:hover:disabled,
+    input[type="reset"]:visited:disabled {
+  color: hsl(0, 0%, 75%);
+  color: var(--disabled-color);
+  background-color: hsl(0, 0%, 95%);
+  background-color: var(--gray-lightest);
+  cursor: not-allowed;
+}
 /* general form styling */
 fieldset {
   margin-bottom: 16px;
@@ -1051,15 +1126,19 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: hsl(0, 0%, 75%);
   background-color: var(--range-input-track-focus-background);
 }
-/* button styling */
-:root {
-  --button-hover-color: rgb(162, 162, 162); /* eventually use custom property here */
+/* file input styling */
+input[type="file"] {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
 }
-button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+input[type="file"] + label {
   display: inline-block;
   width: auto;
   height: 40px;
@@ -1075,14 +1154,11 @@ input[type="reset"] {
   background-color: var(--gray-lighter);
   transition: background-color 0.1s ease-out;
   transition: background-color var(--speed) var(--easing);
-  cursor: pointer
+  cursor: pointer;
+  font-weight: normal;
 }
 @supports ((display: -webkit-inline-box) or (display: inline-flex)) {
-  button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+  input[type="file"] + label {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -1090,36 +1166,24 @@ input[type="reset"] {
         -ms-flex-align: center;
             align-items: center;
   }
-  }
-button:hover, [role="button"]:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+}
+input[type="file"] + label:hover {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: rgb(162, 162, 162);
   background-color: var(--button-hover-color);
 }
-button:focus, [role="button"]:focus, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus {
+input[type="file"] + label:focus {
   background-color: hsl(0, 0%, 75%);
   background-color: var(--gray-light);
 }
-button:visited, [role="button"]:visited, input[type="submit"]:visited, input[type="button"]:visited, input[type="reset"]:visited {
+input[type="file"] + label:visited {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
 }
-button:disabled,
-  button:hover:disabled,
-  button:visited:disabled,
-  [role="button"]:disabled,
-  [role="button"]:hover:disabled,
-  [role="button"]:visited:disabled,
-  input[type="submit"]:disabled,
-  input[type="submit"]:hover:disabled,
-  input[type="submit"]:visited:disabled,
-  input[type="button"]:disabled,
-  input[type="button"]:hover:disabled,
-  input[type="button"]:visited:disabled,
-  input[type="reset"]:disabled,
-  input[type="reset"]:hover:disabled,
-  input[type="reset"]:visited:disabled {
+input[type="file"] + label:disabled,
+    input[type="file"] + label:hover:disabled,
+    input[type="file"] + label:visited:disabled {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   background-color: hsl(0, 0%, 95%);

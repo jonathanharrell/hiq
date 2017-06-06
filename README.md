@@ -57,10 +57,11 @@ All custom properties can be found in the `variables.css` file.
 
 ### Containers
 
-Containers are simple wrappers around your content:
+Containers are simple wrappers around your content. Adding the `.is-fluid` class will cause the container stretch across the full browser width.
 
 ```html
 <div class="container"></div>
+<div class="container is-fluid"></div>
 ```
 
 Containers have a max width and padding on the left and right side. These exist as custom properties:
@@ -74,6 +75,14 @@ Containers have a max width and padding on the left and right side. These exist 
 
 
 NOTE: The default padding is responsive, relative to the viewport width.
+
+### Utility
+
+Utility classes provide an easy way to achieve common tasks, such as visually hiding an element but allowing it to remain in the DOM so that screen readers can access it:
+
+```html
+<div class="visually-hidden"></div>
+```
 
 ### Typography
 
