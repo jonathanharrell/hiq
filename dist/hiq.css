@@ -145,6 +145,13 @@ input[type=datetime-local]::-webkit-clear-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input[type=date]::-webkit-calendar-picker-indicator,
+input[type=month]::-webkit-calendar-picker-indicator,
+input[type=week]::-webkit-calendar-picker-indicator,
+input[type=datetime-local]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none;
+}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -713,7 +720,11 @@ input[type="url"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
-input[type="number"] {
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime-local"] {
   display: block;
   width: 100%;
   height: 40px;
@@ -725,38 +736,38 @@ input[type="number"] {
   color: hsl(0, 0%, 25%);
   color: var(--text-color)
 }
-input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder {
   color: hsl(0, 0%, 50%);
   color: var(--gray);
 }
-input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder {
   color: hsl(0, 0%, 50%);
   color: var(--gray);
 }
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="url"]::placeholder, input[type="email"]::placeholder, input[type="tel"]::placeholder, input[type="search"]::placeholder, input[type="number"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="url"]::placeholder, input[type="email"]::placeholder, input[type="tel"]::placeholder, input[type="search"]::placeholder, input[type="number"]::placeholder, input[type="date"]::placeholder, input[type="month"]::placeholder, input[type="week"]::placeholder, input[type="datetime-local"]::placeholder {
   color: hsl(0, 0%, 50%);
   color: var(--gray);
 }
-input[type="text"]:focus, input[type="password"]:focus, input[type="url"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="number"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="url"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="datetime-local"]:focus {
   border: 1px solid #0032a0;
   border: 1px solid var(--color-primary);
 }
-input[type="text"]:disabled, input[type="password"]:disabled, input[type="url"]:disabled, input[type="email"]:disabled, input[type="tel"]:disabled, input[type="search"]:disabled, input[type="number"]:disabled {
+input[type="text"]:disabled, input[type="password"]:disabled, input[type="url"]:disabled, input[type="email"]:disabled, input[type="tel"]:disabled, input[type="search"]:disabled, input[type="number"]:disabled, input[type="date"]:disabled, input[type="month"]:disabled, input[type="week"]:disabled, input[type="datetime-local"]:disabled {
   border-color: hsl(0, 0%, 90%);
   border-color: var(--gray-lighter);
 }
-input[type="text"]:disabled:disabled, input[type="password"]:disabled:disabled, input[type="url"]:disabled:disabled, input[type="email"]:disabled:disabled, input[type="tel"]:disabled:disabled, input[type="search"]:disabled:disabled, input[type="number"]:disabled:disabled {
+input[type="text"]:disabled:disabled, input[type="password"]:disabled:disabled, input[type="url"]:disabled:disabled, input[type="email"]:disabled:disabled, input[type="tel"]:disabled:disabled, input[type="search"]:disabled:disabled, input[type="number"]:disabled:disabled, input[type="date"]:disabled:disabled, input[type="month"]:disabled:disabled, input[type="week"]:disabled:disabled, input[type="datetime-local"]:disabled:disabled {
   cursor: not-allowed;
 }
-input[type="text"]:disabled::-webkit-input-placeholder, input[type="password"]:disabled::-webkit-input-placeholder, input[type="url"]:disabled::-webkit-input-placeholder, input[type="email"]:disabled::-webkit-input-placeholder, input[type="tel"]:disabled::-webkit-input-placeholder, input[type="search"]:disabled::-webkit-input-placeholder, input[type="number"]:disabled::-webkit-input-placeholder {
+input[type="text"]:disabled::-webkit-input-placeholder, input[type="password"]:disabled::-webkit-input-placeholder, input[type="url"]:disabled::-webkit-input-placeholder, input[type="email"]:disabled::-webkit-input-placeholder, input[type="tel"]:disabled::-webkit-input-placeholder, input[type="search"]:disabled::-webkit-input-placeholder, input[type="number"]:disabled::-webkit-input-placeholder, input[type="date"]:disabled::-webkit-input-placeholder, input[type="month"]:disabled::-webkit-input-placeholder, input[type="week"]:disabled::-webkit-input-placeholder, input[type="datetime-local"]:disabled::-webkit-input-placeholder {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
 }
-input[type="text"]:disabled:-ms-input-placeholder, input[type="password"]:disabled:-ms-input-placeholder, input[type="url"]:disabled:-ms-input-placeholder, input[type="email"]:disabled:-ms-input-placeholder, input[type="tel"]:disabled:-ms-input-placeholder, input[type="search"]:disabled:-ms-input-placeholder, input[type="number"]:disabled:-ms-input-placeholder {
+input[type="text"]:disabled:-ms-input-placeholder, input[type="password"]:disabled:-ms-input-placeholder, input[type="url"]:disabled:-ms-input-placeholder, input[type="email"]:disabled:-ms-input-placeholder, input[type="tel"]:disabled:-ms-input-placeholder, input[type="search"]:disabled:-ms-input-placeholder, input[type="number"]:disabled:-ms-input-placeholder, input[type="date"]:disabled:-ms-input-placeholder, input[type="month"]:disabled:-ms-input-placeholder, input[type="week"]:disabled:-ms-input-placeholder, input[type="datetime-local"]:disabled:-ms-input-placeholder {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
 }
-input[type="text"]:disabled::placeholder, input[type="password"]:disabled::placeholder, input[type="url"]:disabled::placeholder, input[type="email"]:disabled::placeholder, input[type="tel"]:disabled::placeholder, input[type="search"]:disabled::placeholder, input[type="number"]:disabled::placeholder {
+input[type="text"]:disabled::placeholder, input[type="password"]:disabled::placeholder, input[type="url"]:disabled::placeholder, input[type="email"]:disabled::placeholder, input[type="tel"]:disabled::placeholder, input[type="search"]:disabled::placeholder, input[type="number"]:disabled::placeholder, input[type="date"]:disabled::placeholder, input[type="month"]:disabled::placeholder, input[type="week"]:disabled::placeholder, input[type="datetime-local"]:disabled::placeholder {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
 }

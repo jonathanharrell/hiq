@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
-    <link rel="stylesheet" href="dist/hiq.css">
+    <link rel="stylesheet" href="dist/hiq.min.css">
     <style>
         .container {
             width: 100%;
@@ -781,11 +781,55 @@
                 <p class="label">Number input</p>
                 <div>
                     <p>
-                        <label>Number Input</label>
-                        <input type="number" placeholder="1234">
+                        <label for="number">Number Input</label>
+                        <input type="number" id="number" name="number" placeholder="1234">
                     </p>
                     <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
 &lt;input type=&quot;number&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
+                </div>
+            </section>
+            <section class="element">
+                <p class="label">Date input</p>
+                <div>
+                    <p>
+                        <label for="date">Date Input</label>
+                        <input type="date" id="date" name="date" placeholder="mm/dd/yyyy">
+                    </p>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;date&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
+                </div>
+            </section>
+            <section class="element">
+                <p class="label">Month input</p>
+                <div>
+                    <p>
+                        <label for="month">Month Input</label>
+                        <input type="month" id="month" name="month">
+                    </p>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;month&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
+                </div>
+            </section>
+            <section class="element">
+                <p class="label">Week input</p>
+                <div>
+                    <p>
+                        <label for="week">Week Input</label>
+                        <input type="week" id="week" name="week">
+                    </p>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;week&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
+                </div>
+            </section>
+            <section class="element">
+                <p class="label">Datetime local input</p>
+                <div>
+                    <p>
+                        <label for="datetime">Datetime Local Input</label>
+                        <input type="datetime-local" id="datetime" name="datetime">
+                    </p>
+                    <pre><code>&lt;label for=&quot;...&quot;&gt;...&lt;/label&gt;
+&lt;input type=&quot;datetime-local&quot; id=&quot;...&quot; name=&quot;...&quot;&gt;</code></pre>
                 </div>
             </section>
             <section class="element">

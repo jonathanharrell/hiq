@@ -31,7 +31,11 @@ input[type="url"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
-input[type="number"] {
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime-local"] {
   display: block;
   width: 100%;
   height: 2.5rem;
