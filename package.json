@@ -1,6 +1,6 @@
 {
   "name": "hiq",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Basic semantic styling for HTML elements",
   "scripts": {
     "dev": "node_modules/.bin/webpack",
