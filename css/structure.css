@@ -1,11 +1,19 @@
-/* wrapper div */
-.container {
-  max-width: var(--max-container-width);
-  margin: 0 auto;
-  padding: 0 var(--container-horizontal-padding);
-  &.is-fluid {
+/* container mixins */
+:root {
+  --container: {
+    max-width: var(--max-container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-horizontal-padding);
+  };
+  --is-fluid: {
     max-width: none;
   }
+}
+
+/* wrapper div */
+.container {
+  @apply --container;
+  @apply --is-fluid;
 }
 
 /* semantic elements */

@@ -76,6 +76,15 @@ Containers have a max width and padding on the left and right side. These exist 
 
 NOTE: The default padding is responsive, relative to the viewport width.
 
+Containers can also be applied to any element in css by applying custom property sets.
+
+```css
+.element {
+  @apply --container;
+  @apply --is-fluid;
+}
+```
+
 ### Utility
 
 Utility classes provide an easy way to achieve common tasks, such as visually hiding an element but allowing it to remain in the DOM so that screen readers can access it:

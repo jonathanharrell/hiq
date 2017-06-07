@@ -347,15 +347,14 @@ class to add carets to selects and dropdowns
   border-left: 0.4rem solid transparent;
 }
 /* base styles */
+/* container mixins */
 /* wrapper div */
 .container {
   max-width: 80em;
   max-width: var(--max-container-width);
   margin: 0 auto;
   padding: 0 5vw;
-  padding: 0 var(--container-horizontal-padding)
-}
-.container.is-fluid {
+  padding: 0 var(--container-horizontal-padding);
   max-width: none;
 }
 /* semantic elements */
