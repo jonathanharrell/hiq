@@ -354,7 +354,9 @@ class to add carets to selects and dropdowns
   max-width: var(--max-container-width);
   margin: 0 auto;
   padding: 0 5vw;
-  padding: 0 var(--container-horizontal-padding);
+  padding: 0 var(--container-horizontal-padding)
+}
+.container.is-fluid {
   max-width: none;
 }
 /* semantic elements */

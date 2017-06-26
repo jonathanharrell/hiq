@@ -13,7 +13,9 @@
 /* wrapper div */
 .container {
   @apply --container;
-  @apply --is-fluid;
+  &.is-fluid {
+    @apply --is-fluid;
+  }
 }
 
 /* semantic elements */
