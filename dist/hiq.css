@@ -310,7 +310,10 @@ input[type=range]::-ms-track {
 /* eventually use custom property here */
 /* utility classes */
 /*
-class the visually hides elements but keeps them accessible to screen readers
+visually hides elements but keeps them accessible to screen readers
+ */
+/*
+removes default styling from list
  */
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -355,7 +358,7 @@ class to add carets to selects and dropdowns
   padding: 0 var(--container-horizontal-padding)
 }
 .container.is-fluid {
-  max-width: none;
+    max-width: none;
 }
 /* semantic elements */
 article,
@@ -610,7 +613,7 @@ tbody tr:last-child td,
 }
 /* button styling */
 :root {
-  --button-hover-color: rgb(162, 162, 162) /* eventually use custom property here */
+  --button-hover-color: rgb(162, 162, 162); /* eventually use custom property here */
 }
 button,
 [role='button'],
@@ -666,20 +669,20 @@ button:visited, [role='button']:visited, input[type='submit']:visited, input[typ
   color: var(--text-color);
 }
 button:disabled,
-    button:hover:disabled,
-    button:visited:disabled,
-    [role='button']:disabled,
-    [role='button']:hover:disabled,
-    [role='button']:visited:disabled,
-    input[type='submit']:disabled,
-    input[type='submit']:hover:disabled,
-    input[type='submit']:visited:disabled,
-    input[type='button']:disabled,
-    input[type='button']:hover:disabled,
-    input[type='button']:visited:disabled,
-    input[type='reset']:disabled,
-    input[type='reset']:hover:disabled,
-    input[type='reset']:visited:disabled {
+  button:hover:disabled,
+  button:visited:disabled,
+  [role='button']:disabled,
+  [role='button']:hover:disabled,
+  [role='button']:visited:disabled,
+  input[type='submit']:disabled,
+  input[type='submit']:hover:disabled,
+  input[type='submit']:visited:disabled,
+  input[type='button']:disabled,
+  input[type='button']:hover:disabled,
+  input[type='button']:visited:disabled,
+  input[type='reset']:disabled,
+  input[type='reset']:hover:disabled,
+  input[type='reset']:visited:disabled {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   background-color: hsl(0, 0%, 95%);
@@ -1198,8 +1201,8 @@ input[type='file'] + label:visited {
   color: var(--text-color);
 }
 input[type='file'] + label:disabled,
-    input[type='file'] + label:hover:disabled,
-    input[type='file'] + label:visited:disabled {
+  input[type='file'] + label:hover:disabled,
+  input[type='file'] + label:visited:disabled {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   background-color: hsl(0, 0%, 95%);

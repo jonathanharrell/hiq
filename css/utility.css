@@ -1,31 +1,32 @@
 /*
-class the visually hides elements but keeps them accessible to screen readers
+visually hides elements but keeps them accessible to screen readers
  */
-:root {
-  --visually-hidden: {
-    clip: rect(0 0 0 0);
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    white-space: nowrap;
-  };
+@define-mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
 
-  --list-unstyled: {
-    margin: 0;
-    list-style: none;
-  }
+/*
+removes default styling from list
+ */
+@define-mixin list-unstyled {
+  margin: 0;
+  list-style: none;
 }
 
 .visually-hidden {
-  @apply --visually-hidden;
+  @mixin visually-hidden;
 }
 
 .list-unstyled {
-  @apply --list-unstyled;
+  @mixin list-unstyled;
 }
 
 /*

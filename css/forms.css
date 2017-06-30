@@ -360,11 +360,11 @@ input[type=range]:focus::-ms-fill-upper {
 
 /* file input styling */
 input[type='file'] {
-  @apply --visually-hidden;
+  @mixin visually-hidden;
 }
 
 input[type='file'] + label {
-  @apply --button;
+  @mixin button;
   font-weight: normal;
 }
 

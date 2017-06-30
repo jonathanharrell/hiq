@@ -40,6 +40,7 @@
     "postcss-discard-duplicates": "^2.1.0",
     "postcss-import": "^9.1.0",
     "postcss-loader": "^1.3.3",
+    "postcss-mixins": "^6.0.1",
     "style-loader": "^0.16.1",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-order": "^0.4.3",
