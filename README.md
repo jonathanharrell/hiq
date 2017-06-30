@@ -76,12 +76,12 @@ Containers have a max width and padding on the left and right side. These exist 
 
 NOTE: The default padding is responsive, relative to the viewport width.
 
-Containers can also be applied to any element in css by applying custom property sets.
+Containers can also be applied to any element in postcss through mixins.
 
 ```css
 .element {
-  @apply --container;
-  @apply --is-fluid;
+  @mixin container;
+  @mixin is-fluid;
 }
 ```
 
@@ -91,6 +91,16 @@ Utility classes provide an easy way to achieve common tasks, such as visually hi
 
 ```html
 <div class="visually-hidden"></div>
+<ul class="list-unstyled"></ul>
+```
+
+These are also available as mixins:
+
+```css
+.element {
+  @mixin visually-hidden;
+  @mixin list-unstyled;
+}
 ```
 
 ### Typography
