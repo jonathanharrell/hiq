@@ -99,11 +99,11 @@ Typography is truly responsive, meaning that it is not simply redefined at vario
 
 ```css
 :root {
-  --min-font-size: 1rem;
-  --max-font-size: 1.15rem;
+  --min-font-size: 16px;
+  --max-font-size: 20px;
 
-  --lower-font-range: 26rem;
-  --upper-font-range: 80rem;
+  --lower-font-range: 460px;
+  --upper-font-range: 1200px;
 }
 ```
 
@@ -113,7 +113,7 @@ NOTE: Due to current restrictions with the calc() function and custom properties
 NOTE: Due to current limitations with custom media queries and custom properties, the raw value for the upper font range is also needed in a custom media query definition:
 
 ```css
-@custom-media --upper-font-range (width >= 80rem);
+@custom-media --upper-font-range (width >= 1200px);
 ```
 
 
