@@ -16,6 +16,7 @@
     @supports (display: inline-flex) {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
     }
     &:hover {
       color: var(--text-color);
@@ -38,9 +39,9 @@
 }
 
 button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+[role='button'],
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
   @apply --button;
 }

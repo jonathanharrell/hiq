@@ -25,17 +25,17 @@ textarea {
 }
 
 /* text input styling */
-input[type="text"],
-input[type="password"],
-input[type="url"],
-input[type="email"],
-input[type="tel"],
-input[type="search"],
-input[type="number"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="datetime-local"] {
+input[type='text'],
+input[type='password'],
+input[type='url'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime-local'] {
   display: block;
   width: 100%;
   height: 2.5rem;
@@ -109,7 +109,7 @@ select {
     top: 3rem;
     right: 0.75rem;
     pointer-events: none;
-    content: "";
+    content: '';
   }
 }
 
@@ -130,10 +130,10 @@ select {
       height: 24px;
       background-color: var(--gray-lighter);
       transition: background-color var(--speed) var(--easing);
-      content: "";
+      content: '';
     }
   }
-  & input[type="checkbox"] {
+  & input[type='checkbox'] {
     position: absolute;
     top: 0;
     left: 0;
@@ -157,7 +157,7 @@ select {
       border: solid white;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
-      content: "";
+      content: '';
     }
     &:disabled + label {
       color: var(--disabled-color);
@@ -187,11 +187,11 @@ select {
       border-radius: 50%;
       background-color: var(--gray-lighter);
       transition: background-color var(--speed) var(--easing);
-      content: "";
+      content: '';
     }
   }
 
-  & input[type="radio"] {
+  & input[type='radio'] {
     position: absolute;
     top: 0;
     left: 0;
@@ -213,7 +213,7 @@ select {
       height: 12px;
       border-radius: 50%;
       background-color: white;
-      content: "";
+      content: '';
     }
     &:disabled + label {
       color: var(--disabled-color);
@@ -359,11 +359,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /* file input styling */
-input[type="file"] {
+input[type='file'] {
   @apply --visually-hidden;
 }
 
-input[type="file"] + label {
+input[type='file'] + label {
   @apply --button;
   font-weight: normal;
 }

@@ -12,11 +12,20 @@ class the visually hides elements but keeps them accessible to screen readers
     padding: 0;
     border: 0;
     white-space: nowrap;
+  };
+
+  --list-unstyled: {
+    margin: 0;
+    list-style: none;
   }
 }
 
 .visually-hidden {
   @apply --visually-hidden;
+}
+
+.list-unstyled {
+  @apply --list-unstyled;
 }
 
 /*

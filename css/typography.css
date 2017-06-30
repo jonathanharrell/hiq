@@ -14,9 +14,9 @@ html {
   font-family: var(--base-font-family);
 
   /* responsive base font size */
-  font-size: calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
-  font-size: -ms-calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
-  font-size: -webkit-calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: calc(var(--min-font-size) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -ms-calc(var(--min-font-size) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -webkit-calc(var(--min-font-size) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
 
   /* base line height */
   line-height: var(--base-line-height);

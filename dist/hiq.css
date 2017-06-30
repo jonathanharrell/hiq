@@ -188,16 +188,17 @@ input[type=range]::-ms-track {
   /* structural variables */
 
   /* container variables */
-  --max-container-width: 80em;
+  --max-container-width: 1280px;
+  --max-container-width: 80rem;
   --container-horizontal-padding: 5vw;
 
-  /* font variables - all sizing variables must have the same unit! (use em or px) */
+  /* font variables - all sizing variables must have the same unit! */
 
   /* font family variables */
-  --font-family-sans-serif: -apple-system, "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --font-family-serif: "Roboto Slab", serif;
-  --font-family-monospace: "Roboto Mono", monospace;
-  --base-font-family: -apple-system, "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-family-sans-serif: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-family-serif: 'Roboto Slab', serif;
+  --font-family-monospace: 'Roboto Mono', monospace;
+  --base-font-family: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --base-font-family: var(--font-family-sans-serif);
 
   /*
@@ -206,21 +207,17 @@ input[type=range]::-ms-track {
   eventually, this should use something like strip() to remove units in the calculation
    */
 
-  /* base font size variables */
+  /* base font size variables in px */
   --min-font-size: 16px;
-  --min-font-size: 1rem;
-  --max-font-size: 18.4px;
-  --max-font-size: 1.15rem;
-  --unitless-min-font-size: 1;
-  --unitless-max-font-size: 1.15;
+  --max-font-size: 20px;
+  --unitless-min-font-size: 16;
+  --unitless-max-font-size: 20;
 
-  /* viewport widths in rem when min/max font sizes will apply */
-  --lower-font-range: 416px;
-  --lower-font-range: 26rem;
-  --upper-font-range: 1280px;
-  --upper-font-range: 80rem;
-  --unitless-lower-font-range: 26;
-  --unitless-upper-font-range: 80;
+  /* viewport widths in px when min/max font sizes will apply */
+  --lower-font-range: 460px;
+  --upper-font-range: 1200px;
+  --unitless-lower-font-range: 460;
+  --unitless-upper-font-range: 1200;
 
   /* base unitless line heights */
   --base-line-height: 1.4;
@@ -228,14 +225,10 @@ input[type=range]::-ms-track {
 
   /* letter spacing variables */
   /* stylelint-disable-next-line length-zero-no-unit */
-  --min-letter-spacing: 0px;
-  --min-letter-spacing: 0rem;
-  --max-letter-spacing: 0.08px;
-  --max-letter-spacing: 0.005rem;
-  --lower-letter-spacing-range: 416px;
-  --lower-letter-spacing-range: 26rem;
-  --upper-letter-spacing-range: 1280px;
-  --upper-letter-spacing-range: 80rem;
+  --min-letter-spacing: 0em;
+  --max-letter-spacing: 0.005em;
+  --lower-letter-spacing-range: 460px;
+  --upper-letter-spacing-range: 1200px;
 
   /* font sizes */
   --font-size-1: 44px;
@@ -330,6 +323,10 @@ class the visually hides elements but keeps them accessible to screen readers
   border: 0;
   white-space: nowrap;
 }
+.list-unstyled {
+  margin: 0;
+  list-style: none;
+}
 /*
 class to add carets to selects and dropdowns
  */
@@ -350,7 +347,8 @@ class to add carets to selects and dropdowns
 /* container mixins */
 /* wrapper div */
 .container {
-  max-width: 80em;
+  max-width: 1280px;
+  max-width: 80rem;
   max-width: var(--max-container-width);
   margin: 0 auto;
   padding: 0 5vw;
@@ -393,11 +391,11 @@ iframe {
 }
 /* responsive typography utility variables */
 :root {
-  --font-size-difference: 0.15;
+  --font-size-difference: 4;
   --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
-  --font-range-difference: 54;
+  --font-range-difference: 740;
   --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
-  --viewport-difference: calc(100vw - 26rem);
+  --viewport-difference: calc(100vw - 460px);
   --viewport-difference: calc(100vw - var(--lower-font-range));
 }
 html {
@@ -406,15 +404,15 @@ html {
   -webkit-font-smoothing: antialiased;
 
   /* base font family */
-  font-family: -apple-system, "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-family: var(--base-font-family);
 
   /* responsive base font size */
-  font-size: calc(1rem + 0.15 * (100vw - 26rem) / 54);
-  font-size: calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
-  font-size: -ms-calc(1rem + 0.15 * (100vw - 26rem) / 54);
-  font-size: -ms-calc(1rem + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
-  font-size: -webkit-calc(100% + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: calc(16px + 4 * (100vw - 460px) / 740);
+  font-size: calc(var(--min-font-size) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -ms-calc(16px + 4 * (100vw - 460px) / 740);
+  font-size: -ms-calc(var(--min-font-size) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  font-size: -webkit-calc(var(--min-font-size) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
 
   /* base line height */
   line-height: 1.4;
@@ -422,9 +420,9 @@ html {
 
   /* set upper font range limit */
 }
-@media (min-width: 80rem) {
+@media (min-width: 1200px) {
   html {
-    font-size: 1.15rem;
+    font-size: 20px;
     font-size: var(--max-font-size);
   }
   }
@@ -516,7 +514,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-family: var(--font-family-monospace);
   background-color: hsl(0, 0%, 95%);
   background-color: var(--background-color);
@@ -615,10 +613,10 @@ tbody tr:last-child td,
   --button-hover-color: rgb(162, 162, 162) /* eventually use custom property here */
 }
 button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+[role='button'],
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
   display: inline-block;
   width: auto;
   height: 40px;
@@ -638,47 +636,50 @@ input[type="reset"] {
 }
 @supports ((display: -webkit-inline-box) or (display: inline-flex)) {
   button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+[role='button'],
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
-button:hover, [role="button"]:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: rgb(162, 162, 162);
   background-color: var(--button-hover-color);
 }
-button:focus, [role="button"]:focus, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus {
+button:focus, [role='button']:focus, input[type='submit']:focus, input[type='button']:focus, input[type='reset']:focus {
   background-color: hsl(0, 0%, 75%);
   background-color: var(--gray-light);
 }
-button:visited, [role="button"]:visited, input[type="submit"]:visited, input[type="button"]:visited, input[type="reset"]:visited {
+button:visited, [role='button']:visited, input[type='submit']:visited, input[type='button']:visited, input[type='reset']:visited {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
 }
 button:disabled,
     button:hover:disabled,
     button:visited:disabled,
-    [role="button"]:disabled,
-    [role="button"]:hover:disabled,
-    [role="button"]:visited:disabled,
-    input[type="submit"]:disabled,
-    input[type="submit"]:hover:disabled,
-    input[type="submit"]:visited:disabled,
-    input[type="button"]:disabled,
-    input[type="button"]:hover:disabled,
-    input[type="button"]:visited:disabled,
-    input[type="reset"]:disabled,
-    input[type="reset"]:hover:disabled,
-    input[type="reset"]:visited:disabled {
+    [role='button']:disabled,
+    [role='button']:hover:disabled,
+    [role='button']:visited:disabled,
+    input[type='submit']:disabled,
+    input[type='submit']:hover:disabled,
+    input[type='submit']:visited:disabled,
+    input[type='button']:disabled,
+    input[type='button']:hover:disabled,
+    input[type='button']:visited:disabled,
+    input[type='reset']:disabled,
+    input[type='reset']:hover:disabled,
+    input[type='reset']:visited:disabled {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   background-color: hsl(0, 0%, 95%);
@@ -715,17 +716,17 @@ textarea {
   outline: 0;
 }
 /* text input styling */
-input[type="text"],
-input[type="password"],
-input[type="url"],
-input[type="email"],
-input[type="tel"],
-input[type="search"],
-input[type="number"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="datetime-local"] {
+input[type='text'],
+input[type='password'],
+input[type='url'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime-local'] {
   display: block;
   width: 100%;
   height: 40px;
@@ -737,38 +738,38 @@ input[type="datetime-local"] {
   color: hsl(0, 0%, 25%);
   color: var(--text-color)
 }
-input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder {
+input[type='text']::-webkit-input-placeholder, input[type='password']::-webkit-input-placeholder, input[type='url']::-webkit-input-placeholder, input[type='email']::-webkit-input-placeholder, input[type='tel']::-webkit-input-placeholder, input[type='search']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, input[type='date']::-webkit-input-placeholder, input[type='month']::-webkit-input-placeholder, input[type='week']::-webkit-input-placeholder, input[type='datetime-local']::-webkit-input-placeholder {
   color: hsl(0, 0%, 50%);
   color: var(--gray);
 }
-input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder {
+input[type='text']:-ms-input-placeholder, input[type='password']:-ms-input-placeholder, input[type='url']:-ms-input-placeholder, input[type='email']:-ms-input-placeholder, input[type='tel']:-ms-input-placeholder, input[type='search']:-ms-input-placeholder, input[type='number']:-ms-input-placeholder, input[type='date']:-ms-input-placeholder, input[type='month']:-ms-input-placeholder, input[type='week']:-ms-input-placeholder, input[type='datetime-local']:-ms-input-placeholder {
   color: hsl(0, 0%, 50%);
   color: var(--gray);
 }
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="url"]::placeholder, input[type="email"]::placeholder, input[type="tel"]::placeholder, input[type="search"]::placeholder, input[type="number"]::placeholder, input[type="date"]::placeholder, input[type="month"]::placeholder, input[type="week"]::placeholder, input[type="datetime-local"]::placeholder {
+input[type='text']::placeholder, input[type='password']::placeholder, input[type='url']::placeholder, input[type='email']::placeholder, input[type='tel']::placeholder, input[type='search']::placeholder, input[type='number']::placeholder, input[type='date']::placeholder, input[type='month']::placeholder, input[type='week']::placeholder, input[type='datetime-local']::placeholder {
   color: hsl(0, 0%, 50%);
   color: var(--gray);
 }
-input[type="text"]:focus, input[type="password"]:focus, input[type="url"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="datetime-local"]:focus {
+input[type='text']:focus, input[type='password']:focus, input[type='url']:focus, input[type='email']:focus, input[type='tel']:focus, input[type='search']:focus, input[type='number']:focus, input[type='date']:focus, input[type='month']:focus, input[type='week']:focus, input[type='datetime-local']:focus {
   border: 1px solid #0032a0;
   border: 1px solid var(--color-primary);
 }
-input[type="text"]:disabled, input[type="password"]:disabled, input[type="url"]:disabled, input[type="email"]:disabled, input[type="tel"]:disabled, input[type="search"]:disabled, input[type="number"]:disabled, input[type="date"]:disabled, input[type="month"]:disabled, input[type="week"]:disabled, input[type="datetime-local"]:disabled {
+input[type='text']:disabled, input[type='password']:disabled, input[type='url']:disabled, input[type='email']:disabled, input[type='tel']:disabled, input[type='search']:disabled, input[type='number']:disabled, input[type='date']:disabled, input[type='month']:disabled, input[type='week']:disabled, input[type='datetime-local']:disabled {
   border-color: hsl(0, 0%, 90%);
   border-color: var(--gray-lighter);
 }
-input[type="text"]:disabled:disabled, input[type="password"]:disabled:disabled, input[type="url"]:disabled:disabled, input[type="email"]:disabled:disabled, input[type="tel"]:disabled:disabled, input[type="search"]:disabled:disabled, input[type="number"]:disabled:disabled, input[type="date"]:disabled:disabled, input[type="month"]:disabled:disabled, input[type="week"]:disabled:disabled, input[type="datetime-local"]:disabled:disabled {
+input[type='text']:disabled:disabled, input[type='password']:disabled:disabled, input[type='url']:disabled:disabled, input[type='email']:disabled:disabled, input[type='tel']:disabled:disabled, input[type='search']:disabled:disabled, input[type='number']:disabled:disabled, input[type='date']:disabled:disabled, input[type='month']:disabled:disabled, input[type='week']:disabled:disabled, input[type='datetime-local']:disabled:disabled {
   cursor: not-allowed;
 }
-input[type="text"]:disabled::-webkit-input-placeholder, input[type="password"]:disabled::-webkit-input-placeholder, input[type="url"]:disabled::-webkit-input-placeholder, input[type="email"]:disabled::-webkit-input-placeholder, input[type="tel"]:disabled::-webkit-input-placeholder, input[type="search"]:disabled::-webkit-input-placeholder, input[type="number"]:disabled::-webkit-input-placeholder, input[type="date"]:disabled::-webkit-input-placeholder, input[type="month"]:disabled::-webkit-input-placeholder, input[type="week"]:disabled::-webkit-input-placeholder, input[type="datetime-local"]:disabled::-webkit-input-placeholder {
+input[type='text']:disabled::-webkit-input-placeholder, input[type='password']:disabled::-webkit-input-placeholder, input[type='url']:disabled::-webkit-input-placeholder, input[type='email']:disabled::-webkit-input-placeholder, input[type='tel']:disabled::-webkit-input-placeholder, input[type='search']:disabled::-webkit-input-placeholder, input[type='number']:disabled::-webkit-input-placeholder, input[type='date']:disabled::-webkit-input-placeholder, input[type='month']:disabled::-webkit-input-placeholder, input[type='week']:disabled::-webkit-input-placeholder, input[type='datetime-local']:disabled::-webkit-input-placeholder {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
 }
-input[type="text"]:disabled:-ms-input-placeholder, input[type="password"]:disabled:-ms-input-placeholder, input[type="url"]:disabled:-ms-input-placeholder, input[type="email"]:disabled:-ms-input-placeholder, input[type="tel"]:disabled:-ms-input-placeholder, input[type="search"]:disabled:-ms-input-placeholder, input[type="number"]:disabled:-ms-input-placeholder, input[type="date"]:disabled:-ms-input-placeholder, input[type="month"]:disabled:-ms-input-placeholder, input[type="week"]:disabled:-ms-input-placeholder, input[type="datetime-local"]:disabled:-ms-input-placeholder {
+input[type='text']:disabled:-ms-input-placeholder, input[type='password']:disabled:-ms-input-placeholder, input[type='url']:disabled:-ms-input-placeholder, input[type='email']:disabled:-ms-input-placeholder, input[type='tel']:disabled:-ms-input-placeholder, input[type='search']:disabled:-ms-input-placeholder, input[type='number']:disabled:-ms-input-placeholder, input[type='date']:disabled:-ms-input-placeholder, input[type='month']:disabled:-ms-input-placeholder, input[type='week']:disabled:-ms-input-placeholder, input[type='datetime-local']:disabled:-ms-input-placeholder {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
 }
-input[type="text"]:disabled::placeholder, input[type="password"]:disabled::placeholder, input[type="url"]:disabled::placeholder, input[type="email"]:disabled::placeholder, input[type="tel"]:disabled::placeholder, input[type="search"]:disabled::placeholder, input[type="number"]:disabled::placeholder, input[type="date"]:disabled::placeholder, input[type="month"]:disabled::placeholder, input[type="week"]:disabled::placeholder, input[type="datetime-local"]:disabled::placeholder {
+input[type='text']:disabled::placeholder, input[type='password']:disabled::placeholder, input[type='url']:disabled::placeholder, input[type='email']:disabled::placeholder, input[type='tel']:disabled::placeholder, input[type='search']:disabled::placeholder, input[type='number']:disabled::placeholder, input[type='date']:disabled::placeholder, input[type='month']:disabled::placeholder, input[type='week']:disabled::placeholder, input[type='datetime-local']:disabled::placeholder {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
 }
@@ -852,7 +853,7 @@ select:disabled + .caret {
   right: 12px;
   right: 0.75rem;
   pointer-events: none;
-  content: "";
+  content: '';
 }
 /* checkbox styling */
 .checkbox {
@@ -877,9 +878,9 @@ select:disabled + .caret {
   background-color: var(--gray-lighter);
   transition: background-color 0.1s ease-out;
   transition: background-color var(--speed) var(--easing);
-  content: "";
+  content: '';
 }
-.checkbox input[type="checkbox"] {
+.checkbox input[type='checkbox'] {
   position: absolute;
   top: 0;
   left: 0;
@@ -888,15 +889,15 @@ select:disabled + .caret {
   opacity: 0;
   pointer-events: none;
 }
-.checkbox input[type="checkbox"]:focus + label::before {
+.checkbox input[type='checkbox']:focus + label::before {
   background-color: hsl(0, 0%, 75%);
   background-color: var(--gray-light);
 }
-.checkbox input[type="checkbox"]:checked + label::before {
+.checkbox input[type='checkbox']:checked + label::before {
   background-color: #0032a0;
   background-color: var(--color-primary);
 }
-.checkbox input[type="checkbox"]:checked + label::after {
+.checkbox input[type='checkbox']:checked + label::after {
   display: block;
   position: absolute;
   top: 3px;
@@ -907,14 +908,14 @@ select:disabled + .caret {
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  content: "";
+  content: '';
 }
-.checkbox input[type="checkbox"]:disabled + label {
+.checkbox input[type='checkbox']:disabled + label {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   cursor: not-allowed;
 }
-.checkbox input[type="checkbox"]:disabled + label::before {
+.checkbox input[type='checkbox']:disabled + label::before {
   background-color: hsl(0, 0%, 95%);
   background-color: var(--gray-lightest);
 }
@@ -942,9 +943,9 @@ select:disabled + .caret {
   background-color: var(--gray-lighter);
   transition: background-color 0.1s ease-out;
   transition: background-color var(--speed) var(--easing);
-  content: "";
+  content: '';
 }
-.radio input[type="radio"] {
+.radio input[type='radio'] {
   position: absolute;
   top: 0;
   left: 0;
@@ -952,15 +953,15 @@ select:disabled + .caret {
   height: 0;
   opacity: 0;
 }
-.radio input[type="radio"]:focus + label::before {
+.radio input[type='radio']:focus + label::before {
   background-color: hsl(0, 0%, 75%);
   background-color: var(--gray-light);
 }
-.radio input[type="radio"]:checked + label::before {
+.radio input[type='radio']:checked + label::before {
   background-color: #0032a0;
   background-color: var(--color-primary);
 }
-.radio input[type="radio"]:checked + label::after {
+.radio input[type='radio']:checked + label::after {
   display: block;
   position: absolute;
   top: 6px;
@@ -969,14 +970,14 @@ select:disabled + .caret {
   height: 12px;
   border-radius: 50%;
   background-color: white;
-  content: "";
+  content: '';
 }
-.radio input[type="radio"]:disabled + label {
+.radio input[type='radio']:disabled + label {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   cursor: not-allowed;
 }
-.radio input[type="radio"]:disabled + label::before {
+.radio input[type='radio']:disabled + label::before {
   background-color: hsl(0, 0%, 95%);
   background-color: var(--gray-lightest);
 }
@@ -1139,7 +1140,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: var(--range-input-track-focus-background);
 }
 /* file input styling */
-input[type="file"] {
+input[type='file'] {
   clip: rect(0 0 0 0);
   position: absolute;
   width: 1px;
@@ -1150,7 +1151,7 @@ input[type="file"] {
   border: 0;
   white-space: nowrap;
 }
-input[type="file"] + label {
+input[type='file'] + label {
   display: inline-block;
   width: auto;
   height: 40px;
@@ -1170,32 +1171,35 @@ input[type="file"] + label {
   font-weight: normal;
 }
 @supports ((display: -webkit-inline-box) or (display: inline-flex)) {
-  input[type="file"] + label {
+  input[type='file'] + label {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
-input[type="file"] + label:hover {
+input[type='file'] + label:hover {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: rgb(162, 162, 162);
   background-color: var(--button-hover-color);
 }
-input[type="file"] + label:focus {
+input[type='file'] + label:focus {
   background-color: hsl(0, 0%, 75%);
   background-color: var(--gray-light);
 }
-input[type="file"] + label:visited {
+input[type='file'] + label:visited {
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
 }
-input[type="file"] + label:disabled,
-    input[type="file"] + label:hover:disabled,
-    input[type="file"] + label:visited:disabled {
+input[type='file'] + label:disabled,
+    input[type='file'] + label:hover:disabled,
+    input[type='file'] + label:visited:disabled {
   color: hsl(0, 0%, 75%);
   color: var(--disabled-color);
   background-color: hsl(0, 0%, 95%);
