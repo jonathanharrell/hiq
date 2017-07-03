@@ -2,7 +2,7 @@
 :root {
   --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
   --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
-  --viewport-difference: calc(100vw - var(--lower-font-range));
+  --viewport-difference: calc(100vw - (var(--unitless-lower-font-range) * 1px));
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 
   /* set upper font range limit */
   @media (--upper-font-range) {
-    font-size: var(--max-font-size);
+    font-size: calc(var(--unitless-max-font-size) * 1px);
   }
 }
 

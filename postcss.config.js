@@ -1,15 +1,13 @@
-module.exports = (ctx) => ({
+module.exports = {
     plugins: [
-        require('postcss-import')(),
-        require('postcss-mixins')(),
+        require('postcss-import'),
+        require('postcss-mixins'),
         require('postcss-cssnext')({
             features: {
                 rem: {html: false},
-                customProperties: {
-                    preserve: ctx.env === 'production' ? false : true
-                }
+                customProperties: {preserve: true}
             }
         }),
-        require('postcss-discard-duplicates')()
+        require('postcss-discard-duplicates')
     ]
-})
+}

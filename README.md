@@ -20,30 +20,20 @@ Or download/clone the repo.
 
 ## Usage
 
-You can use the fully compiled and minified CSS version:
-
-```html
-<link rel="stylesheet" href="node_modules/hiq/hiq.min.css">
-```
-```css
-@import 'node_modules/hiq/hiq.min.css';
-```
-
-
-Or the version with custom properties intact, so you can override with your own values and do cool things like theme switching (RECOMMENDED):
+You can use the full or minified versions as links, or CSS imports:
 
 ```html
 <link rel="stylesheet" href="node_modules/hiq/hiq.css">
+<link rel="stylesheet" href="node_modules/hiq/hiq.min.css">
 ```
 ```css
 @import 'node_modules/hiq/hiq.css';
+@import 'node_modules/hiq/hiq.min.css';
 ```
-
-Keep in mind that with this version, styles will only fully work in browsers that support custom properties. To solve this, you may incorporate this file into your own postcss build.
 
 ## Customization
 
-Any custom properties defined in this library may be overwritten simply by placing your own property values after the unminified version.
+Any custom properties defined in this library may be overwritten simply by placing your own property values after the imported stylesheet.
 
 ```css
 @import 'node_modules/hiq/hiq.css';
@@ -105,22 +95,20 @@ These are also available as mixins:
 
 ### Typography
 
-Typography is truly responsive, meaning that it is not simply redefined at various breakpoints, but is a function of viewport width. You can define a min and max font size, and a min and max browser width, below and above which the font size will stop changing.
+Typography is truly responsive, meaning that it is not simply redefined at various breakpoints, but is a function of viewport width. You can define a min and max font size, and a min and max browser width, below and above which the font size will stop changing. Font sizes must currently be provided as unitless pixel values.
 
 ```css
 :root {
-  --min-font-size: 16px;
-  --max-font-size: 20px;
+  --unitless-min-font-size: 16;
+  --unitless-max-font-size: 20;
 
-  --lower-font-range: 460px;
-  --upper-font-range: 1200px;
+  --unitless-lower-font-range: 460;
+  --unitless-upper-font-range: 1200;
 }
 ```
 
 
-NOTE: Due to current restrictions with the calc() function and custom properties, unitless values must also be provided.
-
-NOTE: Due to current limitations with custom media queries and custom properties, the raw value for the upper font range is also needed in a custom media query definition:
+NOTE: Due to current limitations with custom media queries and custom properties, the pixel value for the upper font range is also needed in a custom media query definition:
 
 ```css
 @custom-media --upper-font-range (width >= 1200px);

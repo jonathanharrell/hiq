@@ -207,28 +207,17 @@ input[type=range]::-ms-track {
   eventually, this should use something like strip() to remove units in the calculation
    */
 
-  /* base font size variables in px */
-  --min-font-size: 16px;
-  --max-font-size: 20px;
+  /* unitless base font size variables in px */
   --unitless-min-font-size: 16;
   --unitless-max-font-size: 20;
 
-  /* viewport widths in px when min/max font sizes will apply */
-  --lower-font-range: 460px;
-  --upper-font-range: 1200px;
+  /* unitless viewport widths in px when min/max font sizes will apply */
   --unitless-lower-font-range: 460;
   --unitless-upper-font-range: 1200;
 
   /* base unitless line heights */
   --base-line-height: 1.4;
   --heading-line-height: 1.2;
-
-  /* letter spacing variables */
-  /* stylelint-disable-next-line length-zero-no-unit */
-  --min-letter-spacing: 0em;
-  --max-letter-spacing: 0.005em;
-  --lower-letter-spacing-range: 460px;
-  --upper-letter-spacing-range: 1200px;
 
   /* font sizes */
   --font-size-1: 44px;
@@ -399,7 +388,7 @@ iframe {
   --font-range-difference: 740;
   --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
   --viewport-difference: calc(100vw - 460px);
-  --viewport-difference: calc(100vw - var(--lower-font-range));
+  --viewport-difference: calc(100vw - (var(--unitless-lower-font-range) * 1px));
 }
 html {
   /* font smoothing */
@@ -423,7 +412,7 @@ html {
 @media (min-width: 1200px) {
   html {
     font-size: 20px;
-    font-size: var(--max-font-size);
+    font-size: calc(var(--unitless-max-font-size) * 1px);
   }
   }
 /* heading line height */
