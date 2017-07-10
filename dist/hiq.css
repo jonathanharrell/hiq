@@ -406,7 +406,7 @@ input[type=range]::-ms-track {
   --max-container-width: 80rem;
   --container-horizontal-padding: 5vw;
 
-  /* font variables - all sizing variables must have the same unit! */
+  /* font variables */
 
   /* font family variables */
   --font-family-sans-serif: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -414,12 +414,6 @@ input[type=range]::-ms-track {
   --font-family-monospace: 'Roboto Mono', monospace;
   --base-font-family: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --base-font-family: var(--font-family-sans-serif);
-
-  /*
-  NOTE:
-  currently variables are required twice, with and without units, in order to make calc() work
-  eventually, this should use something like strip() to remove units in the calculation
-   */
 
   /* unitless base font size variables in px */
   --unitless-min-font-size: 16;
@@ -781,7 +775,15 @@ button,
 input[type='submit'],
 input[type='button'],
 input[type='reset'] {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: auto;
   height: 2.5rem;
   padding: 0 0.75rem;
@@ -796,23 +798,6 @@ input[type='reset'] {
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
 }
-@supports ((display: -webkit-inline-box) or (display: inline-flex)) {
-    button,
-[role='button'],
-input[type='submit'],
-input[type='button'],
-input[type='reset'] {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    }
-  }
 button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
@@ -1114,7 +1099,15 @@ input[type='file'] {
   white-space: nowrap;
 }
 input[type='file'] + label {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: auto;
   height: 2.5rem;
   padding: 0 0.75rem;
@@ -1130,19 +1123,6 @@ input[type='file'] + label {
   cursor: pointer;
   font-weight: normal;
 }
-@supports ((display: -webkit-inline-box) or (display: inline-flex)) {
-    input[type='file'] + label {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    }
-  }
 input[type='file'] + label:hover {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);

@@ -4,7 +4,9 @@
 }
 
 @define-mixin button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: 2.5rem;
   padding: 0 0.75rem;
@@ -14,11 +16,6 @@
   background-color: var(--gray-lighter);
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
-  @supports (display: inline-flex) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
   &:hover {
     color: var(--text-color);
     background-color: var(--button-hover-color);

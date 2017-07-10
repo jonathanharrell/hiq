@@ -2,7 +2,9 @@
 $button-hover-color: darken($gray-lighter, 15%);
 
 @mixin button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: 2.5rem;
   padding: 0 0.75rem;
@@ -12,11 +14,6 @@ $button-hover-color: darken($gray-lighter, 15%);
   background-color: $gray-lighter;
   transition: background-color $speed $easing;
   cursor: pointer;
-  @supports (display: inline-flex) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
   &:hover {
     color: $text-color;
     background-color: $button-hover-color;
