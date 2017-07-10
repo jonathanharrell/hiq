@@ -168,7 +168,6 @@ input[type='text']:focus, input[type='password']:focus, input[type='url']:focus,
     border: 1px solid var(--color-primary);
 }
 fieldset legend {
-    margin-bottom: 16px;
     margin-bottom: 1rem;
     font-weight: 700;
     font-weight: var(--font-weight-bold);
@@ -288,6 +287,7 @@ object,
 audio,
 video {
   max-width: 100%;
+  height: auto;
 }
 /* Reset tables so tabular data only takes the space it needs */
 table {
@@ -401,7 +401,6 @@ input[type=range]::-ms-track {
   /* structural variables */
 
   /* container variables */
-  --max-container-width: 1280px;
   --max-container-width: 80rem;
   --container-horizontal-padding: 5vw;
 
@@ -433,25 +432,16 @@ input[type=range]::-ms-track {
   --heading-line-height: 1.2;
 
   /* font sizes */
-  --font-size-1: 44px;
   --font-size-1: 2.75rem;
-  --font-size-2: 36px;
   --font-size-2: 2.25rem;
-  --font-size-3: 28px;
   --font-size-3: 1.75rem;
-  --font-size-4: 24px;
   --font-size-4: 1.5rem;
-  --font-size-5: 16px;
   --font-size-5: 1rem;
-  --font-size-6: 14px;
   --font-size-6: 0.875rem;
-  --font-size-base: 16px;
   --font-size-base: 1rem;
   --font-size-base: var(--font-size-5);
-  --font-size-large: 24px;
   --font-size-large: 1.5rem;
   --font-size-large: var(--font-size-4);
-  --font-size-small: 14px;
   --font-size-small: 0.875rem;
   --font-size-small: var(--font-size-6);
 
@@ -539,20 +529,15 @@ class to add carets to selects and dropdowns
   display: block;
   width: 0;
   height: 0;
-  border-top: 7.2px solid hsl(0, 0%, 25%);
   border-top: 0.45rem solid hsl(0, 0%, 25%);
-  border-top: 7.2px solid var(--text-color);
   border-top: 0.45rem solid var(--text-color);
-  border-right: 6.4px solid transparent;
   border-right: 0.4rem solid transparent;
-  border-left: 6.4px solid transparent;
   border-left: 0.4rem solid transparent;
 }
 /* base styles */
 /* container mixins */
 /* wrapper div */
 .container {
-  max-width: 1280px;
   max-width: 80rem;
   max-width: var(--max-container-width);
   margin: 0 auto;
@@ -566,14 +551,12 @@ class to add carets to selects and dropdowns
 article,
 section,
 nav {
-  margin: 16px 0;
   margin: 1rem 0;
 }
 /* horizontal rule */
 hr {
   display: block;
   height: 1px;
-  margin: 16px 0;
   margin: 1rem 0;
   border: none;
   background-color: hsl(0, 0%, 75%);
@@ -591,7 +574,6 @@ iframe {
   display: block;
   width: 100%;
   max-width: 100%;
-  margin-bottom: 16px;
   margin-bottom: 1rem;
 }
 /* responsive typography utility variables */
@@ -635,45 +617,37 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 16px;
   margin-bottom: 1rem;
   line-height: 1.2;
   line-height: var(--heading-line-height);
 }
 /* heading sizes and spacing */
 h1 {
-  font-size: 44px;
   font-size: 2.75rem;
   font-size: var(--font-size-1);
 }
 h2 {
-  font-size: 36px;
   font-size: 2.25rem;
   font-size: var(--font-size-2);
 }
 h3 {
-  font-size: 28px;
   font-size: 1.75rem;
   font-size: var(--font-size-3);
 }
 h4 {
-  font-size: 24px;
   font-size: 1.5rem;
   font-size: var(--font-size-4);
 }
 h5 {
-  font-size: 16px;
   font-size: 1rem;
   font-size: var(--font-size-5);
 }
 h6 {
-  font-size: 14px;
   font-size: 0.875rem;
   font-size: var(--font-size-6);
 }
 /* small font size */
 small {
-  font-size: 14px;
   font-size: 0.875rem;
   font-size: var(--font-size-small);
 }
@@ -685,7 +659,6 @@ ul,
 blockquote,
 pre,
 table {
-  margin-bottom: 16px;
   margin-bottom: 1rem;
 }
 /* definition list styling */
@@ -721,12 +694,10 @@ pre {
 code,
 kbd,
 samp {
-  padding: 4px 8px;
   padding: 0.25rem 0.5rem;
 }
 pre {
   overflow: auto;
-  padding: 16px;
   padding: 1rem;
 }
 /* applying color variables */
@@ -758,7 +729,6 @@ table {
   width: 100%
 }
 table caption {
-    margin-bottom: 16px;
     margin-bottom: 1rem;
     text-align: left;
     font-weight: 700;
@@ -811,9 +781,7 @@ input[type='button'],
 input[type='reset'] {
   display: inline-block;
   width: auto;
-  height: 40px;
   height: 2.5rem;
-  padding: 0 12px;
   padding: 0 0.75rem;
   border-radius: 4px;
   border-radius: var(--border-radius);
@@ -851,18 +819,15 @@ button:hover, [role='button']:hover, input[type='submit']:hover, input[type='but
 }
 /* general form styling */
 fieldset {
-  margin-bottom: 16px;
   margin-bottom: 1rem;
   padding: 0;
   border: 0
 }
 fieldset:not(:last-child) {
-    margin-bottom: 16px;
     margin-bottom: 1rem;
 }
 label {
   display: block;
-  margin-bottom: 8px;
   margin-bottom: 0.5rem;
   font-weight: 700;
   font-weight: var(--font-weight-bold);
@@ -886,9 +851,7 @@ input[type='week'],
 input[type='datetime-local'] {
   display: block;
   width: 100%;
-  height: 40px;
   height: 2.5rem;
-  padding: 0 12px;
   padding: 0 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
   border: 1px solid var(--border-color);
@@ -911,7 +874,6 @@ textarea {
   display: block;
   width: 100%;
   height: auto;
-  padding: 8px 12px;
   padding: 0.5rem 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
   border: 1px solid var(--border-color);
@@ -934,9 +896,7 @@ textarea::placeholder {
 select {
   display: block;
   width: 100%;
-  height: 40px;
   height: 2.5rem;
-  padding: 0 12px;
   padding: 0 0.75rem;
   border: 1px solid hsl(0, 0%, 75%);
   border: 1px solid var(--border-color);
@@ -952,9 +912,7 @@ select:focus {
 }
 .select .caret {
     position: absolute;
-    top: 48px;
     top: 3rem;
-    right: 12px;
     right: 0.75rem;
     pointer-events: none;
     content: '';
@@ -965,7 +923,6 @@ select:focus {
 }
 .checkbox label {
     position: relative;
-    padding: 0 32px;
     padding: 0 2rem;
     font-weight: 400;
     font-weight: var(--font-weight-normal);
@@ -990,7 +947,6 @@ select:focus {
 }
 .radio label {
     position: relative;
-    padding: 0 32px;
     padding: 0 2rem;
     font-weight: 400;
     font-weight: var(--font-weight-normal);
@@ -1026,7 +982,6 @@ progress {
 }
 progress[value] {
     width: 100%;
-    height: 16px;
     height: 1rem;
 }
 /* range input styling */
@@ -1159,9 +1114,7 @@ input[type='file'] {
 input[type='file'] + label {
   display: inline-block;
   width: auto;
-  height: 40px;
   height: 2.5rem;
-  padding: 0 12px;
   padding: 0 0.75rem;
   border-radius: 4px;
   border-radius: var(--border-radius);

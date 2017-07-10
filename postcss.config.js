@@ -8,8 +8,8 @@ module.exports = {
         require('postcss-mixins'),
         require('postcss-cssnext')({
             features: {
-                rem: {html: false},
-                customProperties: {preserve: true}
+                rem: false,
+                customProperties: { preserve: true }
             }
         }),
         require('postcss-discard-duplicates')
