@@ -11,7 +11,6 @@ module.exports = {
                 rem: false,
                 customProperties: { preserve: true }
             }
-        }),
-        require('postcss-discard-duplicates')
+        })
     ]
 }

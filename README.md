@@ -1,5 +1,7 @@
 # Hi-Q
-A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss) and [cssnext](http://cssnext.io/). See the [demo page](https://jonathanharrell.github.io/hiq/).
+A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss) and [cssnext](http://cssnext.io/).
+
+See the [demo page](https://jonathanharrell.github.io/hiq/).
 
 <img src="https://raw.githubusercontent.com/jonathanharrell/hiq/master/hiq.png" alt="HiQ" width="250" height="250" />
 
@@ -9,6 +11,16 @@ In the age of Flexbox, CSS grid, and other exciting layout features, there is le
 * It's semantic – we only use classes where absolutely necessary so you can more easily write your own styles.
 * It's forward-thinking – built with future CSS features like custom properties.
 * It's grid-less – who needs a grid framework anymore? We don't.
+
+## Documentation
+
+* [Install](#install)
+* [Usage](#usage)
+* [Customization](#customization)
+* [Containers](#containers)
+* [Utility](#utility)
+* [Typography](#typography)
+* [Color](#color)
 
 ## Install
 
@@ -29,6 +41,24 @@ You can use the full or minified versions as links, or CSS imports:
 ```css
 @import 'node_modules/hiq/hiq.css';
 @import 'node_modules/hiq/hiq.min.css';
+```
+
+If you have your own PostCSS setup, you can import the source css file directly:
+
+```css
+@import 'node_modules/hiq/css/hiq.css';
+```
+
+Note that in this case, you will need to configure your postcss.config.js file to include the following plugins:
+
+```js
+module.exports = {
+    plugins: [
+        require('postcss-import'),
+        require('postcss-mixins'),
+        require('postcss-cssnext')
+    ]
+}
 ```
 
 ## Customization
@@ -66,7 +96,7 @@ Containers have a max width and padding on the left and right side. These exist 
 
 NOTE: The default padding is responsive, relative to the viewport width.
 
-Containers can also be applied to any element in postcss through mixins.
+Containers can also be applied to any element in PostCSS through mixins.
 
 ```css
 .element {
