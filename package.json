@@ -23,6 +23,7 @@
     },
     "devDependencies": {
         "minifier": "^0.8.1",
+        "node-sass": "^4.5.3",
         "postcss-cli": "^4.1.0",
         "postcss-cssnext": "^2.10.0",
         "postcss-import": "^9.1.0",

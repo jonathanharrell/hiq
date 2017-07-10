@@ -1,0 +1,22 @@
+/* applying color variables */
+body {
+  color: $text-color;
+  background-color: $page-background-color;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  transition: color $speed $easing;
+  cursor: pointer;
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
+    color: $link-active-color;
+  }
+}
+
+mark {
+  background-color: $mark-color;
+}

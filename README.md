@@ -1,11 +1,11 @@
-# Hi-Q
-A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss) and [cssnext](http://cssnext.io/).
+# HiQ
+A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss) and [cssnext](http://cssnext.io/). Now also available for Sass.
 
 See the [demo page](https://jonathanharrell.github.io/hiq/).
 
 <img src="https://raw.githubusercontent.com/jonathanharrell/hiq/master/hiq.png" alt="HiQ" width="250" height="250" />
 
-In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles. Enter Hi-Q.
+In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles. Enter HiQ.
 
 * It's small – the current build is only 29KB!
 * It's semantic – we only use classes where absolutely necessary so you can more easily write your own styles.
@@ -21,6 +21,7 @@ In the age of Flexbox, CSS grid, and other exciting layout features, there is le
 * [Utility](#utility)
 * [Typography](#typography)
 * [Color](#color)
+* [Sass](#sass)
 
 ## Install
 
@@ -172,3 +173,19 @@ Color is defined with a palette of grays and a semantic palette:
 ```
 
 Colors are then applied to various elements with additional custom properties.
+
+### Sass
+
+HiQ can also be used with Sass. In this case, import the main Sass file directly:
+
+```scss
+@import 'node_modules/hiq/scss/hiq';
+```
+
+If you need to override variables, include them BEFORE importing the library:
+
+```scss
+$color-primary: red;
+
+@import 'node_modules/hiq/scss/hiq';
+```

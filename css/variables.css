@@ -5,19 +5,13 @@
   --max-container-width: 80rem;
   --container-horizontal-padding: 5vw;
 
-  /* font variables - all sizing variables must have the same unit! */
+  /* font variables */
 
   /* font family variables */
   --font-family-sans-serif: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --font-family-serif: 'Roboto Slab', serif;
   --font-family-monospace: 'Roboto Mono', monospace;
   --base-font-family: var(--font-family-sans-serif);
-
-  /*
-  NOTE:
-  currently variables are required twice, with and without units, in order to make calc() work
-  eventually, this should use something like strip() to remove units in the calculation
-   */
 
   /* unitless base font size variables in px */
   --unitless-min-font-size: 16;
