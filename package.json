@@ -4,9 +4,9 @@
     "description": "Basic semantic styling for HTML elements",
     "main": "css/hiq.css",
     "scripts": {
-        "dev": "node_modules/.bin/webpack",
-        "production": "NODE_ENV=production node_modules/.bin/webpack",
-        "watch": "npm run dev -- --watch"
+        "build": "postcss css/hiq.css -o dist/hiq.css",
+        "minify": "minify dist/hiq.css --output dist/hiq.min.css",
+        "watch": "npm run build -- --watch"
     },
     "repository": {
         "type": "git",
@@ -22,30 +22,15 @@
         "blanq-slate": "^1.1.10"
     },
     "devDependencies": {
-        "babel-core": "^6.24.1",
-        "babel-eslint": "^7.2.3",
-        "babel-loader": "^7.0.0",
-        "babel-preset-es2015": "^6.24.1",
-        "browser-sync": "^2.18.8",
-        "browser-sync-webpack-plugin": "^1.1.4",
-        "css-loader": "^0.28.0",
-        "eslint": "^3.19.0",
-        "eslint-config-standard": "^10.2.1",
-        "eslint-loader": "^1.7.1",
-        "eslint-plugin-import": "^2.2.0",
-        "eslint-plugin-node": "^4.2.2",
-        "eslint-plugin-promise": "^3.5.0",
-        "eslint-plugin-standard": "^3.0.1",
-        "extract-text-webpack-plugin": "^2.1.0",
+        "minifier": "^0.8.1",
+        "postcss-cli": "^4.1.0",
         "postcss-cssnext": "^2.10.0",
         "postcss-discard-duplicates": "^2.1.0",
         "postcss-import": "^9.1.0",
         "postcss-loader": "^1.3.3",
         "postcss-mixins": "^6.0.1",
-        "style-loader": "^0.16.1",
         "stylelint-config-standard": "^16.0.0",
         "stylelint-order": "^0.4.3",
-        "stylelint-webpack-plugin": "^0.7.0",
-        "webpack": "^2.4.1"
+        "stylelint-webpack-plugin": "^0.7.0"
     }
 }

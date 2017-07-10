@@ -1,6 +1,10 @@
 module.exports = {
     plugins: [
-        require('postcss-import'),
+        require('postcss-import')({
+            plugins: [
+                require('stylelint')
+            ]
+        }),
         require('postcss-mixins'),
         require('postcss-cssnext')({
             features: {
