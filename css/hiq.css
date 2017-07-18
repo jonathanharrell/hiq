@@ -1,5 +1,5 @@
 /* reset */
-@import '../node_modules/blanq-slate/blanq-slate.css';
+@import 'blanq-slate/blanq-slate.css';
 
 /* custom properties */
 @import 'variables.css';

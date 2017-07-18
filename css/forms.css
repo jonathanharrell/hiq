@@ -367,4 +367,3 @@ input[type='file'] + label {
   @mixin button;
   font-weight: normal;
 }
-
