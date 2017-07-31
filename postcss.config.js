@@ -5,7 +5,7 @@ module.exports = {
                 require('stylelint')
             ]
         }),
-        require('postcss-mixins'),
+        require('postcss-mixins')(),
         require('postcss-cssnext')({
             features: {
                 rem: false,
