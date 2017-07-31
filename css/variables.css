@@ -75,6 +75,7 @@
   --background-color: var(--gray-lightest);
   --border-color: var(--gray-light);
   --mark-color: #ffeb3b;
+  --selection-color: #0ff;
   --disabled-color: var(--gray-light);
 
   /* border-radius */

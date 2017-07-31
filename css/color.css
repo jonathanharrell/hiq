@@ -28,3 +28,14 @@ del {
 ins {
   background-color: var(--color-success);
 }
+
+/* selections */
+::-moz-selection {
+  text-shadow: none !important;
+  background-color: var(--selection-color);
+}
+
+::selection {
+  text-shadow: none !important;
+  background-color: var(--selection-color);
+}
