@@ -12,23 +12,23 @@
   padding: 0 0.75rem;
   border-radius: var(--border-radius);
   outline: 0;
+  text-decoration: none;
+  white-space: nowrap;
   color: var(--text-color);
   background-color: var(--gray-lighter);
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
-  &:hover {
+  &:hover:not(:disabled) {
     color: var(--text-color);
     background-color: var(--button-hover-color);
   }
-  &:focus {
+  &:focus:not(:disabled) {
     background-color: var(--gray-light);
   }
-  &:visited {
+  &:visited:not(:disabled) {
     color: var(--text-color);
   }
-  &:disabled,
-  &:hover:disabled,
-  &:visited:disabled {
+  &:disabled {
     color: var(--disabled-color);
     background-color: var(--gray-lightest);
     cursor: not-allowed;

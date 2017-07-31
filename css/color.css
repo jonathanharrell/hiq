@@ -20,3 +20,11 @@ a {
 mark {
   background-color: var(--mark-color);
 }
+
+del {
+  background-color: var(--color-error);
+}
+
+ins {
+  background-color: var(--color-success);
+}
