@@ -1,17 +1,15 @@
-input[type='file'] + label:disabled,
-  input[type='file'] + label:hover:disabled,
-  input[type='file'] + label:visited:disabled {
+input[type='file'] + label:disabled {
     color: hsl(0, 0%, 75%);
     color: var(--disabled-color);
     background-color: hsl(0, 0%, 95%);
     background-color: var(--gray-lightest);
     cursor: not-allowed;
 }
-input[type='file'] + label:visited {
+input[type='file'] + label:visited:not(:disabled) {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
 }
-input[type='file'] + label:focus {
+input[type='file'] + label:focus:not(:disabled) {
     background-color: hsl(0, 0%, 75%);
     background-color: var(--gray-light);
 }
@@ -170,32 +168,18 @@ fieldset legend {
     font-weight: 700;
     font-weight: var(--font-weight-bold);
 }
-button:disabled,
-  button:hover:disabled,
-  button:visited:disabled,
-  [role='button']:disabled,
-  [role='button']:hover:disabled,
-  [role='button']:visited:disabled,
-  input[type='submit']:disabled,
-  input[type='submit']:hover:disabled,
-  input[type='submit']:visited:disabled,
-  input[type='button']:disabled,
-  input[type='button']:hover:disabled,
-  input[type='button']:visited:disabled,
-  input[type='reset']:disabled,
-  input[type='reset']:hover:disabled,
-  input[type='reset']:visited:disabled {
+button:disabled, [role='button']:disabled, input[type='submit']:disabled, input[type='button']:disabled, input[type='reset']:disabled {
     color: hsl(0, 0%, 75%);
     color: var(--disabled-color);
     background-color: hsl(0, 0%, 95%);
     background-color: var(--gray-lightest);
     cursor: not-allowed;
 }
-button:visited, [role='button']:visited, input[type='submit']:visited, input[type='button']:visited, input[type='reset']:visited {
+button:visited:not(:disabled), [role='button']:visited:not(:disabled), input[type='submit']:visited:not(:disabled), input[type='button']:visited:not(:disabled), input[type='reset']:visited:not(:disabled) {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
 }
-button:focus, [role='button']:focus, input[type='submit']:focus, input[type='button']:focus, input[type='reset']:focus {
+button:focus:not(:disabled), [role='button']:focus:not(:disabled), input[type='submit']:focus:not(:disabled), input[type='button']:focus:not(:disabled), input[type='reset']:focus:not(:disabled) {
     background-color: hsl(0, 0%, 75%);
     background-color: var(--gray-light);
 }
@@ -499,6 +483,9 @@ input[type=range]::-ms-track {
 visually hides elements but keeps them accessible to screen readers
  */
 /*
+clears to reset space after floated elements
+ */
+/*
 removes default styling from list
  */
 .visually-hidden {
@@ -558,6 +545,7 @@ hr {
 }
 /* media/embeds */
 figure,
+figcaption,
 img,
 audio,
 video,
@@ -660,6 +648,11 @@ dt {
   font-weight: 700;
   font-weight: var(--font-weight-bold);
 }
+/* abbreviation */
+abbr[title] {
+  border-bottom: dashed 1px currentcolor;
+  text-decoration: none;
+}
 /* list spacing */
 ol,
 ul {
@@ -680,8 +673,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: 'Roboto Mono', monospace;
-  font-family: var(--font-family-monospace);
+  font-family: 'Roboto Mono', monospace, monospace;
+  font-family: var(--font-family-monospace), monospace;
   background-color: hsl(0, 0%, 95%);
   background-color: var(--background-color);
 }
@@ -716,6 +709,14 @@ a:hover {
 mark {
   background-color: #ffeb3b;
   background-color: var(--mark-color);
+}
+del {
+  background-color: #f44336;
+  background-color: var(--color-error);
+}
+ins {
+  background-color: #4caf50;
+  background-color: var(--color-success);
 }
 /* element styles */
 /* table styling */
@@ -788,6 +789,8 @@ input[type='reset'] {
   border-radius: 4px;
   border-radius: var(--border-radius);
   outline: 0;
+  text-decoration: none;
+  white-space: nowrap;
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: hsl(0, 0%, 90%);
@@ -796,7 +799,7 @@ input[type='reset'] {
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
 }
-button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover {
+button:hover:not(:disabled), [role='button']:hover:not(:disabled), input[type='submit']:hover:not(:disabled), input[type='button']:hover:not(:disabled), input[type='reset']:hover:not(:disabled) {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
     background-color: rgb(162, 162, 162);
@@ -1110,6 +1113,8 @@ input[type='file'] + label {
   border-radius: 4px;
   border-radius: var(--border-radius);
   outline: 0;
+  text-decoration: none;
+  white-space: nowrap;
   color: hsl(0, 0%, 25%);
   color: var(--text-color);
   background-color: hsl(0, 0%, 90%);
@@ -1119,7 +1124,7 @@ input[type='file'] + label {
   cursor: pointer;
   font-weight: normal;
 }
-input[type='file'] + label:hover {
+input[type='file'] + label:hover:not(:disabled) {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
     background-color: rgb(162, 162, 162);
