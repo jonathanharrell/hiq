@@ -18,19 +18,19 @@
   background-color: var(--gray-lighter);
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
-  &:hover:not(:disabled) {
+  &:hover {
     color: var(--text-color);
     background-color: var(--button-hover-color);
   }
-  &:focus:not(:disabled) {
+  &:focus {
     background-color: var(--gray-light);
   }
-  &:visited:not(:disabled) {
+  &:visited {
     color: var(--text-color);
   }
   &:disabled {
-    color: var(--disabled-color);
-    background-color: var(--gray-lightest);
+    color: var(--disabled-color) !important;
+    background-color: var(--gray-lightest) !important;
     cursor: not-allowed;
   }
 }
