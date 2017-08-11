@@ -78,7 +78,7 @@ All custom properties can be found in the `variables.css` file.
 
 ### Containers
 
-Containers are simple wrappers around your content. Adding the `.is-fluid` class will cause the container stretch across the full browser width.
+Containers are simple wrappers around your content. Adding the `.is-fluid` class will cause the container to stretch across the full browser width.
 
 ```html
 <div class="container"></div>
