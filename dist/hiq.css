@@ -3,17 +3,17 @@ input[type='color']::-webkit-color-swatch {
     border-radius: 0;
 }
 input[type='file'] + label:disabled {
-    color: hsl(0, 0%, 75%);
-    color: var(--disabled-color);
-    background-color: hsl(0, 0%, 95%);
-    background-color: var(--gray-lightest);
+    color: hsl(0, 0%, 75%) !important;
+    color: var(--disabled-color) !important;
+    background-color: hsl(0, 0%, 95%) !important;
+    background-color: var(--gray-lightest) !important;
     cursor: not-allowed;
 }
-input[type='file'] + label:visited:not(:disabled) {
+input[type='file'] + label:visited {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
 }
-input[type='file'] + label:focus:not(:disabled) {
+input[type='file'] + label:focus {
     background-color: hsl(0, 0%, 75%);
     background-color: var(--gray-light);
 }
@@ -171,17 +171,17 @@ fieldset legend {
     font-weight: var(--font-weight-bold);
 }
 button:disabled, [role='button']:disabled, input[type='submit']:disabled, input[type='button']:disabled, input[type='reset']:disabled {
-    color: hsl(0, 0%, 75%);
-    color: var(--disabled-color);
-    background-color: hsl(0, 0%, 95%);
-    background-color: var(--gray-lightest);
+    color: hsl(0, 0%, 75%) !important;
+    color: var(--disabled-color) !important;
+    background-color: hsl(0, 0%, 95%) !important;
+    background-color: var(--gray-lightest) !important;
     cursor: not-allowed;
 }
-button:visited:not(:disabled), [role='button']:visited:not(:disabled), input[type='submit']:visited:not(:disabled), input[type='button']:visited:not(:disabled), input[type='reset']:visited:not(:disabled) {
+button:visited, [role='button']:visited, input[type='submit']:visited, input[type='button']:visited, input[type='reset']:visited {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
 }
-button:focus:not(:disabled), [role='button']:focus:not(:disabled), input[type='submit']:focus:not(:disabled), input[type='button']:focus:not(:disabled), input[type='reset']:focus:not(:disabled) {
+button:focus, [role='button']:focus, input[type='submit']:focus, input[type='button']:focus, input[type='reset']:focus {
     background-color: hsl(0, 0%, 75%);
     background-color: var(--gray-light);
 }
@@ -393,10 +393,10 @@ input[type=range]::-ms-track {
   /* font variables */
 
   /* font family variables */
-  --font-family-sans-serif: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --font-family-serif: 'Roboto Slab', serif;
-  --font-family-monospace: 'Roboto Mono', monospace;
-  --base-font-family: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --base-font-family: var(--font-family-sans-serif);
 
   /* unitless base font size variables in px */
@@ -576,7 +576,7 @@ html {
   -webkit-font-smoothing: antialiased;
 
   /* base font family */
-  font-family: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-family: var(--base-font-family);
 
   /* responsive base font size */
@@ -676,7 +676,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: 'Roboto Mono', monospace, monospace;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
   font-family: var(--font-family-monospace), monospace;
   background-color: hsl(0, 0%, 95%);
   background-color: var(--background-color);
@@ -813,7 +813,7 @@ input[type='reset'] {
   transition: background-color var(--speed) var(--easing);
   cursor: pointer;
 }
-button:hover:not(:disabled), [role='button']:hover:not(:disabled), input[type='submit']:hover:not(:disabled), input[type='button']:hover:not(:disabled), input[type='reset']:hover:not(:disabled) {
+button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
     background-color: rgb(162, 162, 162);
@@ -1134,7 +1134,7 @@ input[type='file'] + label {
   cursor: pointer;
   font-weight: normal;
 }
-input[type='file'] + label:hover:not(:disabled) {
+input[type='file'] + label:hover {
     color: hsl(0, 0%, 25%);
     color: var(--text-color);
     background-color: rgb(162, 162, 162);
