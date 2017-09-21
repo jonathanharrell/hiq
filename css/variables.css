@@ -8,9 +8,9 @@
   /* font variables */
 
   /* font family variables */
-  --font-family-sans-serif: -apple-system, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --font-family-serif: 'Roboto Slab', serif;
-  --font-family-monospace: 'Roboto Mono', monospace;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
   --base-font-family: var(--font-family-sans-serif);
 
   /* unitless base font size variables in px */
