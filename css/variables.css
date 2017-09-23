@@ -59,7 +59,7 @@
   --font-weight-bold: 700;
 
   /* letter spacing */
-  --letter-spacing-base: auto;
+  --letter-spacing-base: -0.025em;
 
   /* applied font weights */
   --font-weight-base: var(--font-weight-normal);
@@ -86,21 +86,21 @@
   --gray-lightest: hsl(0, 0%, 98%);
 
   /* semantic palette */
-  --color-primary: #0032a0;
-  --color-success: #4caf50;
+  --color-primary: #3f2ab1;
+  --color-success: #3f2ab1;
   --color-warning: #ff5722;
-  --color-error: #f44336;
+  --color-error: color(#3f2ab1 tint(25%));
 
   /* applied colors */
-  --text-color: var(--gray-dark);
+  --text-color: var(--gray-darker);
   --html-background-color: white;
   --body-background-color: white;
   --background-color: var(--gray-lightest);
   --border-color: var(--gray-light);
-  --mark-color: #ffeb3b;
-  --selection-color: #0ff;
+  --mark-color: color(#3f2ab1 tint(75%));
+  --selection-color: color(#3f2ab1 tint(85%));
   --deleted-color: var(--color-error);
-  --inserted-color: var(--color-success);
+  --inserted-color: color(#3f2ab1 tint(75%));
   --disabled-color: var(--gray-light);
 
   /* ====================
@@ -115,9 +115,9 @@
      ==================== */
 
   --link-color: var(--color-primary);
-  --link-hover-color: color(#0032a0 shade(50%));
-  --link-focus-color: color(#0032a0 shade(50%));
-  --link-active-color: color(#0032a0 shade(50%));
+  --link-hover-color: color(#3f2ab1 shade(50%));
+  --link-focus-color: color(#3f2ab1 shade(50%));
+  --link-active-color: color(#3f2ab1 shade(50%));
   --link-text-decoration: none;
 
   /* ====================
@@ -132,24 +132,24 @@
   --button-font-weight: var(--font-weight-medium);
 
   /* static colors */
-  --button-border-color: var(--gray-lighter);
-  --button-text-color: var(--text-color);
-  --button-background-color: var(--gray-lighter);
+  --button-border-color: var(--color-primary);
+  --button-text-color: white;
+  --button-background-color: var(--color-primary);
 
   /* hover colors */
   --button-hover-border-color: transparent;
-  --button-hover-text-color: var(--text-color);
-  --button-hover-background-color: var(--gray-light);
+  --button-hover-text-color: white;
+  --button-hover-background-color: color(#3f2ab1 shade(50%));
 
   /* focus colors */
   --button-focus-border-color: transparent;
-  --button-focus-text-color: var(--text-color);
-  --button-focus-background-color: var(--gray-light);
+  --button-focus-text-color: white;
+  --button-focus-background-color: color(#3f2ab1 shade(50%));
 
   /* active colors */
   --button-active-border-color: transparent;
-  --button-active-text-color: var(--text-color);
-  --button-active-background-color: var(--gray-light);
+  --button-active-text-color: white;
+  --button-active-background-color: color(#3f2ab1 shade(50%));
 
   /* disabled colors */
   --button-disabled-border-color: transparent;
@@ -197,28 +197,28 @@
   --input-border-width: 1px;
 
   /* static input colors */
-  --input-border-color: var(--border-color);
+  --input-border-color: var(--gray-lighter);
   --input-text-color: var(--text-color);
   --input-placeholder-color: var(--gray);
-  --input-background-color: white;
+  --input-background-color: var(--gray-lighter);
 
   /* hover input colors */
-  --input-hover-border-color: var(--border-color);
-  --input-hover-text-color: var(--text-color);
+  --input-hover-border-color: var(--color-primary);
+  --input-hover-text-color: var(--color-primary);
   --input-hover-placeholder-color: var(--gray);
-  --input-hover-background-color: white;
+  --input-hover-background-color: var(--gray-lighter);
 
   /* focus input colors */
   --input-focus-border-color: var(--color-primary);
-  --input-focus-text-color: var(--text-color);
+  --input-focus-text-color: var(--color-primary);
   --input-focus-placeholder-color: var(--gray);
-  --input-focus-background-color: white;
+  --input-focus-background-color: var(--gray-lighter);
 
   /* disabled input colors */
-  --input-disabled-border-color: var(--border-color);
-  --input-disabled-text-color: var(--text-color);
-  --input-disabled-placeholder-color: var(--gray);
-  --input-disabled-background-color: white;
+  --input-disabled-border-color: var(--gray-lightest);
+  --input-disabled-text-color: var(--gray-light);
+  --input-disabled-placeholder-color: var(--gray-light);
+  --input-disabled-background-color: var(--gray-lightest);
 
   /* textareas */
   --textarea-display: block;
@@ -284,11 +284,11 @@
   --range-input-thumb-width: 24px;
   --range-input-thumb-height: 24px;
   --range-input-thumb-border-radius: 50%;
-  --range-input-thumb-background: var(--gray);
+  --range-input-thumb-background: var(--color-primary);
   --range-input-track-width: 100%;
   --range-input-track-height: 10px;
   --range-input-track-background: var(--gray-lighter);
-  --range-input-track-focus-background: var(--gray-light);
+  --range-input-track-focus-background: var(--gray-lighter);
 
   /* color input */
   --color-input-width: 2.5rem;
@@ -300,7 +300,7 @@
 
   --horizontal-rule-height: 1px;
   --horizontal-rule-margin-vertical: 1rem;
-  --horizontal-rule-color: var(--border-color);
+  --horizontal-rule-color: var(--color-primary);
 
   /* ====================
      media/embeds variables

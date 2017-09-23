@@ -34,6 +34,7 @@ textarea {
   border-style: solid;
   border-color: var(--input-border-color);
   color: var(--input-text-color);
+  background-color: var(--input-background-color);
   &::placeholder {
     color: var(--input-placeholder-color);
   }
@@ -61,9 +62,9 @@ textarea {
     color: var(--input-disabled-text-color);
     background-color: var(--input-disabled-background-color);
     cursor: not-allowed;
-    &::placeholder {
-      color: var(--input-placeholder-color);
-    }
+  }
+  &:disabled::placeholder {
+    color: var(--input-disabled-placeholder-color);
   }
 }
 
@@ -112,6 +113,7 @@ select {
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: var(--select-background-size);
+  cursor: pointer;
 }
 
 /* ====================
@@ -401,6 +403,7 @@ input[type='color'] {
   width: var(--color-input-width);
   padding: 0;
   border: 0;
+  cursor: pointer;
   &::-webkit-color-swatch-wrapper {
     padding: 0;
   }
