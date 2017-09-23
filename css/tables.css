@@ -1,51 +1,21 @@
 /* table styling */
 table {
-  width: 100%;
+  width: var(--table-width);
   & caption {
-    margin-bottom: 1rem;
+    margin-bottom: var(--table-caption-margin-bottom);
     text-align: left;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--table-caption-font-weight);
   }
 }
 
 th,
 td {
-  padding: 0.5em 0.75em;
-  border: 0 solid var(--border-color);
-  border-bottom-width: 1px;
+  padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+  border: var(--table-cell-border-width) solid var(--table-cell-border-color);
   text-align: left;
   vertical-align: top;
-  &:first-child {
-    padding-left: 0;
-  }
-  &:last-child {
-    padding-right: 0;
-  }
 }
 
 th {
-  font-weight: var(--font-weight-bold);
-}
-
-thead {
-  & td,
-  & th {
-    border-bottom-width: 2px;
-  }
-}
-
-tfoot {
-  & td,
-  & th {
-    border-bottom-width: 2px;
-  }
-}
-
-tbody {
-  & tr:last-child {
-    & td,
-    & th {
-      border-bottom-width: 0;
-    }
-  }
+  font-weight: var(--table-heading-font-weight);
 }

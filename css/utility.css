@@ -1,6 +1,8 @@
-/*
-visually hides elements but keeps them accessible to screen readers
- */
+/* ====================
+   utility mixins and classes
+   ==================== */
+
+/* visually hides elements but keeps them accessible to screen readers */
 @define-mixin visually-hidden {
   clip: rect(0 0 0 0);
   position: absolute;
@@ -13,9 +15,11 @@ visually hides elements but keeps them accessible to screen readers
   white-space: nowrap;
 }
 
-/*
-clears to reset space after floated elements
- */
+.visually-hidden {
+  @mixin visually-hidden;
+}
+
+/* clears to reset space after floated elements */
 @define-mixin clearfix {
   &::before,
   &::after {
@@ -27,25 +31,21 @@ clears to reset space after floated elements
   }
 }
 
-/*
-removes default styling from list
- */
+.clearfix {
+  @mixin clearfix;
+}
+
+/* removes default styling from list */
 @define-mixin list-unstyled {
   margin: 0;
   list-style: none;
-}
-
-.visually-hidden {
-  @mixin visually-hidden;
 }
 
 .list-unstyled {
   @mixin list-unstyled;
 }
 
-/*
-class to add carets to selects and dropdowns
- */
+/* class to add carets to selects and dropdowns */
 .caret {
   display: block;
   width: 0;

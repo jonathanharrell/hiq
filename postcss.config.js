@@ -9,7 +9,10 @@ module.exports = {
         require('postcss-cssnext')({
             features: {
                 rem: false,
-                customProperties: { preserve: true }
+                customProperties: {
+                    preserve: true,
+                    warnings: false
+                }
             }
         })
     ]

@@ -1,21 +1,22 @@
-/* general form styling */
+/* ====================
+   general form styling
+   ==================== */
 fieldset {
-  margin-bottom: 1rem;
-  padding: 0;
-  border: 0;
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  margin: var(--fieldset-margin-vertical) 0;
+  padding: var(--fieldset-padding-vertical) var(--fieldset-padding-horizontal);
+  border-width: var(--fieldset-border-width);
+  border-style: solid;
+  border-color: var(--fieldset-border-color);
   & legend {
-    margin-bottom: 1rem;
-    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--legend-margin-bottom);
+    font-weight: var(--legend-font-weight);
   }
 }
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--legend-margin-bottom);
+  font-weight: var(--legend-font-weight);
 }
 
 input,
@@ -24,7 +25,52 @@ textarea {
   outline: 0;
 }
 
-/* text input styling */
+/* ====================
+   general mixin
+   ==================== */
+
+@define-mixin input {
+  border-width: var(--input-border-width);
+  border-style: solid;
+  border-color: var(--input-border-color);
+  color: var(--input-text-color);
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
+  &:hover {
+    border-color: var(--input-hover-border-color);
+    color: var(--input-hover-text-color);
+    background-color: var(--input-hover-background-color);
+    &::placeholder {
+      color: var(--input-placeholder-color);
+    }
+  }
+  &:focus,
+  &:hover:focus {
+    border-color: var(--input-focus-border-color);
+    color: var(--input-focus-text-color);
+    background-color: var(--input-focus-background-color);
+    &::placeholder {
+      color: var(--input-placeholder-color);
+    }
+  }
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    border-color: var(--input-disabled-border-color);
+    color: var(--input-disabled-text-color);
+    background-color: var(--input-disabled-background-color);
+    cursor: not-allowed;
+    &::placeholder {
+      color: var(--input-placeholder-color);
+    }
+  }
+}
+
+/* ====================
+   text inputs
+   ==================== */
+
 input[type='text'],
 input[type='password'],
 input[type='url'],
@@ -36,79 +82,48 @@ input[type='date'],
 input[type='month'],
 input[type='week'],
 input[type='datetime-local'],
-input[type='color'] {
-  display: block;
-  width: 100%;
-  height: 2.5rem;
-  padding: 0 0.75rem;
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-  &::placeholder {
-    color: var(--gray);
-  }
-  &:focus {
-    border: 1px solid var(--color-primary);
-  }
-  &:disabled {
-    border-color: var(--gray-lighter);
-    cursor: not-allowed;
-  }
-  &:disabled::placeholder {
-    color: var(--disabled-color);
-  }
+input[type='color'],
+select {
+  @mixin input;
+  display: var(--input-display);
+  width: var(--input-width);
+  height: var(--input-height);
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
 }
+
+/* ====================
+   textareas
+   ==================== */
 
 textarea {
-  display: block;
-  width: 100%;
-  height: auto;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-  &::placeholder {
-    color: var(--gray);
-  }
-  &:focus {
-    border: 1px solid var(--color-primary);
-  }
-  &:disabled {
-    border-color: var(--gray-lighter);
-    cursor: not-allowed;
-  }
-  &:disabled::placeholder {
-    color: var(--disabled-color);
-  }
+  @mixin input;
+  display: var(--textarea-display);
+  width: var(--textarea-width);
+  height: var(--textarea-height);
+  padding: var(--textarea-padding-vertical) var(--textarea-padding-horizontal);
 }
 
-/* select element styling */
+/* ====================
+   selects
+   ==================== */
+
 select {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 2.5rem;
-  padding: 0 0.75rem;
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
+  background-image: var(--select-background-image);
   background-repeat: no-repeat;
   background-position: right 1rem center;
-  background-size: 0.75rem;
-  &:focus {
-    border: 1px solid var(--color-primary);
-  }
-  &:disabled {
-    color: var(--disabled-color);
-    cursor: not-allowed;
-  }
+  background-size: var(--select-background-size);
 }
 
-/* checkbox styling */
+/* ====================
+   checkboxes
+   ==================== */
+
 .checkbox {
   position: relative;
   & label {
     position: relative;
-    padding: 0 2rem;
-    font-weight: var(--font-weight-normal);
+    padding: 0 var(--checkbox-label-padding-horizontal);
+    font-weight: var(--checkbox-label-font-weight);
     cursor: pointer;
   }
   & label::before {
@@ -116,9 +131,9 @@ select {
     position: absolute;
     top: 0;
     left: 0;
-    width: 24px;
-    height: 24px;
-    background-color: var(--gray-lighter);
+    width: var(--checkbox-width);
+    height: var(--checkbox-height);
+    background-color: var(--checkbox-background-color);
     transition: background-color var(--speed) var(--easing);
     content: '';
   }
@@ -132,40 +147,52 @@ select {
   height: 0;
   opacity: 0;
   pointer-events: none;
-  &:focus + label::before {
-    background-color: var(--gray-light);
+  &:hover + label::before {
+    background-color: var(--checkbox-hover-background-color);
   }
-  &:checked + label::before {
-    background-color: var(--color-primary) !important;
+  &:focus + label::before {
+    background-color: var(--checkbox-focus-background-color);
+  }
+  &:checked + label::before,
+  &:checked:hover + label::before,
+  &:checked:focus + label::before {
+    background-color: var(--checkbox-checked-background-color);
   }
   &:checked + label::after {
     display: block;
     position: absolute;
-    top: 3px;
-    left: 8px;
-    width: 8px;
-    height: 14px;
+    top: var(--checkbox-check-position-top);
+    left: var(--checkbox-check-position-left);
+    width: var(--checkbox-check-width);
+    height: var(--checkbox-check-height);
     border: solid white;
-    border-width: 0 2px 2px 0;
+    border-width: 0 var(--checkbox-border-width) var(--checkbox-border-width) 0;
     transform: rotate(45deg);
     content: '';
   }
-  &:disabled + label {
-    color: var(--disabled-color);
+  &:disabled + label,
+  &:disabled:hover + label,
+  &:disabled:focus + label {
+    color: var(--checkbox-label-disabled-color);
     cursor: not-allowed;
   }
-  &:disabled + label::before {
-    background-color: var(--gray-lightest);
+  &:disabled + label::before,
+  &:disabled:hover + label::before,
+  &:disabled:focus + label::before {
+    background-color: var(--checkbox-disabled-background-color);
   }
 }
 
-/* radio button styling */
+/* ====================
+   radio buttons
+   ==================== */
+
 .radio {
   position: relative;
   & label {
     position: relative;
-    padding: 0 2rem;
-    font-weight: var(--font-weight-normal);
+    padding: 0 var(--radio-label-padding-horizontal);
+    font-weight: var(--radio-label-font-weight);
     cursor: pointer;
   }
   & label::before {
@@ -173,10 +200,10 @@ select {
     position: absolute;
     top: 0;
     left: 0;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--gray-lighter);
+    width: var(--radio-width);
+    height: var(--radio-height);
+    border-radius: var(--radio-border-radius);
+    background-color: var(--radio-background-color);
     transition: background-color var(--speed) var(--easing);
     content: '';
   }
@@ -189,84 +216,90 @@ select {
   width: 0;
   height: 0;
   opacity: 0;
-  &:focus + label::before {
-    background-color: var(--gray-light);
+  &:hover + label::before {
+    background-color: var(--radio-hover-background-color);
   }
-  &:checked + label::before {
-    background-color: var(--color-primary) !important;
+  &:focus + label::before {
+    background-color: var(--radio-focus-background-color);
+  }
+  &:checked + label::before,
+  &:checked:hover + label::before,
+  &:checked:focus + label::before {
+    background-color: var(--radio-checked-background-color);
   }
   &:checked + label::after {
     display: block;
     position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: white;
+    top: var(--radio-check-position-top);
+    left: var(--radio-check-position-left);
+    width: var(--radio-check-width);
+    height: var(--radio-check-height);
+    border-radius: var(--radio-check-border-radius);
+    background-color: var(--radio-check-background-color);
     content: '';
   }
-  &:disabled + label {
-    color: var(--disabled-color);
+  &:disabled + label,
+  &:disabled:hover + label,
+  &:disabled:focus + label {
+    color: var(--radio-label-disabled-color);
     cursor: not-allowed;
   }
-  &:disabled + label::before {
-    background-color: var(--gray-lightest);
+  &:disabled + label::before,
+  &:disabled:hover + label::before,
+  &:disabled:focus + label::before {
+    background-color: var(--radio-disabled-background-color);
   }
 }
 
-/* meter element styling – currently only works in Webkit browsers and Firefox */
+/* ====================
+   meter elements
+   ==================== */
+
+/* currently only works in Webkit browsers and Firefox */
 meter {
   -webkit-appearance: meter;
-  width: 100%;
-  background: var(--gray-lighter);
+  width: var(--meter-width);
+  background: var(--meter-background-color);
   &::-webkit-meter-bar {
-    background: var(--gray-lighter);
+    background: var(--meter-background-color);
   }
   &::-moz-meter-bar {
-    background: var(--gray-lighter);
+    background: var(--meter-background-color);
   }
   &::-webkit-meter-optimum-value {
-    background: var(--color-primary);
+    background: var(--meter-filled-color);
   }
   &:-moz-meter-optimum::-moz-meter-bar {
-    background: var(--color-primary);
+    background: var(--meter-filled-color);
   }
 }
 
-/* progress element styling */
+/* ====================
+   progress elements
+   ==================== */
+
 progress {
   &[value] {
-    width: 100%;
-    height: 1rem;
+    width: var(--progress-width);
+    height: var(--progress-height);
   }
   &::-webkit-progress-bar {
-    background-color: var(--gray-lighter);
+    background-color: var(--progress-background-color);
   }
   &::-webkit-progress-value {
-    background-color: var(--color-primary);
+    background-color: var(--progress-filled-color);
   }
   &::-moz-progress-bar {
-    background-color: var(--color-primary);
+    background-color: var(--progress-filled-color);
   }
 }
 
-/* range input styling */
-
-/* range input utility variables */
-:root {
-  --range-input-thumb-width: 24px;
-  --range-input-thumb-height: 24px;
-  --range-input-thumb-border-radius: 50%;
-  --range-input-thumb-background: var(--gray);
-  --range-input-track-width: 100%;
-  --range-input-track-height: 10px;
-  --range-input-track-background: var(--gray-lighter);
-  --range-input-track-focus-background: var(--gray-light);
-}
+/* ====================
+   range inputs
+   ==================== */
 
 input[type=range] {
-  width: 100%;
+  width: var(--range-input-width);
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -348,25 +381,31 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: var(--range-input-track-focus-background);
 }
 
-/* file input styling */
+/* ====================
+   file inputs
+   ==================== */
+
 input[type='file'] {
   @mixin visually-hidden;
 }
 
 input[type='file'] + label {
   @mixin button;
-  font-weight: normal;
 }
 
-/* color input styling */
+/* ====================
+   color inputs
+   ==================== */
+
 input[type='color'] {
-  width: 2.5rem;
+  width: var(--color-input-width);
   padding: 0;
+  border: 0;
   &::-webkit-color-swatch-wrapper {
     padding: 0;
   }
   &::-webkit-color-swatch {
     border: none;
-    border-radius: 0;
+    border-radius: var(--color-border-radius);
   }
 }

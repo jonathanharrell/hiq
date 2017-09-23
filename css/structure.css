@@ -1,4 +1,8 @@
-/* container mixins */
+/* ====================
+   containers
+   ==================== */
+
+/* mixins */
 @define-mixin container {
   max-width: var(--max-container-width);
   margin: 0 auto;
@@ -17,23 +21,32 @@
   }
 }
 
-/* semantic elements */
+/* ====================
+   semantic block elements
+   ==================== */
+
 article,
 section,
 nav {
-  margin: 1rem 0;
+  margin: var(--block-semantic-element-margin-vertical) 0;
 }
 
-/* horizontal rule */
+/* ====================
+   horizontal rules
+   ==================== */
+
 hr {
   display: block;
-  height: 1px;
-  margin: 1rem 0;
+  height: var(--horizontal-rule-height);
+  margin: var(--horizontal-rule-margin-vertical) 0;
   border: none;
-  background-color: var(--border-color);
+  background-color: var(--horizontal-rule-color);
 }
 
-/* media/embeds */
+/* ====================
+   media/embeds
+   ==================== */
+
 figure,
 figcaption,
 img,
@@ -44,7 +57,7 @@ meter,
 progress,
 iframe {
   display: block;
-  width: 100%;
+  width: var(--media-width);
   max-width: 100%;
-  margin-bottom: 1rem;
+  margin: var(--media-margin-vertical) 0;
 }

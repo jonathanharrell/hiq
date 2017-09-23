@@ -1,9 +1,16 @@
-/* responsive typography utility variables */
+/* ====================
+   fluid sizing utility variables
+   ==================== */
+
 :root {
   --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
   --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
   --viewport-difference: calc(100vw - (var(--unitless-lower-font-range) * 1px));
 }
+
+/* ====================
+   global font settings
+   ==================== */
 
 html {
   /* font smoothing */
@@ -19,21 +26,28 @@ html {
   /* base line height */
   line-height: var(--base-line-height);
 
+  /* base font weight */
+  font-weight: var(--font-weight-base);
+
   /* set upper font range limit */
   @media (--upper-font-range) {
     font-size: calc(var(--unitless-max-font-size) * 1px);
   }
 }
 
-/* heading line height */
+/* ====================
+   headings
+   ==================== */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 1rem;
+  margin-bottom: var(--heading-margin-bottom);
   line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
 }
 
 /* heading sizes and spacing */
@@ -61,9 +75,22 @@ h6 {
   font-size: var(--font-size-6);
 }
 
+/* ====================
+   additional type styles
+   ==================== */
+
 /* small font size */
 small {
   font-size: var(--font-size-small);
+}
+
+/* additional font weights */
+strong {
+  font-weight: var(--strong-font-weight);
+}
+
+b {
+  font-weight: var(--bold-font-weight);
 }
 
 /* block spacing */
@@ -72,60 +99,63 @@ dl,
 ol,
 ul,
 blockquote,
-pre,
-table {
-  margin-bottom: 1rem;
+pre {
+  margin: var(--block-element-margin-vertical) 0;
 }
 
 /* definition list styling */
 dt {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--definition-list-title-font-weight);
 }
 
 /* abbreviation */
 abbr[title] {
-  border-bottom: dashed 1px currentcolor;
+  border-bottom: dotted 1px currentColor;
   text-decoration: none;
-}
-
-/* list spacing */
-ol,
-ul {
-  margin-left: 1em;
-}
-
-/* unordered list bullets */
-ul {
-  list-style: disc;
 }
 
 /* blockquote */
 blockquote p {
-  &::before {
-    content: '\201c';
-  }
-  &::after {
-    content: '\201d';
-  }
+  &::before { content: '\201c'; }
+  &::after { content: '\201d'; }
 }
 
-/* code formatting */
+/* ====================
+   list styles
+   ==================== */
+ol,
+ul {
+  margin-left: var(--list-margin-left);
+}
+
+/* unordered list bullets */
+ul {
+  list-style: var(--unordered-list-style);
+}
+
+/* ====================
+   code styles
+   ==================== */
+
 code,
 kbd,
 samp,
 pre {
   font-family: var(--font-family-monospace), monospace;
-  background-color: var(--background-color);
+  background-color: var(--code-background-color);
 }
 
+/* inline code snippets */
 code,
 kbd,
 samp {
-  padding: 0.25rem 0.5rem;
+  padding: var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
 }
 
+/* block code snippets */
 pre {
   overflow: auto;
-  padding: 1rem;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
 }
 
