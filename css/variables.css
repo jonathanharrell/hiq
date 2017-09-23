@@ -58,6 +58,9 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* letter spacing */
+  --letter-spacing-base: auto;
+
   /* applied font weights */
   --font-weight-base: var(--font-weight-normal);
   --heading-font-weight: var(--font-weight-medium);

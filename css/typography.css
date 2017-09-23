@@ -29,6 +29,9 @@ html {
   /* base font weight */
   font-weight: var(--font-weight-base);
 
+  /* base letter spacing */
+  letter-spacing: var(--letter-spacing-base);
+
   /* set upper font range limit */
   @media (--upper-font-range) {
     font-size: calc(var(--unitless-max-font-size) * 1px);

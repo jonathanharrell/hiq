@@ -678,6 +678,9 @@ input[type=range]::-ms-track {
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* letter spacing */
+  --letter-spacing-base: auto;
+
   /* applied font weights */
   --font-weight-base: 400;
   --font-weight-base: var(--font-weight-normal);
@@ -1132,7 +1135,11 @@ html {
 
   /* base font weight */
   font-weight: 400;
-  font-weight: var(--font-weight-base)
+  font-weight: var(--font-weight-base);
+
+  /* base letter spacing */
+  letter-spacing: auto;
+  letter-spacing: var(--letter-spacing-base)
 
   /* set upper font range limit */
 }
