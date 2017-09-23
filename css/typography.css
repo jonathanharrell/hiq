@@ -145,6 +145,7 @@ kbd,
 samp,
 pre {
   font-family: var(--font-family-monospace), monospace;
+  color: var(--code-text-color);
   background-color: var(--code-background-color);
 }
 

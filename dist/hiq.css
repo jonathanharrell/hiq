@@ -994,8 +994,10 @@ input[type=range]::-ms-track {
      code variables
      ==================== */
 
-  --code-background-color: hsl(0, 0%, 98%);
+  --code-text-color: #3f2ab1;
 
+  --code-text-color: var(--color-primary);
+  --code-background-color: hsl(0, 0%, 98%);
   --code-background-color: var(--background-color);
   --inline-code-padding-vertical: 0.25rem;
   --inline-code-padding-horizontal: 0.5rem;
@@ -1250,6 +1252,8 @@ samp,
 pre {
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
   font-family: var(--font-family-monospace), monospace;
+  color: #3f2ab1;
+  color: var(--code-text-color);
   background-color: hsl(0, 0%, 98%);
   background-color: var(--code-background-color);
 }

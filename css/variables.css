@@ -313,6 +313,7 @@
      code variables
      ==================== */
 
+  --code-text-color: var(--color-primary);
   --code-background-color: var(--background-color);
   --inline-code-padding-vertical: 0.25rem;
   --inline-code-padding-horizontal: 0.5rem;
