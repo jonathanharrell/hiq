@@ -2,12 +2,7 @@
    generic button mixin
    ==================== */
 
-button,
-[role='button'],
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-input[type='file'] + label {
+@define-mixin button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
