@@ -218,7 +218,7 @@ textarea:focus,
     }
 }
 textarea:hover {
-    border-color: #3f2ab1;
+    border-color: transparent;
     border-color: var(--input-hover-border-color);
     color: #3f2ab1;
     color: var(--input-hover-text-color);
@@ -342,7 +342,7 @@ input[type='text']:focus,
     }
 }
 input[type='text']:hover, input[type='password']:hover, input[type='url']:hover, input[type='email']:hover, input[type='tel']:hover, input[type='search']:hover, input[type='number']:hover, input[type='date']:hover, input[type='month']:hover, input[type='week']:hover, input[type='datetime-local']:hover, input[type='color']:hover, select:hover {
-    border-color: #3f2ab1;
+    border-color: transparent;
     border-color: var(--input-hover-border-color);
     color: #3f2ab1;
     color: var(--input-hover-text-color);
@@ -621,8 +621,8 @@ input[type=range]::-ms-track {
      ==================== */
 
   /* container variables */
-  --max-container-width: 60rem;
-  --container-horizontal-padding: 5vw;
+  --max-container-width: 45rem;
+  --container-horizontal-padding: 3rem;
 
   /* spacing variables */
   --block-element-margin-vertical: 1rem;
@@ -713,7 +713,7 @@ input[type=range]::-ms-track {
   /* semantic palette */
   --color-primary: #3f2ab1;
   --color-success: #3f2ab1;
-  --color-warning: #ff5722;
+  --color-warning: rgb(111, 95, 197);
   --color-error: rgb(111, 95, 197);
 
   /* applied colors */
@@ -723,8 +723,8 @@ input[type=range]::-ms-track {
   --body-background-color: white;
   --background-color: hsl(0, 0%, 98%);
   --background-color: var(--gray-lightest);
-  --border-color: hsl(0, 0%, 75%);
-  --border-color: var(--gray-light);
+  --border-color: hsl(0, 0%, 95%);
+  --border-color: var(--gray-lighter);
   --mark-color: rgb(207, 202, 236);
   --selection-color: rgb(226, 223, 243);
   --deleted-color: rgb(111, 95, 197);
@@ -805,7 +805,7 @@ input[type=range]::-ms-track {
   --table-cell-padding-vertical: 0.5rem;
   --table-cell-padding-horizontal: 0.75rem;
   --table-cell-border-width: 1px;
-  --table-cell-border-color: hsl(0, 0%, 75%);
+  --table-cell-border-color: hsl(0, 0%, 95%);
   --table-cell-border-color: var(--border-color);
   --table-heading-font-weight: 600;
   --table-heading-font-weight: var(--font-weight-semibold);
@@ -831,7 +831,7 @@ input[type=range]::-ms-track {
   --label-font-weight: 600;
   --label-font-weight: var(--font-weight-semibold);
 
-  /* inputs */
+  /* text inputs */
   --input-display: block;
   --input-width: 100%;
   --input-height: 2.5rem;
@@ -850,8 +850,7 @@ input[type=range]::-ms-track {
   --input-background-color: var(--gray-lighter);
 
   /* hover input colors */
-  --input-hover-border-color: #3f2ab1;
-  --input-hover-border-color: var(--color-primary);
+  --input-hover-border-color: transparent;
   --input-hover-text-color: #3f2ab1;
   --input-hover-text-color: var(--color-primary);
   --input-hover-placeholder-color: hsl(0, 0%, 50%);
@@ -994,15 +993,18 @@ input[type=range]::-ms-track {
      code variables
      ==================== */
 
-  --code-text-color: #3f2ab1;
+  --code-font-size: 0.875rem;
 
+  --code-font-size: var(--font-size-small);
+  --code-text-color: #3f2ab1;
   --code-text-color: var(--color-primary);
-  --code-background-color: hsl(0, 0%, 98%);
-  --code-background-color: var(--background-color);
+  --code-background-color: #f2f0f9;
   --inline-code-padding-vertical: 0.25rem;
   --inline-code-padding-horizontal: 0.5rem;
   --block-code-padding-vertical: 1rem;
   --block-code-padding-horizontal: 1rem;
+  --block-code-border-radius: 4px;
+  --block-code-border-radius: var(--border-radius);
 }
 /* utility classes */
 /* ====================
@@ -1050,10 +1052,10 @@ input[type=range]::-ms-track {
 /* mixins */
 /* wrapper div */
 .container {
-  max-width: 60rem;
+  max-width: 45rem;
   max-width: var(--max-container-width);
   margin: 0 auto;
-  padding: 0 5vw;
+  padding: 0 3rem;
   padding: 0 var(--container-horizontal-padding)
 }
 .container.is-fluid {
@@ -1062,6 +1064,8 @@ input[type=range]::-ms-track {
 /* ====================
    semantic block elements
    ==================== */
+header,
+footer,
 article,
 section,
 nav {
@@ -1248,13 +1252,16 @@ ul {
    ==================== */
 code,
 kbd,
-samp,
-pre {
+samp {
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
   font-family: var(--font-family-monospace), monospace;
+  font-size: 0.875rem;
+  font-size: var(--code-font-size);
+  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   color: #3f2ab1;
   color: var(--code-text-color);
-  background-color: hsl(0, 0%, 98%);
+  background-color: #f2f0f9;
   background-color: var(--code-background-color);
 }
 /* inline code snippets */
@@ -1270,6 +1277,12 @@ pre {
   -webkit-overflow-scrolling: touch;
   padding: 1rem 1rem;
   padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
+  border-radius: 4px;
+  border-radius: var(--block-code-border-radius)
+}
+pre code {
+    padding: 0;
+    background-color: transparent;
 }
 /* ====================
    applied colors
@@ -1321,31 +1334,6 @@ ins {
   background-color: var(--selection-color);
 }
 /* element styles */
-/* table styling */
-table {
-  width: 100%;
-  width: var(--table-width)
-}
-table caption {
-    margin-bottom: 1rem;
-    margin-bottom: var(--table-caption-margin-bottom);
-    text-align: left;
-    font-weight: 600;
-    font-weight: var(--table-caption-font-weight);
-}
-th,
-td {
-  padding: 0.5rem 0.75rem;
-  padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
-  border: 1px solid hsl(0, 0%, 75%);
-  border: var(--table-cell-border-width) solid var(--table-cell-border-color);
-  text-align: left;
-  vertical-align: top;
-}
-th {
-  font-weight: 600;
-  font-weight: var(--table-heading-font-weight);
-}
 /* ====================
    generic button mixin
    ==================== */
@@ -1396,6 +1384,31 @@ button:hover, [role='button']:hover, input[type='submit']:hover, input[type='but
     color: var(--button-hover-text-color);
     background-color: rgb(32, 21, 89);
     background-color: var(--button-hover-background-color);
+}
+/* table styling */
+table {
+  width: 100%;
+  width: var(--table-width)
+}
+table caption {
+    margin-bottom: 1rem;
+    margin-bottom: var(--table-caption-margin-bottom);
+    text-align: left;
+    font-weight: 600;
+    font-weight: var(--table-caption-font-weight);
+}
+th,
+td {
+  padding: 0.5rem 0.75rem;
+  padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+  border: 1px solid hsl(0, 0%, 95%);
+  border: var(--table-cell-border-width) solid var(--table-cell-border-color);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  font-weight: 600;
+  font-weight: var(--table-heading-font-weight);
 }
 /* ====================
    general form styling

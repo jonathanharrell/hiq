@@ -13,6 +13,6 @@
 @import 'color.css';
 
 /* element styles */
-@import 'tables.css';
 @import 'buttons.css';
+@import 'tables.css';
 @import 'forms.css';

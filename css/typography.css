@@ -142,9 +142,10 @@ ul {
 
 code,
 kbd,
-samp,
-pre {
+samp {
   font-family: var(--font-family-monospace), monospace;
+  font-size: var(--code-font-size);
+  font-weight: var(--font-weight-normal);
   color: var(--code-text-color);
   background-color: var(--code-background-color);
 }
@@ -161,5 +162,9 @@ pre {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
+  border-radius: var(--block-code-border-radius);
+  & code {
+    padding: 0;
+    background-color: transparent;
+  }
 }
-

@@ -4,8 +4,8 @@
      ==================== */
 
   /* container variables */
-  --max-container-width: 60rem;
-  --container-horizontal-padding: 5vw;
+  --max-container-width: 45rem;
+  --container-horizontal-padding: 3rem;
 
   /* spacing variables */
   --block-element-margin-vertical: 1rem;
@@ -88,7 +88,7 @@
   /* semantic palette */
   --color-primary: #3f2ab1;
   --color-success: #3f2ab1;
-  --color-warning: #ff5722;
+  --color-warning: color(#3f2ab1 tint(25%));
   --color-error: color(#3f2ab1 tint(25%));
 
   /* applied colors */
@@ -96,7 +96,7 @@
   --html-background-color: white;
   --body-background-color: white;
   --background-color: var(--gray-lightest);
-  --border-color: var(--gray-light);
+  --border-color: var(--gray-lighter);
   --mark-color: color(#3f2ab1 tint(75%));
   --selection-color: color(#3f2ab1 tint(85%));
   --deleted-color: var(--color-error);
@@ -188,7 +188,7 @@
   --label-margin-bottom: 0.5rem;
   --label-font-weight: var(--font-weight-semibold);
 
-  /* inputs */
+  /* text inputs */
   --input-display: block;
   --input-width: 100%;
   --input-height: 2.5rem;
@@ -203,7 +203,7 @@
   --input-background-color: var(--gray-lighter);
 
   /* hover input colors */
-  --input-hover-border-color: var(--color-primary);
+  --input-hover-border-color: transparent;
   --input-hover-text-color: var(--color-primary);
   --input-hover-placeholder-color: var(--gray);
   --input-hover-background-color: var(--gray-lighter);
@@ -313,10 +313,12 @@
      code variables
      ==================== */
 
+  --code-font-size: var(--font-size-small);
   --code-text-color: var(--color-primary);
-  --code-background-color: var(--background-color);
+  --code-background-color: #f2f0f9;
   --inline-code-padding-vertical: 0.25rem;
   --inline-code-padding-horizontal: 0.5rem;
   --block-code-padding-vertical: 1rem;
   --block-code-padding-horizontal: 1rem;
+  --block-code-border-radius: var(--border-radius);
 }
