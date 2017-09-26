@@ -2,7 +2,13 @@
    generic button mixin
    ==================== */
 
-@define-mixin button {
+button,
+.button,
+[role='button'],
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+input[type='file'] + label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -49,13 +55,4 @@
     background-color: var(--button-disabled-background-color);
     cursor: not-allowed;
   }
-}
-
-/* applying the mixin */
-button,
-[role='button'],
-input[type='submit'],
-input[type='button'],
-input[type='reset'] {
-  @mixin button;
 }
