@@ -3,7 +3,6 @@
    ==================== */
 
 button,
-.button,
 [role='button'],
 input[type='submit'],
 input[type='button'],
@@ -55,4 +54,14 @@ input[type='file'] + label {
     background-color: var(--button-disabled-background-color);
     cursor: not-allowed;
   }
+}
+
+/* applying the mixin */
+button,
+[role='button'],
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+input[type='file'] + label {
+  @mixin button;
 }

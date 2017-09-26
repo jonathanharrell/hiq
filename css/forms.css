@@ -391,6 +391,10 @@ input[type='file'] {
   @mixin visually-hidden;
 }
 
+input[type='file'] + label {
+  @mixin button;
+}
+
 /* ====================
    color inputs
    ==================== */
