@@ -3,6 +3,39 @@ input[type='color']::-webkit-color-swatch {
     border-radius: 0;
     border-radius: var(--color-border-radius);
 }
+input[type='file'] + label:disabled,
+  input[type='file'] + label:disabled:hover,
+  input[type='file'] + label:disabled:focus,
+  input[type='file'] + label:disabled:active,
+  input[type='file'] + label:disabled:visited {
+    border-color: transparent;
+    border-color: var(--button-disabled-border-color);
+    color: hsl(0, 0%, 75%);
+    color: var(--button-disabled-text-color);
+    background-color: hsl(0, 0%, 98%);
+    background-color: var(--button-disabled-background-color);
+    cursor: not-allowed;
+}
+input[type='file'] + label:visited {
+    color: white;
+    color: var(--button-text-color);
+}
+input[type='file'] + label:active {
+    border-color: transparent;
+    border-color: var(--button-active-border-color);
+    color: white;
+    color: var(--button-active-text-color);
+    background-color: rgb(32, 21, 89);
+    background-color: var(--button-active-background-color);
+}
+input[type='file'] + label:focus {
+    border-color: transparent;
+    border-color: var(--button-focus-border-color);
+    color: white;
+    color: var(--button-focus-text-color);
+    background-color: rgb(32, 21, 89);
+    background-color: var(--button-focus-background-color);
+}
 progress::-moz-progress-bar {
     background-color: #3f2ab1;
     background-color: var(--progress-filled-color);
@@ -333,11 +366,6 @@ button:disabled,
   button:disabled:focus,
   button:disabled:active,
   button:disabled:visited,
-  .button:disabled,
-  .button:disabled:hover,
-  .button:disabled:focus,
-  .button:disabled:active,
-  .button:disabled:visited,
   [role='button']:disabled,
   [role='button']:disabled:hover,
   [role='button']:disabled:focus,
@@ -371,11 +399,11 @@ button:disabled,
     background-color: var(--button-disabled-background-color);
     cursor: not-allowed;
 }
-button:visited, .button:visited, [role='button']:visited, input[type='submit']:visited, input[type='button']:visited, input[type='reset']:visited, input[type='file'] + label:visited {
+button:visited, [role='button']:visited, input[type='submit']:visited, input[type='button']:visited, input[type='reset']:visited, input[type='file'] + label:visited {
     color: white;
     color: var(--button-text-color);
 }
-button:active, .button:active, [role='button']:active, input[type='submit']:active, input[type='button']:active, input[type='reset']:active, input[type='file'] + label:active {
+button:active, [role='button']:active, input[type='submit']:active, input[type='button']:active, input[type='reset']:active, input[type='file'] + label:active {
     border-color: transparent;
     border-color: var(--button-active-border-color);
     color: white;
@@ -383,7 +411,7 @@ button:active, .button:active, [role='button']:active, input[type='submit']:acti
     background-color: rgb(32, 21, 89);
     background-color: var(--button-active-background-color);
 }
-button:focus, .button:focus, [role='button']:focus, input[type='submit']:focus, input[type='button']:focus, input[type='reset']:focus, input[type='file'] + label:focus {
+button:focus, [role='button']:focus, input[type='submit']:focus, input[type='button']:focus, input[type='reset']:focus, input[type='file'] + label:focus {
     border-color: transparent;
     border-color: var(--button-focus-border-color);
     color: white;
@@ -1314,8 +1342,8 @@ ins {
 /* ====================
    generic button mixin
    ==================== */
+/* applying the mixin */
 button,
-.button,
 [role='button'],
 input[type='submit'],
 input[type='button'],
@@ -1353,9 +1381,9 @@ input[type='file'] + label {
   background-color: var(--button-background-color);
   transition: background-color 0.1s ease-out;
   transition: background-color var(--speed) var(--easing);
-  cursor: pointer
+  cursor: pointer;
 }
-button:hover, .button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover, input[type='file'] + label:hover {
+button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover, input[type='file'] + label:hover {
     border-color: transparent;
     border-color: var(--button-hover-border-color);
     color: white;
@@ -1711,6 +1739,49 @@ input[type='file'] {
   padding: 0;
   border: 0;
   white-space: nowrap;
+}
+input[type='file'] + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  height: 2.25rem;
+  height: var(--button-height);
+  padding: 0 0.75rem;
+  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
+  border-width: 1px;
+  border-width: var(--button-border-width);
+  border-style: solid;
+  border-color: #3f2ab1;
+  border-color: var(--button-border-color);
+  border-radius: 4px;
+  border-radius: var(--button-border-radius);
+  outline: 0;
+  text-decoration: none;
+  font-weight: 500;
+  font-weight: var(--button-font-weight);
+  white-space: nowrap;
+  color: white;
+  color: var(--button-text-color);
+  background-color: #3f2ab1;
+  background-color: var(--button-background-color);
+  transition: background-color 0.1s ease-out;
+  transition: background-color var(--speed) var(--easing);
+  cursor: pointer;
+}
+input[type='file'] + label:hover {
+    border-color: transparent;
+    border-color: var(--button-hover-border-color);
+    color: white;
+    color: var(--button-hover-text-color);
+    background-color: rgb(32, 21, 89);
+    background-color: var(--button-hover-background-color);
 }
 /* ====================
    color inputs
