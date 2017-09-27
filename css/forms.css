@@ -33,6 +33,7 @@ textarea {
   border-width: var(--input-border-width);
   border-style: solid;
   border-color: var(--input-border-color);
+  border-radius: var(--input-border-radius);
   color: var(--input-text-color);
   background-color: var(--input-background-color);
   &::placeholder {

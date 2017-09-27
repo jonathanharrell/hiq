@@ -195,6 +195,7 @@
   --input-padding-vertical: 0;
   --input-padding-horizontal: 0.75rem;
   --input-border-width: 1px;
+  --input-border-radius: var(--border-radius);
 
   /* static input colors */
   --input-border-color: var(--gray-lighter);
