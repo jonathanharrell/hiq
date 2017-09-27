@@ -123,6 +123,11 @@ blockquote p {
   &::after { content: '\201d'; }
 }
 
+/* address */
+address {
+  font-style: normal;
+}
+
 /* ====================
    list styles
    ==================== */
