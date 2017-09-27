@@ -82,14 +82,14 @@
   --gray-dark: hsl(0, 0%, 25%);
   --gray: hsl(0, 0%, 50%);
   --gray-light: hsl(0, 0%, 75%);
-  --gray-lighter: hsl(0, 0%, 95%);
+  --gray-lighter: hsl(0, 0%, 90%);
   --gray-lightest: hsl(0, 0%, 98%);
 
   /* semantic palette */
   --color-primary: #3f2ab1;
   --color-success: #3f2ab1;
-  --color-warning: color(#3f2ab1 tint(25%));
-  --color-error: color(#3f2ab1 tint(25%));
+  --color-warning: #ffca28;
+  --color-error: #d32f2f;
 
   /* applied colors */
   --text-color: var(--gray-darker);

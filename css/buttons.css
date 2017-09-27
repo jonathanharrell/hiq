@@ -19,7 +19,7 @@
   white-space: nowrap;
   color: var(--button-text-color);
   background-color: var(--button-background-color);
-  transition: background-color var(--speed) var(--easing);
+  transition: border-color var(--speed) var(--easing), background-color var(--speed) var(--easing);
   cursor: pointer;
   &:hover {
     border-color: var(--button-hover-border-color);
