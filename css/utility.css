@@ -44,13 +44,3 @@
 .list-unstyled {
   @mixin list-unstyled;
 }
-
-/* class to add carets to selects and dropdowns */
-.caret {
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 0.45rem solid var(--text-color);
-  border-right: 0.4rem solid transparent;
-  border-left: 0.4rem solid transparent;
-}
