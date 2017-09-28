@@ -67,6 +67,7 @@
   --strong-font-weight: var(--font-weight-semibold);
   --bold-font-weight: var(--font-weight-semibold);
   --definition-list-title-font-weight: var(--font-weight-semibold);
+  --input-font-weight: var(--font-weight-normal);
 
   /* list variables */
   --list-margin-left: 1rem;
