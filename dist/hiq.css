@@ -697,6 +697,8 @@ input[type=range]::-ms-track {
   --bold-font-weight: var(--font-weight-semibold);
   --definition-list-title-font-weight: 600;
   --definition-list-title-font-weight: var(--font-weight-semibold);
+  --input-font-weight: 400;
+  --input-font-weight: var(--font-weight-normal);
 
   /* list variables */
   --list-margin-left: 1rem;
@@ -1231,6 +1233,10 @@ blockquote p {
 }
 blockquote p::before { content: '\201c';
 }
+/* address */
+address {
+  font-style: normal;
+}
 /* ====================
    list styles
    ==================== */
@@ -1275,7 +1281,9 @@ pre {
   padding: 1rem 1rem;
   padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
   border-radius: 4px;
-  border-radius: var(--block-code-border-radius)
+  border-radius: var(--block-code-border-radius);
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
+  font-family: var(--font-family-monospace), monospace
 }
 pre code {
     padding: 0;
@@ -1466,6 +1474,8 @@ select {
   border-color: var(--input-border-color);
   border-radius: 4px;
   border-radius: var(--input-border-radius);
+  font-weight: 400;
+  font-weight: var(--input-font-weight);
   color: hsl(0, 0%, 10%);
   color: var(--input-text-color);
   background-color: hsl(0, 0%, 90%);
@@ -1502,6 +1512,8 @@ textarea {
   border-color: var(--input-border-color);
   border-radius: 4px;
   border-radius: var(--input-border-radius);
+  font-weight: 400;
+  font-weight: var(--input-font-weight);
   color: hsl(0, 0%, 10%);
   color: var(--input-text-color);
   background-color: hsl(0, 0%, 90%);

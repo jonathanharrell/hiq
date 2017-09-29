@@ -168,6 +168,7 @@ pre {
   -webkit-overflow-scrolling: touch;
   padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
   border-radius: var(--block-code-border-radius);
+  font-family: var(--font-family-monospace), monospace;
   & code {
     padding: 0;
     background-color: transparent;
