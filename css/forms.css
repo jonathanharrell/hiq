@@ -114,7 +114,7 @@ textarea {
 select {
   background-image: var(--select-background-image);
   background-repeat: no-repeat;
-  background-position: right 1rem center;
+  background-position: var(--select-background-position);
   background-size: var(--select-background-size);
   cursor: pointer;
 }
