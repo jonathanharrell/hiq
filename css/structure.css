@@ -49,8 +49,6 @@ hr {
    media/embeds
    ==================== */
 
-figure,
-figcaption,
 img,
 audio,
 video,
@@ -62,8 +60,6 @@ iframe {
   margin: var(--media-margin-vertical) 0;
 }
 
-figure,
-figcaption,
 img,
 audio,
 video,

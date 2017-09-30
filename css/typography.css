@@ -102,6 +102,7 @@ dl,
 ol,
 ul,
 blockquote,
+figcaption,
 pre {
   margin: var(--block-element-margin-vertical) 0;
 }
