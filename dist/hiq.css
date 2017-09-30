@@ -1097,11 +1097,19 @@ meter,
 progress,
 iframe {
   display: block;
+  margin: 1rem 0;
+  margin: var(--media-margin-vertical) 0;
+}
+figure,
+figcaption,
+img,
+audio,
+video,
+canvas,
+iframe {
   width: 100%;
   width: var(--media-width);
   max-width: 100%;
-  margin: 1rem 0;
-  margin: var(--media-margin-vertical) 0;
 }
 /* ====================
    fluid sizing utility variables
@@ -1253,9 +1261,12 @@ ul {
 /* ====================
    code styles
    ==================== */
+/* inline code snippets */
 code,
 kbd,
 samp {
+  padding: 0.25rem 0.5rem;
+  padding: var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
   font-family: var(--font-family-monospace), monospace;
   font-size: 0.875rem;
@@ -1267,13 +1278,6 @@ samp {
   background-color: #f2f0f9;
   background-color: var(--code-background-color);
 }
-/* inline code snippets */
-code,
-kbd,
-samp {
-  padding: 0.25rem 0.5rem;
-  padding: var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
-}
 /* block code snippets */
 pre {
   overflow: auto;
@@ -1283,7 +1287,11 @@ pre {
   border-radius: 4px;
   border-radius: var(--block-code-border-radius);
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
-  font-family: var(--font-family-monospace), monospace
+  font-family: var(--font-family-monospace), monospace;
+  font-size: 0.875rem;
+  font-size: var(--code-font-size);
+  font-weight: 400;
+  font-weight: var(--font-weight-normal)
 }
 pre code {
     padding: 0;
@@ -1379,8 +1387,8 @@ input[type='file'] + label {
   color: var(--button-text-color);
   background-color: #3f2ab1;
   background-color: var(--button-background-color);
-  transition: border-color 0.1s ease-out, background-color 0.1s ease-out;
-  transition: border-color var(--speed) var(--easing), background-color var(--speed) var(--easing);
+  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
+  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
   cursor: pointer;
 }
 button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover, input[type='file'] + label:hover {
@@ -1438,10 +1446,10 @@ fieldset legend {
 }
 label {
   display: block;
-  margin-bottom: 1rem;
-  margin-bottom: var(--legend-margin-bottom);
+  margin-bottom: 0.5rem;
+  margin-bottom: var(--label-margin-bottom);
   font-weight: 600;
-  font-weight: var(--legend-font-weight);
+  font-weight: var(--label-font-weight);
 }
 input,
 select,
@@ -1480,6 +1488,8 @@ select {
   color: var(--input-text-color);
   background-color: hsl(0, 0%, 90%);
   background-color: var(--input-background-color);
+  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
+  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
   display: block;
   display: var(--input-display);
   width: 100%;
@@ -1518,6 +1528,8 @@ textarea {
   color: var(--input-text-color);
   background-color: hsl(0, 0%, 90%);
   background-color: var(--input-background-color);
+  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
+  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
   display: block;
   display: var(--textarea-display);
   width: 100%;
@@ -1779,8 +1791,8 @@ input[type='file'] + label {
   color: var(--button-text-color);
   background-color: #3f2ab1;
   background-color: var(--button-background-color);
-  transition: border-color 0.1s ease-out, background-color 0.1s ease-out;
-  transition: border-color var(--speed) var(--easing), background-color var(--speed) var(--easing);
+  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
+  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
   cursor: pointer;
 }
 input[type='file'] + label:hover {
