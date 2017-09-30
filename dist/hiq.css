@@ -218,9 +218,9 @@ textarea:focus,
     }
 }
 textarea:hover {
-    border-color: transparent;
+    border-color: hsl(0, 0%, 90%);
     border-color: var(--input-hover-border-color);
-    color: #3f2ab1;
+    color: hsl(0, 0%, 10%);
     color: var(--input-hover-text-color);
     background-color: hsl(0, 0%, 90%);
     background-color: var(--input-hover-background-color);
@@ -342,9 +342,9 @@ input[type='text']:focus,
     }
 }
 input[type='text']:hover, input[type='password']:hover, input[type='url']:hover, input[type='email']:hover, input[type='tel']:hover, input[type='search']:hover, input[type='number']:hover, input[type='date']:hover, input[type='month']:hover, input[type='week']:hover, input[type='datetime-local']:hover, input[type='color']:hover, select:hover {
-    border-color: transparent;
+    border-color: hsl(0, 0%, 90%);
     border-color: var(--input-hover-border-color);
-    color: #3f2ab1;
+    color: hsl(0, 0%, 10%);
     color: var(--input-hover-text-color);
     background-color: hsl(0, 0%, 90%);
     background-color: var(--input-hover-background-color);
@@ -859,13 +859,14 @@ input[type=range]::-ms-track {
   --input-background-color: var(--gray-lighter);
 
   /* hover input colors */
-  --input-hover-border-color: transparent;
-  --input-hover-text-color: #3f2ab1;
-  --input-hover-text-color: var(--color-primary);
+  --input-hover-border-color: hsl(0, 0%, 90%);
+  --input-hover-border-color: var(--input-border-color);
+  --input-hover-text-color: hsl(0, 0%, 10%);
+  --input-hover-text-color: var(--input-text-color);
   --input-hover-placeholder-color: hsl(0, 0%, 50%);
-  --input-hover-placeholder-color: var(--gray);
+  --input-hover-placeholder-color: var(--input-placeholder-color);
   --input-hover-background-color: hsl(0, 0%, 90%);
-  --input-hover-background-color: var(--gray-lighter);
+  --input-hover-background-color: var(--input-background-color);
 
   /* focus input colors */
   --input-focus-border-color: #3f2ab1;
@@ -873,9 +874,9 @@ input[type=range]::-ms-track {
   --input-focus-text-color: #3f2ab1;
   --input-focus-text-color: var(--color-primary);
   --input-focus-placeholder-color: hsl(0, 0%, 50%);
-  --input-focus-placeholder-color: var(--gray);
+  --input-focus-placeholder-color: var(--input-placeholder-color);
   --input-focus-background-color: hsl(0, 0%, 90%);
-  --input-focus-background-color: var(--gray-lighter);
+  --input-focus-background-color: var(--input-background-color);
 
   /* disabled input colors */
   --input-disabled-border-color: hsl(0, 0%, 98%);

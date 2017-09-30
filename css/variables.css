@@ -205,16 +205,16 @@
   --input-background-color: var(--gray-lighter);
 
   /* hover input colors */
-  --input-hover-border-color: transparent;
-  --input-hover-text-color: var(--color-primary);
-  --input-hover-placeholder-color: var(--gray);
-  --input-hover-background-color: var(--gray-lighter);
+  --input-hover-border-color: var(--input-border-color);
+  --input-hover-text-color: var(--input-text-color);
+  --input-hover-placeholder-color: var(--input-placeholder-color);
+  --input-hover-background-color: var(--input-background-color);
 
   /* focus input colors */
   --input-focus-border-color: var(--color-primary);
   --input-focus-text-color: var(--color-primary);
-  --input-focus-placeholder-color: var(--gray);
-  --input-focus-background-color: var(--gray-lighter);
+  --input-focus-placeholder-color: var(--input-placeholder-color);
+  --input-focus-background-color: var(--input-background-color);
 
   /* disabled input colors */
   --input-disabled-border-color: var(--gray-lightest);
