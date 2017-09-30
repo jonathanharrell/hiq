@@ -287,7 +287,6 @@
   --range-input-thumb-height: 24px;
   --range-input-thumb-border-radius: 50%;
   --range-input-thumb-background: var(--color-primary);
-  --range-input-track-width: 100%;
   --range-input-track-height: 10px;
   --range-input-track-background: var(--gray-lighter);
   --range-input-track-focus-background: var(--gray-lighter);
