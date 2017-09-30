@@ -1087,8 +1087,6 @@ hr {
 /* ====================
    media/embeds
    ==================== */
-figure,
-figcaption,
 img,
 audio,
 video,
@@ -1100,8 +1098,6 @@ iframe {
   margin: 1rem 0;
   margin: var(--media-margin-vertical) 0;
 }
-figure,
-figcaption,
 img,
 audio,
 video,
@@ -1222,6 +1218,7 @@ dl,
 ol,
 ul,
 blockquote,
+figcaption,
 pre {
   margin: 1rem 0;
   margin: var(--block-element-margin-vertical) 0;
