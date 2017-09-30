@@ -1,6 +1,6 @@
 {
   "name": "hiq",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Basic semantic styling for HTML elements",
   "main": "css/hiq.css",
   "scripts": {
