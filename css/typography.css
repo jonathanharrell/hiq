@@ -145,21 +145,16 @@ ul {
    code styles
    ==================== */
 
-code,
-kbd,
-samp {
-  font-family: var(--font-family-monospace), monospace;
-  font-size: var(--code-font-size);
-  font-weight: var(--font-weight-normal);
-  color: var(--code-text-color);
-  background-color: var(--code-background-color);
-}
-
 /* inline code snippets */
 code,
 kbd,
 samp {
   padding: var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
+  font-family: var(--font-family-monospace), monospace;
+  font-size: var(--code-font-size);
+  font-weight: var(--font-weight-normal);
+  color: var(--code-text-color);
+  background-color: var(--code-background-color);
 }
 
 /* block code snippets */
@@ -169,6 +164,8 @@ pre {
   padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
   border-radius: var(--block-code-border-radius);
   font-family: var(--font-family-monospace), monospace;
+  font-size: var(--code-font-size);
+  font-weight: var(--font-weight-normal);
   & code {
     padding: 0;
     background-color: transparent;

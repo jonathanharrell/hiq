@@ -59,7 +59,16 @@ meter,
 progress,
 iframe {
   display: block;
+  margin: var(--media-margin-vertical) 0;
+}
+
+figure,
+figcaption,
+img,
+audio,
+video,
+canvas,
+iframe {
   width: var(--media-width);
   max-width: 100%;
-  margin: var(--media-margin-vertical) 0;
 }
