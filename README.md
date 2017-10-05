@@ -9,11 +9,6 @@ Use the [theme builder](https://hiq.jonathan-harrell.com/theme-builder/structure
 
 In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles. Enter HiQ.
 
-## Documentation
-
-* [Install](#install)
-* [Usage](#usage)
-
 ## Install
 
 ```sh
