@@ -68,3 +68,7 @@ iframe {
   width: var(--media-width);
   max-width: 100%;
 }
+
+svg {
+  fill: currentColor;
+}

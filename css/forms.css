@@ -104,6 +104,7 @@ textarea {
   display: var(--textarea-display);
   width: var(--textarea-width);
   height: var(--textarea-height);
+  resize: vertical;
   padding: var(--textarea-padding-vertical) var(--textarea-padding-horizontal);
 }
 
