@@ -1,6 +1,7 @@
 /* ====================
    general form styling
    ==================== */
+
 fieldset {
   margin: var(--fieldset-margin-vertical) 0;
   padding: var(--fieldset-padding-vertical) var(--fieldset-padding-horizontal);
