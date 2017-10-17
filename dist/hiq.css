@@ -1107,6 +1107,9 @@ iframe {
   width: var(--media-width);
   max-width: 100%;
 }
+svg {
+  fill: currentColor;
+}
 /* ====================
    fluid sizing utility variables
    ==================== */
@@ -1146,8 +1149,16 @@ html {
   letter-spacing: -0.025em;
   letter-spacing: var(--letter-spacing-base)
 
+  /* set lower font range limit */
+
   /* set upper font range limit */
 }
+@media (max-width: 459px) {
+    html {
+    font-size: 15px;
+    font-size: calc(var(--unitless-min-font-size) * 1px);
+    }
+  }
 @media (min-width: 1200px) {
     html {
     font-size: 18px;
@@ -1533,6 +1544,7 @@ textarea {
   width: var(--textarea-width);
   height: auto;
   height: var(--textarea-height);
+  resize: vertical;
   padding: 0.5rem 0.75rem;
   padding: var(--textarea-padding-vertical) var(--textarea-padding-horizontal);
 }

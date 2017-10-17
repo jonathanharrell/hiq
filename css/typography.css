@@ -32,6 +32,11 @@ html {
   /* base letter spacing */
   letter-spacing: var(--letter-spacing-base);
 
+  /* set lower font range limit */
+  @media (--lower-font-range) {
+    font-size: calc(var(--unitless-min-font-size) * 1px);
+  }
+
   /* set upper font range limit */
   @media (--upper-font-range) {
     font-size: calc(var(--unitless-max-font-size) * 1px);

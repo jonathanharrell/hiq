@@ -34,6 +34,7 @@
   --unitless-upper-font-range: 1200;
 
   /* should match --unitless-upper-font-range with px unit */
+  @custom-media --lower-font-range (width < 460px);
   @custom-media --upper-font-range (width >= 1200px);
 
   /* base unitless line heights */
