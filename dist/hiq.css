@@ -1826,3 +1826,18 @@ input[type='color'] {
 input[type='color']::-webkit-color-swatch-wrapper {
     padding: 0;
 }
+/* ====================
+   speed up touch delay
+   ==================== */
+a,
+area,
+button,
+[role="button"],
+input:not([type=range]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}

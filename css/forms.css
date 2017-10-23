@@ -417,3 +417,20 @@ input[type='color'] {
     border-radius: var(--color-border-radius);
   }
 }
+
+/* ====================
+   speed up touch delay
+   ==================== */
+
+a,
+area,
+button,
+[role="button"],
+input:not([type=range]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
