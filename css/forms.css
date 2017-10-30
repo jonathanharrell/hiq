@@ -18,26 +18,26 @@ label {
   @mixin is-controlled;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 4px));
+  background-color: var(--input-background-color, white);
   font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
   color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
-  background-color: var(--input-background-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
   &::placeholder {
     color: var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%)));
   }
   &:hover {
     border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
-    color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
     background-color: var(--input-hover-background-color, var(--input-background-color), white);
+    color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
     &::placeholder {
       color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
     }
   }
   &:focus {
     border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
-    color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
     background-color: var(--input-focus-background-color, var(--input-background-color), white));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+    color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
     &::placeholder {
       color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
     }
@@ -45,8 +45,8 @@ label {
   &:disabled,
   &[readonly] {
     border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
-    color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
     background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+    color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
     &::placeholder {
       color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
     }
@@ -109,8 +109,8 @@ select[multiple] {
     position: relative;
     margin-bottom: var(--checkbox-margin-bottom, 0.5rem);
     padding: 0 var(--checkbox-label-padding-horizontal, 1.5rem);
-    line-height: 1;
     font-weight: var(--checkbox-label-font-weight);
+    line-height: 1;
     cursor: pointer;
     user-select: none;
     &::before {
@@ -139,8 +139,8 @@ select[multiple] {
       background-color: var(--checkbox-hover-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
     }
     &:focus + label::before {
-      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
       background-color: var(--checkbox-focus-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
     }
     &:checked + label::before {
       background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
@@ -179,8 +179,8 @@ select[multiple] {
     position: relative;
     margin-bottom: var(--radio-margin-bottom, 0.5rem);
     padding: 0 var(--radio-label-padding-horizontal, 1.5rem);
-    line-height: 1;
     font-weight: var(--radio-label-font-weight);
+    line-height: 1;
     cursor: pointer;
     user-select: none;
     &::before {
@@ -208,8 +208,8 @@ select[multiple] {
       background-color: var(--radio-hover-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
     }
     &:focus + label::before {
-      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
       background-color: var(--radio-focus-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
     }
     &:checked + label::before {
       background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
@@ -268,10 +268,10 @@ input[type='color'] {
 /* range inputs */
 
 input[type=range] {
-  -webkit-appearance: none;
   width: 100%;
-  outline: 0;
   background: transparent;
+  outline: 0;
+  -webkit-appearance: none;
   &::-webkit-slider-runnable-track {
     width: 100%;
     height: 0.5rem;
@@ -298,8 +298,8 @@ input[type=range] {
     height: var(--range-input-thumb-height, 1.5rem);
     border-width: var(--range-input-thumb-height, 1.5rem);
     border-color: transparent;
-    color: transparent;
     background-color: transparent;
+    color: transparent;
     transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
     cursor: pointer;
   }
@@ -316,13 +316,13 @@ input[type=range] {
     background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-webkit-slider-thumb {
-    -webkit-appearance: none;
     width: var(--range-input-thumb-width, 1.5rem);
     height: var(--range-input-thumb-height, 1.5rem);
     margin-top: -0.5rem;
     border-color: transparent;
     border-radius: var(--range-input-thumb-border-radius, 50%);
     background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    -webkit-appearance: none;
     cursor: pointer;
   }
   &::-moz-range-thumb {
@@ -374,9 +374,9 @@ input[type=range] {
 /* meter elements */
 
 meter {
-  -webkit-appearance: meter;
   width: 100%;
   background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  -webkit-appearance: meter;
   &::-webkit-meter-bar {
     background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
@@ -394,9 +394,9 @@ meter {
 /* progress elements */
 
 progress {
+  border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: none;
   &[value] {
     width: 100%;
     height: 1rem;

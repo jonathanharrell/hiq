@@ -9,36 +9,36 @@
   padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
   border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
   border-radius: var(--button-border-radius, 4px);
-  text-decoration: none;
-  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
-  color: var(--button-text-color, white);
   background-color: var(--button-background-color, hsl(210, 100%, 50%));
+  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
+  text-decoration: none;
+  color: var(--button-text-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
   cursor: pointer;
   &:hover {
     border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
-    color: var(--button-hover-text-color, white);
     background-color: var(--button-hover-background-color, hsl(210, 100%, 40%));
+    color: var(--button-hover-text-color, white);
   }
   &:focus {
     border-color: var(--button-focus-border-color, hsl(210, 100%, 50%));
+    background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
     box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-focus-box-shadow-color, hsl(210, 100%, 85%));
     color: var(--button-focus-text-color, white);
-    background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
   }
   &:active {
     border-color: var(--button-active-border-color, hsl(210, 100%, 30%));
+    background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
     box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-active-box-shadow-color, hsl(210, 100%, 85%));
     color: var(--button-active-text-color, white);
-    background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
   }
   &:visited {
     color: var(--button-text-color, white);
   }
   &:disabled {
     border-color: var(--button-disabled-border-color, transparent);
-    color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
     background-color: var(--button-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+    color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
     cursor: not-allowed;
   }
 }

@@ -30,14 +30,14 @@ html {
     font-size: calc(var(--unitless-max-font-size, 16) * 1px);
   }
 
-  /* base line height */
-  line-height: var(--line-height-base, 1.4);
-
   /* base font weight */
   font-weight: var(--font-weight-base, var(--font-weight-normal, 400));
 
   /* base letter spacing */
   letter-spacing: var(--letter-spacing-base, 0);
+
+  /* base line height */
+  line-height: var(--line-height-base, 1.4);
 
   /* text color */
   color: var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)));
@@ -52,8 +52,8 @@ h4,
 h5,
 h6 {
   margin-bottom: var(--heading-margin-bottom, 0.5rem);
-  line-height: var(--heading-line-height, 1.2);
   font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
+  line-height: var(--heading-line-height, 1.2);
 }
 
 /* heading sizes */
@@ -321,11 +321,11 @@ a {
 
 /* user selection color */
 ::-moz-selection {
-  text-shadow: none;
   background-color: var(--selection-color, hsl(210, 100%, 90%));
+  text-shadow: none;
 }
 
 ::selection {
-  text-shadow: none;
   background-color: var(--selection-color, hsl(210, 100%, 90%));
+  text-shadow: none;
 }

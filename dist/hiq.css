@@ -232,7 +232,7 @@ a:not([href]):not([tabindex]):focus {
 /* Code */
 /*
 1. Correct inheritance and scaling of font size in all browsers
-2. Correct odd `em` font sizing in all browsers
+2. Correct odd font sizing in all browsers
 Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
  */
 pre,
@@ -240,7 +240,7 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: 1rem; /* 2 */
 }
 /*
 1. Don't allow content to break outside
@@ -259,10 +259,12 @@ Source: https://github.com/jgthms/minireset.css
 img,
 embed,
 object,
-audio,
 video {
   max-width: 100%;
   height: auto;
+}
+audio {
+  max-width: 100%;
 }
 /*
 1. Remove the border on images inside links in IE 10-
@@ -606,10 +608,10 @@ html {/* set upper font range limit */
     font-size: calc(var(--unitless-max-font-size, 16) * 1px);
   }
 }
-html {/* base line height */
-  line-height: var(--line-height-base, 1.4);/* base font weight */
+html {/* base font weight */
   font-weight: var(--font-weight-base, var(--font-weight-normal, 400));/* base letter spacing */
-  letter-spacing: var(--letter-spacing-base, 0);/* text color */
+  letter-spacing: var(--letter-spacing-base, 0);/* base line height */
+  line-height: var(--line-height-base, 1.4);/* text color */
   color: var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)));
 }
 /* headings */
@@ -620,8 +622,8 @@ h4,
 h5,
 h6 {
   margin-bottom: var(--heading-margin-bottom, 0.5rem);
-  line-height: var(--heading-line-height, 1.2);
   font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
+  line-height: var(--heading-line-height, 1.2);
 }
 /* heading sizes */
 h1,
@@ -780,12 +782,12 @@ a:active {
 }
 /* user selection color */
 ::-moz-selection {
-  text-shadow: none;
   background-color: var(--selection-color, hsl(210, 100%, 90%));
+  text-shadow: none;
 }
 ::selection {
-  text-shadow: none;
   background-color: var(--selection-color, hsl(210, 100%, 90%));
+  text-shadow: none;
 }
 code,
 kbd,
@@ -797,19 +799,19 @@ samp {
 code {
   padding: var(--code-padding-vertical, 0.2rem) var(--code-padding-horizontal, 0.4rem);
   border-radius: var(--code-border-radius, var(--border-radius, 0.2rem));
-  color: var(--code-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
   background-color: var(--code-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  color: var(--code-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
 }
 a code {
   padding: 0;
-  color: inherit;
   background-color: inherit;
+  color: inherit;
 }
 kbd {
   padding: var(--kbd-padding-vertical, 0.2rem) var(--kbd-padding-horizontal, 0.4rem);
   border-radius: var(--kbd-border-radius, 0.2rem);
-  color: var(--kbd-text-color, white);
-  background-color: var(--kbd-background-color, var(--gray-dark, hsl(220, 10%, 20%)))
+  background-color: var(--kbd-background-color, var(--gray-dark, hsl(220, 10%, 20%)));
+  color: var(--kbd-text-color, white)
 }
 kbd kbd {
   padding: 0;
@@ -821,18 +823,18 @@ pre {
   margin-bottom: var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
   border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));
+  background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
   tab-size: 1.5rem;
   white-space: pre;
   word-wrap: normal;
-  color: var(--pre-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
-  background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)))
+  color: var(--pre-text-color, var(--gray-dark, hsl(220, 10%, 20%)))
 }
 pre code {
   padding: 0;
   border-radius: 0;
+  background-color: transparent;
   font-size: inherit;
   color: inherit;
-  background-color: transparent;
 }
 figure {
   margin-bottom: var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
@@ -859,10 +861,10 @@ button,
 [type='button'],
 [type='submit'],
 [type='reset'] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   box-shadow: none;
   outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -874,37 +876,37 @@ button,
   padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
   border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
   border-radius: var(--button-border-radius, 4px);
-  text-decoration: none;
-  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
-  color: var(--button-text-color, white);
   background-color: var(--button-background-color, hsl(210, 100%, 50%));
+  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
+  text-decoration: none;
+  color: var(--button-text-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
   cursor: pointer;
 }
 button:hover, .button:hover, [type='button']:hover, [type='submit']:hover, [type='reset']:hover {
   border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
-  color: var(--button-hover-text-color, white);
   background-color: var(--button-hover-background-color, hsl(210, 100%, 40%));
+  color: var(--button-hover-text-color, white);
 }
 button:focus, .button:focus, [type='button']:focus, [type='submit']:focus, [type='reset']:focus {
   border-color: var(--button-focus-border-color, hsl(210, 100%, 50%));
+  background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
   box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-focus-box-shadow-color, hsl(210, 100%, 85%));
   color: var(--button-focus-text-color, white);
-  background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
 }
 button:active, .button:active, [type='button']:active, [type='submit']:active, [type='reset']:active {
   border-color: var(--button-active-border-color, hsl(210, 100%, 30%));
+  background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
   box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-active-box-shadow-color, hsl(210, 100%, 85%));
   color: var(--button-active-text-color, white);
-  background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
 }
 button:visited, .button:visited, [type='button']:visited, [type='submit']:visited, [type='reset']:visited {
   color: var(--button-text-color, white);
 }
 button:disabled, .button:disabled, [type='button']:disabled, [type='submit']:disabled, [type='reset']:disabled {
   border-color: var(--button-disabled-border-color, transparent);
-  color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
   background-color: var(--button-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
   cursor: not-allowed;
 }
 /* Future-proof disabling of clicks on `<a>` elements */
@@ -969,15 +971,15 @@ input[type='month'],
 input[type='week'],
 input[type='datetime-local'],
 select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   box-shadow: none;
   outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 4px));
+  background-color: var(--input-background-color, white);
   font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
   color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
-  background-color: var(--input-background-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
 }
 input[type='text']::placeholder, input[type='password']::placeholder, input[type='url']::placeholder, input[type='email']::placeholder, input[type='tel']::placeholder, input[type='search']::placeholder, input[type='number']::placeholder, input[type='date']::placeholder, input[type='month']::placeholder, input[type='week']::placeholder, input[type='datetime-local']::placeholder, select::placeholder {
@@ -985,17 +987,17 @@ input[type='text']::placeholder, input[type='password']::placeholder, input[type
 }
 input[type='text']:hover, input[type='password']:hover, input[type='url']:hover, input[type='email']:hover, input[type='tel']:hover, input[type='search']:hover, input[type='number']:hover, input[type='date']:hover, input[type='month']:hover, input[type='week']:hover, input[type='datetime-local']:hover, select:hover {
   border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
-  color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
   background-color: var(--input-hover-background-color, var(--input-background-color), white);
+  color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
 }
 input[type='text']:hover::placeholder, input[type='password']:hover::placeholder, input[type='url']:hover::placeholder, input[type='email']:hover::placeholder, input[type='tel']:hover::placeholder, input[type='search']:hover::placeholder, input[type='number']:hover::placeholder, input[type='date']:hover::placeholder, input[type='month']:hover::placeholder, input[type='week']:hover::placeholder, input[type='datetime-local']:hover::placeholder, select:hover::placeholder {
   color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
 }
 input[type='text']:focus, input[type='password']:focus, input[type='url']:focus, input[type='email']:focus, input[type='tel']:focus, input[type='search']:focus, input[type='number']:focus, input[type='date']:focus, input[type='month']:focus, input[type='week']:focus, input[type='datetime-local']:focus, select:focus {
   border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
+  background-color: var(--input-focus-background-color, var(--input-background-color), white));
   box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
-  color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
-    background-color: var(--input-focus-background-color, var(--input-background-color), white));
+  color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
 }
 input[type='text']:focus::placeholder, input[type='password']:focus::placeholder, input[type='url']:focus::placeholder, input[type='email']:focus::placeholder, input[type='tel']:focus::placeholder, input[type='search']:focus::placeholder, input[type='number']:focus::placeholder, input[type='date']:focus::placeholder, input[type='month']:focus::placeholder, input[type='week']:focus::placeholder, input[type='datetime-local']:focus::placeholder, select:focus::placeholder {
   color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
@@ -1025,8 +1027,8 @@ input[type='text']:disabled,
   select:disabled,
   select[readonly] {
   border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
-  color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
   background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
 }
 input[type='text']:disabled::placeholder, input[type='text'][readonly]::placeholder, input[type='password']:disabled::placeholder, input[type='password'][readonly]::placeholder, input[type='url']:disabled::placeholder, input[type='url'][readonly]::placeholder, input[type='email']:disabled::placeholder, input[type='email'][readonly]::placeholder, input[type='tel']:disabled::placeholder, input[type='tel'][readonly]::placeholder, input[type='search']:disabled::placeholder, input[type='search'][readonly]::placeholder, input[type='number']:disabled::placeholder, input[type='number'][readonly]::placeholder, input[type='date']:disabled::placeholder, input[type='date'][readonly]::placeholder, input[type='month']:disabled::placeholder, input[type='month'][readonly]::placeholder, input[type='week']:disabled::placeholder, input[type='week'][readonly]::placeholder, input[type='datetime-local']:disabled::placeholder, input[type='datetime-local'][readonly]::placeholder, select:disabled::placeholder, select[readonly]::placeholder {
   color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
@@ -1053,15 +1055,15 @@ select {
 }
 /* textareas */
 textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   box-shadow: none;
   outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 4px));
+  background-color: var(--input-background-color, white);
   font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
   color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
-  background-color: var(--input-background-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
 }
 textarea::placeholder {
@@ -1069,17 +1071,17 @@ textarea::placeholder {
 }
 textarea:hover {
   border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
-  color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
   background-color: var(--input-hover-background-color, var(--input-background-color), white);
+  color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
 }
 textarea:hover::placeholder {
   color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
 }
 textarea:focus {
   border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
+  background-color: var(--input-focus-background-color, var(--input-background-color), white));
   box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
-  color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
-    background-color: var(--input-focus-background-color, var(--input-background-color), white));
+  color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
 }
 textarea:focus::placeholder {
   color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
@@ -1087,8 +1089,8 @@ textarea:focus::placeholder {
 textarea:disabled,
   textarea[readonly] {
   border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
-  color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
   background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
 }
 textarea:disabled::placeholder, textarea[readonly]::placeholder {
   color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
@@ -1121,8 +1123,8 @@ select[multiple] {
   position: relative;
   margin-bottom: var(--checkbox-margin-bottom, 0.5rem);
   padding: 0 var(--checkbox-label-padding-horizontal, 1.5rem);
-  line-height: 1;
   font-weight: var(--checkbox-label-font-weight);
+  line-height: 1;
   cursor: pointer;
   user-select: none;
 }
@@ -1152,8 +1154,8 @@ select[multiple] {
   background-color: var(--checkbox-hover-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
 .checkbox input[type='checkbox']:focus + label::before {
-  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
   background-color: var(--checkbox-focus-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
 }
 .checkbox input[type='checkbox']:checked + label::before {
   background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
@@ -1189,8 +1191,8 @@ select[multiple] {
   position: relative;
   margin-bottom: var(--radio-margin-bottom, 0.5rem);
   padding: 0 var(--radio-label-padding-horizontal, 1.5rem);
-  line-height: 1;
   font-weight: var(--radio-label-font-weight);
+  line-height: 1;
   cursor: pointer;
   user-select: none;
 }
@@ -1219,8 +1221,8 @@ select[multiple] {
   background-color: var(--radio-hover-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
 .radio input[type='radio']:focus + label::before {
-  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
   background-color: var(--radio-focus-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
 }
 .radio input[type='radio']:checked + label::before {
   background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
@@ -1271,10 +1273,10 @@ input[type='color']:disabled {
 }
 /* range inputs */
 input[type=range] {
-  -webkit-appearance: none;
   width: 100%;
+  background: transparent;
   outline: 0;
-  background: transparent
+  -webkit-appearance: none
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
@@ -1302,8 +1304,8 @@ input[type=range]::-ms-track {
   height: var(--range-input-thumb-height, 1.5rem);
   border-width: var(--range-input-thumb-height, 1.5rem);
   border-color: transparent;
-  color: transparent;
   background-color: transparent;
+  color: transparent;
   transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
   cursor: pointer;
 }
@@ -1320,13 +1322,13 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
   width: var(--range-input-thumb-width, 1.5rem);
   height: var(--range-input-thumb-height, 1.5rem);
   margin-top: -0.5rem;
   border-color: transparent;
   border-radius: var(--range-input-thumb-border-radius, 50%);
   background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+  -webkit-appearance: none;
   cursor: pointer;
 }
 input[type=range]::-moz-range-thumb {
@@ -1374,9 +1376,9 @@ input[type=range]:disabled::-ms-thumb {
 }
 /* meter elements */
 meter {
-  -webkit-appearance: meter;
   width: 100%;
-  background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)))
+  background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  -webkit-appearance: meter
 }
 meter::-webkit-meter-bar {
   background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
@@ -1392,9 +1394,9 @@ meter:-moz-meter-optimum::-moz-meter-bar {
 }
 /* progress elements */
 progress {
+  border: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none
+  -moz-appearance: none
 }
 progress[value] {
   width: 100%;
@@ -1410,10 +1412,3 @@ progress::-moz-progress-bar {
   background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
 }
 /* semantic block elements */
-/*header,
-footer,
-article,
-section,
-nav {
-  margin: var(--block-semantic-element-margin-vertical) 0;
-}*/

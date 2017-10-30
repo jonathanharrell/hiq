@@ -53,8 +53,8 @@
 
 /* removes default appearance from buttons and inputs */
 @define-mixin is-controlled {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   box-shadow: none;
   outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }

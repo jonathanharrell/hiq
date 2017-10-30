@@ -9,21 +9,21 @@ samp {
 code {
   padding: var(--code-padding-vertical, 0.2rem) var(--code-padding-horizontal, 0.4rem);
   border-radius: var(--code-border-radius, var(--border-radius, 0.2rem));
-  color: var(--code-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
   background-color: var(--code-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  color: var(--code-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
 }
 
 a code {
   padding: 0;
-  color: inherit;
   background-color: inherit;
+  color: inherit;
 }
 
 kbd {
   padding: var(--kbd-padding-vertical, 0.2rem) var(--kbd-padding-horizontal, 0.4rem);
   border-radius: var(--kbd-border-radius, 0.2rem);
-  color: var(--kbd-text-color, white);
   background-color: var(--kbd-background-color, var(--gray-dark, hsl(220, 10%, 20%)));
+  color: var(--kbd-text-color, white);
   & kbd {
     padding: 0;
     font-weight: var(--nested-kbd-font-weight, var(--font-weight-medium, 600));
@@ -36,16 +36,16 @@ pre {
   margin-bottom: var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
   border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));
+  background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
   tab-size: 1.5rem;
   white-space: pre;
   word-wrap: normal;
   color: var(--pre-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
-  background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
   & code {
     padding: 0;
     border-radius: 0;
+    background-color: transparent;
     font-size: inherit;
     color: inherit;
-    background-color: transparent;
   }
 }
