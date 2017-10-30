@@ -1,51 +1,49 @@
-/* ====================
-   fluid sizing utility variables
-   ==================== */
+/* custom media queries */
 
-:root {
-  --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
-  --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
-  --viewport-difference: calc(100vw - (var(--unitless-lower-font-range) * 1px));
-}
+/* should match corresponding variables with px unit */
+@custom-media --lower-font-range (min-width: 460px);
+@custom-media --upper-font-range (min-width: 1200px);
 
-/* ====================
-   global font settings
-   ==================== */
+/* global font settings */
 
 html {
   /* font smoothing */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
+  /* text rendering */
+  text-rendering: var(--text-rendering, optimizeLegibility);
+
   /* base font family */
-  font-family: var(--base-font-family);
+  font-family: var(--base-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif);
 
-  /* responsive base font size */
-  font-size: calc((var(--unitless-min-font-size) * 1px) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  /* base font size */
+  font-size: calc(var(--unitless-min-font-size, 15) * 1px);
 
-  /* base line height */
-  line-height: var(--base-line-height);
-
-  /* base font weight */
-  font-weight: var(--font-weight-base);
-
-  /* base letter spacing */
-  letter-spacing: var(--letter-spacing-base);
-
-  /* set lower font range limit */
+  /* responsive font size calculation */
   @media (--lower-font-range) {
-    font-size: calc(var(--unitless-min-font-size) * 1px);
+    font-size: calc((var(--unitless-min-font-size, 15) * 1px) + (calc(var(--unitless-max-font-size, 16) - var(--unitless-min-font-size, 15))) * (calc(100vw - (var(--unitless-lower-font-range, 460) * 1px))) / (calc(var(--unitless-upper-font-range, 1200) - var(--unitless-lower-font-range, 460))));
   }
 
   /* set upper font range limit */
   @media (--upper-font-range) {
-    font-size: calc(var(--unitless-max-font-size) * 1px);
+    font-size: calc(var(--unitless-max-font-size, 16) * 1px);
   }
+
+  /* base line height */
+  line-height: var(--line-height-base, 1.4);
+
+  /* base font weight */
+  font-weight: var(--font-weight-base, var(--font-weight-normal, 400));
+
+  /* base letter spacing */
+  letter-spacing: var(--letter-spacing-base, 0);
+
+  /* text color */
+  color: var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)));
 }
 
-/* ====================
-   headings
-   ==================== */
+/* headings */
 
 h1,
 h2,
@@ -53,127 +51,281 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: var(--heading-margin-bottom);
-  line-height: var(--heading-line-height);
-  font-weight: var(--heading-font-weight);
+  margin-bottom: var(--heading-margin-bottom, 0.5rem);
+  line-height: var(--heading-line-height, 1.2);
+  font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
 }
 
-/* heading sizes and spacing */
-h1 {
-  font-size: var(--font-size-1);
+/* heading sizes */
+@define-mixin is-size-1 {
+  font-size: var(--font-size-1, 2.5rem);
 }
 
-h2 {
-  font-size: var(--font-size-2);
+@define-mixin is-size-2 {
+  font-size: var(--font-size-2, 2rem);
 }
 
-h3 {
-  font-size: var(--font-size-3);
+@define-mixin is-size-3 {
+  font-size: var(--font-size-3, 1.75rem);
 }
 
-h4 {
-  font-size: var(--font-size-4);
+@define-mixin is-size-4 {
+  font-size: var(--font-size-4, 1.5rem);
 }
 
-h5 {
-  font-size: var(--font-size-5);
+@define-mixin is-size-5 {
+  font-size: var(--font-size-5, 1rem);
 }
 
-h6 {
-  font-size: var(--font-size-6);
+@define-mixin is-size-6 {
+  font-size: var(--font-size-6, 0.875rem);
 }
 
-/* ====================
-   additional type styles
-   ==================== */
-
-/* small font size */
-small {
-  font-size: var(--font-size-small);
+h1,
+.is-size-1 {
+  @mixin is-size-1;
 }
 
-/* additional font weights */
+h2,
+.is-size-2 {
+  @mixin is-size-2;
+}
+
+h3,
+.is-size-3 {
+  @mixin is-size-3;
+}
+
+h4,
+.is-size-4 {
+  @mixin is-size-4;
+}
+
+h5,
+.is-size-5 {
+  @mixin is-size-5;
+}
+
+h6,
+.is-size-6 {
+  @mixin is-size-6;
+}
+
+/* large/small font sizes */
+
+@define-mixin is-large {
+  font-size: var(--font-size-large, var(--font-size-4, 1.5rem));
+}
+
+@define-mixin is-small {
+  font-size: var(--font-size-small, var(--font-size-6, 0.875rem));
+}
+
+.is-large {
+  @mixin is-large;
+}
+
+small,
+.is-small {
+  @mixin is-small;
+}
+
+/* font weights */
+
 strong {
-  font-weight: var(--strong-font-weight);
+  font-weight: var(--strong-font-weight, var(--font-weight-bold, 700));
 }
 
 b {
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--bold-font-weight, var(--font-weight-bold, 700));
 }
 
-/* block spacing */
-p,
-dl,
-ol,
-ul,
-blockquote,
-figcaption,
-pre {
-  margin: var(--block-element-margin-vertical) 0;
+@define-mixin has-font-weight-light {
+  font-weight: var(--font-weight-light, 300);
 }
 
-/* definition list styling */
-dt {
-  font-weight: var(--definition-list-title-font-weight);
+@define-mixin has-font-weight-normal {
+  font-weight: var(--font-weight-normal, 400);
 }
 
-/* abbreviation */
-abbr[title] {
-  border-bottom: dotted 1px currentColor;
-  text-decoration: none;
+@define-mixin has-font-weight-medium {
+  font-weight: var(--font-weight-medium, 500);
 }
 
-/* blockquote */
-blockquote p {
-  &::before { content: '\201c'; }
-  &::after { content: '\201d'; }
+@define-mixin has-font-weight-semibold {
+  font-weight: var(--font-weight-semibold, 600);
 }
 
-/* address */
+@define-mixin has-font-weight-bold {
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.has-font-weight-light {
+  @mixin has-font-weight-light;
+}
+
+.has-font-weight-normal {
+  @mixin has-font-weight-normal;
+}
+
+.has-font-weight-medium {
+  @mixin has-font-weight-medium;
+}
+
+.has-font-weight-semibold {
+  @mixin has-font-weight-semibold;
+}
+
+.has-font-weight-bold {
+  @mixin has-font-weight-bold;
+}
+
+/* paragraph spacing */
+
+p {
+  margin-bottom: var(--paragraph-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+
+/* address spacing */
+
 address {
+  margin-bottom: var(--address-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+
+/* details list */
+
+details {
+  margin-bottom: var(--details-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+
+summary:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: none;
+}
+
+/* mark */
+
+mark {
+  background-color: var(--mark-color, #fcf8e3);
+}
+
+/* deleted element */
+
+del {
+  background-color: var(--deleted-color, hsl(355, 70%, 95%));
+}
+
+/* inserted element */
+
+ins {
+  background-color: var(--inserted-color, hsl(210, 100%, 95%));
+}
+
+/* horizontal rules */
+
+hr {
+  height: var(--horizontal-rule-height, 1px);
+  margin-top: var(--horizontal-rule-margin-vertical, 1rem);
+  margin-bottom: var(--horizontal-rule-margin-vertical, 1rem);
+  border: 0;
+  background-color: var(--horizontal-rule-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+}
+
+/* lists */
+
+ol,
+ul {
+  margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding-left: var(--list-margin-left, 1rem);
+}
+
+ul {
+  list-style: var(--unordered-list-style, initial);
+}
+
+@define-mixin is-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+@define-mixin is-inline {
+  & > * {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: var(--inline-item-margin, 0.25rem);
+    }
+  }
+}
+
+.is-unstyled {
+  @mixin is-unstyled;
+}
+
+.is-inline {
+  @mixin is-inline;
+}
+
+/* definition lists */
+
+dl {
+  margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+
+dt {
+  font-weight: var(--definition-list-title-font-weight, var(--font-weight-semibold, 600));
+}
+
+/* blockquotes */
+
+blockquote {
+  margin-bottom: var(--blockquote-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  & p {
+    margin-bottom: 0;
+    font-size: var(--blockquote-font-size, var(--font-size-large, var(--font-size-4, 1.5rem)));
+  }
+  & cite {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--blockquote-citation-color, var(--gray-light, hsl(0, 0%, 60%)));
+    &::before {
+      content: '\2014 \00A0'; /* em dash, nbsp */
+    }
+  }
+}
+
+/* citations */
+
+cite {
   font-style: normal;
 }
 
-/* ====================
-   list styles
-   ==================== */
-ol,
-ul {
-  margin-left: var(--list-margin-left);
-}
+/* links */
 
-/* unordered list bullets */
-ul {
-  list-style: var(--unordered-list-style);
-}
-
-/* ====================
-   code styles
-   ==================== */
-
-/* inline code snippets */
-code,
-kbd,
-samp {
-  padding: var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
-  font-family: var(--font-family-monospace), monospace;
-  font-size: var(--code-font-size);
-  font-weight: var(--font-weight-normal);
-  color: var(--code-text-color);
-  background-color: var(--code-background-color);
-}
-
-/* block code snippets */
-pre {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
-  border-radius: var(--block-code-border-radius);
-  font-family: var(--font-family-monospace), monospace;
-  font-size: var(--code-font-size);
-  font-weight: var(--font-weight-normal);
-  & code {
-    padding: 0;
-    background-color: transparent;
+a {
+  text-decoration: var(--link-text-decoration, none);
+  color: var(--link-color, hsl(210, 100%, 50%));
+  transition: color var(--speed, 0.1s) var(--easing, ease-out);
+  cursor: pointer;
+  &:hover {
+    color: var(--link-hover-color, hsl(210, 100%, 25%));
   }
+  &:focus {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--link-focus-box-shadow-color, hsl(210, 100%, 85%));
+    outline: none;
+    color: var(--link-focus-color, hsl(210, 100%, 25%));
+  }
+  &:active {
+    color: var(--link-active-color, hsl(210, 100%, 25%));
+  }
+}
+
+/* user selection color */
+::-moz-selection {
+  text-shadow: none;
+  background-color: var(--selection-color, hsl(210, 100%, 90%));
+}
+
+::selection {
+  text-shadow: none;
+  background-color: var(--selection-color, hsl(210, 100%, 90%));
 }

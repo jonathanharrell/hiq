@@ -1,9 +1,25 @@
-/* ====================
-   utility mixins and classes
-   ==================== */
+/* makes element unselectable by user */
+@define-mixin is-unselectable {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.is-unselectable {
+  @mixin is-unselectable;
+}
+
+/* overflow touch (for mobile devices) */
+@define-mixin overflow-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-touch {
+  @mixin overflow-touch;
+}
 
 /* visually hides elements but keeps them accessible to screen readers */
-@define-mixin visually-hidden {
+@define-mixin is-visually-hidden {
   clip: rect(0 0 0 0);
   position: absolute;
   width: 1px;
@@ -15,8 +31,8 @@
   white-space: nowrap;
 }
 
-.visually-hidden {
-  @mixin visually-hidden;
+.is-visually-hidden {
+  @mixin is-visually-hidden;
 }
 
 /* clears to reset space after floated elements */
@@ -35,12 +51,10 @@
   @mixin clearfix;
 }
 
-/* removes default styling from list */
-@define-mixin list-unstyled {
-  margin: 0;
-  list-style: none;
-}
-
-.list-unstyled {
-  @mixin list-unstyled;
+/* removes default appearance from buttons and inputs */
+@define-mixin is-controlled {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
 }

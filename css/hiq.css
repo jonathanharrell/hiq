@@ -1,18 +1,26 @@
 /* reset */
 @import 'blanq-slate/blanq-slate.css';
 
-/* custom properties */
-@import 'variables.css';
-
-/* utility classes */
+/* utility mixins and classes */
 @import 'utility.css';
 
 /* base styles */
 @import 'structure.css';
 @import 'typography.css';
-@import 'color.css';
+@import 'code.css';
+@import 'media.css';
 
 /* element styles */
 @import 'buttons.css';
 @import 'tables.css';
 @import 'forms.css';
+
+/* semantic block elements */
+
+/*header,
+footer,
+article,
+section,
+nav {
+  margin: var(--block-semantic-element-margin-vertical) 0;
+}*/

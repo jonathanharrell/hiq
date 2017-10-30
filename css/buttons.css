@@ -1,62 +1,58 @@
-/* ====================
-   generic button mixin
-   ==================== */
-
 @define-mixin button {
+  @mixin is-controlled;
+  @mixin is-unselectable;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: auto;
-  height: var(--button-height);
-  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
-  border-width: var(--button-border-width);
-  border-style: solid;
-  border-color: var(--button-border-color);
-  border-radius: var(--button-border-radius);
-  outline: 0;
+  height: var(--button-height, 2.25rem);
+  padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
+  border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
+  border-radius: var(--button-border-radius, 4px);
   text-decoration: none;
-  font-weight: var(--button-font-weight);
-  white-space: nowrap;
-  color: var(--button-text-color);
-  background-color: var(--button-background-color);
-  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
+  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
+  color: var(--button-text-color, white);
+  background-color: var(--button-background-color, hsl(210, 100%, 50%));
+  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
   cursor: pointer;
   &:hover {
-    border-color: var(--button-hover-border-color);
-    color: var(--button-hover-text-color);
-    background-color: var(--button-hover-background-color);
+    border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
+    color: var(--button-hover-text-color, white);
+    background-color: var(--button-hover-background-color, hsl(210, 100%, 40%));
   }
   &:focus {
-    border-color: var(--button-focus-border-color);
-    color: var(--button-focus-text-color);
-    background-color: var(--button-focus-background-color);
+    border-color: var(--button-focus-border-color, hsl(210, 100%, 50%));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-focus-box-shadow-color, hsl(210, 100%, 85%));
+    color: var(--button-focus-text-color, white);
+    background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
   }
   &:active {
-    border-color: var(--button-active-border-color);
-    color: var(--button-active-text-color);
-    background-color: var(--button-active-background-color);
+    border-color: var(--button-active-border-color, hsl(210, 100%, 30%));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-active-box-shadow-color, hsl(210, 100%, 85%));
+    color: var(--button-active-text-color, white);
+    background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
   }
   &:visited {
-    color: var(--button-text-color);
+    color: var(--button-text-color, white);
   }
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus,
-  &:disabled:active,
-  &:disabled:visited {
-    border-color: var(--button-disabled-border-color);
-    color: var(--button-disabled-text-color);
-    background-color: var(--button-disabled-background-color);
+  &:disabled {
+    border-color: var(--button-disabled-border-color, transparent);
+    color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
+    background-color: var(--button-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
     cursor: not-allowed;
   }
 }
 
-/* applying the mixin */
 button,
-[role='button'],
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-input[type='file'] + label {
+.button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
   @mixin button;
+}
+
+/* Future-proof disabling of clicks on `<a>` elements */
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
 }

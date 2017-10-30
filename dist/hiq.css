@@ -1,451 +1,46 @@
-input[type='color']::-webkit-color-swatch {
-    border: none;
-    border-radius: 0;
-    border-radius: var(--color-border-radius);
-}
-input[type='file'] + label:disabled,
-  input[type='file'] + label:disabled:hover,
-  input[type='file'] + label:disabled:focus,
-  input[type='file'] + label:disabled:active,
-  input[type='file'] + label:disabled:visited {
-    border-color: transparent;
-    border-color: var(--button-disabled-border-color);
-    color: hsl(0, 0%, 75%);
-    color: var(--button-disabled-text-color);
-    background-color: hsl(0, 0%, 98%);
-    background-color: var(--button-disabled-background-color);
-    cursor: not-allowed;
-}
-input[type='file'] + label:visited {
-    color: white;
-    color: var(--button-text-color);
-}
-input[type='file'] + label:active {
-    border-color: transparent;
-    border-color: var(--button-active-border-color);
-    color: white;
-    color: var(--button-active-text-color);
-    background-color: rgb(32, 21, 89);
-    background-color: var(--button-active-background-color);
-}
-input[type='file'] + label:focus {
-    border-color: transparent;
-    border-color: var(--button-focus-border-color);
-    color: white;
-    color: var(--button-focus-text-color);
-    background-color: rgb(32, 21, 89);
-    background-color: var(--button-focus-background-color);
-}
-progress::-moz-progress-bar {
-    background-color: #3f2ab1;
-    background-color: var(--progress-filled-color);
-}
-progress::-webkit-progress-value {
-    background-color: #3f2ab1;
-    background-color: var(--progress-filled-color);
-}
-progress::-webkit-progress-bar {
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--progress-background-color);
-}
-meter:-moz-meter-optimum::-moz-meter-bar {
-    background: #3f2ab1;
-    background: var(--meter-filled-color);
-}
-meter::-webkit-meter-optimum-value {
-    background: #3f2ab1;
-    background: var(--meter-filled-color);
-}
-meter::-moz-meter-bar {
-    background: hsl(0, 0%, 90%);
-    background: var(--meter-background-color);
-}
-.radio input[type='radio']:disabled + label::before,
-  .radio input[type='radio']:disabled:hover + label::before,
-  .radio input[type='radio']:disabled:focus + label::before {
-    background-color: hsl(0, 0%, 98%);
-    background-color: var(--radio-disabled-background-color);
-}
-.radio input[type='radio']:disabled + label,
-  .radio input[type='radio']:disabled:hover + label,
-  .radio input[type='radio']:disabled:focus + label {
-    color: hsl(0, 0%, 75%);
-    color: var(--radio-label-disabled-color);
-    cursor: not-allowed;
-}
-.radio input[type='radio']:checked + label::after {
-    display: block;
-    position: absolute;
-    top: 6px;
-    top: var(--radio-check-position-top);
-    left: 6px;
-    left: var(--radio-check-position-left);
-    width: 12px;
-    width: var(--radio-check-width);
-    height: 12px;
-    height: var(--radio-check-height);
-    border-radius: 50%;
-    border-radius: var(--radio-check-border-radius);
-    background-color: white;
-    background-color: var(--radio-check-background-color);
-    content: '';
-}
-.radio input[type='radio']:checked + label::before,
-  .radio input[type='radio']:checked:hover + label::before,
-  .radio input[type='radio']:checked:focus + label::before {
-    background-color: #3f2ab1;
-    background-color: var(--radio-checked-background-color);
-}
-.radio input[type='radio']:focus + label::before {
-    background-color: hsl(0, 0%, 75%);
-    background-color: var(--radio-focus-background-color);
-}
-.radio label::before {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px;
-    width: var(--radio-width);
-    height: 24px;
-    height: var(--radio-height);
-    border-radius: 50%;
-    border-radius: var(--radio-border-radius);
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--radio-background-color);
-    transition: background-color 0.1s ease-out;
-    transition: background-color var(--speed) var(--easing);
-    content: '';
-}
-.checkbox input[type='checkbox']:disabled + label::before,
-  .checkbox input[type='checkbox']:disabled:hover + label::before,
-  .checkbox input[type='checkbox']:disabled:focus + label::before {
-    background-color: hsl(0, 0%, 98%);
-    background-color: var(--checkbox-disabled-background-color);
-}
-.checkbox input[type='checkbox']:disabled + label,
-  .checkbox input[type='checkbox']:disabled:hover + label,
-  .checkbox input[type='checkbox']:disabled:focus + label {
-    color: hsl(0, 0%, 75%);
-    color: var(--checkbox-label-disabled-color);
-    cursor: not-allowed;
-}
-.checkbox input[type='checkbox']:checked + label::after {
-    display: block;
-    position: absolute;
-    top: 3px;
-    top: var(--checkbox-check-position-top);
-    left: 8px;
-    left: var(--checkbox-check-position-left);
-    width: 8px;
-    width: var(--checkbox-check-width);
-    height: 14px;
-    height: var(--checkbox-check-height);
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    border-width: 0 var(--checkbox-border-width) var(--checkbox-border-width) 0;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    content: '';
-}
-.checkbox input[type='checkbox']:checked + label::before,
-  .checkbox input[type='checkbox']:checked:hover + label::before,
-  .checkbox input[type='checkbox']:checked:focus + label::before {
-    background-color: #3f2ab1;
-    background-color: var(--checkbox-checked-background-color);
-}
-.checkbox input[type='checkbox']:focus + label::before {
-    background-color: hsl(0, 0%, 75%);
-    background-color: var(--checkbox-focus-background-color);
-}
-.checkbox label::before {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px;
-    width: var(--checkbox-width);
-    height: 24px;
-    height: var(--checkbox-height);
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--checkbox-background-color);
-    transition: background-color 0.1s ease-out;
-    transition: background-color var(--speed) var(--easing);
-    content: '';
-}
-textarea:disabled::-webkit-input-placeholder {
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-placeholder-color);
-}
-textarea:disabled:-ms-input-placeholder {
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-placeholder-color);
-}
-textarea:disabled::placeholder {
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-placeholder-color);
-}
-textarea:disabled,
-  textarea:disabled:hover,
-  textarea:disabled:focus {
-    border-color: hsl(0, 0%, 98%);
-    border-color: var(--input-disabled-border-color);
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-text-color);
-    background-color: hsl(0, 0%, 98%);
-    background-color: var(--input-disabled-background-color);
-    cursor: not-allowed;
-}
-textarea:focus,
-  textarea:hover:focus {
-    border-color: #3f2ab1;
-    border-color: var(--input-focus-border-color);
-    color: #3f2ab1;
-    color: var(--input-focus-text-color);
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--input-focus-background-color);
-    &::-webkit-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &:-ms-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &::placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-}
-textarea:hover {
-    border-color: hsl(0, 0%, 90%);
-    border-color: var(--input-hover-border-color);
-    color: hsl(0, 0%, 10%);
-    color: var(--input-hover-text-color);
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--input-hover-background-color);
-    &::-webkit-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &:-ms-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &::placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-}
-input[type='text']:disabled::-webkit-input-placeholder, input[type='password']:disabled::-webkit-input-placeholder, input[type='url']:disabled::-webkit-input-placeholder, input[type='email']:disabled::-webkit-input-placeholder, input[type='tel']:disabled::-webkit-input-placeholder, input[type='search']:disabled::-webkit-input-placeholder, input[type='number']:disabled::-webkit-input-placeholder, input[type='date']:disabled::-webkit-input-placeholder, input[type='month']:disabled::-webkit-input-placeholder, input[type='week']:disabled::-webkit-input-placeholder, input[type='datetime-local']:disabled::-webkit-input-placeholder, input[type='color']:disabled::-webkit-input-placeholder, select:disabled::-webkit-input-placeholder {
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-placeholder-color);
-}
-input[type='text']:disabled:-ms-input-placeholder, input[type='password']:disabled:-ms-input-placeholder, input[type='url']:disabled:-ms-input-placeholder, input[type='email']:disabled:-ms-input-placeholder, input[type='tel']:disabled:-ms-input-placeholder, input[type='search']:disabled:-ms-input-placeholder, input[type='number']:disabled:-ms-input-placeholder, input[type='date']:disabled:-ms-input-placeholder, input[type='month']:disabled:-ms-input-placeholder, input[type='week']:disabled:-ms-input-placeholder, input[type='datetime-local']:disabled:-ms-input-placeholder, input[type='color']:disabled:-ms-input-placeholder, select:disabled:-ms-input-placeholder {
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-placeholder-color);
-}
-input[type='text']:disabled::placeholder, input[type='password']:disabled::placeholder, input[type='url']:disabled::placeholder, input[type='email']:disabled::placeholder, input[type='tel']:disabled::placeholder, input[type='search']:disabled::placeholder, input[type='number']:disabled::placeholder, input[type='date']:disabled::placeholder, input[type='month']:disabled::placeholder, input[type='week']:disabled::placeholder, input[type='datetime-local']:disabled::placeholder, input[type='color']:disabled::placeholder, select:disabled::placeholder {
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-placeholder-color);
-}
-input[type='text']:disabled,
-  input[type='text']:disabled:hover,
-  input[type='text']:disabled:focus,
-  input[type='password']:disabled,
-  input[type='password']:disabled:hover,
-  input[type='password']:disabled:focus,
-  input[type='url']:disabled,
-  input[type='url']:disabled:hover,
-  input[type='url']:disabled:focus,
-  input[type='email']:disabled,
-  input[type='email']:disabled:hover,
-  input[type='email']:disabled:focus,
-  input[type='tel']:disabled,
-  input[type='tel']:disabled:hover,
-  input[type='tel']:disabled:focus,
-  input[type='search']:disabled,
-  input[type='search']:disabled:hover,
-  input[type='search']:disabled:focus,
-  input[type='number']:disabled,
-  input[type='number']:disabled:hover,
-  input[type='number']:disabled:focus,
-  input[type='date']:disabled,
-  input[type='date']:disabled:hover,
-  input[type='date']:disabled:focus,
-  input[type='month']:disabled,
-  input[type='month']:disabled:hover,
-  input[type='month']:disabled:focus,
-  input[type='week']:disabled,
-  input[type='week']:disabled:hover,
-  input[type='week']:disabled:focus,
-  input[type='datetime-local']:disabled,
-  input[type='datetime-local']:disabled:hover,
-  input[type='datetime-local']:disabled:focus,
-  input[type='color']:disabled,
-  input[type='color']:disabled:hover,
-  input[type='color']:disabled:focus,
-  select:disabled,
-  select:disabled:hover,
-  select:disabled:focus {
-    border-color: hsl(0, 0%, 98%);
-    border-color: var(--input-disabled-border-color);
-    color: hsl(0, 0%, 75%);
-    color: var(--input-disabled-text-color);
-    background-color: hsl(0, 0%, 98%);
-    background-color: var(--input-disabled-background-color);
-    cursor: not-allowed;
-}
-input[type='text']:focus,
-  input[type='text']:hover:focus,
-  input[type='password']:focus,
-  input[type='password']:hover:focus,
-  input[type='url']:focus,
-  input[type='url']:hover:focus,
-  input[type='email']:focus,
-  input[type='email']:hover:focus,
-  input[type='tel']:focus,
-  input[type='tel']:hover:focus,
-  input[type='search']:focus,
-  input[type='search']:hover:focus,
-  input[type='number']:focus,
-  input[type='number']:hover:focus,
-  input[type='date']:focus,
-  input[type='date']:hover:focus,
-  input[type='month']:focus,
-  input[type='month']:hover:focus,
-  input[type='week']:focus,
-  input[type='week']:hover:focus,
-  input[type='datetime-local']:focus,
-  input[type='datetime-local']:hover:focus,
-  input[type='color']:focus,
-  input[type='color']:hover:focus,
-  select:focus,
-  select:hover:focus {
-    border-color: #3f2ab1;
-    border-color: var(--input-focus-border-color);
-    color: #3f2ab1;
-    color: var(--input-focus-text-color);
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--input-focus-background-color);
-    &::-webkit-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &:-ms-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &::placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-}
-input[type='text']:hover, input[type='password']:hover, input[type='url']:hover, input[type='email']:hover, input[type='tel']:hover, input[type='search']:hover, input[type='number']:hover, input[type='date']:hover, input[type='month']:hover, input[type='week']:hover, input[type='datetime-local']:hover, input[type='color']:hover, select:hover {
-    border-color: hsl(0, 0%, 90%);
-    border-color: var(--input-hover-border-color);
-    color: hsl(0, 0%, 10%);
-    color: var(--input-hover-text-color);
-    background-color: hsl(0, 0%, 90%);
-    background-color: var(--input-hover-background-color);
-    &::-webkit-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &:-ms-input-placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-    &::placeholder {
-      color: hsl(0, 0%, 50%);
-      color: var(--input-placeholder-color);
-    }
-}
-button:disabled,
-  button:disabled:hover,
-  button:disabled:focus,
-  button:disabled:active,
-  button:disabled:visited,
-  [role='button']:disabled,
-  [role='button']:disabled:hover,
-  [role='button']:disabled:focus,
-  [role='button']:disabled:active,
-  [role='button']:disabled:visited,
-  input[type='submit']:disabled,
-  input[type='submit']:disabled:hover,
-  input[type='submit']:disabled:focus,
-  input[type='submit']:disabled:active,
-  input[type='submit']:disabled:visited,
-  input[type='button']:disabled,
-  input[type='button']:disabled:hover,
-  input[type='button']:disabled:focus,
-  input[type='button']:disabled:active,
-  input[type='button']:disabled:visited,
-  input[type='reset']:disabled,
-  input[type='reset']:disabled:hover,
-  input[type='reset']:disabled:focus,
-  input[type='reset']:disabled:active,
-  input[type='reset']:disabled:visited,
-  input[type='file'] + label:disabled,
-  input[type='file'] + label:disabled:hover,
-  input[type='file'] + label:disabled:focus,
-  input[type='file'] + label:disabled:active,
-  input[type='file'] + label:disabled:visited {
-    border-color: transparent;
-    border-color: var(--button-disabled-border-color);
-    color: hsl(0, 0%, 75%);
-    color: var(--button-disabled-text-color);
-    background-color: hsl(0, 0%, 98%);
-    background-color: var(--button-disabled-background-color);
-    cursor: not-allowed;
-}
-button:visited, [role='button']:visited, input[type='submit']:visited, input[type='button']:visited, input[type='reset']:visited, input[type='file'] + label:visited {
-    color: white;
-    color: var(--button-text-color);
-}
-button:active, [role='button']:active, input[type='submit']:active, input[type='button']:active, input[type='reset']:active, input[type='file'] + label:active {
-    border-color: transparent;
-    border-color: var(--button-active-border-color);
-    color: white;
-    color: var(--button-active-text-color);
-    background-color: rgb(32, 21, 89);
-    background-color: var(--button-active-background-color);
-}
-button:focus, [role='button']:focus, input[type='submit']:focus, input[type='button']:focus, input[type='reset']:focus, input[type='file'] + label:focus {
-    border-color: transparent;
-    border-color: var(--button-focus-border-color);
-    color: white;
-    color: var(--button-focus-text-color);
-    background-color: rgb(32, 21, 89);
-    background-color: var(--button-focus-background-color);
-}
-a:active {
-    color: rgb(32, 21, 89);
-    color: var(--link-active-color);
-}
-a:focus {
-    color: rgb(32, 21, 89);
-    color: var(--link-focus-color);
-}
-blockquote p::after { content: '\201d';
-}
-.clearfix::after {
-    clear: both;
-}/* reset */
-/* Set border-box box sizing so borders and padding don't affect set dimensions */
+/* reset */
+/* stylelint-disable font-family-no-duplicate-names, plugin/no-unsupported-browser-features */
+/* Global element resets */
+/*
+Set border-box box sizing so borders and padding don't affect set dimensions
+Source: https://github.com/jgthms/minireset.css
+*/
 html {
   box-sizing: border-box;
 }
-* {
-  box-sizing: inherit;
-}
-*::before {
-  box-sizing: inherit;
-}
+*,
+*::before,
 *::after {
   box-sizing: inherit;
 }
-/* Reset block margins so spacing is only applied when needed */
+/*
+IE10+ doesn't honor `<meta name="viewport">` in some cases
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+@-ms-viewport {
+  width: device-width;
+}
+/*
+Fix display of HTML5 structural elements in IE10 and older browsers
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+/*
+Reset block margins so margin and padding are only applied when needed
+Source: https://github.com/jgthms/minireset.css
+*/
 html,
 body,
 p,
@@ -473,17 +68,57 @@ h6 {
   padding: 0;
 }
 /*
-Set html font size to match browser size
-Prevent adjustments of font size after orientation changes on some mobile devices
-Reset line height
+Always hide an element with the `hidden` HTML attribute
+Needed for proper display in IE 10-
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+[hidden] {
+  display: none !important;
+}
+/* Horizontal rules */
+/*
+1. Add the correct box sizing in Firefox
+2. Show the overflow in Edge and IE
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+/* Body */
+/*
+1. As best practice, apply default `background-color`
+2. Set explicit initial text-align value so the `inherit` value can be used later on things like `<th>` elements
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+body {
+  background-color: white;/* 1 */
+  text-align: left; /* 2 */
+}
+/* Typography */
+/*
+1. Prevent adjustments of font size after orientation changes on some mobile devices
+2. Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so we force a non-overlapping, non-auto-hiding scrollbar to counteract
+3. Change default font family in all browsers
+4. Set html font size to match browser size
+5. Correct line height in all browsers
+6. Change default tap highlight to be completely transparent in iOS
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 */
 html {
-  font-size: 100%;
-  line-height: 1;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 1 */
+  -ms-overflow-style: scrollbar; /* 2 */
+  font-family: sans-serif; /* 3 */
+  font-size: 100%; /* 4 */
+  line-height: 1.15; /* 5 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 6 */
 }
-/* Reset font sizes so semantic markup doesn't affect styling */
+/*
+Reset heading font sizes and weight
+Source: https://github.com/jgthms/minireset.css
+*/
 h1,
 h2,
 h3,
@@ -493,15 +128,134 @@ h6 {
   font-size: 100%;
   font-weight: normal;
 }
-/* Remove bullets from unordered lists */
+/*
+Add correct font weight in Chrome, Edge, and Safari
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+/*
+Add correct font size in all browsers
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+small {
+  font-size: 80%;
+}
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/*
+1. Remove the bottom border in Firefox 39-
+2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
+3. Add explicit cursor to indicate changed behavior
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+abbr[title] {
+  border-bottom: 0; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+  cursor: help; /* 3 */
+}
+/*
+Reset font style and line height for `address` elements
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+/*
+Remove bullets from unordered lists
+Source: https://github.com/jgthms/minireset.css
+*/
 ul {
   list-style: none;
 }
-/* Remove border from iframes */
-iframe {
-  border: 0;
+/*
+Add correct font style in Android 4.3-
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+dfn {
+  font-style: italic;
 }
-/* Set responsive media elements so images and embeds scale with browser width */
+/*
+Add correct display in all browsers
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+summary {
+  display: list-item;
+}
+/* Links */
+/*
+1. Remove the gray background on active links in IE 10.
+2. Remove gaps in links underline in iOS 8+ and Safari 8+
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+/*
+Undo these styles for placeholder links/named anchors (without href) which have not been made explicitly keyboard-focusable (without tabindex)
+
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+See https://github.com/twbs/bootstrap/issues/19402
+*/
+a:not([href]):not([tabindex]) {
+  text-decoration: none;
+  color: inherit;
+}
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+  text-decoration: none;
+  color: inherit;
+}
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+/* Code */
+/*
+1. Correct inheritance and scaling of font size in all browsers
+2. Correct odd `em` font sizing in all browsers
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/*
+1. Don't allow content to break outside
+2. Force a non-overlapping, non-auto-hiding scrollbar to counteract @viewport being set, which causes scrollbars to overlap content in IE11 and Edge
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+pre {
+  overflow: auto; /* 1 */
+  -ms-overflow-style: scrollbar; /* 2 */
+}
+/* Media and embedded elements */
+/*
+Set responsive media elements so images and embeds scale with browser width
+Source: https://github.com/jgthms/minireset.css
+*/
 img,
 embed,
 object,
@@ -510,517 +264,276 @@ video {
   max-width: 100%;
   height: auto;
 }
-/* Reset tables so tabular data only takes the space it needs */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/*
+1. Remove the border on images inside links in IE 10-
+2. Align images vertically
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+img {
+  border-style: none; /* 1 */
+  vertical-align: middle; /* 2 */
 }
+/*
+Hide overflow in IE
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+svg:not(:root) {
+  overflow: hidden;
+}
+/* Correct display for audio controls in iOS 4-7 */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/*
+Remove border from iframes
+Source: https://github.com/jgthms/minireset.css
+*/
+iframe {
+  border: 0;
+}
+/* Tables */
+/*
+1. Prevent double borders
+2. Reset table spacing so tabular data only takes the space it needs
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+table {
+  border-collapse: collapse; /* 1 */
+  border-spacing: 0; /* 2 */
+}
+/*
+1. Move caption below table
+2. Align table caption to left (inherits from body)
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+caption {
+  caption-side: bottom; /* 1 */
+  text-align: inherit; /* 2 */
+}
+/*
+Remove padding from table cells and align text left (inherits from body)
+Source: https://github.com/jgthms/minireset.css
+*/
 td,
 th {
   padding: 0;
-  text-align: left;
-}
-th {
-  font-weight: normal;
-}
-/* Remove default styling of buttons and inputs */
-button,
-input,
-textarea,
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: auto;
-  height: auto;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  font-family: inherit;
-  font-size: inherit;
   text-align: inherit;
-  resize: none;
-  background-color: transparent;
-  background-image: none;
 }
-/* Remove clear and reveal buttons from inputs in IE */
-input::-ms-clear,
-input::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
-}
-/* Remove scrollbars from textarea in IE to match other browsers */
+/* Interaction elements */
+/*
+Avoid 300ms click delay on touch devices that support the `touch-action` CSS property
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+a,
+area,
+button,
+[role="button"],
+input:not([type="range"]),
+label,
+select,
+summary,
 textarea {
-  overflow: auto;
+  touch-action: manipulation;
 }
-/* Remove dropdown arrow from selects in IE */
-select::-ms-expand {
-  display: none;
+/*
+Suppress the focus outline on elements that cannot be accessed via keyboard
+This prevents an unwanted focus outline from appearing around elements that might still respond to pointer events.
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+[tabindex="-1"]:focus {
+  outline: none !important;
 }
-/* Remove default styling for spinners in various inputs */
-input[type=number] {
-  -moz-appearance: textfield;
+/* Buttons and inputs &/
+
+/*
+Remove default `border-radius` that macOS Chrome adds
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+button {
+  border-radius: 0;
 }
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button,
-input[type=date]::-webkit-inner-spin-button,
-input[type=date]::-webkit-outer-spin-button,
-input[type=date]::-webkit-clear-button,
-input[type=month]::-webkit-inner-spin-button,
-input[type=month]::-webkit-outer-spin-button,
-input[type=month]::-webkit-clear-button,
-input[type=week]::-webkit-inner-spin-button,
-input[type=week]::-webkit-outer-spin-button,
-input[type=week]::-webkit-clear-button,
-input[type=datetime-local]::-webkit-inner-spin-button,
-input[type=datetime-local]::-webkit-outer-spin-button,
-input[type=datetime-local]::-webkit-clear-button {
+/*
+1. Remove `margin` in Firefox and Safari
+2. Inherit type styles
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0; /* 1 */
+  font-family: inherit; /* 2 */
+  font-size: inherit; /* 2 */
+  line-height: inherit; /* 2 */
+}
+/*
+Show overflow in Edge
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+button,
+input {
+  overflow: visible;
+}
+/*
+Remove inheritance of `text-transform` in Firefox
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+button,
+select {
+  text-transform: none;
+}
+/*
+1. Prevent WebKit bug where (2) destroys native `audio` and `video` controls in Android 4
+2. Correct inability to style clickable types in iOS and Safari
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+/*
+Remove inner border and padding from Firefox
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+/*
+Remove padding in IE 10-
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+input[type="radio"],
+input[type="checkbox"] {
+  padding: 0;
+}
+/*
+Remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+See https://bugs.webkit.org/show_bug.cgi?id=139848
+*/
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+/*
+1. Remove default vertical scrollbar in IE
+2. Textareas should really only resize vertically so they don't break their (horizontal) containers
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+textarea {
+  overflow: auto; /* 1 */
+  resize: vertical; /* 2 */
+}
+/*
+Correct cursor style of increment and decrement buttons in Chrome
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+Overrides extra rounded corners on search inputs in iOS
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="search"] {
+  outline-offset: -2px;
   -webkit-appearance: none;
-  margin: 0;
 }
-input[type=date]::-webkit-calendar-picker-indicator,
-input[type=month]::-webkit-calendar-picker-indicator,
-input[type=week]::-webkit-calendar-picker-indicator,
-input[type=datetime-local]::-webkit-calendar-picker-indicator {
+/*
+Remove inner padding and cancel buttons in Chrome and Safari on macOS
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
-  display: none;
 }
-input[type='search']::-webkit-search-decoration,
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button,
-input[type='search']::-webkit-search-results-decoration {
-  display: none;
+/*
+1. Correct inability to style clickable types in iOS and Safari
+2. Change font properties to `inherit` in Safari
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+::-webkit-file-upload-button {
+  font: inherit; /* 2 */
+  -webkit-appearance: button; /* 1 */
 }
-/* Remove default styling for meter elements */
-meter {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-/* Remove default styling for progress elements */
+/*
+Add correct vertical alignment in Chrome, Firefox, and Opera
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
 progress {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
+  vertical-align: baseline;
 }
-/* Remove default styling for range inputs */
-input[type=range] {
-  -webkit-appearance: none;
-  background: transparent;
+/* Form elements */
+/*
+1. Ensure fieldsets behave more like a standard block element (browsers set a default `min-width: min-content;` on fieldsets)
+See https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+2. Reset the default outline behavior of fieldsets so they don't affect page layout
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+fieldset {
+  min-width: 0; /* 1 */
+  border: 0; /* 2 */
 }
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
+/*
+1. Correct text wrapping in Edge and IE
+2. Correct color inheritance from `fieldset` elements in IE
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%; /* 1 */
+  padding: 0;
+  line-height: inherit;
+  white-space: normal; /* 1 */
+  color: inherit; /* 2 */
 }
-input[type=range]::-ms-track {
-  border-color: transparent;
-  color: transparent;
-  background: transparent;
+/*
+Allow labels to use `margin` for spacing
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+label {
+  display: inline-block;
 }
-::-moz-progress-bar {
-  -moz-appearance: none;
+/*
+Display form output inline
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+output {
+  display: inline-block;
 }
-/* custom properties */
-:root {
-  /* ====================
-     structural variables
-     ==================== */
-
-  /* container variables */
-  --max-container-width: 45rem;
-  --container-horizontal-padding: 3rem;
-
-  /* spacing variables */
-  --block-element-margin-vertical: 1rem;
-  --block-semantic-element-margin-vertical: 1rem;
-  --heading-margin-bottom: 1rem;
-
-  /* border-radius */
-  --border-radius: 4px;
-
-  /* ====================
-     typography variables
-     ==================== */
-
-  /* font families */
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --font-family-serif: Georgia, 'Times New Roman', Times, serif;
-  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --base-font-family: var(--font-family-sans-serif);
-
-  /* unitless base font size variables in px */
-  --unitless-min-font-size: 15;
-  --unitless-max-font-size: 18;
-
-  /* unitless viewport widths in px when min/max font sizes will apply */
-  --unitless-lower-font-range: 460;
-  --unitless-upper-font-range: 1200;
-
-  /* should match --unitless-upper-font-range with px unit */
-
-  /* base unitless line heights */
-  --base-line-height: 1.4;
-  --heading-line-height: 1.2;
-
-  /* font sizes */
-  --font-size-1: 2.25rem;
-  --font-size-2: 1.75rem;
-  --font-size-3: 1.5rem;
-  --font-size-4: 1.125rem;
-  --font-size-5: 1rem;
-  --font-size-6: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-base: var(--font-size-5);
-  --font-size-large: 1.125rem;
-  --font-size-large: var(--font-size-4);
-  --font-size-small: 0.875rem;
-  --font-size-small: var(--font-size-6);
-
-  /* font weights */
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* letter spacing */
-  --letter-spacing-base: -0.025em;
-
-  /* applied font weights */
-  --font-weight-base: 400;
-  --font-weight-base: var(--font-weight-normal);
-  --heading-font-weight: 500;
-  --heading-font-weight: var(--font-weight-medium);
-  --strong-font-weight: 600;
-  --strong-font-weight: var(--font-weight-semibold);
-  --bold-font-weight: 600;
-  --bold-font-weight: var(--font-weight-semibold);
-  --definition-list-title-font-weight: 600;
-  --definition-list-title-font-weight: var(--font-weight-semibold);
-  --input-font-weight: 400;
-  --input-font-weight: var(--font-weight-normal);
-
-  /* list variables */
-  --list-margin-left: 1rem;
-  --unordered-list-style: disc;
-
-  /* ====================
-     color variables
-     ==================== */
-
-  /* gray palette */
-  --gray-darkest: hsl(0, 0%, 5%);
-  --gray-darker: hsl(0, 0%, 10%);
-  --gray-dark: hsl(0, 0%, 25%);
-  --gray: hsl(0, 0%, 50%);
-  --gray-light: hsl(0, 0%, 75%);
-  --gray-lighter: hsl(0, 0%, 90%);
-  --gray-lightest: hsl(0, 0%, 98%);
-
-  /* semantic palette */
-  --color-primary: #3f2ab1;
-  --color-success: #3f2ab1;
-  --color-warning: #ffca28;
-  --color-error: #d32f2f;
-
-  /* applied colors */
-  --text-color: hsl(0, 0%, 10%);
-  --text-color: var(--gray-darker);
-  --html-background-color: white;
-  --body-background-color: white;
-  --background-color: hsl(0, 0%, 98%);
-  --background-color: var(--gray-lightest);
-  --border-color: hsl(0, 0%, 90%);
-  --border-color: var(--gray-lighter);
-  --mark-color: rgb(207, 202, 236);
-  --selection-color: rgb(226, 223, 243);
-  --deleted-color: #d32f2f;
-  --deleted-color: var(--color-error);
-  --inserted-color: rgb(207, 202, 236);
-  --disabled-color: hsl(0, 0%, 75%);
-  --disabled-color: var(--gray-light);
-
-  /* ====================
-     transition variables
-     ==================== */
-
-  --speed: 0.1s;
-  --easing: ease-out;
-
-  /* ====================
-     link variables
-     ==================== */
-
-  --link-color: #3f2ab1;
-
-  --link-color: var(--color-primary);
-  --link-hover-color: rgb(32, 21, 89);
-  --link-focus-color: rgb(32, 21, 89);
-  --link-active-color: rgb(32, 21, 89);
-  --link-text-decoration: none;
-
-  /* ====================
-     button variables
-     ==================== */
-
-  --button-height: 2.25rem;
-  --button-vertical-padding: 0;
-  --button-horizontal-padding: 0.75rem;
-  --button-border-width: 1px;
-  --button-border-radius: 4px;
-  --button-border-radius: var(--border-radius);
-  --button-font-weight: 500;
-  --button-font-weight: var(--font-weight-medium);
-
-  /* static colors */
-  --button-border-color: #3f2ab1;
-  --button-border-color: var(--color-primary);
-  --button-text-color: white;
-  --button-background-color: #3f2ab1;
-  --button-background-color: var(--color-primary);
-
-  /* hover colors */
-  --button-hover-border-color: transparent;
-  --button-hover-text-color: white;
-  --button-hover-background-color: rgb(32, 21, 89);
-
-  /* focus colors */
-  --button-focus-border-color: transparent;
-  --button-focus-text-color: white;
-  --button-focus-background-color: rgb(32, 21, 89);
-
-  /* active colors */
-  --button-active-border-color: transparent;
-  --button-active-text-color: white;
-  --button-active-background-color: rgb(32, 21, 89);
-
-  /* disabled colors */
-  --button-disabled-border-color: transparent;
-  --button-disabled-text-color: hsl(0, 0%, 75%);
-  --button-disabled-text-color: var(--disabled-color);
-  --button-disabled-background-color: hsl(0, 0%, 98%);
-  --button-disabled-background-color: var(--gray-lightest);
-
-  /* ====================
-     table variables
-     ==================== */
-
-  --table-width: 100%;
-  --table-caption-margin-bottom: 1rem;
-  --table-caption-font-weight: 600;
-  --table-caption-font-weight: var(--font-weight-semibold);
-  --table-cell-padding-vertical: 0.5rem;
-  --table-cell-padding-horizontal: 0.75rem;
-  --table-cell-border-width: 1px;
-  --table-cell-border-color: hsl(0, 0%, 90%);
-  --table-cell-border-color: var(--border-color);
-  --table-heading-font-weight: 600;
-  --table-heading-font-weight: var(--font-weight-semibold);
-
-  /* ====================
-     form variables
-     ==================== */
-
-  /* fieldsets */
-  --fieldset-margin-vertical: 1rem;
-  --fieldset-padding-vertical: 0;
-  --fieldset-padding-horizontal: 0;
-  --fieldset-border-width: 0;
-  --fieldset-border-color: transparent;
-
-  /* legends */
-  --legend-margin-bottom: 1rem;
-  --legend-font-weight: 600;
-  --legend-font-weight: var(--font-weight-semibold);
-
-  /* labels */
-  --label-margin-bottom: 0.5rem;
-  --label-font-weight: 600;
-  --label-font-weight: var(--font-weight-semibold);
-
-  /* text inputs */
-  --input-display: block;
-  --input-width: 100%;
-  --input-height: 2.5rem;
-  --input-padding-vertical: 0;
-  --input-padding-horizontal: 0.75rem;
-  --input-border-width: 1px;
-  --input-border-radius: 4px;
-  --input-border-radius: var(--border-radius);
-
-  /* static input colors */
-  --input-border-color: hsl(0, 0%, 90%);
-  --input-border-color: var(--gray-lighter);
-  --input-text-color: hsl(0, 0%, 10%);
-  --input-text-color: var(--text-color);
-  --input-placeholder-color: hsl(0, 0%, 50%);
-  --input-placeholder-color: var(--gray);
-  --input-background-color: hsl(0, 0%, 90%);
-  --input-background-color: var(--gray-lighter);
-
-  /* hover input colors */
-  --input-hover-border-color: hsl(0, 0%, 90%);
-  --input-hover-border-color: var(--input-border-color);
-  --input-hover-text-color: hsl(0, 0%, 10%);
-  --input-hover-text-color: var(--input-text-color);
-  --input-hover-placeholder-color: hsl(0, 0%, 50%);
-  --input-hover-placeholder-color: var(--input-placeholder-color);
-  --input-hover-background-color: hsl(0, 0%, 90%);
-  --input-hover-background-color: var(--input-background-color);
-
-  /* focus input colors */
-  --input-focus-border-color: #3f2ab1;
-  --input-focus-border-color: var(--color-primary);
-  --input-focus-text-color: #3f2ab1;
-  --input-focus-text-color: var(--color-primary);
-  --input-focus-placeholder-color: hsl(0, 0%, 50%);
-  --input-focus-placeholder-color: var(--input-placeholder-color);
-  --input-focus-background-color: hsl(0, 0%, 90%);
-  --input-focus-background-color: var(--input-background-color);
-
-  /* disabled input colors */
-  --input-disabled-border-color: hsl(0, 0%, 98%);
-  --input-disabled-border-color: var(--gray-lightest);
-  --input-disabled-text-color: hsl(0, 0%, 75%);
-  --input-disabled-text-color: var(--gray-light);
-  --input-disabled-placeholder-color: hsl(0, 0%, 75%);
-  --input-disabled-placeholder-color: var(--gray-light);
-  --input-disabled-background-color: hsl(0, 0%, 98%);
-  --input-disabled-background-color: var(--gray-lightest);
-
-  /* textareas */
-  --textarea-display: block;
-  --textarea-width: 100%;
-  --textarea-height: auto;
-  --textarea-padding-vertical: 0.5rem;
-  --textarea-padding-horizontal: 0.75rem;
-
-  /* selects */
-  --select-background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E');
-  --select-background-position: right 1rem center;
-  --select-background-size: 0.75rem;
-
-  /* checkboxes */
-  --checkbox-label-padding-horizontal: 2rem;
-  --checkbox-label-font-weight: 400;
-  --checkbox-label-font-weight: var(--font-weight-normal);
-  --checkbox-label-disabled-color: hsl(0, 0%, 75%);
-  --checkbox-label-disabled-color: var(--disabled-color);
-  --checkbox-width: 24px;
-  --checkbox-height: 24px;
-  --checkbox-background-color: hsl(0, 0%, 90%);
-  --checkbox-background-color: var(--gray-lighter);
-  --checkbox-hover-background-color: hsl(0, 0%, 75%);
-  --checkbox-hover-background-color: var(--gray-light);
-  --checkbox-focus-background-color: hsl(0, 0%, 75%);
-  --checkbox-focus-background-color: var(--gray-light);
-  --checkbox-checked-background-color: #3f2ab1;
-  --checkbox-checked-background-color: var(--color-primary);
-  --checkbox-disabled-background-color: hsl(0, 0%, 98%);
-  --checkbox-disabled-background-color: var(--gray-lightest);
-  --checkbox-check-position-top: 3px;
-  --checkbox-check-position-left: 8px;
-  --checkbox-check-width: 8px;
-  --checkbox-check-height: 14px;
-  --checkbox-border-width: 2px;
-
-  /* radio buttons */
-  --radio-label-padding-horizontal: 2rem;
-  --radio-label-font-weight: 400;
-  --radio-label-font-weight: var(--font-weight-normal);
-  --radio-label-disabled-color: hsl(0, 0%, 75%);
-  --radio-label-disabled-color: var(--disabled-color);
-  --radio-width: 24px;
-  --radio-height: 24px;
-  --radio-border-radius: 50%;
-  --radio-background-color: hsl(0, 0%, 90%);
-  --radio-background-color: var(--gray-lighter);
-  --radio-hover-background-color: hsl(0, 0%, 75%);
-  --radio-hover-background-color: var(--gray-light);
-  --radio-focus-background-color: hsl(0, 0%, 75%);
-  --radio-focus-background-color: var(--gray-light);
-  --radio-checked-background-color: #3f2ab1;
-  --radio-checked-background-color: var(--color-primary);
-  --radio-disabled-background-color: hsl(0, 0%, 98%);
-  --radio-disabled-background-color: var(--gray-lightest);
-  --radio-check-position-top: 6px;
-  --radio-check-position-left: 6px;
-  --radio-check-width: 12px;
-  --radio-check-height: 12px;
-  --radio-check-border-radius: 50%;
-  --radio-check-background-color: white;
-
-  /* meter */
-  --meter-width: 100%;
-  --meter-background-color: hsl(0, 0%, 90%);
-  --meter-background-color: var(--gray-lighter);
-  --meter-filled-color: #3f2ab1;
-  --meter-filled-color: var(--color-primary);
-
-  /* progress */
-  --progress-width: 100%;
-  --progress-height: 1rem;
-  --progress-background-color: hsl(0, 0%, 90%);
-  --progress-background-color: var(--gray-lighter);
-  --progress-filled-color: #3f2ab1;
-  --progress-filled-color: var(--color-primary);
-
-  /* range input */
-  --range-input-width: 100%;
-  --range-input-thumb-width: 24px;
-  --range-input-thumb-height: 24px;
-  --range-input-thumb-border-radius: 50%;
-  --range-input-thumb-background: #3f2ab1;
-  --range-input-thumb-background: var(--color-primary);
-  --range-input-track-height: 10px;
-  --range-input-track-background: hsl(0, 0%, 90%);
-  --range-input-track-background: var(--gray-lighter);
-  --range-input-track-focus-background: hsl(0, 0%, 90%);
-  --range-input-track-focus-background: var(--gray-lighter);
-
-  /* color input */
-  --color-input-width: 2.5rem;
-  --color-border-radius: 0;
-
-  /* ====================
-     horizontal rule variables
-     ==================== */
-
-  --horizontal-rule-height: 1px;
-  --horizontal-rule-margin-vertical: 1rem;
-  --horizontal-rule-color: #3f2ab1;
-  --horizontal-rule-color: var(--color-primary);
-
-  /* ====================
-     media/embeds variables
-     ==================== */
-
-  --media-width: 100%;
-  --media-margin-vertical: 1rem;
-
-  /* ====================
-     code variables
-     ==================== */
-
-  --code-font-size: 0.875rem;
-
-  --code-font-size: var(--font-size-small);
-  --code-text-color: #3f2ab1;
-  --code-text-color: var(--color-primary);
-  --code-background-color: #f2f0f9;
-  --inline-code-padding-vertical: 0.25rem;
-  --inline-code-padding-horizontal: 0.5rem;
-  --block-code-padding-vertical: 1rem;
-  --block-code-padding-horizontal: 1rem;
-  --block-code-border-radius: 4px;
-  --block-code-border-radius: var(--border-radius);
+/* Additional element display fixes */
+/*
+Add correct display in IE
+Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+template {
+  display: none;
 }
-/* utility classes */
-/* ====================
-   utility mixins and classes
-   ==================== */
+/* utility mixins and classes */
+/* makes element unselectable by user */
+.is-unselectable {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+/* overflow touch (for mobile devices) */
+.overflow-touch {
+  -webkit-overflow-scrolling: touch;
+}
 /* visually hides elements but keeps them accessible to screen readers */
-.visually-hidden {
+.is-visually-hidden {
   clip: rect(0 0 0 0);
   position: absolute;
   width: 1px;
@@ -1032,444 +545,418 @@ input[type=range]::-ms-track {
   white-space: nowrap;
 }
 /* clears to reset space after floated elements */
-.clearfix {
-}
 .clearfix::before,
   .clearfix::after {
-    display: table;
-    content: '';
+  display: table;
+  content: '';
 }
-/* removes default styling from list */
-.list-unstyled {
-  margin: 0;
-  list-style: none;
+.clearfix::after {
+  clear: both;
 }
+/* removes default appearance from buttons and inputs */
 /* base styles */
-/* ====================
-   containers
-   ==================== */
-/* mixins */
-/* wrapper div */
+/* containers */
 .container {
-  max-width: 45rem;
-  max-width: var(--max-container-width);
-  margin: 0 auto;
-  padding: 0 3rem;
-  padding: 0 var(--container-horizontal-padding)
+  width: calc(100% - (var(--container-horizontal-gap, 2rem) * 2));
+  max-width: calc(var(--max-container-width, 45rem) - (var(--container-horizontal-gap, 2rem) * 2));
+  margin-right: auto;
+  margin-left: auto
 }
 .container.is-fluid {
-    max-width: none;
+  max-width: none;
 }
-/* ====================
-   semantic block elements
-   ==================== */
-header,
-footer,
-article,
-section,
-nav {
-  margin: 1rem 0;
-  margin: var(--block-semantic-element-margin-vertical) 0;
+/* html & body */
+html {
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--html-background-color, white);
 }
-/* ====================
-   horizontal rules
-   ==================== */
-hr {
-  display: block;
-  height: 1px;
-  height: var(--horizontal-rule-height);
-  margin: 1rem 0;
-  margin: var(--horizontal-rule-margin-vertical) 0;
-  border: none;
-  background-color: #3f2ab1;
-  background-color: var(--horizontal-rule-color);
+body {
+  background-color: var(--body-background-color, white);
 }
-/* ====================
-   media/embeds
-   ==================== */
-img,
-audio,
-video,
-canvas,
-meter,
-progress,
-iframe {
-  display: block;
-  margin: 1rem 0;
-  margin: var(--media-margin-vertical) 0;
-}
-img,
-audio,
-video,
-canvas,
-iframe {
-  width: 100%;
-  width: var(--media-width);
-  max-width: 100%;
-}
-svg {
-  fill: currentColor;
-}
-/* ====================
-   fluid sizing utility variables
-   ==================== */
-:root {
-  --font-size-difference: 3;
-  --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
-  --font-range-difference: 740;
-  --font-range-difference: calc(var(--unitless-upper-font-range) - var(--unitless-lower-font-range));
-  --viewport-difference: calc(100vw - 460px);
-  --viewport-difference: calc(100vw - (var(--unitless-lower-font-range) * 1px));
-}
-/* ====================
-   global font settings
-   ==================== */
+/* custom media queries */
+/* should match corresponding variables with px unit */
+/* global font settings */
 html {
   /* font smoothing */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
+  /* text rendering */
+  text-rendering: var(--text-rendering, optimizeLegibility);
+
   /* base font family */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  font-family: var(--base-font-family);
+  font-family: var(--base-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif);
 
-  /* responsive base font size */
-  font-size: calc(15px + 3 * (100vw - 460px) / 740);
-  font-size: calc((var(--unitless-min-font-size) * 1px) + var(--font-size-difference) * var(--viewport-difference) / var(--font-range-difference));
+  /* base font size */
+  font-size: calc(var(--unitless-min-font-size, 15) * 1px);
 
-  /* base line height */
-  line-height: 1.4;
-  line-height: var(--base-line-height);
-
-  /* base font weight */
-  font-weight: 400;
-  font-weight: var(--font-weight-base);
-
-  /* base letter spacing */
-  letter-spacing: -0.025em;
-  letter-spacing: var(--letter-spacing-base)
-
-  /* set lower font range limit */
-
-  /* set upper font range limit */
+  /* responsive font size calculation */
 }
-@media (max-width: 459px) {
-    html {
-    font-size: 15px;
-    font-size: calc(var(--unitless-min-font-size) * 1px);
-    }
+@media (min-width: 460px) {
+  html {
+    font-size: calc((var(--unitless-min-font-size, 15) * 1px) + (calc(var(--unitless-max-font-size, 16) - var(--unitless-min-font-size, 15))) * (calc(100vw - (var(--unitless-lower-font-range, 460) * 1px))) / (calc(var(--unitless-upper-font-range, 1200) - var(--unitless-lower-font-range, 460))));
   }
+}
+html {/* set upper font range limit */
+}
 @media (min-width: 1200px) {
-    html {
-    font-size: 18px;
-    font-size: calc(var(--unitless-max-font-size) * 1px);
-    }
+  html {
+    font-size: calc(var(--unitless-max-font-size, 16) * 1px);
   }
-/* ====================
-   headings
-   ==================== */
+}
+html {/* base line height */
+  line-height: var(--line-height-base, 1.4);/* base font weight */
+  font-weight: var(--font-weight-base, var(--font-weight-normal, 400));/* base letter spacing */
+  letter-spacing: var(--letter-spacing-base, 0);/* text color */
+  color: var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)));
+}
+/* headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 1rem;
-  margin-bottom: var(--heading-margin-bottom);
-  line-height: 1.2;
-  line-height: var(--heading-line-height);
-  font-weight: 500;
-  font-weight: var(--heading-font-weight);
+  margin-bottom: var(--heading-margin-bottom, 0.5rem);
+  line-height: var(--heading-line-height, 1.2);
+  font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
 }
-/* heading sizes and spacing */
-h1 {
-  font-size: 2.25rem;
-  font-size: var(--font-size-1);
+/* heading sizes */
+h1,
+.is-size-1 {
+  font-size: var(--font-size-1, 2.5rem);
 }
-h2 {
-  font-size: 1.75rem;
-  font-size: var(--font-size-2);
+h2,
+.is-size-2 {
+  font-size: var(--font-size-2, 2rem);
 }
-h3 {
-  font-size: 1.5rem;
-  font-size: var(--font-size-3);
+h3,
+.is-size-3 {
+  font-size: var(--font-size-3, 1.75rem);
 }
-h4 {
-  font-size: 1.125rem;
-  font-size: var(--font-size-4);
+h4,
+.is-size-4 {
+  font-size: var(--font-size-4, 1.5rem);
 }
-h5 {
-  font-size: 1rem;
-  font-size: var(--font-size-5);
+h5,
+.is-size-5 {
+  font-size: var(--font-size-5, 1rem);
 }
-h6 {
-  font-size: 0.875rem;
-  font-size: var(--font-size-6);
+h6,
+.is-size-6 {
+  font-size: var(--font-size-6, 0.875rem);
 }
-/* ====================
-   additional type styles
-   ==================== */
-/* small font size */
-small {
-  font-size: 0.875rem;
-  font-size: var(--font-size-small);
+/* large/small font sizes */
+.is-large {
+  font-size: var(--font-size-large, var(--font-size-4, 1.5rem));
 }
-/* additional font weights */
+small,
+.is-small {
+  font-size: var(--font-size-small, var(--font-size-6, 0.875rem));
+}
+/* font weights */
 strong {
-  font-weight: 600;
-  font-weight: var(--strong-font-weight);
+  font-weight: var(--strong-font-weight, var(--font-weight-bold, 700));
 }
 b {
-  font-weight: 600;
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--bold-font-weight, var(--font-weight-bold, 700));
 }
-/* block spacing */
-p,
-dl,
-ol,
-ul,
-blockquote,
-figcaption,
-pre {
-  margin: 1rem 0;
-  margin: var(--block-element-margin-vertical) 0;
+.has-font-weight-light {
+  font-weight: var(--font-weight-light, 300);
 }
-/* definition list styling */
-dt {
-  font-weight: 600;
-  font-weight: var(--definition-list-title-font-weight);
+.has-font-weight-normal {
+  font-weight: var(--font-weight-normal, 400);
 }
-/* abbreviation */
-abbr[title] {
-  border-bottom: dotted 1px currentColor;
-  text-decoration: none;
+.has-font-weight-medium {
+  font-weight: var(--font-weight-medium, 500);
 }
-/* blockquote */
-blockquote p {
+.has-font-weight-semibold {
+  font-weight: var(--font-weight-semibold, 600);
 }
-blockquote p::before { content: '\201c';
+.has-font-weight-bold {
+  font-weight: var(--font-weight-bold, 700);
 }
-/* address */
+/* paragraph spacing */
+p {
+  margin-bottom: var(--paragraph-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+/* address spacing */
 address {
+  margin-bottom: var(--address-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+/* details list */
+details {
+  margin-bottom: var(--details-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+summary:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: none;
+}
+/* mark */
+mark {
+  background-color: var(--mark-color, #fcf8e3);
+}
+/* deleted element */
+del {
+  background-color: var(--deleted-color, hsl(355, 70%, 95%));
+}
+/* inserted element */
+ins {
+  background-color: var(--inserted-color, hsl(210, 100%, 95%));
+}
+/* horizontal rules */
+hr {
+  height: var(--horizontal-rule-height, 1px);
+  margin-top: var(--horizontal-rule-margin-vertical, 1rem);
+  margin-bottom: var(--horizontal-rule-margin-vertical, 1rem);
+  border: 0;
+  background-color: var(--horizontal-rule-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+}
+/* lists */
+ol,
+ul {
+  margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding-left: var(--list-margin-left, 1rem);
+}
+ul {
+  list-style: var(--unordered-list-style, initial);
+}
+.is-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.is-inline > * {
+  display: inline-block;
+}
+.is-inline > *:not(:last-child) {
+  margin-right: var(--inline-item-margin, 0.25rem);
+}
+/* definition lists */
+dl {
+  margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+dt {
+  font-weight: var(--definition-list-title-font-weight, var(--font-weight-semibold, 600));
+}
+/* blockquotes */
+blockquote {
+  margin-bottom: var(--blockquote-margin-bottom, var(--block-element-margin-bottom, 1rem))
+}
+blockquote p {
+  margin-bottom: 0;
+  font-size: var(--blockquote-font-size, var(--font-size-large, var(--font-size-4, 1.5rem)));
+}
+blockquote cite {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--blockquote-citation-color, var(--gray-light, hsl(0, 0%, 60%)));
+}
+blockquote cite::before {
+  content: '\2014 \00A0';/* em dash, nbsp */
+}
+/* citations */
+cite {
   font-style: normal;
 }
-/* ====================
-   list styles
-   ==================== */
-ol,
-ul {
-  margin-left: 1rem;
-  margin-left: var(--list-margin-left);
-}
-/* unordered list bullets */
-ul {
-  list-style: disc;
-  list-style: var(--unordered-list-style);
-}
-/* ====================
-   code styles
-   ==================== */
-/* inline code snippets */
-code,
-kbd,
-samp {
-  padding: 0.25rem 0.5rem;
-  padding: var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
-  font-family: var(--font-family-monospace), monospace;
-  font-size: 0.875rem;
-  font-size: var(--code-font-size);
-  font-weight: 400;
-  font-weight: var(--font-weight-normal);
-  color: #3f2ab1;
-  color: var(--code-text-color);
-  background-color: #f2f0f9;
-  background-color: var(--code-background-color);
-}
-/* block code snippets */
-pre {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 1rem 1rem;
-  padding: var(--block-code-padding-vertical) var(--block-code-padding-horizontal);
-  border-radius: 4px;
-  border-radius: var(--block-code-border-radius);
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace;
-  font-family: var(--font-family-monospace), monospace;
-  font-size: 0.875rem;
-  font-size: var(--code-font-size);
-  font-weight: 400;
-  font-weight: var(--font-weight-normal)
-}
-pre code {
-    padding: 0;
-    background-color: transparent;
-}
-/* ====================
-   applied colors
-   ==================== */
-html {
-  background-color: white;
-  background-color: var(--html-background-color);
-}
-body {
-  color: hsl(0, 0%, 10%);
-  color: var(--text-color);
-  background-color: white;
-  background-color: var(--body-background-color);
-}
+/* links */
 a {
-  text-decoration: none;
-  text-decoration: var(--link-text-decoration);
-  color: #3f2ab1;
-  color: var(--link-color);
-  transition: color 0.1s ease-out;
-  transition: color var(--speed) var(--easing);
+  text-decoration: var(--link-text-decoration, none);
+  color: var(--link-color, hsl(210, 100%, 50%));
+  transition: color var(--speed, 0.1s) var(--easing, ease-out);
   cursor: pointer
 }
 a:hover {
-    color: rgb(32, 21, 89);
-    color: var(--link-hover-color);
+  color: var(--link-hover-color, hsl(210, 100%, 25%));
 }
-mark {
-  background-color: rgb(207, 202, 236);
-  background-color: var(--mark-color);
+a:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--link-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: none;
+  color: var(--link-focus-color, hsl(210, 100%, 25%));
 }
-del {
-  background-color: #d32f2f;
-  background-color: var(--deleted-color);
+a:active {
+  color: var(--link-active-color, hsl(210, 100%, 25%));
 }
-ins {
-  background-color: rgb(207, 202, 236);
-  background-color: var(--inserted-color);
-}
-/* selections */
+/* user selection color */
 ::-moz-selection {
-  text-shadow: none !important;
-  background-color: rgb(226, 223, 243);
-  background-color: var(--selection-color);
+  text-shadow: none;
+  background-color: var(--selection-color, hsl(210, 100%, 90%));
 }
 ::selection {
-  text-shadow: none !important;
-  background-color: rgb(226, 223, 243);
-  background-color: var(--selection-color);
+  text-shadow: none;
+  background-color: var(--selection-color, hsl(210, 100%, 90%));
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-family-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Courier New', monospace);
+  font-size: var(--code-font-size, var(--font-size-base, var(--font-size-5, 1rem)));
+}
+code {
+  padding: var(--code-padding-vertical, 0.2rem) var(--code-padding-horizontal, 0.4rem);
+  border-radius: var(--code-border-radius, var(--border-radius, 0.2rem));
+  color: var(--code-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
+  background-color: var(--code-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+a code {
+  padding: 0;
+  color: inherit;
+  background-color: inherit;
+}
+kbd {
+  padding: var(--kbd-padding-vertical, 0.2rem) var(--kbd-padding-horizontal, 0.4rem);
+  border-radius: var(--kbd-border-radius, 0.2rem);
+  color: var(--kbd-text-color, white);
+  background-color: var(--kbd-background-color, var(--gray-dark, hsl(220, 10%, 20%)))
+}
+kbd kbd {
+  padding: 0;
+  font-weight: var(--nested-kbd-font-weight, var(--font-weight-medium, 600));
+}
+pre {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  margin-bottom: var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
+  border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));
+  tab-size: 1.5rem;
+  white-space: pre;
+  word-wrap: normal;
+  color: var(--pre-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
+  background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)))
+}
+pre code {
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+figure {
+  margin-bottom: var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+figcaption {
+  margin-top: var(--figcaption-margin-top, 0.5rem);
+  font-weight: var(--figcaption-caption-font-weight, var(--font-weight-normal, 400));
+  color: var(--figcaption-text-color, var(--gray-light, hsl(0, 0%, 60%)));
+}
+img {
+  display: block;
+  border-radius: var(--image-border-radius, var(--border-radius, 4px));
+}
+svg {
+  fill: currentColor;
+}
+video:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--video-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: 0;
 }
 /* element styles */
-/* ====================
-   generic button mixin
-   ==================== */
-/* applying the mixin */
 button,
-[role='button'],
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-input[type='file'] + label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
+.button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: auto;
-  height: 2.25rem;
-  height: var(--button-height);
-  padding: 0 0.75rem;
-  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
-  border-width: 1px;
-  border-width: var(--button-border-width);
-  border-style: solid;
-  border-color: #3f2ab1;
-  border-color: var(--button-border-color);
-  border-radius: 4px;
-  border-radius: var(--button-border-radius);
-  outline: 0;
+  height: var(--button-height, 2.25rem);
+  padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
+  border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
+  border-radius: var(--button-border-radius, 4px);
   text-decoration: none;
-  font-weight: 500;
-  font-weight: var(--button-font-weight);
-  white-space: nowrap;
-  color: white;
-  color: var(--button-text-color);
-  background-color: #3f2ab1;
-  background-color: var(--button-background-color);
-  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
-  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
+  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
+  color: var(--button-text-color, white);
+  background-color: var(--button-background-color, hsl(210, 100%, 50%));
+  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
   cursor: pointer;
 }
-button:hover, [role='button']:hover, input[type='submit']:hover, input[type='button']:hover, input[type='reset']:hover, input[type='file'] + label:hover {
-    border-color: transparent;
-    border-color: var(--button-hover-border-color);
-    color: white;
-    color: var(--button-hover-text-color);
-    background-color: rgb(32, 21, 89);
-    background-color: var(--button-hover-background-color);
+button:hover, .button:hover, [type='button']:hover, [type='submit']:hover, [type='reset']:hover {
+  border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
+  color: var(--button-hover-text-color, white);
+  background-color: var(--button-hover-background-color, hsl(210, 100%, 40%));
 }
-/* table styling */
+button:focus, .button:focus, [type='button']:focus, [type='submit']:focus, [type='reset']:focus {
+  border-color: var(--button-focus-border-color, hsl(210, 100%, 50%));
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-focus-box-shadow-color, hsl(210, 100%, 85%));
+  color: var(--button-focus-text-color, white);
+  background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
+}
+button:active, .button:active, [type='button']:active, [type='submit']:active, [type='reset']:active {
+  border-color: var(--button-active-border-color, hsl(210, 100%, 30%));
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-active-box-shadow-color, hsl(210, 100%, 85%));
+  color: var(--button-active-text-color, white);
+  background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
+}
+button:visited, .button:visited, [type='button']:visited, [type='submit']:visited, [type='reset']:visited {
+  color: var(--button-text-color, white);
+}
+button:disabled, .button:disabled, [type='button']:disabled, [type='submit']:disabled, [type='reset']:disabled {
+  border-color: var(--button-disabled-border-color, transparent);
+  color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
+  background-color: var(--button-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  cursor: not-allowed;
+}
+/* Future-proof disabling of clicks on `<a>` elements */
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
 table {
   width: 100%;
-  width: var(--table-width)
-}
-table caption {
-    margin-bottom: 1rem;
-    margin-bottom: var(--table-caption-margin-bottom);
-    text-align: left;
-    font-weight: 600;
-    font-weight: var(--table-caption-font-weight);
+  max-width: 100%;
+  margin-bottom: var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
 }
 th,
 td {
-  padding: 0.5rem 0.75rem;
-  padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
-  border: 1px solid hsl(0, 0%, 90%);
-  border: var(--table-cell-border-width) solid var(--table-cell-border-color);
-  text-align: left;
+  padding: var(--table-cell-padding-vertical, 0.5rem) var(--table-cell-padding-horizontal, 0.75rem);
+  border-top: var(--table-cell-border-width, 1px) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
   vertical-align: top;
 }
-th {
-  font-weight: 600;
-  font-weight: var(--table-heading-font-weight);
+thead th,
+thead td {
+  border-top: 0;
+  border-bottom: var(--table-foot-border-width, var(--table-cell-border-width, 2px)) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  vertical-align: bottom;
 }
-/* ====================
-   general form styling
-   ==================== */
+tfoot th,
+tfoot td {
+  border-top: var(--table-head-border-width, var(--table-cell-border-width, 2px)) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  vertical-align: top;
+}
+tbody + tbody {
+  border-top: var(--table-head-border-width, var(--table-cell-border-width, 2px)) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+}
+table caption {
+  padding: var(--table-caption-padding-vertical, 0.75rem) 0;
+  font-weight: var(--table-caption-font-weight, var(--font-weight-normal, 400));
+  color: var(--table-caption-text-color, var(--gray-light, hsl(0, 0%, 60%)));
+}
 fieldset {
-  margin: 1rem 0;
-  margin: var(--fieldset-margin-vertical) 0;
-  padding: 0 0;
-  padding: var(--fieldset-padding-vertical) var(--fieldset-padding-horizontal);
-  border-width: 0;
-  border-width: var(--fieldset-border-width);
-  border-style: solid;
-  border-color: transparent;
-  border-color: var(--fieldset-border-color)
+  margin-bottom: var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: var(--fieldset-padding-vertical, 0) var(--fieldset-padding-horizontal, 0);
+  border: var(--fieldset-border-width, 0) solid var(--fieldset-border-color, transparent)
 }
 fieldset legend {
-    margin-bottom: 1rem;
-    margin-bottom: var(--legend-margin-bottom);
-    font-weight: 600;
-    font-weight: var(--legend-font-weight);
+  margin-bottom: var(--legend-margin-bottom, 0.5rem);
+  font-weight: var(--legend-font-weight, var(--font-weight-semibold, 600));
 }
 label {
   display: block;
-  margin-bottom: 0.5rem;
-  margin-bottom: var(--label-margin-bottom);
-  font-weight: 600;
-  font-weight: var(--label-font-weight);
+  margin-bottom: var(--label-margin-bottom, 0.25rem);
+  font-weight: var(--label-font-weight, var(--font-weight-medium, 500));
 }
-input,
-select,
-textarea {
-  outline: 0;
-}
-/* ====================
-   general mixin
-   ==================== */
-/* ====================
-   text inputs
-   ==================== */
+/* text inputs */
 input[type='text'],
 input[type='password'],
 input[type='url'],
@@ -1481,111 +968,176 @@ input[type='date'],
 input[type='month'],
 input[type='week'],
 input[type='datetime-local'],
-input[type='color'],
 select {
-  border-width: 1px;
-  border-width: var(--input-border-width);
-  border-style: solid;
-  border-color: hsl(0, 0%, 90%);
-  border-color: var(--input-border-color);
-  border-radius: 4px;
-  border-radius: var(--input-border-radius);
-  font-weight: 400;
-  font-weight: var(--input-font-weight);
-  color: hsl(0, 0%, 10%);
-  color: var(--input-text-color);
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--input-background-color);
-  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
-  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--input-border-radius, var(--border-radius, 4px));
+  font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
+  color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
+  background-color: var(--input-background-color, white);
+  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
+}
+input[type='text']::placeholder, input[type='password']::placeholder, input[type='url']::placeholder, input[type='email']::placeholder, input[type='tel']::placeholder, input[type='search']::placeholder, input[type='number']::placeholder, input[type='date']::placeholder, input[type='month']::placeholder, input[type='week']::placeholder, input[type='datetime-local']::placeholder, select::placeholder {
+  color: var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%)));
+}
+input[type='text']:hover, input[type='password']:hover, input[type='url']:hover, input[type='email']:hover, input[type='tel']:hover, input[type='search']:hover, input[type='number']:hover, input[type='date']:hover, input[type='month']:hover, input[type='week']:hover, input[type='datetime-local']:hover, select:hover {
+  border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
+  background-color: var(--input-hover-background-color, var(--input-background-color), white);
+}
+input[type='text']:hover::placeholder, input[type='password']:hover::placeholder, input[type='url']:hover::placeholder, input[type='email']:hover::placeholder, input[type='tel']:hover::placeholder, input[type='search']:hover::placeholder, input[type='number']:hover::placeholder, input[type='date']:hover::placeholder, input[type='month']:hover::placeholder, input[type='week']:hover::placeholder, input[type='datetime-local']:hover::placeholder, select:hover::placeholder {
+  color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+}
+input[type='text']:focus, input[type='password']:focus, input[type='url']:focus, input[type='email']:focus, input[type='tel']:focus, input[type='search']:focus, input[type='number']:focus, input[type='date']:focus, input[type='month']:focus, input[type='week']:focus, input[type='datetime-local']:focus, select:focus {
+  border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+  color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
+    background-color: var(--input-focus-background-color, var(--input-background-color), white));
+}
+input[type='text']:focus::placeholder, input[type='password']:focus::placeholder, input[type='url']:focus::placeholder, input[type='email']:focus::placeholder, input[type='tel']:focus::placeholder, input[type='search']:focus::placeholder, input[type='number']:focus::placeholder, input[type='date']:focus::placeholder, input[type='month']:focus::placeholder, input[type='week']:focus::placeholder, input[type='datetime-local']:focus::placeholder, select:focus::placeholder {
+  color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+}
+input[type='text']:disabled,
+  input[type='text'][readonly],
+  input[type='password']:disabled,
+  input[type='password'][readonly],
+  input[type='url']:disabled,
+  input[type='url'][readonly],
+  input[type='email']:disabled,
+  input[type='email'][readonly],
+  input[type='tel']:disabled,
+  input[type='tel'][readonly],
+  input[type='search']:disabled,
+  input[type='search'][readonly],
+  input[type='number']:disabled,
+  input[type='number'][readonly],
+  input[type='date']:disabled,
+  input[type='date'][readonly],
+  input[type='month']:disabled,
+  input[type='month'][readonly],
+  input[type='week']:disabled,
+  input[type='week'][readonly],
+  input[type='datetime-local']:disabled,
+  input[type='datetime-local'][readonly],
+  select:disabled,
+  select[readonly] {
+  border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
+  background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+input[type='text']:disabled::placeholder, input[type='text'][readonly]::placeholder, input[type='password']:disabled::placeholder, input[type='password'][readonly]::placeholder, input[type='url']:disabled::placeholder, input[type='url'][readonly]::placeholder, input[type='email']:disabled::placeholder, input[type='email'][readonly]::placeholder, input[type='tel']:disabled::placeholder, input[type='tel'][readonly]::placeholder, input[type='search']:disabled::placeholder, input[type='search'][readonly]::placeholder, input[type='number']:disabled::placeholder, input[type='number'][readonly]::placeholder, input[type='date']:disabled::placeholder, input[type='date'][readonly]::placeholder, input[type='month']:disabled::placeholder, input[type='month'][readonly]::placeholder, input[type='week']:disabled::placeholder, input[type='week'][readonly]::placeholder, input[type='datetime-local']:disabled::placeholder, input[type='datetime-local'][readonly]::placeholder, select:disabled::placeholder, select[readonly]::placeholder {
+  color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
+}
+input[type='text']:disabled, input[type='password']:disabled, input[type='url']:disabled, input[type='email']:disabled, input[type='tel']:disabled, input[type='search']:disabled, input[type='number']:disabled, input[type='date']:disabled, input[type='month']:disabled, input[type='week']:disabled, input[type='datetime-local']:disabled, select:disabled {
+  cursor: not-allowed;
+}
+input[type='text'],
+input[type='password'],
+input[type='url'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime-local'],
+select {
   display: block;
-  display: var(--input-display);
   width: 100%;
-  width: var(--input-width);
-  height: 2.5rem;
-  height: var(--input-height);
-  padding: 0 0.75rem;
-  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  height: var(--input-height, 2.5rem);
+  padding: var(--input-padding-vertical, 0) var(--input-padding-horizontal, 0.75rem);
 }
-input[type='text']::-webkit-input-placeholder, input[type='password']::-webkit-input-placeholder, input[type='url']::-webkit-input-placeholder, input[type='email']::-webkit-input-placeholder, input[type='tel']::-webkit-input-placeholder, input[type='search']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, input[type='date']::-webkit-input-placeholder, input[type='month']::-webkit-input-placeholder, input[type='week']::-webkit-input-placeholder, input[type='datetime-local']::-webkit-input-placeholder, input[type='color']::-webkit-input-placeholder, select::-webkit-input-placeholder {
-    color: hsl(0, 0%, 50%);
-    color: var(--input-placeholder-color);
-}
-input[type='text']:-ms-input-placeholder, input[type='password']:-ms-input-placeholder, input[type='url']:-ms-input-placeholder, input[type='email']:-ms-input-placeholder, input[type='tel']:-ms-input-placeholder, input[type='search']:-ms-input-placeholder, input[type='number']:-ms-input-placeholder, input[type='date']:-ms-input-placeholder, input[type='month']:-ms-input-placeholder, input[type='week']:-ms-input-placeholder, input[type='datetime-local']:-ms-input-placeholder, input[type='color']:-ms-input-placeholder, select:-ms-input-placeholder {
-    color: hsl(0, 0%, 50%);
-    color: var(--input-placeholder-color);
-}
-input[type='text']::placeholder, input[type='password']::placeholder, input[type='url']::placeholder, input[type='email']::placeholder, input[type='tel']::placeholder, input[type='search']::placeholder, input[type='number']::placeholder, input[type='date']::placeholder, input[type='month']::placeholder, input[type='week']::placeholder, input[type='datetime-local']::placeholder, input[type='color']::placeholder, select::placeholder {
-    color: hsl(0, 0%, 50%);
-    color: var(--input-placeholder-color);
-}
-/* ====================
-   textareas
-   ==================== */
+/* textareas */
 textarea {
-  border-width: 1px;
-  border-width: var(--input-border-width);
-  border-style: solid;
-  border-color: hsl(0, 0%, 90%);
-  border-color: var(--input-border-color);
-  border-radius: 4px;
-  border-radius: var(--input-border-radius);
-  font-weight: 400;
-  font-weight: var(--input-font-weight);
-  color: hsl(0, 0%, 10%);
-  color: var(--input-text-color);
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--input-background-color);
-  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
-  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
-  display: block;
-  display: var(--textarea-display);
-  width: 100%;
-  width: var(--textarea-width);
-  height: auto;
-  height: var(--textarea-height);
-  resize: vertical;
-  padding: 0.5rem 0.75rem;
-  padding: var(--textarea-padding-vertical) var(--textarea-padding-horizontal);
-}
-textarea::-webkit-input-placeholder {
-    color: hsl(0, 0%, 50%);
-    color: var(--input-placeholder-color);
-}
-textarea:-ms-input-placeholder {
-    color: hsl(0, 0%, 50%);
-    color: var(--input-placeholder-color);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--input-border-radius, var(--border-radius, 4px));
+  font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
+  color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
+  background-color: var(--input-background-color, white);
+  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
 }
 textarea::placeholder {
-    color: hsl(0, 0%, 50%);
-    color: var(--input-placeholder-color);
+  color: var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%)));
 }
-/* ====================
-   selects
-   ==================== */
-select {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E');
-  background-image: var(--select-background-image);
+textarea:hover {
+  border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
+  background-color: var(--input-hover-background-color, var(--input-background-color), white);
+}
+textarea:hover::placeholder {
+  color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+}
+textarea:focus {
+  border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+  color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
+    background-color: var(--input-focus-background-color, var(--input-background-color), white));
+}
+textarea:focus::placeholder {
+  color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+}
+textarea:disabled,
+  textarea[readonly] {
+  border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
+  background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+textarea:disabled::placeholder, textarea[readonly]::placeholder {
+  color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
+}
+textarea:disabled {
+  cursor: not-allowed;
+}
+textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: var(--textarea-padding-vertical, 0.5rem) var(--textarea-padding-horizontal, 0.75rem);
+}
+/* selects */
+select:not([multiple]) {
+  background-image: var(--select-background-image, url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E'));
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-position: var(--select-background-position);
-  background-size: 0.75rem;
-  background-size: var(--select-background-size);
-  cursor: pointer;
+  background-position: var(--select-background-position, right 1rem center);
+  background-size: var(--select-background-size, 0.75rem);
 }
-/* ====================
-   checkboxes
-   ==================== */
+/* multiple select */
+select[multiple] {
+  height: auto;
+}
+/* checkboxes */
 .checkbox {
   position: relative
 }
 .checkbox label {
-    position: relative;
-    padding: 0 2rem;
-    padding: 0 var(--checkbox-label-padding-horizontal);
-    font-weight: 400;
-    font-weight: var(--checkbox-label-font-weight);
-    cursor: pointer;
+  position: relative;
+  margin-bottom: var(--checkbox-margin-bottom, 0.5rem);
+  padding: 0 var(--checkbox-label-padding-horizontal, 1.5rem);
+  line-height: 1;
+  font-weight: var(--checkbox-label-font-weight);
+  cursor: pointer;
+  user-select: none;
+}
+.checkbox label::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--checkbox-width, 1rem);
+  height: var(--checkbox-height, 1rem);
+  border-color: var(--checkbox-border-color, transparent);
+  border-radius: var(--checkbox-border-radius, var(--border-radius, 4px));
+  background-color: var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+  content: '';
 }
 .checkbox input[type='checkbox'] {
   position: absolute;
@@ -1594,25 +1146,65 @@ select {
   width: 0;
   height: 0;
   opacity: 0;
-  pointer-events: none
+  pointer-events: none;
 }
 .checkbox input[type='checkbox']:hover + label::before {
-    background-color: hsl(0, 0%, 75%);
-    background-color: var(--checkbox-hover-background-color);
+  background-color: var(--checkbox-hover-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
-/* ====================
-   radio buttons
-   ==================== */
+.checkbox input[type='checkbox']:focus + label::before {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+  background-color: var(--checkbox-focus-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+}
+.checkbox input[type='checkbox']:checked + label::before {
+  background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
+}
+.checkbox input[type='checkbox']:checked + label::after {
+  display: block;
+  position: absolute;
+  top: var(--checkbox-check-position-top, 0.2rem);
+  left: var(--checkbox-check-position-left, 0.375rem);
+  width: var(--checkbox-check-width, 0.25rem);
+  height: var(--checkbox-check-height, 0.5rem);
+  border: solid white;
+  border-width: 0 var(--checkbox-border-width, 2px) var(--checkbox-border-width, 2px) 0;
+  transform: rotate(45deg);
+  content: '';
+}
+.checkbox input[type='checkbox']:disabled + label,
+    .checkbox input[type='checkbox'][readonly] + label {
+  color: var(--checkbox-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
+}
+.checkbox input[type='checkbox']:disabled {
+  cursor: not-allowed;
+}
+.checkbox input[type='checkbox']:disabled + label::before,
+    .checkbox input[type='checkbox'][readonly] + label::before {
+  background-color: var(--checkbox-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+/* radio buttons */
 .radio {
   position: relative
 }
 .radio label {
-    position: relative;
-    padding: 0 2rem;
-    padding: 0 var(--radio-label-padding-horizontal);
-    font-weight: 400;
-    font-weight: var(--radio-label-font-weight);
-    cursor: pointer;
+  position: relative;
+  margin-bottom: var(--radio-margin-bottom, 0.5rem);
+  padding: 0 var(--radio-label-padding-horizontal, 1.5rem);
+  line-height: 1;
+  font-weight: var(--radio-label-font-weight);
+  cursor: pointer;
+  user-select: none;
+}
+.radio label::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--radio-width, 1rem);
+  height: var(--radio-height, 1rem);
+  border-radius: var(--radio-border-radius, 50%);
+  background-color: var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+  content: '';
 }
 .radio input[type='radio'] {
   position: absolute;
@@ -1620,224 +1212,208 @@ select {
   left: 0;
   width: 0;
   height: 0;
-  opacity: 0
+  opacity: 0;
+  pointer-events: none;
 }
 .radio input[type='radio']:hover + label::before {
-    background-color: hsl(0, 0%, 75%);
-    background-color: var(--radio-hover-background-color);
+  background-color: var(--radio-hover-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
-/* ====================
-   meter elements
-   ==================== */
-/* currently only works in Webkit browsers and Firefox */
-meter {
-  -webkit-appearance: meter;
-  width: 100%;
-  width: var(--meter-width);
-  background: hsl(0, 0%, 90%);
-  background: var(--meter-background-color)
+.radio input[type='radio']:focus + label::before {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+  background-color: var(--radio-focus-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
-meter::-webkit-meter-bar {
-    background: hsl(0, 0%, 90%);
-    background: var(--meter-background-color);
+.radio input[type='radio']:checked + label::before {
+  background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
 }
-/* ====================
-   progress elements
-   ==================== */
-progress {
+.radio input[type='radio']:checked + label::after {
+  display: block;
+  position: absolute;
+  top: var(--radio-check-position-top, 0.25rem);
+  left: var(--radio-check-position-left, 0.25rem);
+  width: var(--radio-check-width, 0.5rem);
+  height: var(--radio-check-height, 0.5rem);
+  border-radius: var(--radio-check-border-radius, 50%);
+  background-color: var(--radio-check-background-color, white);
+  content: '';
 }
-progress[value] {
-    width: 100%;
-    width: var(--progress-width);
-    height: 1rem;
-    height: var(--progress-height);
+.radio input[type='radio']:disabled + label,
+    .radio input[type='radio'][readonly] + label {
+  color: var(--radio-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
 }
-/* ====================
-   range inputs
-   ==================== */
+.radio input[type='radio']:disabled {
+  cursor: not-allowed;
+}
+.radio input[type='radio']:disabled + label::before,
+    .radio input[type='radio'][readonly] + label::before {
+  background-color: var(--radio-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+/* file inputs */
+input[type='file'] {
+  cursor: pointer
+}
+input[type='file']:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: 0;
+}
+input[type='file']:disabled {
+  cursor: not-allowed;
+}
+/* color inputs */
+input[type='color'] {
+  cursor: pointer
+}
+input[type='color']:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: 0;
+}
+input[type='color']:disabled {
+  cursor: not-allowed;
+}
+/* range inputs */
 input[type=range] {
+  -webkit-appearance: none;
   width: 100%;
-  width: var(--range-input-width);
-}
-input[type=range]::-webkit-slider-thumb {
-  width: 24px;
-  width: var(--range-input-thumb-width);
-  height: 24px;
-  height: var(--range-input-thumb-height);
-  margin-top: -7px;
-  border-color: transparent;
-  border-radius: 50%;
-  border-radius: var(--range-input-thumb-border-radius);
-  background-color: #3f2ab1;
-  background-color: var(--range-input-thumb-background);
-  cursor: pointer;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-focus-background);
-}
-input[type=range]::-moz-range-thumb {
-  width: 24px;
-  width: var(--range-input-thumb-width);
-  height: 24px;
-  height: var(--range-input-thumb-height);
-  border-color: transparent;
-  border-radius: 50%;
-  border-radius: var(--range-input-thumb-border-radius);
-  background-color: #3f2ab1;
-  background-color: var(--range-input-thumb-background);
-  cursor: pointer;
-}
-input[type=range]::-ms-thumb {
-  width: 24px;
-  width: var(--range-input-thumb-width);
-  height: 24px;
-  height: var(--range-input-thumb-height);
-  border-color: transparent;
-  border-radius: 50%;
-  border-radius: var(--range-input-thumb-border-radius);
-  background-color: #3f2ab1;
-  background-color: var(--range-input-thumb-background);
-  cursor: pointer;
+  outline: 0;
+  background: transparent
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  width: var(--range-input-width);
-  height: 10px;
-  height: var(--range-input-track-height);
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-background);
-  transition: background-color 0.1s ease-out;
-  transition: background-color var(--speed) var(--easing);
+  height: 0.5rem;
+  border-radius: var(--range-input-track-border-radius, var(--border-radius, 4px));
+  background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
   cursor: pointer;
 }
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+}
 input[type=range]::-moz-range-track {
-  width: 100%;
-  width: var(--range-input-width);
-  height: 10px;
-  height: var(--range-input-track-height);
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-background);
-  transition: background-color 0.1s ease-out;
-  transition: background-color var(--speed) var(--easing);
+  width: var(--range-input-thumb-width, 1.5rem);
+  height: var(--range-input-thumb-height, 1.5rem);
+  background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
   cursor: pointer;
 }
 input[type=range]:focus::-moz-range-track {
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-focus-background);
+  background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 input[type=range]::-ms-track {
-  width: 100%;
-  width: var(--range-input-width);
-  height: 10px;
-  height: var(--range-input-track-height);
-  border-width: 24px;
-  border-width: var(--range-input-thumb-height);
+  width: var(--range-input-thumb-width, 1.5rem);
+  height: var(--range-input-thumb-height, 1.5rem);
+  border-width: var(--range-input-thumb-height, 1.5rem);
   border-color: transparent;
   color: transparent;
   background-color: transparent;
-  transition: background-color 0.1s ease-out;
-  transition: background-color var(--speed) var(--easing);
+  transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
   cursor: pointer;
 }
 input[type=range]::-ms-fill-lower {
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-background);
+  background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 input[type=range]:focus::-ms-fill-lower {
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-focus-background);
+  background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 input[type=range]::-ms-fill-upper {
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-background);
+  background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 input[type=range]:focus::-ms-fill-upper {
-  background-color: hsl(0, 0%, 90%);
-  background-color: var(--range-input-track-focus-background);
+  background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
-/* ====================
-   file inputs
-   ==================== */
-input[type='file'] {
-  clip: rect(0 0 0 0);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
-}
-input[type='file'] + label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: auto;
-  height: 2.25rem;
-  height: var(--button-height);
-  padding: 0 0.75rem;
-  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
-  border-width: 1px;
-  border-width: var(--button-border-width);
-  border-style: solid;
-  border-color: #3f2ab1;
-  border-color: var(--button-border-color);
-  border-radius: 4px;
-  border-radius: var(--button-border-radius);
-  outline: 0;
-  text-decoration: none;
-  font-weight: 500;
-  font-weight: var(--button-font-weight);
-  white-space: nowrap;
-  color: white;
-  color: var(--button-text-color);
-  background-color: #3f2ab1;
-  background-color: var(--button-background-color);
-  transition: border-color 0.1s ease-out, color 0.1s ease-out, background-color 0.1s ease-out;
-  transition: border-color var(--speed) var(--easing), color var(--speed) var(--easing), background-color var(--speed) var(--easing);
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--range-input-thumb-width, 1.5rem);
+  height: var(--range-input-thumb-height, 1.5rem);
+  margin-top: -0.5rem;
+  border-color: transparent;
+  border-radius: var(--range-input-thumb-border-radius, 50%);
+  background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
   cursor: pointer;
 }
-input[type='file'] + label:hover {
-    border-color: transparent;
-    border-color: var(--button-hover-border-color);
-    color: white;
-    color: var(--button-hover-text-color);
-    background-color: rgb(32, 21, 89);
-    background-color: var(--button-hover-background-color);
+input[type=range]::-moz-range-thumb {
+  width: var(--range-input-thumb-width, 1.5rem);
+  height: var(--range-input-thumb-height, 1.5rem);
+  border-color: transparent;
+  border-radius: var(--range-input-thumb-border-radius, 50%);
+  background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+  cursor: pointer;
 }
-/* ====================
-   color inputs
-   ==================== */
-input[type='color'] {
-  width: 2.5rem;
-  width: var(--color-input-width);
-  padding: 0;
-  border: 0;
-  cursor: pointer
+input[type=range]::-ms-thumb {
+  width: var(--range-input-thumb-width, 1.5rem);
+  height: var(--range-input-thumb-height, 1.5rem);
+  border-color: transparent;
+  border-radius: var(--range-input-thumb-border-radius, 50%);
+  background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+  cursor: pointer;
 }
-input[type='color']::-webkit-color-swatch-wrapper {
-    padding: 0;
+input[type=range]:disabled {
+  cursor: not-allowed;
 }
-/* ====================
-   speed up touch delay
-   ==================== */
-a,
-area,
-button,
-[role="button"],
-input:not([type=range]),
-label,
-select,
-summary,
-textarea {
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+input[type=range]:disabled::-webkit-slider-runnable-track {
+  background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
 }
+input[type=range]:disabled::-moz-range-track {
+  background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+input[type=range]:disabled::-ms-fill-lower {
+  background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+input[type=range]:disabled::-ms-fill-upper {
+  background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+}
+input[type=range]:disabled::-webkit-slider-thumb {
+  background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+}
+input[type=range]:disabled::-moz-range-thumb {
+  background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+}
+input[type=range]:disabled::-ms-thumb {
+  background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+}
+::-moz-progress-bar {
+  -moz-appearance: none;
+}
+/* meter elements */
+meter {
+  -webkit-appearance: meter;
+  width: 100%;
+  background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)))
+}
+meter::-webkit-meter-bar {
+  background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+}
+meter::-moz-meter-bar {
+  background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+}
+meter::-webkit-meter-optimum-value {
+  background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+}
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+}
+/* progress elements */
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none
+}
+progress[value] {
+  width: 100%;
+  height: 1rem;
+}
+progress::-webkit-progress-bar {
+  background-color: var(--progress-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+}
+progress::-webkit-progress-value {
+  background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+}
+progress::-moz-progress-bar {
+  background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+}
+/* semantic block elements */
+/*header,
+footer,
+article,
+section,
+nav {
+  margin: var(--block-semantic-element-margin-vertical) 0;
+}*/
