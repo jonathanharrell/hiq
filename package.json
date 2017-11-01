@@ -34,6 +34,7 @@
     "stylelint": {
         "extends": "stylelint-config-whq",
         "rules": {
+            "comment-empty-line-before": null,
             "plugin/no-unsupported-browser-features": null
         }
     }

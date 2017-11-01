@@ -1,3 +1,5 @@
+/* utility mixins and classes */
+
 /* makes element unselectable by user */
 @define-mixin is-unselectable {
   user-select: none;
@@ -9,7 +11,7 @@
   @mixin is-unselectable;
 }
 
-/* overflow touch (for mobile devices) */
+/* enables "flicking" scroll motion on touch devices when content overflows */
 @define-mixin overflow-touch {
   -webkit-overflow-scrolling: touch;
 }
@@ -57,4 +59,22 @@
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+
+/*
+applies `inline-block` display mode to all child elements of any element
+adds `margin-right` for spacing
+this will be particularly useful for `ul` and `ol` elements
+*/
+@define-mixin is-inline {
+  & > * {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: var(--inline-item-margin, 0.25rem);
+    }
+  }
+}
+
+.is-inline {
+  @mixin is-inline;
 }

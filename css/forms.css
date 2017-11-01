@@ -1,3 +1,7 @@
+/* forms */
+
+/* basic form styles */
+
 fieldset {
   margin-bottom: var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--fieldset-padding-vertical, 0) var(--fieldset-padding-horizontal, 0);
@@ -14,7 +18,9 @@ label {
   font-weight: var(--label-font-weight, var(--font-weight-medium, 500));
 }
 
+/* input mixin */
 @define-mixin input {
+  /* removes default browser appearance */
   @mixin is-controlled;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 4px));
@@ -90,6 +96,7 @@ textarea {
 /* selects */
 
 select:not([multiple]) {
+  /* if select does not have `multiple` attribute it receives a caret on the right-hand side */
   background-image: var(--select-background-image, url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E'));
   background-repeat: no-repeat;
   background-position: var(--select-background-position, right 1rem center);
@@ -113,6 +120,7 @@ select[multiple] {
     line-height: 1;
     cursor: pointer;
     user-select: none;
+    /* style `::before` to appear like checkbox */
     &::before {
       display: block;
       position: absolute;
@@ -127,6 +135,7 @@ select[multiple] {
       content: '';
     }
   }
+  /* visually hide input */
   & input[type='checkbox'] {
     position: absolute;
     top: 0;
@@ -145,6 +154,7 @@ select[multiple] {
     &:checked + label::before {
       background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
     }
+    /* style `::after` to look like check mark */
     &:checked + label::after {
       display: block;
       position: absolute;
@@ -183,6 +193,7 @@ select[multiple] {
     line-height: 1;
     cursor: pointer;
     user-select: none;
+    /* style `::before` to look like radio button */
     &::before {
       display: block;
       position: absolute;
@@ -196,6 +207,7 @@ select[multiple] {
       content: '';
     }
   }
+  /* visually hide input */
   & input[type='radio'] {
     position: absolute;
     top: 0;
@@ -214,6 +226,7 @@ select[multiple] {
     &:checked + label::before {
       background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
     }
+    /* style `::after` to look like radio button fill */
     &:checked + label::after {
       display: block;
       position: absolute;
@@ -365,10 +378,6 @@ input[type=range] {
       background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
     }
   }
-}
-
-::-moz-progress-bar {
-  -moz-appearance: none;
 }
 
 /* meter elements */

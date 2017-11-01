@@ -192,17 +192,6 @@ address {
   margin-bottom: var(--address-margin-bottom, var(--block-element-margin-bottom, 1rem));
 }
 
-/* details list */
-
-details {
-  margin-bottom: var(--details-margin-bottom, var(--block-element-margin-bottom, 1rem));
-}
-
-summary:focus {
-  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, hsl(210, 100%, 85%));
-  outline: none;
-}
-
 /* mark */
 
 mark {
@@ -219,16 +208,6 @@ del {
 
 ins {
   background-color: var(--inserted-color, hsl(210, 100%, 95%));
-}
-
-/* horizontal rules */
-
-hr {
-  height: var(--horizontal-rule-height, 1px);
-  margin-top: var(--horizontal-rule-margin-vertical, 1rem);
-  margin-bottom: var(--horizontal-rule-margin-vertical, 1rem);
-  border: 0;
-  background-color: var(--horizontal-rule-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
 
 /* lists */
@@ -248,21 +227,8 @@ ul {
   list-style: none;
 }
 
-@define-mixin is-inline {
-  & > * {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: var(--inline-item-margin, 0.25rem);
-    }
-  }
-}
-
 .is-unstyled {
   @mixin is-unstyled;
-}
-
-.is-inline {
-  @mixin is-inline;
 }
 
 /* definition lists */
@@ -273,6 +239,17 @@ dl {
 
 dt {
   font-weight: var(--definition-list-title-font-weight, var(--font-weight-semibold, 600));
+}
+
+/* details list */
+
+details {
+  margin-bottom: var(--details-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+
+summary:focus {
+  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, hsl(210, 100%, 85%));
+  outline: none;
 }
 
 /* blockquotes */
@@ -297,6 +274,16 @@ blockquote {
 
 cite {
   font-style: normal;
+}
+
+/* horizontal rules */
+
+hr {
+  height: var(--horizontal-rule-height, 1px);
+  margin-top: var(--horizontal-rule-margin-vertical, 1rem);
+  margin-bottom: var(--horizontal-rule-margin-vertical, 1rem);
+  border: 0;
+  background-color: var(--horizontal-rule-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
 
 /* links */

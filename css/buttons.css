@@ -1,5 +1,10 @@
+/* buttons */
+
+/* button mixin */
 @define-mixin button {
+  /* removes default browser appearance */
   @mixin is-controlled;
+  /* prevents button text from being selected */
   @mixin is-unselectable;
   display: inline-flex;
   align-items: center;
@@ -32,6 +37,7 @@
     box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-active-box-shadow-color, hsl(210, 100%, 85%));
     color: var(--button-active-text-color, white);
   }
+  /* force styling of text color if element has visited state (needed for `a` elements) */
   &:visited {
     color: var(--button-text-color, white);
   }
@@ -43,6 +49,12 @@
   }
 }
 
+/*
+applying mixin to:
+1. `button` elements
+2. elements with `.button` class (can be an `a` element)
+3. elements with certain `type` attributes
+*/
 button,
 .button,
 [type='button'],
