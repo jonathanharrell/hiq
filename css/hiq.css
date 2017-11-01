@@ -1,6 +1,9 @@
 /* reset */
 @import 'blanq-slate/blanq-slate.css';
 
+/* comment in variables to customize */
+/* @import 'variables.css'; */
+
 /* utility mixins and classes */
 @import 'utility.css';
 

@@ -1,7 +1,7 @@
+/* variables */
+
 :root {
-  /* ====================
-     structural variables
-     ==================== */
+  /* structural variables */
 
   /* container variables */
   --max-container-width: 45rem;
@@ -9,19 +9,20 @@
 
   /* spacing variables */
   --block-element-margin-bottom: 1rem;
-  --block-semantic-element-margin-bottom: 1rem;
-  --heading-margin-bottom: 1rem;
+  --heading-margin-bottom: 0.5rem;
+  --paragraph-margin-bottom: 1rem;
+  --inline-item-margin-right: 0.25rem;
 
-  /* border-radius */
-  --border-radius: 4px;
+  /* border & outline */
+  --border-radius: 0.2rem;
+  --outline-width: 0.2rem;
 
-  /* ====================
-     typography variables
-     ==================== */
+  /* typography variables */
+
+  --text-rendering: optimizeLegibility;
 
   /* font families */
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --font-family-serif: Georgia, 'Times New Roman', Times, serif;
   --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
   --base-font-family: var(--font-family-sans-serif);
 
@@ -34,18 +35,18 @@
   --unitless-upper-font-range: 1200;
 
   /* should match --unitless-upper-font-range with px unit */
-  @custom-media --lower-font-range (width < 460px);
-  @custom-media --upper-font-range (width >= 1200px);
+  @custom-media --lower-font-range (min-width: 460px);
+  @custom-media --upper-font-range (min-width: 1200px);
 
   /* base unitless line heights */
   --line-height-base: 1.4;
   --heading-line-height: 1.2;
 
   /* font sizes */
-  --font-size-1: 2.25rem;
-  --font-size-2: 1.75rem;
-  --font-size-3: 1.5rem;
-  --font-size-4: 1.125rem;
+  --font-size-1: 2.5rem;
+  --font-size-2: 2rem;
+  --font-size-3: 1.75rem;
+  --font-size-4: 1.5rem;
   --font-size-5: 1rem;
   --font-size-6: 0.875rem;
   --font-size-base: var(--font-size-5);
@@ -60,13 +61,13 @@
   --font-weight-bold: 700;
 
   /* letter spacing */
-  --letter-spacing-base: -0.025em;
+  --letter-spacing-base: 0;
 
   /* applied font weights */
   --font-weight-base: var(--font-weight-normal);
   --heading-font-weight: var(--font-weight-medium);
-  --strong-font-weight: var(--font-weight-semibold);
-  --bold-font-weight: var(--font-weight-semibold);
+  --strong-font-weight: var(--font-weight-bold);
+  --bold-font-weight: var(--font-weight-bold);
   --definition-list-title-font-weight: var(--font-weight-semibold);
   --input-font-weight: var(--font-weight-normal);
 
@@ -74,9 +75,7 @@
   --list-margin-left: 1rem;
   --unordered-list-style: disc;
 
-  /* ====================
-     color variables
-     ==================== */
+  /* color variables */
 
   /* gray palette */
   --gray-darkest: hsl(220, 10%, 5%);
@@ -88,10 +87,10 @@
   --gray-lightest: hsl(220, 10%, 95%);
 
   /* semantic palette */
-  --color-primary: #3f2ab1;
-  --color-success: #3f2ab1;
-  --color-warning: #ffca28;
-  --color-error: #d32f2f;
+  --color-primary: hsl(210, 100%, 50%);
+  --color-success: hsl(210, 100%, 50%);
+  --color-warning: hsl(45, 100%, 51%);
+  --color-error: hsl(354, 70%, 54%);
 
   /* applied colors */
   --text-color: var(--gray-darker);
@@ -99,32 +98,45 @@
   --body-background-color: white;
   --background-color: var(--gray-lightest);
   --border-color: var(--gray-lighter);
-  --mark-color: color(#3f2ab1 tint(75%));
-  --selection-color: color(#3f2ab1 tint(85%));
+  --box-shadow-color: hsl(210, 100%, 85%);
+  --mark-color: hsl(50, 81%, 94%);
+  --selection-color: hsl(210, 100%, 90%);
   --deleted-color: var(--color-error);
-  --inserted-color: color(#3f2ab1 tint(75%));
+  --inserted-color: hsl(210, 100%, 95%);
   --disabled-color: var(--gray-light);
 
-  /* ====================
-     transition variables
-     ==================== */
+  /* transition variables */
 
   --speed: 0.1s;
   --easing: ease-out;
 
-  /* ====================
-     link variables
-     ==================== */
+  /* address variables */
+
+  --address-margin-bottom: var(--block-element-margin-bottom);
+
+  /* list variables */
+
+  --list-margin-bottom: var(--block-element-margin-bottom);
+  --details-margin-bottom: var(--block-element-margin-bottom);
+  --summary-focus-box-shadow-color: var(--box-shadow-color);
+
+  /* blockquote variables */
+
+  --blockquote-margin-bottom: 1rem;
+  --blockquote-font-size: var(--font-size-4);
+  --blockquote-line-height: var(--heading-line-height);
+  --blockquote-citation-color: var(--gray-light);
+
+  /* link variables */
 
   --link-color: var(--color-primary);
-  --link-hover-color: color(#3f2ab1 shade(50%));
-  --link-focus-color: color(#3f2ab1 shade(50%));
-  --link-active-color: color(#3f2ab1 shade(50%));
+  --link-hover-color: hsl(210, 100%, 25%);
+  --link-focus-color: hsl(210, 100%, 25%);
+  --link-focus-box-shadow-color: var(--box-shadow-color);
+  --link-active-color: hsl(210, 100%, 25%);
   --link-text-decoration: none;
 
-  /* ====================
-     button variables
-     ==================== */
+  /* button variables */
 
   --button-height: 2.25rem;
   --button-vertical-padding: 0;
@@ -135,35 +147,38 @@
 
   /* static colors */
   --button-border-color: var(--color-primary);
-  --button-text-color: white;
   --button-background-color: var(--color-primary);
+  --button-text-color: white;
 
   /* hover colors */
   --button-hover-border-color: transparent;
+  --button-hover-background-color: hsl(210, 100%, 40%);
   --button-hover-text-color: white;
-  --button-hover-background-color: color(#3f2ab1 shade(50%));
 
   /* focus colors */
   --button-focus-border-color: transparent;
+  --button-focus-background-color: hsl(210, 100%, 40%);
+  --button-focus-box-shadow-color: var(--box-shadow-color);
   --button-focus-text-color: white;
-  --button-focus-background-color: color(#3f2ab1 shade(50%));
 
   /* active colors */
   --button-active-border-color: transparent;
+  --button-active-background-color: hsl(210, 100%, 40%);
+  --button-active-box-shadow-color: var(--box-shadow-color);
   --button-active-text-color: white;
-  --button-active-background-color: color(#3f2ab1 shade(50%));
 
   /* disabled colors */
   --button-disabled-border-color: transparent;
-  --button-disabled-text-color: var(--disabled-color);
   --button-disabled-background-color: var(--gray-lightest);
+  --button-disabled-text-color: var(--disabled-color);
 
-  /* ====================
-     table variables
-     ==================== */
+  /* table variables */
 
-  --table-width: 100%;
+  --table-margin-bottom: var(--block-element-margin-bottom);
+  --table-head-border-width: var(--table-cell-border-width);
+  --table-foot-border-width: var(--table-cell-border-width);
   --table-caption-padding-vertical: 0.5rem;
+  --table-caption-text-color: var(--gray-light);
   --table-caption-font-weight: var(--font-weight-semibold);
   --table-cell-padding-vertical: 0.5rem;
   --table-cell-padding-horizontal: 0.75rem;
@@ -171,9 +186,7 @@
   --table-cell-border-color: var(--border-color);
   --table-heading-font-weight: var(--font-weight-semibold);
 
-  /* ====================
-     form variables
-     ==================== */
+  /* form variables */
 
   /* fieldsets */
   --fieldset-margin-bottom: 1rem;
@@ -199,27 +212,28 @@
 
   /* static input colors */
   --input-border-color: var(--gray-lighter);
+  --input-background-color: var(--gray-lighter);
   --input-text-color: var(--text-color);
   --input-placeholder-color: var(--gray);
-  --input-background-color: var(--gray-lighter);
 
   /* hover input colors */
   --input-hover-border-color: var(--input-border-color);
+  --input-hover-background-color: var(--input-background-color);
   --input-hover-text-color: var(--input-text-color);
   --input-hover-placeholder-color: var(--input-placeholder-color);
-  --input-hover-background-color: var(--input-background-color);
 
   /* focus input colors */
   --input-focus-border-color: var(--color-primary);
+  --input-focus-background-color: var(--input-background-color);
+  --input-focus-box-shadow-color: var(--box-shadow-color);
   --input-focus-text-color: var(--color-primary);
   --input-focus-placeholder-color: var(--input-placeholder-color);
-  --input-focus-background-color: var(--input-background-color);
 
   /* disabled input colors */
   --input-disabled-border-color: var(--gray-lightest);
+  --input-disabled-background-color: var(--gray-lightest);
   --input-disabled-text-color: var(--gray-light);
   --input-disabled-placeholder-color: var(--gray-light);
-  --input-disabled-background-color: var(--gray-lightest);
 
   /* textareas */
   --textarea-padding-vertical: 0.5rem;
@@ -231,38 +245,43 @@
   --select-background-size: 0.75rem;
 
   /* checkboxes */
+  --checkbox-margin-bottom: 0.5rem;
   --checkbox-label-padding-horizontal: 2rem;
   --checkbox-label-font-weight: var(--font-weight-normal);
   --checkbox-label-disabled-color: var(--disabled-color);
-  --checkbox-width: 24px;
-  --checkbox-height: 24px;
+  --checkbox-width: 1rem;
+  --checkbox-height: 1rem;
+  --checkbox-border-color: transparent;
+  --checkbox-border-radius: var(--border-radius);
   --checkbox-background-color: var(--gray-lighter);
   --checkbox-hover-background-color: var(--gray-light);
   --checkbox-focus-background-color: var(--gray-light);
   --checkbox-checked-background-color: var(--color-primary);
   --checkbox-disabled-background-color: var(--gray-lightest);
-  --checkbox-check-position-top: 3px;
-  --checkbox-check-position-left: 8px;
-  --checkbox-check-width: 8px;
-  --checkbox-check-height: 14px;
+  --checkbox-check-position-top: 0.2rem;
+  --checkbox-check-position-left: 0.375rem;
+  --checkbox-check-width: 0.25rem;
+  --checkbox-check-height: 0.5rem;
   --checkbox-border-width: 2px;
 
   /* radio buttons */
+  --radio-margin-bottom: 0.5rem;
   --radio-label-padding-horizontal: 2rem;
   --radio-label-font-weight: var(--font-weight-normal);
   --radio-label-disabled-color: var(--disabled-color);
-  --radio-width: 24px;
-  --radio-height: 24px;
+  --radio-width: 1rem;
+  --radio-height: 1rem;
+  --radio-border-color: transparent;
   --radio-border-radius: 50%;
   --radio-background-color: var(--gray-lighter);
   --radio-hover-background-color: var(--gray-light);
   --radio-focus-background-color: var(--gray-light);
   --radio-checked-background-color: var(--color-primary);
   --radio-disabled-background-color: var(--gray-lightest);
-  --radio-check-position-top: 6px;
-  --radio-check-position-left: 6px;
-  --radio-check-width: 12px;
-  --radio-check-height: 12px;
+  --radio-check-position-top: 0.25rem;
+  --radio-check-position-left: 0.25rem;
+  --radio-check-width: 0.5rem;
+  --radio-check-height: 0.5rem;
   --radio-check-border-radius: 50%;
   --radio-check-background-color: white;
 
@@ -276,85 +295,50 @@
   --progress-filled-color: var(--color-primary);
 
   /* range input */
-  --range-input-thumb-width: 24px;
-  --range-input-thumb-height: 24px;
+  --range-input-thumb-width: 1.5rem;
+  --range-input-thumb-height: 1.5rem;
   --range-input-thumb-border-radius: 50%;
   --range-input-thumb-background: var(--color-primary);
   --range-input-thumb-disabled-background: var(--color-primary);
-  --range-input-track-height: 10px;
+  --range-input-track-height: 0.5rem;
+  --range-input-track-border-radius: var(--border-radius);
   --range-input-track-background: var(--gray-lighter);
   --range-input-track-focus-background: var(--gray-lighter);
-  --range-input-track-disabled-background
+  --range-input-track-disabled-background: var(--gray-lightest);
 
-  /* ====================
-     horizontal rule variables
-     ==================== */
+  /* horizontal rule variables */
 
   --horizontal-rule-height: 1px;
   --horizontal-rule-margin-vertical: 1rem;
   --horizontal-rule-color: var(--color-primary);
 
-  /* ====================
-     media/embeds variables
-     ==================== */
+  /* media/embeds variables */
 
-  --media-width: 100%;
-  --media-margin-vertical: 1rem;
+  --figure-margin-bottom: var(--block-element-margin-bottom);
+  --figcaption-margin-top: 0.5rem;
+  --figcaption-font-weight: var(--font-weight-normal);
+  --figcaption-text-color: var(--gray-light);
+  --image-border-radius: var(--border-radius);
+  --video-focus-box-shadow-color: var(--box-shadow-color);
 
-  /* ====================
-     code variables
-     ==================== */
+  /* code variables */
 
-  --code-font-size: var(--font-size-small);
-  --code-text-color: var(--color-primary);
-  --code-background-color: #f2f0f9;
   --code-padding-vertical: 0.25rem;
   --code-padding-horizontal: 0.5rem;
+  --code-border-radius: var(--border-radius);
+  --code-font-size: var(--font-size-small);
+  --code-background-color: var(--gray-lightest);
+  --code-text-color: var(--color-primary);
+  --pre-margin-bottom: var(--block-element-margin-bottom);
   --pre-padding-vertical: 1rem;
   --pre-padding-horizontal: 1rem;
   --pre-border-radius: var(--border-radius);
+  --pre-background-color: var(--gray-lightest);
+  --pre-text-color: var(--gray-dark);
+  --kbd-padding-vertical: 0.2rem;
+  --kbd-padding-horizontal: 0.4rem;
+  --kbd-border-radius: 0.2rem;
+  --nested-kbd-font-weight: var(--font-weight-medium);
+  --kbd-background-color: var(--gray-dark);
+  --kbd-text-color: white;
 }
-
-
-/*
---paragraph-margin-bottom
---inline-item-margin
---blockquote-margin-bottom
---blockquote-font-size
---blockquote-line-height
---address-margin-bottom
---list-margin-bottom
---details-margin-bottom
---blockquote-citation-color
---text-rendering
---kbd-text-color
---kbd-background-color
---kbd-border-radius
---nested-kbd-font-weight
---pre-margin-bottom
---kbd-padding-vertical
---kbd-padding-horizontal
---code-border-radius
---pre-background-color
---pre-color
---figure-margin-bottom
---figcaption-margin-top
---table-margin-bottom
---table-head-border-width
---table-foot-border-width
---table-caption-text-color
---image-border-radius
---figcaption-font-weight
---figcaption-text-color
---button-focus-box-shadow-color
---button-active-box-shadow-color
---input-focus-box-shadow-color
---checkbox-border-color
---checkbox-border-radius
---checkbox-margin-bottom
---outline-width
---summary-focus-box-shadow-color
---link-focus-box-shadow-color
---video-focus-box-shadow-color
---range-input-track-border-radius
-*/

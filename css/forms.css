@@ -23,7 +23,7 @@ label {
   /* removes default browser appearance */
   @mixin is-controlled;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
-  border-radius: var(--input-border-radius, var(--border-radius, 4px));
+  border-radius: var(--input-border-radius, var(--border-radius, 0.2rem));
   background-color: var(--input-background-color, white);
   font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
   color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
@@ -42,7 +42,7 @@ label {
   &:focus {
     border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
     background-color: var(--input-focus-background-color, var(--input-background-color), white));
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
     &::placeholder {
       color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
@@ -129,7 +129,7 @@ select[multiple] {
       width: var(--checkbox-width, 1rem);
       height: var(--checkbox-height, 1rem);
       border-color: var(--checkbox-border-color, transparent);
-      border-radius: var(--checkbox-border-radius, var(--border-radius, 4px));
+      border-radius: var(--checkbox-border-radius, var(--border-radius, 0.2rem));
       background-color: var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
       transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
       content: '';
@@ -149,7 +149,7 @@ select[multiple] {
     }
     &:focus + label::before {
       background-color: var(--checkbox-focus-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
-      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     }
     &:checked + label::before {
       background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
@@ -201,6 +201,7 @@ select[multiple] {
       left: 0;
       width: var(--radio-width, 1rem);
       height: var(--radio-height, 1rem);
+      border-color: var(--radio-border-color, transparent);
       border-radius: var(--radio-border-radius, 50%);
       background-color: var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
       transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
@@ -221,7 +222,7 @@ select[multiple] {
     }
     &:focus + label::before {
       background-color: var(--radio-focus-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
-      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     }
     &:checked + label::before {
       background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
@@ -257,7 +258,7 @@ select[multiple] {
 input[type='file'] {
   cursor: pointer;
   &:focus {
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     outline: 0;
   }
   &:disabled {
@@ -270,7 +271,7 @@ input[type='file'] {
 input[type='color'] {
   cursor: pointer;
   &:focus {
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, hsl(210, 100%, 85%));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     outline: 0;
   }
   &:disabled {
@@ -287,8 +288,8 @@ input[type=range] {
   -webkit-appearance: none;
   &::-webkit-slider-runnable-track {
     width: 100%;
-    height: 0.5rem;
-    border-radius: var(--range-input-track-border-radius, var(--border-radius, 4px));
+    height: var(--range-input-track-height, 0.5rem);
+    border-radius: var(--range-input-track-border-radius, var(--border-radius, 0.2rem));
     background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
     transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
     cursor: pointer;
@@ -297,8 +298,8 @@ input[type=range] {
     background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-moz-range-track {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
+    width: 100%;
+    height: var(--range-input-track-height, 0.5rem);
     background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
     transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
     cursor: pointer;
@@ -307,8 +308,8 @@ input[type=range] {
     background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-ms-track {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
+    width: 100%;
+    height: var(--range-input-track-height, 0.5rem);
     border-width: var(--range-input-thumb-height, 1.5rem);
     border-color: transparent;
     background-color: transparent;
