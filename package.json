@@ -8,7 +8,7 @@
         "minify": "minify dist/hiq.css --output dist/hiq.min.css",
         "precommit": "npm run lint && npm run postcss && npm run minify",
         "postcss": "postcss css/hiq.css -o dist/hiq.css",
-        "watch": "npm run build -- --watch"
+        "watch": "npm run postcss -- --watch"
     },
     "repository": {
         "type": "git",
