@@ -570,6 +570,17 @@ this will be particularly useful for `ul` and `ol` elements
 .is-inline > *:not(:last-child) {
   margin-right: var(--inline-item-margin-right, 0.25rem);
 }
+/*
+stretches element to full size of its parent
+parent must have `position: relative`
+*/
+.absolute-stretch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 /* base styles */
 /* containers */
 .container {
