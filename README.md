@@ -41,14 +41,12 @@ module.exports = {
 
 ### Alternatives
 
-You can use the full or minified versions as links, or CSS imports:
+You can use the full or minified versions as CSS imports:
 
-```html
-<link rel="stylesheet" href="node_modules/hiq/hiq.css">
-<link rel="stylesheet" href="node_modules/hiq/hiq.min.css">
-```
 ```css
 @import 'node_modules/hiq/hiq.css';
 @import 'node_modules/hiq/hiq.min.css';
 ```
+
+
 
