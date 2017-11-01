@@ -33,6 +33,10 @@
         "stylelint-order": "^0.4.3"
     },
     "files": [
-        "dist"
+        ".stylelintrc",
+        "css/*.css",
+        "dist",
+        "index.html",
+        "postcss.config.js"
     ]
 }
