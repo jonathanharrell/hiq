@@ -78,3 +78,19 @@ this will be particularly useful for `ul` and `ol` elements
 .is-inline {
   @mixin is-inline;
 }
+
+/*
+stretches element to full size of its parent
+parent must have `position: relative`
+*/
+@define-mixin absolute-stretch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.absolute-stretch {
+  @mixin absolute-stretch;
+}
