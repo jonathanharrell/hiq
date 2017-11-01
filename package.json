@@ -4,8 +4,10 @@
     "description": "Basic semantic styling for HTML elements",
     "main": "css/hiq.css",
     "scripts": {
-        "build": "postcss css/hiq.css -o dist/hiq.css",
+        "lint": "stylelint css/*.css",
         "minify": "minify dist/hiq.css --output dist/hiq.min.css",
+        "precommit": "npm run lint && npm run postcss && npm run minify",
+        "postcss": "postcss css/hiq.css -o dist/hiq.css",
         "watch": "npm run build -- --watch"
     },
     "repository": {
@@ -22,6 +24,7 @@
         "blanq-slate": "^1.2.0"
     },
     "devDependencies": {
+        "husky": "^0.14.3",
         "minifier": "^0.8.1",
         "postcss-cli": "^4.1.0",
         "postcss-cssnext": "^2.10.0",
