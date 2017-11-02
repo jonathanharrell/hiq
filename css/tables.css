@@ -3,7 +3,7 @@
 table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
   border-collapse: collapse;
   border-spacing: 0;
 }

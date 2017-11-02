@@ -9,8 +9,7 @@ video {
 }
 
 figure {
-  margin-top: 0;
-  margin-bottom: var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0;
 }
 

@@ -39,8 +39,7 @@ pre {
   @mixin overflow-touch;
   -ms-overflow-style: scrollbar;
   overflow-x: auto;
-  margin-top: 0;
-  margin-bottom: var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
   border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));
   background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));

@@ -1,528 +1,3 @@
-/* reset */
-/* stylelint-disable font-family-no-duplicate-names, plugin/no-unsupported-browser-features */
-/* Global element resets */
-/*
-Set border-box box sizing so borders and padding don't affect set dimensions
-Source: https://github.com/jgthms/minireset.css
-*/
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-/*
-IE10+ doesn't honor `<meta name="viewport">` in some cases
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-@-ms-viewport {
-  width: device-width;
-}
-/*
-Fix display of HTML5 structural elements in IE10 and older browsers
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-article,
-aside,
-dialog,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
-  display: block;
-}
-/*
-Reset block margins so margin and padding are only applied when needed
-Source: https://github.com/jgthms/minireset.css
-*/
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-/*
-Always hide an element with the `hidden` HTML attribute
-Needed for proper display in IE 10-
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-[hidden] {
-  display: none !important;
-}
-/* Horizontal rules */
-/*
-1. Add the correct box sizing in Firefox
-2. Show the overflow in Edge and IE
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-/* Body */
-/*
-1. As best practice, apply default `background-color`
-2. Set explicit initial text-align value so the `inherit` value can be used later on things like `<th>` elements
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-body {
-  background-color: white;/* 1 */
-  text-align: left; /* 2 */
-}
-/* Typography */
-/*
-1. Prevent adjustments of font size after orientation changes on some mobile devices
-2. Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so we force a non-overlapping, non-auto-hiding scrollbar to counteract
-3. Change default font family in all browsers
-4. Set html font size to match browser size
-5. Correct line height in all browsers
-6. Change default tap highlight to be completely transparent in iOS
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-html {
-  -ms-text-size-adjust: 100%; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 1 */
-  -ms-overflow-style: scrollbar; /* 2 */
-  font-family: sans-serif; /* 3 */
-  font-size: 100%; /* 4 */
-  line-height: 1.15; /* 5 */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 6 */
-}
-/*
-Reset heading font sizes and weight
-Source: https://github.com/jgthms/minireset.css
-*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-/*
-Add correct font weight in Chrome, Edge, and Safari
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-b,
-strong {
-  font-weight: bolder;
-}
-/*
-Add correct font size in all browsers
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-small {
-  font-size: 80%;
-}
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-sub,
-sup {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-/*
-1. Remove the bottom border in Firefox 39-
-2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
-3. Add explicit cursor to indicate changed behavior
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-abbr[title] {
-  border-bottom: 0; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-  cursor: help; /* 3 */
-}
-/*
-Reset font style and line height for `address` elements
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-address {
-  font-style: normal;
-  line-height: inherit;
-}
-/*
-Remove bullets from unordered lists
-Source: https://github.com/jgthms/minireset.css
-*/
-ul {
-  list-style: none;
-}
-/*
-Add correct font style in Android 4.3-
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-dfn {
-  font-style: italic;
-}
-/*
-Add correct display in all browsers
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-summary {
-  display: list-item;
-}
-/* Links */
-/*
-1. Remove the gray background on active links in IE 10.
-2. Remove gaps in links underline in iOS 8+ and Safari 8+
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-a {
-  background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
-}
-/*
-Undo these styles for placeholder links/named anchors (without href) which have not been made explicitly keyboard-focusable (without tabindex)
-
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-See https://github.com/twbs/bootstrap/issues/19402
-*/
-a:not([href]):not([tabindex]) {
-  text-decoration: none;
-  color: inherit;
-}
-a:not([href]):not([tabindex]):hover,
-a:not([href]):not([tabindex]):focus {
-  text-decoration: none;
-  color: inherit;
-}
-a:not([href]):not([tabindex]):focus {
-  outline: 0;
-}
-/* Code */
-/*
-1. Correct inheritance and scaling of font size in all browsers
-2. Correct odd font sizing in all browsers
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-pre,
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1rem; /* 2 */
-}
-/*
-1. Don't allow content to break outside
-2. Force a non-overlapping, non-auto-hiding scrollbar to counteract @viewport being set, which causes scrollbars to overlap content in IE11 and Edge
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-pre {
-  overflow: auto; /* 1 */
-  -ms-overflow-style: scrollbar; /* 2 */
-}
-/* Media and embedded elements */
-/*
-Set responsive media elements so images and embeds scale with browser width
-Source: https://github.com/jgthms/minireset.css
-*/
-img,
-embed,
-object,
-video {
-  max-width: 100%;
-  height: auto;
-}
-audio {
-  max-width: 100%;
-}
-/*
-1. Remove the border on images inside links in IE 10-
-2. Align images vertically
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-img {
-  border-style: none; /* 1 */
-  vertical-align: middle; /* 2 */
-}
-/*
-Hide overflow in IE
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-svg:not(:root) {
-  overflow: hidden;
-}
-/* Correct display for audio controls in iOS 4-7 */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-/*
-Remove border from iframes
-Source: https://github.com/jgthms/minireset.css
-*/
-iframe {
-  border: 0;
-}
-/* Tables */
-/*
-1. Prevent double borders
-2. Reset table spacing so tabular data only takes the space it needs
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-table {
-  border-collapse: collapse; /* 1 */
-  border-spacing: 0; /* 2 */
-}
-/*
-1. Move caption below table
-2. Align table caption to left (inherits from body)
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-caption {
-  caption-side: bottom; /* 1 */
-  text-align: inherit; /* 2 */
-}
-/*
-Remove padding from table cells and align text left (inherits from body)
-Source: https://github.com/jgthms/minireset.css
-*/
-td,
-th {
-  padding: 0;
-  text-align: inherit;
-}
-/* Interaction elements */
-/*
-Avoid 300ms click delay on touch devices that support the `touch-action` CSS property
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-a,
-area,
-button,
-[role="button"],
-input:not([type="range"]),
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
-}
-/*
-Suppress the focus outline on elements that cannot be accessed via keyboard
-This prevents an unwanted focus outline from appearing around elements that might still respond to pointer events.
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-[tabindex="-1"]:focus {
-  outline: none !important;
-}
-/* Buttons and inputs &/
-
-/*
-Remove default `border-radius` that macOS Chrome adds
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-button {
-  border-radius: 0;
-}
-/*
-1. Remove `margin` in Firefox and Safari
-2. Inherit type styles
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0; /* 1 */
-  font-family: inherit; /* 2 */
-  font-size: inherit; /* 2 */
-  line-height: inherit; /* 2 */
-}
-/*
-Show overflow in Edge
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-button,
-input {
-  overflow: visible;
-}
-/*
-Remove inheritance of `text-transform` in Firefox
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-button,
-select {
-  text-transform: none;
-}
-/*
-1. Prevent WebKit bug where (2) destroys native `audio` and `video` controls in Android 4
-2. Correct inability to style clickable types in iOS and Safari
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-button,
-html [type="button"], /* 1 */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-}
-/*
-Remove inner border and padding from Firefox
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-/*
-Remove padding in IE 10-
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-input[type="radio"],
-input[type="checkbox"] {
-  padding: 0;
-}
-/*
-Remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-See https://bugs.webkit.org/show_bug.cgi?id=139848
-*/
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
-}
-/*
-1. Remove default vertical scrollbar in IE
-2. Textareas should really only resize vertically so they don't break their (horizontal) containers
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-textarea {
-  overflow: auto; /* 1 */
-  resize: vertical; /* 2 */
-}
-/*
-Correct cursor style of increment and decrement buttons in Chrome
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-/*
-Overrides extra rounded corners on search inputs in iOS
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-[type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none;
-}
-/*
-Remove inner padding and cancel buttons in Chrome and Safari on macOS
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-/*
-1. Correct inability to style clickable types in iOS and Safari
-2. Change font properties to `inherit` in Safari
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-::-webkit-file-upload-button {
-  font: inherit; /* 2 */
-  -webkit-appearance: button; /* 1 */
-}
-/*
-Add correct vertical alignment in Chrome, Firefox, and Opera
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-progress {
-  vertical-align: baseline;
-}
-/* Form elements */
-/*
-1. Ensure fieldsets behave more like a standard block element (browsers set a default `min-width: min-content;` on fieldsets)
-See https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
-2. Reset the default outline behavior of fieldsets so they don't affect page layout
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-fieldset {
-  min-width: 0; /* 1 */
-  border: 0; /* 2 */
-}
-/*
-1. Correct text wrapping in Edge and IE
-2. Correct color inheritance from `fieldset` elements in IE
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-legend {
-  display: block;
-  width: 100%;
-  max-width: 100%; /* 1 */
-  padding: 0;
-  line-height: inherit;
-  white-space: normal; /* 1 */
-  color: inherit; /* 2 */
-}
-/*
-Allow labels to use `margin` for spacing
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-label {
-  display: inline-block;
-}
-/*
-Display form output inline
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-output {
-  display: inline-block;
-}
-/* Additional element display fixes */
-/*
-Add correct display in IE
-Source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-*/
-template {
-  display: none;
-}
 /* use variables from this file to customize */
 /* @import 'variables.css'; */
 /* utility mixins and classes */
@@ -719,8 +194,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  margin-bottom: var(--heading-margin-bottom, 0.5rem);
+  margin: 0 0 var(--heading-margin-bottom, 0.5rem);
   padding: 0;
   font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
   line-height: var(--heading-line-height, 1.2);
@@ -800,8 +274,7 @@ b {
 }
 /* paragraph spacing */
 p {
-  margin-top: 0;
-  margin-bottom: var(--paragraph-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--paragraph-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0;
 }
 /* address spacing */
@@ -836,8 +309,7 @@ ins {
 /* lists */
 ol,
 ul {
-  margin-top: 0;
-  margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0 0 0 var(--list-margin-left, 1rem);
 }
 ul {
@@ -853,8 +325,7 @@ li {
 }
 /* definition lists */
 dl {
-  margin-top: 0;
-  margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0;
 }
 dt {
@@ -879,8 +350,7 @@ summary:focus {
 }
 /* blockquotes */
 blockquote {
-  margin-top: 0;
-  margin-bottom: var(--blockquote-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--blockquote-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0
 }
 blockquote p {
@@ -992,8 +462,7 @@ pre {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: scrollbar;
   overflow-x: auto;
-  margin-top: 0;
-  margin-bottom: var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
   border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));
   background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
@@ -1019,8 +488,7 @@ video {
   height: auto;
 }
 figure {
-  margin-top: 0;
-  margin-bottom: var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0;
 }
 figcaption {
@@ -1137,7 +605,7 @@ fieldset[disabled] a.btn {
 table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -1175,7 +643,7 @@ table caption {
 /* basic form elements */
 fieldset {
   min-width: 0;
-  margin-bottom: var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--fieldset-padding-vertical, 0) var(--fieldset-padding-horizontal, 0);
   border: var(--fieldset-border-width, 0) solid var(--fieldset-border-color, transparent);
 }
@@ -1183,7 +651,7 @@ legend {
   display: block;
   width: 100%;
   max-width: 100%;
-  margin-bottom: var(--legend-margin-bottom, 0.5rem);
+  margin: 0 0 var(--legend-margin-bottom, 0.5rem);
   padding: 0;
   font-weight: var(--legend-font-weight, var(--font-weight-semibold, 600));
   line-height: inherit;
@@ -1192,8 +660,7 @@ legend {
 }
 label {
   display: block;
-  margin-top: 0;
-  margin-bottom: var(--label-margin-bottom, 0.25rem);
+  margin: 0 0 var(--label-margin-bottom, 0.25rem);
   padding: 0;
   font-weight: var(--label-font-weight, var(--font-weight-medium, 500));
 }
@@ -1219,7 +686,6 @@ select {
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  overflow: visible;
   margin: 0;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 0.2rem));
@@ -1344,7 +810,6 @@ textarea {
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  overflow: visible;
   margin: 0;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 0.2rem));
@@ -1561,6 +1026,9 @@ optgroup {
 }
 /* file inputs */
 input[type='file'] {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
   cursor: pointer
 }
 input[type='file']:focus {
@@ -1569,6 +1037,10 @@ input[type='file']:focus {
 }
 input[type='file']:disabled {
   cursor: not-allowed;
+}
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
 }
 /* color inputs */
 input[type='color'] {
@@ -1680,16 +1152,6 @@ input[type=range]:disabled::-moz-range-thumb {
 }
 input[type=range]:disabled::-ms-thumb {
   background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
-}
-/* file inputs */
-/*
-1. correct inability to style clickable types in iOS and Safari
-2. change font properties to `inherit` in Safari
-source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
- */
-::-webkit-file-upload-button {
-  font: inherit; /* 2 */
-  -webkit-appearance: button; /* 1 */
 }
 /* meter elements */
 meter {
