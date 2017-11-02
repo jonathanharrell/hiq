@@ -144,3 +144,15 @@ this will be particularly useful for `ul` and `ol` elements
 .is-clearfix {
   @mixin is-clearfix;
 }
+
+@define-mixin flex-grid $flex-basis, $grid-gap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$grid-gap;
+  margin-left: -$grid-gap;
+  & > * {
+    flex: 1 1 $flex-basis;
+    padding-right: $grid-gap;
+    padding-left: $grid-gap;
+  }
+}
