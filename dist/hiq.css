@@ -24,27 +24,7 @@
   border: 0;
   white-space: nowrap;
 }
-/* clears to reset space after floated elements */
-.clearfix::before,
-  .clearfix::after {
-  display: table;
-  content: '';
-}
-.clearfix::after {
-  clear: both;
-}
 /* removes default appearance from buttons and inputs */
-/*
-applies `inline-block` display mode to all child elements of any element
-adds `margin-right` for spacing
-this will be particularly useful for `ul` and `ol` elements
-*/
-.is-inline > * {
-  display: inline-block;
-}
-.is-inline > *:not(:last-child) {
-  margin-right: var(--inline-item-margin-right, 0.25rem);
-}
 /*
 stretches element to full size of its parent
 parent must have `position: relative`
@@ -55,6 +35,48 @@ parent must have `position: relative`
   left: 0;
   width: 100%;
   height: 100%;
+}
+/*
+applies `inline-block` display mode to all child elements of any element
+adds `margin-right` for spacing
+this will be particularly useful for `ul` and `ol` elements
+*/
+.has-inline-children > * {
+  display: inline-block;
+}
+.has-inline-children > *:not(:last-child) {
+  margin-right: var(--inline-item-margin-right, 0.25rem);
+}
+/* makes element full width of its parent */
+.is-full-width {
+  width: 100%;
+}
+/* makes element max width of 100% of its parent */
+.is-max-full-width {
+  max-width: 100%;
+}
+/* centers element as a block element */
+.is-centered-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* floats element left */
+.is-pulled-left {
+  float: left;
+}
+/* floats element right */
+.is-pulled-right {
+  float: right;
+}
+/* clears to reset space after floated elements */
+.is-clearfix::before,
+  .is-clearfix::after {
+  display: table;
+  content: '';
+}
+.is-clearfix::after {
+  clear: both;
 }
 /* base styles */
 /* containers */
