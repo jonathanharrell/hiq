@@ -1,7 +1,17 @@
 /* media */
 
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 figure {
+  margin-top: 0;
   margin-bottom: var(--figure-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: 0;
 }
 
 figcaption {
@@ -12,14 +22,29 @@ figcaption {
 
 img {
   display: block;
+  border-style: none;
   border-radius: var(--image-border-radius, var(--border-radius, 0.2rem));
+  vertical-align: middle;
 }
 
 svg {
   fill: currentColor;
+  &:not(:root) {
+    overflow: hidden;
+  }
 }
 
 video:focus {
   box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--video-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
   outline: 0;
+}
+
+audio {
+  max-width: 100%;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }

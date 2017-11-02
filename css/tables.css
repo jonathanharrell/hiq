@@ -4,12 +4,20 @@ table {
   width: 100%;
   max-width: 100%;
   margin-bottom: var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: inherit;
 }
 
 th,
 td {
   padding: var(--table-cell-padding-vertical, 0.5rem) var(--table-cell-padding-horizontal, 0.75rem);
   border-top: var(--table-cell-border-width, 1px) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  text-align: inherit;
   vertical-align: top;
 }
 

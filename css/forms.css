@@ -1,31 +1,51 @@
 /* forms */
 
-/* basic form styles */
+/* basic form elements */
 
 fieldset {
+  min-width: 0;
   margin-bottom: var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--fieldset-padding-vertical, 0) var(--fieldset-padding-horizontal, 0);
   border: var(--fieldset-border-width, 0) solid var(--fieldset-border-color, transparent);
-  & legend {
-    margin-bottom: var(--legend-margin-bottom, 0.5rem);
-    font-weight: var(--legend-font-weight, var(--font-weight-semibold, 600));
-  }
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: var(--legend-margin-bottom, 0.5rem);
+  padding: 0;
+  font-weight: var(--legend-font-weight, var(--font-weight-semibold, 600));
+  line-height: inherit;
+  white-space: normal;
+  color: inherit;
 }
 
 label {
   display: block;
+  margin-top: 0;
   margin-bottom: var(--label-margin-bottom, 0.25rem);
+  padding: 0;
   font-weight: var(--label-font-weight, var(--font-weight-medium, 500));
+}
+
+output {
+  display: inline-block;
 }
 
 /* input mixin */
 @define-mixin input {
-  /* removes default browser appearance */
+  /* remove default browser appearance */
   @mixin is-controlled;
+  overflow: visible;
+  margin: 0;
   border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--input-border-radius, var(--border-radius, 0.2rem));
   background-color: var(--input-background-color, white);
+  font-family: inherit;
+  font-size: inherit;
   font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
+  line-height: inherit;
   color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
   &::placeholder {
@@ -83,6 +103,45 @@ select {
   padding: var(--input-padding-vertical, 0) var(--input-padding-horizontal, 0.75rem);
 }
 
+/*
+correct cursor style of increment and decrement buttons in Chrome
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+override extra rounded corners on search inputs in iOS
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+/*
+remove inner padding and cancel buttons in Chrome and Safari on macOS
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+see https://bugs.webkit.org/show_bug.cgi?id=139848
+*/
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
 /* textareas */
 
 textarea {
@@ -90,7 +149,10 @@ textarea {
   display: block;
   width: 100%;
   height: auto;
+  overflow: auto;
+  margin: 0;
   padding: var(--textarea-padding-vertical, 0.5rem) var(--textarea-padding-horizontal, 0.75rem);
+  resize: vertical;
 }
 
 /* selects */
@@ -106,6 +168,14 @@ select:not([multiple]) {
 /* multiple select */
 select[multiple] {
   height: auto;
+}
+
+/* grouping of options within `select` element */
+optgroup {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 /* checkboxes */
@@ -381,6 +451,18 @@ input[type=range] {
   }
 }
 
+/* file inputs */
+
+/*
+1. correct inability to style clickable types in iOS and Safari
+2. change font properties to `inherit` in Safari
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ */
+::-webkit-file-upload-button {
+  font: inherit; /* 2 */
+  -webkit-appearance: button; /* 1 */
+}
+
 /* meter elements */
 
 meter {
@@ -405,6 +487,7 @@ meter {
 
 progress {
   border: none;
+  vertical-align: baseline;
   -webkit-appearance: none;
   -moz-appearance: none;
   &[value] {

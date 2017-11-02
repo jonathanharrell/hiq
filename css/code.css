@@ -27,7 +27,7 @@ kbd {
   border-radius: var(--kbd-border-radius, 0.2rem);
   background-color: var(--kbd-background-color, var(--gray-dark, hsl(220, 10%, 20%)));
   color: var(--kbd-text-color, white);
-  /* removing padding and increase font weight if `kbd` is nested within another `kbd` */
+  /* remove padding and increase font weight if `kbd` is nested within another `kbd` */
   & kbd {
     padding: 0;
     font-weight: var(--nested-kbd-font-weight, var(--font-weight-medium, 600));
@@ -37,7 +37,9 @@ kbd {
 pre {
   /* enable "flicking" scroll motion on touch devices when content overflows */
   @mixin overflow-touch;
+  -ms-overflow-style: scrollbar;
   overflow-x: auto;
+  margin-top: 0;
   margin-bottom: var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
   border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));

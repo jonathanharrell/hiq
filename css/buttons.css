@@ -2,23 +2,29 @@
 
 /* button mixin */
 @define-mixin button {
-  /* removes default browser appearance */
+  /* remove default browser appearance */
   @mixin is-controlled;
-  /* prevents button text from being selected */
+  /* prevent button text from being selected */
   @mixin is-unselectable;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: auto;
   height: var(--button-height, 2.25rem);
+  overflow: visible;
+  margin: 0;
   padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
   border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
   border-radius: var(--button-border-radius, 0.2rem);
   background-color: var(--button-background-color, hsl(210, 100%, 50%));
+  font-family: inherit;
+  font-size: inherit;
   font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
+  line-height: inherit;
   text-decoration: none;
   color: var(--button-text-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
+  -webkit-appearance: button;
   cursor: pointer;
   &:hover {
     border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
@@ -50,7 +56,7 @@
 }
 
 /*
-applying mixin to:
+apply mixin to:
 1. `button` elements
 2. elements with `.button` class (can be an `a` element)
 3. elements with certain `type` attributes
@@ -63,7 +69,7 @@ button,
   @mixin button;
 }
 
-/* Future-proof disabling of clicks on `<a>` elements */
+/* future-proof disabling of clicks on `<a>` elements */
 a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;

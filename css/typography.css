@@ -11,6 +11,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
+  /* prevent adjustments of font size after orientation changes on some mobile devices */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
   /* text rendering */
   text-rendering: var(--text-rendering, optimizeLegibility);
 
@@ -43,6 +47,10 @@ html {
   color: var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)));
 }
 
+body {
+  text-align: left;
+}
+
 /* headings */
 
 h1,
@@ -51,7 +59,9 @@ h3,
 h4,
 h5,
 h6 {
+  margin-top: 0;
   margin-bottom: var(--heading-margin-bottom, 0.5rem);
+  padding: 0;
   font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
   line-height: var(--heading-line-height, 1.2);
 }
@@ -130,6 +140,28 @@ small,
   @mixin is-small;
 }
 
+/* `sub` & `sup` elements */
+
+/*
+prevent `sub` and `sup` elements from affecting the line height in all browsers.
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
 /* font weights */
 
 strong {
@@ -183,28 +215,47 @@ b {
 /* paragraph spacing */
 
 p {
+  margin-top: 0;
   margin-bottom: var(--paragraph-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: 0;
 }
 
 /* address spacing */
 
 address {
   margin-bottom: var(--address-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  font-style: normal;
+  line-height: inherit;
 }
 
-/* mark */
+/* abbreviations */
+
+abbr[title] {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* definitions */
+
+dfn {
+  font-style: italic;
+}
+
+/* marks */
 
 mark {
   background-color: var(--mark-color, hsl(50, 81%, 94%));
 }
 
-/* deleted element */
+/* deleted elements */
 
 del {
   background-color: var(--deleted-color, hsl(355, 70%, 95%));
 }
 
-/* inserted element */
+/* inserted elements */
 
 ins {
   background-color: var(--inserted-color, hsl(210, 100%, 95%));
@@ -214,12 +265,18 @@ ins {
 
 ol,
 ul {
+  margin-top: 0;
   margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
-  padding-left: var(--list-margin-left, 1rem);
+  padding: 0 0 0 var(--list-margin-left, 1rem);
 }
 
 ul {
   list-style: var(--unordered-list-style, initial);
+}
+
+li {
+  margin: 0;
+  padding: 0;
 }
 
 @define-mixin is-unstyled {
@@ -234,11 +291,20 @@ ul {
 /* definition lists */
 
 dl {
+  margin-top: 0;
   margin-bottom: var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: 0;
 }
 
 dt {
+  margin: 0;
+  padding: 0;
   font-weight: var(--definition-list-title-font-weight, var(--font-weight-semibold, 600));
+}
+
+dd {
+  margin: 0;
+  padding: 0;
 }
 
 /* details lists */
@@ -247,15 +313,20 @@ details {
   margin-bottom: var(--details-margin-bottom, var(--block-element-margin-bottom, 1rem));
 }
 
-summary:focus {
-  box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
-  outline: none;
+summary {
+  display: list-item;
+  &:focus {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    outline: none;
+  }
 }
 
 /* blockquotes */
 
 blockquote {
+  margin-top: 0;
   margin-bottom: var(--blockquote-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: 0;
   & p {
     margin-bottom: 0;
     font-size: var(--blockquote-font-size, var(--font-size-large, var(--font-size-4, 1.5rem)));
@@ -280,9 +351,12 @@ cite {
 /* horizontal rules */
 
 hr {
+  box-sizing: content-box;
   height: var(--horizontal-rule-height, 1px);
+  overflow: visible;
   margin-top: var(--horizontal-rule-margin-vertical, 1rem);
   margin-bottom: var(--horizontal-rule-margin-vertical, 1rem);
+  padding: 0;
   border: 0;
   background-color: var(--horizontal-rule-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
 }
@@ -290,7 +364,9 @@ hr {
 /* links */
 
 a {
+  background-color: transparent;
   text-decoration: var(--link-text-decoration, none);
+  -webkit-text-decoration-skip: objects;
   color: var(--link-color, hsl(210, 100%, 50%));
   transition: color var(--speed, 0.1s) var(--easing, ease-out);
   cursor: pointer;
@@ -304,6 +380,23 @@ a {
   }
   &:active {
     color: var(--link-active-color, hsl(210, 100%, 25%));
+  }
+  /*
+  undo these styles for placeholder links/named anchors (without href) which have not been made explicitly keyboard-focusable (without tabindex)
+  source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+  See https://github.com/twbs/bootstrap/issues/19402
+  */
+  &:not([href]):not([tabindex]) {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:not([href]):not([tabindex]):hover,
+  &:not([href]):not([tabindex]):focus,
+  &:not([href]):not([tabindex]):active {
+    color: inherit;
+  }
+  &:not([href]):not([tabindex]):focus {
+    box-shadow: none;
   }
 }
 
