@@ -1,9 +1,12 @@
 /* code */
 
-code,
-kbd,
-pre,
-samp {
+@custom-selector :--code-element
+  code,
+  kbd,
+  pre,
+  samp;
+
+:--code-element {
   font-family: var(--font-family-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Courier New', monospace);
   font-size: var(--code-font-size, var(--font-size-base, var(--font-size-5, 1rem)));
 }

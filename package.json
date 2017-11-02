@@ -21,9 +21,11 @@
     },
     "homepage": "https://github.com/jonathanharrell/hiq#readme",
     "devDependencies": {
+        "autoprefixer": "^7.1.6",
         "husky": "^0.14.3",
         "minifier": "^0.8.1",
         "postcss-custom-media": "^6.0.0",
+        "postcss-custom-selectors": "^4.0.1",
         "postcss-import": "^9.1.0",
         "postcss-mixins": "^6.0.1",
         "postcss-nesting": "^4.2.1",

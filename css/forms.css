@@ -32,6 +32,10 @@ output {
   display: inline-block;
 }
 
+@custom-selector :--not-writable
+  &:disabled,
+  &[readonly];
+
 /* input mixin */
 @define-mixin input {
   /* remove default browser appearance */
@@ -66,8 +70,7 @@ output {
       color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
     }
   }
-  &:disabled,
-  &[readonly] {
+  :--not-writable {
     border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
     background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
     color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
@@ -82,18 +85,21 @@ output {
 
 /* text inputs */
 
-input[type='text'],
-input[type='password'],
-input[type='url'],
-input[type='email'],
-input[type='tel'],
-input[type='search'],
-input[type='number'],
-input[type='date'],
-input[type='month'],
-input[type='week'],
-input[type='datetime-local'],
-select {
+@custom-selector :--text-input
+  input[type='text'],
+  input[type='password'],
+  input[type='url'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='search'],
+  input[type='number'],
+  input[type='date'],
+  input[type='month'],
+  input[type='week'],
+  input[type='datetime-local'],
+  select;
+
+:--text-input {
   @mixin input;
   display: block;
   width: 100%;
@@ -105,8 +111,11 @@ select {
 correct cursor style of increment and decrement buttons in Chrome
 source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+@custom-selector :--spin-button
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button;
+
+:--spin-button {
   height: auto;
 }
 
@@ -123,8 +132,11 @@ source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 remove inner padding and cancel buttons in Chrome and Safari on macOS
 source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 */
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+@custom-selector :--cancel-button
+  [type="search"]::-webkit-search-cancel-button,
+  [type="search"]::-webkit-search-decoration;
+
+:--cancel-button {
   -webkit-appearance: none;
 }
 
@@ -133,10 +145,13 @@ remove the default appearance of temporal inputs to avoid a Mobile Safari bug wh
 source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 see https://bugs.webkit.org/show_bug.cgi?id=139848
 */
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
+@custom-selector :--temporal-input
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"];
+
+:--temporal-input {
   -webkit-appearance: listbox;
 }
 
@@ -235,15 +250,13 @@ optgroup {
       transform: rotate(45deg);
       content: '';
     }
-    &:disabled + label,
-    &[readonly] + label {
+    :--not-writable + label {
       color: var(--checkbox-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
     }
     &:disabled {
       cursor: not-allowed;
     }
-    &:disabled + label::before,
-    &[readonly] + label::before {
+    :--not-writable + label::before {
       background-color: var(--checkbox-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
     }
   }
@@ -307,15 +320,13 @@ optgroup {
       background-color: var(--radio-check-background-color, white);
       content: '';
     }
-    &:disabled + label,
-    &[readonly] + label {
+    :--not-writable + label {
       color: var(--radio-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
     }
     &:disabled {
       cursor: not-allowed;
     }
-    &:disabled + label::before,
-    &[readonly] + label::before {
+    :--not-writable + label::before {
       background-color: var(--radio-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
     }
   }
@@ -357,101 +368,64 @@ input[type='color'] {
 
 /* range inputs */
 
+@custom-selector :--range-track
+  ::-webkit-slider-runnable-track,
+  ::-moz-range-track,
+  ::-ms-track;
+
+@custom-selector :--range-track-fill
+  ::-webkit-slider-runnable-track,
+  ::-moz-range-track,
+  ::-ms-fill-lower,
+  ::-ms-fill-upper;
+
+@custom-selector :--range-thumb
+  ::-webkit-slider-thumb,
+  ::-moz-range-thumb,
+  ::-ms-thumb;
+
 input[type=range] {
   width: 100%;
   background: transparent;
   outline: 0;
   -webkit-appearance: none;
-  &::-webkit-slider-runnable-track {
+  &:--range-track {
     width: 100%;
     height: var(--range-input-track-height, 0.5rem);
     border-radius: var(--range-input-track-border-radius, var(--border-radius, 0.2rem));
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
     transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
     cursor: pointer;
   }
-  &:focus::-webkit-slider-runnable-track {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-  }
-  &::-moz-range-track {
-    width: 100%;
-    height: var(--range-input-track-height, 0.5rem);
+  &:--range-track-fill {
     background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
-    cursor: pointer;
   }
-  &:focus::-moz-range-track {
+  &:focus:--range-track-fill {
     background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-ms-track {
-    width: 100%;
-    height: var(--range-input-track-height, 0.5rem);
     border-width: var(--range-input-thumb-height, 1.5rem);
     border-color: transparent;
     background-color: transparent;
     color: transparent;
-    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+  }
+  &:--range-thumb {
+    width: var(--range-input-thumb-width, 1.5rem);
+    height: var(--range-input-thumb-height, 1.5rem);
+    border-color: transparent;
+    border-radius: var(--range-input-thumb-border-radius, 50%);
+    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
     cursor: pointer;
-  }
-  &::-ms-fill-lower {
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-  }
-  &:focus::-ms-fill-lower {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-  }
-  &::-ms-fill-upper {
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-  }
-  &:focus::-ms-fill-upper {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-webkit-slider-thumb {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
     margin-top: -0.5rem;
-    border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius, 50%);
-    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
     -webkit-appearance: none;
-    cursor: pointer;
-  }
-  &::-moz-range-thumb {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
-    border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius, 50%);
-    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
-    cursor: pointer;
-  }
-  &::-ms-thumb {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
-    border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius, 50%);
-    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
-    cursor: pointer;
   }
   &:disabled {
     cursor: not-allowed;
-    &::-webkit-slider-runnable-track {
+    &:--range-track-fill {
       background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
     }
-    &::-moz-range-track {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
-    }
-    &::-ms-fill-lower {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
-    }
-    &::-ms-fill-upper {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
-    }
-    &::-webkit-slider-thumb {
-      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
-    }
-    &::-moz-range-thumb {
-      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
-    }
-    &::-ms-thumb {
+    &:--range-thumb {
       background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
     }
   }
@@ -459,25 +433,31 @@ input[type=range] {
 
 /* meter elements */
 
+@custom-selector :--meter-bar
+  ::-webkit-meter-bar,
+  ::-moz-meter-bar;
+
+@custom-selector :--meter-value
+  ::-webkit-meter-optimum-value,
+  :-moz-meter-optimum::-moz-meter-bar;
+
 meter {
   width: 100%;
   background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   -webkit-appearance: meter;
-  &::-webkit-meter-bar {
+  &:--meter-bar {
     background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
-  &::-moz-meter-bar {
-    background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
-  }
-  &::-webkit-meter-optimum-value {
-    background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
-  }
-  &:-moz-meter-optimum::-moz-meter-bar {
+  &:--meter-value {
     background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
   }
 }
 
 /* progress elements */
+
+@custom-selector :--progress-value
+  ::-webkit-progress-value,
+  ::-moz-progress-bar;
 
 progress {
   border: none;
@@ -491,10 +471,7 @@ progress {
   &::-webkit-progress-bar {
     background-color: var(--progress-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
-  &::-webkit-progress-value {
-    background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
-  }
-  &::-moz-progress-bar {
+  &:--progress-value {
     background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
   }
 }

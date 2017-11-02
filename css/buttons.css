@@ -61,11 +61,14 @@ apply mixin to:
 2. elements with `.button` class (can be an `a` element)
 3. elements with certain `type` attributes
 */
-button,
-.button,
-[type='button'],
-[type='submit'],
-[type='reset'] {
+@custom-selector :--button
+  button,
+  .button,
+  [type='button'],
+  [type='submit'],
+  [type='reset'];
+
+:--button {
   @mixin button;
 }
 

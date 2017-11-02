@@ -1,9 +1,12 @@
 /* media */
 
-img,
-embed,
-object,
-video {
+@custom-selector :--media
+  img,
+  embed,
+  object,
+  video;
+
+:--media {
   max-width: 100%;
   height: auto;
 }

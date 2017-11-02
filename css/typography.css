@@ -53,12 +53,15 @@ body {
 
 /* headings */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@custom-selector :--heading
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6;
+
+:--heading {
   margin: 0 0 var(--heading-margin-bottom, 0.5rem);
   padding: 0;
   font-weight: var(--heading-font-weight, var(--font-weight-medium, 500));
@@ -293,8 +296,11 @@ ins {
 
 /* lists */
 
-ol,
-ul {
+@custom-selector :--list
+  ol,
+  ul;
+
+:--list {
   margin: 0 0 var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
   padding: 0 0 0 var(--list-margin-left, 1rem);
 }
@@ -408,32 +414,38 @@ a {
   &:active {
     color: var(--link-active-color, hsl(210, 100%, 25%));
   }
-  /*
+}
+
+/*
   undo these styles for placeholder links/named anchors (without href) which have not been made explicitly keyboard-focusable (without tabindex)
   source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
   See https://github.com/twbs/bootstrap/issues/19402
   */
-  &:not([href]):not([tabindex]) {
-    text-decoration: none;
+@custom-selector :--placeholder-link
+  a:not([href]):not([tabindex]);
+
+@custom-selector :--interaction-state
+  :hover,
+  :focus,
+  :active;
+
+:--placeholder-link {
+  text-decoration: none;
+  color: inherit;
+  &:--interaction-state {
     color: inherit;
   }
-  &:not([href]):not([tabindex]):hover,
-  &:not([href]):not([tabindex]):focus,
-  &:not([href]):not([tabindex]):active {
-    color: inherit;
-  }
-  &:not([href]):not([tabindex]):focus {
+  &:focus {
     box-shadow: none;
   }
 }
 
 /* user selection color */
-::-moz-selection {
-  background-color: var(--selection-color, hsl(210, 100%, 90%));
-  text-shadow: none;
-}
+@custom-selector :--user-selection
+  ::-moz-selection,
+  ::selection;
 
-::selection {
+:--user-selection {
   background-color: var(--selection-color, hsl(210, 100%, 90%));
   text-shadow: none;
 }
