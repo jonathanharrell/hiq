@@ -211,6 +211,38 @@ b {
   @mixin has-font-weight-bold;
 }
 
+/* text alignment */
+
+.has-text-centered {
+  text-align: center;
+}
+
+.has-text-justified {
+  text-align: justify;
+}
+
+.has-text-left {
+  text-align: left;
+}
+
+.has-text-right {
+  text-align: right;
+}
+
+/* text transformation */
+
+.is-capitalized {
+  text-transform: capitalize;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
 /* paragraph spacing */
 
 p {
