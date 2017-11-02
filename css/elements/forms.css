@@ -433,31 +433,24 @@ input[type=range] {
 
 /* meter elements */
 
-@custom-selector :--meter-bar
-  ::-webkit-meter-bar,
-  ::-moz-meter-bar;
-
-@custom-selector :--meter-value
-  ::-webkit-meter-optimum-value,
-  :-moz-meter-optimum::-moz-meter-bar;
-
 meter {
   width: 100%;
   background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
-  -webkit-appearance: meter;
-  &:--meter-bar {
+  &::-webkit-meter-bar {
     background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
-  &:--meter-value {
+  &::-moz-meter-bar {
+    background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-webkit-meter-optimum-value {
+    background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+  &:-moz-meter-optimum::-moz-meter-bar {
     background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
   }
 }
 
 /* progress elements */
-
-@custom-selector :--progress-value
-  ::-webkit-progress-value,
-  ::-moz-progress-bar;
 
 progress {
   border: none;
@@ -471,7 +464,10 @@ progress {
   &::-webkit-progress-bar {
     background-color: var(--progress-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   }
-  &:--progress-value {
+  &::-webkit-progress-value {
+    background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+  &::-moz-progress-bar {
     background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
   }
 }
