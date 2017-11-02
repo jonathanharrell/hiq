@@ -1,16 +1,17 @@
+/* utility */
+
 /* use variables from this file to customize */
-/* @import 'variables.css'; */
+/* @import 'utility/variables.css'; */
 
-/* utility mixins and classes */
-@import 'utility.css';
+@import 'utility/mixins.css';
 
-/* base styles */
-@import 'structure.css';
-@import 'typography.css';
-@import 'code.css';
-@import 'media.css';
+/* base */
+@import 'base/structure.css';
+@import 'base/typography.css';
 
-/* element styles */
-@import 'buttons.css';
-@import 'tables.css';
-@import 'forms.css';
+/* elements */
+@import 'elements/buttons.css';
+@import 'elements/code.css';
+@import 'elements/forms.css';
+@import 'elements/media.css';
+@import 'elements/tables.css';
