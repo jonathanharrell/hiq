@@ -5,6 +5,7 @@ module.exports = {
         require('postcss-custom-selectors')(),
         require('postcss-nesting')(),
         require('autoprefixer')(),
-        require('postcss-custom-media')()
+        require('postcss-custom-media')(),
+        require('postcss-discard-comments')()
     ]
 }

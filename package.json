@@ -27,6 +27,7 @@
         "postcss": "^6.0.14",
         "postcss-custom-media": "^6.0.0",
         "postcss-custom-selectors": "^4.0.1",
+        "postcss-discard-comments": "^2.0.4",
         "postcss-import": "^11.0.0",
         "postcss-mixins": "^6.0.1",
         "postcss-nesting": "^4.2.1",
