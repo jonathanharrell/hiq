@@ -98,14 +98,17 @@ this will be particularly useful for `ul` and `ol` elements
 }
 
 /* centers element as a block element */
-@define-mixin is-centered-block {
+@define-mixin is-centered-block $max-width {
   display: block;
+  max-width: $max-width;
   margin-right: auto;
   margin-left: auto;
 }
 
 .is-centered-block {
-  @mixin is-centered-block;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* floats element left */
