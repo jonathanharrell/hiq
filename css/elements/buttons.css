@@ -24,7 +24,6 @@
   text-decoration: none;
   color: var(--button-text-color, white);
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
-  -webkit-appearance: button;
   cursor: pointer;
   &:hover {
     border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
