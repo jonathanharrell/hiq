@@ -37,46 +37,12 @@
   @mixin is-visually-hidden;
 }
 
-/* clears to reset space after floated elements */
-@define-mixin clearfix {
-  &::before,
-  &::after {
-    display: table;
-    content: '';
-  }
-  &::after {
-    clear: both;
-  }
-}
-
-.clearfix {
-  @mixin clearfix;
-}
-
 /* removes default appearance from buttons and inputs */
 @define-mixin is-controlled {
   box-shadow: none;
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-}
-
-/*
-applies `inline-block` display mode to all child elements of any element
-adds `margin-right` for spacing
-this will be particularly useful for `ul` and `ol` elements
-*/
-@define-mixin is-inline {
-  & > * {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: var(--inline-item-margin-right, 0.25rem);
-    }
-  }
-}
-
-.is-inline {
-  @mixin is-inline;
 }
 
 /*
@@ -93,4 +59,85 @@ parent must have `position: relative`
 
 .absolute-stretch {
   @mixin absolute-stretch;
+}
+
+/*
+applies `inline-block` display mode to all child elements of any element
+adds `margin-right` for spacing
+this will be particularly useful for `ul` and `ol` elements
+*/
+@define-mixin has-inline-children {
+  & > * {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: var(--inline-item-margin-right, 0.25rem);
+    }
+  }
+}
+
+.has-inline-children {
+  @mixin has-inline-children;
+}
+
+/* makes element full width of its parent */
+@define-mixin is-full-width {
+  width: 100%;
+}
+
+.is-full-width {
+  @mixin is-full-width;
+}
+
+/* makes element max width of 100% of its parent */
+@define-mixin is-max-full-width {
+  max-width: 100%;
+}
+
+.is-max-full-width {
+  @mixin is-max-full-width;
+}
+
+/* centers element as a block element */
+@define-mixin is-centered-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.is-centered-block {
+  @mixin is-centered-block;
+}
+
+/* floats element left */
+@define-mixin is-pulled-left {
+  float: left;
+}
+
+.is-pulled-left {
+  @mixin is-pulled-left;
+}
+
+/* floats element right */
+@define-mixin is-pulled-right {
+  float: right;
+}
+
+.is-pulled-right {
+  @mixin is-pulled-right;
+}
+
+/* clears to reset space after floated elements */
+@define-mixin is-clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.is-clearfix {
+  @mixin is-clearfix;
 }
