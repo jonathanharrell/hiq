@@ -1,5 +1,7 @@
 /* code */
 
+@import '../utility/controls.css';
+
 @custom-selector :--code-element
   code,
   kbd,

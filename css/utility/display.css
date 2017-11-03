@@ -1,25 +1,5 @@
 /* utility mixins and classes */
 
-/* makes element unselectable by user */
-@define-mixin is-unselectable {
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-}
-
-.is-unselectable {
-  @mixin is-unselectable;
-}
-
-/* enables "flicking" scroll motion on touch devices when content overflows */
-@define-mixin overflow-touch {
-  -webkit-overflow-scrolling: touch;
-}
-
-.overflow-touch {
-  @mixin overflow-touch;
-}
-
 /* visually hides elements but keeps them accessible to screen readers */
 @define-mixin is-visually-hidden {
   clip: rect(0 0 0 0);
@@ -35,14 +15,6 @@
 
 .is-visually-hidden {
   @mixin is-visually-hidden;
-}
-
-/* removes default appearance from buttons and inputs */
-@define-mixin is-controlled {
-  box-shadow: none;
-  outline: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
 }
 
 /*

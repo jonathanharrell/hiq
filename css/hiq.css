@@ -1,9 +1,9 @@
-/* utility */
+/* use variables from 'utility/variables.css' to customize */
 
-/* use variables from this file to customize */
-/* @import 'utility/variables.css'; */
+/* utilities from 'utility/controls.css' are imported into individual components */
 
-@import 'utility/mixins.css';
+/* display utilities */
+@import 'utility/display.css';
 
 /* base */
 @import 'base/structure.css';

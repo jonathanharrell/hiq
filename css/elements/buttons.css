@@ -1,5 +1,7 @@
 /* buttons */
 
+@import '../utility/controls.css';
+
 /* button mixin */
 @define-mixin button {
   /* remove default browser appearance */

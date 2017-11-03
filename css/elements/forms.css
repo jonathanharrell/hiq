@@ -1,5 +1,7 @@
 /* forms */
 
+@import '../utility/controls.css';
+
 /* basic form elements */
 
 fieldset {
