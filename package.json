@@ -21,19 +21,19 @@
     },
     "homepage": "https://github.com/jonathanharrell/hiq#readme",
     "dependencies": {
-        "blanq-slate": "^1.2.0"
+        "blanq-slate": "2.0.3"
     },
     "devDependencies": {
-        "husky": "^0.14.3",
-        "minifier": "^0.8.1",
-        "postcss-cli": "^4.1.0",
-        "postcss-cssnext": "^2.10.0",
-        "postcss-import": "^9.1.0",
-        "postcss-loader": "^1.3.3",
-        "postcss-mixins": "^6.0.1",
-        "stylelint": "^7.12.0",
-        "stylelint-config-standard": "^16.0.0",
-        "stylelint-order": "^0.4.3"
+        "husky": "0.14.3",
+        "minifier": "0.8.1",
+        "postcss-cli": "4.1.1",
+        "postcss-cssnext": "3.0.2",
+        "postcss-import": "11.0.0",
+        "postcss-loader": "2.0.8",
+        "postcss-mixins": "6.2.0",
+        "stylelint": "8.2.0",
+        "stylelint-config-standard": "17.0.0",
+        "stylelint-order": "0.7.0"
     },
     "files": [
         ".stylelintrc",
