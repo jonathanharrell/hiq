@@ -21,22 +21,23 @@
     },
     "homepage": "https://github.com/jonathanharrell/hiq#readme",
     "devDependencies": {
-        "autoprefixer": "^7.1.6",
-        "husky": "^0.14.3",
-        "minifier": "^0.8.1",
-        "postcss": "^6.0.14",
-        "postcss-custom-media": "^6.0.0",
-        "postcss-custom-selectors": "^4.0.1",
-        "postcss-discard-comments": "^2.0.4",
-        "postcss-import": "^11.0.0",
-        "postcss-mixins": "^6.0.1",
-        "postcss-nesting": "^4.2.1",
-        "stylelint": "^7.12.0",
-        "stylelint-config-whq": "^2.1.2"
+        "autoprefixer": "7.1.6",
+        "husky": "0.14.3",
+        "minifier": "0.8.1",
+        "postcss": "6.0.14",
+        "postcss-custom-media": "6.0.0",
+        "postcss-custom-selectors": "4.0.1",
+        "postcss-discard-comments": "2.0.4",
+        "postcss-import": "11.0.0",
+        "postcss-mixins": "6.2.0",
+        "postcss-nesting": "4.2.1",
+        "stylelint": "8.2.0",
+        "stylelint-config-whq": "2.1.2"
     },
     "stylelint": {
         "extends": "stylelint-config-whq",
         "rules": {
+            "at-rule-no-unknown": null,
             "comment-empty-line-before": null,
             "plugin/no-unsupported-browser-features": null
         }
