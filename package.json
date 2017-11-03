@@ -42,7 +42,6 @@
         }
     },
     "files": [
-        ".stylelintrc",
         "css/*.css",
         "dist",
         "index.html",
