@@ -62,7 +62,7 @@ apply mixin to:
 */
 @custom-selector :--button
   button,
-  .button,
+  [role='button'],
   [type='button'],
   [type='submit'],
   [type='reset'];
