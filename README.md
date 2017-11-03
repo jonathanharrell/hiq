@@ -44,8 +44,8 @@ module.exports = {
 You can use the full or minified versions as CSS imports:
 
 ```css
-@import 'node_modules/hiq/hiq.css';
-@import 'node_modules/hiq/hiq.min.css';
+@import 'node_modules/hiq/dist/hiq.css';
+@import 'node_modules/hiq/dist/hiq.min.css';
 ```
 
 
