@@ -72,7 +72,6 @@ apply mixin to:
 }
 
 /* future-proof disabling of clicks on `<a>` elements */
-a.btn.disabled,
-fieldset[disabled] a.btn {
+fieldset[disabled] [role='button'] {
   pointer-events: none;
 }
