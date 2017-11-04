@@ -4,7 +4,7 @@
     "description": "Basic semantic styling for HTML elements",
     "main": "css/hiq.css",
     "scripts": {
-        "lint": "stylelint css/*.css",
+        "lint": "stylelint css/*.pcss",
         "minify": "minify dist/hiq.css --output dist/hiq.min.css",
         "precommit": "npm run lint && npm run postcss && npm run minify",
         "postcss": "postcss css/hiq.pcss -o dist/hiq.css",
