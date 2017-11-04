@@ -7,7 +7,7 @@
         "lint": "stylelint css/*.css",
         "minify": "minify dist/hiq.css --output dist/hiq.min.css",
         "precommit": "npm run lint && npm run postcss && npm run minify",
-        "postcss": "postcss css/hiq.postcss -o dist/hiq.css",
+        "postcss": "postcss css/hiq.pcss -o dist/hiq.css",
         "watch": "npm run postcss -- --watch"
     },
     "repository": {
