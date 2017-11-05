@@ -15,6 +15,9 @@
         "url": "git+https://jonathanharrell@github.com/jonathanharrell/hiq.git"
     },
     "author": "Jonathan Harrell",
+    "contributors": [
+        "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
+    ],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/jonathanharrell/hiq/issues"
