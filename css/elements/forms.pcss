@@ -225,6 +225,20 @@ optgroup {
       transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
       content: '';
     }
+    &::after {
+      display: block;
+      position: absolute;
+      top: var(--checkbox-check-position-top, 0.2rem);
+      left: var(--checkbox-check-position-left, 0.375rem);
+      width: 0;
+      height: var(--checkbox-check-height, 0.5rem);
+      border: solid white;
+      border-width: 0 var(--checkbox-border-width, 2px) var(--checkbox-border-width, 2px) 0;
+      opacity: 0;
+      transform: rotate(90deg);
+      transition: all calc(var(--speed, 0.2s) / 2) var(--easing, ease-out);
+      content: '';
+    }
   }
   /* visually hide input */
   & input[type='checkbox'] {
@@ -247,16 +261,9 @@ optgroup {
     }
     /* style `::after` to look like check mark */
     &:checked + label::after {
-      display: block;
-      position: absolute;
-      top: var(--checkbox-check-position-top, 0.2rem);
-      left: var(--checkbox-check-position-left, 0.375rem);
       width: var(--checkbox-check-width, 0.25rem);
-      height: var(--checkbox-check-height, 0.5rem);
-      border: solid white;
-      border-width: 0 var(--checkbox-border-width, 2px) var(--checkbox-border-width, 2px) 0;
+      opacity: 1;
       transform: rotate(45deg);
-      content: '';
     }
     :--not-writable + label {
       color: var(--checkbox-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
