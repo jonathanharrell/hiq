@@ -15,6 +15,9 @@
         "url": "git+https://jonathanharrell@github.com/jonathanharrell/hiq.git"
     },
     "author": "Jonathan Harrell",
+    "contributors": [
+        "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
+    ],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/jonathanharrell/hiq/issues"
@@ -25,6 +28,7 @@
         "husky": "0.14.3",
         "minifier": "0.8.1",
         "postcss": "6.0.14",
+        "postcss-cli": "^4.1.1",
         "postcss-custom-media": "6.0.0",
         "postcss-custom-selectors": "4.0.1",
         "postcss-discard-comments": "2.0.4",

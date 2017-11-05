@@ -1,6 +1,6 @@
 /* buttons */
 
-@import '../utility/controls.css';
+@import '../utility/controls.pcss';
 
 /* button mixin */
 @define-mixin button {
@@ -64,6 +64,7 @@ apply mixin to:
 */
 @custom-selector :--button
   button,
+  ::-webkit-file-upload-button,
   [role='button'],
   [type='button'],
   [type='submit'],
