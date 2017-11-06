@@ -1,0 +1,19 @@
+/* containers */
+
+@define-mixin container {
+  width: calc(100% - (var(--container-horizontal-gap, 2rem) * 2));
+  max-width: calc(var(--max-container-width, 50rem) - (var(--container-horizontal-gap, 2rem) * 2));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@define-mixin is-fluid {
+  max-width: none;
+}
+
+.container {
+  @mixin container;
+  &.is-fluid {
+    @mixin is-fluid;
+  }
+}

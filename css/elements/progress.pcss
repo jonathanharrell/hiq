@@ -1,0 +1,21 @@
+/* progress elements */
+
+progress {
+  border: none;
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &[value] {
+    width: 100%;
+    height: 1rem;
+  }
+  &::-webkit-progress-bar {
+    background-color: var(--progress-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-webkit-progress-value {
+    background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+  &::-moz-progress-bar {
+    background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+}

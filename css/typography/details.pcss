@@ -1,0 +1,13 @@
+/* details/summary */
+
+details {
+  margin-bottom: var(--details-margin-bottom, var(--block-element-margin-bottom, 1rem));
+}
+
+summary {
+  display: list-item;
+  &:focus {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--summary-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    outline: none;
+  }
+}

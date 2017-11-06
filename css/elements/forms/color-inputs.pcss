@@ -1,0 +1,12 @@
+/* color inputs */
+
+input[type='color'] {
+  cursor: pointer;
+  &:focus {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    outline: 0;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
