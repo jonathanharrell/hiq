@@ -1,0 +1,54 @@
+/* global font settings */
+
+/*
+custom media queries
+should match corresponding variables with px unit
+*/
+@custom-media --lower-font-range (min-width: 460px);
+@custom-media --upper-font-range (min-width: 1200px);
+
+html {
+  /* font smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  /* prevent adjustments of font size after orientation changes on some mobile devices */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  /* text rendering */
+  text-rendering: var(--text-rendering, optimizeLegibility);
+
+  /* base font family */
+  font-family: var(--base-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif);
+
+  /* base font size */
+  font-size: calc(var(--unitless-min-font-size, 15) * 1px);
+
+  /* responsive font size calculation */
+  @media (--lower-font-range) {
+    font-size: calc((var(--unitless-min-font-size, 15) * 1px) + (calc(var(--unitless-max-font-size, 16) - var(--unitless-min-font-size, 15))) * (calc(100vw - (var(--unitless-lower-font-range, 460) * 1px))) / (calc(var(--unitless-upper-font-range, 1200) - var(--unitless-lower-font-range, 460))));
+  }
+
+  /* set upper font range limit */
+  @media (--upper-font-range) {
+    font-size: calc(var(--unitless-max-font-size, 16) * 1px);
+  }
+
+  /* base font weight */
+  font-weight: var(--font-weight-base, var(--font-weight-normal, 400));
+
+  /* base letter spacing */
+  letter-spacing: var(--letter-spacing-base, 0);
+
+  /* base line height */
+  line-height: var(--line-height-base, 1.4);
+
+  /* text color */
+  color: var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)));
+}
+
+/* allow text alignment to be inherited */
+body {
+  text-align: left;
+}

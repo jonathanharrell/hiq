@@ -13,7 +13,6 @@
   justify-content: center;
   width: auto;
   height: var(--button-height, 2.25rem);
-  overflow: visible;
   margin: 0;
   padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
   border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
@@ -64,13 +63,17 @@ apply mixin to:
 */
 @custom-selector :--button
   button,
-  ::-webkit-file-upload-button,
   [role='button'],
   [type='button'],
   [type='submit'],
   [type='reset'];
 
 :--button {
+  @mixin button;
+}
+
+/* styling file input button like a button */
+::-webkit-file-upload-button {
   @mixin button;
 }
 

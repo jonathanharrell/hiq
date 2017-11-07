@@ -1,0 +1,53 @@
+@import '../utility/controls.pcss';
+
+/* selector for non-writable inputs */
+@custom-selector :--not-writable
+  &:disabled,
+  &[readonly];
+
+/* input mixin */
+@define-mixin input {
+  /* remove default browser appearance */
+  @mixin is-controlled;
+  margin: 0;
+  border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--input-border-radius, var(--border-radius, 0.2rem));
+  background-color: var(--input-background-color, white);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
+  line-height: inherit;
+  color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
+  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
+  &::placeholder {
+    color: var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%)));
+  }
+  &:hover {
+    border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+    background-color: var(--input-hover-background-color, var(--input-background-color), white);
+    color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
+    &::placeholder {
+      color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+    }
+  }
+  &:focus {
+    border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
+    background-color: var(--input-focus-background-color, var(--input-background-color), white));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
+    &::placeholder {
+      color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+    }
+  }
+  :--not-writable {
+    border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+    color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
+    &::placeholder {
+      color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

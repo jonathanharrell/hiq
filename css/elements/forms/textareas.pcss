@@ -1,0 +1,14 @@
+/* textareas */
+
+@import '../../utility/input.pcss';
+
+textarea {
+  @mixin input;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  margin: 0;
+  padding: var(--textarea-padding-vertical, 0.5rem) var(--textarea-padding-horizontal, 0.75rem);
+  resize: vertical;
+}

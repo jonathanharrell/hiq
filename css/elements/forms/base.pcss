@@ -1,0 +1,31 @@
+/* basic form elements */
+
+fieldset {
+  min-width: 0;
+  margin: 0 0 var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: var(--fieldset-padding-vertical, 0) var(--fieldset-padding-horizontal, 0);
+  border: var(--fieldset-border-width, 0) solid var(--fieldset-border-color, transparent);
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 var(--legend-margin-bottom, 0.5rem);
+  padding: 0;
+  font-weight: var(--legend-font-weight, var(--font-weight-semibold, 600));
+  line-height: inherit;
+  white-space: normal;
+  color: inherit;
+}
+
+label {
+  display: block;
+  margin: 0 0 var(--label-margin-bottom, 0.25rem);
+  padding: 0;
+  font-weight: var(--label-font-weight, var(--font-weight-medium, 500));
+}
+
+output {
+  display: inline-block;
+}

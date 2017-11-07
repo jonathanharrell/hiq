@@ -1,0 +1,51 @@
+/* lists */
+
+@custom-selector :--list
+ol,
+ul;
+
+:--list {
+  margin: 0 0 var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: 0 0 0 var(--list-margin-left, 1rem);
+}
+
+ul {
+  list-style: var(--unordered-list-style, initial);
+}
+
+/* remove bottom margin from nested lists */
+ul ul {
+  margin-bottom: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+@define-mixin is-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.is-unstyled {
+  @mixin is-unstyled;
+}
+
+/* definition lists */
+
+dl {
+  margin: 0 0 var(--list-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: 0;
+}
+
+dt {
+  margin: 0;
+  padding: 0;
+  font-weight: var(--definition-list-title-font-weight, var(--font-weight-semibold, 600));
+}
+
+dd {
+  margin: 0 0 var(--description-margin-bottom, var(--paragraph-margin-bottom, var(--block-element-margin-bottom, 0.5rem))) 0;
+  padding: 0;
+}
