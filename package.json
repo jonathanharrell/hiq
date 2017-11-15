@@ -32,7 +32,7 @@
         "postcss-custom-media": "6.0.0",
         "postcss-custom-selectors": "4.0.1",
         "postcss-discard-comments": "2.0.4",
-        "postcss-import": "11.0.0",
+        "postcss-easy-import": "3.0.0",
         "postcss-mixins": "6.2.0",
         "postcss-nesting": "4.2.1",
         "stylelint": "8.2.0",
