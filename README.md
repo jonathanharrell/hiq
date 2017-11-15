@@ -44,11 +44,9 @@ module.exports = {
 You can use the full or minified versions as links, or CSS imports:
 
 ```html
-<link rel="stylesheet" href="hiq.css">
 <link rel="stylesheet" href="hiq.min.css">
 ```
 ```css
-@import 'node_modules/hiq/dist/hiq.css';
 @import 'node_modules/hiq/dist/hiq.min.css';
 ```
 
