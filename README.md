@@ -24,15 +24,15 @@ Or download/clone the repo.
 If you have your own PostCSS setup, you can import the source css file directly:
 
 ```css
-@import 'node_modules/hiq/css/hiq.css';
+@import 'node_modules/hiq/css/hiq.pcss';
 ```
 
-Note that in this case, you will need to configure your postcss.config.js file to include the following plugins:
+Note that in this case, you will need to configure your `postcss.config.js` file to include the following plugins:
 
 ```js
 module.exports = {
     plugins: [
-        require('postcss-import'),
+        require('postcss-easy-import')({extensions: '.pcss'}),
         require('postcss-mixins'),
         require('postcss-cssnext')
     ]
@@ -44,11 +44,9 @@ module.exports = {
 You can use the full or minified versions as links, or CSS imports:
 
 ```html
-<link rel="stylesheet" href="hiq.css">
 <link rel="stylesheet" href="hiq.min.css">
 ```
 ```css
-@import 'node_modules/hiq/hiq.css';
-@import 'node_modules/hiq/hiq.min.css';
+@import 'node_modules/hiq/dist/hiq.min.css';
 ```
 

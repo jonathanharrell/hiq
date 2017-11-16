@@ -1,0 +1,525 @@
+/* forms */
+
+@import '../utility/controls.pcss';
+
+/* basic form elements */
+
+fieldset {
+  min-width: 0;
+  margin: 0 0 var(--fieldset-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  padding: var(--fieldset-padding-vertical, 0) var(--fieldset-padding-horizontal, 0);
+  border: var(--fieldset-border-width, 0) solid var(--fieldset-border-color, transparent);
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 var(--legend-margin-bottom, 0.5rem);
+  padding: 0;
+  font-weight: var(--legend-font-weight, var(--font-weight-semibold, 600));
+  line-height: inherit;
+  white-space: normal;
+  color: inherit;
+}
+
+label {
+  display: block;
+  margin: 0 0 var(--label-margin-bottom, 0.25rem);
+  padding: 0;
+  font-weight: var(--label-font-weight, var(--font-weight-medium, 500));
+}
+
+output {
+  display: inline-block;
+}
+
+@custom-selector :--not-writable
+  &:disabled,
+  &[readonly];
+
+/* input mixin */
+@define-mixin input {
+  /* remove default browser appearance */
+  @mixin is-controlled;
+  margin: 0;
+  border: var(--input-border-width, 1px) solid var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--input-border-radius, var(--border-radius, 0.2rem));
+  background-color: var(--input-background-color, white);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
+  line-height: inherit;
+  color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
+  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
+  &::placeholder {
+    color: var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%)));
+  }
+  &:hover {
+    border-color: var(--input-hover-border-color, var(--input-border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+    background-color: var(--input-hover-background-color, var(--input-background-color), white);
+    color: var(--input-hover-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
+    &::placeholder {
+      color: var(--input-hover-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+    }
+  }
+  &:focus {
+    border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
+    background-color: var(--input-focus-background-color, var(--input-background-color), white));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
+    &::placeholder {
+      color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));
+    }
+  }
+  :--not-writable {
+    border-color: var(--input-disabled-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--input-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+    color: var(--input-disabled-text-color, var(--gray-light, hsl(220, 10%, 60%)));
+    &::placeholder {
+      color: var(--input-disabled-placeholder-color, var(--gray-light, hsl(220, 10%, 60%)));
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* text inputs */
+
+@custom-selector :--text-input
+  input[type='text'],
+  input[type='password'],
+  input[type='url'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='search'],
+  input[type='number'],
+  input[type='date'],
+  input[type='month'],
+  input[type='week'],
+  input[type='datetime-local'],
+  select;
+
+:--text-input {
+  @mixin input;
+  display: block;
+  width: 100%;
+  height: var(--input-height, 2.5rem);
+  padding: var(--input-padding-vertical, 0) var(--input-padding-horizontal, 0.75rem);
+}
+
+/*
+correct cursor style of increment and decrement buttons in Chrome
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+@custom-selector :--spin-button
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button;
+
+:--spin-button {
+  height: auto;
+}
+
+/*
+override extra rounded corners on search inputs in iOS
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+/*
+remove inner padding and cancel buttons in Chrome and Safari on macOS
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+@custom-selector :--cancel-button
+  [type="search"]::-webkit-search-cancel-button,
+  [type="search"]::-webkit-search-decoration;
+
+:--cancel-button {
+  -webkit-appearance: none;
+}
+
+/*
+remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+see https://bugs.webkit.org/show_bug.cgi?id=139848
+*/
+@custom-selector :--temporal-input
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"];
+
+:--temporal-input {
+  -webkit-appearance: listbox;
+}
+
+/* textareas */
+
+textarea {
+  @mixin input;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  margin: 0;
+  padding: var(--textarea-padding-vertical, 0.5rem) var(--textarea-padding-horizontal, 0.75rem);
+  resize: vertical;
+}
+
+/* selects */
+
+select:not([multiple]) {
+  /* if select does not have `multiple` attribute it receives a caret on the right-hand side */
+  background-image: var(--select-background-image, url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E'));
+  background-repeat: no-repeat;
+  background-position: var(--select-background-position, right 1rem center);
+  background-size: var(--select-background-size, 0.75rem);
+}
+
+/* multiple select */
+
+select[multiple] {
+  height: auto;
+
+  & option:checked {
+    background: var(--color-primary, hsl(210, 100%, 50%)) -webkit-linear-gradient(bottom, var(--color-primary, hsl(210, 100%, 50%)) 0%, var(--color-primary, hsl(210, 100%, 50%)) 100%);
+  }
+}
+
+/* grouping of options within `select` element */
+
+optgroup {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* checkboxes */
+
+.checkbox {
+  position: relative;
+  & label {
+    position: relative;
+    margin-bottom: var(--checkbox-margin-bottom, 0.5rem);
+    padding: 0 var(--checkbox-label-padding-horizontal, 1.5rem);
+    font-weight: var(--checkbox-label-font-weight);
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    /* style `::before` to appear like checkbox */
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--checkbox-width, 1rem);
+      height: var(--checkbox-height, 1rem);
+      border-color: var(--checkbox-border-color, transparent);
+      border-radius: var(--checkbox-border-radius, var(--border-radius, 0.2rem));
+      background-color: var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+      transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+      content: '';
+    }
+    &::after {
+      display: block;
+      position: absolute;
+      top: var(--checkbox-check-position-top, 0.2rem);
+      left: var(--checkbox-check-position-left, 0.375rem);
+      width: 0;
+      height: var(--checkbox-check-height, 0.5rem);
+      border: solid white;
+      border-width: 0 var(--checkbox-border-width, 2px) var(--checkbox-border-width, 2px) 0;
+      opacity: 0;
+      transform: rotate(90deg);
+      transition: all calc(var(--speed, 0.2s) / 2) var(--easing, ease-out);
+      content: '';
+    }
+  }
+  /* visually hide input */
+  & input[type='checkbox'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    &:hover + label::before {
+      background-color: var(--checkbox-hover-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+    }
+    &:focus + label::before {
+      background-color: var(--checkbox-focus-background-color, var(--checkbox-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    }
+    &:checked + label::before {
+      background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
+    }
+    /* style `::after` to look like check mark */
+    &:checked + label::after {
+      width: var(--checkbox-check-width, 0.25rem);
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+    :--not-writable + label {
+      color: var(--checkbox-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+    :--not-writable + label::before {
+      background-color: var(--checkbox-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+    }
+  }
+}
+
+/* radio buttons */
+
+.radio {
+  position: relative;
+  & label {
+    position: relative;
+    margin-bottom: var(--radio-margin-bottom, 0.5rem);
+    padding: 0 var(--radio-label-padding-horizontal, 1.5rem);
+    font-weight: var(--radio-label-font-weight);
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    /* style `::before` to look like radio button */
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--radio-width, 1rem);
+      height: var(--radio-height, 1rem);
+      border-color: var(--radio-border-color, transparent);
+      border-radius: var(--radio-border-radius, 50%);
+      background-color: var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+      transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+      content: '';
+    }
+  }
+  /* visually hide input */
+  & input[type='radio'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    &:hover + label::before {
+      background-color: var(--radio-hover-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+    }
+    &:focus + label::before {
+      background-color: var(--radio-focus-background-color, var(--radio-background-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+      box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    }
+    &:checked + label::before {
+      background-color: var(--checkbox-checked-background-color, var(--color-primary, hsl(210, 100%, 50%)));
+    }
+    /* style `::after` to look like radio button fill */
+    &:checked + label::after {
+      display: block;
+      position: absolute;
+      top: var(--radio-check-position-top, 0.25rem);
+      left: var(--radio-check-position-left, 0.25rem);
+      width: var(--radio-check-width, 0.5rem);
+      height: var(--radio-check-height, 0.5rem);
+      border-radius: var(--radio-check-border-radius, 50%);
+      background-color: var(--radio-check-background-color, white);
+      content: '';
+    }
+    :--not-writable + label {
+      color: var(--radio-label-disabled-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+    :--not-writable + label::before {
+      background-color: var(--radio-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+    }
+  }
+}
+
+/* file inputs */
+
+input[type='file'] {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  &:focus {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    outline: 0;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+/* color inputs */
+
+input[type='color'] {
+  cursor: pointer;
+  &:focus {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    outline: 0;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* range inputs */
+
+input[type=range] {
+  width: 100%;
+  background: transparent;
+  outline: 0;
+  -webkit-appearance: none;
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: var(--range-input-track-height, 0.5rem);
+    border-radius: var(--range-input-track-border-radius, var(--border-radius, 0.2rem));
+    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+    cursor: pointer;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-moz-range-track {
+    width: 100%;
+    height: var(--range-input-track-height, 0.5rem);
+    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+    cursor: pointer;
+  }
+  &:focus::-moz-range-track {
+    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-ms-track {
+    width: 100%;
+    height: var(--range-input-track-height, 0.5rem);
+    border-width: var(--range-input-thumb-height, 1.5rem);
+    border-color: transparent;
+    background-color: transparent;
+    color: transparent;
+    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+    cursor: pointer;
+  }
+  &::-ms-fill-lower {
+    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &:focus::-ms-fill-lower {
+    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-ms-fill-upper {
+    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &:focus::-ms-fill-upper {
+    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-webkit-slider-thumb {
+    width: var(--range-input-thumb-width, 1.5rem);
+    height: var(--range-input-thumb-height, 1.5rem);
+    margin-top: -0.5rem;
+    border-color: transparent;
+    border-radius: var(--range-input-thumb-border-radius, 50%);
+    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  &::-moz-range-thumb {
+    width: var(--range-input-thumb-width, 1.5rem);
+    height: var(--range-input-thumb-height, 1.5rem);
+    border-color: transparent;
+    border-radius: var(--range-input-thumb-border-radius, 50%);
+    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    cursor: pointer;
+  }
+  &::-ms-thumb {
+    width: var(--range-input-thumb-width, 1.5rem);
+    height: var(--range-input-thumb-height, 1.5rem);
+    border-color: transparent;
+    border-radius: var(--range-input-thumb-border-radius, 50%);
+    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    cursor: pointer;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    &::-webkit-slider-runnable-track {
+      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+    }
+    &::-moz-range-track {
+      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+    }
+    &::-ms-fill-lower {
+      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+    }
+    &::-ms-fill-upper {
+      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+    }
+    &::-webkit-slider-thumb {
+      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+    }
+    &::-moz-range-thumb {
+      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+    }
+    &::-ms-thumb {
+      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+    }
+  }
+}
+
+/* meter elements */
+
+meter {
+  width: 100%;
+  background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  &::-webkit-meter-bar {
+    background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-moz-meter-bar {
+    background: var(--meter-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-webkit-meter-optimum-value {
+    background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+  &:-moz-meter-optimum::-moz-meter-bar {
+    background: var(--meter-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+}
+
+/* progress elements */
+
+progress {
+  border: none;
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &[value] {
+    width: 100%;
+    height: 1rem;
+  }
+  &::-webkit-progress-bar {
+    background-color: var(--progress-background-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-webkit-progress-value {
+    background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+  &::-moz-progress-bar {
+    background-color: var(--progress-filled-color, var(--color-primary, hsl(210, 100%, 50%)));
+  }
+}

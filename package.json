@@ -5,9 +5,9 @@
     "main": "css/hiq.pcss",
     "scripts": {
         "lint": "stylelint css/*.pcss",
-        "minify": "minify dist/hiq.css --output dist/hiq.min.css",
+        "minify": "minify dist/hiq.min.css --output dist/hiq.min.css",
         "precommit": "npm run lint && npm run postcss && npm run minify",
-        "postcss": "postcss css/hiq.pcss -o dist/hiq.css",
+        "postcss": "postcss css/hiq.pcss -o dist/hiq.min.css",
         "watch": "npm run lint && npm run postcss -- --watch"
     },
     "repository": {
@@ -32,7 +32,7 @@
         "postcss-custom-media": "6.0.0",
         "postcss-custom-selectors": "4.0.1",
         "postcss-discard-comments": "2.0.4",
-        "postcss-import": "11.0.0",
+        "postcss-easy-import": "3.0.0",
         "postcss-mixins": "6.2.0",
         "postcss-nesting": "4.2.1",
         "stylelint": "8.2.0",
