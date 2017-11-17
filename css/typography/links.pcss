@@ -11,7 +11,7 @@ a {
     color: var(--link-hover-color, hsl(210, 100%, 25%));
   }
   &:focus {
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--link-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--outline-color, hsl(210, 100%, 85%));
     outline: none;
     color: var(--link-focus-color, hsl(210, 100%, 25%));
   }
@@ -20,26 +20,3 @@ a {
   }
 }
 
-/*
-  undo these styles for placeholder links/named anchors (without href) which have not been made explicitly keyboard-focusable (without tabindex)
-  source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
-  See https://github.com/twbs/bootstrap/issues/19402
-  */
-@custom-selector :--placeholder-link
-  a:not([href]):not([tabindex]);
-
-@custom-selector :--interaction-state
-  :hover,
-  :focus,
-  :active;
-
-:--placeholder-link {
-  text-decoration: none;
-  color: inherit;
-  &:--interaction-state {
-    color: inherit;
-  }
-  &:focus {
-    box-shadow: none;
-  }
-}

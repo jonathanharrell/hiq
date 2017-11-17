@@ -126,3 +126,14 @@ parent must have `position: relative`
 .is-visually-hidden {
   @mixin is-visually-hidden;
 }
+
+/* truncate text and show ellipsis */
+@define-mixin has-text-truncated {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.has-text-truncated {
+  @mixin has-text-truncated;
+}

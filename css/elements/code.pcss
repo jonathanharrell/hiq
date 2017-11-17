@@ -9,32 +9,40 @@
   samp;
 
 :--code-element {
-  font-family: var(--font-family-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Courier New', monospace);
-  font-size: var(--code-font-size, var(--font-size-base, var(--font-size-5, 1rem)));
+  font-family: var(--font-family-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace);
+  font-size: var(--code-font-size, var(--font-size-small, var(--font-size-6, 0.875rem)));
 }
 
 code {
   padding: var(--code-padding-vertical, 0.2rem) var(--code-padding-horizontal, 0.4rem);
   border-radius: var(--code-border-radius, var(--border-radius, 0.2rem));
-  background-color: var(--code-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
-  color: var(--code-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
+  background-color: var(--code-background-color, transparent);
+  white-space: pre;
+  color: var(--code-text-color, var(--text-color, var(--gray-dark, hsl(220, 10%, 20%))));
+}
+
+*:not(pre) > code {
+  border: 1px solid var(--code-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 
 /* inherit styles from `a` element if code is within */
 a code {
   padding: 0;
+  border: 0;
   background-color: inherit;
   color: inherit;
 }
 
 kbd {
   padding: var(--kbd-padding-vertical, 0.2rem) var(--kbd-padding-horizontal, 0.4rem);
+  border: 1px solid var(--kbd-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   border-radius: var(--kbd-border-radius, 0.2rem);
-  background-color: var(--kbd-background-color, var(--gray-dark, hsl(220, 10%, 20%)));
-  color: var(--kbd-text-color, white);
+  background-color: var(--kbd-background-color, transparent);
+  color: var(--kbd-text-color, var(--text-color, var(--gray-dark, hsl(220, 10%, 20%))));
   /* remove padding and increase font weight if `kbd` is nested within another `kbd` */
   & kbd {
     padding: 0;
+    border: 0;
     font-weight: var(--nested-kbd-font-weight, var(--font-weight-medium, 600));
   }
 }
@@ -44,20 +52,22 @@ pre {
   @mixin overflow-touch;
   -ms-overflow-style: scrollbar;
   overflow-x: auto;
-  margin: 0 0 var(--pre-margin-bottom, var(--block-element-margin-bottom, 1rem));
-  padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 1rem));
-  border-radius: var(--pre-border-radius, var(--border-radius, 0.5rem));
-  background-color: var(--pre-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  margin: 0 0 var(--block-element-margin-bottom, 1rem);
+  padding: var(--pre-padding-vertical, var(--code-padding-vertical, 1.5rem)) var(--pre-padding-horizontal, var(--code-padding-horizontal, 2rem));
+  border: 1px solid var(--pre-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--pre-border-radius, var(--border-radius, 0.25rem));
+  background-color: var(--pre-background-color, transparent);
   tab-size: 1.5rem;
-  white-space: pre;
+  white-space: pre-wrap;
   word-wrap: normal;
-  color: var(--pre-text-color, var(--gray-dark, hsl(220, 10%, 20%)));
+  color: var(--pre-text-color, var(--gray, hsl(220, 10%, 40%)));
   /* reset and inherit styles from `pre` if code is contained within */
   & code {
     padding: 0;
     border-radius: 0;
     background-color: transparent;
     font-size: inherit;
+    white-space: pre-wrap;
     color: inherit;
   }
 }

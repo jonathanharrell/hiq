@@ -15,7 +15,7 @@
   background-color: var(--input-background-color, white);
   font-family: inherit;
   font-size: inherit;
-  font-weight: var(--input-font-weight, var(--font-weight-normal, 400));
+  font-weight: var(--font-weight-base, 400);
   line-height: inherit;
   color: var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%))));
   transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
@@ -33,7 +33,7 @@
   &:focus {
     border-color: var(--input-focus-border-color, var(--color-primary, hsl(210, 100%, 50%)));
     background-color: var(--input-focus-background-color, var(--input-background-color), white));
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--input-focus-outline-color, var(--outline-color, hsl(210, 100%, 85%)));
     color: var(--input-focus-text-color, var(--input-text-color, var(--text-color, var(--gray-darker, hsl(220, 10%, 10%)))));
     &::placeholder {
       color: var(--input-focus-placeholder-color, var(--input-placeholder-color, var(--gray, hsl(220, 10%, 40%))));

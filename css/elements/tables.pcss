@@ -3,7 +3,7 @@
 table {
   width: 100%;
   max-width: 100%;
-  margin: 0 0 var(--table-margin-bottom, var(--block-element-margin-bottom, 1rem));
+  margin: 0 0 var(--block-element-margin-bottom, 1rem);
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -19,24 +19,30 @@ caption {
 
 :--table-cell {
   padding: var(--table-cell-padding-vertical, 0.5rem) var(--table-cell-padding-horizontal, 0.75rem);
-  border-top: var(--table-cell-border-width, 1px) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  border-top: var(--table-cell-border-width, 1px) solid var(--table-cell-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   text-align: inherit;
   vertical-align: top;
 }
 
 thead :--table-cell {
   border-top: 0;
-  border-bottom: var(--table-foot-border-width, var(--table-cell-border-width, 2px)) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  border-bottom: var(--table-foot-border-width, var(--table-cell-border-width, 1px)) solid var(--table-cell-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   vertical-align: bottom;
 }
 
 tfoot :--table-cell {
-  border-top: var(--table-head-border-width, var(--table-cell-border-width, 2px)) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  border-top: var(--table-head-border-width, var(--table-cell-border-width, 1px)) solid var(--table-cell-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
   vertical-align: top;
 }
 
+th {
+  background-color: var(--table-heading-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
+  font-weight: var(--table-heading-font-weight, var(--font-weight-medium, 500));
+  color: var(--table-heading-text-color, var(--gray, hsl(220, 10%, 40%)));
+}
+
 tbody + tbody {
-  border-top: var(--table-head-border-width, var(--table-cell-border-width, 2px)) solid var(--table-cell-border-color, var(--border-color, var(--gray-lighter, hsl(220, 10%, 90%))));
+  border-top: var(--table-head-border-width, var(--table-cell-border-width, 1px)) solid var(--table-cell-border-color, var(--gray-lighter, hsl(220, 10%, 90%)));
 }
 
 table caption {

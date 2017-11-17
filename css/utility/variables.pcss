@@ -1,30 +1,54 @@
 /* variables */
 
 :root {
-  /* structural variables */
+  /* theme variables */
 
-  /* container variables */
+  /* gray palette */
+  --gray-darkest: hsl(220, 10%, 5%);
+  --gray-darker: hsl(220, 10%, 10%);
+  --gray-dark: hsl(220, 10%, 20%);
+  --gray: hsl(220, 10%, 40%);
+  --gray-light: hsl(220, 10%, 60%);
+  --gray-lighter: hsl(220, 10%, 90%);
+  --gray-lightest: hsl(220, 10%, 95%);
+
+  /* semantic colors */
+  --color-primary: hsl(210, 100%, 50%);
+
+  /* global applied colors */
+  --html-background-color: white;
+  --body-background-color: white;
+  --outline-color: hsl(210, 100%, 85%);
+  --disabled-color: var(--gray-light);
+
+  /* layout variables */
+
+  /* containers */
   --max-container-width: 50rem;
   --container-horizontal-gap: 2rem;
 
-  /* spacing variables */
+  /* spacing */
   --block-element-margin-bottom: 1rem;
-  --heading-margin-bottom: 0.5rem;
-  --paragraph-margin-bottom: 1rem;
-  --inline-item-margin-right: 0.25rem;
 
   /* border & outline */
   --border-radius: 0.2rem;
   --outline-width: 0.2rem;
 
+  /* transitions */
+  --speed: 0.1s;
+  --easing: ease-out;
+
   /* typography variables */
 
+  /* global typography variables */
   --text-rendering: optimizeLegibility;
+  --letter-spacing-base: 0;
 
   /* font families */
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  --base-font-family: var(--font-family-sans-serif);
+
+  /* responsive sizing */
 
   /* unitless base font size variables in px */
   --unitless-min-font-size: 15;
@@ -32,15 +56,11 @@
 
   /* unitless viewport widths in px when min/max font sizes will apply */
   --unitless-lower-font-range: 460;
-  --unitless-upper-font-range: 1200;
+  --unitless-upper-font-range: 736;
 
   /* should match --unitless-upper-font-range with px unit */
   @custom-media --lower-font-range (min-width: 460px);
-  @custom-media --upper-font-range (min-width: 1200px);
-
-  /* base unitless line heights */
-  --line-height-base: 1.4;
-  --heading-line-height: 1.2;
+  @custom-media --upper-font-range (min-width: 736px);
 
   /* font sizes */
   --font-size-1: 2.5rem;
@@ -53,6 +73,10 @@
   --font-size-large: var(--font-size-4);
   --font-size-small: var(--font-size-6);
 
+  /* base unitless line heights */
+  --line-height-base: 1.5;
+  --heading-line-height: 1.2;
+
   /* font weights */
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -60,80 +84,40 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* letter spacing */
-  --letter-spacing-base: 0;
-
   /* applied font weights */
   --font-weight-base: var(--font-weight-normal);
   --heading-font-weight: var(--font-weight-medium);
-  --strong-font-weight: var(--font-weight-bold);
-  --bold-font-weight: var(--font-weight-bold);
   --definition-list-title-font-weight: var(--font-weight-semibold);
-  --input-font-weight: var(--font-weight-normal);
 
-  /* list variables */
-  --list-margin-left: 1rem;
-  --unordered-list-style: disc;
-
-  /* color variables */
-
-  /* gray palette */
-  --gray-darkest: hsl(220, 10%, 5%);
-  --gray-darker: hsl(220, 10%, 10%);
-  --gray-dark: hsl(220, 10%, 20%);
-  --gray: hsl(220, 10%, 40%);
-  --gray-light: hsl(220, 10%, 60%);
-  --gray-lighter: hsl(220, 10%, 90%);
-  --gray-lightest: hsl(220, 10%, 95%);
-
-  /* semantic palette */
-  --color-primary: hsl(210, 100%, 50%);
-  --color-success: hsl(134, 61%, 41%);
-  --color-warning: hsl(45, 100%, 51%);
-  --color-error: hsl(354, 70%, 54%);
-
-  /* applied colors */
+  /* global text color */
   --text-color: var(--gray-darker);
-  --html-background-color: white;
-  --body-background-color: white;
-  --background-color: var(--gray-lightest);
-  --border-color: var(--gray-lighter);
-  --box-shadow-color: hsl(210, 100%, 85%);
+
+  /* inline text elements */
   --mark-color: hsl(50, 81%, 94%);
   --selection-color: hsl(210, 100%, 90%);
-  --deleted-color: var(--color-error);
+  --deleted-color: hsl(331, 93%, 67%);
   --inserted-color: hsl(210, 100%, 95%);
-  --disabled-color: var(--gray-light);
 
-  /* transition variables */
-
-  --speed: 0.1s;
-  --easing: ease-out;
-
-  /* address variables */
-
-  --address-margin-bottom: var(--block-element-margin-bottom);
-
-  /* list variables */
-
-  --list-margin-bottom: var(--block-element-margin-bottom);
-  --details-margin-bottom: var(--block-element-margin-bottom);
-  --summary-focus-box-shadow-color: var(--box-shadow-color);
+  /* lists */
+  --list-margin-left: 1rem;
+  --unordered-list-style: disc;
+  --inline-item-margin-right: 0.25rem;
   --description-margin-bottom: 0.5rem;
 
-  /* blockquote variables */
-
-  --blockquote-margin-bottom: 1rem;
+  /* blockquotes */
   --blockquote-font-size: var(--font-size-4);
   --blockquote-line-height: var(--heading-line-height);
   --blockquote-citation-color: var(--gray-light);
 
-  /* link variables */
+  /* horizontal rules */
+  --horizontal-rule-height: 1px;
+  --horizontal-rule-margin-vertical: 1rem;
+  --horizontal-rule-color: var(--color-primary);
 
+  /* links */
   --link-color: var(--color-primary);
   --link-hover-color: hsl(210, 100%, 25%);
   --link-focus-color: hsl(210, 100%, 25%);
-  --link-focus-box-shadow-color: var(--box-shadow-color);
   --link-active-color: hsl(210, 100%, 25%);
   --link-text-decoration: none;
 
@@ -159,13 +143,11 @@
   /* focus colors */
   --button-focus-border-color: transparent;
   --button-focus-background-color: hsl(210, 100%, 40%);
-  --button-focus-box-shadow-color: var(--box-shadow-color);
   --button-focus-text-color: white;
 
   /* active colors */
   --button-active-border-color: transparent;
   --button-active-background-color: hsl(210, 100%, 40%);
-  --button-active-box-shadow-color: var(--box-shadow-color);
   --button-active-text-color: white;
 
   /* disabled colors */
@@ -173,9 +155,43 @@
   --button-disabled-background-color: var(--gray-lightest);
   --button-disabled-text-color: var(--disabled-color);
 
+  /* code element variables */
+
+  /* code */
+  --code-padding-vertical: 0.25rem;
+  --code-padding-horizontal: 0.5rem;
+  --code-border-color: var(--gray-lighter);
+  --code-border-radius: var(--border-radius);
+  --code-font-size: var(--font-size-small);
+  --code-background-color: transparent;
+  --code-text-color: var(--text-color);
+
+  /* pre */
+  --pre-padding-vertical: 1.5rem;
+  --pre-padding-horizontal: 2rem;
+  --pre-border-color: var(--gray-lighter);
+  --pre-border-radius: 0.25rem;
+  --pre-background-color: transparent;
+  --pre-text-color: var(--gray);
+
+  /* kbd */
+  --kbd-padding-vertical: 0.2rem;
+  --kbd-padding-horizontal: 0.4rem;
+  --kbd-border-color: var(--gray-lighter);
+  --kbd-border-radius: 0.2rem;
+  --nested-kbd-font-weight: var(--font-weight-medium);
+  --kbd-background-color: transparent;
+  --kbd-text-color: var(--text-color);
+
+  /* media/embed variables */
+
+  --figcaption-margin-top: 0.5rem;
+  --figcaption-font-weight: var(--font-weight-normal);
+  --figcaption-text-color: var(--gray-light);
+  --image-border-radius: var(--border-radius);
+
   /* table variables */
 
-  --table-margin-bottom: var(--block-element-margin-bottom);
   --table-head-border-width: var(--table-cell-border-width);
   --table-foot-border-width: var(--table-cell-border-width);
   --table-caption-padding-vertical: 0.5rem;
@@ -184,20 +200,21 @@
   --table-cell-padding-vertical: 0.5rem;
   --table-cell-padding-horizontal: 0.75rem;
   --table-cell-border-width: 1px;
-  --table-cell-border-color: var(--border-color);
-  --table-heading-font-weight: var(--font-weight-semibold);
+  --table-cell-border-color: var(--gray-lighter);
+  --table-heading-background-color: var(--gray-lightest);
+  --table-heading-text-color: var(--gray);
+  --table-heading-font-weight: var(--font-weight-medium);
 
-  /* form variables */
+  /* forms/inputs variables */
 
   /* fieldsets */
-  --fieldset-margin-bottom: 1rem;
   --fieldset-padding-vertical: 0;
   --fieldset-padding-horizontal: 0;
   --fieldset-border-width: 0;
   --fieldset-border-color: transparent;
 
   /* legends */
-  --legend-margin-bottom: 1rem;
+  --legend-margin-bottom: var(--block-element-margin-bottom);
   --legend-font-weight: var(--font-weight-semibold);
 
   /* labels */
@@ -226,8 +243,7 @@
   /* focus input colors */
   --input-focus-border-color: var(--color-primary);
   --input-focus-background-color: var(--input-background-color);
-  --input-focus-box-shadow-color: var(--box-shadow-color);
-  --input-focus-text-color: var(--color-primary);
+  --input-focus-text-color: var(--input-text-color);
   --input-focus-placeholder-color: var(--input-placeholder-color);
 
   /* disabled input colors */
@@ -286,15 +302,6 @@
   --radio-check-border-radius: 50%;
   --radio-check-background-color: white;
 
-  /* meter */
-  --meter-background-color: var(--gray-lighter);
-  --meter-filled-color: var(--color-primary);
-
-  /* progress */
-  --progress-height: 1rem;
-  --progress-background-color: var(--gray-lighter);
-  --progress-filled-color: var(--color-primary);
-
   /* range input */
   --range-input-thumb-width: 1.5rem;
   --range-input-thumb-height: 1.5rem;
@@ -307,39 +314,14 @@
   --range-input-track-focus-background: var(--gray-lighter);
   --range-input-track-disabled-background: var(--gray-lightest);
 
-  /* horizontal rule variables */
+  /* progress/meter variables */
 
-  --horizontal-rule-height: 1px;
-  --horizontal-rule-margin-vertical: 1rem;
-  --horizontal-rule-color: var(--color-primary);
+  /* progress */
+  --progress-height: 1rem;
+  --progress-background-color: var(--gray-lighter);
+  --progress-filled-color: var(--color-primary);
 
-  /* media/embeds variables */
-
-  --figure-margin-bottom: var(--block-element-margin-bottom);
-  --figcaption-margin-top: 0.5rem;
-  --figcaption-font-weight: var(--font-weight-normal);
-  --figcaption-text-color: var(--gray-light);
-  --image-border-radius: var(--border-radius);
-  --video-focus-box-shadow-color: var(--box-shadow-color);
-
-  /* code variables */
-
-  --code-padding-vertical: 0.25rem;
-  --code-padding-horizontal: 0.5rem;
-  --code-border-radius: var(--border-radius);
-  --code-font-size: var(--font-size-small);
-  --code-background-color: var(--gray-lightest);
-  --code-text-color: var(--color-primary);
-  --pre-margin-bottom: var(--block-element-margin-bottom);
-  --pre-padding-vertical: 1rem;
-  --pre-padding-horizontal: 1rem;
-  --pre-border-radius: var(--border-radius);
-  --pre-background-color: var(--gray-lightest);
-  --pre-text-color: var(--gray-dark);
-  --kbd-padding-vertical: 0.2rem;
-  --kbd-padding-horizontal: 0.4rem;
-  --kbd-border-radius: 0.2rem;
-  --nested-kbd-font-weight: var(--font-weight-medium);
-  --kbd-background-color: var(--gray-dark);
-  --kbd-text-color: white;
+  /* meter */
+  --meter-background-color: var(--gray-lighter);
+  --meter-filled-color: var(--color-primary);
 }

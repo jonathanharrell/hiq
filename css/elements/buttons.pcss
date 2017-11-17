@@ -31,16 +31,18 @@
     background-color: var(--button-hover-background-color, hsl(210, 100%, 40%));
     color: var(--button-hover-text-color, white);
   }
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--outline-color, hsl(210, 100%, 85%));
+  }
   &:focus {
     border-color: var(--button-focus-border-color, hsl(210, 100%, 50%));
     background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-focus-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     color: var(--button-focus-text-color, white);
   }
   &:active {
     border-color: var(--button-active-border-color, hsl(210, 100%, 30%));
     background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--button-active-box-shadow-color, var(--box-shadow-color, hsl(210, 100%, 85%)));
     color: var(--button-active-text-color, white);
   }
   /* force styling of text color if element has visited state (needed for `a` elements) */
