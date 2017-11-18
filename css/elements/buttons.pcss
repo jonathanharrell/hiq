@@ -12,47 +12,47 @@
   align-items: center;
   justify-content: center;
   width: auto;
-  height: var(--button-height, 2.25rem);
+  height: var(--hiq-button-height, 2.25rem);
   margin: 0;
-  padding: var(--button-vertical-padding, 0) var(--button-horizontal-padding, 1rem);
-  border: var(--button-border-width, 1px) solid var(--button-border-color, hsl(210, 100%, 50%));
-  border-radius: var(--button-border-radius, 0.2rem);
-  background-color: var(--button-background-color, hsl(210, 100%, 50%));
+  padding: var(--hiq-button-vertical-padding, 0) var(--hiq-button-horizontal-padding, 1rem);
+  border: var(--hiq-button-border-width, 1px) solid var(--hiq-button-border-color, hsl(210, 100%, 50%));
+  border-radius: var(--hiq-button-border-radius, 0.2rem);
+  background-color: var(--hiq-button-background-color, hsl(210, 100%, 50%));
   font-family: inherit;
   font-size: inherit;
-  font-weight: var(--button-font-weight, var(--font-weight-medium, 500));
+  font-weight: var(--hiq-button-font-weight, var(--hiq-font-weight-medium, 500));
   line-height: inherit;
   text-decoration: none;
-  color: var(--button-text-color, white);
-  transition: border-color var(--speed, 0.1s) var(--easing, ease-out), color var(--speed, 0.1s) var(--easing, ease-out), background-color var(--speed, 0.1s) var(--easing, ease-out);
+  color: var(--hiq-button-text-color, white);
+  transition: border-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), background-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
   cursor: pointer;
   &:hover {
-    border-color: var(--button-hover-border-color, hsl(210, 100%, 40%));
-    background-color: var(--button-hover-background-color, hsl(210, 100%, 40%));
-    color: var(--button-hover-text-color, white);
+    border-color: var(--hiq-button-hover-border-color, hsl(210, 100%, 40%));
+    background-color: var(--hiq-button-hover-background-color, hsl(210, 100%, 40%));
+    color: var(--hiq-button-hover-text-color, white);
   }
   &:focus,
   &:active {
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--outline-color, hsl(210, 100%, 85%));
+    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
   }
   &:focus {
-    border-color: var(--button-focus-border-color, hsl(210, 100%, 50%));
-    background-color: var(--button-focus-background-color, hsl(210, 100%, 50%));
-    color: var(--button-focus-text-color, white);
+    border-color: var(--hiq-button-focus-border-color, hsl(210, 100%, 50%));
+    background-color: var(--hiq-button-focus-background-color, hsl(210, 100%, 50%));
+    color: var(--hiq-button-focus-text-color, white);
   }
   &:active {
-    border-color: var(--button-active-border-color, hsl(210, 100%, 30%));
-    background-color: var(--button-active-background-color, hsl(210, 100%, 30%));
-    color: var(--button-active-text-color, white);
+    border-color: var(--hiq-button-active-border-color, hsl(210, 100%, 30%));
+    background-color: var(--hiq-button-active-background-color, hsl(210, 100%, 30%));
+    color: var(--hiq-button-active-text-color, white);
   }
   /* force styling of text color if element has visited state (needed for `a` elements) */
   &:visited {
-    color: var(--button-text-color, white);
+    color: var(--hiq-button-text-color, white);
   }
   &:disabled {
-    border-color: var(--button-disabled-border-color, transparent);
-    background-color: var(--button-disabled-background-color, var(--gray-lightest, hsl(220, 10%, 95%)));
-    color: var(--button-disabled-text-color, var(--disabled-color, var(--gray-light, hsl(220, 10%, 60%))));
+    border-color: var(--hiq-button-disabled-border-color, transparent);
+    background-color: var(--hiq-button-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+    color: var(--hiq-button-disabled-text-color, var(--hiq-disabled-color, var(--hiq-gray-light, hsl(220, 10%, 60%))));
     cursor: not-allowed;
   }
 }

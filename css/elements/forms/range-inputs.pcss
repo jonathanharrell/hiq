@@ -7,95 +7,95 @@ input[type=range] {
   -webkit-appearance: none;
   &::-webkit-slider-runnable-track {
     width: 100%;
-    height: var(--range-input-track-height, 0.5rem);
-    border-radius: var(--range-input-track-border-radius, var(--border-radius, 0.2rem));
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+    height: var(--hiq-range-input-track-height, 0.5rem);
+    border-radius: var(--hiq-range-input-track-border-radius, var(--hiq-border-radius, 0.2rem));
+    background-color: var(--hiq-range-input-track-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+    transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
     cursor: pointer;
   }
   &:focus::-webkit-slider-runnable-track {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-range-input-track-focus-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-moz-range-track {
     width: 100%;
-    height: var(--range-input-track-height, 0.5rem);
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
-    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+    height: var(--hiq-range-input-track-height, 0.5rem);
+    background-color: var(--hiq-range-input-track-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+    transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
     cursor: pointer;
   }
   &:focus::-moz-range-track {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-range-input-track-focus-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-ms-track {
     width: 100%;
-    height: var(--range-input-track-height, 0.5rem);
-    border-width: var(--range-input-thumb-height, 1.5rem);
+    height: var(--hiq-range-input-track-height, 0.5rem);
+    border-width: var(--hiq-range-input-thumb-height, 1.5rem);
     border-color: transparent;
     background-color: transparent;
     color: transparent;
-    transition: background-color var(--speed, 0.2s) var(--easing, ease-out);
+    transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
     cursor: pointer;
   }
   &::-ms-fill-lower {
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-range-input-track-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
   }
   &:focus::-ms-fill-lower {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-range-input-track-focus-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-ms-fill-upper {
-    background-color: var(--range-input-track-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-range-input-track-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
   }
   &:focus::-ms-fill-upper {
-    background-color: var(--range-input-track-focus-background, var(--gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-range-input-track-focus-background, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
   }
   &::-webkit-slider-thumb {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
+    width: var(--hiq-range-input-thumb-width, 1.5rem);
+    height: var(--hiq-range-input-thumb-height, 1.5rem);
     margin-top: -0.5rem;
     border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius, 50%);
-    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    border-radius: var(--hiq-range-input-thumb-border-radius, 50%);
+    background-color: var(--hiq-range-input-thumb-background, var(--hiq-color-primary, hsl(210, 100%, 50%)));
     -webkit-appearance: none;
     cursor: pointer;
   }
   &::-moz-range-thumb {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
+    width: var(--hiq-range-input-thumb-width, 1.5rem);
+    height: var(--hiq-range-input-thumb-height, 1.5rem);
     border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius, 50%);
-    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    border-radius: var(--hiq-range-input-thumb-border-radius, 50%);
+    background-color: var(--hiq-range-input-thumb-background, var(--hiq-color-primary, hsl(210, 100%, 50%)));
     cursor: pointer;
   }
   &::-ms-thumb {
-    width: var(--range-input-thumb-width, 1.5rem);
-    height: var(--range-input-thumb-height, 1.5rem);
+    width: var(--hiq-range-input-thumb-width, 1.5rem);
+    height: var(--hiq-range-input-thumb-height, 1.5rem);
     border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius, 50%);
-    background-color: var(--range-input-thumb-background, var(--color-primary, hsl(210, 100%, 50%)));
+    border-radius: var(--hiq-range-input-thumb-border-radius, 50%);
+    background-color: var(--hiq-range-input-thumb-background, var(--hiq-color-primary, hsl(210, 100%, 50%)));
     cursor: pointer;
   }
   &:disabled {
     cursor: not-allowed;
     &::-webkit-slider-runnable-track {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-range-input-track-disabled-background, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
     }
     &::-moz-range-track {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-range-input-track-disabled-background, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
     }
     &::-ms-fill-lower {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-range-input-track-disabled-background, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
     }
     &::-ms-fill-upper {
-      background-color: var(--range-input-track-disabled-background, var(--gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-range-input-track-disabled-background, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
     }
     &::-webkit-slider-thumb {
-      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+      background-color: var(--hiq-range-input-thumb-disabled-background, var(--hiq-gray-lighter, hsl(210, 10%, 90%)));
     }
     &::-moz-range-thumb {
-      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+      background-color: var(--hiq-range-input-thumb-disabled-background, var(--hiq-gray-lighter, hsl(210, 10%, 90%)));
     }
     &::-ms-thumb {
-      background-color: var(--range-input-thumb-disabled-background, var(--gray-lighter, hsl(210, 10%, 90%)));
+      background-color: var(--hiq-range-input-thumb-disabled-background, var(--hiq-gray-lighter, hsl(210, 10%, 90%)));
     }
   }
 }

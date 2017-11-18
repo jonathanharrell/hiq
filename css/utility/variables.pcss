@@ -4,324 +4,324 @@
   /* theme variables */
 
   /* gray palette */
-  --gray-darkest: hsl(220, 10%, 5%);
-  --gray-darker: hsl(220, 10%, 10%);
-  --gray-dark: hsl(220, 10%, 20%);
-  --gray: hsl(220, 10%, 40%);
-  --gray-light: hsl(220, 10%, 60%);
-  --gray-lighter: hsl(220, 10%, 90%);
-  --gray-lightest: hsl(220, 10%, 95%);
+  --hiq-gray-darkest: hsl(220, 10%, 5%);
+  --hiq-gray-darker: hsl(220, 10%, 10%);
+  --hiq-gray-dark: hsl(220, 10%, 20%);
+  --hiq-gray: hsl(220, 10%, 40%);
+  --hiq-gray-light: hsl(220, 10%, 60%);
+  --hiq-gray-lighter: hsl(220, 10%, 90%);
+  --hiq-gray-lightest: hsl(220, 10%, 95%);
 
   /* semantic colors */
-  --color-primary: hsl(210, 100%, 50%);
+  --hiq-color-primary: hsl(210, 100%, 50%);
 
   /* global applied colors */
-  --html-background-color: white;
-  --body-background-color: white;
-  --outline-color: hsl(210, 100%, 85%);
-  --disabled-color: var(--gray-light);
+  --hiq-html-background-color: white;
+  --hiq-body-background-color: white;
+  --hiq-outline-color: hsl(210, 100%, 85%);
+  --hiq-disabled-color: var(--hiq-gray-light);
 
   /* layout variables */
 
   /* containers */
-  --max-container-width: 50rem;
-  --container-horizontal-gap: 2rem;
+  --hiq-max-container-width: 50rem;
+  --hiq-container-horizontal-gap: 2rem;
 
   /* spacing */
-  --block-element-margin-bottom: 1rem;
+  --hiq-block-element-margin-bottom: 1rem;
 
   /* border & outline */
-  --border-radius: 0.2rem;
-  --outline-width: 0.2rem;
+  --hiq-border-radius: 0.2rem;
+  --hiq-outline-width: 0.2rem;
 
   /* transitions */
-  --speed: 0.1s;
-  --easing: ease-out;
+  --hiq-speed: 0.1s;
+  --hiq-easing: ease-out;
 
   /* typography variables */
 
   /* global typography variables */
-  --text-rendering: optimizeLegibility;
-  --letter-spacing-base: 0;
+  --hiq-text-rendering: optimizeLegibility;
+  --hiq-letter-spacing-base: 0;
 
   /* font families */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --hiq-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --hiq-font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
   /* responsive sizing */
 
   /* unitless base font size variables in px */
-  --unitless-min-font-size: 15;
-  --unitless-max-font-size: 18;
+  --hiq-unitless-min-font-size: 15;
+  --hiq-unitless-max-font-size: 18;
 
   /* unitless viewport widths in px when min/max font sizes will apply */
-  --unitless-lower-font-range: 460;
-  --unitless-upper-font-range: 736;
+  --hiq-unitless-lower-font-range: 460;
+  --hiq-unitless-upper-font-range: 736;
 
-  /* should match --unitless-upper-font-range with px unit */
-  @custom-media --lower-font-range (min-width: 460px);
-  @custom-media --upper-font-range (min-width: 736px);
+  /* should match --hiq-unitless-upper-font-range with px unit */
+  @custom-media --hiq-lower-font-range (min-width: 460px);
+  @custom-media --hiq-upper-font-range (min-width: 736px);
 
   /* font sizes */
-  --font-size-1: 2.5rem;
-  --font-size-2: 2rem;
-  --font-size-3: 1.75rem;
-  --font-size-4: 1.5rem;
-  --font-size-5: 1rem;
-  --font-size-6: 0.875rem;
-  --font-size-base: var(--font-size-5);
-  --font-size-large: var(--font-size-4);
-  --font-size-small: var(--font-size-6);
+  --hiq-font-size-1: 2.5rem;
+  --hiq-font-size-2: 2rem;
+  --hiq-font-size-3: 1.75rem;
+  --hiq-font-size-4: 1.5rem;
+  --hiq-font-size-5: 1rem;
+  --hiq-font-size-6: 0.875rem;
+  --hiq-font-size-base: var(--hiq-font-size-5);
+  --hiq-font-size-large: var(--hiq-font-size-4);
+  --hiq-font-size-small: var(--hiq-font-size-6);
 
   /* base unitless line heights */
-  --line-height-base: 1.5;
-  --heading-line-height: 1.2;
+  --hiq-line-height-base: 1.5;
+  --hiq-heading-line-height: 1.2;
 
   /* font weights */
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --hiq-font-weight-light: 300;
+  --hiq-font-weight-normal: 400;
+  --hiq-font-weight-medium: 500;
+  --hiq-font-weight-semibold: 600;
+  --hiq-font-weight-bold: 700;
 
   /* applied font weights */
-  --font-weight-base: var(--font-weight-normal);
-  --heading-font-weight: var(--font-weight-medium);
-  --definition-list-title-font-weight: var(--font-weight-semibold);
+  --hiq-font-weight-base: var(--hiq-font-weight-normal);
+  --hiq-heading-font-weight: var(--hiq-font-weight-medium);
+  --hiq-definition-list-title-font-weight: var(--hiq-font-weight-semibold);
 
   /* global text color */
-  --text-color: var(--gray-darker);
+  --hiq-text-color: var(--hiq-gray-darker);
 
   /* inline text elements */
-  --mark-color: hsl(50, 81%, 94%);
-  --selection-color: hsl(210, 100%, 90%);
-  --deleted-color: hsl(331, 93%, 67%);
-  --inserted-color: hsl(210, 100%, 95%);
+  --hiq-mark-color: hsl(50, 81%, 94%);
+  --hiq-selection-color: hsl(210, 100%, 90%);
+  --hiq-deleted-color: hsl(331, 93%, 67%);
+  --hiq-inserted-color: hsl(210, 100%, 95%);
 
   /* lists */
-  --list-margin-left: 1rem;
-  --unordered-list-style: disc;
-  --inline-item-margin-right: 0.25rem;
-  --description-margin-bottom: 0.5rem;
+  --hiq-list-margin-left: 1rem;
+  --hiq-unordered-list-style: disc;
+  --hiq-inline-item-margin-right: 0.25rem;
+  --hiq-description-margin-bottom: 0.5rem;
 
   /* blockquotes */
-  --blockquote-font-size: var(--font-size-4);
-  --blockquote-line-height: var(--heading-line-height);
-  --blockquote-citation-color: var(--gray-light);
+  --hiq-blockquote-font-size: var(--hiq-font-size-4);
+  --hiq-blockquote-line-height: var(--hiq-heading-line-height);
+  --hiq-blockquote-citation-color: var(--hiq-gray-light);
 
   /* horizontal rules */
-  --horizontal-rule-height: 1px;
-  --horizontal-rule-margin-vertical: 1rem;
-  --horizontal-rule-color: var(--color-primary);
+  --hiq-horizontal-rule-height: 1px;
+  --hiq-horizontal-rule-margin-vertical: 1rem;
+  --hiq-horizontal-rule-color: var(--hiq-color-primary);
 
   /* links */
-  --link-color: var(--color-primary);
-  --link-hover-color: hsl(210, 100%, 25%);
-  --link-focus-color: hsl(210, 100%, 25%);
-  --link-active-color: hsl(210, 100%, 25%);
-  --link-text-decoration: none;
+  --hiq-link-color: var(--hiq-color-primary);
+  --hiq-link-hover-color: hsl(210, 100%, 25%);
+  --hiq-link-focus-color: hsl(210, 100%, 25%);
+  --hiq-link-active-color: hsl(210, 100%, 25%);
+  --hiq-link-text-decoration: none;
 
   /* button variables */
 
-  --button-height: 2.25rem;
-  --button-vertical-padding: 0;
-  --button-horizontal-padding: 0.75rem;
-  --button-border-width: 1px;
-  --button-border-radius: var(--border-radius);
-  --button-font-weight: var(--font-weight-medium);
+  --hiq-button-height: 2.25rem;
+  --hiq-button-vertical-padding: 0;
+  --hiq-button-horizontal-padding: 0.75rem;
+  --hiq-button-border-width: 1px;
+  --hiq-button-border-radius: var(--hiq-border-radius);
+  --hiq-button-font-weight: var(--hiq-font-weight-medium);
 
   /* static colors */
-  --button-border-color: var(--color-primary);
-  --button-background-color: var(--color-primary);
-  --button-text-color: white;
+  --hiq-button-border-color: var(--hiq-color-primary);
+  --hiq-button-background-color: var(--hiq-color-primary);
+  --hiq-button-text-color: white;
 
   /* hover colors */
-  --button-hover-border-color: transparent;
-  --button-hover-background-color: hsl(210, 100%, 40%);
-  --button-hover-text-color: white;
+  --hiq-button-hover-border-color: transparent;
+  --hiq-button-hover-background-color: hsl(210, 100%, 40%);
+  --hiq-button-hover-text-color: white;
 
   /* focus colors */
-  --button-focus-border-color: transparent;
-  --button-focus-background-color: hsl(210, 100%, 40%);
-  --button-focus-text-color: white;
+  --hiq-button-focus-border-color: transparent;
+  --hiq-button-focus-background-color: hsl(210, 100%, 40%);
+  --hiq-button-focus-text-color: white;
 
   /* active colors */
-  --button-active-border-color: transparent;
-  --button-active-background-color: hsl(210, 100%, 40%);
-  --button-active-text-color: white;
+  --hiq-button-active-border-color: transparent;
+  --hiq-button-active-background-color: hsl(210, 100%, 40%);
+  --hiq-button-active-text-color: white;
 
   /* disabled colors */
-  --button-disabled-border-color: transparent;
-  --button-disabled-background-color: var(--gray-lightest);
-  --button-disabled-text-color: var(--disabled-color);
+  --hiq-button-disabled-border-color: transparent;
+  --hiq-button-disabled-background-color: var(--hiq-gray-lightest);
+  --hiq-button-disabled-text-color: var(--hiq-disabled-color);
 
   /* code element variables */
 
   /* code */
-  --code-padding-vertical: 0.25rem;
-  --code-padding-horizontal: 0.5rem;
-  --code-border-color: var(--gray-lighter);
-  --code-border-radius: var(--border-radius);
-  --code-font-size: var(--font-size-small);
-  --code-background-color: transparent;
-  --code-text-color: var(--text-color);
+  --hiq-code-padding-vertical: 0.25rem;
+  --hiq-code-padding-horizontal: 0.5rem;
+  --hiq-code-border-color: var(--hiq-gray-lighter);
+  --hiq-code-border-radius: var(--hiq-border-radius);
+  --hiq-code-font-size: var(--hiq-font-size-small);
+  --hiq-code-background-color: transparent;
+  --hiq-code-text-color: var(--hiq-text-color);
 
   /* pre */
-  --pre-padding-vertical: 1.5rem;
-  --pre-padding-horizontal: 2rem;
-  --pre-border-color: var(--gray-lighter);
-  --pre-border-radius: 0.25rem;
-  --pre-background-color: transparent;
-  --pre-text-color: var(--gray);
+  --hiq-pre-padding-vertical: 1.25rem;
+  --hiq-pre-padding-horizontal: 1.5rem;
+  --hiq-pre-border-color: var(--hiq-gray-lighter);
+  --hiq-pre-border-radius: 0.25rem;
+  --hiq-pre-background-color: transparent;
+  --hiq-pre-text-color: var(--hiq-gray);
 
   /* kbd */
-  --kbd-padding-vertical: 0.2rem;
-  --kbd-padding-horizontal: 0.4rem;
-  --kbd-border-color: var(--gray-lighter);
-  --kbd-border-radius: 0.2rem;
-  --nested-kbd-font-weight: var(--font-weight-medium);
-  --kbd-background-color: transparent;
-  --kbd-text-color: var(--text-color);
+  --hiq-kbd-padding-vertical: 0.2rem;
+  --hiq-kbd-padding-horizontal: 0.4rem;
+  --hiq-kbd-border-color: var(--hiq-gray-lighter);
+  --hiq-kbd-border-radius: 0.2rem;
+  --hiq-nested-kbd-font-weight: var(--hiq-font-weight-medium);
+  --hiq-kbd-background-color: transparent;
+  --hiq-kbd-text-color: var(--hiq-text-color);
 
   /* media/embed variables */
 
-  --figcaption-margin-top: 0.5rem;
-  --figcaption-font-weight: var(--font-weight-normal);
-  --figcaption-text-color: var(--gray-light);
-  --image-border-radius: var(--border-radius);
+  --hiq-figcaption-margin-top: 0.5rem;
+  --hiq-figcaption-font-weight: var(--hiq-font-weight-normal);
+  --hiq-figcaption-text-color: var(--hiq-gray-light);
+  --hiq-image-border-radius: var(--hiq-border-radius);
 
   /* table variables */
 
-  --table-head-border-width: var(--table-cell-border-width);
-  --table-foot-border-width: var(--table-cell-border-width);
-  --table-caption-padding-vertical: 0.5rem;
-  --table-caption-text-color: var(--gray-light);
-  --table-caption-font-weight: var(--font-weight-semibold);
-  --table-cell-padding-vertical: 0.5rem;
-  --table-cell-padding-horizontal: 0.75rem;
-  --table-cell-border-width: 1px;
-  --table-cell-border-color: var(--gray-lighter);
-  --table-heading-background-color: var(--gray-lightest);
-  --table-heading-text-color: var(--gray);
-  --table-heading-font-weight: var(--font-weight-medium);
+  --hiq-table-head-border-width: var(--hiq-table-cell-border-width);
+  --hiq-table-foot-border-width: var(--hiq-table-cell-border-width);
+  --hiq-table-caption-padding-vertical: 0.5rem;
+  --hiq-table-caption-text-color: var(--hiq-gray-light);
+  --hiq-table-caption-font-weight: var(--hiq-font-weight-semibold);
+  --hiq-table-cell-padding-vertical: 0.5rem;
+  --hiq-table-cell-padding-horizontal: 0.75rem;
+  --hiq-table-cell-border-width: 1px;
+  --hiq-table-cell-border-color: var(--hiq-gray-lighter);
+  --hiq-table-heading-background-color: var(--hiq-gray-lightest);
+  --hiq-table-heading-text-color: var(--hiq-gray);
+  --hiq-table-heading-font-weight: var(--hiq-font-weight-medium);
 
   /* forms/inputs variables */
 
   /* fieldsets */
-  --fieldset-padding-vertical: 0;
-  --fieldset-padding-horizontal: 0;
-  --fieldset-border-width: 0;
-  --fieldset-border-color: transparent;
+  --hiq-fieldset-padding-vertical: 0;
+  --hiq-fieldset-padding-horizontal: 0;
+  --hiq-fieldset-border-width: 0;
+  --hiq-fieldset-border-color: transparent;
 
   /* legends */
-  --legend-margin-bottom: var(--block-element-margin-bottom);
-  --legend-font-weight: var(--font-weight-semibold);
+  --hiq-legend-margin-bottom: var(--hiq-block-element-margin-bottom);
+  --hiq-legend-font-weight: var(--hiq-font-weight-semibold);
 
   /* labels */
-  --label-margin-bottom: 0.5rem;
-  --label-font-weight: var(--font-weight-semibold);
+  --hiq-label-margin-bottom: 0.5rem;
+  --hiq-label-font-weight: var(--hiq-font-weight-semibold);
 
   /* text inputs */
-  --input-height: 2.5rem;
-  --input-padding-vertical: 0;
-  --input-padding-horizontal: 0.75rem;
-  --input-border-width: 1px;
-  --input-border-radius: var(--border-radius);
+  --hiq-input-height: 2.5rem;
+  --hiq-input-padding-vertical: 0;
+  --hiq-input-padding-horizontal: 0.75rem;
+  --hiq-input-border-width: 1px;
+  --hiq-input-border-radius: var(--hiq-border-radius);
 
   /* static input colors */
-  --input-border-color: var(--gray-lighter);
-  --input-background-color: var(--gray-lighter);
-  --input-text-color: var(--text-color);
-  --input-placeholder-color: var(--gray);
+  --hiq-input-border-color: var(--hiq-gray-lighter);
+  --hiq-input-background-color: var(--hiq-gray-lighter);
+  --hiq-input-text-color: var(--hiq-text-color);
+  --hiq-input-placeholder-color: var(--hiq-gray);
 
   /* hover input colors */
-  --input-hover-border-color: var(--input-border-color);
-  --input-hover-background-color: var(--input-background-color);
-  --input-hover-text-color: var(--input-text-color);
-  --input-hover-placeholder-color: var(--input-placeholder-color);
+  --hiq-input-hover-border-color: var(--hiq-input-border-color);
+  --hiq-input-hover-background-color: var(--hiq-input-background-color);
+  --hiq-input-hover-text-color: var(--hiq-input-text-color);
+  --hiq-input-hover-placeholder-color: var(--hiq-input-placeholder-color);
 
   /* focus input colors */
-  --input-focus-border-color: var(--color-primary);
-  --input-focus-background-color: var(--input-background-color);
-  --input-focus-text-color: var(--input-text-color);
-  --input-focus-placeholder-color: var(--input-placeholder-color);
+  --hiq-input-focus-border-color: var(--hiq-color-primary);
+  --hiq-input-focus-background-color: var(--hiq-input-background-color);
+  --hiq-input-focus-text-color: var(--hiq-input-text-color);
+  --hiq-input-focus-placeholder-color: var(--hiq-input-placeholder-color);
 
   /* disabled input colors */
-  --input-disabled-border-color: var(--gray-lightest);
-  --input-disabled-background-color: var(--gray-lightest);
-  --input-disabled-text-color: var(--gray-light);
-  --input-disabled-placeholder-color: var(--gray-light);
+  --hiq-input-disabled-border-color: var(--hiq-gray-lightest);
+  --hiq-input-disabled-background-color: var(--hiq-gray-lightest);
+  --hiq-input-disabled-text-color: var(--hiq-gray-light);
+  --hiq-input-disabled-placeholder-color: var(--hiq-gray-light);
 
   /* textareas */
-  --textarea-padding-vertical: 0.5rem;
-  --textarea-padding-horizontal: 0.75rem;
+  --hiq-textarea-padding-vertical: 0.5rem;
+  --hiq-textarea-padding-horizontal: 0.75rem;
 
   /* selects */
-  --select-background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E');
-  --select-background-position: right 1rem center;
-  --select-background-size: 0.75rem;
+  --hiq-select-background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E');
+  --hiq-select-background-position: right 1rem center;
+  --hiq-select-background-size: 0.75rem;
 
   /* checkboxes */
-  --checkbox-margin-bottom: 0.5rem;
-  --checkbox-label-padding-horizontal: 2rem;
-  --checkbox-label-font-weight: var(--font-weight-normal);
-  --checkbox-label-disabled-color: var(--disabled-color);
-  --checkbox-width: 1rem;
-  --checkbox-height: 1rem;
-  --checkbox-border-color: transparent;
-  --checkbox-border-radius: var(--border-radius);
-  --checkbox-background-color: var(--gray-lighter);
-  --checkbox-hover-background-color: var(--gray-light);
-  --checkbox-focus-background-color: var(--gray-light);
-  --checkbox-checked-background-color: var(--color-primary);
-  --checkbox-disabled-background-color: var(--gray-lightest);
-  --checkbox-check-position-top: 0.2rem;
-  --checkbox-check-position-left: 0.375rem;
-  --checkbox-check-width: 0.25rem;
-  --checkbox-check-height: 0.5rem;
-  --checkbox-border-width: 2px;
+  --hiq-checkbox-margin-bottom: 0.5rem;
+  --hiq-checkbox-label-padding-horizontal: 2rem;
+  --hiq-checkbox-label-font-weight: var(--hiq-font-weight-normal);
+  --hiq-checkbox-label-disabled-color: var(--hiq-disabled-color);
+  --hiq-checkbox-width: 1rem;
+  --hiq-checkbox-height: 1rem;
+  --hiq-checkbox-border-color: transparent;
+  --hiq-checkbox-border-radius: var(--hiq-border-radius);
+  --hiq-checkbox-background-color: var(--hiq-gray-lighter);
+  --hiq-checkbox-hover-background-color: var(--hiq-gray-light);
+  --hiq-checkbox-focus-background-color: var(--hiq-gray-light);
+  --hiq-checkbox-checked-background-color: var(--hiq-color-primary);
+  --hiq-checkbox-disabled-background-color: var(--hiq-gray-lightest);
+  --hiq-checkbox-check-position-top: 0.2rem;
+  --hiq-checkbox-check-position-left: 0.375rem;
+  --hiq-checkbox-check-width: 0.25rem;
+  --hiq-checkbox-check-height: 0.5rem;
+  --hiq-checkbox-border-width: 2px;
 
   /* radio buttons */
-  --radio-margin-bottom: 0.5rem;
-  --radio-label-padding-horizontal: 2rem;
-  --radio-label-font-weight: var(--font-weight-normal);
-  --radio-label-disabled-color: var(--disabled-color);
-  --radio-width: 1rem;
-  --radio-height: 1rem;
-  --radio-border-color: transparent;
-  --radio-border-radius: 50%;
-  --radio-background-color: var(--gray-lighter);
-  --radio-hover-background-color: var(--gray-light);
-  --radio-focus-background-color: var(--gray-light);
-  --radio-checked-background-color: var(--color-primary);
-  --radio-disabled-background-color: var(--gray-lightest);
-  --radio-check-position-top: 0.25rem;
-  --radio-check-position-left: 0.25rem;
-  --radio-check-width: 0.5rem;
-  --radio-check-height: 0.5rem;
-  --radio-check-border-radius: 50%;
-  --radio-check-background-color: white;
+  --hiq-radio-margin-bottom: 0.5rem;
+  --hiq-radio-label-padding-horizontal: 2rem;
+  --hiq-radio-label-font-weight: var(--hiq-font-weight-normal);
+  --hiq-radio-label-disabled-color: var(--hiq-disabled-color);
+  --hiq-radio-width: 1rem;
+  --hiq-radio-height: 1rem;
+  --hiq-radio-border-color: transparent;
+  --hiq-radio-border-radius: 50%;
+  --hiq-radio-background-color: var(--hiq-gray-lighter);
+  --hiq-radio-hover-background-color: var(--hiq-gray-light);
+  --hiq-radio-focus-background-color: var(--hiq-gray-light);
+  --hiq-radio-checked-background-color: var(--hiq-color-primary);
+  --hiq-radio-disabled-background-color: var(--hiq-gray-lightest);
+  --hiq-radio-check-position-top: 0.25rem;
+  --hiq-radio-check-position-left: 0.25rem;
+  --hiq-radio-check-width: 0.5rem;
+  --hiq-radio-check-height: 0.5rem;
+  --hiq-radio-check-border-radius: 50%;
+  --hiq-radio-check-background-color: white;
 
   /* range input */
-  --range-input-thumb-width: 1.5rem;
-  --range-input-thumb-height: 1.5rem;
-  --range-input-thumb-border-radius: 50%;
-  --range-input-thumb-background: var(--color-primary);
-  --range-input-thumb-disabled-background: var(--color-primary);
-  --range-input-track-height: 0.5rem;
-  --range-input-track-border-radius: var(--border-radius);
-  --range-input-track-background: var(--gray-lighter);
-  --range-input-track-focus-background: var(--gray-lighter);
-  --range-input-track-disabled-background: var(--gray-lightest);
+  --hiq-range-input-thumb-width: 1.5rem;
+  --hiq-range-input-thumb-height: 1.5rem;
+  --hiq-range-input-thumb-border-radius: 50%;
+  --hiq-range-input-thumb-background: var(--hiq-color-primary);
+  --hiq-range-input-thumb-disabled-background: var(--hiq-color-primary);
+  --hiq-range-input-track-height: 0.5rem;
+  --hiq-range-input-track-border-radius: var(--hiq-border-radius);
+  --hiq-range-input-track-background: var(--hiq-gray-lighter);
+  --hiq-range-input-track-focus-background: var(--hiq-gray-lighter);
+  --hiq-range-input-track-disabled-background: var(--hiq-gray-lightest);
 
   /* progress/meter variables */
 
   /* progress */
-  --progress-height: 1rem;
-  --progress-background-color: var(--gray-lighter);
-  --progress-filled-color: var(--color-primary);
+  --hiq-progress-height: 1rem;
+  --hiq-progress-background-color: var(--hiq-gray-lighter);
+  --hiq-progress-filled-color: var(--hiq-color-primary);
 
   /* meter */
-  --meter-background-color: var(--gray-lighter);
-  --meter-filled-color: var(--color-primary);
+  --hiq-meter-background-color: var(--hiq-gray-lighter);
+  --hiq-meter-filled-color: var(--hiq-color-primary);
 }

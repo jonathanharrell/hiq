@@ -2,21 +2,21 @@
 
 a {
   background-color: transparent;
-  text-decoration: var(--link-text-decoration, none);
+  text-decoration: var(--hiq-link-text-decoration, none);
   -webkit-text-decoration-skip: objects;
-  color: var(--link-color, hsl(210, 100%, 50%));
-  transition: color var(--speed, 0.1s) var(--easing, ease-out);
+  color: var(--hiq-link-color, hsl(210, 100%, 50%));
+  transition: color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
   cursor: pointer;
   &:hover {
-    color: var(--link-hover-color, hsl(210, 100%, 25%));
+    color: var(--hiq-link-hover-color, hsl(210, 100%, 25%));
   }
   &:focus {
-    box-shadow: 0 0 0 var(--outline-width, 0.2rem) var(--outline-color, hsl(210, 100%, 85%));
+    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
     outline: none;
-    color: var(--link-focus-color, hsl(210, 100%, 25%));
+    color: var(--hiq-link-focus-color, hsl(210, 100%, 25%));
   }
   &:active {
-    color: var(--link-active-color, hsl(210, 100%, 25%));
+    color: var(--hiq-link-active-color, hsl(210, 100%, 25%));
   }
 }
 
