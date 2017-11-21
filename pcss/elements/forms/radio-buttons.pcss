@@ -41,11 +41,13 @@
       background-color: var(--hiq-radio-focus-background-color, var(--hiq-radio-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%))));
       box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
     }
-    &:checked + label::before {
+    &:checked + label::before,
+    &[aria-checked] + label::before {
       background-color: var(--hiq-checkbox-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
     }
     /* style `::after` to look like radio button fill */
-    &:checked + label::after {
+    &:checked + label::after,
+    &[aria-checked] + label::after {
       display: block;
       position: absolute;
       top: var(--hiq-radio-check-position-top, 0.25rem);
@@ -59,7 +61,8 @@
     :--not-writable + label {
       color: var(--hiq-radio-label-disabled-color, var(--hiq-disabled-color, var(--hiq-gray-light, hsl(220, 10%, 60%))));
     }
-    &:disabled {
+    &:disabled,
+    [aria-disabled] {
       cursor: not-allowed;
     }
     :--not-writable + label::before {

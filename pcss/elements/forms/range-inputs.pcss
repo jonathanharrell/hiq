@@ -83,7 +83,8 @@ input[type=range] {
   &:focus::-ms-thumb {
     box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
   }
-  &:disabled {
+  &:disabled,
+  [aria-disabled] {
     cursor: not-allowed;
     &::-webkit-slider-runnable-track {
       background-color: var(--hiq-range-input-track-disabled-background, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
