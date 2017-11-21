@@ -24,7 +24,7 @@ Or download/clone the repo.
 If you have your own PostCSS setup, you can import the source css file directly:
 
 ```css
-@import 'node_modules/hiq/css/hiq.pcss';
+@import 'node_modules/hiq/pcss/hiq.pcss';
 ```
 
 Note that in this case, you will need to configure your `postcss.config.js` file to include the following plugins:
