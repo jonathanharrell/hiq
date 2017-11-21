@@ -1,6 +1,6 @@
 module.exports = {
     plugins: [
-        require('postcss-easy-import')({extensions: '.pcss'}),
+        require('postcss-easy-import')({ extensions: '.pcss' }),
         require('postcss-mixins'),
         require('postcss-custom-selectors'),
         require('postcss-nesting'),

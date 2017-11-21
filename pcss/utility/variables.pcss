@@ -12,13 +12,12 @@
   --hiq-gray-lighter: hsl(220, 10%, 90%);
   --hiq-gray-lightest: hsl(220, 10%, 95%);
 
-  /* semantic colors */
+  /* primary color */
   --hiq-color-primary: hsl(210, 100%, 50%);
 
   /* global applied colors */
   --hiq-html-background-color: white;
   --hiq-body-background-color: white;
-  --hiq-outline-color: hsl(210, 100%, 85%);
   --hiq-disabled-color: var(--hiq-gray-light);
 
   /* layout variables */
@@ -33,6 +32,7 @@
   /* border & outline */
   --hiq-border-radius: 0.2rem;
   --hiq-outline-width: 0.2rem;
+  --hiq-outline-color: hsl(210, 100%, 85%);
 
   /* transitions */
   --hiq-speed: 0.1s;
@@ -56,11 +56,11 @@
 
   /* unitless viewport widths in px when min/max font sizes will apply */
   --hiq-unitless-lower-font-range: 460;
-  --hiq-unitless-upper-font-range: 736;
+  --hiq-unitless-upper-font-range: 900;
 
   /* should match --hiq-unitless-upper-font-range with px unit */
   @custom-media --hiq-lower-font-range (min-width: 460px);
-  @custom-media --hiq-upper-font-range (min-width: 736px);
+  @custom-media --hiq-upper-font-range (min-width: 900px);
 
   /* font sizes */
   --hiq-font-size-1: 2.5rem;

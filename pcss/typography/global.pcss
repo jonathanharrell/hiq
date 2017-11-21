@@ -5,7 +5,7 @@ custom media queries
 should match corresponding variables with px unit
 */
 @custom-media --hiq-lower-font-range (min-width: 460px);
-@custom-media --hiq-upper-font-range (min-width: 736px);
+@custom-media --hiq-upper-font-range (min-width: 900px);
 
 html {
   /* font smoothing */
@@ -27,7 +27,7 @@ html {
 
   /* responsive font size calculation */
   @media (--hiq-lower-font-range) {
-    font-size: calc((var(--hiq-unitless-min-font-size, 15) * 1px) + (calc(var(--hiq-unitless-max-font-size, 16) - var(--hiq-unitless-min-font-size, 15))) * (calc(100vw - (var(--hiq-unitless-lower-font-range, 460) * 1px))) / (calc(var(--hiq-unitless-upper-font-range, 736) - var(--hiq-unitless-lower-font-range, 460))));
+    font-size: calc((var(--hiq-unitless-min-font-size, 15) * 1px) + (calc(var(--hiq-unitless-max-font-size, 16) - var(--hiq-unitless-min-font-size, 15))) * (calc(100vw - (var(--hiq-unitless-lower-font-range, 460) * 1px))) / (calc(var(--hiq-unitless-upper-font-range, 900) - var(--hiq-unitless-lower-font-range, 460))));
   }
 
   /* set upper font range limit */

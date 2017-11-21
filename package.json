@@ -4,17 +4,23 @@
     "description": "A lightweight, progressive, high-IQ PostCSS framework.",
     "main": "css/hiq.pcss",
     "scripts": {
-        "lint": "stylelint css/*.pcss",
-        "minify": "minify dist/hiq.min.css --output dist/hiq.min.css",
-        "precommit": "npm run lint && npm run postcss && npm run minify",
-        "postcss": "postcss css/hiq.pcss -o dist/hiq.min.css",
-        "watch": "npm run lint && npm run postcss -- --watch"
+        "lint": "stylelint pcss/*.pcss",
+        "minify": "minify dist/hiq.css --output dist/hiq.min.css",
+        "precommit": "npm run lint && npm run postcss && npm run minify && npm run docs-lint && npm run docs-postcss && npm run docs-minify",
+        "postcss": "postcss pcss/hiq.pcss -o dist/hiq.css",
+        "watch": "npm run lint && npm run postcss -- --watch",
+        "docs-lint": "stylelint assets/pcss/*.pcss",
+        "docs-minify": "minify assets/build/docs.css --output assets/build/docs.min.css",
+        "docs-postcss": "postcss assets/css/docs.pcss -o assets/build/docs.css",
+        "docs-watch": "npm run docs-lint && npm run docs-postcss -- --watch",
+        "docs-generate": "bundle exec jekyll serve",
+        "algolia-index": "bundle exec jekyll algolia push"
     },
     "repository": {
         "type": "git",
         "url": "git+https://jonathanharrell@github.com/jonathanharrell/hiq.git"
     },
-    "author": "Jonathan Harrell",
+    "author": "Jonathan Harrell <harr041@gmail.com> (www.jonathan-harrell.com)",
     "contributors": [
         "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
     ],
@@ -47,9 +53,12 @@
         }
     },
     "files": [
-        "css/*.css",
+        "pcss/**/*.pcss",
         "dist",
         "index.html",
         "postcss.config.js"
-    ]
+    ],
+    "dependencies": {
+        "autocomplete.js": "0.29.0"
+    }
 }
