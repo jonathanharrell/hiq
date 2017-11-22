@@ -1,6 +1,7 @@
 node_modules
 dist
 _site
+_gh_pages
+_algolia_api_key
 .vscode
 .idea
-_gh_pages

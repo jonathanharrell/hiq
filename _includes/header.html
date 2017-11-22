@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll v{{ jekyll.version }}">
+
+<title>
+    {%- if page.title -%}
+    {{ page.title }} &middot; {{ site.title }}
+    {%- else -%}
+    {{ site.title }} &middot; {{ site.description }}
+    {%- endif -%}
+</title>
+
+<!-- HiQ core CSS -->
+{% if site.github %}
+<link href="{{ site.baseurl }}/dist/hiq.min.css" rel="stylesheet">
+{% else %}
+<link href="{{ site.baseurl }}/dist/hiq.css" rel="stylesheet">
+{% endif %}
+
+<!--<link href="{{ site.baseurl }}/assets/docs.min.css" rel="stylesheet">-->
+
+{% include favicons.html %}
+
+{% include social.html %}
+
+<!-- Google analytics -->

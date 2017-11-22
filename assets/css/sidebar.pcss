@@ -1,0 +1,147 @@
+.sidebar {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  order: 2;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  @media (--desktop) {
+    visibility: visible;
+    position: relative;
+    z-index: auto;
+    flex: 0 0 12rem;
+    width: auto;
+    height: auto;
+    margin-left: 4rem;
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+.mobile-toc-visible {
+  height: 100%;
+  overflow: hidden;
+  & .sidebar {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  & .toc {
+    transform: translateY(0);
+  }
+  & .mobile-toc-toggle {
+    transform: rotate(45deg);
+  }
+}
+
+.toc {
+  padding-top: 2rem;
+  transform: translateY(5rem);
+  transition: transform 0.3s ease-out;
+  @media (--desktop) {
+    position: fixed;
+    z-index: 2;
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    margin-right: -999px;
+    padding-top: 6rem;
+    padding-right: 999px;
+    transform: translateY(0);
+  }
+  & ul {
+    padding: 0;
+    list-style: none;
+    & ul {
+      margin: 0.5rem 0 1.25rem;
+    }
+  }
+}
+
+.toc-wrapper {
+  padding-bottom: 6rem;
+  @media (--desktop) {
+    padding-bottom: 2rem;
+    border-left: 1px solid var(--hiq-gray-lighter);
+  }
+}
+
+.toc-entry {
+  & a {
+    display: inline-block;
+    padding: 0.125rem 2rem;
+    border-left: 3px solid transparent;
+    box-shadow: none !important;
+    color: inherit;
+  }
+}
+
+.toc-h1 {
+  margin-bottom: 0.75rem;
+  &.active > a {
+    border-left-color: var(--hiq-color-primary);
+    color: var(--hiq-color-primary);
+  }
+  & > a {
+    font-size: var(--hiq-font-size-small);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--hiq-gray);
+    &:hover {
+      color: var(--hiq-color-primary);
+    }
+  }
+}
+
+.toc-h2 {
+  & > a:hover {
+    color: var(--hiq-gray);
+  }
+  & ul {
+    display: none;
+  }
+}
+
+.mobile-toc-toggle {
+  display: block;
+  position: fixed;
+  right: 1.5rem;
+  bottom: 2rem;
+  z-index: 1020;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--hiq-color-primary);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  font-size: 2.2rem;
+  font-weight: normal;
+  line-height: 0;
+  color: white;
+  transition: transform 0.2s ease-out;
+  @media (--desktop) {
+    display: none;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: var(--hiq-color-primary);
+    background-color: var(--hiq-color-primary);
+  }
+  & span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 0.2rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,94 @@
+.doc-content {
+  order: 1;
+  max-width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  @media (--desktop) {
+    flex: 1;
+    margin-top: 6rem;
+  }
+  & h1 {
+    font-weight: 600;
+  }
+  & h2 {
+    margin-top: 1rem;
+    padding-top: 3rem;
+    font-weight: 300;
+    @media (--desktop) {
+      margin-top: calc(calc(var(--navbar-height) + 3rem) * -1 + 4rem);
+      padding-top: calc(var(--navbar-height) + 3rem);
+    }
+  }
+  & h3 {
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    @media (--desktop) {
+      margin-top: calc(var(--navbar-height) * -1);
+      padding-top: calc(var(--navbar-height) + 3rem);
+    }
+  }
+  & > table {
+    margin: 1.75rem 0 3rem;
+    font-size: 1rem;
+    & th,
+    & td {
+      vertical-align: middle;
+    }
+    & td {
+      & code {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        white-space: pre-wrap;
+        color: var(--hiq-color-primary);
+      }
+      & p {
+        margin-bottom: 0;
+        color: initial;
+      }
+    }
+  }
+  & > ul {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    list-style: none;
+    & li {
+      position: relative;
+      margin-bottom: 0.5rem;
+      &::before {
+        position: absolute;
+        left: -1rem;
+        font-weight: 300;
+        color: var(--hiq-gray-light);
+        content: '-';
+      }
+    }
+  }
+  & figure {
+    margin: 2rem 0 3rem;
+    @media (--desktop) {
+      margin: 3rem 0 5rem;
+    }
+  }
+  & img {
+    width: 100%;
+  }
+}
+
+.color-swatch {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.hiq-example figure {
+  margin-bottom: 0;
+}
+
+.hiq-example p:last-of-type {
+  margin-bottom: 0;
+}

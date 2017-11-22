@@ -5,4 +5,9 @@ group :development, :test do
   gem 'jekyll-redirect-from', '~> 0.12.1'
   gem 'jekyll-sitemap', '~> 1.1.1'
   gem 'jekyll-toc', '~> 0.4.0.rc2'
+
+end
+
+group :jekyll_plugins do
+  gem 'algoliasearch-jekyll', '~> 0.9.0'
 end
