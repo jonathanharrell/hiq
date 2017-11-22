@@ -19,8 +19,8 @@
     <p>This is an <span>inline element</span>.</p>
     <p>This is an <q>inline quotation</q>.</p>
     <blockquote>
-        <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-        <cite>Said no one, ever.</cite>
+        <p>A block quotation is a quotation that is offset from the main text as a paragraph, or block of text.</p>
+        <cite>Quote citation</cite>
     </blockquote>
     <p><a href="#">This is a text link with a <strong>strong element</strong></a></p>
     <p><strong>Strong</strong> is used to indicate strong importance.</p>
@@ -90,75 +90,58 @@
     <hr>
     <table>
         <thead>
-        <tr>
-            <th>Date</th>
-            <th>Event</th>
-            <th>Venue</th>
-        </tr>
+            <tr>
+                <th scope="col">Column 1</th>
+                <th scope="col">Column 2</th>
+                <th scope="col">Column 3</th>
+                <th scope="col">Column 4</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>3 February</td>
-            <td>Surprise Party</td>
-            <td>Party Town USA</td>
-        </tr>
+            <tr>
+                <td>Row 1 Cell 1</td>
+                <td>Row 1 Cell 2</td>
+                <td>Row 1 Cell 3</td>
+                <td>Row 1 Cell 4</td>
+            </tr>
         </tbody>
     </table>
     <table>
-        <caption>Color Names in Multiple Languages</caption>
         <thead>
-        <tr>
-            <th scope="col">Color</th>
-            <th scope="col">French</th>
-            <th scope="col">German</th>
-            <th scope="col">Italian</th>
-        </tr>
+            <tr>
+                <th scope="col">Column 1</th>
+                <th scope="col">Column 2</th>
+                <th scope="col">Column 3</th>
+                <th scope="col">Column 4</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">Red</th>
-            <td>rouge</td>
-            <td>rot</td>
-            <td>rosso</td>
-        </tr>
-        <tr>
-            <th scope="row">Orange</th>
-            <td>orange</td>
-            <td>orange</td>
-            <td>arancione</td>
-        </tr>
-        <tr>
-            <th scope="row">Yellow</th>
-            <td>jaune</td>
-            <td>gelb</td>
-            <td>giallo</td>
-        </tr>
-        <tr>
-            <th scope="row">Green</th>
-            <td>vert</td>
-            <td>grün</td>
-            <td>verde</td>
-        </tr>
-        <tr>
-            <th scope="row">Blue</th>
-            <td>bleu</td>
-            <td>blau</td>
-            <td>blu</td>
-        </tr>
-        <tr>
-            <th scope="row">Purple</th>
-            <td>pourpre</td>
-            <td>lila</td>
-            <td>porpora</td>
-        </tr>
+            <tr>
+                <th scope="row">Row 1</th>
+                <td>Row 1 Cell 1</td>
+                <td>Row 1 Cell 2</td>
+                <td>Row 1 Cell 3</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 2</th>
+                <td>Row 2 Cell 1</td>
+                <td>Row 2 Cell 2</td>
+                <td>Row 2 Cell 3</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 3</th>
+                <td>Row 3 Cell 1</td>
+                <td>Row 3 Cell 2</td>
+                <td>Row 3 Cell 3</td>
+            </tr>
         </tbody>
         <tfoot>
-        <tr>
-            <th scope="col">Color</th>
-            <th scope="col">French</th>
-            <th scope="col">German</th>
-            <th scope="col">Italian</th>
-        </tr>
+            <tr>
+                <th scope="col">Column 1</th>
+                <th scope="col">Column 2</th>
+                <th scope="col">Column 3</th>
+                <th scope="col">Column 4</th>
+            </tr>
         </tfoot>
     </table>
     <p>To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
@@ -177,17 +160,17 @@ p q r s t u v w x y z { | } ~ </pre>
     document.getElementById('root')
 );</code></pre>
     <figure>
-        <img src="http://via.placeholder.com/800x500" alt="Image alt text">
+        <img src="/assets/img/placeholder.svg" alt="Image alt text">
     </figure>
     <figure>
-        <img src="http://via.placeholder.com/800x500" alt="Image alt text">
+        <img src="/assets/img/placeholder.svg" alt="Image alt text">
         <figcaption>Here is a caption for this image.</figcaption>
     </figure>
     <p>
         <audio controls="">audio</audio>
     </p>
     <figure>
-        <video controls="" poster="http://via.placeholder.com/800x500">video</video>
+        <video controls="" poster="/assets/img/placeholder.svg">video</video>
     </figure>
     <p>
         <progress value="50" max="100">progress</progress>
