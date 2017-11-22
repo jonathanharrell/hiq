@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Layout
-description: ...
+description: Use HiQ containers to provide structure for your content and take advantage of HiQ's easy-to-use layout utilities.
 toc: true
 group: guide
 ---

@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Theming
-description: ...
+description: It's never been easier to apply a theme to your elements. HiQ uses a system of CSS custom properties to generate its styles. Pass in your values to create the look you want.
 toc: true
 group: guide
 ---

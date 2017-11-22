@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Forms & Inputs
-description: ...
+description: Take the hassle out of styling inputs by using HiQ as a base. HiQ extracts away the complexity of cross-browser input styling while still allowing for customization.
 toc: true
 group: guide
 ---

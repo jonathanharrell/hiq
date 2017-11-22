@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Code
-description: ...
+description: Get some nice default styling for code elements with HiQ's built-in styles.
 toc: true
 group: guide
 ---

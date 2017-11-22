@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Tables
-description: ...
+description: Make your tables look nice and easy-to-read with HiQ. Default styles look good but can be easily customized to fit your own brand.
 toc: true
 group: guide
 ---

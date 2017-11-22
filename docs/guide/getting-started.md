@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Getting Started
-description: Get started with HiQ.
+description: Learn how to get started using the HiQ CSS framework. Read about how to install, use and customize HiQ.
 toc: true
 group: guide
 ---

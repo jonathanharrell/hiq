@@ -9,9 +9,6 @@
         <main class="main-content">
             <div class="container">
                 <div class="main-content-wrapper">
-                    {% if page.toc %}
-                        {% include sidebar.html %}
-                    {% endif %}
                     <section class="doc-content">
                         <h1>{{ page.title }}</h1>
                         {{ content }}
@@ -20,9 +17,7 @@
             </div>
         </main>
         {% include footer.html %}
-        <script src="/assets/js/mobile-menu.js"></script>
         <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
         <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-        <script src="/assets/js/doc-search.js"></script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Media
-description: ...
+description: HiQ applies responsive styles to your media elements out of the box.
 toc: true
 group: guide
 ---

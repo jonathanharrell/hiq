@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Meters & Progress
-description: ...
+description: HiQ makes customizing the appearance of meter and progress elements easier than ever. Just pass in a few custom properties and you're good to go.
 toc: true
 group: guide
 ---

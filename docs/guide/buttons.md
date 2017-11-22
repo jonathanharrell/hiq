@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Buttons
-description: ...
+description: Easily custom the appearance of button elements, and other elements with button-like functionality, using HiQ's CSS custom property system.
 toc: true
 group: guide
 ---

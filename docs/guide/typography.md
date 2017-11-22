@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Typography
-description: ...
+description: HiQ provides truly responsive typography that resizes based on browser width. Use custom properties, media queries and utilities to take complete control over your typography.
 toc: true
 group: guide
 ---
