@@ -544,7 +544,7 @@ If text overflows its container and needs to be truncated with an ellipsis, you 
 
 {% example html %}
 <p class="has-text-truncated">
-    This paragraph is long, and will probably need to be truncated.
+    This run-on sentence is quite long, and in all likelihood will probably need to be truncated.
 </p>
 {% endexample %}
 

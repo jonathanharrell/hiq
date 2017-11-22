@@ -490,6 +490,7 @@ html{
     -webkit-box-flex:1;
         -ms-flex:1;
             flex:1;
+    max-width:calc(100% - 12rem);
     margin-top:6rem;
   }
 }
