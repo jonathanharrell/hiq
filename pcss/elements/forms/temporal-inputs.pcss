@@ -6,10 +6,11 @@ source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 see https://bugs.webkit.org/show_bug.cgi?id=139848
 */
 @custom-selector :--temporal-input
-  input[type="date"],
-  input[type="time"],
-  input[type="datetime-local"],
-  input[type="month"];
+  input[type='date'],
+  input[type='time'],
+  input[type='month'],
+  input[type='week'],
+  input[type='datetime-local'];
 
 :--temporal-input {
   -webkit-appearance: listbox;

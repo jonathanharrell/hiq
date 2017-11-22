@@ -8,8 +8,8 @@ source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
   a,
   area,
   button,
-  [role="button"],
-  input:not([type="range"]),
+  [role='button'],
+  input:not([type='range']),
   label,
   select,
   summary,
@@ -24,6 +24,6 @@ suppress the focus outline on elements that cannot be accessed via keyboard
 this prevents an unwanted focus outline from appearing around elements that might still respond to pointer events.
 source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
  */
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
   outline: none !important;
 }

@@ -139,6 +139,11 @@ Six type sizes are provided by default. These correspond to the six heading leve
 
 `--hiq-font-size-base` controls the default sizing on the `html` element. `--hiq-font-size-large` and `--hiq-font-size-small` provide additional, semantically clear sizing options.
 
+```css
+@mixin is-size-large;
+@mixin is-size-small;
+```
+
 All sizes are defined with `rems`, which are relative to the root font size defined on the `html` element (see above for information about the responsive nature of this root size).
 
 {% include properties-table.html category="type-scale" %}
@@ -406,7 +411,7 @@ ul {
 
 ### Inline
 
-Make a list's items inline with `.has-inline-children`. This will also apply some `margin-right` to the items to space them out. Note that you will need to also use the `.is-unstyled` class to remove bullets.
+Make a list's items inline with `.has-inline-children` or the matching mixin. This will also apply some `margin-right` to the items to space them out. Note that you will need to also use the `.is-unstyled` class to remove bullets.
 
 {% example html %}
 <ul class="has-inline-children is-unstyled">
@@ -415,6 +420,10 @@ Make a list's items inline with `.has-inline-children`. This will also apply som
     <li>Inline list item 3</li>
 </ul>
 {% endexample %}
+
+```css
+@mixin has-inline-children;
+```
 
 {% include properties-table.html category="inline-lists" %}
 

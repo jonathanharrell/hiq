@@ -100,8 +100,29 @@
 
 .properties-table {
   & .name {
+    white-space: normal;
     @media (--desktop) {
       width: 18rem;
+    }
+  }
+}
+
+.properties-search-form {
+  margin-top: 2rem;
+}
+
+.utilities-table {
+  & .name {
+    @media (--desktop) {
+      width: 14rem;
+    }
+  }
+  & .mixin-class {
+    @media (--desktop) {
+      width: 15rem;
+    }
+    & .class {
+      opacity: 0.5;
     }
   }
 }

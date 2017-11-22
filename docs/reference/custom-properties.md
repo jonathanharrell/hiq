@@ -7,7 +7,9 @@ group: reference
 redirect_from: "/docs/reference/"
 ---
 
-<form>
+HiQ is built on a series of custom properties, all of which you can customize to theme elements for your project. You can find the full list of custom properties used in HiQ below.
+
+<form class="properties-search-form">
     <input type="text" class="search-properties" placeholder="Search properties...">
 </form>
 
@@ -21,7 +23,7 @@ redirect_from: "/docs/reference/"
     <tbody>
         {%- for property in site.data.custom-properties -%}
             <tr id="{{ property.name }}">
-                <td class="name">{{ property.name }}</td>
+                <td class="name"><code>{{ property.name }}</code></td>
                 <td class="description">{{ property.description }}</td>
             </tr>
         {%- endfor -%}

@@ -164,3 +164,51 @@ div {
 ```
 
 For more information on the clearfix hack and why it is needed when doing float-based layouts, [read this article](https://css-tricks.com/snippets/css/clear-fix/) from CSS-Tricks.
+
+### Stretching
+
+To stretch a child element to fill its parents, use the `.absolute-stretch` class or its related mixin. Note that the parent must have `position: relative` to size the children correctly.
+
+```html
+<div class="parent" style="position: relative;">
+    <div class="child absolute-stretch"></div>
+</div>
+```
+
+```css
+.parent {
+  position: relative;
+}
+
+.child {
+  @mixin absolute-stretch;
+}
+```
+
+### Touch Device Overflow
+
+When content overflows the bounds of an element, scrolling on a touch device can feel slow or "sticky" by default. To enable smooth, momentum-based scrolling, use the `.overflow-touch` class or mixin on that element.
+
+```html
+<div class="overflow-touch"></div>
+```
+
+```css
+.overflowing-element {
+  @mixin overflow-touch;
+}
+```
+
+### Visibility
+
+To visually hide an element, but keep it accessible to screen readers, use the `.is-visually-hidden` class or mixin.
+
+```html
+<div class="element-to-hide is-visually-hidden"></div>
+```
+
+```css
+.element-to-hide {
+  @mixin is-visually-hidden;
+}
+```

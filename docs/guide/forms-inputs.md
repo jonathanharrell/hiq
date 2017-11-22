@@ -137,6 +137,12 @@ Styling for date- and time-based inputs:
     </tr>
     <tr>
       <td>
+        {% markdown %}`<input type="time">`{% endmarkdown %}
+      </td>
+      <td><input type="time" placeholder="--:-- --" /></td>
+    </tr>
+    <tr>
+      <td>
         {% markdown %}`<input type="month">`{% endmarkdown %}
       </td>
       <td><input type="month" placeholder="Enter month" /></td>

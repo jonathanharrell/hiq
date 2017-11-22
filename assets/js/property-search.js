@@ -4,7 +4,7 @@ var properties = []
 
 document.querySelectorAll('.properties-table tbody tr')
     .forEach(function(row) {
-        var nameCell = row.querySelector('.name')
+        var nameCell = row.querySelector('.name code')
         var descriptionCell = row.querySelector('.description')
 
         properties.push({
@@ -33,7 +33,7 @@ function renderResults(results, query) {
     results.forEach(function(property) {
         var propertyNameHTML = property.name.split(query).join('<strong>' + query + '</strong>');
 
-        htmlString += '<tr>' + '<td class="name">' + propertyNameHTML + '</td><td class="description">' + property.description + '</tr>';
+        htmlString += '<tr>' + '<td class="name"><code>' + propertyNameHTML + '</code></td><td class="description">' + property.description + '</tr>';
     });
 
     document.querySelector('.properties-table tbody').innerHTML = htmlString;

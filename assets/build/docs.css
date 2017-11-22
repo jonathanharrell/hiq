@@ -603,11 +603,37 @@ html{
   max-width:30rem;
 }
 
+.properties-table .name{
+  white-space:normal;
+}
+
 @media (min-width: 800px){
 
   .properties-table .name{
     width:18rem;
   }
+}
+
+.properties-search-form{
+  margin-top:2rem;
+}
+
+@media (min-width: 800px){
+
+  .utilities-table .name{
+    width:14rem;
+  }
+}
+
+@media (min-width: 800px){
+
+  .utilities-table .mixin-class{
+    width:15rem;
+  }
+}
+
+.utilities-table .mixin-class .class{
+  opacity:0.5;
 }
 
 .highlighter-rouge{
