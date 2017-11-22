@@ -32,9 +32,7 @@ Use the `fieldset` element to group related elements in a form. By default, HiQ 
 
 The `legend` element represents a caption for the content of `fieldset` while the `label` element represents a caption for each `input`.
 
-Property Name | Description
---- | ---
-`--hiq-fieldset-border-width` | ....
+{% include properties-table.html category="forms" %}
 
 ## Input Mixin
 
@@ -48,9 +46,7 @@ A mixin defines the base styles for many input elements, including all textual i
 
 Numerous custom properties are available to customize the appearance of inputs:
 
-Property Name | Description
---- | ---
-`--hiq-input-background-color` | ....
+{% include properties-table.html category="inputs" %}
 
 ## Text Inputs
 
@@ -171,9 +167,7 @@ The `textarea` element provides a multi-line text input control.
 </p>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-textarea-padding-horizontal` | ....
+{% include properties-table.html category="textareas" %}
 
 ## Selects
 
@@ -207,9 +201,7 @@ If multiple options should be selectable, use the `multiple` attribute on the `s
 </p>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-select-background-image` | ....
+{% include properties-table.html category="selects" %}
 
 
 ## Checkboxes
@@ -234,9 +226,7 @@ Place checkbox inputs inside a div with the class `.checkbox` and the `label` el
 </fieldset>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-checkbox-background-color` | ....
+{% include properties-table.html category="checkboxes" %}
 
 ## Radio Buttons
 
@@ -260,9 +250,7 @@ Place radio inputs inside a div with the class `.radio` and the `label` element 
 </fieldset>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-radio-background-color` | ....
+{% include properties-table.html category="radio-buttons" %}
 
 ## Range Inputs
 
@@ -275,9 +263,7 @@ Range inputs let users specify a numeric value within a specified range. The sty
 </p>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-range-input-thumb-background` | ....
+{% include properties-table.html category="range-inputs" %}
 
 ## File Inputs
 

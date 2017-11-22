@@ -38,9 +38,7 @@ span {
 
 Button styling can be customized through a number of custom properties targeted to each interaction state.
 
-Property Name | Description
---- | ---
-`--hiq-button-height` | ....
+{% include properties-table.html category="buttons" %}
 
 ## Customization
 

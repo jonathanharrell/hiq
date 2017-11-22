@@ -14,9 +14,7 @@ Use the `<meter>` element to represent either a scalar value within a known rang
 <meter value="5" min="0" max="10">5 out of 10</meter>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--meter-background-color` | ....
+{% include properties-table.html category="meters" %}
 
 ## Progress Bars
 
@@ -26,6 +24,4 @@ Use the `<progress>` element to represent the completion progress of a task as a
 <progress value="50" max="100">progress</progress>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--progress-height` | ....
+{% include properties-table.html category="progress" %}

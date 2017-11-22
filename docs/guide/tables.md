@@ -88,9 +88,7 @@ Use `<th>` for heading cells. These can be used within in `<thead>`, `<tbody>`, 
 </table>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--table-margin-bottom` | ....
+{% include properties-table.html category="tables" %}
 
 ## Captions
 
@@ -100,6 +98,7 @@ HiQ places captions after tables by default.
 
 {% example html %}
 <table>
+    <caption>This is a caption for this table.</caption>
     <thead>
         <tr>
             <th scope="col">Column 1</th>

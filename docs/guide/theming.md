@@ -50,22 +50,7 @@ Every color used throughout HiQ is defined as a custom property. We favor using 
 
 All gray values are built from a single gray palette composed of seven gradations, ranging from `gray-darkest` to `gray-lightest`. These are created from HSL values of the same hue and saturation, where only the lightness is modified.
 
-<table>
-    <thead>
-        <tr>
-            <th></th>
-            <th>Property Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><span class="color-swatch" style="background-color: var(--hiq-gray-lightest);"></span></td>
-            <td><code>--hiq-gray-lightest</code></td>
-            <td>...</td>
-        </tr>
-    </tbody>
-</table>
+{% include colors-table.html category="gray-palette" %}
 
 
 ### Semantic Palette
@@ -80,22 +65,7 @@ There is only one color defined in HiQ that conveys semantic meaning: `--hiq-col
 }
 ```
 
-<table>
-    <thead>
-        <tr>
-            <th></th>
-            <th>Property Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><span class="color-swatch" style="background-color: var(--hiq-color-primary);"></span></td>
-            <td><code>--hiq-color-primary</code></td>
-            <td>...</td>
-        </tr>
-    </tbody>
-</table>
+{% include colors-table.html category="semantic-palette" %}
 
 ### Adding Additional Colors
 
@@ -111,9 +81,7 @@ You will likely need additional colors. We recommend creating custom properties 
 
 The manner in which colors are applied is also customizable. A set of custom properties defines the colors applied to certain structural and typographic elements. Additional color-related properties will be found in the documentation for each component.
 
-Property Name | Description
---- | ---
-`--hiq-html-background-color` | ....
+{% include colors-table.html category="applied-colors" %}
 
 ## Recommendations
 
@@ -171,7 +139,7 @@ Here are some example media queries:
 }
 ```
 
-### Animation Controls
+### Animation Controls 
 
 As part of your theme customizations, you can alter the details of how certain properties transition through `--hiq-speed` and `--hiq-easing`. For example, these values affect the transition of button colors on `hover`.
 
@@ -182,3 +150,5 @@ You can use these values when creating your own transitions and animations, as w
   --menu-easing: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 ```
+
+{% include properties-table.html category="animation-controls" %}

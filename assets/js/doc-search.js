@@ -50,6 +50,8 @@ autocomplete('#search-input', { hint: false }, [
 
     if (suggestion.css_selector_parent) {
         url += suggestion.css_selector_parent;
+    } else {
+        url += '#' + suggestion.text;
     }
 
     document.location.href = url;

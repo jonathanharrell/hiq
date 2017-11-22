@@ -36,10 +36,7 @@ You can apply the `.is-fluid` modifier class to remove the max-width, causing th
 <div class="container is-fluid"></div>
 ```
 
-Property Name | Description
---- | ---
-`--hiq-max-container-width` | Sets the maximum width of  the `.container` class.
-`--hiq-container-horizontal-gap` | Sets the left and right space between the `.container` edge and its parent.
+{% include properties-table.html category="containers" %}
 
 Mixins can be used when using the HiQ source files and running through a PostCSS setup (see the [Getting Started](/docs/guide/getting-started#usage) section).
 
@@ -63,9 +60,7 @@ div {
 
 Most block-level elements will fallback to using the bottom margin defined by the `--hiq-block-element-margin-bottom` custom property. More specific bottom margins can be defined using additional custom properties like `--hiq-heading-margin-bottom` and `--hiq-paragraph-margin-bottom`. See a more complete list below and in the documentation for each element.
 
-Property Name | Description
---- | ---
-`--hiq-block-element-margin-bottom` | Sets the default bottom margin for block elements, including ....
+{% include properties-table.html category="margins" %}
 
 ## Flex Grid
 

@@ -4,6 +4,7 @@ title: Getting Started
 description: Learn how to get started using the HiQ CSS framework. Read about how to install, use and customize HiQ.
 toc: true
 group: guide
+redirect_from: "/docs/guide/"
 ---
 
 ## Installation
@@ -154,7 +155,7 @@ This way, you have the freedom to be as specific with your custom property defin
 
 The HiQ distribution build will work in any browsers that support custom properties. See the [Can I Use page](https://caniuse.com/#feat=css-variables) for the full browser listing.
 
-You can use the source files and a PostCSS build to support browser the don't provide custom property support (more information below).
+You can use the source files and a PostCSS build to support browsers that don't provide custom property support (more information below).
 
 ### Vendor Prefixes
 

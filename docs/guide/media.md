@@ -16,9 +16,7 @@ Media elements, including `img`, `embed`, `object`, and `video` are made respons
 
 <img src="/assets/img/placeholder.svg" alt="Image alt text">
 
-Property Name | Description
---- | ---
-`--hiq-image-border-radius` | ....
+{% include properties-table.html category="images" %}
 
 ## Figures
 
@@ -31,9 +29,7 @@ Anytime you need to display a piece of content like an image with an optional ca
 </figure>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-figure-margin-bottom` | ....
+{% include properties-table.html category="figures" %}
 
 ## iFrames
 

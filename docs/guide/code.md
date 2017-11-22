@@ -14,9 +14,7 @@ Wrap inline snippets of code with `<code>`. Be sure to escape HTML angle bracket
 The <code>code</code> element represents a fragment of computer code.
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-code-padding-vertical` | ....
+{% include properties-table.html category="inline-code" %}
 
 ## Code blocks
 
@@ -28,9 +26,7 @@ The `<pre>` element defines preformatted text, usually used for multiple lines o
 </code></pre>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-pre-margin-bottom` | ....
+{% include properties-table.html category="code-blocks" %}
 
 ## Variables
 
@@ -49,9 +45,7 @@ To install HiQ, enter <kbd>npm install hiq</kbd> in your terminal.<br>
 To cancel the installation process, press <kbd><kbd>ctrl</kbd> + <kbd>c</kbd></kbd>.
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-kbd-padding-vertical` | ....
+{% include properties-table.html category="user-input" %}
 
 ## Sample output
 

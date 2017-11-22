@@ -87,22 +87,23 @@
   /* applied font weights */
   --hiq-font-weight-base: var(--hiq-font-weight-normal);
   --hiq-heading-font-weight: var(--hiq-font-weight-medium);
-  --hiq-definition-list-title-font-weight: var(--hiq-font-weight-semibold);
+  --hiq-description-list-title-font-weight: var(--hiq-font-weight-semibold);
 
   /* global text color */
   --hiq-text-color: var(--hiq-gray-darker);
 
   /* inline text elements */
   --hiq-mark-color: hsl(50, 81%, 94%);
-  --hiq-selection-color: hsl(210, 100%, 90%);
   --hiq-deleted-color: hsl(331, 93%, 67%);
   --hiq-inserted-color: hsl(210, 100%, 95%);
+
+  /* user selection */
+  --hiq-selection-color: hsl(210, 100%, 90%);
 
   /* lists */
   --hiq-list-margin-left: 1rem;
   --hiq-unordered-list-style: disc;
   --hiq-inline-item-margin-right: 0.25rem;
-  --hiq-description-margin-bottom: 0.5rem;
 
   /* blockquotes */
   --hiq-blockquote-font-size: var(--hiq-font-size-4);
@@ -304,26 +305,26 @@
   --hiq-radio-check-border-radius: 50%;
   --hiq-radio-check-background-color: white;
 
-  /* range input */
+  /* range inputs */
   --hiq-range-input-thumb-width: 1.5rem;
   --hiq-range-input-thumb-height: 1.5rem;
   --hiq-range-input-thumb-border-radius: 50%;
-  --hiq-range-input-thumb-background: var(--hiq-color-primary);
-  --hiq-range-input-thumb-disabled-background: var(--hiq-color-primary);
+  --hiq-range-input-thumb-background-color: var(--hiq-color-primary);
+  --hiq-range-input-thumb-disabled-background-color: var(--hiq-color-primary);
   --hiq-range-input-track-height: 0.5rem;
   --hiq-range-input-track-border-radius: var(--hiq-border-radius);
-  --hiq-range-input-track-background: var(--hiq-gray-lighter);
-  --hiq-range-input-track-focus-background: var(--hiq-gray-lighter);
-  --hiq-range-input-track-disabled-background: var(--hiq-gray-lightest);
+  --hiq-range-input-track-background-color: var(--hiq-gray-lighter);
+  --hiq-range-input-track-focus-background-color: var(--hiq-gray-lighter);
+  --hiq-range-input-track-disabled-background-color: var(--hiq-gray-lightest);
 
   /* progress/meter variables */
+
+  /* meters */
+  --hiq-meter-background-color: var(--hiq-gray-lighter);
+  --hiq-meter-filled-color: var(--hiq-color-primary);
 
   /* progress */
   --hiq-progress-height: 1rem;
   --hiq-progress-background-color: var(--hiq-gray-lighter);
   --hiq-progress-filled-color: var(--hiq-color-primary);
-
-  /* meter */
-  --hiq-meter-background-color: var(--hiq-gray-lighter);
-  --hiq-meter-filled-color: var(--hiq-color-primary);
 }

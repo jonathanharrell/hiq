@@ -16,12 +16,9 @@ HiQ sets several global typographic settings:
 
 Some additional options are set globally and are customizable with custom properties.
 
-Property Name | Description
---- | ---
-`--hiq-letter-spacing-base` | Sets the default letter spacing on the `html` element.
-`--hiq-text-color` | Sets the default text color on the `html` element.
+{% include properties-table.html category="global-typography-settings" %}
 
-## Native font stack
+## Font families
 
 By default, a native font stack is used as the font family on the `html` element, which allows for optimum text rendering on every device and operating system.
 
@@ -43,11 +40,7 @@ By default, a native font stack is used as the font family on the `html` element
 
 The `--hiq-base-font-family` is defined on the `html` element and automatically inherited through HiQ. You can change the global `font-family` as well as monospace family, which is used on code elements.
 
-Property Name | Description
---- | ---
-`--hiq-font-family-sans-serif` | ....
-`--hiq-font-family-monospace` | ....
-`--hiq-base-font-family` | ....
+{% include properties-table.html category="font-families" %}
 
 ### Adding Font Families
 
@@ -75,12 +68,7 @@ The root font size, set on the `html` element is determined by a formula that lo
 
 There are four values you can customize that will tweak the behavior of the responsive type.
 
-Property Name | Description
---- | ---
-`--hiq-unitless-min-font-size` | ....
-`--hiq-unitless-max-font-size` | ....
-`--hiq-unitless-lower-font-range` | ....
-`--hiq-unitless-upper-font-range` | ....
+{% include properties-table.html category="responsive-typography" %}
 
 In order to fully alter this behavior, you must be pulling in the source HiQ files into your project with PostCSS. This will allow you to change two custom media queries that set lower and upper bounds on the type size changes.
 
@@ -153,11 +141,7 @@ Six type sizes are provided by default. These correspond to the six heading leve
 
 All sizes are defined with `rems`, which are relative to the root font size defined on the `html` element (see above for information about the responsive nature of this root size).
 
-Property Name | Description
---- | ---
-`--hiq-font-size-1` | ....
-`--hiq-font-size-2` | ....
-`--hiq-font-size-3` | ....
+{% include properties-table.html category="type-scale" %}
 
 If these six sizes are not enough for your project, simply add additional custom properties and use as needed.
 
@@ -218,14 +202,13 @@ All HTML headings, `<h1>` through `<h6>`, are sized according to the six provide
   </tbody>
 </table>
 
+{% include properties-table.html category="headings" %}
+
 ## Line height
 
 Base line height is defined on the `html` element with the `--hiq-line-height-base` custom property. Headings (`h1` through `h6`) receive a variant line height defined by `--hiq-heading-line-height`.
 
-Property Name | Description
---- | ---
-`--hiq-line-height-base` | ....
-`--hiq-heading-line-height` | ....
+{% include properties-table.html category="line-height" %}
 
 ## Font weights
 
@@ -251,12 +234,7 @@ By default, font weights are set to the most common values defined for web fonts
 
 Custom properties are also used to apply the font weights to various elements. By default, `--hiq-font-weight-normal` is set on the `html` element. This is defined by the `--hiq-font-weight-base` custom property.
 
-Property Name | Description
---- | ---
-`--hiq-font-weight-light` | ....
-`--hiq-font-weight-normal` | ....
-`--hiq-font-weight-base` | ....
-`--hiq-heading-font-weight` | ....
+{% include properties-table.html category="font-weights" %}
 
 ## Inline text elements
 
@@ -351,11 +329,13 @@ Styling for common inline HTML5 elements:
   </tbody>
 </table>
 
-Property Name | Description
---- | ---
-`--mark-color` | ....
-`--deleted-color` | ....
-`--inserted-color` | ....
+{% include properties-table.html category="inline-text-elements" %}
+
+## User selection
+
+The background color of a user's selection can be customized using the `--hiq-selection-color` custom property.
+
+{% include properties-table.html category="user-selection" %}
 
 ## Address
 
@@ -369,10 +349,6 @@ The `<address>` element is updated to reset the browser default `font-style` fro
     <abbr title="Phone">P:</abbr> (123) 456-7890
 </address>
 {% endexample %}
-
-Property Name | Description
---- | ---
-`--hiq-address-margin-bottom` | ....
 
 ## Lists
 
@@ -396,6 +372,8 @@ All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and `ma
     <li>Ordered list item 3</li>
 </ol>
 {% endexample %}
+
+{% include properties-table.html category="lists" %}
 
 ### Unstyled
 
@@ -438,6 +416,8 @@ Make a list's items inline with `.has-inline-children`. This will also apply som
 </ul>
 {% endexample %}
 
+{% include properties-table.html category="inline-lists" %}
+
 ### Description Lists
 
 For simpler styling, clear hierarchy, and better spacing, description lists have updated margins. By default, `<dd>`s reset `margin-left` to `0` and add `margin-bottom: 0.5rem`. `<dt>`s are bolded.
@@ -456,9 +436,7 @@ For simpler styling, clear hierarchy, and better spacing, description lists have
 </dl>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-list-margin-left` | ....
+{% include properties-table.html category="description-lists" %}
 
 ## Blockquote
 
@@ -473,17 +451,13 @@ Wrap the name of the source of the quote in `<cite>`.
 </blockquote>
 {% endexample %}
 
-Property Name | Description
---- | ---
-`--hiq-blockquote-margin-bottom` | ....
+{% include properties-table.html category="blockquotes" %}
 
 ## Horizontal rules
 
 Use the `hr` element to visually separate sections of content. The thickness of the rule can be controlled with the `--hiq-horizontal-rule-height` custom property.
 
-Property Name | Description
---- | ---
-`--hiq-horizontal-rule-height` | ....
+{% include properties-table.html category="horizontal-rules" %}
 
 ## Links
 
@@ -491,13 +465,7 @@ Links receive different text colors based on their state (static, `hover`, `focu
 
 The underline beneath links is removed by default, in favor of a color change and outline effect. This can be changed with a custom property.
 
-Property Name | Description
---- | ---
-`--hiq-link-color` | ....
-
-## User selection
-
-The background color of a user's selection can be customized using the `--hiq-selection-color` custom property.
+{% include properties-table.html category="links" %}
 
 ## Typography Utilities
 
@@ -567,6 +535,3 @@ Use the `details` element, along with its corresponding `summary` element to all
 
 NOTE: There is currently a [Webkit bug](https://bugs.webkit.org/show_bug.cgi?id=173876) that causes rem-based font sizes following after the `details` element to be miscalculated.
 
-Property Name | Description
---- | ---
-`--hiq-details-margin-bottom` | ....

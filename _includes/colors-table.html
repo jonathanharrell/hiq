@@ -1,0 +1,20 @@
+<table class="properties-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Property Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for property in site.data.custom-properties -%}
+            {%- if property.category == include.category -%}
+                <tr>
+                    <td><span class="color-swatch" style="background-color: {{ property.default }};"></span></td>
+                    <td class="name"><code>{{ property.name }}</code></td>
+                    <td>{{ property.description }}</td>
+                </tr>
+            {%- endif -%}
+        {%- endfor -%}
+    </tbody>
+</table>
