@@ -9,15 +9,9 @@ In the age of Flexbox, CSS grid, and other exciting layout features, there is le
 
 Start using HiQ by using npm to install the package or use the Github repository to get the latest development version.
 
-**Use npm (recommended)**
-
 ```bash
 npm install hiq
 ```
-
-**Download from the repository**
-
-[https://github.com/jonathanharrell/hiq](https://github.com/jonathanharrell/hiq)
 
 ## Usage
 
