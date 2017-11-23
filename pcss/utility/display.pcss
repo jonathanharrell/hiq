@@ -137,3 +137,48 @@ parent must have `position: relative`
 .has-text-truncated {
   @mixin has-text-truncated;
 }
+
+/* overflow content hidden */
+@define-mixin is-clipped {
+  overflow: hidden !important;
+}
+
+.is-clipped {
+  @mixin is-clipped;
+}
+
+/* remove margin */
+@define-mixin is-marginless {
+  margin: 0 !important;
+}
+
+.is-marginless {
+  @mixin is-marginless;
+}
+
+/* remove padding */
+@define-mixin is-paddingless {
+  padding: 0 !important;
+}
+
+.is-paddingless {
+  @mixin is-paddingless;
+}
+
+/* remove border-radius */
+@define-mixin is-radiusless {
+  border-radius: 0 !important;
+}
+
+.is-radiusless {
+  @mixin is-radiusless;
+}
+
+/* remove box-shadow */
+@define-mixin is-shadowless {
+  box-shadow: none !important;
+}
+
+.is-shadowless {
+  @mixin is-shadowless;
+}

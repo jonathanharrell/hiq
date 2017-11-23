@@ -185,7 +185,19 @@ To stretch a child element to fill its parents, use the `.absolute-stretch` clas
 }
 ```
 
-### Touch Device Overflow
+### Overflow
+
+Use `.is-clipped` to hide content that is overflowing an element.
+
+```html
+<div class="is-clipped"></div>
+```
+
+```css
+.overflowing-element {
+  @mixin is-clipped;
+}
+```
 
 When content overflows the bounds of an element, scrolling on a touch device can feel slow or "sticky" by default. To enable smooth, momentum-based scrolling, use the `.overflow-touch` class or mixin on that element.
 
@@ -211,4 +223,29 @@ To visually hide an element, but keep it accessible to screen readers, use the `
 .element-to-hide {
   @mixin is-visually-hidden;
 }
+```
+
+### Property Removal
+
+There are several utilities designed for removing certain properties:
+
+```html
+<!-- removes margin -->
+<div class="is-marginless"></div>
+
+<!-- removes padding -->
+<div class="is-paddingless"></div>
+
+<!-- removes border-radius -->
+<div class="is-radiusless"></div>
+
+<!-- removes box-shadow -->
+<div class="is-shadowless"></div>
+```
+
+```css
+@mixin is-marginless;
+@mixin is-paddingless;
+@mixin is-radiusless;
+@mixin is-shadowless;
 ```
