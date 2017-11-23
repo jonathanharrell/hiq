@@ -209,6 +209,21 @@ If multiple options should be selectable, use the `multiple` attribute on the `s
 
 {% include properties-table.html category="selects" %}
 
+## Datalists
+
+An "autocomplete" feature can be provided on inputs using the `datalist` element. This is supported in most browsers, with the noticeable exception of Safari.
+
+{% example html %}
+<p>
+    <label for="datalist">Datalist</label>
+    <input list="options" id="datalist" placeholder="Type 'o' to see matching options" />
+    <datalist id="options">
+        <option value="Option 1" />
+        <option value="Option 2" />
+        <option value="Option 3" />
+    </datalist>
+</p>
+{% endexample %}
 
 ## Checkboxes
 

@@ -24,4 +24,10 @@ Use the `<progress>` element to represent the completion progress of a task as a
 <progress value="50" max="100">progress</progress>
 {% endexample %}
 
+If a progress bar has no value defined on it, it will display an indeterminate loading animation.
+
+{% example html %}
+<progress>indeterminate progress</progress>
+{% endexample %}
+
 {% include properties-table.html category="progress" %}
