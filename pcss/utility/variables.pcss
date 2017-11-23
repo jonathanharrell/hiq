@@ -18,7 +18,9 @@
   /* global applied colors */
   --hiq-html-background-color: white;
   --hiq-body-background-color: white;
-  --hiq-disabled-color: var(--hiq-gray-light);
+  --hiq-disabled-border-color: var(--hiq-gray-lightest);
+  --hiq-disabled-background-color: var(--hiq-gray-lightest);
+  --hiq-disabled-text-color: var(--hiq-gray-light);
 
   /* layout variables */
 
@@ -137,24 +139,19 @@
   --hiq-button-text-color: white;
 
   /* hover colors */
-  --hiq-button-hover-border-color: transparent;
+  --hiq-button-hover-border-color: hsl(210, 100%, 40%);
   --hiq-button-hover-background-color: hsl(210, 100%, 40%);
   --hiq-button-hover-text-color: white;
 
   /* focus colors */
-  --hiq-button-focus-border-color: transparent;
-  --hiq-button-focus-background-color: hsl(210, 100%, 40%);
+  --hiq-button-focus-border-color: hsl(210, 100%, 50%);
+  --hiq-button-focus-background-color: hsl(210, 100%, 50%);
   --hiq-button-focus-text-color: white;
 
   /* active colors */
-  --hiq-button-active-border-color: transparent;
-  --hiq-button-active-background-color: hsl(210, 100%, 40%);
+  --hiq-button-active-border-color: hsl(210, 100%, 30%);
+  --hiq-button-active-background-color: hsl(210, 100%, 30%);
   --hiq-button-active-text-color: white;
-
-  /* disabled colors */
-  --hiq-button-disabled-border-color: transparent;
-  --hiq-button-disabled-background-color: var(--hiq-gray-lightest);
-  --hiq-button-disabled-text-color: var(--hiq-disabled-color);
 
   /* code element variables */
 
@@ -247,12 +244,6 @@
   --hiq-input-focus-text-color: var(--hiq-input-text-color);
   --hiq-input-focus-placeholder-color: var(--hiq-input-placeholder-color);
 
-  /* disabled input colors */
-  --hiq-input-disabled-border-color: var(--hiq-gray-lightest);
-  --hiq-input-disabled-background-color: var(--hiq-gray-lightest);
-  --hiq-input-disabled-text-color: var(--hiq-gray-light);
-  --hiq-input-disabled-placeholder-color: var(--hiq-gray-light);
-
   /* textareas */
   --hiq-textarea-padding-vertical: 0.5rem;
   --hiq-textarea-padding-horizontal: 0.75rem;
@@ -268,7 +259,6 @@
   --hiq-checkbox-margin-bottom: 0.5rem;
   --hiq-checkbox-label-padding-horizontal: 2rem;
   --hiq-checkbox-label-font-weight: var(--hiq-font-weight-normal);
-  --hiq-checkbox-label-disabled-color: var(--hiq-disabled-color);
   --hiq-checkbox-width: 1rem;
   --hiq-checkbox-height: 1rem;
   --hiq-checkbox-border-color: transparent;
@@ -277,7 +267,6 @@
   --hiq-checkbox-hover-background-color: var(--hiq-gray-light);
   --hiq-checkbox-focus-background-color: var(--hiq-gray-light);
   --hiq-checkbox-checked-background-color: var(--hiq-color-primary);
-  --hiq-checkbox-disabled-background-color: var(--hiq-gray-lightest);
   --hiq-checkbox-check-position-top: 0.2rem;
   --hiq-checkbox-check-position-left: 0.375rem;
   --hiq-checkbox-check-width: 0.25rem;
@@ -288,7 +277,6 @@
   --hiq-radio-margin-bottom: 0.5rem;
   --hiq-radio-label-padding-horizontal: 2rem;
   --hiq-radio-label-font-weight: var(--hiq-font-weight-normal);
-  --hiq-radio-label-disabled-color: var(--hiq-disabled-color);
   --hiq-radio-width: 1rem;
   --hiq-radio-height: 1rem;
   --hiq-radio-border-color: transparent;
@@ -297,7 +285,6 @@
   --hiq-radio-hover-background-color: var(--hiq-gray-light);
   --hiq-radio-focus-background-color: var(--hiq-gray-light);
   --hiq-radio-checked-background-color: var(--hiq-color-primary);
-  --hiq-radio-disabled-background-color: var(--hiq-gray-lightest);
   --hiq-radio-check-position-top: 0.25rem;
   --hiq-radio-check-position-left: 0.25rem;
   --hiq-radio-check-width: 0.5rem;
@@ -310,12 +297,11 @@
   --hiq-range-input-thumb-height: 1.5rem;
   --hiq-range-input-thumb-border-radius: 50%;
   --hiq-range-input-thumb-background-color: var(--hiq-color-primary);
-  --hiq-range-input-thumb-disabled-background-color: var(--hiq-color-primary);
+  --hiq-range-input-thumb-disabled-background-color: var(--hiq-gray-lighter);
   --hiq-range-input-track-height: 0.5rem;
   --hiq-range-input-track-border-radius: var(--hiq-border-radius);
   --hiq-range-input-track-background-color: var(--hiq-gray-lighter);
   --hiq-range-input-track-focus-background-color: var(--hiq-gray-lighter);
-  --hiq-range-input-track-disabled-background-color: var(--hiq-gray-lightest);
 
   /* progress/meter variables */
 

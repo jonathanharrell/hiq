@@ -60,14 +60,14 @@
       content: '';
     }
     :--not-writable + label {
-      color: var(--hiq-checkbox-label-disabled-color, var(--hiq-disabled-color, var(--hiq-gray-light, hsl(220, 10%, 60%))));
+      color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
     }
     &:disabled,
     &[aria-disabled] {
       cursor: not-allowed;
     }
     :--not-writable + label::before {
-      background-color: var(--hiq-checkbox-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
     }
   }
 }

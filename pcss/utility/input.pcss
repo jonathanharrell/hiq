@@ -41,11 +41,11 @@
     }
   }
   :--not-writable {
-    border-color: var(--hiq-input-disabled-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
-    background-color: var(--hiq-input-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
-    color: var(--hiq-input-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
+    border-color: var(--hiq-disabled-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+    color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
     &::placeholder {
-      color: var(--hiq-input-disabled-placeholder-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
+      color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
     }
   }
   &:disabled {
