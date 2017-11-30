@@ -30,6 +30,8 @@
 - name: "overflow-touch"
   class: "overflow-touch"
   description: "Applies momentum-based scrolling for overflowing elements on touch devices."
+- name: "is-resizable"
+  description: "Makes an element resizable."
 - name: "is-visually-hidden"
   class: "is-visually-hidden"
   description: "Visually hides an element but keeps it accessible to screen readers."

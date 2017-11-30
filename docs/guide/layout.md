@@ -211,6 +211,26 @@ When content overflows the bounds of an element, scrolling on a touch device can
 }
 ```
 
+### Resizability
+
+You can use a mixin to make an element resizable.
+
+```css
+@mixin is-resizable $direction;
+```
+
+Argument | Description
+--- | ---
+`direction` | Defines the direction of resizability, either vertical or horizontal.
+
+Example usage:
+
+```css
+.resizable-element {
+  @mixin is-resizable vertical;
+}
+```
+
 ### Visibility
 
 To visually hide an element, but keep it accessible to screen readers, use the `.is-visually-hidden` class or mixin.

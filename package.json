@@ -59,6 +59,7 @@
         "postcss.config.js"
     ],
     "dependencies": {
-        "autocomplete.js": "0.29.0"
+        "autocomplete.js": "0.29.0",
+        "postcss-custom-properties": "6.2.0"
     }
 }

@@ -27,3 +27,9 @@
 .overflow-touch {
   @mixin overflow-touch;
 }
+
+/* makes an element resizable */
+@define-mixin is-resizable $direction {
+  overflow: auto;
+  resize: $direction;
+}
