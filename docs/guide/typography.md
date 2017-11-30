@@ -111,7 +111,7 @@ Here's a full example:
 @custom-media --hiq-upper-font-range (min-width: 900px);
 ```
 
-NOTE: Currently Safari doesn't support truly fluid typography using `rems` and viewport units. Your min and max font sizes will still apply but type will not scale fluidly between your ranges.
+{% include browser-bugs.html category="responsive-typography" %}
 
 ## Type scale
 
@@ -542,5 +542,4 @@ Use the `details` element, along with its corresponding `summary` element to all
 </details>
 {% endexample %}
 
-NOTE: There is currently a [Webkit bug](https://bugs.webkit.org/show_bug.cgi?id=173876) that causes rem-based font sizes following after the `details` element to be miscalculated.
-
+{% include browser-bugs.html category="details" %}

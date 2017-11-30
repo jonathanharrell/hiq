@@ -48,6 +48,8 @@ Numerous custom properties are available to customize the appearance of inputs:
 
 {% include properties-table.html category="inputs" %}
 
+{% include browser-bugs.html category="inputs" %}
+
 ## Text Inputs
 
 Styling for textual inputs:
@@ -286,6 +288,8 @@ Range inputs let users specify a numeric value within a specified range. The sty
 
 {% include properties-table.html category="range-inputs" %}
 
+{% include browser-bugs.html category="range-inputs" %}
+
 ## File Inputs
 
 File inputs let users choose one or more files from their device storage. HiQ styles file inputs in Webkit browsers to appear as buttons.
@@ -296,6 +300,8 @@ File inputs let users choose one or more files from their device storage. HiQ st
     <input type="file" id="file">
 </p>
 {% endexample %}
+
+{% include browser-bugs.html category="file-inputs" %}
 
 ## Color Inputs
 

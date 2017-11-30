@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Utilities
-description: ...
+description: HiQ provides a number of PostCSS-powered custom selectors and mixins that will make styling your project much easier. Easily find out about them using the complete reference.
 toc: true
 group: reference
 ---

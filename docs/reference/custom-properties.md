@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Custom Property Reference
-description: ...
+description: HiQ is built using custom properties. Easily access information about any property using the complete reference.
 toc: true
 group: reference
 redirect_from: "/docs/reference/"

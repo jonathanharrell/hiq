@@ -16,6 +16,8 @@ Use the `<meter>` element to represent either a scalar value within a known rang
 
 {% include properties-table.html category="meters" %}
 
+{% include browser-bugs.html category="meters" %}
+
 ## Progress Bars
 
 Use the `<progress>` element to represent the completion progress of a task as a progress bar.
@@ -31,3 +33,5 @@ If a progress bar has no value defined on it, it will display an indeterminate l
 {% endexample %}
 
 {% include properties-table.html category="progress" %}
+
+{% include browser-bugs.html category="progress" %}
