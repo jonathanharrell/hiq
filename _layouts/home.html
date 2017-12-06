@@ -1,23 +1,58 @@
 <!doctype html>
 <html lang="en">
-<head>
-    {% include header.html %}
-    <link rel="stylesheet" href="/assets/build/docs.css">
-</head>
-<body>
-{% include navbar.html %}
-<main class="main-content">
-    <div class="container">
-        <div class="main-content-wrapper">
-            <section class="doc-content">
-                <h1>{{ page.title }}</h1>
-                {{ content }}
-            </section>
-        </div>
-    </div>
-</main>
-{% include footer.html %}
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-</body>
+    <head>
+        {% include header.html %}
+        <link rel="stylesheet" href="/assets/build/docs.css">
+    </head>
+    <body>
+        {% include navbar.html %}
+        <main class="main-content">
+            <div class="container">
+                <div class="main-content-wrapper">
+                    <div class="home-content">
+                        <header class="home-header">
+                            <img src="/assets/img/hiq-logo.svg" alt="hiq" class="logo">
+                            <h1>{{ page.title }}</h1>
+                            <p>Jump-start your styling with a lightweight, easily customizable framework that is built with CSS custom properties and modern best practices.</p>
+                            <a href="/docs/guide/getting-started" role="button">Get started</a>
+                        </header>
+                        <section>
+                            <figure>
+                                <img src="/assets/img/what-you-need.svg">
+                            </figure>
+                            <div class="text">
+                                <h2>Just what you need</h2>
+                                <p>In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles.</p>
+                                <a href="/docs/guide/getting-started" role="button">Read the guide</a>
+                            </div>
+                        </section>
+                        <section>
+                            <figure>
+                                <img src="/assets/img/easy-theming.svg">
+                            </figure>
+                            <div class="text">
+                                <h2>Easy theming</h2>
+                                <p>In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles.</p>
+                                <a href="/docs/theme-builder" role="button">Build your theme</a>
+                            </div>
+                        </section>
+                        <section>
+                            <figure>
+                                <img src="/assets/img/built-progressively.svg">
+                            </figure>
+                            <div class="text">
+                                <h2>Built progressively</h2>
+                                <p>In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles.</p>
+                                <a href="/docs/reference" role="button">See the reference</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include footer.html %}
+        <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+        <script src="/assets/js/doc-search.js"></script>
+    </body>
 </html>
