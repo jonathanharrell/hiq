@@ -191,3 +191,7 @@ button {
 ```
 
 The custom property is included second and, therefore, will override the static value if the browser supports custom properties.
+
+## Old Docs
+
+Looking for the old docs? Check out the v1 documentation [here](https://hiq.jonathan-harrell.com/).
