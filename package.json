@@ -35,12 +35,6 @@
         "minifier": "0.8.1",
         "postcss": "6.0.14",
         "postcss-cli": "4.1.1",
-        "postcss-custom-media": "6.0.0",
-        "postcss-custom-selectors": "4.0.1",
-        "postcss-discard-comments": "2.0.4",
-        "postcss-easy-import": "3.0.0",
-        "postcss-mixins": "6.2.0",
-        "postcss-nesting": "4.2.1",
         "stylelint": "8.2.0",
         "stylelint-config-whq": "2.1.2"
     },
@@ -60,6 +54,11 @@
     ],
     "dependencies": {
         "autocomplete.js": "0.29.0",
-        "postcss-custom-properties": "6.2.0"
+        "postcss-custom-media": "6.0.0",
+        "postcss-custom-selectors": "4.0.1",
+        "postcss-discard-comments": "2.0.4",
+        "postcss-easy-import": "3.0.0",
+        "postcss-mixins": "6.2.0",
+        "postcss-nesting": "4.2.1"
     }
 }
