@@ -41,7 +41,11 @@ autocomplete('#search-input', { hint: false }, [
                     result += '<span class="text">' + suggestion._snippetResult.text.value + '</span>';
                 }
 
-                return '<div class="result-content">' + result + '</div>';
+                return '<span class="result-content">' + result + '</span>';
+            },
+
+            footer: function() {
+                return '<span class="aa-dropdown-footer">Search by&nbsp;<a href="https://www.algolia.com/">Algolia</a></span>';
             }
         }
     }
