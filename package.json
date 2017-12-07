@@ -1,6 +1,6 @@
 {
     "name": "hiq",
-    "version": "2.0.4-beta",
+    "version": "2.0.5-beta",
     "description": "A lightweight, progressive, high-IQ PostCSS framework.",
     "main": "css/hiq.pcss",
     "scripts": {
@@ -58,7 +58,6 @@
         "postcss-custom-selectors": "4.0.1",
         "postcss-discard-comments": "2.0.4",
         "postcss-easy-import": "3.0.0",
-        "postcss-import": "11.0.0",
         "postcss-mixins": "6.2.0",
         "postcss-nesting": "4.2.1"
     }
