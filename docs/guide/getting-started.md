@@ -41,42 +41,27 @@ Import the source version and process your CSS using PostCSS. This will give you
 @import 'node_modules/hiq/pcss/hiq.pcss';
 ```
 
-In order to compile the HiQ source files correctly, several PostCSS plugins are required. To install them run this command:
-
-```bash
-npm install --save-dev postcss-easy-import postcss-mixins postcss-custom-selectors postcss-nesting autoprefixer postcss-custom-media postcss-discard-comments
-```
-
-Setup your postcss configuration (`postcss.config.js`) like this (order matters):
-
-```js
-module.exports = {
-    plugins: [
-        require('postcss-easy-import')({ extensions: '.pcss' }),
-        require('postcss-mixins'),
-        require('postcss-custom-selectors'),
-        require('postcss-nesting'),
-        require('autoprefixer'),
-        require('postcss-custom-media'),
-        require('postcss-discard-comments') // optional
-    ]
-}
-```
-
 For more information on using PostCSS read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
 
 ### Individual Files
 
-Any of the HiQ CSS files can be imported independently. For example, if you want only the button styles:
+Any of the HiQ CSS files can be imported independently. For example, if you want only the button styles, import import the buttons file, after the basic utility files:
 
 ```css
+/* import utility styles first */
+@import 'node_modules/hiq/pcss/utility/*.pcss';
+
+/* then the components you want to include */
 @import 'node_modules/hiq/pcss/elements/buttons.pcss';
 ```
 
 If you go with this approach, we recommend importing at least the base styles first and then including additional files after that. The base files will give you the typographic scale and basic structural styles. This is not required, however.
 
 ```css
-/* import base styles first */
+/* import utility styles first */
+@import 'node_modules/hiq/pcss/utility/*.pcss';
+
+/* then import base styles */
 @import 'node_modules/hiq/pcss/base/*.pcss';
 @import 'node_modules/hiq/pcss/typography/*.pcss';
 
