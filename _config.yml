@@ -38,9 +38,9 @@ plugins:
   - algoliasearch-jekyll
 
 # Social
-title:              Hi-Q
+title:              HiQ
 description:        ""
-authors:            "Jonathan Harrell and Hi-Q contributors"
+authors:            "Jonathan Harrell and HiQ contributors"
 social_image_path:  /assets/brand/[].png
 social_logo_path:   /assets/brand/[].png
 
