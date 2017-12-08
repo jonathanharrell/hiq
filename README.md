@@ -39,20 +39,16 @@ In order to compile the HiQ source files correctly, several PostCSS plugins are 
 npm install --save-dev postcss-easy-import postcss-mixins postcss-custom-selectors postcss-nesting autoprefixer postcss-custom-media postcss-discard-comments
 ```
 
-Setup your postcss configuration (`postcss.config.js`) like this (order matters):
+To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
 
 ```js
 module.exports = {
     plugins: [
-        require('postcss-easy-import')({ extensions: '.pcss' }),
         require('postcss-mixins'),
         require('postcss-custom-selectors'),
-        require('postcss-nesting'),
-        require('autoprefixer'),
-        require('postcss-custom-media'),
-        require('postcss-discard-comments') // optional
+        require('postcss-custom-media')
     ]
-}
+};
 ```
 
 For more information on using PostCSS read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
