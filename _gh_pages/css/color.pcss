@@ -1,0 +1,51 @@
+/* ====================
+   applied colors
+   ==================== */
+
+html {
+  background-color: var(--html-background-color);
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--body-background-color);
+}
+
+a {
+  text-decoration: var(--link-text-decoration);
+  color: var(--link-color);
+  transition: color var(--speed) var(--easing);
+  cursor: pointer;
+  &:hover {
+    color: var(--link-hover-color);
+  }
+  &:focus {
+    color: var(--link-focus-color);
+  }
+  &:active {
+    color: var(--link-active-color);
+  }
+}
+
+mark {
+  background-color: var(--mark-color);
+}
+
+del {
+  background-color: var(--deleted-color);
+}
+
+ins {
+  background-color: var(--inserted-color);
+}
+
+/* selections */
+::-moz-selection {
+  text-shadow: none !important;
+  background-color: var(--selection-color);
+}
+
+::selection {
+  text-shadow: none !important;
+  background-color: var(--selection-color);
+}

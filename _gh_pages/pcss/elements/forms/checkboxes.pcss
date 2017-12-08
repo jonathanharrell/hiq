@@ -1,0 +1,73 @@
+/* checkboxes */
+
+.checkbox {
+  position: relative;
+  & label {
+    position: relative;
+    margin-bottom: var(--hiq-checkbox-margin-bottom, 0.5rem);
+    padding: 0 var(--hiq-checkbox-label-padding-horizontal, 1.5rem);
+    font-weight: var(--hiq-checkbox-label-font-weight, var(--hiq-font-weight-normal, 400));
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    /* style `::before` to appear like checkbox */
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--hiq-checkbox-width, 1rem);
+      height: var(--hiq-checkbox-height, 1rem);
+      border-color: var(--hiq-checkbox-border-color, transparent);
+      border-radius: var(--hiq-checkbox-border-radius, var(--hiq-border-radius, 0.2rem));
+      background-color: var(--hiq-checkbox-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+      transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
+      content: '';
+    }
+  }
+  /* visually hide input */
+  & input[type='checkbox'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    &:hover + label::before {
+      background-color: var(--hiq-checkbox-hover-background-color, var(--hiq-checkbox-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%))));
+    }
+    &:focus + label::before {
+      background-color: var(--hiq-checkbox-focus-background-color, var(--hiq-checkbox-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%))));
+      box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-input-focus-outline-color, var(--hiq-outline-color, hsl(210, 100%, 85%)));
+    }
+    &:checked + label::before,
+    &[aria-checked] + label::before {
+      background-color: var(--hiq-checkbox-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+    }
+    /* style `::after` to look like check mark */
+    &:checked + label::after,
+    &[aria-checked] + label::after {
+      display: block;
+      position: absolute;
+      top: var(--hiq-checkbox-check-position-top, 0.2rem);
+      left: var(--hiq-checkbox-check-position-left, 0.375rem);
+      width: var(--hiq-checkbox-check-width, 0.25rem);
+      height: var(--hiq-checkbox-check-height, 0.5rem);
+      border: solid white;
+      border-width: 0 var(--hiq-checkbox-border-width, 2px) var(--hiq-checkbox-border-width, 2px) 0;
+      transform: rotate(45deg);
+      content: '';
+    }
+    :--not-writable + label {
+      color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
+    }
+    &:disabled,
+    &[aria-disabled] {
+      cursor: not-allowed;
+    }
+    :--not-writable + label::before {
+      background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+    }
+  }
+}

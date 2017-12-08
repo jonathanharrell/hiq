@@ -1,0 +1,18 @@
+/* meter elements */
+
+meter {
+  width: 100%;
+  background: var(--hiq-meter-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  &::-webkit-meter-bar {
+    background: var(--hiq-meter-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-moz-meter-bar {
+    background: var(--hiq-meter-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  }
+  &::-webkit-meter-optimum-value {
+    background: var(--hiq-meter-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  }
+  &:-moz-meter-optimum::-moz-meter-bar {
+    background: var(--hiq-meter-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  }
+}

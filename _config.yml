@@ -21,7 +21,6 @@ permalink:      pretty
 source:         "."
 destination:    ./_gh_pages
 baseurl:        ""
-#url:            "https://hiq.jonathan-harrell.com"
 encoding:       UTF-8
 exclude:
   - .git/

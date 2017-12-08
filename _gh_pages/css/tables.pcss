@@ -1,0 +1,21 @@
+/* table styling */
+table {
+  width: var(--table-width);
+  & caption {
+    margin-bottom: var(--table-caption-margin-bottom);
+    text-align: left;
+    font-weight: var(--table-caption-font-weight);
+  }
+}
+
+th,
+td {
+  padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+  border: var(--table-cell-border-width) solid var(--table-cell-border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: var(--table-heading-font-weight);
+}

@@ -1,0 +1,100 @@
+:root {
+  --hiq-pink: #f95faa;
+  --hiq-lavender: #9b80ff;
+}
+
+.hll { background-color: #ffc; }
+.c { color: #999; }
+.k { color: var(--hiq-color-primary); }
+.o { color: #555; }
+.cm { color: #999; }
+.cp { color: #099; }
+.c1 { color: #999; }
+.cs { color: #999; }
+
+.gd {
+  border: 1px solid var(--hiq-pink);
+  background-color: #fcc;
+}
+
+.ge { font-style: italic; }
+.gr { color: var(--hiq-pink); }
+.gh { color: #030; }
+
+.gi {
+  border: 1px solid #0c0;
+  background-color: #cfc;
+}
+
+.go { color: #aaa; }
+.gp { color: #009; }
+.gu { color: #030; }
+.gt { color: #9c6; }
+.kc { color: var(--hiq-color-primary); }
+.kd { color: var(--hiq-color-primary); }
+.kn { color: var(--hiq-color-primary); }
+.kp { color: var(--hiq-color-primary); }
+.kr { color: var(--hiq-color-primary); }
+.kt { color: #078; }
+.m { color: var(--hiq-pink); }
+.s { color: var(--hiq-lavender); }
+.na { color: var(--hiq-color-primary); }
+.nb { color: #366; }
+.nc { color: var(--hiq-lavender); }
+.no { color: var(--hiq-pink); }
+.nd { color: var(--hiq-color-primary); }
+.ni { color: #999; }
+.ne { color: #c00; }
+.nf { color: #c0f; }
+.nl { color: var(--hiq-color-primary); }
+.nn { color: #0cf; }
+.nt { color: #2f6f9f; }
+.nv { color: #033; }
+.ow { color: #000; }
+.w { color: #bbb; }
+.mf { color: var(--hiq-pink); }
+.mh { color: var(--hiq-pink); }
+.mi { color: var(--hiq-pink); }
+.mo { color: var(--hiq-pink); }
+.sb { color: var(--hiq-pink); }
+.sc { color: var(--hiq-pink); }
+
+.sd {
+  font-style: italic;
+  color: var(--hiq-pink);
+}
+
+.s2 { color: var(--hiq-lavender); }
+.se { color: var(--hiq-pink); }
+.sh { color: var(--hiq-pink); }
+.si { color: var(--hiq-pink); }
+.sx { color: var(--hiq-pink); }
+.sr { color: #3aa; }
+.s1 { color: var(--hiq-lavender); }
+.ss { color: #fc3; }
+.bp { color: #366; }
+.vc { color: #033; }
+.vg { color: #033; }
+.vi { color: #033; }
+.il { color: var(--hiq-pink); }
+
+.py { color: var(--hiq-color-primary); }
+
+.css .o,
+.css .o + .nt,
+.css .nt + .nt {
+  color: #999;
+}
+
+.language-bash code::before,
+.language-sh code::before {
+  color: var(--hiq-color-primary);
+  user-select: none;
+  content: '$ ';
+}
+
+.language-powershell code::before {
+  color: var(--hiq-color-primary);
+  user-select: none;
+  content: 'PM> ';
+}

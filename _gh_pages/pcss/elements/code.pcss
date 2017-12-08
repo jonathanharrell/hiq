@@ -1,0 +1,71 @@
+/* code */
+
+@custom-selector :--code-element
+  code,
+  kbd,
+  pre,
+  samp;
+
+:--code-element {
+  font-family: var(--hiq-font-family-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace);
+  font-size: var(--hiq-code-font-size, var(--hiq-font-size-small, var(--hiq-font-size-6, 0.875rem)));
+}
+
+code {
+  padding: var(--hiq-code-padding-vertical, 0.2rem) var(--hiq-code-padding-horizontal, 0.4rem);
+  border-radius: var(--hiq-code-border-radius, var(--hiq-border-radius, 0.2rem));
+  background-color: var(--hiq-code-background-color, transparent);
+  white-space: pre;
+  color: var(--hiq-code-text-color, var(--hiq-text-color, var(--hiq-gray-dark, hsl(220, 10%, 20%))));
+}
+
+*:not(pre) > code {
+  border: 1px solid var(--hiq-code-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+}
+
+/* inherit styles from `a` element if code is within */
+a code {
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  color: inherit;
+}
+
+kbd {
+  padding: var(--hiq-kbd-padding-vertical, 0.2rem) var(--hiq-kbd-padding-horizontal, 0.4rem);
+  border: 1px solid var(--hiq-kbd-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--hiq-kbd-border-radius, 0.2rem);
+  background-color: var(--hiq-kbd-background-color, transparent);
+  color: var(--hiq-kbd-text-color, var(--hiq-text-color, var(--hiq-gray-dark, hsl(220, 10%, 20%))));
+  /* remove padding and increase font weight if `kbd` is nested within another `kbd` */
+  & kbd {
+    padding: 0;
+    border: 0;
+    font-weight: var(--hiq-nested-kbd-font-weight, var(--hiq-font-weight-medium, 600));
+  }
+}
+
+pre {
+  /* enable "momentum-based scrolling on touch devices when content overflows */
+  @mixin overflow-touch;
+  -ms-overflow-style: scrollbar;
+  overflow-x: auto;
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  padding: var(--hiq-pre-padding-vertical, var(--hiq-code-padding-vertical, 1.25rem)) var(--hiq-pre-padding-horizontal, var(--hiq-code-padding-horizontal, 1.5rem));
+  border: 1px solid var(--hiq-pre-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  border-radius: var(--hiq-pre-border-radius, var(--hiq-border-radius, 0.25rem));
+  background-color: var(--hiq-pre-background-color, transparent);
+  tab-size: 1.5rem;
+  white-space: pre-wrap;
+  word-wrap: normal;
+  color: var(--hiq-pre-text-color, var(--hiq-gray, hsl(220, 10%, 40%)));
+  /* reset and inherit styles from `pre` if code is contained within */
+  & code {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: inherit;
+    white-space: pre-wrap;
+    color: inherit;
+  }
+}
