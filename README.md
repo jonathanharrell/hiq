@@ -84,3 +84,8 @@ button.is-primary {
   --hiq-button-text-color: white;
 }
 ```
+
+## v1
+
+Looking for the old docs? Check out the v1 documentation [here](https://hiq.jonathan-harrell.com/).
+
