@@ -41,6 +41,27 @@ Import the source version and process your CSS using PostCSS. This will give you
 @import 'node_modules/hiq/pcss/hiq.pcss';
 ```
 
+To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
+
+```js
+module.exports = {
+    plugins: [
+        require('postcss-mixins'),
+        require('postcss-custom-selectors'),
+        require('postcss-custom-media')
+    ]
+};
+```
+
+You may also want to include the following optional plugins (also installed with HiQ):
+
+```js
+require('postcss-easy-import'),
+require('postcss-nesting'),
+require('autoprefixer'),
+require('postcss-discard-comments')
+```
+
 For more information on using PostCSS read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
 
 ### Individual Files
