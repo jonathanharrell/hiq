@@ -20,7 +20,7 @@ permalink:      pretty
 # Server
 source:         "."
 destination:    ./docs
-baseurl:        "/hiq/docs"
+baseurl:        "/hiq"
 encoding:       UTF-8
 exclude:
   - .git/
