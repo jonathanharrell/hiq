@@ -1,0 +1,47 @@
+# Dependencies
+markdown:       kramdown
+highlighter:    rouge
+
+kramdown:
+  auto_ids:     true
+  toc:          true
+
+algolia:
+  application_id: "G1GBQM2KE5"
+  index_name:     "hiq_docs"
+  record_css_selector: "p,td"
+  settings:
+    attributesToSnippet: ["text:8"]
+    snippetEllipsisText: "…"
+
+# Permalinks
+permalink:      pretty
+
+# Server
+source:         "."
+destination:    ./_gh_pages
+baseurl:        ""
+#url:            "https://hiq.jonathan-harrell.com"
+encoding:       UTF-8
+exclude:
+  - .git/
+  - .github/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-toc
+  - algoliasearch-jekyll
+
+# Social
+title:              Hi-Q
+description:        ""
+authors:            "Jonathan Harrell and Hi-Q contributors"
+social_image_path:  /assets/brand/[].png
+social_logo_path:   /assets/brand/[].png
+

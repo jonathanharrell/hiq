@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="576px" height="451px" viewBox="0 0 576 451" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>responsive-typography</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy-2" transform="translate(-225.000000, -144.000000)">
+            <g id="responsive-typography" transform="translate(225.000000, 144.000000)">
+                <text id="type-is-static-below" font-family="SanFranciscoText-Regular, San Francisco Text" font-size="14" font-weight="normal" line-spacing="24" letter-spacing="-0.0777777806" fill="#000000">
+                    <tspan x="2.17967669" y="444">type is static below this point</tspan>
+                </text>
+                <text id="type-changes-size-re" font-family="SanFranciscoText-Regular, San Francisco Text" font-size="14" font-weight="normal" line-spacing="24" letter-spacing="-0.0777777806" fill="#0080FF">
+                    <tspan x="156.50931" y="251">type changes size relative to the viewport</tspan>
+                </text>
+                <text id="type-is-static-above" font-family="SanFranciscoText-Regular, San Francisco Text" font-size="14" font-weight="normal" line-spacing="24" letter-spacing="-0.0777777806" fill="#000000">
+                    <tspan x="386.37206" y="444">type is static above this point</tspan>
+                </text>
+                <text id="Aa" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="18" font-weight="400" letter-spacing="-0.100000001" fill="#000000">
+                    <tspan x="40" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="36" font-weight="400" letter-spacing="-0.200000018" fill="#000000">
+                    <tspan x="504" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-2" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="34" font-weight="400" letter-spacing="-0.188888907" fill="#000000">
+                    <tspan x="417" y="205">Aa</tspan>
+                </text>
+                <text id="Aa" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="20" font-weight="400" letter-spacing="-0.111111119" fill="#000000">
+                    <tspan x="122" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-3" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="22" font-weight="400" letter-spacing="-0.12222223" fill="#000000">
+                    <tspan x="156" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-4" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="24" font-weight="400" letter-spacing="-0.13333334" fill="#000000">
+                    <tspan x="194" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-5" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="26" font-weight="400" letter-spacing="-0.144444451" fill="#000000">
+                    <tspan x="233" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-6" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="28" font-weight="400" letter-spacing="-0.155555561" fill="#000000">
+                    <tspan x="276" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-7" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="30" font-weight="400" letter-spacing="-0.166666672" fill="#000000">
+                    <tspan x="320" y="205">Aa</tspan>
+                </text>
+                <text id="Aa-Copy-8" font-family="SanFranciscoText-Medium, San Francisco Text" font-size="32" font-weight="400" letter-spacing="-0.177777782" fill="#000000">
+                    <tspan x="368" y="205">Aa</tspan>
+                </text>
+                <rect id="Rectangle-2" stroke="#DBDBDB" x="0.5" y="22.5" width="575" height="329" rx="4"></rect>
+                <rect id="Rectangle-Copy-2" fill="#F0F0F0" x="0" y="393" width="270" height="27"></rect>
+                <rect id="Rectangle-Copy-7" fill="#F0F0F0" x="305" y="393" width="270" height="27"></rect>
+                <text id="—-hiq-unitless-lower" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" line-spacing="14" letter-spacing="-0.261333346" fill="#0080FF">
+                    <tspan x="8" y="412">—-hiq-unitless-lower-font-range</tspan>
+                </text>
+                <text id="—-hiq-unitless-lower" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" line-spacing="14" letter-spacing="-0.2613333" fill="#0080FF">
+                    <tspan x="313" y="413">—-hiq-unitless-lower-font-range</tspan>
+                </text>
+                <path d="M96.5,0.5 L96.5,369.512195" id="Line" stroke="#0080FF" stroke-linecap="square" stroke-dasharray="3"></path>
+                <path d="M103,232 L472,232" id="Line" stroke="#0080FF" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M103,229 L103,235" stroke="#0080FF" stroke-linecap="square"></path>
+                <path id="Line-decoration-2" d="M472,229 L472,235" stroke="#0080FF" stroke-linecap="square"></path>
+                <path d="M477.5,0.5 L477.5,369.512195" id="Line-Copy" stroke="#0080FF" stroke-linecap="square" stroke-dasharray="3"></path>
+                <rect id="Rectangle-Copy-8" fill="#F0F0F0" x="311" y="45" width="245" height="27"></rect>
+                <rect id="Rectangle-Copy-9" fill="#F0F0F0" x="22" y="45" width="245" height="27"></rect>
+                <text id="—-hiq-unitless-max-f" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" line-spacing="14" letter-spacing="-0.2613333" fill="#0080FF">
+                    <tspan x="319" y="65">—-hiq-unitless-max-font-size</tspan>
+                </text>
+                <text id="—-hiq-unitless-min-f" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" line-spacing="14" letter-spacing="-0.2613333" fill="#0080FF">
+                    <tspan x="30" y="65">—-hiq-unitless-min-font-size</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

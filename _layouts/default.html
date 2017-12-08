@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include header.html %}
+        <link rel="stylesheet" href="/assets/build/docs.css">
+    </head>
+    <body>
+        {% include navbar.html %}
+        <main class="main-content">
+            <div class="container">
+                <div class="main-content-wrapper">
+                    <section class="doc-content">
+                        <h1>{{ page.title }}</h1>
+                        {{ content }}
+                    </section>
+                </div>
+            </div>
+        </main>
+        {% include footer.html %}
+        <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+.home-content {
+  max-width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  @media (--desktop) {
+    flex: 1;
+    margin-top: 4rem;
+  }
+  & header {
+    @media (--desktop) {
+      margin-bottom: 3rem;
+    }
+  }
+  & .logo {
+    display: none;
+    @media (--desktop) {
+      display: block;
+      width: 200px;
+      margin: 0 auto 2rem;
+    }
+  }
+  & section {
+    margin: 5rem 0;
+    @media (--desktop) {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      & > * {
+        width: 50%;
+      }
+      & p {
+        margin-bottom: 0;
+      }
+      &:nth-child(even) {
+        & figure {
+          order: 2;
+        }
+      }
+      &:nth-child(odd) {
+        & figure {
+          position: relative;
+          left: calc(-25% + 3rem);
+        }
+      }
+    }
+  }
+  & figure {
+    margin: 3rem 0;
+    & img {
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      @media (--desktop) {
+        width: 125%;
+        max-width: unset;
+      }
+    }
+  }
+  & .text {
+    @media (--desktop) {
+      padding-right: 4rem;
+    }
+    & a[role='button'] {
+      --hiq-button-border-color: var(--hiq-gray-lightest);
+      --hiq-button-background-color: var(--hiq-gray-lightest);
+      --hiq-button-text-color: var(--hiq-gray);
+      --hiq-button-hover-border-color: var(--hiq-gray-lighter);
+      --hiq-button-hover-background-color: var(--hiq-gray-lighter);
+      --hiq-button-hover-text-color: var(--hiq-gray);
+      --hiq-button-focus-border-color: var(--hiq-gray-lighter);
+      --hiq-button-focus-background-color: var(--hiq-gray-lighter);
+      --hiq-button-focus-text-color: var(--hiq-gray);
+      --hiq-button-active-border-color: var(--hiq-gray-lighter);
+      --hiq-button-active-background-color: var(--hiq-gray-lighter);
+      --hiq-button-active-text-color: var(--hiq-gray);
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.home-header {
+  @media (--desktop) {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

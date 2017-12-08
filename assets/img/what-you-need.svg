@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="566px" height="354px" viewBox="0 0 566 354" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="378" cy="164" r="10"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5">
+            <rect id="Rectangle-5-Copy-3" fill="#FFFFFF" x="0" y="0" width="566" height="354"></rect>
+            <text id="Aa" font-family="SFProText-Semibold, SF Pro Text" font-size="42" font-weight="500" line-spacing="42" fill="#9B9B9B">
+                <tspan x="41" y="88">Aa</tspan>
+            </text>
+            <text id="Aa-Copy" font-family="SFProText-Semibold, SF Pro Text" font-size="42" font-weight="500" line-spacing="42" fill="#9B9B9B">
+                <tspan x="117" y="87">Aa</tspan>
+            </text>
+            <text id="Aa-Copy-2" font-family="SFProText-Semibold, SF Pro Text" font-size="42" font-weight="500" line-spacing="42" fill="#9B9B9B">
+                <tspan x="200" y="87">Aa</tspan>
+            </text>
+            <rect id="Rectangle-12" stroke="#E0E0E0" stroke-width="3" x="39.5" y="141.5" width="207" height="23" rx="4"></rect>
+            <rect id="Rectangle-12-Copy" stroke="#E0E0E0" stroke-width="3" x="39.5" y="207.5" width="207" height="23" rx="4"></rect>
+            <rect id="Rectangle-12-Copy-2" fill="#057FFF" x="38" y="272" width="210" height="28" rx="4"></rect>
+            <polygon id="Path-9-Copy-16" fill="#E0E0E0" transform="translate(233.000000, 219.500000) rotate(-180.000000) translate(-233.000000, -219.500000) " points="228 222 233.00283 217 238 221.994344"></polygon>
+            <path d="M311,164 L521,164" id="Line-Copy-71" stroke="#F4F4F4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M311,259 L521,259" id="Line-Copy-71" stroke="#F4F4F4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M311,259 L403.005435,259" id="Line-Copy-71" stroke="#057FFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M311,294 L521,294" id="Line-Copy-71" stroke="#F4F4F4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M311,294 L360.010203,294" id="Line-Copy-71" stroke="#057FFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M311.415323,198.5 L521.415323,198.5" id="Line-Copy-74" stroke="#F4F4F4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Oval-3-Copy-9">
+                <use fill="#057FFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <circle stroke="#057FFF" stroke-width="3" cx="378" cy="164" r="8.5"></circle>
+            </g>
+            <circle id="Oval-3-Copy-8" fill="#057FFF" cx="452" cy="198" r="10"></circle>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="41" y="98" width="50" height="6"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="341" y="62" width="68" height="6"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="117" y="98" width="50" height="6"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="200" y="98" width="50" height="6"></rect>
+            <rect id="Rectangle-12-Copy-5" stroke="#E0E0E0" stroke-width="3" x="312.5" y="56.5" width="17" height="17"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="454" y="62" width="68" height="6"></rect>
+            <rect id="Rectangle-12-Copy-5" stroke="#E0E0E0" stroke-width="3" x="425.5" y="56.5" width="17" height="17"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="341" y="103" width="68" height="6"></rect>
+            <rect id="Rectangle-12-Copy-5" stroke="#E0E0E0" stroke-width="3" x="312.5" y="97.5" width="17" height="17" rx="8.5"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="454" y="103" width="68" height="6"></rect>
+            <rect id="Rectangle-12-Copy-5" stroke="#E0E0E0" stroke-width="3" x="425.5" y="97.5" width="17" height="17" rx="8.5"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="38" y="175" width="50" height="6"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#E0E0E0" x="38" y="241" width="50" height="6"></rect>
+            <rect id="Rectangle-3-Copy-5" fill="#FFFFFF" x="100" y="282" width="87" height="6"></rect>
+        </g>
+    </g>
+</svg>

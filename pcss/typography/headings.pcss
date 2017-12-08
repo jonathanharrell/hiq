@@ -1,0 +1,16 @@
+/* headings */
+
+@custom-selector :--heading
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6;
+
+:--heading {
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  padding: 0;
+  font-weight: var(--hiq-heading-font-weight, var(--hiq-font-weight-medium, 500));
+  line-height: var(--hiq-heading-line-height, 1.2);
+}

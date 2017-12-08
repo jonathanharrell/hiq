@@ -1,45 +1,64 @@
 {
     "name": "hiq",
-    "version": "1.1.3",
-    "description": "Basic semantic styling for HTML elements",
-    "main": "css/hiq.css",
+    "version": "2.0.5-beta",
+    "description": "A lightweight, progressive, high-IQ PostCSS framework.",
+    "main": "css/hiq.pcss",
     "scripts": {
-        "lint": "stylelint css/*.pcss",
+        "lint": "stylelint pcss/*.pcss",
         "minify": "minify dist/hiq.css --output dist/hiq.min.css",
-        "precommit": "npm run lint && npm run postcss && npm run minify",
-        "postcss": "postcss css/hiq.pcss -o dist/hiq.css",
-        "watch": "npm run postcss -- --watch"
+        "precommit": "npm run lint && npm run postcss && npm run minify && npm run docs-lint && npm run docs-postcss && npm run docs-minify",
+        "postcss": "postcss pcss/hiq.pcss -o dist/hiq.css",
+        "watch": "npm run lint && npm run postcss -- --watch",
+        "docs-lint": "stylelint assets/pcss/*.pcss",
+        "docs-minify": "minify assets/build/docs.css --output assets/build/docs.min.css",
+        "docs-postcss": "postcss assets/css/docs.pcss -o assets/build/docs.css",
+        "docs-watch": "npm run docs-lint && npm run docs-postcss -- --watch",
+        "docs-generate": "bundle exec jekyll serve",
+        "algolia-index": "bundle exec jekyll algolia push"
     },
     "repository": {
         "type": "git",
         "url": "git+https://jonathanharrell@github.com/jonathanharrell/hiq.git"
     },
-    "author": "Jonathan Harrell",
+    "author": "Jonathan Harrell <harr041@gmail.com> (www.jonathan-harrell.com)",
+    "contributors": [
+        "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
+    ],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/jonathanharrell/hiq/issues"
     },
     "homepage": "https://github.com/jonathanharrell/hiq#readme",
-    "dependencies": {
-        "blanq-slate": "2.0.3"
-    },
     "devDependencies": {
         "husky": "0.14.3",
         "minifier": "0.8.1",
-        "postcss-cli": "4.1.1",
-        "postcss-cssnext": "3.0.2",
-        "postcss-import": "11.0.0",
-        "postcss-loader": "2.0.8",
-        "postcss-mixins": "6.2.0",
         "stylelint": "8.2.0",
-        "stylelint-config-standard": "17.0.0",
-        "stylelint-order": "0.7.0"
+        "stylelint-config-whq": "2.1.2"
+    },
+    "stylelint": {
+        "extends": "stylelint-config-whq",
+        "rules": {
+            "at-rule-no-unknown": null,
+            "comment-empty-line-before": null,
+            "plugin/no-unsupported-browser-features": null
+        }
     },
     "files": [
-        ".stylelintrc",
-        "css/*.css",
+        "pcss/**/*.pcss",
         "dist",
         "index.html",
         "postcss.config.js"
-    ]
+    ],
+    "dependencies": {
+        "autocomplete.js": "0.29.0",
+        "autoprefixer": "7.1.6",
+        "postcss": "6.0.14",
+        "postcss-cli": "4.1.1",
+        "postcss-custom-media": "6.0.0",
+        "postcss-custom-selectors": "4.0.1",
+        "postcss-discard-comments": "2.0.4",
+        "postcss-easy-import": "3.0.0",
+        "postcss-mixins": "6.2.0",
+        "postcss-nesting": "4.2.1"
+    }
 }

@@ -1,0 +1,74 @@
+/* font sizes */
+
+@define-mixin is-size-1 {
+  font-size: var(--hiq-font-size-1, 2.5rem);
+}
+
+@define-mixin is-size-2 {
+  font-size: var(--hiq-font-size-2, 2rem);
+}
+
+@define-mixin is-size-3 {
+  font-size: var(--hiq-font-size-3, 1.75rem);
+}
+
+@define-mixin is-size-4 {
+  font-size: var(--hiq-font-size-4, 1.5rem);
+}
+
+@define-mixin is-size-5 {
+  font-size: var(--hiq-font-size-5, 1rem);
+}
+
+@define-mixin is-size-6 {
+  font-size: var(--hiq-font-size-6, 0.875rem);
+}
+
+h1,
+.is-size-1 {
+  @mixin is-size-1;
+}
+
+h2,
+.is-size-2 {
+  @mixin is-size-2;
+}
+
+h3,
+.is-size-3 {
+  @mixin is-size-3;
+}
+
+h4,
+.is-size-4 {
+  @mixin is-size-4;
+}
+
+h5,
+.is-size-5 {
+  @mixin is-size-5;
+}
+
+h6,
+.is-size-6 {
+  @mixin is-size-6;
+}
+
+/* large/small font sizes */
+
+@define-mixin is-large {
+  font-size: var(--hiq-font-size-large, var(--hiq-font-size-4, 1.5rem));
+}
+
+@define-mixin is-small {
+  font-size: var(--hiq-font-size-small, var(--hiq-font-size-6, 0.875rem));
+}
+
+.is-large {
+  @mixin is-large;
+}
+
+small,
+.is-small {
+  @mixin is-small;
+}

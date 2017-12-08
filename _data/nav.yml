@@ -1,0 +1,20 @@
+- title: Guide
+  pages:
+    - title: Getting Started
+    - title: Theming
+    - title: Layout
+    - title: Typography
+    - title: Buttons
+    - title: Code
+    - title: Media
+    - title: Tables
+    - title: Forms & Inputs
+    - title: Meters & Progress
+
+- title: Reference
+  pages:
+    - title: Custom Properties
+    - title: Utilities
+    - title: Browser Bugs
+
+- title: Theme Builder

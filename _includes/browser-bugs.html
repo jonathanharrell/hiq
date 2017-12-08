@@ -1,0 +1,7 @@
+{%- for bug in site.data.browser-bugs -%}
+    {%- if bug.category == include.category -%}
+        <small>
+            NOTE: {{ bug.description }}
+        </small>
+    {%- endif -%}
+{%- endfor -%}

@@ -1,19 +1,11 @@
 module.exports = {
     plugins: [
-        require('postcss-import')({
-            plugins: [
-                require('stylelint')
-            ]
-        }),
-        require('postcss-mixins')(),
-        require('postcss-cssnext')({
-            features: {
-                rem: false,
-                customProperties: {
-                    preserve: true,
-                    warnings: false
-                }
-            }
-        })
+        require('postcss-easy-import')({ extensions: '.pcss' }),
+        require('postcss-mixins'),
+        require('postcss-custom-selectors'),
+        require('postcss-nesting'),
+        require('autoprefixer'),
+        require('postcss-custom-media'),
+        require('postcss-discard-comments')
     ]
-}
+};
