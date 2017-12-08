@@ -66,7 +66,7 @@ For more information on using PostCSS read the [PostCSS documentation](https://g
 
 ### Individual Files
 
-Any of the HiQ CSS files can be imported independently. For example, if you want only the button styles, import import the buttons file, after the basic utility files:
+Any of the HiQ CSS files can be imported independently. For example, if you want only the button styles, import the buttons file, after the basic utility files:
 
 ```css
 /* import utility styles first */
@@ -92,7 +92,7 @@ If you go with this approach, we recommend importing at least the base styles fi
 
 ## Theming
 
-HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference/custom-properties), grab the properties you want to change, and include them in your project.
+HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/hiq/reference/custom-properties), grab the properties you want to change, and include them in your project.
 
 These can be included anywhere, before or after HiQ!
 
