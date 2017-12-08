@@ -165,7 +165,7 @@ You can use the source files and a PostCSS build to support browsers that don't 
 
 ### Vendor Prefixes
 
-The compiled version of HiQ comes with vendor prefixes included. If you want greater control over with prefixes that are used, you can import the HiQ source files and run them through your own PostCSS setup.
+The compiled version of HiQ comes with vendor prefixes included. If you want greater control over which prefixes are used, you can import the HiQ source files and run them through your own PostCSS setup.
 
 We recommend using [autoprefixer](https://github.com/postcss/autoprefixer) and defining the browsers you wish to support using [browserslist](https://github.com/ai/browserslist).
 
