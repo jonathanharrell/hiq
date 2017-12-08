@@ -17,9 +17,7 @@ npm install hiq@beta
 
 ### Basic
 
-If you have your own PostCSS setup, you can import the source css file directly:
-
-Import the compiled minified version in your CSS
+Import the compiled minified version in your CSS:
 
 ```css
 @import 'node_modules/hiq/dist/hiq.min.css';
@@ -33,33 +31,23 @@ Import the source version and process your CSS using PostCSS. This will give you
 @import 'node_modules/hiq/pcss/hiq.pcss';
 ```
 
-In order to compile the HiQ source files correctly, several PostCSS plugins are required. To install them run this command:
-
-```bash
-npm install --save-dev postcss-easy-import postcss-mixins postcss-custom-selectors postcss-nesting autoprefixer postcss-custom-media postcss-discard-comments
-```
-
-Setup your postcss configuration (`postcss.config.js`) like this (order matters):
+To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
 
 ```js
 module.exports = {
     plugins: [
-        require('postcss-easy-import')({ extensions: '.pcss' }),
         require('postcss-mixins'),
         require('postcss-custom-selectors'),
-        require('postcss-nesting'),
-        require('autoprefixer'),
-        require('postcss-custom-media'),
-        require('postcss-discard-comments') // optional
+        require('postcss-custom-media')
     ]
-}
+};
 ```
 
-For more information on using PostCSS read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
+For more information on using PostCSS, read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
 
 ## Theming
 
-HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference/custom-properties), grab the properties you want to change, and include them in your project.
+HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](https://jonathanharrell.github.io/hiq/reference/custom-properties/), grab the properties you want to change, and include them in your project.
 
 These can be included anywhere, before or after HiQ!
 
