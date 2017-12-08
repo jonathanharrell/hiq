@@ -43,11 +43,11 @@ module.exports = {
 };
 ```
 
-For more information on using PostCSS read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
+For more information on using PostCSS, read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
 
 ## Theming
 
-HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference/custom-properties), grab the properties you want to change, and include them in your project.
+HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](https://jonathanharrell.github.io/hiq/reference/custom-properties/), grab the properties you want to change, and include them in your project.
 
 These can be included anywhere, before or after HiQ!
 
