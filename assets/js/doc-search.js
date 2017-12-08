@@ -50,7 +50,7 @@ autocomplete('#search-input', { hint: false }, [
         }
     }
 ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-    var url = suggestion.url;
+    var url = '/hiq' + suggestion.url;
 
     if (suggestion.css_selector_parent) {
         url += suggestion.css_selector_parent;
