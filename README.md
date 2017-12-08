@@ -59,7 +59,7 @@ For more information on using PostCSS read the [PostCSS documentation](https://g
 
 ## Theming
 
-HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/docs/reference/custom-properties), grab the properties you want to change, and include them in your project.
+HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference/custom-properties), grab the properties you want to change, and include them in your project.
 
 These can be included anywhere, before or after HiQ!
 

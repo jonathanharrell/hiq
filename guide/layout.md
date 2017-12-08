@@ -38,7 +38,7 @@ You can apply the `.is-fluid` modifier class to remove the max-width, causing th
 
 {% include properties-table.html category="containers" %}
 
-Mixins can be used when using the HiQ source files and running through a PostCSS setup (see the [Getting Started](/docs/guide/getting-started#usage) section).
+Mixins can be used when using the HiQ source files and running through a PostCSS setup (see the [Getting Started](/guide/getting-started#usage) section).
 
 You can make any element a container by using these PostCSS mixins:
 

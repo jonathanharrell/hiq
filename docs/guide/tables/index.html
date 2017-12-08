@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll v3.6.2">
+
+<title>Tables &middot; Hi-Q</title>
+
+<!-- HiQ core CSS -->
+
+<link href="/dist/hiq.css" rel="stylesheet">
+
+
+<!--<link href="/assets/docs.min.css" rel="stylesheet">-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#0074ff">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<!-- Google analytics -->
+
+    <link rel="stylesheet" href="/assets/build/docs.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="container is-fluid">
+        <a href="/">
+            <img src="/assets/img/hiq-logo.svg" alt="hiq" class="logo">
+        </a>
+        <nav><a class="active" href="/guide/getting-started/">
+                        Guide
+                    </a><a  href="/reference/custom-properties/">
+                        Reference
+                    </a></nav>
+        <a href="https://github.com/jonathanharrell/hiq" class="github-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.36">
+    <title>GitHub</title>
+    <path d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+
+        </a>
+        <span class="version-number">2.0</span>
+        <div class="search">
+            <input type="text" id="search-input" placeholder="Search..." />
+        </div>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="container">
+        <div class="main-content-wrapper">
+            
+            <aside class="sidebar">
+    <nav class="toc">
+        <div class="toc-wrapper"><ul class="page-nav"><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/getting-started/">
+                                Getting Started
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/theming/">
+                                Theming
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/layout/">
+                                Layout
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/typography/">
+                                Typography
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/buttons/">
+                                Buttons
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/code/">
+                                Code
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/media/">
+                                Media
+                            </a></li><li class="toc-entry toc-h1 active">
+                            <a href="/docs/guide/tables/">
+                                Tables
+                            </a><ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#default-styling">Default Styling</a></li>
+<li class="toc-entry toc-h2"><a href="#captions">Captions</a></li>
+</ul></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/forms-inputs/">
+                                Forms & Inputs
+                            </a></li><li class="toc-entry toc-h1 ">
+                            <a href="/docs/guide/meters-progress/">
+                                Meters & Progress
+                            </a></li></ul></div>
+    </nav>
+</aside>
+<button class="mobile-toc-toggle" id="mobile-toc-toggle">
+    <span>+</span>
+</button>
+
+            
+            <section class="doc-content">
+                <h1>Tables</h1>
+                <h2 id="default-styling">Default Styling</h2>
+
+<p>Tables receive some light default styling in HiQ.</p>
+
+<div class="hiq-example">
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Column 1</th>
+            <th scope="col">Column 2</th>
+            <th scope="col">Column 3</th>
+            <th scope="col">Column 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Cell 1</td>
+            <td>Row 1 Cell 2</td>
+            <td>Row 1 Cell 3</td>
+            <td>Row 1 Cell 4</td>
+        </tr>
+        <tr>
+            <td>Row 2 Cell 1</td>
+            <td>Row 2 Cell 2</td>
+            <td>Row 2 Cell 3</td>
+            <td>Row 2 Cell 4</td>
+        </tr>
+        <tr>
+            <td>Row 3 Cell 1</td>
+            <td>Row 3 Cell 2</td>
+            <td>Row 3 Cell 3</td>
+            <td>Row 3 Cell 4</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 4<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 3<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 4<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 3<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 4<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 3<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 4<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
+
+<p>Remember that you can use <code class="highlighter-rouge">.has-text-truncated</code> to truncate the contents of a cell and display an ellipsis.</p>
+
+<p>Use <code class="highlighter-rouge">&lt;th&gt;</code> for heading cells. These can be used within in <code class="highlighter-rouge">&lt;thead&gt;</code>, <code class="highlighter-rouge">&lt;tbody&gt;</code>, or <code class="highlighter-rouge">&lt;tfoot&gt;</code>.</p>
+
+<div class="hiq-example">
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Column 1</th>
+            <th scope="col">Column 2</th>
+            <th scope="col">Column 3</th>
+            <th scope="col">Column 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Row 1</th>
+            <td>Row 1 Cell 1</td>
+            <td>Row 1 Cell 2</td>
+            <td>Row 1 Cell 3</td>
+        </tr>
+        <tr>
+            <th scope="row">Row 2</th>
+            <td>Row 2 Cell 1</td>
+            <td>Row 2 Cell 2</td>
+            <td>Row 2 Cell 3</td>
+        </tr>
+        <tr>
+            <th scope="row">Row 3</th>
+            <td>Row 3 Cell 1</td>
+            <td>Row 3 Cell 2</td>
+            <td>Row 3 Cell 3</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th scope="col">Column 1</th>
+            <th scope="col">Column 2</th>
+            <th scope="col">Column 3</th>
+            <th scope="col">Column 4</th>
+        </tr>
+    </tfoot>
+</table>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 4<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Row 1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Row 2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Row 3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+    <span class="nt">&lt;tfoot&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 4<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tfoot&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
+
+<table class="properties-table">
+    <thead>
+        <tr>
+            <th>Property Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+                    <td class="name"><code>--hiq-table-head-border-width</code></td>
+                    <td>Sets the width of the bottom border on cells within the thead element.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-foot-border-width</code></td>
+                    <td>Sets the width of the top border on cells within the tfoot element.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-caption-padding-vertical</code></td>
+                    <td>Sets the top and bottom padding on the caption element with a table.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-caption-text-color</code></td>
+                    <td>Sets the text color on the caption element within a table.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-caption-font-weight</code></td>
+                    <td>Sets the font weight for the caption element within a table.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-cell-padding-vertical</code></td>
+                    <td>Sets the top and bottom padding for th and td elements.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-cell-padding-horizontal</code></td>
+                    <td>Sets the left and right padding for th and td elements.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-cell-border-width</code></td>
+                    <td>Sets the border width for th and td elements.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-cell-border-color</code></td>
+                    <td>Sets the border color for th and td elements.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-heading-background-color</code></td>
+                    <td>Sets the background color for th elements.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-heading-text-color</code></td>
+                    <td>Sets the text color for th elements.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-table-heading-font-weight</code></td>
+                    <td>Sets the font weight for th elements.</td>
+                </tr></tbody>
+</table>
+
+<h2 id="captions">Captions</h2>
+
+<p>A <code class="highlighter-rouge">&lt;caption&gt;</code> functions like a heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide if they want to read it.</p>
+
+<p>HiQ places captions after tables by default.</p>
+
+<div class="hiq-example">
+<table>
+    <caption>This is a caption for this table.</caption>
+    <thead>
+        <tr>
+            <th scope="col">Column 1</th>
+            <th scope="col">Column 2</th>
+            <th scope="col">Column 3</th>
+            <th scope="col">Column 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Row 1</th>
+            <td>Row 1 Cell 1</td>
+            <td>Row 1 Cell 2</td>
+            <td>Row 1 Cell 3</td>
+        </tr>
+        <tr>
+            <th scope="row">Row 2</th>
+            <td>Row 2 Cell 1</td>
+            <td>Row 2 Cell 2</td>
+            <td>Row 2 Cell 3</td>
+        </tr>
+        <tr>
+            <th scope="row">Row 3</th>
+            <td>Row 3 Cell 1</td>
+            <td>Row 3 Cell 2</td>
+            <td>Row 3 Cell 3</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;caption&gt;</span>This is a caption for this table.<span class="nt">&lt;/caption&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Column 4<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Row 1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 1 Cell 3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Row 2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 2 Cell 3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Row 3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Row 3 Cell 3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
+
+
+            </section>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="container">
+        Designed and built by <a href="https://www.twitter.com/HarrellofDurham">HarrellofDurham</a> with the help of <a href="https://www.twitter.com/equinusocio">equinusocio</a> and contributors. Code licensed <a href="https://opensource.org/licenses/MIT">MIT</a>.
+    </div>
+</footer>
+
+<script src="/assets/js/mobile-menu.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="/assets/js/doc-search.js"></script>
+<script src="/assets/js/property-search.js"></script>
+</body>
+</html>
