@@ -9,11 +9,11 @@ group: guide
 ## Default Styling
 
 Button styling is automatically applied to any elements matching the following selectors:
-* `button`
-* `[role='button']`
-* `[type='button']`
-* `[type='submit']`
-* `[type='reset']`
+- `button`
+- `[role='button']`
+- `[type='button']`
+- `[type='submit']`
+- `[type='reset']`
 
 In order to use an `a` element as a button, use `role="button"` to convey their purpose to screen readers and other assistive technologies.
 
