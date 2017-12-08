@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         {% include header.html %}
-        <link rel="stylesheet" href="assets/build/docs.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/build/docs.css">
     </head>
     <body>
         {% include navbar.html %}
@@ -11,14 +11,14 @@
                 <div class="main-content-wrapper">
                     <div class="home-content">
                         <header class="home-header">
-                            <img src="assets/img/hiq-logo.svg" alt="hiq" class="logo">
+                            <img src="{{ site.baseurl }}/assets/img/hiq-logo.svg" alt="hiq" class="logo">
                             <h1>{{ page.title }}</h1>
                             <p>Jump-start your styling with a lightweight, easily customizable framework that is built with CSS custom properties and modern best practices.</p>
                             <a href="/guide/getting-started" role="button">Get started</a>
                         </header>
                         <section>
                             <figure>
-                                <img src="assets/img/what-you-need.svg">
+                                <img src="{{ site.baseurl }}/assets/img/what-you-need.svg">
                             </figure>
                             <div class="text">
                                 <h2>Just what you need</h2>
@@ -28,7 +28,7 @@
                         </section>
                         <section>
                             <figure>
-                                <img src="assets/img/easy-theming.svg">
+                                <img src="{{ site.baseurl }}/assets/img/easy-theming.svg">
                             </figure>
                             <div class="text">
                                 <h2>Easy theming</h2>
@@ -38,7 +38,7 @@
                         </section>
                         <section>
                             <figure>
-                                <img src="assets/img/built-progressively.svg">
+                                <img src="{{ site.baseurl }}/assets/img/built-progressively.svg">
                             </figure>
                             <div class="text">
                                 <h2>Built progressively</h2>
@@ -53,6 +53,6 @@
         {% include footer.html %}
         <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
         <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-        <script src="assets/js/doc-search.js"></script>
+        <script src="{{ site.baseurl }}/assets/js/doc-search.js"></script>
     </body>
 </html>

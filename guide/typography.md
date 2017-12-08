@@ -59,7 +59,7 @@ We recommend that you similarly add a new custom property for each new font stac
 Typography in HiQ is truly fluid, meaning that it is not simply defined at various breakpoints, but is a function of viewport width.
 
 <figure>
-    <img src="assets/img/diagrams/responsive-typography.svg" alt="Diagram showing the relationship of the different responsive typography variables" />
+    <img src="{{ site.baseurl }}/assets/img/diagrams/responsive-typography.svg" alt="Diagram showing the relationship of the different responsive typography variables" />
 </figure>
 
 The root font size, set on the `html` element is determined by a formula that looks like this:

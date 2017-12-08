@@ -14,7 +14,7 @@ Media elements, including `img`, `embed`, `object`, and `video` are made respons
 
 `img` elements are given a border-radius by default. This can be altered with `--hiq-image-border-radius`.
 
-<img src="assets/img/placeholder.svg" alt="Image alt text">
+<img src="{{ site.baseurl }}/assets/img/placeholder.svg" alt="Image alt text">
 
 {% include properties-table.html category="images" %}
 
@@ -24,7 +24,7 @@ Anytime you need to display a piece of content like an image with an optional ca
 
 {% example html %}
 <figure>
-    <img src="assets/img/placeholder.svg" alt="Image alt text">
+    <img src="{{ site.baseurl }}/assets/img/placeholder.svg" alt="Image alt text">
     <figcaption>Here is a caption for this image.</figcaption>
 </figure>
 {% endexample %}

@@ -20,7 +20,7 @@ permalink:      pretty
 # Server
 source:         "."
 destination:    ./docs
-baseurl:        ""
+baseurl:        "/docs"
 encoding:       UTF-8
 exclude:
   - .git/

@@ -21,7 +21,7 @@ All focusable elements have `outline` removed, but an outline is simulated using
 Containers can be used throughout your project to provide a frame for your content and bring consistency to how your views are sizing with respect to the browser.
 
 <figure>
-    <img src="assets/img/diagrams/containers.svg" alt="Diagram demonstrating what the container variables control" />
+    <img src="{{ site.baseurl }}/assets/img/diagrams/containers.svg" alt="Diagram demonstrating what the container variables control" />
 </figure>
 
 The basic container has a maximum width which you can define using a custom property and is inset from the edge of the viewport by another customizable amount.
