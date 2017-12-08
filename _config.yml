@@ -20,7 +20,7 @@ permalink:      pretty
 # Server
 source:         "."
 destination:    ./docs
-baseurl:        ""
+baseurl:        "https://jonathanharrell.github.io/hiq/"
 encoding:       UTF-8
 exclude:
   - .git/
