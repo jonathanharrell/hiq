@@ -17,7 +17,7 @@ npm install hiq@beta
 
 ### Basic
 
-Import the compiled minified version in your CSS
+Import the compiled minified version in your CSS:
 
 ```css
 @import 'node_modules/hiq/dist/hiq.min.css';
@@ -29,12 +29,6 @@ Import the source version and process your CSS using PostCSS. This will give you
 
 ```css
 @import 'node_modules/hiq/pcss/hiq.pcss';
-```
-
-In order to compile the HiQ source files correctly, several PostCSS plugins are required. To install them run this command:
-
-```bash
-npm install --save-dev postcss-easy-import postcss-mixins postcss-custom-selectors postcss-nesting autoprefixer postcss-custom-media postcss-discard-comments
 ```
 
 To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
