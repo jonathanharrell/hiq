@@ -17,8 +17,6 @@ npm install hiq@beta
 
 ### Basic
 
-If you have your own PostCSS setup, you can import the source css file directly:
-
 Import the compiled minified version in your CSS
 
 ```css

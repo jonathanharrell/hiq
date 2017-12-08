@@ -27,7 +27,7 @@ There are a few different ways you can include HiQ in your project.
 
 ### Basic
 
-Import the compiled minified version in your CSS
+Import the compiled minified version in your CSS:
 
 ```css
 @import 'node_modules/hiq/dist/hiq.min.css';
