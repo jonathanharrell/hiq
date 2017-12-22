@@ -11,7 +11,9 @@ group: guide
 Use the `<meter>` element to represent either a scalar value within a known range or a fractional value.
 
 {% example html %}
-<meter value="5" min="0" max="10">5 out of 10</meter>
+<meter min="0" max="100" low="25" high="75" optimum="100" value="10"></meter>
+<meter min="0" max="100" low="25" high="75" optimum="100" value="50"></meter>
+<meter min="0" max="100" low="25" high="75" optimum="100" value="80"></meter>
 {% endexample %}
 
 {% include properties-table.html category="meters" %}

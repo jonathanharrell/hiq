@@ -659,10 +659,22 @@ meter::-moz-meter-bar{
   background:var(--hiq-meter-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
 }
 meter::-webkit-meter-optimum-value{
-  background:var(--hiq-meter-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  background:var(--hiq-meter-strong-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
 }
 meter:-moz-meter-optimum::-moz-meter-bar{
-  background:var(--hiq-meter-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  background:var(--hiq-meter-strong-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+}
+meter::-webkit-meter-suboptimum-value{
+  background:var(--hiq-meter-good-color, var(--hiq-color-warning, hsl(46, 97%, 64%)));
+}
+meter:-moz-meter-sub-optimum::-moz-meter-bar{
+  background:var(--hiq-meter-good-color, var(--hiq-color-warning, hsl(46, 97%, 64%)));
+}
+meter::-webkit-meter-even-less-good-value{
+  background:var(--hiq-meter-weak-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+}
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar{
+  background:var(--hiq-meter-weak-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
 }
 progress{
   position:relative;
