@@ -698,6 +698,33 @@ progress:indeterminate::after{
           animation:progress-bar-stripes 1s linear infinite;
   content:'';
 }
+progress:indeterminate::-webkit-progress-bar{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:block;
+  background-color:var(--hiq-progress-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size:1rem 1rem;
+  -webkit-animation:progress-bar-stripes 1s linear infinite;
+          animation:progress-bar-stripes 1s linear infinite;
+  content:'';
+}
+progress:indeterminate::-moz-progress-bar{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:block;
+  background-color:var(--hiq-progress-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size:1rem 1rem;
+  animation:progress-bar-stripes 1s linear infinite;
+  content:'';
+}
 @-webkit-keyframes progress-bar-stripes{
   from{
     background-position:1rem 0;

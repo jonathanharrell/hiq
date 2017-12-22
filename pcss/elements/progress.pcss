@@ -1,5 +1,15 @@
 /* progress elements */
 
+@define-mixin progress-indeterminate {
+  @mixin absolute-stretch;
+  display: block;
+  background-color: var(--hiq-progress-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+  animation: progress-bar-stripes 1s linear infinite;
+  content: '';
+}
+
 progress {
   position: relative;
   width: 100%;
@@ -21,13 +31,13 @@ progress {
   }
   &:indeterminate {
     &::after {
-      @mixin absolute-stretch;
-      display: block;
-      background-color: var(--hiq-progress-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
-      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-size: 1rem 1rem;
-      animation: progress-bar-stripes 1s linear infinite;
-      content: '';
+      @mixin progress-indeterminate;
+    }
+    &::-webkit-progress-bar {
+      @mixin progress-indeterminate;
+    }
+    &::-moz-progress-bar {
+      @mixin progress-indeterminate;
     }
   }
 }

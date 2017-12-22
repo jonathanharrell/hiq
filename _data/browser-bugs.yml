@@ -22,6 +22,6 @@
 - description: "The meter element is currently not stylable in Edge."
   category: "meters"
   browsers: "Edge"
-- description: "Indeterminate progress bar styling currently only works in Chrome."
+- description: "Indeterminate progress bar styling is currently not supported in Edge or Internet Explorer."
   category: "progress"
-  browsers: "Safari, Firefox, Edge, IE"
+  browsers: "Edge, IE"
