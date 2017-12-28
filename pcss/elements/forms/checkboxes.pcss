@@ -44,7 +44,8 @@
       box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-input-focus-outline-color, var(--hiq-outline-color, hsl(210, 100%, 85%)));
     }
     &:checked + label::before,
-    &[aria-checked] + label::before {
+    &[aria-checked] + label::before,
+    &:indeterminate + label::before {
       border-color: var(--hiq-checkbox-checked-border-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
       background-color: var(--hiq-checkbox-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
     }
@@ -57,9 +58,19 @@
       left: var(--hiq-checkbox-check-position-left, 0.375rem);
       width: var(--hiq-checkbox-check-width, 0.25rem);
       height: var(--hiq-checkbox-check-height, 0.5rem);
-      border: solid white;
+      border: solid var(--hiq-checkbox-check-color, white);
       border-width: 0 var(--hiq-checkbox-check-border-width, 2px) var(--hiq-checkbox-check-border-width, 2px) 0;
       transform: rotate(45deg);
+      content: '';
+    }
+    &:indeterminate + label::after {
+      display: block;
+      position: absolute;
+      top: 0.45rem;
+      left: 0.3rem;
+      width: calc(var(--hiq-checkbox-width, 1rem) - 0.5rem);
+      height: var(--hiq-checkbox-check-border-width, 2px);
+      background-color: var(--hiq-checkbox-check-color, white);
       content: '';
     }
     :--not-writable + label {
