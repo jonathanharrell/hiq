@@ -897,9 +897,9 @@ output{
 .checkbox input[type='checkbox']:indeterminate + label::after{
   display:block;
   position:absolute;
-  top:0.45rem;
-  left:0.3rem;
-  width:calc(var(--hiq-checkbox-width, 1rem) - 0.5rem);
+  top:var(--hiq-checkbox-indeterminate-position-top, 0.45rem);
+  left:var(--hiq-checkbox-indeterminate-position-left, 0.3rem);
+  width:var(--hiq-checkbox-indeterminate-width, 0.5rem);
   height:var(--hiq-checkbox-check-border-width, 2px);
   background-color:var(--hiq-checkbox-check-color, white);
   content:'';
