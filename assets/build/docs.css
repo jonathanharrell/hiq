@@ -185,8 +185,6 @@ summary:focus{
   outline:none;
 }
 html{
-  -moz-osx-font-smoothing:grayscale;
-  -webkit-font-smoothing:antialiased;
   -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
   text-rendering:var(--hiq-text-rendering, optimizeLegibility);
