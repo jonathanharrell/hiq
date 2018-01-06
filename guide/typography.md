@@ -10,7 +10,6 @@ group: guide
 
 HiQ sets several global typographic settings:
 
-* Font-smoothing is set to `antialiased` for Webkit browsers and `grayscale` for Firefox.
 * Adjustments of font size after orientation changes on some mobile devices is prevented by setting `text-size-adjust` to `100%`.
 * `text-rendering` is set to `optimizeLegiblity` to emphasize legibility over rendering speed or geometric precision. This enables kerning and optional ligatures.
 
