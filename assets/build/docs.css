@@ -896,7 +896,7 @@ output{
   display:block;
   position:absolute;
   top:var(--hiq-checkbox-indeterminate-position-top, 0.45rem);
-  left:var(--hiq-checkbox-indeterminate-position-left, 0.3rem);
+  left:var(--hiq-checkbox-indeterminate-position-left, 0.25rem);
   width:var(--hiq-checkbox-indeterminate-width, 0.5rem);
   height:var(--hiq-checkbox-check-border-width, 2px);
   background-color:var(--hiq-checkbox-check-color, white);
@@ -1015,6 +1015,12 @@ input[list]:disabled::placeholder, input[list][aria-disabled]::placeholder, inpu
 }
 input[list]:disabled{
   cursor:not-allowed;
+}
+input[list]:required:invalid{
+  border-color:var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+}
+input[list]:required:valid{
+  border-color:var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
 }
 input[list]{
   display:block;
@@ -1326,6 +1332,12 @@ select:disabled::placeholder, select[aria-disabled]::placeholder, select[readonl
 select:disabled{
   cursor:not-allowed;
 }
+select:required:invalid{
+  border-color:var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+}
+select:required:valid{
+  border-color:var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+}
 select{
   display:block;
   width:100%;
@@ -1494,6 +1506,12 @@ input[type='text']:disabled::placeholder, input[type='text'][aria-disabled]::pla
 input[type='text']:disabled, input[type='password']:disabled, input[type='url']:disabled, input[type='email']:disabled, input[type='tel']:disabled, input[type='search']:disabled, input[type='number']:disabled, input[type='date']:disabled, input[type='time']:disabled, input[type='month']:disabled, input[type='week']:disabled, input[type='datetime-local']:disabled{
   cursor:not-allowed;
 }
+input[type='text']:required:invalid, input[type='password']:required:invalid, input[type='url']:required:invalid, input[type='email']:required:invalid, input[type='tel']:required:invalid, input[type='search']:required:invalid, input[type='number']:required:invalid, input[type='date']:required:invalid, input[type='time']:required:invalid, input[type='month']:required:invalid, input[type='week']:required:invalid, input[type='datetime-local']:required:invalid{
+  border-color:var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+}
+input[type='text']:required:valid, input[type='password']:required:valid, input[type='url']:required:valid, input[type='email']:required:valid, input[type='tel']:required:valid, input[type='search']:required:valid, input[type='number']:required:valid, input[type='date']:required:valid, input[type='time']:required:valid, input[type='month']:required:valid, input[type='week']:required:valid, input[type='datetime-local']:required:valid{
+  border-color:var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+}
 input[type='text'],
 input[type='password'],
 input[type='url'],
@@ -1610,6 +1628,12 @@ textarea:disabled::placeholder, textarea[aria-disabled]::placeholder, textarea[r
 }
 textarea:disabled{
   cursor:not-allowed;
+}
+textarea:required:invalid{
+  border-color:var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+}
+textarea:required:valid{
+  border-color:var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
 }
 textarea{
   display:block;

@@ -50,6 +50,21 @@ Numerous custom properties are available to customize the appearance of inputs:
 
 {% include browser-bugs.html category="inputs" %}
 
+## Input Validation
+
+Border color on inputs with a `required` attribute is changed based on their validation state. This applies to inputs matching `:required:invalid` or `:required:valid` selectors. This can be easily overridden with custom properties (see the list of properties above).
+
+{% example html %}
+<p>
+    <label for="required">Invalid Required Input</label>
+    <input type="text" required>
+</p>
+<p>
+    <label for="required">Valid Required Input</label>
+    <input type="text" required value="Input value">
+</p>
+{% endexample %}
+
 ## Text Inputs
 
 Styling for textual inputs:

@@ -49,4 +49,10 @@
   &:disabled {
     cursor: not-allowed;
   }
+  &:required:invalid {
+    border-color: var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+  }
+  &:required:valid {
+    border-color: var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+  }
 }

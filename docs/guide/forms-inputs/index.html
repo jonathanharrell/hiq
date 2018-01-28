@@ -92,6 +92,7 @@
                             </a><ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#basic-form-elements">Basic Form Elements</a></li>
 <li class="toc-entry toc-h2"><a href="#input-mixin">Input Mixin</a></li>
+<li class="toc-entry toc-h2"><a href="#input-validation">Input Validation</a></li>
 <li class="toc-entry toc-h2"><a href="#text-inputs">Text Inputs</a></li>
 <li class="toc-entry toc-h2"><a href="#temporal-inputs">Temporal Inputs</a></li>
 <li class="toc-entry toc-h2"><a href="#textareas">Textareas</a></li>
@@ -211,6 +212,12 @@
         </tr>
     </thead>
     <tbody><tr>
+                    <td class="name"><code>--hiq-input-invalid-border-color</code></td>
+                    <td>Sets the border color for invalid inputs.</td>
+                </tr><tr>
+                    <td class="name"><code>--hiq-input-valid-border-color</code></td>
+                    <td>Sets the border color for valid inputs.</td>
+                </tr><tr>
                     <td class="name"><code>--hiq-input-height</code></td>
                     <td>Sets the default height on text inputs.</td>
                 </tr><tr>
@@ -267,6 +274,29 @@
 <p><small>
             NOTE: Inputs with display: inline-flex applied currently do not display correctly in a line in Edge or Internet Explorer.
         </small></p>
+
+<h2 id="input-validation">Input Validation</h2>
+
+<p>Border color on inputs with a <code class="highlighter-rouge">required</code> attribute is changed based on their validation state. This applies to inputs matching <code class="highlighter-rouge">:required:invalid</code> or <code class="highlighter-rouge">:required:valid</code> selectors. This can be easily overridden with custom properties (see the list of properties above).</p>
+
+<div class="hiq-example">
+<p>
+    <label for="required">Invalid Required Input</label>
+    <input type="text" required="" />
+</p>
+<p>
+    <label for="required">Valid Required Input</label>
+    <input type="text" required="" value="Input value" />
+</p>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"required"</span><span class="nt">&gt;</span>Invalid Required Input<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"required"</span><span class="nt">&gt;</span>Valid Required Input<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">required</span> <span class="na">value=</span><span class="s">"Input value"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
 <h2 id="text-inputs">Text Inputs</h2>
 
