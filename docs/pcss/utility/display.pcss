@@ -182,3 +182,13 @@ parent must have `position: relative`
 .is-shadowless {
   @mixin is-shadowless;
 }
+
+/* reset of all properties to initial values */
+@define-mixin is-initial {
+  all: initial;
+}
+
+/* reset of all properties to inheritable values, or else initial values */
+@define-mixin is-unset {
+  all: unset;
+}

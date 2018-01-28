@@ -268,4 +268,10 @@ There are several utilities designed for removing certain properties:
 @mixin is-paddingless;
 @mixin is-radiusless;
 @mixin is-shadowless;
+
+/* resets all properties on an element to their initial values */
+@mixin is-initial;
+
+/* resets all properties on an element to inheritable values, or else initial values */
+@mixin is-unset;
 ```
