@@ -67,7 +67,7 @@
   type: "color"
   category: "applied-colors"
   description: "Sets the border color for buttons and inputs that have the disabled attribute."
-  default: "hsl(220, 10%, 95%)"
+  default: "hsl(220, 10%, 90%)"
 - name: "--hiq-disabled-background-color"
   type: "color"
   category: "applied-colors"
