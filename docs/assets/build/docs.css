@@ -2169,6 +2169,9 @@ html{
   -webkit-transform:translate(-50%, -50%);
           transform:translate(-50%, -50%);
 }
+.main-content{
+  overflow-x:hidden;
+}
 @media (min-width: 800px){
   .main-content{
     margin-top:var(--navbar-height);
