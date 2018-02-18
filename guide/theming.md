@@ -55,15 +55,7 @@ All gray values are built from a single gray palette composed of seven gradation
 
 ### Semantic Palette
 
-There is only one color defined in HiQ that conveys semantic meaning: `--hiq-color-primary`. You can define additional colors as needed, for example:
-
-```css
-:root {
-  --color-success: hsl(210, 100%, 50%);
-  --color-warning: hsl(45, 100%, 51%);
-  --color-danger: hsl(331, 93%, 67%);
-}
-```
+There are four colors defined in HiQ that convey semantic meaning:
 
 {% include colors-table.html category="semantic-palette" %}
 
