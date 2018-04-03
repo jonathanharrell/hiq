@@ -2462,3 +2462,7 @@ code{
           user-select:none;
   content:'PM> ';
 }
+body{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
