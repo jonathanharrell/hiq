@@ -1,6 +1,6 @@
 {
     "name": "hiq",
-    "version": "2.3.0-beta",
+    "version": "2.3.1-beta",
     "description": "A lightweight, progressive, high-IQ PostCSS framework.",
     "main": "css/hiq.pcss",
     "scripts": {
