@@ -829,7 +829,7 @@ output{
   position:relative;
   margin-bottom:var(--hiq-checkbox-margin-bottom, 0.5rem);
   padding:0 var(--hiq-checkbox-label-padding-horizontal, 1.5rem);
-  font-weight:var(--hiq-checkbox-label-font-weight, var(--hiq-font-weight-normal, 400));
+  font-weight:var(--hiq-checkbox-label-font-weight, var(--hiq-font-weight-normal, 400)) !important;
   line-height:1;
   cursor:pointer;
   -webkit-user-select:none;
@@ -1054,7 +1054,7 @@ input[type='file']:disabled,
   position:relative;
   margin-bottom:var(--hiq-radio-margin-bottom, 0.5rem);
   padding:0 var(--hiq-radio-label-padding-horizontal, 1.5rem);
-  font-weight:var(--hiq-radio-label-font-weight, var(--hiq-font-weight-normal, 400));
+  font-weight:var(--hiq-radio-label-font-weight, var(--hiq-font-weight-normal, 400)) !important;
   line-height:1;
   cursor:pointer;
   -webkit-user-select:none;
