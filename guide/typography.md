@@ -89,17 +89,17 @@ Here's a full example:
 :root {
   /* my max container width */
   --hiq-max-container-width: 50rem;
-  
+
   /* my minimum font size */
   --hiq-unitless-min-font-size: 15;
   /* my maximum font size */
   --hiq-unitless-max-font-size: 18;
-  
+
   /* below this point, the minimum font size will be used */
   --hiq-unitless-lower-font-range: 460;
-  /* 
+  /*
   above this point, the maximum font size will be used
-  I get 900 by multiply 50 (max container width) by 18px (max font size) 
+  I get 900 by multiplying 50 (max container width) by 18px (max font size)
   */
   --hiq-unitless-upper-font-range: 900;
 }
