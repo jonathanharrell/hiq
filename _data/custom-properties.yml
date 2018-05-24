@@ -627,7 +627,7 @@
   category: "selects"
   description: "Sets the background image on select elements. This controls the display of the down caret. By default, this is set to an inline svg."
 - name: "--hiq-select-background-position"
-  type: "number"
+  type: "text"
   category: "selects"
   description: "Sets the positioning of the caret with relation to the select element."
 - name: "--hiq-select-background-size"
