@@ -1,7 +1,7 @@
 - name: "--hiq-gray-darkest"
   type: "color"
   category: "gray-palette"
-  description: "Sets the maximum width of elements with the .container class."
+  description: "The darkest gray in the grayscale palette."
   default: "hsl(220, 10%, 5%)"
 - name: "--hiq-gray-darker"
   type: "color"
