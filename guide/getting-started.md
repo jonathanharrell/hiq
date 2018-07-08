@@ -14,7 +14,7 @@ Start using HiQ by using npm to install the package or use the Github repository
 **Use npm (recommended)**
 
 ```bash
-npm install hiq@beta
+npm install hiq
 ```
 
 **Download from the repository**
@@ -143,11 +143,11 @@ Take this button as an example:
 
 ```css
 button {
-  background-color: 
+  background-color:
     /* will use the button background color variable, if defined */
-    var(--hiq-button-background-color, 
+    var(--hiq-button-background-color,
       /* otherwise will use the primary color variable, if defined */
-      var(--hiq-color-primary, 
+      var(--hiq-color-primary,
         /* otherwise will fallback to a static color value */
         hsl(210, 100%, 50%)
       )
@@ -179,7 +179,7 @@ Note that if you do this, you will lose some of the benefits of custom propertie
 module.exports = {
     plugins: [
         // other plugins here
-        
+
         require('postcss-custom-properties')({
             preserve: true
         })

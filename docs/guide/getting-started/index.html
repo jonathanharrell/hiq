@@ -129,7 +129,7 @@
 
 <p><strong>Use npm (recommended)</strong></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install hiq@beta
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install hiq
 </code></pre></div></div>
 
 <p><strong>Download from the repository</strong></p>
@@ -247,11 +247,11 @@
 <p>Take this button as an example:</p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">button</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> 
+  <span class="nl">background-color</span><span class="p">:</span>
     <span class="c">/* will use the button background color variable, if defined */</span>
-    <span class="n">var</span><span class="p">(</span><span class="n">--hiq-button-background-color</span><span class="p">,</span> 
+    <span class="n">var</span><span class="p">(</span><span class="n">--hiq-button-background-color</span><span class="p">,</span>
       <span class="c">/* otherwise will use the primary color variable, if defined */</span>
-      <span class="n">var</span><span class="p">(</span><span class="n">--hiq-color-primary</span><span class="p">,</span> 
+      <span class="n">var</span><span class="p">(</span><span class="n">--hiq-color-primary</span><span class="p">,</span>
         <span class="c">/* otherwise will fallback to a static color value */</span>
         <span class="n">hsl</span><span class="p">(</span><span class="m">210</span><span class="p">,</span> <span class="m">100%</span><span class="p">,</span> <span class="m">50%</span><span class="p">)</span>
       <span class="p">)</span>
@@ -282,7 +282,7 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
         <span class="c1">// other plugins here</span>
-        
+
         <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-custom-properties'</span><span class="p">)({</span>
             <span class="na">preserve</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">})</span>
