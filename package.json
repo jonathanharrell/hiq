@@ -9,12 +9,8 @@
         "precommit": "npm run lint && npm run postcss && npm run minify && npm run docs-lint && npm run docs-postcss && npm run docs-minify",
         "postcss": "postcss pcss/hiq.pcss -o dist/hiq.css",
         "watch": "npm run lint && npm run postcss -- --watch",
-        "docs-lint": "stylelint assets/pcss/*.pcss",
-        "docs-minify": "minify assets/build/docs.css --output assets/build/docs.min.css",
-        "docs-postcss": "postcss assets/css/docs.pcss -o assets/build/docs.css",
-        "docs-watch": "npm run docs-lint && npm run docs-postcss -- --watch",
-        "docs-generate": "bundle exec jekyll serve",
-        "algolia-index": "bundle exec jekyll algolia push"
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
     },
     "repository": {
         "type": "git",
@@ -33,7 +29,8 @@
         "husky": "0.14.3",
         "minifier": "0.8.1",
         "stylelint": "8.2.0",
-        "stylelint-config-whq": "2.1.2"
+        "stylelint-config-whq": "2.1.2",
+        "vuepress": "0.10.2"
     },
     "stylelint": {
         "extends": "stylelint-config-whq",

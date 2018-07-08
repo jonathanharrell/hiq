@@ -1,14 +1,6 @@
 dist
-_gh_pages
-_algolia_api_key
 .vscode
 .idea
-
-
-### Jekyll ###
-_site/
-.sass-cache/
-.jekyll-metadata
 
 ### macOS ###
 *.DS_Store
@@ -96,7 +88,6 @@ typings/
 
 # dotenv environment variables file
 .env
-
 
 ### Windows ###
 # Windows thumbnail cache files

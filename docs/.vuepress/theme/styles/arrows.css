@@ -1,0 +1,29 @@
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.arrow.up {
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid var(--hiq-gray-light);
+  border-left: 4px solid transparent;
+}
+
+.arrow.down {
+  border-top: 6px solid var(--hiq-gray-light);
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.arrow.right {
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid var(--hiq-gray-light);
+}
+
+.arrow.left {
+  border-top: 4px solid transparent;
+  border-right: 6px solid var(--hiq-gray-light);
+  border-bottom: 4px solid transparent;
+}

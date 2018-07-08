@@ -1,0 +1,82 @@
+:root {
+  --pink: #f95faa;
+  --lavender: #9b80ff;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--hiq-gray-light);
+}
+
+.token.punctuation {
+  color: var(--hiq-gray-light);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: var(--pink);
+}
+
+.token.function-name {
+  color: var(--pink);
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: var(--pink);
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: var(--hiq-color-primary);
+}
+
+.token.selector,
+.token.important,
+.token.keyword,
+.token.builtin {
+  color: #2f6f9f;
+}
+
+.token.rule {
+  color: var(--hiq-color-primary);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: var(--lavender);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: var(--lavender);
+}
+
+.token.important,
+.token.bold {
+  font-weight: var(--hiq-font-weight-semibold);
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: var(--pink);
+}

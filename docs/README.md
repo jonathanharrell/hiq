@@ -1,79 +1,27 @@
-# HiQ
-A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss).
+---
+home: true
+heroImage: /hero.png
+actionText: Get Started →
+actionLink: /guide/
+footer: MIT Licensed | Copyright © 2017-present Jonathan Harrell
+---
 
-View the [documentation](https://jonathanharrell.github.io/hiq/).
+Jump-start your styling with a lightweight, easily customizable framework that is built with CSS custom properties and modern best practices.
 
-In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What we do need is a simple foundation on top of which to build our own styles. Enter HiQ.
-
-## Install
-
-Start using HiQ by using npm to install the package or use the Github repository to get the latest development version.
-
-```bash
-npm install hiq
-```
-
-## Usage
-
-### Basic
-
-Import the compiled minified version in your CSS:
-
-```css
-@import 'node_modules/hiq/dist/hiq.min.css';
-```
-
-### Advanced
-
-Import the source version and process your CSS using PostCSS. This will give you access to the utility mixins that HiQ provides. Note that source files use the `.pcss` file extension.
-
-```css
-@import 'node_modules/hiq/pcss/hiq.pcss';
-```
-
-To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
-
-```js
-module.exports = {
-    plugins: [
-        require('postcss-mixins'),
-        require('postcss-custom-selectors'),
-        require('postcss-custom-media')
-    ]
-};
-```
-
-For more information on using PostCSS, read the [PostCSS documentation](https://github.com/postcss/postcss#usage) usage section.
-
-## Theming
-
-HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](https://jonathanharrell.github.io/hiq/reference/custom-properties/), grab the properties you want to change, and include them in your project.
-
-These can be included anywhere, before or after HiQ!
-
-```css
-@import 'node_modules/hiq/dist/hiq.min.css';
-
-:root {
-  --hiq-button-border-color: lightgray;
-  --hiq-button-background-color: lightgray;
-  --hiq-button-text-color: black;
-}
-```
-
-If you want your custom property definitions to apply globally, you should define them on the root element using `:root`. Otherwise, you can scope them to whatever element you wish.
-
-For example, if you are creating a button variant, you could define the custom properties on a specific class:
-
-```css
-button.is-primary {
-  --hiq-button-border-color: blue;
-  --hiq-button-background-color: blue;
-  --hiq-button-text-color: white;
-}
-```
-
-## v1
-
-Looking for the old docs? Check out the v1 documentation [here](https://hiq.jonathan-harrell.com/).
-
+<div class="features">
+  <div class="feature">
+    <h2>Just what you need</h2>
+    <p>In the age of Flexbox, CSS grid, and other exciting layout features, there is less and less need for a bloated CSS framework. What you do need is a simple foundation on top of which to build your own styles. Enter HiQ.</p>
+    <a href="/guide" role="button">Read the guide</a>
+  </div>
+  <div class="feature">
+    <h2>Built progressively</h2>
+    <p>HiQ is built using PostCSS and takes advantage of exciting new CSS features, like custom properties. If you use the source version, you can use custom selectors and mixins to make styling even easier.</p>
+    <a href="/reference" role="button">See the reference</a>
+  </div>
+  <div class="feature">
+      <h2>Easy theming</h2>
+      <p>Drop HiQ into your project, alter some CSS variables, and you're ready to go. Let HiQ take care of basic button, input and other element styling so you can focus on what's important.</p>
+      <a href="/guide" role="button">Learn about theming</a>
+    </div>
+</div>

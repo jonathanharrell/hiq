@@ -1,0 +1,46 @@
+.custom-block .custom-block-title {
+  margin-bottom: -0.4rem;
+  font-weight: var(--hiq-font-weight-medium);
+}
+
+.custom-block.tip,
+.custom-block.warning,
+.custom-block.danger {
+  margin: 1rem 0;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+}
+
+.custom-block.tip {
+  border-color: var(--hiq-color-primary);
+  background-color: transparent;
+}
+
+.custom-block.warning {
+  border-color: var(--hiq-color-warning);
+  background-color: transparent;
+  color: var(--hiq-color-warning);
+}
+
+.custom-block.warning .custom-block-title {
+  color: var(--hiq-color-warning);
+}
+
+.custom-block.warning a {
+  color: var(--hiq-text-color);
+}
+
+.custom-block.danger {
+  border-color: var(--hiq-color-danger);
+  background-color: transparent;
+  color: var(--hiq-color-danger);
+}
+
+.custom-block.danger .custom-block-title {
+  color: var(--hiq-color-warning);
+}
+
+.custom-block.danger a {
+  color: var(--hiq-text-color);
+}
