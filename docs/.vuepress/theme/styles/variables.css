@@ -55,7 +55,7 @@
 
   /* unitless base font size variables in px */
   --hiq-unitless-min-font-size: 15;
-  --hiq-unitless-max-font-size: 17;
+  --hiq-unitless-max-font-size: 16;
 
   /* unitless viewport widths in px when min/max font sizes will apply */
   --hiq-unitless-lower-font-range: 460;
@@ -68,8 +68,8 @@
   /* font sizes */
   --hiq-font-size-1: 2.5rem;
   --hiq-font-size-2: 2rem;
-  --hiq-font-size-3: 1.5rem;
-  --hiq-font-size-4: 1.25rem;
+  --hiq-font-size-3: 1.75rem;
+  --hiq-font-size-4: 1.5rem;
   --hiq-font-size-5: 1rem;
   --hiq-font-size-6: 0.875rem;
   --hiq-font-size-base: var(--hiq-font-size-5);
@@ -93,7 +93,7 @@
   --hiq-description-list-title-font-weight: var(--hiq-font-weight-semibold);
 
   /* global text color */
-  --hiq-text-color: var(--hiq-gray-dark);
+  --hiq-text-color: var(--hiq-gray-darker);
 
   /* inline text elements */
   --hiq-mark-color: hsl(50, 81%, 94%);
@@ -195,7 +195,7 @@
   --hiq-table-caption-padding-vertical: 0.5rem;
   --hiq-table-caption-text-color: var(--hiq-gray-light);
   --hiq-table-caption-font-weight: var(--hiq-font-weight-semibold);
-  --hiq-table-cell-padding-vertical: 0.5rem;
+  --hiq-table-cell-padding-vertical: 0.75rem;
   --hiq-table-cell-padding-horizontal: 0.75rem;
   --hiq-table-cell-border-width: 1px;
   --hiq-table-cell-border-color: var(--hiq-gray-lighter);

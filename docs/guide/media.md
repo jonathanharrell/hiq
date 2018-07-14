@@ -8,22 +8,29 @@ Media elements, including `img`, `embed`, `object`, and `video` are made respons
 
 `img` elements are given a border-radius by default. This can be altered with `--hiq-image-border-radius`.
 
-<img src="" alt="Image alt text">
+![Image alt text](../assets/placeholder.svg)
 
-{% include properties-table.html category="images" %}
+<PropertiesTable category="images" />
 
 ## Figures
 
 Anytime you need to display a piece of content like an image with an optional caption, consider using a `<figure>`. Some baseline styles are provided for the HTML5 `<figure>` and `<figcaption>` elements.
 
-{% example html %}
+<CodeExample>
+<figure>
+    <img src="../assets/placeholder.svg" alt="Image alt text" />
+    <figcaption>Here is a caption for this image.</figcaption>
+</figure>
+</CodeExample>
+
+```html
 <figure>
     <img src="" alt="Image alt text">
     <figcaption>Here is a caption for this image.</figcaption>
 </figure>
-{% endexample %}
+```
 
-{% include properties-table.html category="figures" %}
+<PropertiesTable category="figures" />
 
 ## iFrames
 

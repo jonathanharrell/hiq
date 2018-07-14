@@ -3,6 +3,10 @@ div[class*="language-"] {
   margin: 1.5rem 0 2rem;
 }
 
+div[class*="language-"] + div[class*="language-"] {
+  margin-top: -1.25rem;
+}
+
 div[class*="language-"] .highlight-lines {
   position: absolute;
   top: 0;

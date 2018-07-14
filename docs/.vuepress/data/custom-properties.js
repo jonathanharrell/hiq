@@ -146,6 +146,7 @@ module.exports = [
         type: "color",
         category: "borders-outlines",
         description: "Sets the color of the outline that appears on interactable elements when focused.",
+        default: "hsl(210, 100%, 85%)"
     },
     {
         name: "--hiq-speed",
@@ -175,7 +176,7 @@ module.exports = [
         name: "--hiq-text-color",
         type: "color",
         category: "global-typography-settings",
-        description: "Sets the default color for all text in the document, including body copy and headings.",
+        description: "Sets the default color for all text in the document, including body copy and headings."
     },
     {
         name: "--hiq-font-family-base",
@@ -326,24 +327,28 @@ module.exports = [
         type: "color",
         category: "inline-text-elements",
         description: "Sets the background color for the mark element, which represents highlighted text.",
+        default: "hsl(50, 81%, 94%)",
     },
     {
         name: "--hiq-deleted-color",
         type: "color",
         category: "inline-text-elements",
         description: "Sets the background color for the del element, which represents a range of text that has been deleted for the document.",
+        default: "hsl(331, 93%, 67%)",
     },
     {
         name: "--hiq-inserted-color",
         type: "color",
         category: "inline-text-elements",
         description: "Sets the background color for the ins element, which represents a range of text that has been added to the document.",
+        default: "hsl(210, 100%, 95%)",
     },
     {
         name: "--hiq-selection-color",
         type: "color",
         category: "user-selection",
         description: "Sets the background color for a user selection within the document.",
+        default: "hsl(210, 100%, 90%)",
     },
     {
         name: "--hiq-list-margin-left",
@@ -1256,24 +1261,28 @@ module.exports = [
         type: "color",
         category: "meters",
         description: "Sets the background color of the meter element track.",
+        default: "var(--hiq-gray-lighter)"
     },
     {
         name: "--hiq-meter-strong-color",
         type: "color",
         category: "meters",
         description: "Sets the background color of the meter bar with an optimum value.",
+        default: "var(--hiq-color-success)"
     },
     {
         name: "--hiq-meter-good-color",
         type: "color",
         category: "meters",
         description: "Sets the background color of the meter bar with a sub-optimum value.",
+        default: "var(--hiq-color-warning)"
     },
     {
         name: "--hiq-meter-weak-color",
         type: "color",
         category: "meters",
         description: "Sets the background color of the meter bar with a weak value.",
+        default: "var(--hiq-color-danger)"
     },
     {
         name: "--hiq-progress-height",

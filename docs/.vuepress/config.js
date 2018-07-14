@@ -13,9 +13,6 @@ module.exports = {
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
     ],
     serviceWorker: true,
-    markdown: {
-        lineNumbers: true
-    },
     themeConfig: {
         repo: 'jonathanharrell/hiq',
         editLinks: true,
@@ -38,12 +35,13 @@ module.exports = {
             }
         ],
         sidebar: {
-            '/guide/': genSidebarConfig('Guide')
+            '/guide/': genGuideSidebarConfig('Guide'),
+            '/reference/': genReferenceSidebarConfig('Reference')
         }
     }
 }
 
-function genSidebarConfig (title) {
+function genGuideSidebarConfig (title) {
     return [
         {
             title,
@@ -59,6 +57,20 @@ function genSidebarConfig (title) {
                 'tables',
                 'forms-inputs',
                 'meters-progress'
+            ]
+        }
+    ]
+}
+
+function genReferenceSidebarConfig (title) {
+    return [
+        {
+            title,
+            collapsable: false,
+            children: [
+                '',
+                'utilities',
+                'browser-bugs'
             ]
         }
     ]

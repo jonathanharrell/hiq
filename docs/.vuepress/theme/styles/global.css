@@ -7,8 +7,13 @@ h1 {
   font-weight: var(--hiq-font-weight-light);
 }
 
+h2 {
+  font-size: var(--hiq-font-size-3);
+  font-weight: var(--hiq-font-weight-semibold);
+}
+
 h3 {
-  font-weight: var(--hiq-font-weight-bold);
+  font-size: var(--hiq-font-size-4);
 }
 
 p a code {
@@ -16,23 +21,10 @@ p a code {
   color: var(--hiq-color-primary);
 }
 
-blockquote {
-  margin-left: 0;
-  padding-left: 1rem;
-  border-left: .25rem solid var(--hiq-gray-lighter);
-  font-size: var(--hiq-font-size-large);
-  color: var(--hiq-gray-light);
-}
-
-ul,
-ol {
-  padding-left: 1.2em;
-}
-
 .wrapper {
   max-width: var(--hiq-max-container-width);
   margin: 0 auto;
-  padding: 2rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   @media (max-width: 959px) {
     padding: 2rem;
   }

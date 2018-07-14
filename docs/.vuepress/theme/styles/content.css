@@ -20,7 +20,7 @@
 .content:not(.custom) > h4,
 .content:not(.custom) > h5,
 .content:not(.custom) > h6 {
-  margin-top: calc(0.5rem - var(--navbar-height));
+  margin-top: calc(0.75rem - var(--navbar-height));
   padding-top: calc(var(--navbar-height) + 1rem);
 }
 
@@ -34,9 +34,6 @@
   margin-bottom: 1rem;
 }
 
-.content:not(.custom) > h1:first-child + p,
-.content:not(.custom) > h1:first-child + pre,
-.content:not(.custom) > h1:first-child + .custom-block,
 .content:not(.custom) > h2:first-child + p,
 .content:not(.custom) > h2:first-child + pre,
 .content:not(.custom) > h2:first-child + .custom-block,
@@ -88,6 +85,31 @@ h4:hover .header-anchor,
 h5:hover .header-anchor,
 h6:hover .header-anchor {
   opacity: 1;
+}
+
+.content figure {
+  margin: 2rem 0 3rem;
+}
+
+.content figure img {
+  margin: 0 auto;
+}
+
+.content table {
+  margin-bottom: 0;
+}
+
+.content ul,
+.content ol {
+  padding-left: 1.2em;
+}
+
+.content table td {
+  vertical-align: middle;
+}
+
+.content table p {
+  margin-bottom: 0;
 }
 
 @media (max-width: 959px) {

@@ -6,7 +6,7 @@
     "scripts": {
         "lint": "stylelint pcss/*.pcss",
         "minify": "minify dist/hiq.css --output dist/hiq.min.css",
-        "precommit": "npm run lint && npm run postcss && npm run minify && npm run docs-lint && npm run docs-postcss && npm run docs-minify",
+        "precommit": "npm run lint && npm run postcss && npm run minify",
         "postcss": "postcss pcss/hiq.pcss -o dist/hiq.css",
         "watch": "npm run lint && npm run postcss -- --watch",
         "docs:dev": "vuepress dev docs",

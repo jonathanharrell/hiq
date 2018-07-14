@@ -1,30 +1,38 @@
 .custom-block .custom-block-title {
-  margin-bottom: -0.4rem;
+  margin-bottom: 0.25rem;
   font-weight: var(--hiq-font-weight-medium);
+}
+
+.custom-block p {
+  margin-bottom: 0;
 }
 
 .custom-block.tip,
 .custom-block.warning,
 .custom-block.danger {
-  margin: 1rem 0;
-  padding: 0.1rem 1.5rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.5rem;
   border-left-width: 0.5rem;
   border-left-style: solid;
 }
 
 .custom-block.tip {
   border-color: var(--hiq-color-primary);
-  background-color: transparent;
+  background-color: hsla(210, 100%, 50%, 0.25);
+}
+
+.custom-block.tip code {
+  background-color: hsla(210, 100%, 50%, 0.15);
 }
 
 .custom-block.warning {
   border-color: var(--hiq-color-warning);
-  background-color: transparent;
-  color: var(--hiq-color-warning);
+  background-color: hsla(46, 97%, 65%, 0.25);
+  color: hsl(46, 97%, 25%);
 }
 
 .custom-block.warning .custom-block-title {
-  color: var(--hiq-color-warning);
+  color: hsl(46, 97%, 40%);
 }
 
 .custom-block.warning a {
@@ -33,12 +41,12 @@
 
 .custom-block.danger {
   border-color: var(--hiq-color-danger);
-  background-color: transparent;
-  color: var(--hiq-color-danger);
+  background-color: hsla(352, 95%, 61%, 0.25);;
+  color: hsl(352, 95%, 25%);
 }
 
 .custom-block.danger .custom-block-title {
-  color: var(--hiq-color-warning);
+  color: hsl(352, 95%, 40%);
 }
 
 .custom-block.danger a {

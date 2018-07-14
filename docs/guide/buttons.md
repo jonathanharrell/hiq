@@ -11,14 +11,24 @@ Button styling is automatically applied to any elements matching the following s
 
 In order to use an `a` element as a button, use `role="button"` to convey their purpose to screen readers and other assistive technologies.
 
-{% example html %}
+<CodeExample>
 <button>Button</button>
 <button type="button">Button</button>
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 <a role="button">Link as button</a>
 <button type="button" disabled>Disabled</button>
-{% endexample %}
+
+</CodeExample>
+
+```html
+<button>Button</button>
+<button type="button">Button</button>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<a role="button">Link as button</a>
+<button type="button" disabled>Disabled</button>
+```
 
 You can also style any element like a button by using the button mixin, if you are using the HiQ source files with PostCSS.
 
@@ -32,7 +42,7 @@ span {
 
 Button styling can be customized through a number of custom properties targeted to each interaction state.
 
-{% include properties-table.html category="buttons" %}
+<PropertiesTable category="buttons" />
 
 ## Customization
 
@@ -46,7 +56,9 @@ button.is-primary {
 }
 ```
 
+::: warning
 Note that this will only work with browsers that fully support custom properties. If you need to support older browsers, you will probably want to create button variants with new custom properties or simple overrides.
+:::
 
 ```css
 /*

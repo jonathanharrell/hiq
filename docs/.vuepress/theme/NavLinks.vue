@@ -17,6 +17,7 @@
             {{ repoLabel }}
             <OutboundLink />
         </a>
+        <span class="version-number">v2.0</span>
     </nav>
 </template>
 
@@ -133,6 +134,11 @@
 
     .nav-links .repo-link {
         margin-left: 1.5rem;
+    }
+
+    .version-number {
+        margin-left: 1rem;
+        font-weight: var(--hiq-font-weight-medium);
     }
 
     @media (min-width: 719px) {
