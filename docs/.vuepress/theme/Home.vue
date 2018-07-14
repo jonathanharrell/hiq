@@ -65,10 +65,15 @@
         margin: 1.8rem auto;
     }
 
+    .home .hero h1 {
+        font-weight: var(--hiq-font-weight-medium);
+    }
+
     .home .hero .description {
         max-width: 35rem;
-        font-size: 1.6rem;
+        font-size: var(--hiq-font-size-large);
         line-height: 1.3;
+        color: var(--hiq-gray-light);
     }
 
     .home .hero .action-button {

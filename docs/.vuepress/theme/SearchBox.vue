@@ -175,7 +175,7 @@
 
     .search-box .suggestions {
         position: absolute;
-        top: 1.5rem;
+        top: 2.75rem;
         width: 20rem;
         padding: 0.4rem;
         border: 1px solid var(--hiq-gray-lighter);
@@ -211,7 +211,7 @@
         font-weight: var(--hiq-font-weight-semibold);
     }
 
-    .search-box .suggestion a .page-title .header {
+    .search-box .suggestion a .page-title + .header {
         margin-left: 0.25rem;
         font-size: var(--hiq-font-size-small);
     }
