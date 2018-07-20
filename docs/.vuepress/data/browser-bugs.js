@@ -25,7 +25,7 @@ module.exports = [
         browsers: "Edge, IE",
     },
     {
-        description: "The meter element is currently not supported in Edge or Internet Explorer.",
+        description: "The meter element is currently not supported in Internet Explorer.",
         category: "meters",
         browsers: "Edge, IE",
     },

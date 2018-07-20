@@ -17,8 +17,8 @@
             </div>
         </div>
         <Content custom />
-        <div class="footer" v-if="data.footer">
-            {{ data.footer }}
+        <div class="footer">
+            MIT Licensed | Copyright © 2017-present <a href="https://www.twitter.com/HarrellofDurham">Jonathan Harrell</a>
         </div>
     </div>
 </template>
@@ -79,7 +79,7 @@
     .home .hero .action-button {
         display: inline-block;
         height: auto;
-        padding: 0.8rem 1.6rem;
+        padding: 0.75rem 1.5rem;
         font-size: var(--hiq-font-size-large);
     }
 
@@ -90,7 +90,7 @@
         align-content: stretch;
         justify-content: space-between;
         margin-top: 2.5rem;
-        padding: 1.2rem 0;
+        padding: 2.5rem 0 1rem;
         border-top: 1px solid var(--hiq-gray-lighter);
     }
 
@@ -98,9 +98,11 @@
         flex-grow: 1;
         flex-basis: 30%;
         max-width: 30%;
+        margin-bottom: 0.5rem;
     }
 
     .home .feature h2 {
+        margin-bottom: 0.5rem;
         border-bottom: 0;
         font-size: var(--hiq-font-size-4);
         font-weight: var(--hiq-font-weight-medium);
@@ -115,6 +117,14 @@
         border-top: 1px solid var(--hiq-gray-lighter);
         text-align: center;
         color: var(--hiq-gray-light);
+    }
+
+    .home .footer a {
+        color: var(--hiq-gray-light);
+    }
+
+    .home .footer a:hover {
+        color: var(--hiq-gray);
     }
 
     @media (max-width: 719px) {

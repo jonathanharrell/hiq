@@ -6,7 +6,7 @@
 
 <style>
     .code-example {
-        margin-top: 1.5rem;
+        margin: 1.5rem 0;
         padding: var(--hiq-pre-padding-vertical) var(--hiq-pre-padding-horizontal);
         border: 1px solid var(--hiq-pre-border-color);
         border-radius: var(--hiq-pre-border-radius);
@@ -38,7 +38,19 @@
     .code-example blockquote,
     .code-example details,
     .code-example fieldset,
-    .code-example figure {
+    .code-example figure,
+    .code-example pre,
+    .code-example table {
         margin: 0;
+    }
+
+    @media (max-width: 419px) {
+        .code-example {
+            margin-right: -1.5rem;
+            margin-left: -1.5rem;
+            border-right: 0;
+            border-left: 0;
+            border-radius: 0;
+        }
     }
 </style>

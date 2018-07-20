@@ -153,4 +153,10 @@
             border-bottom: 2px solid var(--hiq-color-primary);
         }
     }
+
+    @media (max-width: 719px) {
+        .version-number {
+            display: none;
+        }
+    }
 </style>

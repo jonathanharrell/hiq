@@ -44,3 +44,34 @@ p a code {
 .theme-container.no-navbar .custom-layout {
   padding-top: 0;
 }
+
+.properties-table {
+  margin: 1.5rem 0 2rem;
+}
+
+.color-swatch {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--hiq-gray-lighter);
+}
+
+.input-table code {
+  white-space: pre-wrap;
+}
+
+.input-table input {
+  max-width: 100%;
+}
+
+@media (max-width: 959px) {
+  .properties-table .name,
+  .utilities-table .name {
+    width: 40%;
+  }
+
+  .properties-table .name code,
+  .utilities-table .name code {
+    white-space: unset;
+  }
+}

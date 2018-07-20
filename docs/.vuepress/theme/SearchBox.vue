@@ -161,7 +161,7 @@
         background: white url(./search.svg) 0.6rem 0.5rem no-repeat;
         background-size: 1rem;
         outline: none;
-        font-size: 0.95rem;
+        font-size: 16px;
         line-height: 2rem;
         color: var(--hiq-gray-light);
         transition: all 0.2s ease;

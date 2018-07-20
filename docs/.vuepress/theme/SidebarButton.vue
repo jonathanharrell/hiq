@@ -10,10 +10,10 @@
     .sidebar-button {
         display: none;
         position: absolute;
-        top: 0.5rem;
+        top: 0.75rem;
         left: 1rem;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
         padding: 0.5rem;
     }
 

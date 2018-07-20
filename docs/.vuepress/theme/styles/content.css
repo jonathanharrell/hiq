@@ -95,10 +95,6 @@ h6:hover .header-anchor {
   margin: 0 auto;
 }
 
-.content table {
-  margin-bottom: 0;
-}
-
 .content ul,
 .content ol {
   padding-left: 1.2em;

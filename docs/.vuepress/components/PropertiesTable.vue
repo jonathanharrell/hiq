@@ -36,26 +36,3 @@
         }
     }
 </script>
-
-<style>
-    .properties-table {
-        margin: 1.5rem 0 2rem;
-    }
-
-    .color-swatch {
-        display: block;
-        width: 1.5rem;
-        height: 1.5rem;
-        border: 1px solid var(--hiq-gray-lighter);
-    }
-
-    @media (max-width: 959px) {
-        .name {
-            width: 40%;
-        }
-
-        .name code {
-            white-space: unset;
-        }
-    }
-</style>

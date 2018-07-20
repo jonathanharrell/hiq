@@ -94,7 +94,7 @@ Border color on inputs with a `required` attribute is changed based on their val
 
 Styling for textual inputs:
 
-<table>
+<table class="input-table">
   <thead>
     <tr>
       <th>Element</th>
@@ -163,7 +163,7 @@ Styling for textual inputs:
 
 Styling for date- and time-based inputs:
 
-<table>
+<table class="input-table">
   <thead>
     <tr>
       <th>Element</th>

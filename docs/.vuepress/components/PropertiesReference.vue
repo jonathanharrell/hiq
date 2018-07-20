@@ -56,7 +56,7 @@
 
 <style>
     .properties-reference {
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .properties-reference p {
