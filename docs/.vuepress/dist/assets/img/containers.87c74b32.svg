@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="576px" height="344px" viewBox="0 0 576 344" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy-2" transform="translate(-225.000000, -760.000000)">
+            <g id="containers" transform="translate(225.000000, 760.000000)">
+                <g id="container">
+                    <rect id="Rectangle-2" stroke="#DBDBDB" x="0.5" y="0.5" width="575" height="329" rx="4"></rect>
+                    <rect id="Rectangle-2" stroke="#DBDBDB" x="52.5" y="48.5" width="470" height="233"></rect>
+                    <rect id="Rectangle-Copy-2" fill="#F0F0F0" x="179" y="317" width="219" height="27"></rect>
+                    <text id="—-hiq-max-container-" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" letter-spacing="-0.300000012" fill="#0080FF">
+                        <tspan x="186" y="332">—-hiq-max-container-width</tspan>
+                    </text>
+                    <path d="M52,299 L522.502391,299" id="Line" stroke="#0080FF" stroke-linecap="square"></path>
+                    <path id="Line-decoration-1" d="M52,296 L52,302" stroke="#0080FF" stroke-linecap="square"></path>
+                    <path id="Line-decoration-2" d="M522.502391,296 L522.502391,302" stroke="#0080FF" stroke-linecap="square"></path>
+                    <rect id="Rectangle-Copy-9" fill="#F0F0F0" x="82" y="49" width="412" height="232"></rect>
+                    <path d="M53,48.5 L81.5995955,48.5" id="Line" stroke="#0080FF" stroke-linecap="square"></path>
+                    <path id="Line-decoration-1" d="M53,45.5 L53,51.5" stroke="#0080FF" stroke-linecap="square"></path>
+                    <path id="Line-decoration-2" d="M81.5995955,45.5 L81.5995955,51.5" stroke="#0080FF" stroke-linecap="square"></path>
+                    <rect id="Rectangle-Copy-7" fill="#F0F0F0" x="52" y="11" width="261" height="27"></rect>
+                </g>
+                <text id="—-hiq-container-hori" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" letter-spacing="-0.300000012" fill="#0080FF">
+                    <tspan x="61" y="28">—-hiq-container-horizontal-ga</tspan>
+                    <tspan x="296.732617" y="28">p</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

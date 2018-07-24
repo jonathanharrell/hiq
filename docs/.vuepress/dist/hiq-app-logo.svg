@@ -1,0 +1,36 @@
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="0" y="0" width="132" height="132" rx="20"></rect>
+        <filter x="-7.6%" y="-6.1%" width="115.2%" height="115.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="77.0953668%" y1="89.8439464%" x2="77.0953655%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#0074FF" offset="0%"></stop>
+            <stop stop-color="#44C8F5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M45.3555556,90.0800977 C20.6973603,90.0800977 0.711111111,70.0724212 0.711111111,45.3956044 C0.711111111,20.7187875 20.6973603,0.711111111 45.3555556,0.711111111 C70.0137508,0.711111111 90,20.7187875 90,45.3956044 C90,70.0724212 70.0137508,90.0800977 45.3555556,90.0800977 Z M45.2888889,73.2888889 C60.7512327,73.2888889 73.2888889,60.754487 73.2888889,45.2888889 C73.2888889,29.8232908 60.7512327,17.2888889 45.2888889,17.2888889 C29.8265451,17.2888889 17.2888889,29.8232908 17.2888889,45.2888889 C17.2888889,60.754487 29.8265451,73.2888889 45.2888889,73.2888889 Z" id="path-4"></path>
+        <filter x="-35.3%" y="-51.9%" width="170.6%" height="203.9%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hiq-logo" transform="translate(6.000000, 4.000000)">
+            <g id="container">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="logo" transform="translate(21.000000, 22.000000)">
+                <g id="circle-with-shadow">
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <use id="circle" fill="url(#linearGradient-3)" fill-rule="nonzero" xlink:href="#path-4"></use>
+                    <polygon id="shadow" fill-opacity="0.5" fill="#000000" filter="url(#filter-6)" mask="url(#mask-5)" points="33.9777778 55.3406593 50.3777778 55.3406593 85 90 68.6 90"></polygon>
+                </g>
+                <polygon id="tail" fill="#44C8F5" points="38.9777778 55.3406593 59.3777778 55.3406593 90 90 69.6 90"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
