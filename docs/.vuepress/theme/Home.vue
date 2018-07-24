@@ -70,7 +70,7 @@
     }
 
     .home .hero .description {
-        max-width: 35rem;
+        max-width: 30rem;
         font-size: var(--hiq-font-size-large);
         line-height: 1.3;
         color: var(--hiq-gray-light);

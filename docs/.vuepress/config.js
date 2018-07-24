@@ -9,6 +9,8 @@ module.exports = {
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
         ['link', { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' }],
+        ['link', { rel: 'icon', type: 'image/png', size: '32x32', href: '/icons/favicon-32x32.png' }],
+        ['link', { rel: 'icon', type: 'image/png', size: '16x16', href: '/icons/favicon-16x16.png' }],
         ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
         ['meta', { name: 'msapplication-TileImage', content: '/icons/mstile-150x150.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
@@ -31,10 +33,10 @@ module.exports = {
                 text: 'Reference',
                 link: '/reference/'
             },
-            {
-                text: 'Theme Builder',
-                link: '/theme-builder/'
-            }
+            // {
+            //     text: 'Theme Builder',
+            //     link: '/theme-builder/'
+            // }
         ],
         sidebar: {
             '/guide/': genGuideSidebarConfig('Guide'),
