@@ -1,21 +1,14 @@
 /* button variant mixin */
 @define-mixin button-variant $bg-color, $interactive-color, $text-color {
-  /* static colors */
   --hiq-button-border-color: $bg-color;
   --hiq-button-background-color: $bg-color;
   --hiq-button-text-color: $text-color;
-
-  /* hover colors */
   --hiq-button-hover-border-color: $interactive-color;
   --hiq-button-hover-background-color: $interactive-color;
   --hiq-button-hover-text-color: $text-color;
-
-  /* focus colors */
   --hiq-button-focus-border-color: $interactive-color;
   --hiq-button-focus-background-color: $interactive-color;
   --hiq-button-focus-text-color: $text-color;
-
-  /* active colors */
   --hiq-button-active-border-color: $interactive-color;
   --hiq-button-active-background-color: $interactive-color;
   --hiq-button-active-text-color: $text-color;
