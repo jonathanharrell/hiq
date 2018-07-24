@@ -43,7 +43,7 @@ module.exports = {
 You may also want to include the following optional plugins (also installed with HiQ):
 
 ```js
-require('postcss-easy-import'),
+require('postcss-easy-import')({ extensions: '.pcss' }),
 require('postcss-nesting'),
 require('autoprefixer'),
 require('postcss-discard-comments')

@@ -85,3 +85,25 @@ button.is-primary {
   color: white;
 }
 ```
+
+## Variant Mixin
+
+HiQ provides a mixin to make it easier to create button variants. You can pass a few colors to the mixin and a button variant will be generated with scoped variables. Note the mixin will only let you define one background color for hover, focus, and active states, and one text color for all states. If you need more specificity, just define the variables manually.
+
+```css
+@mixin button-variant $bg-color, $interactive-color, $text-color;
+```
+
+Argument | Description
+--- | ---
+`bg-color` | Defines the button's background color.
+`interactive-color` | Defines the background color when the button is hovered, focused, or active.
+`text-color` | Defines the button's text color in all states.
+
+Example usage:
+
+```css
+div {
+  @mixin button-variant blue, navy, white;
+}
+```
