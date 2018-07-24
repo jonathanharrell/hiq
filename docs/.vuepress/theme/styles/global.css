@@ -64,6 +64,12 @@ p a code {
   max-width: 100%;
 }
 
+@supports (color: var(--hiq-color-primary)) {
+  .browser-not-supported {
+    display: none;
+  }
+}
+
 @media (max-width: 959px) {
   .properties-table .name,
   .utilities-table .name {

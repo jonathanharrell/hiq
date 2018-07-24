@@ -1,5 +1,8 @@
 <template>
     <div class="home">
+        <div class="warning custom-block browser-not-supported">
+            <p class="custom-block-title">WARNING</p><p>Your browser does not support custom properties, which are required for this page to display correctly.</p>
+        </div>
         <div class="hero">
             <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
             <h1>{{ data.heroText || $title || 'Hello' }}</h1>
