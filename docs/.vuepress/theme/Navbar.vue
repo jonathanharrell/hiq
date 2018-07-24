@@ -73,8 +73,8 @@
     }
 
     .navbar .logo {
-        min-width: calc(var(--navbar-height) - 1rem);
-        height: calc(var(--navbar-height) - 1rem);
+        min-width: 2.6rem;
+        height: 2.6rem;
         margin-right: 0.8rem;
         vertical-align: top;
     }
