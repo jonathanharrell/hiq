@@ -15,6 +15,7 @@ module.exports = {
         ['meta', { name: 'msapplication-TileImage', content: '/icons/mstile-150x150.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
     ],
+    base: '/hiq/',
     ga: 'UA-106163304-3',
     serviceWorker: true,
     themeConfig: {
