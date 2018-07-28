@@ -128,12 +128,12 @@
     .nav-links .nav-item {
         display: inline-block;
         position: relative;
-        margin-left: 1.5rem;
+        margin-left: 1.125rem;
         line-height: 2rem;
     }
 
     .nav-links .repo-link {
-        margin-left: 1.5rem;
+        margin-left: 1.125rem;
     }
 
     .version-number {
