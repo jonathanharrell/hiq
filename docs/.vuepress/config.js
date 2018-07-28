@@ -34,10 +34,10 @@ module.exports = {
                 text: 'Reference',
                 link: '/reference/'
             },
-            // {
-            //     text: 'Theme Builder',
-            //     link: '/theme-builder/'
-            // }
+            {
+                text: 'Theme Builder',
+                link: 'https://hiq.jonathan-harrell.com/'
+            }
         ],
         sidebar: {
             '/guide/': genGuideSidebarConfig('Guide'),
