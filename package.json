@@ -56,6 +56,6 @@
         "postcss-discard-comments": "2.0.4",
         "postcss-easy-import": "3.0.0",
         "postcss-mixins": "6.2.0",
-        "postcss-nesting": "4.2.1"
+        "postcss-nested": "3.0.0"
     }
 }

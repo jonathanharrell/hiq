@@ -44,7 +44,7 @@ You may also want to include the following optional plugins (also installed with
 
 ```js
 require('postcss-easy-import')({ extensions: '.pcss' }),
-require('postcss-nesting'),
+require('postcss-nested'),
 require('autoprefixer'),
 require('postcss-discard-comments')
 ```
@@ -64,7 +64,6 @@ If you go with this approach, we recommend importing at least the base styles fi
 
 ```css
 @import 'node_modules/hiq/pcss/utility/*.pcss';
-
 @import 'node_modules/hiq/pcss/base/*.pcss';
 @import 'node_modules/hiq/pcss/typography/*.pcss';
 
@@ -74,7 +73,7 @@ If you go with this approach, we recommend importing at least the base styles fi
 ## Theming
 
 
-HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference), grab the properties you want to change, and include them in your project.
+HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference/), grab the properties you want to change, and include them in your project.
 
 These can be included anywhere, before or after HiQ!
 
