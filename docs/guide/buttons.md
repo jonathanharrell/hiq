@@ -8,8 +8,9 @@ Button styling is automatically applied to any elements matching the following s
 * `[type='button']`
 * `[type='submit']`
 * `[type='reset']`
+* `.button`
 
-In order to use an `a` element as a button, use `role="button"` to convey their purpose to screen readers and other assistive technologies.
+In order to use an `a` element as a button, use `role="button"` to convey their purpose to screen readers and other assistive technologies. If you want to apply button styling to an `a` element, but retain the semantics of the anchor tag, use the `.button` class instead.
 
 <CodeExample>
 <button>Button</button>
@@ -17,6 +18,7 @@ In order to use an `a` element as a button, use `role="button"` to convey their 
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 <a role="button">Link as button</a>
+<a class="button">Link with button styling</a>
 <button type="button" disabled>Disabled</button>
 
 </CodeExample>
@@ -27,6 +29,7 @@ In order to use an `a` element as a button, use `role="button"` to convey their 
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 <a role="button">Link as button</a>
+<a class="button">Link with button styling</a>
 <button type="button" disabled>Disabled</button>
 ```
 
