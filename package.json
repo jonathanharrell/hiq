@@ -29,8 +29,8 @@
         "husky": "0.14.3",
         "minifier": "0.8.1",
         "stylelint": "8.2.0",
-        "stylelint-config-whq": "2.1.2",
-        "vuepress": "0.10.2"
+        "stylelint-config-whq": "2.3.0",
+        "vuepress": "0.14.4"
     },
     "stylelint": {
         "extends": "stylelint-config-whq",
