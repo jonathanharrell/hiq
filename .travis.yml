@@ -3,10 +3,11 @@ language: node_js
 node_js:
   - "9"
 
-jobs:
-  include:
-    - stage: build
-      script: ./scripts/build
+cache:
+  directories:
+    - node_modules
+
+script: ./scripts/build.sh
 
 deploy:
   provider: pages
