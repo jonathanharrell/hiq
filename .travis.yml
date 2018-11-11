@@ -3,13 +3,16 @@ language: node_js
 node_js:
   - "9"
 
-cache:
-  directories:
-    - ~/dist
-
 jobs:
   include:
     - stage: build
-      script: ./scripts/build.sh
-    - stage: deploy-docs
-      script: ./scripts/deploy-docs.sh
+      script: ./scripts/build
+
+deploy:
+  provider: pages
+  local-dir: ./docs/.vuepress/dist
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
