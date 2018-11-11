@@ -23,12 +23,12 @@ jobs:
         on:
           branch: master
     - stage: release
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
+      script:
           - npm run postcss
           - npm run minify
           - npm run semantic-release
+      deploy:
+        provider: script
+        skip_cleanup: true
         on:
           branch: master
