@@ -1,6 +1,12 @@
 language: node_js
+
 node_js:
   - "9"
+
+cache:
+  directories:
+    - ~/dist
+
 jobs:
   include:
     - stage: build
