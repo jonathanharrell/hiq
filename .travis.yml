@@ -7,11 +7,13 @@ cache:
   directories:
     - node_modules
 
-script: ./scripts/build.sh
-
 jobs:
   include:
     - stage: deploy-docs
+      script:
+        - npm run postcss
+        - npm run minify
+        - npm run docs:build
       deploy:
         provider: pages
         local-dir: ./docs/.vuepress/dist
@@ -25,6 +27,8 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
+          - npm run postcss
+          - npm run minify
           - npm run semantic-release
         on:
           branch: master
