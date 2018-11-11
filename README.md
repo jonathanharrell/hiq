@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.com/jonathanharrell/hiq.svg?branch=master)
+
 # HiQ
 A simple CSS foundation with responsive typography and input styling, built with [PostCSS](https://github.com/postcss/postcss).
 

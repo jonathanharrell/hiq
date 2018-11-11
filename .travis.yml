@@ -7,13 +7,24 @@ cache:
   directories:
     - node_modules
 
-script: ./scripts/build.sh
-
-deploy:
-  provider: pages
-  local-dir: ./docs/.vuepress/dist
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: build
+      script: ./scripts/build.sh
+    - stage: deploy-docs
+      deploy:
+        provider: pages
+        local-dir: ./docs/.vuepress/dist
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        keep-history: true
+        on:
+          branch: master
+    - stage: release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npm run semantic-release
+        on:
+          branch: master
