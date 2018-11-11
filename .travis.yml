@@ -11,7 +11,9 @@ jobs:
   include:
     - stage: build
       script: ./scripts/build.sh
-    - stage: deploy-docs
+    - stage: docs
+      script:
+        - npm run docs:build
       deploy:
         provider: pages
         local-dir: ./docs/.vuepress/dist
