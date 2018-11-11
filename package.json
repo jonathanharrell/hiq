@@ -29,7 +29,6 @@
     "lint": "stylelint pcss/*.pcss",
     "minify": "minify dist/hiq.css --output dist/hiq.min.css",
     "postcss": "postcss pcss/hiq.pcss -o dist/hiq.css",
-    "test": "",
     "watch": "npm run lint && npm run postcss -- --watch",
     "semantic-release": "semantic-release"
   },
