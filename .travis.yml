@@ -4,6 +4,6 @@ node_js:
 jobs:
   include:
     - stage: build
-      script: ./scripts/build
+      script: ./scripts/build.sh
     - stage: deploy-docs
-      script: ./scripts/deploy-docs
+      script: ./scripts/deploy-docs.sh
