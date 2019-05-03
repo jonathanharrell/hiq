@@ -17,15 +17,23 @@ figure {
 }
 
 figcaption {
-  margin-top: var(--hiq-figcaption-margin-top, 0.5rem);
-  font-weight: var(--hiq-figcaption-font-weight, var(--hiq-font-weight-normal, 400));
-  color: var(--hiq-figcaption-text-color, var(--hiq-gray-light, hsl(0, 0%, 60%)));
+  /* scoped properties */
+  --figcaption-margin-top: var(--hiq-figcaption-margin-top, 0.5rem);
+  --figcaption-font-weight: var(--hiq-figcaption-font-weight, var(--hiq-font-weight-normal, 400));
+  --figcaption-text-color: var(--hiq-figcaption-text-color, var(--hiq-gray-light, hsl(0, 0%, 60%)));
+
+  margin-top: var(--figcaption-margin-top);
+  font-weight: var(--figcaption-font-weight);
+  color: var(--figcaption-text-color);
 }
 
 img {
+  /* scoped property */
+  --image-border-radius: var(--hiq-image-border-radius, var(--hiq-border-radius, 0.2rem));
+
   display: block;
   border-style: none;
-  border-radius: var(--hiq-image-border-radius, var(--hiq-border-radius, 0.2rem));
+  border-radius: var(--image-border-radius);
   vertical-align: middle;
 }
 

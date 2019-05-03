@@ -5,10 +5,12 @@ input[type='file'] {
   font-size: inherit;
   line-height: inherit;
   cursor: pointer;
+
   &:focus {
     box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
     outline: 0;
   }
+
   &:disabled,
   &[aria-disabled] {
     cursor: not-allowed;

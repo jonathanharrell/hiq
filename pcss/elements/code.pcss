@@ -7,20 +7,31 @@
   samp;
 
 :--code-element {
+  /* scoped property */
+  --code-font-size: var(--hiq-code-font-size, var(--hiq-font-size-small, var(--hiq-font-size-6, 0.875rem)));
+
   font-family: var(--hiq-font-family-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace);
-  font-size: var(--hiq-code-font-size, var(--hiq-font-size-small, var(--hiq-font-size-6, 0.875rem)));
+  font-size: var(--code-font-size);
 }
 
 code {
-  padding: var(--hiq-code-padding-vertical, 0.2rem) var(--hiq-code-padding-horizontal, 0.4rem);
-  border-radius: var(--hiq-code-border-radius, var(--hiq-border-radius, 0.2rem));
-  background-color: var(--hiq-code-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+  /* scoped properties */
+  --code-padding-vertical: var(--hiq-code-padding-vertical, 0.2rem);
+  --code-padding-horizontal: var(--hiq-code-padding-horizontal, 0.4rem);
+  --code-border-color: var(--hiq-code-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));;
+  --code-border-radius: var(--hiq-code-border-radius, var(--hiq-border-radius, 0.2rem));
+  --code-background-color: var(--hiq-code-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+  --code-text-color: var(--hiq-code-text-color, var(--hiq-text-color, var(--hiq-gray-dark, hsl(220, 10%, 20%))));
+
+  padding: var(--code-padding-vertical) var(--code-padding-horizontal);
+  border-radius: var(--code-border-radius);
+  background-color: var(--code-background-color);
   white-space: pre;
-  color: var(--hiq-code-text-color, var(--hiq-text-color, var(--hiq-gray-dark, hsl(220, 10%, 20%))));
+  color: var(--code-text-color);
 }
 
 *:not(pre) > code {
-  border: 1px solid var(--hiq-code-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  border: 1px solid var(--code-border-color);
 }
 
 /* inherit styles from `a` element if code is within */
@@ -32,33 +43,53 @@ a code {
 }
 
 kbd {
-  padding: var(--hiq-kbd-padding-vertical, 0.2rem) var(--hiq-kbd-padding-horizontal, 0.4rem);
-  border: 1px solid var(--hiq-kbd-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
-  border-radius: var(--hiq-kbd-border-radius, 0.2rem);
-  background-color: var(--hiq-kbd-background-color, transparent);
-  color: var(--hiq-kbd-text-color, var(--hiq-text-color, var(--hiq-gray-dark, hsl(220, 10%, 20%))));
+  /* scoped properties */
+  --kbd-padding-vertical: var(--hiq-kbd-padding-vertical, 0.2rem);
+  --kbd-padding-horizontal: var(--hiq-kbd-padding-horizontal, 0.4rem);
+  --kbd-border-color: var(--hiq-kbd-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  --kbd-border-radius: var(--hiq-kbd-border-radius, 0.2rem);
+  --kbd-background-color: var(--hiq-kbd-background-color, transparent);
+  --kbd-text-color: var(--hiq-kbd-text-color, var(--hiq-text-color, var(--hiq-gray-dark, hsl(220, 10%, 20%))));
+  --nested-kbd-font-weight: var(--hiq-nested-kbd-font-weight, var(--hiq-font-weight-medium, 600));
+
+  padding: var(--kbd-padding-vertical) var(--kbd-padding-horizontal);
+  border: 1px solid var(--kbd-border-color);
+  border-radius: var(--kbd-border-radius);
+  background-color: var(--kbd-background-color);
+  color: var(--kbd-text-color);
+
   /* remove padding and increase font weight if `kbd` is nested within another `kbd` */
   & kbd {
     padding: 0;
     border: 0;
-    font-weight: var(--hiq-nested-kbd-font-weight, var(--hiq-font-weight-medium, 600));
+    font-weight: var(--nested-kbd-font-weight);
   }
 }
 
 pre {
+  /* scoped properties */
+  --pre-padding-vertical: var(--hiq-pre-padding-vertical, var(--hiq-code-padding-vertical, 1.25rem));
+  --pre-padding-horizontal: var(--hiq-pre-padding-horizontal, var(--hiq-code-padding-horizontal, 1.5rem));
+  --pre-border-color: var(--hiq-pre-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  --pre-border-radius: var(--hiq-pre-border-radius, var(--hiq-border-radius, 0.25rem));
+  --pre-background-color: var(--hiq-pre-background-color, transparent);
+  --pre-text-color: var(--hiq-pre-text-color, var(--hiq-gray, hsl(220, 10%, 40%)));
+
   /* enable "momentum-based scrolling on touch devices when content overflows */
   @mixin overflow-touch;
+
   -ms-overflow-style: scrollbar;
   overflow-x: auto;
   margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
-  padding: var(--hiq-pre-padding-vertical, var(--hiq-code-padding-vertical, 1.25rem)) var(--hiq-pre-padding-horizontal, var(--hiq-code-padding-horizontal, 1.5rem));
-  border: 1px solid var(--hiq-pre-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
-  border-radius: var(--hiq-pre-border-radius, var(--hiq-border-radius, 0.25rem));
-  background-color: var(--hiq-pre-background-color, transparent);
+  padding: var(--pre-padding-vertical) var(--pre-padding-horizontal);
+  border: 1px solid var(--pre-border-color);
+  border-radius: var(--pre-border-radius);
+  background-color: var(--pre-background-color);
   tab-size: 1.5rem;
   white-space: pre-wrap;
   word-wrap: normal;
-  color: var(--hiq-pre-text-color, var(--hiq-gray, hsl(220, 10%, 40%)));
+  color: var(--pre-text-color);
+
   /* reset and inherit styles from `pre` if code is contained within */
   & code {
     padding: 0;

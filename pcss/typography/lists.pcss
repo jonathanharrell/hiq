@@ -5,12 +5,18 @@
   ul;
 
 :--list {
+  /* scoped property */
+  --list-margin-left: var(--hiq-list-margin-left, 1rem);
+
   margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
-  padding: 0 0 0 var(--hiq-list-margin-left, 1rem);
+  padding: 0 0 0 var(--list-margin-left);
 }
 
 ul {
-  list-style: var(--hiq-unordered-list-style, disc);
+  /* scoped property */
+  --unordered-list-style: var(--hiq-unordered-list-style, disc);
+
+  list-style: var(--unordered-list-style);
 }
 
 /* remove bottom margin from nested lists */
@@ -40,9 +46,12 @@ dl {
 }
 
 dt {
+  /* scoped property */
+  --description-list-title-font-weight: var(--hiq-description-list-title-font-weight, var(--hiq-font-weight-semibold, 600));
+
   margin: 0;
   padding: 0;
-  font-weight: var(--hiq-description-list-title-font-weight, var(--hiq-font-weight-semibold, 600));
+  font-weight: var(--description-list-title-font-weight);
 }
 
 dd {

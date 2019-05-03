@@ -1,22 +1,32 @@
 /* links */
 
 a {
+  /* scoped properties */
+  --link-text-decoration: var(--hiq-link-text-decoration, none);
+  --link-color: var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  --link-hover-color: var(--hiq-link-hover-color, hsl(210, 100%, 25%));
+  --link-focus-color: var(--hiq-link-focus-color, hsl(210, 100%, 25%));
+  --link-active-color: var(--hiq-link-active-color, hsl(210, 100%, 25%));
+
   background-color: transparent;
-  text-decoration: var(--hiq-link-text-decoration, none);
+  text-decoration: var(--link-text-decoration);
   -webkit-text-decoration-skip: objects;
-  color: var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  color: var(--link-color);
   transition: color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
   cursor: pointer;
+
   &:hover {
-    color: var(--hiq-link-hover-color, hsl(210, 100%, 25%));
+    color: var(--link-hover-color);
   }
+
   &:focus {
     box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
     outline: none;
-    color: var(--hiq-link-focus-color, hsl(210, 100%, 25%));
+    color: var(--link-focus-color);
   }
+
   &:active {
-    color: var(--hiq-link-active-color, hsl(210, 100%, 25%));
+    color: var(--link-active-color);
   }
 }
 
