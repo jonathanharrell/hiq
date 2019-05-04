@@ -112,8 +112,14 @@ button.is-primary {
 You can also redefine custom properties within media queries:
 
 ```css
+/* width-based media query */
 @media (min-width: 800px) {
   --hiq-container-horizontal-gap: 3rem;
+}
+
+/* color scheme-based media query */
+@media (prefers-color-scheme: dark) {
+  --hiq-color-gray-1: hsl(220, 10%, 98%);
 }
 ```
 

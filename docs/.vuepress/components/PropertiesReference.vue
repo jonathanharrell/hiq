@@ -12,13 +12,20 @@
         <table class="properties-table">
             <thead>
                 <tr>
-                    <th>Property Name</th>
+                    <th>Property Name (global/local)</th>
                     <th>Description</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="property in properties">
-                    <td class="name"><code v-html="renderName(property.name)"></code></td>
+                    <td class="name">
+                        <code v-html="renderName(property.name)"></code><br />
+                        <code
+                            v-if="property.local"
+                            v-html="renderLocalName(property.local)"
+                            style="--code-background-color: var(--hiq-selection-color);"
+                        ></code>
+                    </td>
                     <td class="description">{{ property.description }}</td>
                 </tr>
             </tbody>
@@ -38,7 +45,12 @@
 
         computed: {
             properties () {
-                return propertiesConfig.filter(property => property.name.toLowerCase().includes(this.query.toLowerCase()))
+                return propertiesConfig.filter(property => {
+                    return (
+                        property.name.toLowerCase().includes(this.query.toLowerCase()) ||
+                        (property.local && property.local.toLowerCase().includes(this.query.toLowerCase()))
+                    )
+                })
             }
         },
 
@@ -49,6 +61,14 @@
                 }
 
                 return name
+            },
+
+            renderLocalName (local) {
+                if (this.query) {
+                    return local.replace(this.query, `<strong>${this.query}</strong>`)
+                }
+
+                return local
             }
         }
     }

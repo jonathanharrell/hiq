@@ -18,6 +18,18 @@ Define custom properties on the root element to affect the global scope. These c
 }
 ```
 
+#### Dark mode support
+
+You can override global values within a media query to support native dark mode.
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hiq-color-gray-1: hsl(220, 10%, 98%);
+  }
+}
+```
+
 ### Scoped overrides
 
 Define custom properties on particular selectors to limit their scope. These locally-scoped custom properties will not have the `hiq-` prefix.
