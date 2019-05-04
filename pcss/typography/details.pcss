@@ -6,8 +6,8 @@ details {
 
 summary {
   display: list-item;
+
   &:focus {
-    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
-    outline: none;
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 }

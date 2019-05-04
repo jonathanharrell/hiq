@@ -8,19 +8,15 @@
 @define-mixin input {
   /* scoped properties */
   --input-border-width: var(--hiq-input-border-width, 1px);
-  --input-border-color: var(--hiq-input-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  --input-border-color: var(--hiq-input-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
   --input-border-radius: var(--hiq-input-border-radius, var(--hiq-border-radius, 0.2rem));
   --input-background-color: var(--hiq-input-background-color, white);
-  --input-text-color: var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-gray-darker, hsl(220, 10%, 10%))));
-  --input-placeholder-color: var(--hiq-input-placeholder-color, var(--hiq-gray, hsl(220, 10%, 40%)));
-  --input-hover-border-color: var(--hiq-input-hover-border-color, var(--hiq-input-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%))));
+  --input-text-color: var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%))));
+  --input-placeholder-color: var(--hiq-input-placeholder-color, var(--hiq-color-gray-4, hsl(220, 10%, 40%)));
+  --input-hover-border-color: var(--hiq-input-hover-border-color, var(--hiq-input-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
   --input-hover-background-color: var(--hiq-input-hover-background-color, var(--hiq-input-background-color, white));
-  --input-hover-text-color: var(--hiq-input-hover-text-color, var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-gray-darker, hsl(220, 10%, 10%)))));
-  --input-hover-placeholder-color: var(--hiq-input-hover-placeholder-color, var(--hiq-input-placeholder-color, var(--hiq-gray, hsl(220, 10%, 40%))));
-  --input-focus-border-color: var(--hiq-input-focus-border-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
-  --input-focus-background-color: var(--hiq-input-focus-background-color, var(--hiq-input-background-color, white));
-  --input-focus-text-color: var(--hiq-input-focus-text-color, var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-gray-darker, hsl(220, 10%, 10%)))));
-  --input-focus-placeholder-color: var(--hiq-input-focus-placeholder-color, var(--hiq-input-placeholder-color, var(--hiq-gray, hsl(220, 10%, 40%))));
+  --input-hover-text-color: var(--hiq-input-hover-text-color, var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%)))));
+  --input-hover-placeholder-color: var(--hiq-input-hover-placeholder-color, var(--hiq-input-placeholder-color, var(--hiq-color-gray-4, hsl(220, 10%, 40%))));
   --input-invalid-border-color: var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
   --input-valid-border-color: var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
 
@@ -42,7 +38,8 @@
     color: var(--input-placeholder-color);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: var(--input-hover-border-color);
     background-color: var(--input-hover-background-color);
     color: var(--input-hover-text-color);
@@ -53,23 +50,16 @@
   }
 
   &:focus {
-    border-color: var(--input-focus-border-color);
-    background-color: var(--input-focus-background-color);
-    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
-    color: var(--input-focus-text-color);
-
-    &::placeholder {
-      color: var(--input-focus-placeholder-color);
-    }
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 
   :--not-writable {
-    border-color: var(--hiq-disabled-border-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
-    background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
-    color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
+    border-color: var(--hiq-disabled-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+    color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
 
     &::placeholder {
-      color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
+      color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
     }
   }
 

@@ -1,48 +1,48 @@
 module.exports = [
     {
-        name: "--hiq-gray-darkest",
+        name: "--hiq-color-gray-1",
         type: "color",
         category: "gray-palette",
         description: "The darkest gray in the grayscale palette.",
         default: "hsl(220, 10%, 5%)",
     },
     {
-        name: "--hiq-gray-darker",
+        name: "--hiq-color-gray-2",
         type: "color",
         category: "gray-palette",
         description: "The second darkest gray in the grayscale palette. By default, used as the document text color.",
         default: "hsl(220, 10%, 10%)",
     },
     {
-        name: "--hiq-gray-dark",
+        name: "--hiq-color-gray-3",
         type: "color",
         category: "gray-palette",
         description: "The third darkest gray in the grayscale palette.",
         default: "hsl(220, 10%, 20%)",
     },
     {
-        name: "--hiq-gray",
+        name: "--hiq-color-gray-4",
         type: "color",
         category: "gray-palette",
         description: "The medium gray in the grayscale palette.",
         default: "hsl(220, 10%, 40%)",
     },
     {
-        name: "--hiq-gray-light",
+        name: "--hiq-color-gray-5",
         type: "color",
         category: "gray-palette",
         description: "The third lightest gray in the grayscale palette. By default, used as the disabled color.",
         default: "hsl(220, 10%, 60%)",
     },
     {
-        name: "--hiq-gray-lighter",
+        name: "--hiq-color-gray-6",
         type: "color",
         category: "gray-palette",
         description: "The second lightest gray in the grayscale palette. By default, used as the border color.",
         default: "hsl(220, 10%, 90%)",
     },
     {
-        name: "--hiq-gray-lightest",
+        name: "--hiq-color-gray-7",
         type: "color",
         category: "gray-palette",
         description: "The lightest gray in the grayscale palette.",
@@ -1261,7 +1261,7 @@ module.exports = [
         type: "color",
         category: "meters",
         description: "Sets the background color of the meter element track.",
-        default: "var(--hiq-gray-lighter)"
+        default: "var(--hiq-color-gray-6)"
     },
     {
         name: "--hiq-meter-strong-color",

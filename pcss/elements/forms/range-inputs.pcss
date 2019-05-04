@@ -4,13 +4,12 @@ input[type=range] {
   /* scoped properties */
   --range-input-track-height: var(--hiq-range-input-track-height, 0.5rem);
   --range-input-track-border-radius: var(--hiq-range-input-track-border-radius, var(--hiq-border-radius, 0.2rem));
-  --range-input-track-background-color: var(--hiq-range-input-track-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
-  --range-input-track-focus-background-color: var(--hiq-range-input-track-focus-background-color, var(--hiq-gray-lighter, hsl(220, 10%, 90%)));
+  --range-input-track-background-color: var(--hiq-range-input-track-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
   --range-input-thumb-width: var(--hiq-range-input-thumb-width, 1.5rem);
   --range-input-thumb-height: var(--hiq-range-input-thumb-height, 1.5rem);
   --range-input-thumb-border-radius: var(--hiq-range-input-thumb-border-radius, 50%);
   --range-input-thumb-background-color: var(--hiq-range-input-thumb-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
-  --range-input-thumb-disabled-background-color: var(--hiq-range-input-thumb-disabled-background-color, var(--hiq-gray-lighter, hsl(210, 10%, 90%)));
+  --range-input-thumb-disabled-background-color: var(--hiq-range-input-thumb-disabled-background-color, var(--hiq-color-gray-6, hsl(210, 10%, 90%)));
 
   width: 100%;
   background: transparent;
@@ -26,20 +25,12 @@ input[type=range] {
     cursor: pointer;
   }
 
-  &:focus::-webkit-slider-runnable-track {
-    background-color: var(--range-input-track-focus-background-color);
-  }
-
   &::-moz-range-track {
     width: 100%;
     height: var(--range-input-track-height);
     background-color: var(--range-input-track-background-color);
     transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
     cursor: pointer;
-  }
-
-  &:focus::-moz-range-track {
-    background-color: var(--range-input-track-focus-background-color);
   }
 
   &::-ms-track {
@@ -57,16 +48,8 @@ input[type=range] {
     background-color: var(--range-input-track-background-color);
   }
 
-  &:focus::-ms-fill-lower {
-    background-color: var(--range-input-track-focus-background-color);
-  }
-
   &::-ms-fill-upper {
     background-color: var(--range-input-track-background-color);
-  }
-
-  &:focus::-ms-fill-upper {
-    background-color: var(--range-input-track-focus-background-color);
   }
 
   &::-webkit-slider-thumb {
@@ -81,7 +64,7 @@ input[type=range] {
   }
 
   &:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 
   &::-moz-range-thumb {
@@ -107,28 +90,28 @@ input[type=range] {
   }
 
   &:focus::-ms-thumb {
-    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 
   &:disabled,
   &[aria-disabled] {
     &::-webkit-slider-runnable-track {
-      background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
       cursor: not-allowed;
     }
 
     &::-moz-range-track {
-      background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
       cursor: not-allowed;
     }
 
     &::-ms-fill-lower {
-      background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
       cursor: not-allowed;
     }
 
     &::-ms-fill-upper {
-      background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
       cursor: not-allowed;
     }
 

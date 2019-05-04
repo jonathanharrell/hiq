@@ -4,13 +4,14 @@
   /* theme variables */
 
   /* gray palette */
-  --hiq-gray-darkest: hsl(220, 10%, 5%);
-  --hiq-gray-darker: hsl(220, 10%, 10%);
-  --hiq-gray-dark: hsl(220, 10%, 20%);
-  --hiq-gray: hsl(220, 10%, 40%);
-  --hiq-gray-light: hsl(220, 10%, 60%);
-  --hiq-gray-lighter: hsl(220, 10%, 90%);
-  --hiq-gray-lightest: hsl(220, 10%, 95%);
+  --hiq-color-gray-1: hsl(220, 10%, 5%);
+  --hiq-color-gray-2: hsl(220, 10%, 10%);
+  --hiq-color-gray-3: hsl(220, 10%, 20%);
+  --hiq-color-gray-4: hsl(220, 10%, 40%);
+  --hiq-color-gray-5: hsl(220, 10%, 60%);
+  --hiq-color-gray-6: hsl(220, 10%, 90%);
+  --hiq-color-gray-7: hsl(220, 10%, 95%);
+  --hiq-color-gray-8: hsl(220, 10%, 98%);
 
   /* semantic palette */
   --hiq-color-primary: hsl(210, 100%, 50%);
@@ -21,9 +22,9 @@
   /* global applied colors */
   --hiq-html-background-color: white;
   --hiq-body-background-color: white;
-  --hiq-disabled-border-color: var(--hiq-gray-lightest);
-  --hiq-disabled-background-color: var(--hiq-gray-lightest);
-  --hiq-disabled-text-color: var(--hiq-gray-light);
+  --hiq-disabled-border-color: var(--hiq-color-gray-7);
+  --hiq-disabled-background-color: var(--hiq-color-gray-7);
+  --hiq-disabled-text-color: var(--hiq-color-gray-5);
 
   /* layout variables */
 
@@ -97,7 +98,7 @@
   --hiq-description-list-title-font-weight: var(--hiq-font-weight-semibold);
 
   /* global text color */
-  --hiq-text-color: var(--hiq-gray-darker);
+  --hiq-text-color: var(--hiq-color-gray-2);
 
   /* inline text elements */
   --hiq-mark-color: hsl(50, 81%, 94%);
@@ -115,7 +116,7 @@
   /* blockquotes */
   --hiq-blockquote-font-size: var(--hiq-font-size-4);
   --hiq-blockquote-line-height: var(--hiq-heading-line-height);
-  --hiq-blockquote-citation-color: var(--hiq-gray-light);
+  --hiq-blockquote-citation-color: var(--hiq-color-gray-5);
 
   /* horizontal rules */
   --hiq-horizontal-rule-height: 1px;
@@ -123,9 +124,8 @@
 
   /* links */
   --hiq-link-color: var(--hiq-color-primary);
-  --hiq-link-hover-color: hsl(210, 100%, 25%);
-  --hiq-link-focus-color: hsl(210, 100%, 25%);
-  --hiq-link-active-color: hsl(210, 100%, 25%);
+  --hiq-link-hover-color: hsl(210, 100%, 40%);
+  --hiq-link-active-color: hsl(210, 100%, 40%);
   --hiq-link-text-decoration: none;
 
   /* button variables */
@@ -147,11 +147,6 @@
   --hiq-button-hover-background-color: hsl(210, 100%, 40%);
   --hiq-button-hover-text-color: white;
 
-  /* focus colors */
-  --hiq-button-focus-border-color: hsl(210, 100%, 50%);
-  --hiq-button-focus-background-color: hsl(210, 100%, 50%);
-  --hiq-button-focus-text-color: white;
-
   /* active colors */
   --hiq-button-active-border-color: hsl(210, 100%, 30%);
   --hiq-button-active-background-color: hsl(210, 100%, 30%);
@@ -162,25 +157,22 @@
   /* code */
   --hiq-code-padding-vertical: 0.25rem;
   --hiq-code-padding-horizontal: 0.5rem;
-  --hiq-code-border-color: var(--hiq-gray-lighter);
-  --hiq-code-border-radius: var(--hiq-border-radius);
+  --hiq-code-border-color: var(--hiq-color-gray-6);
   --hiq-code-font-size: var(--hiq-font-size-small);
-  --hiq-code-background-color: var(--hiq-gray-lightest);
+  --hiq-code-background-color: var(--hiq-color-gray-7);
   --hiq-code-text-color: var(--hiq-text-color);
 
   /* pre */
   --hiq-pre-padding-vertical: 1.25rem;
   --hiq-pre-padding-horizontal: 1.5rem;
-  --hiq-pre-border-color: var(--hiq-gray-lighter);
-  --hiq-pre-border-radius: 0.25rem;
+  --hiq-pre-border-color: var(--hiq-color-gray-6);
   --hiq-pre-background-color: transparent;
-  --hiq-pre-text-color: var(--hiq-gray);
+  --hiq-pre-text-color: var(--hiq-color-gray-4);
 
   /* kbd */
   --hiq-kbd-padding-vertical: 0.2rem;
   --hiq-kbd-padding-horizontal: 0.4rem;
-  --hiq-kbd-border-color: var(--hiq-gray-lighter);
-  --hiq-kbd-border-radius: 0.2rem;
+  --hiq-kbd-border-color: var(--hiq-color-gray-6);
   --hiq-nested-kbd-font-weight: var(--hiq-font-weight-medium);
   --hiq-kbd-background-color: transparent;
   --hiq-kbd-text-color: var(--hiq-text-color);
@@ -189,7 +181,7 @@
 
   --hiq-figcaption-margin-top: 0.5rem;
   --hiq-figcaption-font-weight: var(--hiq-font-weight-normal);
-  --hiq-figcaption-text-color: var(--hiq-gray-light);
+  --hiq-figcaption-text-color: var(--hiq-color-gray-5);
   --hiq-image-border-radius: var(--hiq-border-radius);
 
   /* table variables */
@@ -197,14 +189,14 @@
   --hiq-table-head-border-width: var(--hiq-table-cell-border-width);
   --hiq-table-foot-border-width: var(--hiq-table-cell-border-width);
   --hiq-table-caption-padding-vertical: 0.5rem;
-  --hiq-table-caption-text-color: var(--hiq-gray-light);
+  --hiq-table-caption-text-color: var(--hiq-color-gray-5);
   --hiq-table-caption-font-weight: var(--hiq-font-weight-semibold);
   --hiq-table-cell-padding-vertical: 0.5rem;
   --hiq-table-cell-padding-horizontal: 0.75rem;
   --hiq-table-cell-border-width: 1px;
-  --hiq-table-cell-border-color: var(--hiq-gray-lighter);
-  --hiq-table-heading-background-color: var(--hiq-gray-lightest);
-  --hiq-table-heading-text-color: var(--hiq-gray);
+  --hiq-table-cell-border-color: var(--hiq-color-gray-6);
+  --hiq-table-heading-background-color: var(--hiq-color-gray-7);
+  --hiq-table-heading-text-color: var(--hiq-color-gray-4);
   --hiq-table-heading-font-weight: var(--hiq-font-weight-medium);
 
   /* forms/inputs variables */
@@ -235,22 +227,16 @@
   --hiq-input-border-radius: var(--hiq-border-radius);
 
   /* static input colors */
-  --hiq-input-border-color: var(--hiq-gray-lighter);
+  --hiq-input-border-color: var(--hiq-color-gray-6);
   --hiq-input-background-color: white;
   --hiq-input-text-color: var(--hiq-text-color);
-  --hiq-input-placeholder-color: var(--hiq-gray);
+  --hiq-input-placeholder-color: var(--hiq-color-gray-4);
 
   /* hover input colors */
   --hiq-input-hover-border-color: var(--hiq-input-border-color);
   --hiq-input-hover-background-color: var(--hiq-input-background-color);
   --hiq-input-hover-text-color: var(--hiq-input-text-color);
   --hiq-input-hover-placeholder-color: var(--hiq-input-placeholder-color);
-
-  /* focus input colors */
-  --hiq-input-focus-border-color: var(--hiq-color-primary);
-  --hiq-input-focus-background-color: var(--hiq-input-background-color);
-  --hiq-input-focus-text-color: var(--hiq-input-text-color);
-  --hiq-input-focus-placeholder-color: var(--hiq-input-placeholder-color);
 
   /* textareas */
   --hiq-textarea-padding-vertical: 0.5rem;
@@ -272,19 +258,14 @@
   --hiq-checkbox-border-width: 1px;
   --hiq-checkbox-border-color: transparent;
   --hiq-checkbox-border-radius: var(--hiq-border-radius);
-  --hiq-checkbox-background-color: var(--hiq-gray-lighter);
-  --hiq-checkbox-hover-background-color: var(--hiq-gray-light);
-  --hiq-checkbox-focus-background-color: var(--hiq-gray-light);
+  --hiq-checkbox-background-color: var(--hiq-color-gray-6);
+  --hiq-checkbox-hover-background-color: var(--hiq-color-gray-5);
   --hiq-checkbox-checked-border-color: var(--hiq-color-primary);
   --hiq-checkbox-checked-background-color: var(--hiq-color-primary);
-  --hiq-checkbox-check-position-top: 0.2rem;
-  --hiq-checkbox-check-position-left: 0.375rem;
   --hiq-checkbox-check-width: 0.25rem;
   --hiq-checkbox-check-height: 0.5rem;
   --hiq-checkbox-check-border-width: 2px;
   --hiq-checkbox-check-color: white;
-  --hiq-checkbox-indeterminate-position-top: 0.45rem;
-  --hiq-checkbox-indeterminate-position-left: 0.25rem;
   --hiq-checkbox-indeterminate-width: 0.5rem;
 
   /* radio buttons */
@@ -296,13 +277,10 @@
   --hiq-radio-border-width: 1px;
   --hiq-radio-border-color: transparent;
   --hiq-radio-border-radius: 50%;
-  --hiq-radio-background-color: var(--hiq-gray-lighter);
-  --hiq-radio-hover-background-color: var(--hiq-gray-light);
-  --hiq-radio-focus-background-color: var(--hiq-gray-light);
+  --hiq-radio-background-color: var(--hiq-color-gray-6);
+  --hiq-radio-hover-background-color: var(--hiq-color-gray-5);
   --hiq-radio-checked-border-color: var(--hiq-color-primary);
   --hiq-radio-checked-background-color: var(--hiq-color-primary);
-  --hiq-radio-check-position-top: 0.25rem;
-  --hiq-radio-check-position-left: 0.25rem;
   --hiq-radio-check-width: 0.5rem;
   --hiq-radio-check-height: 0.5rem;
   --hiq-radio-check-border-radius: 50%;
@@ -313,22 +291,21 @@
   --hiq-range-input-thumb-height: 1.5rem;
   --hiq-range-input-thumb-border-radius: 50%;
   --hiq-range-input-thumb-background-color: var(--hiq-color-primary);
-  --hiq-range-input-thumb-disabled-background-color: var(--hiq-gray-lighter);
+  --hiq-range-input-thumb-disabled-background-color: var(--hiq-color-gray-6);
   --hiq-range-input-track-height: 0.5rem;
   --hiq-range-input-track-border-radius: var(--hiq-border-radius);
-  --hiq-range-input-track-background-color: var(--hiq-gray-lighter);
-  --hiq-range-input-track-focus-background-color: var(--hiq-gray-lighter);
+  --hiq-range-input-track-background-color: var(--hiq-color-gray-6);
 
   /* progress/meter variables */
 
   /* meters */
-  --hiq-meter-background-color: var(--hiq-gray-lighter);
+  --hiq-meter-background-color: var(--hiq-color-gray-6);
   --hiq-meter-strong-color: var(--hiq-color-success);
   --hiq-meter-good-color: var(--hiq-color-warning);
   --hiq-meter-weak-color: var(--hiq-color-danger);
 
   /* progress */
   --hiq-progress-height: 1rem;
-  --hiq-progress-background-color: var(--hiq-gray-lighter);
+  --hiq-progress-background-color: var(--hiq-color-gray-6);
   --hiq-progress-filled-color: var(--hiq-color-primary);
 }

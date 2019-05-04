@@ -15,9 +15,6 @@
   --button-hover-border-color: var(--hiq-button-hover-border-color, hsl(210, 100%, 40%));
   --button-hover-background-color: var(--hiq-button-hover-background-color, hsl(210, 100%, 40%));
   --button-hover-text-color: var(--hiq-button-hover-text-color, white);
-  --button-focus-border-color: var(--hiq-button-focus-border-color, hsl(210, 100%, 50%));
-  --button-focus-background-color: var(--hiq-button-focus-background-color, hsl(210, 100%, 50%));
-  --button-focus-text-color: var(--hiq-button-focus-text-color, white);
   --button-active-border-color: var(--hiq-button-active-border-color, hsl(210, 100%, 30%));
   --button-active-background-color: var(--hiq-button-active-background-color, hsl(210, 100%, 30%));
   --button-active-text-color: var(--hiq-button-active-text-color, white);
@@ -47,7 +44,8 @@
   transition: border-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), background-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: var(--button-hover-border-color);
     background-color: var(--button-hover-background-color);
     color: var(--button-hover-text-color);
@@ -55,13 +53,7 @@
 
   &:focus,
   &:active {
-    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
-  }
-
-  &:focus {
-    border-color: var(--button-focus-border-color);
-    background-color: var(--button-focus-background-color);
-    color: var(--button-focus-text-color);
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 
   &:active {
@@ -78,8 +70,8 @@
   &:disabled,
   &[aria-disabled] {
     border-color: var(--hiq-disabled-border-color, transparent);
-    background-color: var(--hiq-disabled-background-color, var(--hiq-gray-lightest, hsl(220, 10%, 95%)));
-    color: var(--hiq-disabled-text-color, var(--hiq-gray-light, hsl(220, 10%, 60%)));
+    background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+    color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
     cursor: not-allowed;
   }
 }

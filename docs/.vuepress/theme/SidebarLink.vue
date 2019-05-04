@@ -69,7 +69,7 @@
         box-shadow: none !important;
         line-height: 1.4;
         font-weight: var(--hiq-font-weight-normal);
-        color: var(--hiq-gray-dark);
+        color: var(--hiq-color-gray-3);
     }
 
     a.sidebar-link:hover {

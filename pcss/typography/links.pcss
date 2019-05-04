@@ -4,9 +4,8 @@ a {
   /* scoped properties */
   --link-text-decoration: var(--hiq-link-text-decoration, none);
   --link-color: var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
-  --link-hover-color: var(--hiq-link-hover-color, hsl(210, 100%, 25%));
-  --link-focus-color: var(--hiq-link-focus-color, hsl(210, 100%, 25%));
-  --link-active-color: var(--hiq-link-active-color, hsl(210, 100%, 25%));
+  --link-hover-color: var(--hiq-link-hover-color, hsl(210, 100%, 40%));
+  --link-active-color: var(--hiq-link-active-color, hsl(210, 100%, 40%));
 
   background-color: transparent;
   text-decoration: var(--link-text-decoration);
@@ -15,14 +14,13 @@ a {
   transition: color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--link-hover-color);
   }
 
   &:focus {
-    box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
-    outline: none;
-    color: var(--link-focus-color);
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 
   &:active {

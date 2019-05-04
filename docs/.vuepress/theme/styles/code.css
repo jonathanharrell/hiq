@@ -14,7 +14,7 @@ div[class*="language-"] .highlight-lines {
 }
 
 div[class*="language-"] .highlight-lines .highlighted {
-  background-color: var(--hiq-gray-lightest);
+  background-color: var(--hiq-color-gray-7);
 }
 
 div[class*="language-"] pre,
@@ -30,7 +30,7 @@ div[class*="language-"]::before {
   right: 1rem;
   z-index: 3;
   font-size: 0.75rem;
-  color: var(--hiq-gray-light);
+  color: var(--hiq-color-gray-5);
 }
 
 div[class*="language-"]:not(.line-numbers-mode) .line-numbers-wrapper {
@@ -49,7 +49,7 @@ div[class*="language-"].line-numbers-mode .highlight-lines .highlighted::before 
   z-index: 3;
   width: var(--line-numbers-wrapper-width);
   height: 100%;
-  background-color: var(--hiq-gray-lighter);
+  background-color: var(--hiq-color-gray-6);
   content: '';
 }
 
@@ -65,7 +65,7 @@ div[class*="language-"].line-numbers-mode .line-numbers-wrapper {
   padding: 1.25rem 0;
   line-height: 1.4;
   text-align: center;
-  color: var(--hiq-gray-light);
+  color: var(--hiq-color-gray-5);
 }
 
 div[class*="language-"].line-numbers-mode .line-numbers-wrapper br {
@@ -86,7 +86,7 @@ div[class*="language-"].line-numbers-mode::after {
   z-index: 2;
   width: var(--line-numbers-wrapper-width);
   height: calc(100% - 2px);
-  border-right: 1px solid var(--hiq-gray-lighter);
+  border-right: 1px solid var(--hiq-color-gray-6);
   border-radius: 6px 0 0 6px;
   background-color: white;
   content: '';

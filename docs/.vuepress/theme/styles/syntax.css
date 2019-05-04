@@ -10,11 +10,11 @@
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--hiq-gray-light);
+  color: var(--hiq-color-gray-5);
 }
 
 .token.punctuation {
-  color: var(--hiq-gray-light);
+  color: var(--hiq-color-gray-5);
 }
 
 .token.tag,
@@ -88,11 +88,11 @@
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--hiq-gray-light);
+  color: var(--hiq-color-gray-5);
 }
 
 .token.punctuation {
-  color: var(--hiq-gray-light);
+  color: var(--hiq-color-gray-5);
 }
 
 .token.tag,

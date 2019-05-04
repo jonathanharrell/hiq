@@ -156,14 +156,14 @@
     .search-box input {
         width: 10rem;
         padding: 0 0.5rem 0 2rem;
-        border: 1px solid var(--hiq-gray-lighter);
+        border: 1px solid var(--hiq-color-gray-6);
         border-radius: 2rem;
         background: white url(./search.svg) 0.6rem 0.5rem no-repeat;
         background-size: 1rem;
         outline: none;
         font-size: 16px;
         line-height: 2rem;
-        color: var(--hiq-gray-light);
+        color: var(--hiq-color-gray-5);
         transition: all 0.2s ease;
         cursor: text;
     }
@@ -178,7 +178,7 @@
         top: 2.75rem;
         width: 20rem;
         padding: 0.4rem;
-        border: 1px solid var(--hiq-gray-lighter);
+        border: 1px solid var(--hiq-color-gray-6);
         border-radius: 6px;
         background-color: white;
         list-style-type: none;
@@ -196,11 +196,11 @@
     }
 
     .search-box .suggestion a {
-        color: var(--hiq-gray);
+        color: var(--hiq-color-gray-4);
     }
 
     .search-box .suggestion.focused {
-        background-color: var(--hiq-gray-lightest);
+        background-color: var(--hiq-color-gray-7);
     }
 
     .search-box .suggestion.focused a {

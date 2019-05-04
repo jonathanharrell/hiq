@@ -83,7 +83,7 @@
     .dropdown-wrapper .nav-dropdown .dropdown-item h4 {
         margin: 0.45rem 0 0;
         padding: 0.45rem 1.5rem 0 1.25rem;
-        border-top: 1px solid var(--hiq-gray-lighter);
+        border-top: 1px solid var(--hiq-color-gray-6);
     }
 
     .dropdown-wrapper .nav-dropdown .dropdown-item:first-child h4 {
@@ -165,7 +165,7 @@
 
         .dropdown-wrapper .dropdown-title .arrow {
             /* make the arrow always down at desktop */
-            border-top: 6px solid var(--hiq-gray-lighter);
+            border-top: 6px solid var(--hiq-color-gray-6);
             border-right: 4px solid transparent;
             border-bottom: 0;
             border-left: 4px solid transparent;
@@ -183,9 +183,9 @@
             margin: 0;
             padding: 0.6rem 0;
             background-color: white;
-            border: 1px solid var(--hiq-gray-lighter);
-            border-bottom-color: var(--hiq-gray-lighter);
-            border-radius: 0.25rem;
+            border: 1px solid var(--hiq-color-gray-6);
+            border-bottom-color: var(--hiq-color-gray-6);
+            border-radius: 0.2rem;
             text-align: left;
             white-space: nowrap;
         }
