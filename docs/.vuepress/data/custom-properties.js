@@ -1334,4 +1334,4 @@ module.exports = [
         category: "progress",
         description: "Sets the background color of the filled portion of the progress element.",
     }
-];
+]
