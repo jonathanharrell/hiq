@@ -176,7 +176,7 @@ To stretch a child element to fill its parents, use the `.absolute-stretch` clas
 }
 
 .child {
-  @mixin absolute-stretch;
+  @mixin is-stretched;
 }
 ```
 

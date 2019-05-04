@@ -26,9 +26,9 @@
     "commit": "git-cz",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "stylelint pcss/*.pcss",
+    "lint": "stylelint css/*.css",
     "minify": "minify dist/hiq.css --output dist/hiq.min.css",
-    "postcss": "postcss pcss/hiq.pcss -o dist/hiq.css",
+    "postcss": "postcss css/hiq.css -o dist/hiq.css",
     "watch": "npm run lint && npm run postcss -- --watch",
     "semantic-release": "semantic-release"
   },

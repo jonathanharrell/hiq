@@ -1,7 +1,7 @@
 /* progress elements */
 
 @define-mixin progress-indeterminate {
-  @mixin absolute-stretch;
+  @mixin is-stretched;
 
   display: block;
   background-color: var(--progress-filled-color);
