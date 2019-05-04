@@ -95,7 +95,7 @@
         width: var(--sidebar-width);
         overflow-y: auto;
         margin: 0;
-        border-right: 1px solid var(--hiq-gray-lighter);
+        border-right: 1px solid var(--hiq-color-gray-6);
         background-color: white;
     }
 
@@ -116,7 +116,7 @@
     .sidebar .nav-links {
         display: none;
         padding: 0.5rem 0 0.75rem 0;
-        border-bottom: 1px solid var(--hiq-gray-lighter);
+        border-bottom: 1px solid var(--hiq-color-gray-6);
     }
 
     .sidebar .nav-links a {

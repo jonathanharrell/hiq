@@ -76,7 +76,7 @@
         max-width: 30rem;
         font-size: var(--hiq-font-size-large);
         line-height: 1.3;
-        color: var(--hiq-gray-light);
+        color: var(--hiq-color-gray-5);
     }
 
     .home .hero .action-button {
@@ -94,7 +94,7 @@
         justify-content: space-between;
         margin-top: 2.5rem;
         padding: 2.5rem 0 1rem;
-        border-top: 1px solid var(--hiq-gray-lighter);
+        border-top: 1px solid var(--hiq-color-gray-6);
     }
 
     .home .feature {
@@ -112,22 +112,22 @@
     }
 
     .home .feature p {
-        color: var(--hiq-gray);
+        color: var(--hiq-color-gray-4);
     }
 
     .home .footer {
         padding: 2.5rem;
-        border-top: 1px solid var(--hiq-gray-lighter);
+        border-top: 1px solid var(--hiq-color-gray-6);
         text-align: center;
-        color: var(--hiq-gray-light);
+        color: var(--hiq-color-gray-5);
     }
 
     .home .footer a {
-        color: var(--hiq-gray-light);
+        color: var(--hiq-color-gray-5);
     }
 
     .home .footer a:hover {
-        color: var(--hiq-gray);
+        color: var(--hiq-color-gray-4);
     }
 
     @media (max-width: 719px) {

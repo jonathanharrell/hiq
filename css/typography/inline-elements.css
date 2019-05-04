@@ -1,0 +1,28 @@
+/* inline elements */
+
+/* abbreviations */
+abbr[title] {
+  border-bottom: 0;
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* definitions */
+dfn {
+  font-style: italic;
+}
+
+/* marks */
+mark {
+  background-color: var(--hiq-mark-color, hsl(50, 81%, 94%));
+}
+
+/* deleted elements */
+del {
+  background-color: var(--hiq-deleted-color, hsl(331, 93%, 67%));
+}
+
+/* inserted elements */
+ins {
+  background-color: var(--hiq-inserted-color, hsl(210, 100%, 95%));
+}

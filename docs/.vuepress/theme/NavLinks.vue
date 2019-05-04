@@ -17,7 +17,7 @@
             {{ repoLabel }}
             <OutboundLink />
         </a>
-        <span class="version-number">v2.6.1</span>
+        <span class="version-number">v3.0.0</span>
     </nav>
 </template>
 

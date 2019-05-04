@@ -49,64 +49,12 @@ Button styling can be customized through a number of custom properties targeted 
 
 ## Customization
 
-We recommend creating new button variants by overriding the existing custom properties within the variant scope.
+We recommend creating new button variants by using locally scoped custom properties within the variant scope.
 
 ```css
 button.is-primary {
-  --hiq-button-border-color: blue;
-  --hiq-button-background-color: blue;
-  --hiq-button-text-color: white;
-}
-```
-
-::: warning
-Note that this will only work with browsers that fully support custom properties. If you need to support older browsers, you will probably want to create button variants with new custom properties or simple overrides.
-:::
-
-```css
-/*
-one option for older browsers:
-define new custom properties
-use PostCSS to compute values at compile time
-*/
-:root {
-  --primary-button-border-color: blue;
-  --primary-button-background-color: blue;
-  --primary-button-text-color: white;
-}
-
-button.is-primary {
-  border-color: var(--primary-button-border-color);
-  background-color: var(--primary-button-background-color);
-  color: var(--primary-button-text-color);
-}
-
-/* another option: simple overrides */
-button.is-primary {
-  border-color: blue;
-  background-color: blue;
-  color: white;
-}
-```
-
-## Variant Mixin
-
-HiQ provides a mixin to make it easier to create button variants. You can pass a few colors to the mixin and a button variant will be generated with scoped variables. Note the mixin will only let you define one background color for hover, focus, and active states, and one text color for all states. If you need more specificity, just define the variables manually.
-
-```css
-@mixin button-variant $bg-color, $interactive-color, $text-color;
-```
-
-Argument | Description
---- | ---
-`bg-color` | Defines the button's background color.
-`interactive-color` | Defines the background color when the button is hovered, focused, or active.
-`text-color` | Defines the button's text color in all states.
-
-Example usage:
-
-```css
-div {
-  @mixin button-variant blue, navy, white;
+  --button-border-color: blue;
+  --button-background-color: blue;
+  --button-text-color: white;
 }
 ```

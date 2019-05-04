@@ -1,0 +1,46 @@
+/* meter elements */
+
+meter {
+  /* scoped properties */
+  --meter-background-color: var(--hiq-meter-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+  --meter-strong-color: var(--hiq-meter-strong-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+  --meter-good-color: var(--hiq-meter-good-color, var(--hiq-color-warning, hsl(46, 97%, 64%)));
+  --meter-weak-color: var(--hiq-meter-weak-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+
+  width: 100%;
+  border: 0;
+  background: var(--meter-background-color);
+
+  &::-webkit-meter-bar {
+    border: 0;
+    background: var(--meter-background-color);
+  }
+
+  &::-moz-meter-bar {
+    background: var(--meter-background-color);
+  }
+
+  &::-webkit-meter-optimum-value {
+    background: var(--meter-strong-color);
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    background: var(--meter-strong-color);
+  }
+
+  &::-webkit-meter-suboptimum-value {
+    background: var(--meter-good-color);
+  }
+
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: var(--meter-good-color);
+  }
+
+  &::-webkit-meter-even-less-good-value {
+    background: var(--meter-weak-color);
+  }
+
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: var(--meter-weak-color);
+  }
+}

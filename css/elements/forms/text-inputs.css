@@ -1,0 +1,57 @@
+/* text inputs */
+
+@custom-selector :--text-input
+  input[type='text'],
+  input[type='password'],
+  input[type='url'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='search'],
+  input[type='number'],
+  input[type='date'],
+  input[type='time'],
+  input[type='month'],
+  input[type='week'],
+  input[type='datetime-local'];
+
+:--text-input {
+  @mixin input;
+
+  display: block;
+  width: 100%;
+  height: var(--hiq-input-height, 2.5rem);
+  padding: var(--hiq-input-padding-vertical, 0) var(--hiq-input-padding-horizontal, 0.75rem);
+}
+
+/*
+correct cursor style of increment and decrement buttons in Chrome
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+@custom-selector :--spin-button
+  [type='number']::-webkit-inner-spin-button,
+  [type='number']::-webkit-outer-spin-button;
+
+:--spin-button {
+  height: auto;
+}
+
+/*
+override extra rounded corners on search inputs in iOS
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+[type='search'] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+/*
+remove inner padding and cancel buttons in Chrome and Safari on macOS
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+@custom-selector :--cancel-button
+  [type='search']::-webkit-search-cancel-button,
+  [type='search']::-webkit-search-decoration;
+
+:--cancel-button {
+  -webkit-appearance: none;
+}

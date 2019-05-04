@@ -1,0 +1,77 @@
+/* selector for non-writable inputs */
+@custom-selector :--not-writable
+  &:disabled,
+  &[aria-disabled],
+  &[readonly];
+
+/* input mixin */
+@define-mixin input {
+  /* scoped properties */
+  --input-border-width: var(--hiq-input-border-width, 1px);
+  --input-border-color: var(--hiq-input-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+  --input-border-radius: var(--hiq-input-border-radius, var(--hiq-border-radius, 0.2rem));
+  --input-background-color: var(--hiq-input-background-color, white);
+  --input-text-color: var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%))));
+  --input-placeholder-color: var(--hiq-input-placeholder-color, var(--hiq-color-gray-4, hsl(220, 10%, 40%)));
+  --input-hover-border-color: var(--hiq-input-hover-border-color, var(--hiq-input-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --input-hover-background-color: var(--hiq-input-hover-background-color, var(--hiq-input-background-color, white));
+  --input-hover-text-color: var(--hiq-input-hover-text-color, var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%)))));
+  --input-focus-border-color: var(--hiq-input-focus-border-color, var(--hiq-input-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --input-focus-background-color: var(--hiq-input-focus-background-color, var(--hiq-input-background-color, white));
+  --input-focus-text-color: var(--hiq-input-focus-text-color, var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%)))));
+  --input-invalid-border-color: var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
+  --input-valid-border-color: var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+
+  /* remove default browser appearance */
+  @mixin is-controlled;
+
+  margin: 0;
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--hiq-font-weight-base, 400);
+  line-height: inherit;
+  color: var(--input-text-color);
+  transition: border-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), background-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
+
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
+
+  &:hover {
+    border-color: var(--input-hover-border-color);
+    background-color: var(--input-hover-background-color);
+    color: var(--input-hover-text-color);
+  }
+
+  &:focus {
+    border-color: var(--input-focus-border-color);
+    background-color: var(--input-focus-background-color);
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+    color: var(--input-focus-text-color);
+  }
+
+  :--not-writable {
+    border-color: var(--hiq-disabled-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+    background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+    color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
+
+    &::placeholder {
+      color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:required:invalid:not(:focus) {
+    border-color: var(--input-invalid-border-color);
+  }
+
+  &:required:valid:not(:focus) {
+    border-color: var(--input-valid-border-color);
+  }
+}

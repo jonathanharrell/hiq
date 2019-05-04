@@ -1,0 +1,16 @@
+/* horizontal rules */
+
+hr {
+  /* scoped properties */
+  --horizontal-rule-height: var(--hiq-horizontal-rule-height, 1px);
+  --horizontal-rule-color: var(--hiq-horizontal-rule-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+
+  box-sizing: content-box;
+  height: var(--horizontal-rule-height);
+  overflow: visible;
+  margin-top: var(--hiq-block-element-margin-bottom, 1rem);
+  margin-bottom: var(--hiq-block-element-margin-bottom, 1rem);
+  padding: 0;
+  border: 0;
+  background-color: var(--horizontal-rule-color);
+}

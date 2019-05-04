@@ -1,0 +1,45 @@
+/* basic form elements */
+
+fieldset {
+  /* scoped properties */
+  --fieldset-padding-vertical: var(--hiq-fieldset-padding-vertical, 0);
+  --fieldset-padding-horizontal: var(--hiq-fieldset-padding-horizontal, 0);
+  --fieldset-border-width: var(--hiq-fieldset-border-width, 0);
+  --fieldset-border-color: var(--hiq-fieldset-border-color, transparent);
+
+  min-width: 0;
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  padding: var(--fieldset-padding-vertical) var(--fieldset-padding-horizontal);
+  border: var(--fieldset-border-width) solid var(--fieldset-border-color);
+}
+
+legend {
+  /* scoped properties */
+  --legend-margin-bottom: var(--hiq-legend-margin-bottom, 0.5rem);
+  --legend-font-weight: var(--hiq-legend-font-weight, var(--hiq-font-weight-semibold, 600));
+
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 var(--legend-margin-bottom);
+  padding: 0;
+  font-weight: var(--legend-font-weight);
+  line-height: inherit;
+  white-space: normal;
+  color: inherit;
+}
+
+label {
+  /* scoped properties */
+  --label-margin-bottom: var(--hiq-label-margin-bottom, 0.25rem);
+  --label-font-weight: var(--hiq-label-font-weight, var(--hiq-font-weight-medium, 500));
+
+  display: block;
+  margin: 0 0 var(--label-margin-bottom);
+  padding: 0;
+  font-weight: var(--label-font-weight);
+}
+
+output {
+  display: inline-block;
+}

@@ -53,7 +53,7 @@ p a code {
   display: block;
   width: 1.5rem;
   height: 1.5rem;
-  border: 1px solid var(--hiq-gray-lighter);
+  border: 1px solid var(--hiq-color-gray-6);
 }
 
 .input-table code {

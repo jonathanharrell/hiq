@@ -177,12 +177,12 @@
 
     .page-edit .last-updated .prefix {
         font-weight: var(--hiq-font-weight-medium);
-        color: var(--hiq-gray);
+        color: var(--hiq-color-gray-4);
     }
 
     .page-edit .last-updated .time {
         font-weight: var(--hiq-font-weight-normal);
-        color: var(--hiq-gray-light);
+        color: var(--hiq-color-gray-5);
     }
 
     .page-nav {
@@ -195,7 +195,7 @@
         overflow: auto;
         margin-top: 0;
         padding-top: 1rem;
-        border-top: 1px solid var(--hiq-gray-lighter);
+        border-top: 1px solid var(--hiq-color-gray-6);
     }
 
     .page-nav .next {

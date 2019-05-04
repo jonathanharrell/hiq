@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <th v-if="colors"></th>
-                <th>Property Name</th>
+                <th>Property Name (global/local)</th>
                 <th>Description</th>
             </tr>
         </thead>
@@ -12,7 +12,10 @@
                 <td v-if="colors">
                     <span class="color-swatch" :style="{ backgroundColor: property.default }"></span>
                 </td>
-                <td class="name"><code>{{ property.name }}</code></td>
+                <td class="name">
+                    <code>{{ property.name }}</code><br/>
+                    <code style="--code-background-color: var(--hiq-selection-color);">{{ property.local }}</code>
+                </td>
                 <td class="description">{{ property.description }}</td>
             </tr>
         </tbody>

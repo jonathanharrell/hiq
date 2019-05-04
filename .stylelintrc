@@ -9,7 +9,10 @@
         "at-rule-no-unknown": null,
         "declaration-empty-line-before": ["never"],
         "rule-empty-line-before": ["always", {
-            "ignore": ["after-comment", "inside-block"]
+            "ignore": [
+                "after-comment",
+                "first-nested"
+            ]
         }],
         "no-eol-whitespace": [true, {
             "ignore": ["empty-lines"]

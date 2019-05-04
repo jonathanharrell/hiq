@@ -10,42 +10,8 @@ module.exports = [
         description: "Makes a container the full width of its parent.",
     },
     {
-        name: "flex-grid",
-        description: "Makes an element a wrapping flex-grid. Accepts $flex-basis and $grid-basis as arguments.",
-    },
-    {
-        name: "is-full-width",
-        class: "is-full-width",
-        description: "Makes an element the full width of its parent.",
-    },
-    {
-        name: "is-max-full-width",
-        class: "is-max-full-width",
-        description: "Makes an element no more than the width of its parent.",
-    },
-    {
-        name: "is-centered",
-        class: "is-centered",
-        description: "Centers an element within its parent.",
-    },
-    {
-        name: "is-pulled-left",
-        class: "is-pulled-left",
-        description: "Floats an element left.",
-    },
-    {
-        name: "is-pulled-right",
-        class: "is-pulled-right",
-        description: "Floats an element right.",
-    },
-    {
-        name: "is-clearfix",
-        class: "is-clearfix",
-        description: "Applies the clearfix hack to an element.",
-    },
-    {
-        name: "absolute-stretch",
-        class: "absolute-stretch",
+        name: "is-stretched",
+        class: "is-stretched",
         description: "Stretches an element to fill its parent.",
     },
     {
@@ -103,74 +69,9 @@ module.exports = [
         description: "Makes an element's text the 'small' size in the HiQ type scale.",
     },
     {
-        name: "has-font-weight-light",
-        class: "has-font-weight-light",
-        description: "Gives an element's text light weight.",
-    },
-    {
-        name: "has-font-weight-normal",
-        class: "has-font-weight-normal",
-        description: "Gives an element's text normal weight.",
-    },
-    {
-        name: "has-font-weight-medium",
-        class: "has-font-weight-medium",
-        description: "Gives an element's text medium weight.",
-    },
-    {
-        name: "has-font-weight-semibold",
-        class: "has-font-weight-semibold",
-        description: "Gives an element's text semibold weight.",
-    },
-    {
-        name: "has-font-weight-bold",
-        class: "has-font-weight-bold",
-        description: "Gives an element's text bold weight.",
-    },
-    {
         name: "is-unstyled",
         class: "is-unstyled",
         description: "Removes the default browser styling from a list element.",
-    },
-    {
-        name: "has-inline-children",
-        class: "has-inline-children",
-        description: "Makes an list's items display in a horizontal line.",
-    },
-    {
-        name: "has-text-left",
-        class: "has-text-left",
-        description: "Aligns an element's text to the left.",
-    },
-    {
-        name: "has-text-centered",
-        class: "has-text-centered",
-        description: "Centers an element's text.",
-    },
-    {
-        name: "has-text-right",
-        class: "has-text-right",
-        description: "Aligns an element's text to the right.",
-    },
-    {
-        name: "has-text-justified",
-        class: "has-text-justified",
-        description: "Justifies an element's text.",
-    },
-    {
-        name: "is-capitalized",
-        class: "is-capitalized",
-        description: "Capitalizes an element's text.",
-    },
-    {
-        name: "is-lowercase",
-        class: "is-lowercase",
-        description: "Lowercases an element's text.",
-    },
-    {
-        name: "is-uppercase",
-        class: "is-uppercase",
-        description: "Uppercases an element's text.",
     },
     {
         name: "has-text-truncated",
@@ -181,26 +82,6 @@ module.exports = [
         name: "is-clipped",
         class: "is-clipped",
         description: "Hides overflow that overflows element bounds.",
-    },
-    {
-        name: "is-marginless",
-        class: "is-marginless",
-        description: "Removes any margin from an element.",
-    },
-    {
-        name: "is-paddingless",
-        class: "is-paddingless",
-        description: "Removes any padding from an element.",
-    },
-    {
-        name: "is-radiusless",
-        class: "is-radiusless",
-        description: "Removes any border radius from an element.",
-    },
-    {
-        name: "is-shadowless",
-        class: "is-shadowless",
-        description: "Removes any box shadow from an element.",
     },
     {
         name: "is-initial",
@@ -227,4 +108,4 @@ module.exports = [
         class: "is-unselectable",
         description: "Prevents a user from selecting an element or its text.",
     }
-]
+];

@@ -1,0 +1,66 @@
+/* tables */
+
+table {
+  /* scoped properties */
+  --table-head-border-width: var(--hiq-table-head-border-width, var(--hiq-table-cell-border-width, 1px));
+  --table-foot-border-width: var(--hiq-table-foot-border-width, var(--hiq-table-cell-border-width, 1px));
+  --table-cell-padding-vertical: var(--hiq-table-cell-padding-vertical, 0.5rem);
+  --table-cell-padding-horizontal: var(--hiq-table-cell-padding-horizontal, 0.75rem);
+  --table-cell-border-width: var(--hiq-table-cell-border-width, 1px);
+  --table-cell-border-color: var(--hiq-table-cell-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+  --table-heading-background-color: var(--hiq-table-heading-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+  --table-heading-font-weight: var(--hiq-table-heading-font-weight, var(--hiq-font-weight-medium, 500));
+  --table-heading-text-color: var(--hiq-table-heading-text-color, var(--hiq-color-gray-4, hsl(220, 10%, 40%)));
+  --table-caption-padding-vertical: var(--hiq-table-caption-padding-vertical, 0.75rem);
+  --table-caption-font-weight: var(--hiq-table-caption-font-weight, var(--hiq-font-weight-normal, 400));
+  --table-caption-text-color: var(--hiq-table-caption-text-color, var(--hiq-color-gray-5, hsl(0, 0%, 60%)));
+
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: inherit;
+}
+
+@custom-selector :--table-cell
+  th,
+  td;
+
+:--table-cell {
+  padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+  border-top: var(--table-cell-border-width) solid var(--table-cell-border-color);
+  text-align: inherit;
+  vertical-align: top;
+}
+
+thead :--table-cell {
+  border-top: 0;
+  border-bottom: var(--table-head-border-width) solid var(--hiq-table-cell-border-color);
+  vertical-align: bottom;
+}
+
+tfoot :--table-cell {
+  border-top: var(--table-foot-border-width) solid var(--hiq-table-cell-border-color);
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--table-heading-background-color);
+  font-weight: var(--table-heading-font-weight);
+  color: var(--table-heading-text-color);
+}
+
+tbody + tbody {
+  border-top: var(--hiq-table-head-border-width, var(--hiq-table-cell-border-width, 1px)) solid var(--hiq-table-cell-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+}
+
+table caption {
+  padding: var(--table-caption-padding-vertical) 0;
+  font-weight: var(--table-caption-font-weight);
+  color: var(--table-caption-text-color);
+}

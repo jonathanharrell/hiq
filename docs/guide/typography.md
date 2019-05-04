@@ -223,32 +223,6 @@ Base line height is defined on the `html` element with the `--hiq-line-height-ba
 
 ## Font weights
 
-Five font weights are available as classes and mixins.
-
-<CodeExample>
-<p class="has-font-weight-light">Font weight light</p>
-<p class="has-font-weight-normal">Font weight normal</p>
-<p class="has-font-weight-medium">Font weight medium</p>
-<p class="has-font-weight-semibold">Font weight semibold</p>
-<p class="has-font-weight-bold">Font weight bold</p>
-</CodeExample>
-
-```html
-<p class="has-font-weight-light">Font weight light</p>
-<p class="has-font-weight-normal">Font weight normal</p>
-<p class="has-font-weight-medium">Font weight medium</p>
-<p class="has-font-weight-semibold">Font weight semibold</p>
-<p class="has-font-weight-bold">Font weight bold</p>
-```
-
-```css
-@mixin has-font-weight-light;
-@mixin has-font-weight-normal;
-@mixin has-font-weight-medium;
-@mixin has-font-weight-semibold;
-@mixin has-font-weight-bold;
-```
-
 By default, font weights are set to the most common values defined for web fonts. These can be customized using custom properties.
 
 Custom properties are also used to apply the font weights to various elements. By default, `--hiq-font-weight-normal` is set on the `html` element. This is defined by the `--hiq-font-weight-base` custom property.
@@ -468,32 +442,6 @@ ul {
 }
 ```
 
-### Inline
-
-Make a list's items inline with `.has-inline-children` or the matching mixin. This will also apply some `margin-right` to the items to space them out. Note that you will need to also use the `.is-unstyled` class to remove bullets.
-
-<CodeExample>
-<ul class="has-inline-children is-unstyled">
-    <li>Inline list item 1</li>
-    <li>Inline list item 2</li>
-    <li>Inline list item 3</li>
-</ul>
-</CodeExample>
-
-```html
-<ul class="has-inline-children is-unstyled">
-    <li>Inline list item 1</li>
-    <li>Inline list item 2</li>
-    <li>Inline list item 3</li>
-</ul>
-```
-
-```css
-@mixin has-inline-children;
-```
-
-<PropertiesTable category="inline-lists" />
-
 ### Description Lists
 
 For simpler styling, clear hierarchy, and better spacing, description lists have updated margins. By default, `<dd>`s reset `margin-left` to `0` and add `margin-bottom: 0.5rem`. `<dt>`s are bolded.
@@ -565,70 +513,6 @@ The underline beneath links is removed by default, in favor of a color change an
 <PropertiesTable category="links" />
 
 ## Typography Utilities
-
-### Alignment Utilities
-
-HiQ provides several utility classes for easily aligning text. Remember to use these only if the alignment will not change between breakpoints.
-
-<CodeExample>
-<p class="has-text-left">
-    This paragraph has left-aligned text.
-</p>
-<p class="has-text-centered">
-    This paragraph has centered text.
-</p>
-<p class="has-text-right">
-    This paragraph has right-aligned text.
-</p>
-<p class="has-text-justified">
-    This paragraph has justified text.
-</p>
-</CodeExample>
-
-```html
-<p class="has-text-left">
-    This paragraph has left-aligned text.
-</p>
-<p class="has-text-centered">
-    This paragraph has centered text.
-</p>
-<p class="has-text-right">
-    This paragraph has right-aligned text.
-</p>
-<p class="has-text-justified">
-    This paragraph has justified text.
-</p>
-```
-
-Note that mixins are not provided in this case, as text-alignment is controlled in CSS via a single property, so a mixin wouldn't provide any benefit.
-
-### Transformation Utilities
-
-HiQ provides several utility classes for transforming text. Remember to use these only if the transformation will not change between breakpoints.
-
-<CodeExample>
-<p class="is-capitalized">
-    This paragraph is capitalized.
-</p>
-<p class="is-lowercase">
-    This paragraph is lowercase.
-</p>
-<p class="is-uppercase">
-    This paragraph is uppercase.
-</p>
-</CodeExample>
-
-```html
-<p class="is-capitalized">
-    This paragraph is capitalized.
-</p>
-<p class="is-lowercase">
-    This paragraph is lowercase.
-</p>
-<p class="is-uppercase">
-    This paragraph is uppercase.
-</p>
-```
 
 ### Truncated Text
 

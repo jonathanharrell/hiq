@@ -27,10 +27,10 @@ Import the compiled minified version in your CSS:
 
 ### Advanced
 
-Import the source version and process your CSS using PostCSS. This will give you access to the utility mixins that HiQ provides. Note that source files use the `.pcss` file extension.
+Import the source version and process your CSS using PostCSS. This will give you access to the utility mixins that HiQ provides. Note that source files use the `.css` file extension.
 
 ```css
-@import 'node_modules/hiq/pcss/hiq.pcss';
+@import 'node_modules/hiq/css/hiq.css';
 ```
 
 To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
