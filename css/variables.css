@@ -111,7 +111,6 @@
   /* lists */
   --hiq-list-margin-left: 1rem;
   --hiq-unordered-list-style: disc;
-  --hiq-inline-item-margin-right: 0.25rem;
 
   /* blockquotes */
   --hiq-blockquote-font-size: var(--hiq-font-size-4);
@@ -236,7 +235,11 @@
   --hiq-input-hover-border-color: var(--hiq-input-border-color);
   --hiq-input-hover-background-color: var(--hiq-input-background-color);
   --hiq-input-hover-text-color: var(--hiq-input-text-color);
-  --hiq-input-hover-placeholder-color: var(--hiq-input-placeholder-color);
+
+  /* focus input colors */
+  --hiq-input-focus-border-color: var(--hiq-input-border-color);
+  --hiq-input-focus-background-color: var(--hiq-input-background-color);
+  --hiq-input-focus-text-color: var(--hiq-input-text-color);
 
   /* textareas */
   --hiq-textarea-padding-vertical: 0.5rem;

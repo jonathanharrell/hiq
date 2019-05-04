@@ -8,9 +8,11 @@ meter {
   --meter-weak-color: var(--hiq-meter-weak-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
 
   width: 100%;
+  border: 0;
   background: var(--meter-background-color);
 
   &::-webkit-meter-bar {
+    border: 0;
     background: var(--meter-background-color);
   }
 

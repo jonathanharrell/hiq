@@ -31,22 +31,29 @@ module.exports = [
         name: "--hiq-color-gray-5",
         type: "color",
         category: "gray-palette",
-        description: "The third lightest gray in the grayscale palette. By default, used as the disabled color.",
+        description: "The fourth lightest gray in the grayscale palette. By default, used as the disabled color.",
         default: "hsl(220, 10%, 60%)",
     },
     {
         name: "--hiq-color-gray-6",
         type: "color",
         category: "gray-palette",
-        description: "The second lightest gray in the grayscale palette. By default, used as the border color.",
+        description: "The third lightest gray in the grayscale palette. By default, used as the border color.",
         default: "hsl(220, 10%, 90%)",
     },
     {
         name: "--hiq-color-gray-7",
         type: "color",
         category: "gray-palette",
-        description: "The lightest gray in the grayscale palette.",
+        description: "The second lightest gray in the grayscale palette.",
         default: "hsl(220, 10%, 95%)",
+    },
+    {
+        name: "--hiq-color-gray-8",
+        type: "color",
+        category: "gray-palette",
+        description: "The lightest gray in the grayscale palette.",
+        default: "hsl(220, 10%, 98%)",
     },
     {
         name: "--hiq-color-primary",
@@ -363,12 +370,6 @@ module.exports = [
         description: "Sets the bullet style for ul elements.",
     },
     {
-        name: "--hiq-inline-item-margin-right",
-        type: "number",
-        category: "inline-lists",
-        description: "Sets the right margin on list items in a list that has received the .has-inline-children class. Not applied to the last list item.",
-    },
-    {
         name: "--hiq-description-list-title-font-weight",
         type: "number",
         category: "description-lists",
@@ -415,12 +416,6 @@ module.exports = [
         type: "color",
         category: "links",
         description: "Sets the text color for hovered anchor elements.",
-    },
-    {
-        name: "--hiq-link-focus-color",
-        type: "color",
-        category: "links",
-        description: "Sets the text color for focused anchor elements.",
     },
     {
         name: "--hiq-link-active-color",
@@ -507,24 +502,6 @@ module.exports = [
         description: "Sets the text color for hovered buttons.",
     },
     {
-        name: "--hiq-button-focus-border-color",
-        type: "color",
-        category: "buttons",
-        description: "Sets the border color for focused buttons.",
-    },
-    {
-        name: "--hiq-button-focus-background-color",
-        type: "color",
-        category: "buttons",
-        description: "Sets the background color for focused buttons.",
-    },
-    {
-        name: "--hiq-button-focus-text-color",
-        type: "color",
-        category: "buttons",
-        description: "Sets the text color for focused buttons.",
-    },
-    {
         name: "--hiq-button-active-border-color",
         type: "color",
         category: "buttons",
@@ -559,12 +536,6 @@ module.exports = [
         type: "color",
         category: "inline-code",
         description: "Sets the border color for code elements.",
-    },
-    {
-        name: "--hiq-code-border-radius",
-        type: "number",
-        category: "inline-code",
-        description: "Sets the border radius for code elements.",
     },
     {
         name: "--hiq-code-font-size",
@@ -603,12 +574,6 @@ module.exports = [
         description: "Sets the border color for pre elements.",
     },
     {
-        name: "--hiq-pre-border-radius",
-        type: "number",
-        category: "code-blocks",
-        description: "Sets the border radius for pre elements.",
-    },
-    {
         name: "--hiq-pre-background-color",
         type: "color",
         category: "code-blocks",
@@ -637,12 +602,6 @@ module.exports = [
         type: "color",
         category: "user-input",
         description: "Sets the border color for kbd elements.",
-    },
-    {
-        name: "--hiq-kbd-border-radius",
-        type: "number",
-        category: "user-input",
-        description: "Sets the border radius for kbd elements.",
     },
     {
         name: "--hiq-nested-kbd-font-weight",
@@ -891,12 +850,6 @@ module.exports = [
         description: "Sets the text color on hovered text inputs, selects and textareas.",
     },
     {
-        name: "--hiq-input-hover-placeholder-color",
-        type: "color",
-        category: "inputs",
-        description: "Sets the placeholder text color on hovered text inputs, selects and textareas.",
-    },
-    {
         name: "--hiq-input-focus-border-color",
         type: "color",
         category: "inputs",
@@ -913,12 +866,6 @@ module.exports = [
         type: "color",
         category: "inputs",
         description: "Sets the text color on focused text inputs, selects and textareas.",
-    },
-    {
-        name: "--hiq-input-focus-placeholder-color",
-        type: "color",
-        category: "inputs",
-        description: "Sets the placeholder text color on focused text inputs, selects and textareas.",
     },
     {
         name: "--hiq-textarea-padding-vertical",
@@ -1023,12 +970,6 @@ module.exports = [
         description: "Sets the background color of the visual checkbox element when hovered.",
     },
     {
-        name: "--hiq-checkbox-focus-background-color",
-        type: "color",
-        category: "checkboxes",
-        description: "Sets the background color of the visual checkbox element when focused.",
-    },
-    {
         name: "--hiq-checkbox-checked-border-color",
         type: "color",
         category: "checkboxes",
@@ -1039,18 +980,6 @@ module.exports = [
         type: "color",
         category: "checkboxes",
         description: "Sets the background color of the visual checkbox element when the input is checked.",
-    },
-    {
-        name: "--hiq-checkbox-check-position-top",
-        type: "number",
-        category: "checkboxes",
-        description: "Sets the top position of the check mark within the checkbox.",
-    },
-    {
-        name: "--hiq-checkbox-check-position-left",
-        type: "number",
-        category: "checkboxes",
-        description: "Sets the left position of the check mark within the checkbox.",
     },
     {
         name: "--hiq-checkbox-check-width",
@@ -1075,18 +1004,6 @@ module.exports = [
         type: "color",
         category: "checkboxes",
         description: "Sets the color of the check mark within the checkbox.",
-    },
-    {
-        name: "--hiq-checkbox-indeterminate-position-top",
-        type: "number",
-        category: "checkboxes",
-        description: "Sets the top position of the mark within an indeterminate checkbox.",
-    },
-    {
-        name: "--hiq-checkbox-indeterminate-position-left",
-        type: "number",
-        category: "checkboxes",
-        description: "Sets the left position of the mark within an indeterminate checkbox.",
     },
     {
         name: "--hiq-checkbox-indeterminate-width",
@@ -1155,12 +1072,6 @@ module.exports = [
         description: "Sets the background color of the visual radio element when hovered.",
     },
     {
-        name: "--hiq-radio-focus-background-color",
-        type: "color",
-        category: "radio-buttons",
-        description: "Sets the background color of the visual radio element when focused.",
-    },
-    {
         name: "--hiq-radio-checked-border-color",
         type: "color",
         category: "radio-buttons",
@@ -1171,18 +1082,6 @@ module.exports = [
         type: "color",
         category: "radio-buttons",
         description: "Sets the background color of the visual radio element when the input is checked.",
-    },
-    {
-        name: "--hiq-radio-check-position-top",
-        type: "number",
-        category: "radio-buttons",
-        description: "Sets the top position of the circle within the radio button.",
-    },
-    {
-        name: "--hiq-radio-check-position-left",
-        type: "number",
-        category: "radio-buttons",
-        description: "Sets the left position of the circle within the radio button.",
     },
     {
         name: "--hiq-radio-check-width",
@@ -1251,12 +1150,6 @@ module.exports = [
         description: "Sets the background color of the range input track.",
     },
     {
-        name: "--hiq-range-input-track-focus-background-color",
-        type: "color",
-        category: "range-inputs",
-        description: "Sets the background color of the range input track when focused.",
-    },
-    {
         name: "--hiq-meter-background-color",
         type: "color",
         category: "meters",
@@ -1302,4 +1195,4 @@ module.exports = [
         category: "progress",
         description: "Sets the background color of the filled portion of the progress element.",
     }
-]
+];

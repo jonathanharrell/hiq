@@ -55,4 +55,4 @@ module.exports = [
         name: ":--cancel-button",
         description: "[type='search']::-webkit-search-cancel-button, [type='search']::-webkit-search-decoration",
     }
-]
+];

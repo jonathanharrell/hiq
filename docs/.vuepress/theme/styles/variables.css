@@ -107,7 +107,6 @@
   /* lists */
   --hiq-list-margin-left: 1rem;
   --hiq-unordered-list-style: disc;
-  --hiq-inline-item-margin-right: 0.25rem;
 
   /* blockquotes */
   --hiq-blockquote-font-size: var(--hiq-font-size-4);

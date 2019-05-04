@@ -20,11 +20,11 @@ Define custom properties on the root element to affect the global scope. These c
 
 ### Scoped overrides
 
-Define custom properties on particular selectors to limit their scope. You can use this behavior of custom properties to define component variants.
+Define custom properties on particular selectors to limit their scope. These locally-scoped custom properties will not have the `hiq-` prefix.
 
 ```css
 button.is-primary {
-  --hiq-button-background-color: blue;
+  --button-background-color: blue;
 }
 ```
 
@@ -33,7 +33,7 @@ button.is-primary {
 Pass in the custom property values using the `style` attribute in your html. You might feel that this has similarities to dreaded inline styling, but you can also think of it as something more like `props` in React and similar JavaScript frameworks.
 
 ```html
-<button style="--hiq-button-background-color: blue">Button</button>
+<button style="--button-background-color: blue">Button</button>
 ```
 
 ## Color
@@ -42,7 +42,7 @@ Every color used throughout HiQ is defined as a custom property. We favor using 
 
 ### Gray Palette
 
-All gray values are built from a single gray palette composed of seven gradations, ranging from `gray-darkest` to `gray-lightest`. These are created from HSL values of the same hue and saturation, where only the lightness is modified.
+All gray values are built from a single gray palette composed of eight gradations, ranging from `gray-1` to `gray-8`. These are created from HSL values of the same hue and saturation, where only the lightness is modified. By default, the gradations run from darkest to lightest, but you can alter this if, say, you are implementing a dark theme override.
 
 <PropertiesTable category="gray-palette" />
 
@@ -81,8 +81,8 @@ There are two types of modifier classes. `is-*` signifies that the properties of
 For example, consider the difference between these two classes:
 
 ```html
-<div class="is-centered">This div is centered</div>
-<div class="has-centered-text">This div has centered text</div>
+<div class="is-stretched">This div stretches to fill its parent</div>
+<div class="has-text-truncated">This div has text that is truncated with an ellipsis</div>
 ```
 
 If the properties of the element itself are affected, we use `is-*`. If the contents of that element have been affected, we use `has-*`.
@@ -102,9 +102,11 @@ Here are some example media queries:
 
 .my-component {
   width: 100%;
+  
   @media (--tablet) {
     width: 50%;
   }
+  
   @media (--desktop) {
     width: 25%;
   }

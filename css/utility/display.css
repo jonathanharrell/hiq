@@ -53,15 +53,6 @@ parent must have `position: relative`
   @mixin is-clipped;
 }
 
-/* remove box-shadow */
-@define-mixin is-shadowless {
-  box-shadow: none !important;
-}
-
-.is-shadowless {
-  @mixin is-shadowless;
-}
-
 /* reset of all properties to initial values */
 @define-mixin is-initial {
   all: initial;

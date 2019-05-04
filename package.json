@@ -15,9 +15,9 @@
     "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
   ],
   "license": "MIT",
-  "main": "css/hiq.pcss",
+  "main": "css/hiq.css",
   "files": [
-    "pcss/**/*.pcss",
+    "css/**/*.css",
     "dist",
     "index.html",
     "postcss.config.js"

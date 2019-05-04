@@ -8,7 +8,7 @@ For more straightforward sizing in CSS, we globally change the `box-sizing` valu
 
 A base border-radius is defined globally with `--hiq-border-radius`. This is used on several elements, including `button`s, `input`s, and more, but can be overridden within each element.
 
-All focusable elements have `outline` removed, but an outline is simulated using `box-shadow`. This can be customized with `--hiq-outline-width` and `--hiq-outline-color`.
+All focusable elements have the `outline` property customized with `--hiq-outline-width` and `--hiq-outline-color`.
 
 ## Containers
 
@@ -56,117 +56,19 @@ Most block-level elements will fallback to using the bottom margin defined by th
 
 <PropertiesTable category="margins" />
 
-## Flex Grid
-
-For the most part, HiQ does not provide any grid utilities, due to the quickly improving support for the CSS grid spec. Ideally, most grids should be created using CSS grid properties. However, when supporting older browsers (namely IE11), it may be necessary to create some grids with flexbox.
-
-HiQ provides a simple mixin for more easily creating a wrapped flex grid.
-
-```css
-@mixin flex-grid $flex-basis, $grid-gap;
-```
-
-Argument | Description
---- | ---
-`flex-basis` | Defines the initial main size of each grid item.
-`grid-gap` | Defines the gap between each grid item.
-
-Example usage:
-
-```css
-div {
-  @mixin flex-grid 30rem, 1rem;
-}
-```
-
-In order the create the grid gap, this mixin is setting negative margin on the grid container and horizontal padding on each grid item.
-
-Here’s an example of the css that the mixin would generate:
-
-```css
-.grid-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -1rem;
-  margin-left: -1rem;
-}
-
-.grid-container > * {
-  flex: 1 1 30rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-```
-
 ## Additional Utilities for Layout
 
-There are several utility classes you can use to make certain common layout tasks quicker and easier. Keep in mind that you should probably only use these if the behavior defined by them will not change at different breakpoints.
+There are a few utility classes you can use to make certain common layout tasks quicker and easier. Keep in mind that you should probably only use these if the behavior defined by them will not change at different breakpoints.
 
 Each of the layout utility classes has an associated mixin that can be used if you are using the HiQ source files with a PostCSS build.
 
-### Setting Widths
-
-```html
-<!-- Stretches an element to the full width of its parent -->
-<div class="is-full-width"></div>
-
-<!-- Sets an element's max-width to 100% of its parent -->
-<div class="is-max-full-width"></div>
-```
-
-```css
-@mixin is-full-width;
-@mixin is-max-full-width;
-```
-
-### Centering
-
-`.is-centered` centers an element within its parent. The mixin can optionally set a max-width on the element.
-
-```html
-<div class="is-centered"></div>
-```
-
-```css
-@mixin is-centered $max-width;
-```
-
-Example usage:
-
-```css
-div {
-  @mixin is-centered 30rem;
-}
-```
-
-### Floating
-
-```html
-<!-- Floats an element left -->
-<div class="is-pulled-left"></div>
-
-<!-- Floats an element right -->
-<div class="is-pulled-right"></div>
-
-<!-- Applies the clearfix hack -->
-<div class="is-clearfix"></div>
-```
-
-```css
-@mixin is-pulled-left;
-@mixin is-pulled-right;
-@mixin is-clearfix;
-```
-
-For more information on the clearfix hack and why it is needed when doing float-based layouts, [read this article](https://css-tricks.com/snippets/css/clear-fix/) from CSS-Tricks.
-
 ### Stretching
 
-To stretch a child element to fill its parents, use the `.absolute-stretch` class or its related mixin. Note that the parent must have `position: relative` to size the children correctly.
+To stretch a child element to fill its parents, use the `.is-stretched` class or its related mixin. Note that the parent must have `position: relative` to size the children correctly.
 
 ```html
 <div class="parent" style="position: relative;">
-    <div class="child absolute-stretch"></div>
+    <div class="child is-stretched"></div>
 </div>
 ```
 
@@ -240,28 +142,9 @@ To visually hide an element, but keep it accessible to screen readers, use the `
 
 ### Property Removal
 
-There are several utilities designed for removing certain properties:
-
-```html
-<!-- removes margin -->
-<div class="is-marginless"></div>
-
-<!-- removes padding -->
-<div class="is-paddingless"></div>
-
-<!-- removes border-radius -->
-<div class="is-radiusless"></div>
-
-<!-- removes box-shadow -->
-<div class="is-shadowless"></div>
-```
+There are two utilities designed for removing/resetting property values:
 
 ```css
-@mixin is-marginless;
-@mixin is-paddingless;
-@mixin is-radiusless;
-@mixin is-shadowless;
-
 /* resets all properties on an element to their initial values */
 @mixin is-initial;
 

@@ -22,10 +22,10 @@ Import the compiled minified version in your CSS:
 
 ### Advanced
 
-Import the source version and process your CSS using PostCSS. This will give you access to the utility mixins that HiQ provides. Note that source files use the `.pcss` file extension.
+Import the source version and process your CSS using PostCSS. This will give you access to the utility mixins that HiQ provides. Note that source files use the `.css` file extension.
 
 ```css
-@import 'node_modules/hiq/pcss/hiq.pcss';
+@import 'node_modules/hiq/css/hiq.css';
 ```
 
 To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
@@ -43,7 +43,7 @@ module.exports = {
 You may also want to include the following optional plugins (also installed with HiQ):
 
 ```js
-require('postcss-easy-import')({ extensions: '.pcss' }),
+require('postcss-easy-import'),
 require('postcss-nested'),
 require('autoprefixer'),
 require('postcss-discard-comments')
@@ -56,22 +56,21 @@ For more information on using PostCSS read the [PostCSS documentation](https://g
 Any of the HiQ CSS files can be imported independently. For example, if you want only the button styles, import the buttons file, after the basic utility files:
 
 ```css
-@import 'node_modules/hiq/pcss/utility/*.pcss';
-@import 'node_modules/hiq/pcss/elements/buttons.pcss';
+@import 'node_modules/hiq/css/utility/*.css';
+@import 'node_modules/hiq/css/elements/buttons.css';
 ```
 
 If you go with this approach, we recommend importing at least the base styles first and then including additional files after that. The base files will give you the typographic scale and basic structural styles. This is not required, however.
 
 ```css
-@import 'node_modules/hiq/pcss/utility/*.pcss';
-@import 'node_modules/hiq/pcss/base/*.pcss';
-@import 'node_modules/hiq/pcss/typography/*.pcss';
+@import 'node_modules/hiq/css/utility/*.css';
+@import 'node_modules/hiq/css/base/*.css';
+@import 'node_modules/hiq/css/typography/*.css';
 
-@import 'node_modules/hiq/pcss/base/buttons.pcss';
+@import 'node_modules/hiq/css/base/buttons.css';
 ```
 
 ## Theming
-
 
 HiQ is built with custom properties and is easy to theme according to your own brand. Refer to the [custom property reference](/reference/), grab the properties you want to change, and include them in your project.
 
@@ -96,15 +95,17 @@ Ideally, you would include your custom properties within a `variables.css` file.
 @import 'variables.css';
 ```
 
-If you want your custom property definitions to apply globally, you should define them on the root element using `:root`. Otherwise, you can scope them to whatever element you wish.
+If you want your custom property definitions to apply globally, you should define them on the root element using `:root`.
+
+To apply custom properties on specific elements or classes, you can define the local, scoped version of the custom properties (remove the `hiq-` prefix).
 
 For example, if you are creating a button variant, you could define the custom properties on a specific class:
 
 ```css
 button.is-primary {
-  --hiq-button-border-color: blue;
-  --hiq-button-background-color: blue;
-  --hiq-button-text-color: white;
+  --button-border-color: blue;
+  --button-background-color: blue;
+  --button-text-color: white;
 }
 ```
 
@@ -125,12 +126,14 @@ Take this button as an example:
 ```css
 button {
   background-color:
-    /* use the button background color variable, if defined */
-    var(--hiq-button-background-color,
-      /* otherwise use the primary color variable, if defined */
-      var(--hiq-color-primary,
-        /* otherwise fallback to a static color value */
-        hsl(210, 100%, 50%)
+    /* use the scoped button background color variable, if deifned */
+    var(--button-background-color),
+      /* otherwise use the global background color variable, if defined */
+      var(--hiq-button-background-color,
+        /* otherwise use the primary color variable, if defined */
+        var(--hiq-color-primary,
+          /* otherwise fallback to a static color value */
+          hsl(210, 100%, 50%)
       )
     );
 }
@@ -142,40 +145,12 @@ This way, you have the freedom to be as specific with your custom property defin
 
 The HiQ distribution build will work in any browsers that support custom properties. See the [Can I Use page](https://caniuse.com/#feat=css-variables) for the full browser listing.
 
-You can use the source files and a PostCSS build to support browsers that don’t provide custom property support (more information below).
+::: warning
+Note that as of v3.0.0, HiQ does NOT work with any versions of Internet Explorer.
+:::
 
 ### Vendor Prefixes
 
 The compiled version of HiQ comes with vendor prefixes included. If you want greater control over which prefixes are used, you can import the HiQ source files and run them through your own PostCSS setup.
 
 We recommend using [autoprefixer](https://github.com/postcss/autoprefixer) and defining the browsers you wish to support using [browserslist](https://github.com/ai/browserslist).
-
-### Custom Property Fallbacks
-
-If you are supporting older browsers that do not support custom properties, you can run your css through PostCSS and use the PostCSS custom properties plugin. This will compute the [custom properties](https://github.com/postcss/postcss-custom-properties) at compile time.
-
-Note that if you do this, you will lose some of the benefits of custom properties, including the ability to dynamically change them with JavaScript or override them within scoped selectors or media queries. To preserve custom properties for the browsers that do support them, configure the PostCSS custom properties plugin like this:
-
-```js{5-7}
-module.exports = {
-    plugins: [
-        // other plugins here
-
-        require('postcss-custom-properties')({
-            preserve: true
-        })
-    ]
-}
-```
-
-This will result in both the original custom property and the computed property being included in the final css output:
-
-```css
-button {
-  background-color: hsl(210, 100%, 50%);
-  background-color: var(--gray-lighter);
-}
-```
-
-The custom property is included second and, therefore, will override the static value if the browser supports custom properties.
-
