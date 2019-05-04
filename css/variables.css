@@ -263,6 +263,7 @@
   --hiq-checkbox-border-radius: var(--hiq-border-radius);
   --hiq-checkbox-background-color: var(--hiq-color-gray-6);
   --hiq-checkbox-hover-background-color: var(--hiq-color-gray-5);
+  --hiq-checkbox-focus-background-color: var(--hiq-color-gray-5);
   --hiq-checkbox-checked-border-color: var(--hiq-color-primary);
   --hiq-checkbox-checked-background-color: var(--hiq-color-primary);
   --hiq-checkbox-check-width: 0.25rem;
@@ -282,6 +283,7 @@
   --hiq-radio-border-radius: 50%;
   --hiq-radio-background-color: var(--hiq-color-gray-6);
   --hiq-radio-hover-background-color: var(--hiq-color-gray-5);
+  --hiq-radio-focus-background-color: var(--hiq-color-gray-5);
   --hiq-radio-checked-border-color: var(--hiq-color-primary);
   --hiq-radio-checked-background-color: var(--hiq-color-primary);
   --hiq-radio-check-width: 0.5rem;

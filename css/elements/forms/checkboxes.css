@@ -12,6 +12,7 @@
   --checkbox-border-radius: var(--hiq-checkbox-border-radius, var(--hiq-border-radius, 0.2rem));
   --checkbox-background-color: var(--hiq-checkbox-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
   --checkbox-hover-background-color: var(--hiq-checkbox-hover-background-color, var(--hiq-checkbox-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --checkbox-focus-background-color: var(--hiq-checkbox-focus-background-color, var(--hiq-checkbox-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
   --checkbox-checked-border-color: var(--hiq-checkbox-checked-border-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
   --checkbox-checked-background-color: var(--hiq-checkbox-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
   --checkbox-check-width: var(--hiq-checkbox-check-width, 0.25rem);
@@ -57,12 +58,12 @@
     opacity: 0;
     pointer-events: none;
 
-    &:hover + label::before,
-    &:focus + label::before {
+    &:hover + label::before {
       background-color: var(--checkbox-hover-background-color);
     }
 
     &:focus + label::before {
+      background-color: var(--checkbox-focus-background-color);
       outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
     }
 

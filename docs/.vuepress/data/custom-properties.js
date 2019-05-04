@@ -1072,6 +1072,13 @@ module.exports = [
         description: "Sets the background color of the visual checkbox element when hovered.",
     },
     {
+        name: "--hiq-checkbox-focus-background-color",
+        local: "--checkbox-focus-background-color",
+        type: "color",
+        category: "checkboxes",
+        description: "Sets the background color of the visual checkbox element when focused.",
+    },
+    {
         name: "--hiq-checkbox-checked-border-color",
         local: "--checkbox-checked-border-color",
         type: "color",
@@ -1189,6 +1196,13 @@ module.exports = [
         type: "color",
         category: "radio-buttons",
         description: "Sets the background color of the visual radio element when hovered.",
+    },
+    {
+        name: "--hiq-radio-focus-background-color",
+        local: "--radio-focus-background-color",
+        type: "color",
+        category: "radio-buttons",
+        description: "Sets the background color of the visual radio element when focused.",
     },
     {
         name: "--hiq-radio-checked-border-color",
