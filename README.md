@@ -63,12 +63,12 @@ These can be included anywhere, before or after HiQ!
 
 If you want your custom property definitions to apply globally, you should define them on the root element using `:root`. Otherwise, you can scope them to whatever element you wish.
 
-For example, if you are creating a button variant, you could define the custom properties on a specific class:
+For example, if you are creating a button variant, you could define the locally scoped custom properties on a specific class:
 
 ```css
 button.is-primary {
-  --hiq-button-border-color: blue;
-  --hiq-button-background-color: blue;
-  --hiq-button-text-color: white;
+  --button-border-color: blue;
+  --button-background-color: blue;
+  --button-text-color: white;
 }
 ```
