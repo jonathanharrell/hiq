@@ -14,7 +14,7 @@
                 </td>
                 <td class="name">
                     <code>{{ property.name }}</code><br/>
-                    <code style="--code-background-color: var(--hiq-selection-color);">{{ property.local }}</code>
+                    <code v-if="property.local" style="--code-background-color: var(--hiq-selection-color);">{{ property.local }}</code>
                 </td>
                 <td class="description">{{ property.description }}</td>
             </tr>
