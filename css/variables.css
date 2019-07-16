@@ -1,5 +1,9 @@
 /* variables */
 
+/* should match --hiq-unitless-upper-font-range with px unit */
+@custom-media --hiq-lower-font-range (min-width: 460px);
+@custom-media --hiq-upper-font-range (min-width: 900px);
+
 :root {
   /* theme variables */
 
@@ -65,10 +69,6 @@
   /* unitless viewport widths in px when min/max font sizes will apply */
   --hiq-unitless-lower-font-range: 460;
   --hiq-unitless-upper-font-range: 900;
-
-  /* should match --hiq-unitless-upper-font-range with px unit */
-  @custom-media --hiq-lower-font-range (min-width: 460px);
-  @custom-media --hiq-upper-font-range (min-width: 900px);
 
   /* font sizes */
   --hiq-font-size-1: 2.5rem;
