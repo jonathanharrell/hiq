@@ -132,7 +132,7 @@ Take this button as an example:
 ```css
 button {
   background-color:
-    /* use the scoped button background color variable, if deifned */
+    /* use the scoped button background color variable, if defined */
     var(--button-background-color),
       /* otherwise use the global background color variable, if defined */
       var(--hiq-button-background-color,
