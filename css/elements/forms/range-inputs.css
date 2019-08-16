@@ -33,25 +33,6 @@ input[type=range] {
     cursor: pointer;
   }
 
-  &::-ms-track {
-    width: 100%;
-    height: var(--range-input-track-height);
-    border-width: var(--range-input-thumb-height);
-    border-color: transparent;
-    background-color: transparent;
-    color: transparent;
-    transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
-    cursor: pointer;
-  }
-
-  &::-ms-fill-lower {
-    background-color: var(--range-input-track-background-color);
-  }
-
-  &::-ms-fill-upper {
-    background-color: var(--range-input-track-background-color);
-  }
-
   &::-webkit-slider-thumb {
     width: var(--range-input-thumb-width);
     height: var(--range-input-thumb-height);
@@ -80,19 +61,6 @@ input[type=range] {
     box-shadow: 0 0 0 var(--hiq-outline-width, 0.2rem) var(--hiq-outline-color, hsl(210, 100%, 85%));
   }
 
-  &::-ms-thumb {
-    width: var(--range-input-thumb-width);
-    height: var(--range-input-thumb-height);
-    border-color: transparent;
-    border-radius: var(--range-input-thumb-border-radius);
-    background-color: var(--range-input-thumb-background-color);
-    cursor: pointer;
-  }
-
-  &:focus::-ms-thumb {
-    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
-  }
-
   &:disabled,
   &[aria-disabled] {
     &::-webkit-slider-runnable-track {
@@ -105,27 +73,12 @@ input[type=range] {
       cursor: not-allowed;
     }
 
-    &::-ms-fill-lower {
-      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
-      cursor: not-allowed;
-    }
-
-    &::-ms-fill-upper {
-      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
-      cursor: not-allowed;
-    }
-
     &::-webkit-slider-thumb {
       background-color: var(--range-input-thumb-disabled-background-color);
       cursor: not-allowed;
     }
 
     &::-moz-range-thumb {
-      background-color: var(--range-input-thumb-disabled-background-color);
-      cursor: not-allowed;
-    }
-
-    &::-ms-thumb {
       background-color: var(--range-input-thumb-disabled-background-color);
       cursor: not-allowed;
     }
