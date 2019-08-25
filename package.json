@@ -62,10 +62,10 @@
     "commitizen": "3.0.4",
     "husky": "1.1.3",
     "minifier": "0.8.1",
+    "semantic-release": "15.13.24",
     "stylelint": "8.2.0",
     "stylelint-config-whq": "2.3.0",
-    "vuepress": "0.14.4",
-    "semantic-release": "^15.10.8"
+    "vuepress": "0.14.4"
   },
   "dependencies": {
     "autocomplete.js": "0.29.0",
