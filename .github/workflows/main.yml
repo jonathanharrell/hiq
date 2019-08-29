@@ -14,7 +14,7 @@ jobs:
         env:
           ACCESS_TOKEN: $GITHUB_TOKEN
           BRANCH: master
-          FOLDER: ./docs/.vuepress/dist
+          FOLDER: docs/.vuepress/dist
           BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build
 
   release:
