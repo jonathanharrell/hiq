@@ -23,8 +23,9 @@ jobs:
             -   uses: actions/checkout@master
             -   uses: actions/setup-node@v1
                     with:
-                        node-version: '9'
-            -   run: npm install
-            -   run: npm run postcss
-            -   run: npm run minify
-            -   run: npm run semantic-release
+                        node-version: '9.x'
+            -   run: |
+                    npm install
+                    npm run postcss
+                    npm run minify
+                    npm run semantic-release
