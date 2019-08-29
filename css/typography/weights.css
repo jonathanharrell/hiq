@@ -1,0 +1,6 @@
+/* font weights */
+
+strong,
+b {
+  font-weight: var(--hiq-font-weight-bold, 700);
+}

@@ -1,0 +1,63 @@
+/* lists */
+
+@custom-selector :--list
+  ol,
+  ul;
+
+:--list {
+  /* scoped property */
+  --list-margin-left: var(--hiq-list-margin-left, 1rem);
+
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  padding: 0 0 0 var(--list-margin-left);
+}
+
+ul {
+  /* scoped property */
+  --unordered-list-style: var(--hiq-unordered-list-style, disc);
+
+  list-style: var(--unordered-list-style);
+}
+
+/* remove bottom margin from nested lists */
+ul ul {
+  margin-bottom: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+@define-mixin is-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.is-unstyled {
+  @mixin is-unstyled;
+}
+
+/* definition lists */
+
+dl {
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  padding: 0;
+}
+
+dt {
+  /* scoped property */
+  --description-list-title-font-weight: var(--hiq-description-list-title-font-weight, var(--hiq-font-weight-semibold, 600));
+
+  margin: 0;
+  padding: 0;
+  font-weight: var(--description-list-title-font-weight);
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+  &:not(:last-child) {
+    margin-bottom: var(--hiq-block-element-margin-bottom, 1rem);
+  }
+}

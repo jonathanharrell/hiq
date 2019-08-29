@@ -1,0 +1,35 @@
+/* html & body */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  min-width: 300px;
+  -ms-overflow-style: scrollbar;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--hiq-html-background-color, white);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--hiq-body-background-color, white);
+}
+
+/*
+IE10+ doesn't honor `<meta name='viewport'>` in some cases
+source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+*/
+@-ms-viewport {
+  width: device-width;
+}

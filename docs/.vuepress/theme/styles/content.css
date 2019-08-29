@@ -1,0 +1,126 @@
+.content:not(.custom) {
+  max-width: var(--hiq-max-container-width);
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+
+.content:not(.custom) > *:first-child {
+  margin-top: var(--navbar-height);
+}
+
+.content:not(.custom) p.demo {
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--hiq-color-gray-6);
+  border-radius: 4px;
+}
+
+.content:not(.custom) > h1,
+.content:not(.custom) > h2,
+.content:not(.custom) > h3,
+.content:not(.custom) > h4,
+.content:not(.custom) > h5,
+.content:not(.custom) > h6 {
+  margin-top: calc(0.75rem - var(--navbar-height));
+  padding-top: calc(var(--navbar-height) + 1rem);
+}
+
+.content:not(.custom) > h1:first-child,
+.content:not(.custom) > h2:first-child,
+.content:not(.custom) > h3:first-child,
+.content:not(.custom) > h4:first-child,
+.content:not(.custom) > h5:first-child,
+.content:not(.custom) > h6:first-child {
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content:not(.custom) > h2:first-child + p,
+.content:not(.custom) > h2:first-child + pre,
+.content:not(.custom) > h2:first-child + .custom-block,
+.content:not(.custom) > h3:first-child + p,
+.content:not(.custom) > h3:first-child + pre,
+.content:not(.custom) > h3:first-child + .custom-block,
+.content:not(.custom) > h4:first-child + p,
+.content:not(.custom) > h4:first-child + pre,
+.content:not(.custom) > h4:first-child + .custom-block,
+.content:not(.custom) > h5:first-child + p,
+.content:not(.custom) > h5:first-child + pre,
+.content:not(.custom) > h5:first-child + .custom-block,
+.content:not(.custom) > h6:first-child + p,
+.content:not(.custom) > h6:first-child + pre,
+.content:not(.custom) > h6:first-child + .custom-block {
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
+}
+
+.theme-container.no-navbar .content:not(.custom) > h1,
+.theme-container.no-navbar .content:not(.custom) > h2,
+.theme-container.no-navbar .content:not(.custom) > h3,
+.theme-container.no-navbar .content:not(.custom) > h4,
+.theme-container.no-navbar .content:not(.custom) > h5,
+.theme-container.no-navbar .content:not(.custom) > h6 {
+  margin-top: 1.5rem;
+  padding-top: 0;
+}
+
+.content.custom {
+  margin: 0;
+  padding: 0;
+}
+
+a.header-anchor {
+  float: left;
+  margin-top: 0.125em;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  box-shadow: none !important;
+  opacity: 0;
+  font-size: 0.85em;
+}
+
+h1:hover .header-anchor,
+h2:hover .header-anchor,
+h3:hover .header-anchor,
+h4:hover .header-anchor,
+h5:hover .header-anchor,
+h6:hover .header-anchor {
+  opacity: 1;
+}
+
+.content figure {
+  margin: 2rem 0 3rem;
+}
+
+.content figure img {
+  margin: 0 auto;
+}
+
+.content ul,
+.content ol {
+  padding-left: 1.2em;
+}
+
+.content table td {
+  vertical-align: middle;
+}
+
+.content table p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 959px) {
+  .content:not(.custom) {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 419px) {
+  .content:not(.custom) {
+    padding: 1.5rem;
+  }
+
+  .content div[class*="language-"] {
+    margin: 0.85rem -1.5rem;
+    border-radius: 0;
+  }
+}

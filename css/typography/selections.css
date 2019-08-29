@@ -1,0 +1,11 @@
+/* selections */
+
+/* user selection color */
+@custom-selector :--user-selection
+  ::-moz-selection,
+  ::selection;
+
+:--user-selection {
+  background-color: var(--hiq-selection-color, hsl(210, 100%, 90%));
+  text-shadow: none;
+}

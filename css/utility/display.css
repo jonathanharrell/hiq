@@ -1,0 +1,64 @@
+/* utility mixins and classes */
+
+/*
+stretches element to full size of its parent
+parent must have `position: relative`
+*/
+@define-mixin is-stretched {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.is-stretched {
+  @mixin is-stretched;
+}
+
+/* visually hides elements but keeps them accessible to screen readers */
+@define-mixin is-visually-hidden {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+.is-visually-hidden {
+  @mixin is-visually-hidden;
+}
+
+/* truncate text and show ellipsis */
+@define-mixin has-text-truncated {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.has-text-truncated {
+  @mixin has-text-truncated;
+}
+
+/* overflow content hidden */
+@define-mixin is-clipped {
+  overflow: hidden !important;
+}
+
+.is-clipped {
+  @mixin is-clipped;
+}
+
+/* reset of all properties to initial values */
+@define-mixin is-initial {
+  all: initial;
+}
+
+/* reset of all properties to inheritable values, or else initial values */
+@define-mixin is-unset {
+  all: unset;
+}

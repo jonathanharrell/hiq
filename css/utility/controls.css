@@ -1,0 +1,35 @@
+/* control mixins */
+
+/* removes default appearance from buttons and inputs */
+@define-mixin is-controlled {
+  box-shadow: none;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+/* makes element unselectable by user */
+@define-mixin is-unselectable {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.is-unselectable {
+  @mixin is-unselectable;
+}
+
+/* enables momentum-based scrolling on touch devices when content overflows */
+@define-mixin overflow-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-touch {
+  @mixin overflow-touch;
+}
+
+/* makes an element resizable */
+@define-mixin is-resizable $direction {
+  overflow: auto;
+  resize: $direction;
+}

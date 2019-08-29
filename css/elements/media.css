@@ -1,0 +1,56 @@
+/* media */
+
+@custom-selector :--media
+  img,
+  embed,
+  object,
+  video;
+
+:--media {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
+  padding: 0;
+}
+
+figcaption {
+  /* scoped properties */
+  --figcaption-margin-top: var(--hiq-figcaption-margin-top, 0.5rem);
+  --figcaption-font-weight: var(--hiq-figcaption-font-weight, var(--hiq-font-weight-normal, 400));
+  --figcaption-text-color: var(--hiq-figcaption-text-color, var(--hiq-color-gray-5, hsl(0, 0%, 60%)));
+
+  margin-top: var(--figcaption-margin-top);
+  font-weight: var(--figcaption-font-weight);
+  color: var(--figcaption-text-color);
+}
+
+img {
+  /* scoped property */
+  --image-border-radius: var(--hiq-image-border-radius, var(--hiq-border-radius, 0.2rem));
+
+  display: block;
+  border-style: none;
+  border-radius: var(--image-border-radius);
+  vertical-align: middle;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+video:focus {
+  outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+}
+
+audio {
+  max-width: 100%;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

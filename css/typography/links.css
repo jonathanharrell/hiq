@@ -1,0 +1,30 @@
+/* links */
+
+a {
+  /* scoped properties */
+  --link-text-decoration: var(--hiq-link-text-decoration, none);
+  --link-color: var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  --link-hover-color: var(--hiq-link-hover-color, hsl(210, 100%, 40%));
+  --link-active-color: var(--hiq-link-active-color, hsl(210, 100%, 40%));
+
+  background-color: transparent;
+  text-decoration: var(--link-text-decoration);
+  -webkit-text-decoration-skip: objects;
+  color: var(--link-color);
+  transition: color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--link-hover-color);
+  }
+
+  &:focus {
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+  }
+
+  &:active {
+    color: var(--link-active-color);
+  }
+}
+

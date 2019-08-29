@@ -1,0 +1,22 @@
+/* file inputs */
+
+input[type='file'] {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+  }
+
+  &:disabled,
+  &[aria-disabled] {
+    cursor: not-allowed;
+  }
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}

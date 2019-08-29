@@ -1,0 +1,65 @@
+/* progress elements */
+
+@define-mixin progress-indeterminate {
+  @mixin is-stretched;
+
+  display: block;
+  background-color: var(--progress-filled-color);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+  animation: progress-bar-stripes 1s linear infinite;
+  content: '';
+}
+
+progress {
+  /* scoped properties */
+  --progress-background-color: var(--hiq-progress-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+  --progress-filled-color: var(--hiq-progress-filled-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+
+  position: relative;
+  width: 100%;
+  border: none;
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &[value] {
+    height: 1rem;
+  }
+
+  &::-webkit-progress-bar {
+    background-color: var(--progress-background-color);
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--progress-filled-color);
+  }
+
+  &::-moz-progress-bar {
+    background-color: var(--progress-filled-color);
+  }
+
+  &:indeterminate {
+    &::after {
+      @mixin progress-indeterminate;
+    }
+
+    &::-webkit-progress-bar {
+      @mixin progress-indeterminate;
+    }
+
+    &::-moz-progress-bar {
+      @mixin progress-indeterminate;
+    }
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}

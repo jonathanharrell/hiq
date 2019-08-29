@@ -1,0 +1,103 @@
+/* radio buttons */
+
+.radio {
+  /* scoped properties */
+  --radio-margin-bottom: var(--hiq-radio-margin-bottom, 0.5rem);
+  --radio-label-padding-horizontal: var(--hiq-radio-label-padding-horizontal, 1.5rem);
+  --radio-label-font-weight: var(--hiq-radio-label-font-weight, var(--hiq-font-weight-normal, 400));
+  --radio-width: var(--hiq-radio-width, 1rem);
+  --radio-height: var(--hiq-radio-height, 1rem);
+  --radio-border-width: var(--hiq-radio-border-width, 1px) solid var(--hiq-radio-border-color, transparent);
+  --radio-border-color: var(--hiq-radio-border-color, transparent);
+  --radio-border-radius: var(--hiq-radio-border-radius, 50%);
+  --radio-background-color: var(--hiq-radio-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+  --radio-hover-background-color: var(--hiq-radio-hover-background-color, var(--hiq-radio-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --radio-focus-background-color: var(--hiq-radio-focus-background-color, var(--hiq-radio-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --radio-checked-background-color: var(--hiq-radio-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  --radio-checked-border-color: var(--hiq-radio-checked-border-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  --radio-check-width: var(--hiq-radio-check-width, 0.5rem);
+  --radio-check-height: var(--hiq-radio-check-height, 0.5rem);
+  --radio-check-border-radius: var(--hiq-radio-check-border-radius, 50%);
+  --radio-check-background-color: var(--hiq-radio-check-background-color, white);
+
+  position: relative;
+
+  & label {
+    position: relative;
+    margin-bottom: var(--radio-margin-bottom);
+    padding: 0 var(--radio-label-padding-horizontal);
+    font-weight: var(--radio-label-font-weight) !important;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+
+    /* style `::before` to look like radio button */
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--radio-width);
+      height: var(--radio-height);
+      border: var(--radio-border-width) solid var(--radio-border-color);
+      border-radius: var(--radio-border-radius);
+      background-color: var(--radio-background-color);
+      transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
+      content: '';
+    }
+  }
+
+  /* visually hide input */
+  & input[type='radio'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover + label::before {
+      background-color: var(--radio-hover-background-color);
+    }
+
+    &:focus + label::before {
+      background-color: var(--radio-focus-background-color);
+      outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+    }
+
+    &:checked + label::before,
+    &[aria-checked] + label::before {
+      border-color: var(--radio-checked-border-color);
+      background-color: var(--radio-checked-background-color);
+    }
+
+    /* style `::after` to look like radio button fill */
+    &:checked + label::after,
+    &[aria-checked] + label::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: calc(var(--radio-width) / 2);
+      width: var(--radio-check-width);
+      height: var(--radio-check-height);
+      border-radius: var(--radio-check-border-radius);
+      background-color: var(--radio-check-background-color);
+      transform: translate(-50%, -50%);
+      content: '';
+    }
+
+    :--not-writable + label {
+      color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
+    }
+
+    &:disabled,
+    &[aria-disabled] {
+      cursor: not-allowed;
+    }
+
+    :--not-writable + label::before {
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+    }
+  }
+}

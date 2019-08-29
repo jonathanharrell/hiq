@@ -1,0 +1,48 @@
+/* selects */
+
+select {
+  /* scoped properties */
+  --select-background-image: var(--hiq-select-background-image, url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E'));
+  --select-background-position: var(--hiq-select-background-position, right 1rem center);
+  --select-background-size: var(--hiq-select-background-size, 0.75rem);
+  --select-multiple-padding-vertical: var(--hiq-select-multiple-padding-vertical, 0.75rem);
+  --select-multiple-checked-background-color: var(--hiq-select-multiple-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+
+  @mixin input;
+
+  display: block;
+  width: 100%;
+  height: var(--hiq-input-height, 2.5rem);
+  padding: var(--hiq-input-padding-vertical, 0) var(--hiq-input-padding-horizontal, 0.75rem);
+
+  &:not([multiple]) {
+    /* if select does not have `multiple` attribute it receives a caret on the right-hand side */
+    background-image: var(--select-background-image);
+    background-repeat: no-repeat;
+    background-position: var(--select-background-position);
+    background-size: var(--select-background-size);
+  }
+
+  &[multiple] {
+    height: auto;
+    padding-top: var(--select-multiple-padding-vertical);
+    padding-bottom: var(--select-multiple-padding-vertical);
+
+    & option {
+      padding: 0.125rem 0.5rem;
+
+      &:checked {
+        background: var(--select-multiple-checked-background-color) -webkit-linear-gradient(bottom, var(--select-multiple-checked-background-color) 0%, var(--select-multiple-checked-background-color) 100%);
+      }
+    }
+  }
+}
+
+/* grouping of options within `select` element */
+
+optgroup {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

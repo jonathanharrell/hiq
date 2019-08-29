@@ -1,0 +1,118 @@
+/* checkboxes */
+
+.checkbox {
+  /* scoped properties */
+  --checkbox-margin-bottom: var(--hiq-checkbox-margin-bottom, 0.5rem);
+  --checkbox-label-padding-horizontal: var(--hiq-checkbox-label-padding-horizontal, 1.5rem);
+  --checkbox-label-font-weight: var(--hiq-checkbox-label-font-weight, var(--hiq-font-weight-normal, 400));
+  --checkbox-width: var(--hiq-checkbox-width, 1rem);
+  --checkbox-height: var(--hiq-checkbox-height, 1rem);
+  --checkbox-border-width: var(--hiq-checkbox-border-width, 1px);
+  --checkbox-border-color: var(--hiq-checkbox-border-color, transparent);
+  --checkbox-border-radius: var(--hiq-checkbox-border-radius, var(--hiq-border-radius, 0.2rem));
+  --checkbox-background-color: var(--hiq-checkbox-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%)));
+  --checkbox-hover-background-color: var(--hiq-checkbox-hover-background-color, var(--hiq-checkbox-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --checkbox-focus-background-color: var(--hiq-checkbox-focus-background-color, var(--hiq-checkbox-background-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
+  --checkbox-checked-border-color: var(--hiq-checkbox-checked-border-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  --checkbox-checked-background-color: var(--hiq-checkbox-checked-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
+  --checkbox-check-width: var(--hiq-checkbox-check-width, 0.25rem);
+  --checkbox-check-height: var(--hiq-checkbox-check-height, 0.5rem);
+  --checkbox-check-color: var(--hiq-checkbox-check-color, white);
+  --checkbox-check-border-width: var(--hiq-checkbox-check-border-width, 2px);
+  --checkbox-indeterminate-width: var(--hiq-checkbox-indeterminate-width, 0.5rem);
+
+  position: relative;
+
+  & label {
+    position: relative;
+    margin-bottom: var(--checkbox-margin-bottom);
+    padding: 0 var(--checkbox-label-padding-horizontal);
+    font-weight: var(--checkbox-label-font-weight) !important;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+
+    /* style `::before` to appear like checkbox */
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--checkbox-width);
+      height: var(--checkbox-height);
+      border: var(--checkbox-border-width) solid var(--checkbox-border-color);
+      border-radius: var(--checkbox-border-radius);
+      background-color: var(--checkbox-background-color);
+      transition: background-color var(--hiq-speed, 0.2s) var(--hiq-easing, ease-out);
+      content: '';
+    }
+  }
+
+  /* visually hide input */
+  & input[type='checkbox'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover + label::before {
+      background-color: var(--checkbox-hover-background-color);
+    }
+
+    &:focus + label::before {
+      background-color: var(--checkbox-focus-background-color);
+      outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+    }
+
+    &:checked + label::before,
+    &[aria-checked] + label::before,
+    &:indeterminate + label::before {
+      border-color: var(--checkbox-checked-border-color);
+      background-color: var(--checkbox-checked-background-color);
+    }
+
+    /* style `::after` to look like check mark */
+    &:checked + label::after,
+    &[aria-checked] + label::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: calc(var(--checkbox-width) / 2);
+      width: var(--checkbox-check-width);
+      height: var(--checkbox-check-height);
+      border: solid var(--checkbox-check-color);
+      border-width: 0 var(--checkbox-check-border-width) var(--checkbox-check-border-width) 0;
+      transform: rotate(45deg) translate(-50%, -50%);
+      transform-origin: 50% 0;
+      content: '';
+    }
+
+    &:indeterminate + label::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: calc(var(--checkbox-width) / 2);
+      width: var(--checkbox-indeterminate-width);
+      height: var(--checkbox-check-border-width);
+      background-color: var(--checkbox-check-color);
+      transform: translate(-50%, -50%);
+      content: '';
+    }
+
+    :--not-writable + label {
+      color: var(--hiq-disabled-text-color, var(--hiq-color-gray-5, hsl(220, 10%, 60%)));
+    }
+
+    &:disabled,
+    &[aria-disabled] {
+      cursor: not-allowed;
+    }
+
+    :--not-writable + label::before {
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+    }
+  }
+}
