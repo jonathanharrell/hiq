@@ -1,31 +1,31 @@
 name: CI
 
 on:
-    push:
-        branches:
-            - master
+  push:
+    branches:
+      - master
 
 jobs:
-    deploy-docs:
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: actions/checkout@master
-            -   uses: JamesIves/github-pages-deploy-action@master
-                env:
-                    ACCESS_TOKEN: $GITHUB_TOKEN
-                    BRANCH: master
-                    FOLDER: ./docs/.vuepress/dist
-                    BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build
+  deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: JamesIves/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: $GITHUB_TOKEN
+          BRANCH: master
+          FOLDER: ./docs/.vuepress/dist
+          BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build
 
-    release:
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: actions/checkout@master
-            -   uses: actions/setup-node@v1
-                    with:
-                        node-version: '9.x'
-            -   run: |
-                    npm install
-                    npm run postcss
-                    npm run minify
-                    npm run semantic-release
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+          with:
+            node-version: '9.x'
+      - run: |
+          npm install
+          npm run postcss
+          npm run minify
+          npm run semantic-release
