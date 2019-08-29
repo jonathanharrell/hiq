@@ -24,8 +24,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '9.x'
-      - run: |
-          npm install
+      - name: install
+        run: npm install
+      - name: build
+        run: |
           npm run postcss
           npm run minify
-          npm run semantic-release
+      - name: generate release
+        run: npm run semantic-release
