@@ -16,6 +16,7 @@ jobs:
           BRANCH: master
           FOLDER: docs/.vuepress/dist
           BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build
+          CI: true
 
   release:
     runs-on: ubuntu-latest
@@ -32,3 +33,5 @@ jobs:
           npm run minify
       - name: generate release
         run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: $GITHUB_TOKEN
