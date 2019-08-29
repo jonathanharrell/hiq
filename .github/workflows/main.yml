@@ -9,7 +9,7 @@ jobs:
   deploy-docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
       - uses: JamesIves/github-pages-deploy-action@master
         env:
           ACCESS_TOKEN: $GITHUB_TOKEN
@@ -20,10 +20,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-          with:
-            node-version: '9.x'
+        with:
+          node-version: '9.x'
       - run: |
           npm install
           npm run postcss
