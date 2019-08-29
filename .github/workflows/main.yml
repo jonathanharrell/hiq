@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: JamesIves/github-pages-deploy-action@master
         env:
-          ACCESS_TOKEN: $GITHUB_TOKEN
+          ACCESS_TOKEN: ${GITHUB_TOKEN}
           BRANCH: master
           FOLDER: docs/.vuepress/dist
           BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build
@@ -34,4 +34,4 @@ jobs:
       - name: generate release
         run: npm run semantic-release
         env:
-          GITHUB_TOKEN: $GITHUB_TOKEN
+          GITHUB_TOKEN: ${GITHUB_TOKEN}
