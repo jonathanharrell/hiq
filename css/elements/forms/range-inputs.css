@@ -105,12 +105,27 @@ input[type=range] {
       cursor: not-allowed;
     }
 
+    &::-ms-fill-lower {
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+      cursor: not-allowed;
+    }
+
+    &::-ms-fill-upper {
+      background-color: var(--hiq-disabled-background-color, var(--hiq-color-gray-7, hsl(220, 10%, 95%)));
+      cursor: not-allowed;
+    }
+
     &::-webkit-slider-thumb {
       background-color: var(--range-input-thumb-disabled-background-color);
       cursor: not-allowed;
     }
 
     &::-moz-range-thumb {
+      background-color: var(--range-input-thumb-disabled-background-color);
+      cursor: not-allowed;
+    }
+
+    &::-ms-thumb {
       background-color: var(--range-input-thumb-disabled-background-color);
       cursor: not-allowed;
     }
