@@ -9,7 +9,6 @@ should match corresponding variables with px unit
 
 html {
   /* prevent adjustments of font size after orientation changes on some mobile devices */
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 
   /* text rendering */
