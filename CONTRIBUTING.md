@@ -14,4 +14,4 @@ When you commit, your commit message will be validated and linting will be run.
 
 ## Deployment
 
-When a PR is approved and merged into master, a build will be run through Travis CI, docs will be deployed through Github Pages, and a new package will be released through NPM.
+When a PR is approved and merged into master, a build will be run through Github actions, docs will be deployed through Github Pages, and a new package will be released through NPM.
