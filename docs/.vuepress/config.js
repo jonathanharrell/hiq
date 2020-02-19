@@ -36,7 +36,7 @@ module.exports = {
             },
             {
                 text: 'Theme Builder',
-                link: 'https://hiq.jonathan-harrell.com/'
+                link: 'https://hiq-theme-builder.netlify.com/'
             }
         ],
         sidebar: {
