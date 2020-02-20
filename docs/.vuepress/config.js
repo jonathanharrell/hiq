@@ -43,8 +43,37 @@ module.exports = {
             '/guide/': genGuideSidebarConfig('Guide'),
             '/reference/': genReferenceSidebarConfig('Reference')
         }
-    }
-}
+    },
+    plugins: [
+        [
+            'vuepress-plugin-container',
+            {
+                type: 'tip',
+                defaultTitle: {
+                    '/': 'TIP'
+                },
+            },
+        ],
+        [
+            'vuepress-plugin-container',
+            {
+                type: 'warning',
+                defaultTitle: {
+                    '/': 'WARNING'
+                },
+            },
+        ],
+        [
+            'vuepress-plugin-container',
+            {
+                type: 'danger',
+                defaultTitle: {
+                    '/': 'WARNING'
+                },
+            },
+        ]
+    ]
+};
 
 function genGuideSidebarConfig (title) {
     return [
