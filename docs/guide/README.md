@@ -5,7 +5,7 @@
 Start using HiQ by using npm to install the package or use the Github repository to get the latest development version.
 
 ``` bash
-yarn add hiq # OR npm install hiq
+npm install hiq
 ```
 
 ## Usage
