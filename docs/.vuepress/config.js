@@ -103,8 +103,7 @@ function genReferenceSidebarConfig (title) {
             collapsable: false,
             children: [
                 '',
-                'utilities',
-                'browser-bugs'
+                'utilities'
             ]
         }
     ]
