@@ -435,6 +435,13 @@ module.exports = [
         description: "Sets the text color for active anchor elements.",
     },
     {
+        name: "--hiq-link-visited-color",
+        local: "--link-visited-color",
+        type: "color",
+        category: "links",
+        description: "Sets the text color for visited anchor elements.",
+    },
+    {
         name: "--hiq-link-text-decoration",
         local: "--link-text-decoration",
         type: "text",
