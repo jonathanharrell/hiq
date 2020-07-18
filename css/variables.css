@@ -81,6 +81,20 @@
   --hiq-font-size-large: var(--hiq-font-size-4);
   --hiq-font-size-small: var(--hiq-font-size-6);
 
+  /* heading min/max font sizes */
+  --hiq-min-font-size-1: var(--hiq-font-size-1);
+  --hiq-max-font-size-1: var(--hiq-font-size-1);
+  --hiq-min-font-size-2: var(--hiq-font-size-2);
+  --hiq-max-font-size-2: var(--hiq-font-size-2);
+  --hiq-min-font-size-3: var(--hiq-font-size-3);
+  --hiq-max-font-size-3: var(--hiq-font-size-3);
+  --hiq-min-font-size-4: var(--hiq-font-size-4);
+  --hiq-max-font-size-4: var(--hiq-font-size-4);
+  --hiq-min-font-size-5: var(--hiq-font-size-5);
+  --hiq-max-font-size-5: var(--hiq-font-size-5);
+  --hiq-min-font-size-6: var(--hiq-font-size-6);
+  --hiq-max-font-size-6: var(--hiq-font-size-6);
+
   /* base unitless line heights */
   --hiq-line-height-base: 1.5;
   --hiq-heading-line-height: 1.2;
