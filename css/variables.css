@@ -301,6 +301,9 @@
   --hiq-range-input-track-border-radius: var(--hiq-border-radius);
   --hiq-range-input-track-background-color: var(--hiq-color-gray-6);
 
+  /* color inputs */
+  --hiq-color-input-background-color: var(--hiq-color-gray-6);
+
   /* progress/meter variables */
 
   /* meters */
