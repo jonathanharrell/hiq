@@ -15,7 +15,7 @@ html {
   text-rendering: var(--hiq-text-rendering, optimizeLegibility);
 
   /* base font family */
-  font-family: var(--hiq-font-family-base, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
+  font-family: var(--hiq-font-family-base, -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
 
   /* base font size */
   font-size: calc(var(--hiq-unitless-min-font-size, 15) * 1px);
