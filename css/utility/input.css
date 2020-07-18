@@ -20,7 +20,7 @@
   --input-focus-background-color: var(--hiq-input-focus-background-color, var(--hiq-input-background-color, white));
   --input-focus-text-color: var(--hiq-input-focus-text-color, var(--hiq-input-text-color, var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%)))));
   --input-invalid-border-color: var(--hiq-input-invalid-border-color, var(--hiq-color-danger, hsl(352, 95%, 61%)));
-  --input-valid-border-color: var(--hiq-input-valid-border-color, var(--hiq-color-success, hsl(158, 73%, 48%)));
+  --input-valid-border-color: var(--hiq-input-valid-border-color, var(--hiq-input-border-color, var(--hiq-color-gray-6, hsl(220, 10%, 90%))));
 
   /* remove default browser appearance */
   @mixin is-controlled;
@@ -67,11 +67,11 @@
     cursor: not-allowed;
   }
 
-  &:required:invalid:not(:focus) {
+  &:invalid:not(:focus) {
     border-color: var(--input-invalid-border-color);
   }
 
-  &:required:valid:not(:focus) {
+  &:valid:not(:focus) {
     border-color: var(--input-valid-border-color);
   }
 }

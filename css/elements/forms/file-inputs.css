@@ -14,9 +14,9 @@ input[type='file'] {
   &[aria-disabled] {
     cursor: not-allowed;
   }
-}
 
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
+  &::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: button;
+  }
 }

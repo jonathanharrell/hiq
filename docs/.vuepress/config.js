@@ -90,7 +90,8 @@ function genGuideSidebarConfig (title) {
                 'media',
                 'tables',
                 'forms-inputs',
-                'meters-progress'
+                'meters-progress',
+                'interactive-elements'
             ]
         }
     ]
@@ -103,8 +104,7 @@ function genReferenceSidebarConfig (title) {
             collapsable: false,
             children: [
                 '',
-                'utilities',
-                'browser-bugs'
+                'utilities'
             ]
         }
     ]

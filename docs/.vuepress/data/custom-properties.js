@@ -140,7 +140,7 @@ module.exports = [
         name: "--hiq-border-radius",
         type: "number",
         category: "borders-outlines",
-        description: "Sets the base border radius is applied to buttons, inputs, code blocks and other elements by default.",
+        description: "Sets the base border radius that is applied to buttons, inputs, code blocks and other elements by default.",
     },
     {
         name: "--hiq-outline-width",
@@ -274,6 +274,78 @@ module.exports = [
         type: "number",
         category: "type-scale",
         description: "Size slightly smaller than the base font size. The small element is assigned this size. Set to the sixth font size by default.",
+    },
+    {
+        name: "--hiq-min-font-size-1",
+        type: "number",
+        category: "type-scale",
+        description: "The minimum size (in px) that the first font size can reach. Set to the primary first font size by default.",
+    },
+    {
+        name: "--hiq-max-font-size-1",
+        type: "number",
+        category: "type-scale",
+        description: "The maximum size (in px) that the first font size can reach. Set to the primary first font size by default.",
+    },
+    {
+        name: "--hiq-min-font-size-2",
+        type: "number",
+        category: "type-scale",
+        description: "The minimum size (in px) that the second font size can reach. Set to the primary second font size by default.",
+    },
+    {
+        name: "--hiq-max-font-size-2",
+        type: "number",
+        category: "type-scale",
+        description: "The maximum size (in px) that the second font size can reach. Set to the primary second font size by default.",
+    },
+    {
+        name: "--hiq-min-font-size-3",
+        type: "number",
+        category: "type-scale",
+        description: "The minimum size (in px) that the third font size can reach. Set to the primary third font size by default.",
+    },
+    {
+        name: "--hiq-max-font-size-3",
+        type: "number",
+        category: "type-scale",
+        description: "The maximum size (in px) that the third font size can reach. Set to the primary third font size by default.",
+    },
+    {
+        name: "--hiq-min-font-size-4",
+        type: "number",
+        category: "type-scale",
+        description: "The minimum size (in px) that the fourth font size can reach. Set to the primary fourth font size by default.",
+    },
+    {
+        name: "--hiq-max-font-size-4",
+        type: "number",
+        category: "type-scale",
+        description: "The maximum size (in px) that the fourth font size can reach. Set to the primary fourth font size by default.",
+    },
+    {
+        name: "--hiq-min-font-size-5",
+        type: "number",
+        category: "type-scale",
+        description: "The minimum size (in px) that the fifth font size can reach. Set to the primary fifth font size by default.",
+    },
+    {
+        name: "--hiq-max-font-size-5",
+        type: "number",
+        category: "type-scale",
+        description: "The maximum size (in px) that the fifth font size can reach. Set to the primary fifth font size by default.",
+    },
+    {
+        name: "--hiq-min-font-size-6",
+        type: "number",
+        category: "type-scale",
+        description: "The minimum size (in px) that the sixth font size can reach. Set to the primary sixth font size by default.",
+    },
+    {
+        name: "--hiq-max-font-size-6",
+        type: "number",
+        category: "type-scale",
+        description: "The maximum size (in px) that the sixth font size can reach. Set to the primary sixth font size by default.",
     },
     {
         name: "--hiq-heading-font-weight",
@@ -433,6 +505,13 @@ module.exports = [
         type: "color",
         category: "links",
         description: "Sets the text color for active anchor elements.",
+    },
+    {
+        name: "--hiq-link-visited-color",
+        local: "--link-visited-color",
+        type: "color",
+        category: "links",
+        description: "Sets the text color for visited anchor elements.",
     },
     {
         name: "--hiq-link-text-decoration",
@@ -1348,12 +1427,20 @@ module.exports = [
         type: "color",
         category: "progress",
         description: "Sets the background color of the progress element track.",
-    }, {
+    },
+    {
 
         name: "--hiq-progress-filled-color",
         local: "--progress-filled-color",
         type: "color",
         category: "progress",
         description: "Sets the background color of the filled portion of the progress element.",
+    },
+    {
+        name: "--hiq-dialog-border-radius",
+        local: "--dialog-border-radius",
+        type: "number",
+        category: "dialogs",
+        description: "Sets the border radius for dialog elements.",
     }
 ];

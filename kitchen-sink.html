@@ -197,7 +197,15 @@
             </fieldset>
             <p>
                 <label for="text">Text Input</label>
-                <input type="text" id="text" name="text" placeholder="Enter text" required>
+                <input type="text" id="text" name="text" placeholder="Enter text">
+            </p>
+            <p>
+                <label for="invalid">Invalid Input</label>
+                <input type="text" id="invalid" name="text" placeholder="Enter text" required>
+            </p>
+            <p>
+                <label for="valid">Valid Input</label>
+                <input type="text" id="valid" name="text" placeholder="Enter text" value="Test" required>
             </p>
             <p>
                 <label for="disabled">Disabled Input</label>
@@ -342,9 +350,22 @@
                 <input type="submit" value="Disabled" disabled>
             </p>
         </form>
+        <div>
+            <dialog id="dialog">
+                <form method="dialog">
+                    <p>This is a dialog</p>
+                    <button value="cancel">Close dialog</button>
+                </form>
+            </dialog>
+            <button id="showDialog">Show dialog</button>
+        </div>
     </div>
     <script>
         document.querySelector('.indeterminate').indeterminate = true
+
+        document.getElementById('showDialog').addEventListener("click", () => {
+            document.getElementById('dialog').showModal()
+        })
     </script>
 </body>
 </html>

@@ -150,7 +150,7 @@ Six type sizes are provided by default. These correspond to the six heading leve
 @mixin is-size-small;
 ```
 
-All sizes are defined with `rems`, which are relative to the root font size defined on the `html` element (see above for information about the responsive nature of this root size).
+Primary sizes are defined with `rems`, which are relative to the root font size defined on the `html` element (see above for information about the responsive nature of this root size). Min/max font sizes are defined with `px`.
 
 <PropertiesTable category="type-scale" />
 
@@ -161,6 +161,19 @@ If these six sizes are not enough for your project, simply add additional custom
   --font-size-7: 0.75rem;
 }
 ```
+
+### Size clamping
+
+In [browsers that support the CSS `clamp()` function](https://caniuse.com/#feat=mdn-css_types_clamp), font sizes can be controlled with greater specificity.
+
+Let's say you generally like the default fluid sizing for `--hiq-font-size-1`, but you would prefer it didn't get any larger than `40px`. You can set that value as `--hiq-max-font-size-1`. Similarly, let's say you don't want `--hiq-font-size-6` to get any smaller than `16px`. Set that value as `--hiq-max-font-size-6`.
+
+```css
+  --hiq-max-font-size-1: 40px;
+  --hiq-min-font-size-6: 16px;
+```
+
+These settings are designed for instances where you generally like the fluid type scale you've already set up, but want to fine tune the details. These values should always be set in pixels.
 
 ## Headings
 

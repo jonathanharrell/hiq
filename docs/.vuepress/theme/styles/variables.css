@@ -212,7 +212,7 @@
 
   /* input validation */
   --hiq-input-invalid-border-color: var(--hiq-color-danger);
-  --hiq-input-valid-border-color: var(--hiq-color-success);
+  --hiq-input-valid-border-color: var(--hiq-input-border-color);
 
   /* text inputs */
   --hiq-input-height: 2.5rem;

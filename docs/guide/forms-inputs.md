@@ -66,15 +66,15 @@ Numerous custom properties are available to customize the appearance of inputs:
 
 ## Input Validation
 
-Border color on inputs with a `required` attribute is changed based on their validation state. This applies to inputs matching `:required:invalid` or `:required:valid` selectors. This can be easily overridden with custom properties (see the list of properties above).
+Border color on inputs is changed based on their validation state. This applies to inputs matching `:invalid` or `:valid` selectors. This can be easily overridden with custom properties (see the list of properties above). By default, valid inputs will not have any special border color.
 
 <CodeExample>
 <p>
-    <label for="required">Invalid Required Input</label>
+    <label for="required">Invalid Input</label>
     <input type="text" required>
 </p>
 <p>
-    <label for="required">Valid Required Input</label>
+    <label for="required">Valid Input</label>
     <input type="text" required value="Input value">
 </p>
 </CodeExample>

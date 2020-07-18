@@ -81,6 +81,20 @@
   --hiq-font-size-large: var(--hiq-font-size-4);
   --hiq-font-size-small: var(--hiq-font-size-6);
 
+  /* heading min/max font sizes */
+  --hiq-min-font-size-1: var(--hiq-font-size-1);
+  --hiq-max-font-size-1: var(--hiq-font-size-1);
+  --hiq-min-font-size-2: var(--hiq-font-size-2);
+  --hiq-max-font-size-2: var(--hiq-font-size-2);
+  --hiq-min-font-size-3: var(--hiq-font-size-3);
+  --hiq-max-font-size-3: var(--hiq-font-size-3);
+  --hiq-min-font-size-4: var(--hiq-font-size-4);
+  --hiq-max-font-size-4: var(--hiq-font-size-4);
+  --hiq-min-font-size-5: var(--hiq-font-size-5);
+  --hiq-max-font-size-5: var(--hiq-font-size-5);
+  --hiq-min-font-size-6: var(--hiq-font-size-6);
+  --hiq-max-font-size-6: var(--hiq-font-size-6);
+
   /* base unitless line heights */
   --hiq-line-height-base: 1.5;
   --hiq-heading-line-height: 1.2;
@@ -125,6 +139,7 @@
   --hiq-link-color: var(--hiq-color-primary);
   --hiq-link-hover-color: hsl(210, 100%, 40%);
   --hiq-link-active-color: hsl(210, 100%, 40%);
+  --hiq-link-visited-color: inherit;
   --hiq-link-text-decoration: none;
 
   /* button variables */
@@ -216,7 +231,7 @@
 
   /* input validation */
   --hiq-input-invalid-border-color: var(--hiq-color-danger);
-  --hiq-input-valid-border-color: var(--hiq-color-success);
+  --hiq-input-valid-border-color: var(--hiq-input-border-color);
 
   /* text inputs */
   --hiq-input-height: 2.5rem;
@@ -316,4 +331,7 @@
   --hiq-progress-height: 1rem;
   --hiq-progress-background-color: var(--hiq-color-gray-6);
   --hiq-progress-filled-color: var(--hiq-color-primary);
+
+  /* dialogs */
+  --hiq-dialog-border-radius: var(--hiq-border-radius);
 }
