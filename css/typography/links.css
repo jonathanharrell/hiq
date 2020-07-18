@@ -6,7 +6,9 @@ a {
   --link-color: var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
   --link-hover-color: var(--hiq-link-hover-color, hsl(210, 100%, 40%));
   --link-active-color: var(--hiq-link-active-color, hsl(210, 100%, 40%));
-  --link-visited-color: var(--hiq-link-visited-color, inherit);
+  --link-visited-color: var(--hiq-link-visited-color, var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%))));
+  --link-visited-hover-color: var(--hiq-link-visited-hover-color, var(--hiq-link-hover-color, hsl(210, 100%, 40%)));
+  --link-visited-active-color: var(--hiq-link-visited-active-color, var(--hiq-link-active-color, hsl(210, 100%, 40%)));
 
   background-color: transparent;
   text-decoration: var(--link-text-decoration);
@@ -30,6 +32,15 @@ a {
 
   &:visited {
     color: var(--link-visited-color);
+
+    &:hover,
+    &:focus {
+      color: var(--link-visited-hover-color);
+    }
+
+    &:active {
+      color: var(--link-visited-active-color);
+    }
   }
 }
 
