@@ -139,7 +139,7 @@
   --hiq-link-color: var(--hiq-color-primary);
   --hiq-link-hover-color: hsl(210, 100%, 40%);
   --hiq-link-active-color: hsl(210, 100%, 40%);
-  --hiq-link-visited-color: var(--hiq-link-color);
+  --hiq-link-visited-color: inherit;
   --hiq-link-text-decoration: none;
 
   /* button variables */

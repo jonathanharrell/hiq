@@ -6,7 +6,7 @@ a {
   --link-color: var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
   --link-hover-color: var(--hiq-link-hover-color, hsl(210, 100%, 40%));
   --link-active-color: var(--hiq-link-active-color, hsl(210, 100%, 40%));
-  --link-visited-color: var(--hiq-link-visited-color, var(--hiq-link-color, var(--hiq-color-primary, hsl(210, 100%, 50%))));
+  --link-visited-color: var(--hiq-link-visited-color, inherit);
 
   background-color: transparent;
   text-decoration: var(--link-text-decoration);
