@@ -10,9 +10,16 @@ meter {
   width: 100%;
   border: 0;
   background: var(--meter-background-color);
+  appearance: none;
+
+  &::-webkit-meter-inner-element {
+    display: block;
+  }
 
   &::-webkit-meter-bar {
+    height: 1rem;
     border: 0;
+    border-radius: 0;
     background: var(--meter-background-color);
   }
 
