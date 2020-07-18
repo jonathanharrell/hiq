@@ -514,6 +514,20 @@ module.exports = [
         description: "Sets the text color for visited anchor elements.",
     },
     {
+        name: "--hiq-link-visited-hover-color",
+        local: "--link-visited-hover-color",
+        type: "color",
+        category: "links",
+        description: "Sets the text color for hovered visited anchor elements.",
+    },
+    {
+        name: "--hiq-link-visited-active-color",
+        local: "--link-visited-active-color",
+        type: "color",
+        category: "links",
+        description: "Sets the text color for active visited anchor elements.",
+    },
+    {
         name: "--hiq-link-text-decoration",
         local: "--link-text-decoration",
         type: "text",

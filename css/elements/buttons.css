@@ -45,7 +45,9 @@
   cursor: pointer;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:visited:hover,
+  &:visited:focus {
     border-color: var(--button-hover-border-color);
     background-color: var(--button-hover-background-color);
     color: var(--button-hover-text-color);
@@ -56,7 +58,8 @@
     outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
   }
 
-  &:active {
+  &:active,
+  &:visited:active {
     border-color: var(--button-active-border-color);
     background-color: var(--button-active-background-color);
     color: var(--button-active-text-color);
