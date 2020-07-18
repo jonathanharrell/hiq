@@ -350,9 +350,22 @@
                 <input type="submit" value="Disabled" disabled>
             </p>
         </form>
+        <div>
+            <dialog id="dialog">
+                <form method="dialog">
+                    <p>This is a dialog</p>
+                    <button value="cancel">Close dialog</button>
+                </form>
+            </dialog>
+            <button id="showDialog">Show dialog</button>
+        </div>
     </div>
     <script>
         document.querySelector('.indeterminate').indeterminate = true
+
+        document.getElementById('showDialog').addEventListener("click", () => {
+            document.getElementById('dialog').showModal()
+        })
     </script>
 </body>
 </html>

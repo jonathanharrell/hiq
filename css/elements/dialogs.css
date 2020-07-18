@@ -1,0 +1,7 @@
+dialog {
+  /* scoped properties */
+  --dialog-border-radius: var(--hiq-dialog-border-radius, var(--hiq-border-radius, 0.2rem));
+
+  border: 0;
+  border-radius: var(--dialog-border-radius);
+}

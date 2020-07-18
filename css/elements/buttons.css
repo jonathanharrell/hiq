@@ -8,7 +8,7 @@
   --button-horizontal-padding: var(--hiq-button-horizontal-padding, 1rem);
   --button-border-width: var(--hiq-button-border-width, 1px);
   --button-border-color: var(--hiq-button-border-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
-  --button-border-radius: var(--hiq-button-border-radius, 0.2rem);
+  --button-border-radius: var(--hiq-button-border-radius, var(--hiq-border-radius, 0.2rem));
   --button-background-color: var(--hiq-button-background-color, var(--hiq-color-primary, hsl(210, 100%, 50%)));
   --button-font-weight: var(--hiq-button-font-weight, var(--hiq-font-weight-medium, 500));
   --button-text-color: var(--hiq-button-text-color, white);

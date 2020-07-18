@@ -140,7 +140,7 @@ module.exports = [
         name: "--hiq-border-radius",
         type: "number",
         category: "borders-outlines",
-        description: "Sets the base border radius is applied to buttons, inputs, code blocks and other elements by default.",
+        description: "Sets the base border radius that is applied to buttons, inputs, code blocks and other elements by default.",
     },
     {
         name: "--hiq-outline-width",
@@ -1427,12 +1427,20 @@ module.exports = [
         type: "color",
         category: "progress",
         description: "Sets the background color of the progress element track.",
-    }, {
+    },
+    {
 
         name: "--hiq-progress-filled-color",
         local: "--progress-filled-color",
         type: "color",
         category: "progress",
         description: "Sets the background color of the filled portion of the progress element.",
+    },
+    {
+        name: "--hiq-dialog-border-radius",
+        local: "--dialog-border-radius",
+        type: "number",
+        category: "dialogs",
+        description: "Sets the border radius for dialog elements.",
     }
 ];

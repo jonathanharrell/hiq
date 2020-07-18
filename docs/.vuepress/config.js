@@ -90,7 +90,8 @@ function genGuideSidebarConfig (title) {
                 'media',
                 'tables',
                 'forms-inputs',
-                'meters-progress'
+                'meters-progress',
+                'interactive-elements'
             ]
         }
     ]
