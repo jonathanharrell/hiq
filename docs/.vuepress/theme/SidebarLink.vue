@@ -72,7 +72,13 @@
         color: var(--hiq-color-gray-3);
     }
 
-    a.sidebar-link:hover {
+    a.sidebar-link:visited {
+        color: var(--hiq-color-gray-3);
+    }
+
+    a.sidebar-link:hover,
+    a.sidebar-link:visited:hover,
+    a.sidebar-link:visited:focus {
         color: var(--hiq-color-primary);
     }
 

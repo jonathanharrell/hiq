@@ -112,12 +112,7 @@
     .nav-links a {
         font-weight: var(--hiq-font-weight-medium);
         line-height: 1.4rem;
-        color: inherit;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.router-link-active {
-        color: var(--hiq-color-primary);
+        color: var(--hiq-text-color) !important;
     }
 
     .nav-links .nav-item {
