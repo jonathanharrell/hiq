@@ -3,10 +3,10 @@
 @define-mixin is-size-1 {
   font-size: var(--hiq-font-size-1, 2.5rem);
 
-  @supports (font-size: clamp(0px, 0px, 0px)) {
+  @supports (font-size: clamp(1px, 1px, 1px)) {
     font-size:
       clamp(
-        var(--hiq-min-font-size-1, 0px),
+        var(--hiq-min-font-size-1, 1px),
         var(--hiq-font-size-1, 2.5rem),
         var(--hiq-max-font-size-1, var(--hiq-font-size-1, 2.5rem))
       );
@@ -16,10 +16,10 @@
 @define-mixin is-size-2 {
   font-size: var(--hiq-font-size-2, 2rem);
 
-  @supports (font-size: clamp(0px, 0px, 0px)) {
+  @supports (font-size: clamp(1px, 1px, 1px)) {
     font-size:
       clamp(
-        var(--hiq-min-font-size-2, 0px),
+        var(--hiq-min-font-size-2, 1px),
         var(--hiq-font-size-2, 2rem),
         var(--hiq-max-font-size-2, var(--hiq-font-size-2, 2rem))
       );
@@ -29,10 +29,10 @@
 @define-mixin is-size-3 {
   font-size: var(--hiq-font-size-3, 1.75rem);
 
-  @supports (font-size: clamp(0px, 0px, 0px)) {
+  @supports (font-size: clamp(1px, 1px, 1px)) {
     font-size:
       clamp(
-        var(--hiq-min-font-size-3, 0px),
+        var(--hiq-min-font-size-3, 1px),
         var(--hiq-font-size-3, 1.75rem),
         var(--hiq-max-font-size-3, var(--hiq-font-size-3, 1.75rem))
       );
@@ -42,10 +42,10 @@
 @define-mixin is-size-4 {
   font-size: var(--hiq-font-size-4, 1.5rem);
 
-  @supports (font-size: clamp(0px, 0px, 0px)) {
+  @supports (font-size: clamp(1px, 1px, 1px)) {
     font-size:
       clamp(
-        var(--hiq-min-font-size-4, 0px),
+        var(--hiq-min-font-size-4, 1px),
         var(--hiq-font-size-4, 1.5rem),
         var(--hiq-max-font-size-4, var(--hiq-font-size-4, 1.5rem))
       );
@@ -55,10 +55,10 @@
 @define-mixin is-size-5 {
   font-size: var(--hiq-font-size-5, 1rem);
 
-  @supports (font-size: clamp(0px, 0px, 0px)) {
+  @supports (font-size: clamp(1px, 1px, 1px)) {
     font-size:
       clamp(
-        var(--hiq-min-font-size-5, 0px),
+        var(--hiq-min-font-size-5, 1px),
         var(--hiq-font-size-5, 1rem),
         var(--hiq-max-font-size-5, var(--hiq-font-size-5, 1rem))
       );
@@ -68,10 +68,10 @@
 @define-mixin is-size-6 {
   font-size: var(--hiq-font-size-6, 0.875rem);
 
-  @supports (font-size: clamp(0px, 0px, 0px)) {
+  @supports (font-size: clamp(1px, 1px, 1px)) {
     font-size:
       clamp(
-        var(--hiq-min-font-size-6, 0px),
+        var(--hiq-min-font-size-6, 1px),
         var(--hiq-font-size-6, 0.875rem),
         var(--hiq-max-font-size-6, var(--hiq-font-size-6, 0.875rem))
       );
