@@ -1296,6 +1296,14 @@ module.exports = [
         description: "Sets the background color of the range input track.",
     },
     {
+        name: "--hiq-color-input-background-color",
+        local: "--color-input-background-color",
+        type: "color",
+        category: "color-inputs",
+        description: "Sets the background color of color inputs.",
+        default: "var(--hiq-color-gray-6)"
+    },
+    {
         name: "--hiq-meter-background-color",
         local: "--meter-background-color",
         type: "color",

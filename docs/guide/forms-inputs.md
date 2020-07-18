@@ -454,3 +454,5 @@ Color inputs let users specify a color by using a visual color picker or by ente
     <input type="color" id="color">
 </p>
 ```
+
+<PropertiesTable category="color-inputs" />
