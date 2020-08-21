@@ -1,26 +1,29 @@
 <template>
-    <nav class="nav-links" v-if="userLinks.length || repoLink">
-        <div
-            class="nav-item"
-            v-for="item in userLinks"
-            :key="item.link"
-        >
-            <DropdownLink v-if="item.type === 'links'" :item="item" />
-            <NavLink v-else :item="item" />
-        </div>
-        <a v-if="repoLink"
-           :href="repoLink"
-           class="repo-link"
-           target="_blank"
-           rel="noopener noreferrer"
-        >
-            {{ repoLabel }}
-            <OutboundLink />
-        </a>
-        <span class="version-number">
-            {{ version }}
-        </span>
-    </nav>
+    <div class="nav-links">
+        <nav class="primary-links" v-if="userLinks.length || repoLink">
+            <div
+                class="nav-item"
+                v-for="item in userLinks"
+                :key="item.link"
+            >
+                <DropdownLink v-if="item.type === 'links'" :item="item" />
+                <NavLink v-else :item="item" />
+            </div>
+        </nav>
+        <nav class="secondary-links">
+            <a v-if="repoLink"
+               :href="repoLink"
+               class="repo-link"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+                {{ repoLabel }}
+            </a>
+            <span class="version-number">
+                {{ version }}
+            </span>
+        </nav>
+    </div>
 </template>
 
 <script>
@@ -105,48 +108,13 @@
 </script>
 
 <style>
-    .nav-links {
-        display: inline-block;
-    }
-
-    .nav-links a {
-        font-weight: var(--hiq-font-weight-medium);
-        line-height: 1.4rem;
-        color: var(--hiq-text-color) !important;
-    }
-
-    .nav-links .nav-item {
-        display: inline-block;
-        position: relative;
-        margin-left: 1.125rem;
-        line-height: 2rem;
-    }
-
-    .nav-links .repo-link {
-        margin-left: 1.125rem;
-    }
-
     .version-number {
+        align-self: center;
         margin-left: 1rem;
+        padding: 0 0.35rem;
+        border-radius: 3px;
+        background-color: var(--hiq-color-primary);
         font-weight: var(--hiq-font-weight-medium);
-    }
-
-    @media (min-width: 719px) {
-        .nav-links a:hover,
-        .nav-links a.router-link-active {
-            color: var(--hiq-text-color);
-        }
-
-        .nav-item > a:not(.external):hover,
-        .nav-item > a:not(.external).router-link-active {
-            margin-bottom: -2px;
-            border-bottom: 2px solid var(--hiq-color-primary);
-        }
-    }
-
-    @media (max-width: 719px) {
-        .version-number {
-            display: none;
-        }
+        color: white;
     }
 </style>

@@ -121,6 +121,13 @@
 
     .sidebar .nav-links a {
         font-weight: var(--hiq-font-weight-semibold);
+        color: var(--hiq-text-color);
+    }
+
+    .sidebar .nav-links a:hover,
+    .sidebar .nav-links a:focus,
+    .sidebar .nav-links a:active {
+        color: var(--hiq-link-color);
     }
 
     .sidebar .nav-links .nav-item,
@@ -128,6 +135,10 @@
         display: block;
         padding: 0.5rem 0 0.5rem 1.5rem;
         line-height: 1.25rem;
+    }
+
+    .sidebar .version-number {
+        display: none;
     }
 
     .sidebar .sidebar-links {

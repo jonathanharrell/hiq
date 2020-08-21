@@ -148,9 +148,10 @@
 
 <style>
     .search-box {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         position: relative;
-        margin-right: 0.5rem;
+        margin-left: 1.5rem;
     }
 
     .search-box input {
@@ -175,7 +176,8 @@
 
     .search-box .suggestions {
         position: absolute;
-        top: 2.75rem;
+        top: 3.5rem;
+        right: 0;
         width: 20rem;
         padding: 0.4rem;
         border: 1px solid var(--hiq-color-gray-6);
@@ -219,7 +221,6 @@
     @media (max-width: 959px) {
         .search-box input {
             position: relative;
-            left: 1rem;
             width: 0;
             border-color: transparent;
             cursor: pointer;
@@ -232,19 +233,9 @@
         }
     }
 
-    @media (max-width: 959px) and (min-width: 719px) {
-        .search-box .suggestions {
-            left: 0;
-        }
-    }
-
     @media (max-width: 719px) {
         .search-box {
-            margin-right: 0;
-        }
-
-        .search-box .suggestions {
-            right: 0;
+            margin-left: auto;
         }
     }
 

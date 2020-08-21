@@ -305,7 +305,7 @@
   --hiq-progress-filled-color: var(--hiq-color-primary);
 
   /* app-specific variables */
-  --navbar-height: 3.6rem;
+  --navbar-height: 3.8rem;
   --sidebar-width: 20rem;
   --mobile-sidebar-width: calc(var(--sidebar-width) * 0.82);
   --line-numbers-wrapper-width: 3.5rem;
