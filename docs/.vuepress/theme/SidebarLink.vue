@@ -116,6 +116,11 @@
         padding: 0.2rem 1.25rem;
         background-color: unset !important;
         border-left: none;
+        color: var(--hiq-color-gray-4);
+    }
+
+    .sidebar-sub-headers a.sidebar-link:hover {
+        color: var(--hiq-text-color);
     }
 
     .sidebar-sub-headers a.sidebar-link svg {

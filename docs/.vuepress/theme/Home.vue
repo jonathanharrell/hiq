@@ -21,7 +21,7 @@
         </div>
         <Content custom />
         <div class="footer">
-            MIT Licensed | Copyright © 2017-present <a href="https://www.twitter.com/HarrellofDurham">Jonathan Harrell</a>
+            MIT Licensed | Copyright © 2017-present <a href="https://www.jonathan-harrell.com" target="_blank">Jonathan Harrell</a>
         </div>
     </div>
 </template>

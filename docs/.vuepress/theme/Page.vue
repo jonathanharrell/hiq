@@ -160,6 +160,7 @@
 
 <style>
     .page {
+        margin-top: var(--navbar-height);
         padding-bottom: 2rem;
         padding-left: var(--sidebar-width);
     }

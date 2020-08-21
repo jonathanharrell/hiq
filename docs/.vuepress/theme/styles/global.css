@@ -68,6 +68,10 @@ p a code {
   max-width: 100%;
 }
 
+dialog p {
+  margin-bottom: 1rem;
+}
+
 @supports (color: var(--hiq-color-primary)) {
   .browser-not-supported {
     display: none;

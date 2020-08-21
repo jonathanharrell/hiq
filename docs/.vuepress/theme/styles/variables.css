@@ -31,7 +31,7 @@
   --hiq-container-horizontal-gap: 2rem;
 
   /* spacing */
-  --hiq-block-element-margin-bottom: 1rem;
+  --hiq-block-element-margin-bottom: 0.75rem;
 
   /* border & outline */
   --hiq-border-radius: 0.2rem;
@@ -119,8 +119,8 @@
 
   /* links */
   --hiq-link-color: var(--hiq-color-primary);
-  --hiq-link-hover-color: hsl(210, 100%, 25%);
-  --hiq-link-active-color: hsl(210, 100%, 25%);
+  --hiq-link-hover-color: hsl(210, 100%, 35%);
+  --hiq-link-active-color: hsl(210, 100%, 35%);
   --hiq-link-text-decoration: none;
 
   /* button variables */
@@ -160,8 +160,8 @@
   /* pre */
   --hiq-pre-padding-vertical: 1.25rem;
   --hiq-pre-padding-horizontal: 1.5rem;
-  --hiq-pre-border-color: var(--hiq-color-gray-6);
-  --hiq-pre-background-color: transparent;
+  --hiq-pre-border-color: transparent;
+  --hiq-pre-background-color: var(--hiq-color-gray-8);
   --hiq-pre-text-color: var(--hiq-color-gray-4);
 
   /* kbd */
@@ -190,7 +190,7 @@
   --hiq-table-cell-padding-horizontal: 0.75rem;
   --hiq-table-cell-border-width: 1px;
   --hiq-table-cell-border-color: var(--hiq-color-gray-6);
-  --hiq-table-heading-background-color: var(--hiq-color-gray-7);
+  --hiq-table-heading-background-color: var(--hiq-color-gray-8);
   --hiq-table-heading-text-color: var(--hiq-color-gray-4);
   --hiq-table-heading-font-weight: var(--hiq-font-weight-medium);
 

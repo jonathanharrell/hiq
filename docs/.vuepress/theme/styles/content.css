@@ -1,11 +1,7 @@
 .content__default {
   max-width: var(--hiq-max-container-width);
   margin: 0 auto;
-  padding: 2rem 2.5rem;
-}
-
-.content__default > *:first-child {
-  margin-top: var(--navbar-height);
+  padding: 1rem 2.5rem 2rem;
 }
 
 .content__default p.demo {
@@ -22,16 +18,6 @@
 .content__default > h6 {
   margin-top: calc(0.75rem - var(--navbar-height));
   padding-top: calc(var(--navbar-height) + 1rem);
-}
-
-.content__default > h1:first-child,
-.content__default > h2:first-child,
-.content__default > h3:first-child,
-.content__default > h4:first-child,
-.content__default > h5:first-child,
-.content__default > h6:first-child {
-  margin-top: -1.5rem;
-  margin-bottom: 1rem;
 }
 
 .content__default > h2:first-child + p,

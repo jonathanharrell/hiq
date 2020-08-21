@@ -1,6 +1,6 @@
 div[class*="language-"] {
   position: relative;
-  margin: 1.5rem 0 2rem;
+  margin: 1rem 0 2rem;
 }
 
 div[class*="language-"] .highlight-lines {
