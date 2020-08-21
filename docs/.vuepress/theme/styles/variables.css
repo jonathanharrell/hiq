@@ -160,7 +160,7 @@
   /* pre */
   --hiq-pre-padding-vertical: 1.25rem;
   --hiq-pre-padding-horizontal: 1.5rem;
-  --hiq-pre-border-color: transparent;
+  --hiq-pre-border-color: var(--hiq-color-gray-7);
   --hiq-pre-background-color: var(--hiq-color-gray-8);
   --hiq-pre-text-color: var(--hiq-color-gray-4);
 

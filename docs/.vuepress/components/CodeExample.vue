@@ -6,19 +6,20 @@
 
 <style>
     .code-example {
-        margin: 1.5rem 0;
+        margin: 1.5rem 0 0;
         padding: var(--hiq-pre-padding-vertical) var(--hiq-pre-padding-horizontal);
-        border: 1px solid var(--hiq-pre-border-color);
-        border-radius: var(--hiq-pre-border-radius);
+        border: 1px solid var(--hiq-color-gray-7);
+        border-radius: var(--hiq-border-radius);
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
 
     .code-example + div[class*="language-"] {
-        margin-top: -1px;
+        margin-top: 0;
     }
 
     .code-example + div[class*="language-"] pre {
+        border-top: 0;
         border-top-right-radius: 0;
         border-top-left-radius: 0;
     }
