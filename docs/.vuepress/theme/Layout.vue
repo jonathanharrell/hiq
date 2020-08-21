@@ -25,6 +25,7 @@
 <script>
     import Vue from 'vue'
     import nprogress from 'nprogress'
+    import 'focus-visible'
     import Home from './Home.vue'
     import Navbar from './Navbar.vue'
     import Page from './Page.vue'

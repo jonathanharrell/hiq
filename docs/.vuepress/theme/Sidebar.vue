@@ -109,10 +109,6 @@
         list-style-type: none;
     }
 
-    .sidebar a {
-        display: inline-block;
-    }
-
     .sidebar .nav-links {
         display: none;
         padding: 0.5rem 0 0.75rem 0;
@@ -141,10 +137,6 @@
         display: none;
     }
 
-    .sidebar .sidebar-links {
-        padding: 1.5rem 0;
-    }
-
     @media (max-width: 959px) {
         .sidebar {
             width: var(--mobile-sidebar-width);
@@ -152,6 +144,16 @@
     }
 
     @media (min-width: 720px) {
+        .sidebar {
+            padding: 2rem;
+            border: 0;
+            background-color: var(--hiq-color-gray-8);
+        }
+
+        .sidebar-heading {
+            display: none;
+        }
+
         .theme-container.no-sidebar .sidebar {
             display: none;
         }

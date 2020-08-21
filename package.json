@@ -71,6 +71,7 @@
   "dependencies": {
     "autocomplete.js": "0.29.0",
     "autoprefixer": "9.8.5",
+    "focus-visible": "5.1.0",
     "postcss": "7.0.32",
     "postcss-cli": "7.1.1",
     "postcss-custom-media": "7.0.8",
@@ -78,6 +79,7 @@
     "postcss-discard-comments": "4.0.2",
     "postcss-easy-import": "3.0.0",
     "postcss-mixins": "6.2.3",
-    "postcss-nested": "4.2.3"
+    "postcss-nested": "4.2.3",
+    "vue-feather-icons": "5.1.0"
   }
 }

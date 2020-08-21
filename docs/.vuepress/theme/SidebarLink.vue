@@ -1,5 +1,6 @@
 <script>
     import { isActive, hashRE, groupHeaders } from './util'
+    import sidebarIcons from "../data/sidebar-icons"
 
     export default {
         functional: true,
@@ -41,7 +42,18 @@
                 active,
                 'sidebar-link': true
             }
-        }, text)
+        }, [
+            h(getLinkIcon(text), {
+                attrs: {
+                    size: '18'
+                }
+            }),
+            text
+        ])
+    }
+
+    function getLinkIcon(text) {
+        return sidebarIcons[text] || '';
     }
 
     function renderChildren (h, children, path, route, maxDepth, depth = 1) {
@@ -57,49 +69,61 @@
 </script>
 
 <style>
-    .sidebar .sidebar-sub-headers {
-        padding-left: 1rem;
-    }
-
     a.sidebar-link {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         width: 100%;
-        padding: 0.35rem 1rem 0.35rem 1.25rem;
-        border-left: 0.25rem solid transparent;
+        margin-bottom: 0.25rem;
+        padding: 0.5rem 1.25rem;
+        border-radius: var(--hiq-border-radius);
         box-shadow: none !important;
         line-height: 1.4;
         font-weight: var(--hiq-font-weight-normal);
-        color: var(--hiq-color-gray-3);
+        color: var(--hiq-text-color);
+        transition: color var(--hiq-speed) var(--hiq-easing), background-color var(--hiq-speed) var(--hiq-easing);
     }
 
     a.sidebar-link:visited {
-        color: var(--hiq-color-gray-3);
+        color: var(--hiq-text-color);
     }
 
     a.sidebar-link:hover,
+    a.sidebar-link:focus,
     a.sidebar-link:visited:hover,
     a.sidebar-link:visited:focus {
-        color: var(--hiq-color-primary);
+        background-color: var(--hiq-color-gray-7);
+        color: var(--hiq-text-color);
     }
 
     a.sidebar-link.active {
-        border-left-color: var(--hiq-color-primary);
         font-weight: var(--hiq-font-weight-semibold);
-        color: var(--hiq-color-primary);
+        background-color: var(--hiq-color-gray-6) !important;
     }
 
-    .sidebar-group a.sidebar-link {
-        padding-left: 2rem;
+    a.sidebar-link svg {
+        margin-right: 0.5rem;
+    }
+
+    .sidebar ul.sidebar-sub-headers {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hiq-color-gray-6);
     }
 
     .sidebar-sub-headers a.sidebar-link {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
+        font-size: var(--hiq-font-size-6);
+        padding: 0.2rem 1.25rem;
+        background-color: unset !important;
         border-left: none;
     }
 
+    .sidebar-sub-headers a.sidebar-link svg {
+        display: none;
+    }
+
     .sidebar-sub-headers a.sidebar-link.active {
-        font-weight: var(--hiq-font-weight-medium);
+        font-weight: var(--hiq-font-weight-semibold);
     }
 </style>
 

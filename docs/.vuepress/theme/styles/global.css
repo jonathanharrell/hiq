@@ -3,6 +3,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.js-focus-visible *:focus:not(.focus-visible) {
+  outline: none;
+}
+
 h1 {
   font-weight: var(--hiq-font-weight-light);
 }
