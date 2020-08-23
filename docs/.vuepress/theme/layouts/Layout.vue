@@ -26,10 +26,10 @@
     import Vue from 'vue'
     import nprogress from 'nprogress'
     import 'focus-visible'
-    import Home from '../Home.vue'
-    import Navbar from '../Navbar.vue'
-    import Page from '../Page.vue'
-    import Sidebar from '../Sidebar.vue'
+    import Home from '../components/Home.vue'
+    import Navbar from '../components/Navbar.vue'
+    import Page from '../components/Page.vue'
+    import Sidebar from '../components/Sidebar.vue'
     import { resolveSidebarItems } from '../util'
 
     export default {

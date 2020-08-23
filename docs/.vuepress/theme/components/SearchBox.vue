@@ -164,7 +164,7 @@
         padding: 0 0.5rem 0 2rem;
         border: 1px solid var(--hiq-color-gray-6);
         border-radius: 2rem;
-        background: white url(./search.svg) 0.6rem 0.5rem no-repeat;
+        background: white url(../search.svg) 0.6rem 0.5rem no-repeat;
         background-size: 1rem;
         outline: none;
         font-size: 16px;
