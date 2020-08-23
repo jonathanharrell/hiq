@@ -1,34 +1,24 @@
 <template>
     <div class="page">
         <slot name="top" />
-        <Content :custom="false" />
-        <div class="wrapper page-edit">
-            <div class="last-updated" v-if="lastUpdated">
-                <span class="prefix">{{ lastUpdatedText }}: </span> <span class="time">{{ lastUpdated }}</span>
-            </div>
-        </div>
-        <div class="wrapper page-nav" v-if="prev || next">
-            <p class="inner">
-                <span v-if="prev" class="prev">
-                    ← <router-link v-if="prev" class="prev" :to="prev.path">
-                        {{ prev.title || prev.path }}
-                    </router-link>
-                </span>
-                <span v-if="next" class="next">
-                    <router-link v-if="next" :to="next.path">
-                        {{ next.title || next.path }}
-                    </router-link> →
-                </span>
-            </p>
-        </div>
+        <Content />
+        <PageEdit />
+        <PageNav v-bind="{ sidebarItems }"/>
         <slot name="bottom" />
     </div>
 </template>
 
 <script>
     import { resolvePage, normalize, outboundRE, endingSlashRE } from '../util'
+    import PageEdit from './PageEdit'
+    import PageNav from './PageNav'
 
     export default {
+        components: {
+            PageEdit,
+            PageNav
+        },
+
         props: ['sidebarItems'],
 
         computed: {
@@ -46,28 +36,6 @@
                     return this.$site.themeConfig.lastUpdated
                 }
                 return 'Last Updated'
-            },
-
-            prev () {
-                const prev = this.$page.frontmatter.prev
-                if (prev === false) {
-                    return
-                } else if (prev) {
-                    return resolvePage(this.$site.pages, prev, this.$route.path)
-                } else {
-                    return resolvePrev(this.$page, this.sidebarItems)
-                }
-            },
-
-            next () {
-                const next = this.$page.frontmatter.next
-                if (next === false) {
-                    return
-                } else if (next) {
-                    return resolvePage(this.$site.pages, next, this.$route.path)
-                } else {
-                    return resolveNext(this.$page, this.sidebarItems)
-                }
             },
 
             editLink () {
@@ -171,50 +139,6 @@
         @media (max-width: 719px) {
             padding-left: 0;
         }
-    }
-
-    .page-edit {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        overflow: auto;
-    }
-
-    .last-updated {
-        float: right;
-        font-size: var(--hiq-font-size-small);
-
-        @media (max-width: 719px) {
-            float: none;
-            font-size: var(--hiq-font-size-small);
-            text-align: left;
-        }
-    }
-
-    .prefix {
-        font-weight: var(--hiq-font-weight-medium);
-        color: var(--hiq-color-gray-4);
-    }
-
-    .time {
-        font-weight: var(--hiq-font-weight-normal);
-        color: var(--hiq-color-gray-5);
-    }
-
-    .page-nav {
-        padding-top: 1rem;
-        padding-bottom: 0;
-    }
-
-    .inner {
-        min-height: 2rem;
-        overflow: auto;
-        margin-top: 0;
-        padding-top: 1rem;
-        border-top: 1px solid var(--hiq-color-gray-6);
-    }
-
-    .next {
-        float: right;
     }
 </style>
 
