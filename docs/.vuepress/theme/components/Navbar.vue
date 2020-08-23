@@ -1,7 +1,10 @@
 <template>
     <header class="navbar">
         <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
-        <router-link :to="$localePath" class="home-link">
+        <router-link
+            :to="$localePath"
+            class="home-link"
+        >
             <img
                 class="logo can-hide"
                 v-if="$site.themeConfig.logo"
