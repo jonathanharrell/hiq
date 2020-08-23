@@ -25,9 +25,9 @@
     }
 </script>
 
-<style src="../../../dist/hiq.css"></style>
-<style src="./styles/variables.scss" lang="scss"></style>
-<style src="./styles/global.scss" lang="scss"></style>
+<style src="../../../../dist/hiq.css"></style>
+<style src="../styles/variables.scss" lang="scss"></style>
+<style src="../styles/global.scss" lang="scss"></style>
 
 <style scoped>
     .content {

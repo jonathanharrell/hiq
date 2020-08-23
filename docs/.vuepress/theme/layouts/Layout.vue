@@ -26,11 +26,11 @@
     import Vue from 'vue'
     import nprogress from 'nprogress'
     import 'focus-visible'
-    import Home from './Home.vue'
-    import Navbar from './Navbar.vue'
-    import Page from './Page.vue'
-    import Sidebar from './Sidebar.vue'
-    import { resolveSidebarItems } from './util'
+    import Home from '../Home.vue'
+    import Navbar from '../Navbar.vue'
+    import Page from '../Page.vue'
+    import Sidebar from '../Sidebar.vue'
+    import { resolveSidebarItems } from '../util'
 
     export default {
         components: {
@@ -148,12 +148,12 @@
     }
 </script>
 
-<style src="../../../dist/hiq.css"></style>
-<style src="./styles/variables.scss" lang="scss"></style>
-<style src="./styles/global.scss" lang="scss"></style>
-<style src="./styles/content.scss" lang="scss"></style>
-<style src="./styles/code.scss" lang="scss"></style>
-<style src="./styles/custom-blocks.scss" lang="scss"></style>
-<style src="./styles/arrows.scss" lang="scss"></style>
-<style src="./styles/nprogress.scss" lang="scss"></style>
-<style src="./styles/syntax.scss" lang="scss"></style>
+<style src="../../../../dist/hiq.css"></style>
+<style src="../styles/variables.scss" lang="scss"></style>
+<style src="../styles/global.scss" lang="scss"></style>
+<style src="../styles/content.scss" lang="scss"></style>
+<style src="../styles/code.scss" lang="scss"></style>
+<style src="../styles/custom-blocks.scss" lang="scss"></style>
+<style src="../styles/arrows.scss" lang="scss"></style>
+<style src="../styles/nprogress.scss" lang="scss"></style>
+<style src="../styles/syntax.scss" lang="scss"></style>
