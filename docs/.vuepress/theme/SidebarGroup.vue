@@ -48,7 +48,7 @@
         margin-top: 0;
         margin-bottom: 0.5rem;
         padding: 0 1.5rem;
-        font-weight: var(--hiq-font-weight-bold);
+        font-weight: var(--hiq-font-weight-semibold);
         color: var(--hiq-text-color);
         transition: color 0.15s ease;
         cursor: pointer;

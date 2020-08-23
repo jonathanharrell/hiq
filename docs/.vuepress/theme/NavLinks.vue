@@ -19,17 +19,24 @@
             >
                 {{ repoLabel }}
             </a>
-            <span class="version-number">
+            <a
+                v-if="version"
+                :href="`${repoLink}/releases`"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View releases"
+                class="version-number"
+            >
                 {{ version }}
-            </span>
+            </a>
         </nav>
     </div>
 </template>
 
 <script>
     import DropdownLink from './DropdownLink.vue'
-    import { resolveNavLinkItem } from './util'
     import NavLink from './NavLink.vue'
+    import { resolveNavLinkItem } from './util'
 
     export default {
         components: {
@@ -39,7 +46,7 @@
 
         data() {
             return {
-                version: 'v0.0.0'
+                version: '...'
             }
         },
 
@@ -100,21 +107,23 @@
                     const { tag_name } = await data.json()
                     this.version = tag_name
                 } catch(error) {
-                    this.version = 'v3.0.0'
+                    this.version = 'v4.0.0'
                 }
             }
         }
     }
 </script>
 
-<style>
-    .version-number {
+<style scoped>
+    a.version-number {
         align-self: center;
+        height: auto;
         margin-left: 1rem;
         padding: 0 0.35rem;
         border-radius: 3px;
         background-color: var(--hiq-color-primary);
+        font-size: var(--hiq-font-size-small);
         font-weight: var(--hiq-font-weight-medium);
-        color: white;
+        color: white !important;
     }
 </style>

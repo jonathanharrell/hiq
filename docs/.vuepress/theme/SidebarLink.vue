@@ -75,12 +75,17 @@
         width: 100%;
         margin-bottom: 0.25rem;
         padding: 0.5rem 1.25rem;
-        border-radius: var(--hiq-border-radius);
         box-shadow: none !important;
         line-height: 1.4;
         font-weight: var(--hiq-font-weight-normal);
         color: var(--hiq-text-color);
         transition: color var(--hiq-speed) var(--hiq-easing), background-color var(--hiq-speed) var(--hiq-easing);
+    }
+
+    @media (min-width: 720px) {
+        a.sidebar-link {
+            border-radius: var(--hiq-border-radius);
+        }
     }
 
     a.sidebar-link:visited {
@@ -119,7 +124,8 @@
         color: var(--hiq-color-gray-4);
     }
 
-    .sidebar-sub-headers a.sidebar-link:hover {
+    .sidebar-sub-headers a.sidebar-link:hover,
+    .sidebar-sub-headers a.sidebar-link.active {
         color: var(--hiq-text-color);
     }
 

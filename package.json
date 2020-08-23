@@ -1,6 +1,6 @@
 {
   "name": "hiq",
-  "version": "0.0.0-development",
+  "version": "0.0.0-automated",
   "description": "A lightweight, progressive, high-IQ PostCSS framework.",
   "repository": {
     "type": "git",
@@ -63,6 +63,8 @@
     "commitizen": "4.1.2",
     "husky": "4.2.5",
     "minifier": "0.8.1",
+    "node-sass": "4.14.1",
+    "sass-loader": "9.0.3",
     "semantic-release": "17.1.1",
     "stylelint": "13.6.1",
     "stylelint-config-whq": "2.3.0",

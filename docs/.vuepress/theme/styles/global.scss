@@ -29,6 +29,7 @@ p a code {
   max-width: var(--hiq-max-container-width);
   margin: 0 auto;
   padding: 0.5rem 2.5rem;
+
   @media (max-width: 959px) {
     padding: 2rem;
   }
@@ -73,12 +74,14 @@ dialog p {
 }
 
 @supports (color: var(--hiq-color-primary)) {
+
   .browser-not-supported {
     display: none;
   }
 }
 
 @media (max-width: 959px) {
+
   .properties-table .name,
   .utilities-table .name {
     width: 40%;

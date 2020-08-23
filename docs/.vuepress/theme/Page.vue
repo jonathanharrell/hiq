@@ -158,11 +158,19 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
     .page {
         margin-top: var(--navbar-height);
         padding-bottom: 2rem;
         padding-left: var(--sidebar-width);
+
+        @media (max-width: 959px) {
+            padding-left: var(--mobile-sidebar-width);
+        }
+
+        @media (max-width: 719px) {
+            padding-left: 0;
+        }
     }
 
     .page-edit {
@@ -171,17 +179,23 @@
         overflow: auto;
     }
 
-    .page-edit .last-updated {
+    .last-updated {
         float: right;
         font-size: var(--hiq-font-size-small);
+
+        @media (max-width: 719px) {
+            float: none;
+            font-size: var(--hiq-font-size-small);
+            text-align: left;
+        }
     }
 
-    .page-edit .last-updated .prefix {
+    .prefix {
         font-weight: var(--hiq-font-weight-medium);
         color: var(--hiq-color-gray-4);
     }
 
-    .page-edit .last-updated .time {
+    .time {
         font-weight: var(--hiq-font-weight-normal);
         color: var(--hiq-color-gray-5);
     }
@@ -191,7 +205,7 @@
         padding-bottom: 0;
     }
 
-    .page-nav .inner {
+    .inner {
         min-height: 2rem;
         overflow: auto;
         margin-top: 0;
@@ -199,31 +213,15 @@
         border-top: 1px solid var(--hiq-color-gray-6);
     }
 
-    .page-nav .next {
+    .next {
         float: right;
     }
+</style>
 
-    @media (max-width: 959px) {
-        .page {
-            padding-left: var(--mobile-sidebar-width);
-        }
-    }
-
+<style>
     @media (min-width: 720px) {
         .theme-container.no-sidebar .page {
             padding-left: 0;
-        }
-    }
-
-    @media (max-width: 719px) {
-        .page {
-            padding-left: 0;
-        }
-
-        .page-edit .last-updated {
-            float: none;
-            font-size: var(--hiq-font-size-small);
-            text-align: left;
         }
     }
 </style>

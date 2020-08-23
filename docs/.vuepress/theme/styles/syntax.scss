@@ -65,7 +65,7 @@
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+  font-weight: var(--hiq-font-weight-bold);
 }
 .token.italic {
   font-style: italic;
@@ -78,9 +78,6 @@
 .token.inserted {
   color: green;
 }
-
-
-
 
 /*
 .token.comment,

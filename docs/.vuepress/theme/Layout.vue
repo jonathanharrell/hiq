@@ -149,11 +149,11 @@
 </script>
 
 <style src="../../../dist/hiq.css"></style>
-<style src="./styles/variables.css"></style>
-<style src="./styles/global.css"></style>
-<style src="./styles/content.css"></style>
-<style src="./styles/code.css"></style>
-<style src="./styles/custom-blocks.css"></style>
-<style src="./styles/arrows.css"></style>
-<style src="./styles/nprogress.css"></style>
-<style src="./styles/syntax.css"></style>
+<style src="./styles/variables.scss" lang="scss"></style>
+<style src="./styles/global.scss" lang="scss"></style>
+<style src="./styles/content.scss" lang="scss"></style>
+<style src="./styles/code.scss" lang="scss"></style>
+<style src="./styles/custom-blocks.scss" lang="scss"></style>
+<style src="./styles/arrows.scss" lang="scss"></style>
+<style src="./styles/nprogress.scss" lang="scss"></style>
+<style src="./styles/syntax.scss" lang="scss"></style>

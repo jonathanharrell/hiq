@@ -24,3 +24,16 @@
         }
     }
 </script>
+
+<style src="../../../dist/hiq.css"></style>
+<style src="./styles/variables.scss" lang="scss"></style>
+<style src="./styles/global.scss" lang="scss"></style>
+
+<style scoped>
+    .content {
+        max-width: var(--hiq-max-container-width);
+        margin: 0 auto;
+        padding: 2rem 2.5rem 2rem;
+        text-align: center;
+    }
+</style>

@@ -19,9 +19,9 @@
 
 <script>
     import SidebarButton from './SidebarButton.vue'
-    import AlgoliaSearchBox from './AlgoliaSearchBox.vue'
     import SearchBox from './SearchBox.vue'
     import NavLinks from './NavLinks.vue'
+    import AlgoliaSearchBox from './AlgoliaSearchBox.vue'
 
     export default {
         components: {
@@ -43,7 +43,7 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
     .navbar {
         display: flex;
         align-items: center;
@@ -59,13 +59,13 @@
         background-color: white;
     }
 
-    .home-link {
-        margin-right: 0.5rem;
-    }
-
-    .navbar .logo {
+    /deep/ .logo {
         width: 2.5rem;
         height: 2.5rem;
+    }
+
+    .home-link {
+        margin-right: 0.5rem;
     }
 
     .links {
@@ -74,71 +74,71 @@
         height: 100%;
     }
 
-    .navbar .nav-links {
+    /deep/ .nav-links {
         display: flex;
         flex: 1;
     }
 
-    .navbar .primary-links {
+    /deep/ .primary-links {
         display: flex;
         flex: 1;
+
+        a {
+            border-bottom: 2px solid transparent;
+
+            &:hover,
+            &:focus,
+            &:active {
+                border-bottom-color: var(--hiq-color-gray-6);
+            }
+
+            &.router-link-active {
+                border-bottom-color: var(--hiq-color-primary);
+            }
+        }
     }
 
-    .navbar .secondary-links {
+    /deep/ .secondary-links {
         display: flex;
     }
 
-    .navbar .nav-item {
+    /deep/ .nav-item {
         margin-left: 0.5rem;
     }
 
-    .navbar a {
+    /deep/ a {
         display: flex;
         align-items: center;
         height: 100%;
         padding: 0 0.5rem;
-        font-weight: 500;
+        font-weight: var(--hiq-font-weight-medium);
         color: var(--hiq-color-gray-5);
         transition: color var(--hiq-speed) var(--hiq-easing), border-color var(--hiq-speed) var(--hiq-easing);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--hiq-text-color);
+        }
+
+        &:visited {
+            color: var(--hiq-color-gray-5);
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: var(--hiq-text-color);
+            }
+        }
+
+        &.router-link-active {
+            color: var(--hiq-text-color);
+        }
     }
 
-    .navbar a:visited {
-        color: var(--hiq-color-gray-5);
-    }
-
-    .navbar a:hover,
-    .navbar a:focus,
-    .navbar a:active {
-        color: var(--hiq-text-color);
-    }
-
-    .navbar a:visited:hover,
-    .navbar a:visited:focus,
-    .navbar a:visited:active {
-        color: var(--hiq-text-color);
-    }
-
-    .navbar .nav-links a.router-link-active {
-        color: var(--hiq-text-color);
-    }
-
-    .navbar .primary-links a {
-        border-bottom: 2px solid transparent;
-    }
-
-    .navbar .primary-links a:hover,
-    .navbar .primary-links a:focus,
-    .navbar .primary-links a:active {
-        border-bottom-color: var(--hiq-color-gray-6);
-    }
-
-    .navbar .primary-links a.router-link-active {
-        border-bottom-color: var(--hiq-color-primary);
-    }
-
-    @media (max-width: 719px) {
-        .navbar .can-hide {
-            display: none;
+    .can-hide {
+        @media (max-width: 719px) {
+            display: none !important;
         }
     }
 </style>

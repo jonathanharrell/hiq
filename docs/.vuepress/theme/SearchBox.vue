@@ -11,6 +11,7 @@
             @keyup.enter="go(focusIndex)"
             @keyup.up="onUp"
             @keyup.down="onDown"
+            @keydown.esc="query = ''"
         >
         <ul class="suggestions"
             v-if="showSuggestions"
@@ -146,15 +147,19 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
     .search-box {
         display: flex;
         align-items: center;
         position: relative;
         margin-left: 1.5rem;
+
+        @media (max-width: 719px) {
+            margin-left: auto;
+        }
     }
 
-    .search-box input {
+    input {
         width: 10rem;
         padding: 0 0.5rem 0 2rem;
         border: 1px solid var(--hiq-color-gray-6);
@@ -167,14 +172,31 @@
         color: var(--hiq-color-gray-5);
         transition: all 0.2s ease;
         cursor: text;
+
+        @media (max-width: 959px) {
+            position: relative;
+            width: 0;
+            border-color: transparent;
+            cursor: pointer;
+        }
+
+        &:focus {
+            border-color: var(--hiq-color-primary);
+            cursor: auto;
+
+            @media (max-width: 959px) {
+                width: 10rem;
+                left: 0;
+                cursor: text;
+            }
+
+            @media (max-width: 419px) {
+                width: 10rem;
+            }
+        }
     }
 
-    .search-box input:focus {
-        border-color: var(--hiq-color-primary);
-        cursor: auto;
-    }
-
-    .search-box .suggestions {
+    .suggestions {
         position: absolute;
         top: 3.5rem;
         right: 0;
@@ -184,68 +206,41 @@
         border-radius: 6px;
         background-color: white;
         list-style-type: none;
+
+        @media (max-width: 419px) {
+            width: calc(100vw - 3rem);
+        }
+
+        &.align-right {
+            right: 0;
+        }
     }
 
-    .search-box .suggestions.align-right {
-        right: 0;
-    }
-
-    .search-box .suggestion {
+    .suggestion {
         padding: 0.4rem 0.6rem;
         border-radius: 4px;
         line-height: 1.4;
         cursor: pointer;
-    }
 
-    .search-box .suggestion a {
-        color: var(--hiq-color-gray-4);
-    }
+        a {
+            color: var(--hiq-color-gray-4);
 
-    .search-box .suggestion.focused {
-        background-color: var(--hiq-color-gray-7);
-    }
+            .page-title {
+                font-weight: var(--hiq-font-weight-semibold);
 
-    .search-box .suggestion.focused a {
-        color: var(--hiq-color-primary);
-    }
-
-    .search-box .suggestion a .page-title {
-        font-weight: var(--hiq-font-weight-semibold);
-    }
-
-    .search-box .suggestion a .page-title + .header {
-        margin-left: 0.25rem;
-        font-size: var(--hiq-font-size-small);
-    }
-
-    @media (max-width: 959px) {
-        .search-box input {
-            position: relative;
-            width: 0;
-            border-color: transparent;
-            cursor: pointer;
+                + .header {
+                    margin-left: 0.25rem;
+                    font-size: var(--hiq-font-size-small);
+                }
+            }
         }
 
-        .search-box input:focus {
-            width: 10rem;
-            left: 0;
-            cursor: text;
-        }
-    }
+        &.focused {
+            background-color: var(--hiq-color-gray-7);
 
-    @media (max-width: 719px) {
-        .search-box {
-            margin-left: auto;
-        }
-    }
-
-    @media (max-width: 419px) {
-        .search-box input:focus {
-            width: 10rem;
-        }
-
-        .search-box .suggestions {
-            width: calc(100vw - 3rem);
+            a {
+                color: var(--hiq-color-primary);
+            }
         }
     }
 </style>

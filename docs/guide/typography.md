@@ -162,7 +162,7 @@ If these six sizes are not enough for your project, simply add additional custom
 }
 ```
 
-### Size clamping
+### Size clamping <Badge text="New in 4.0.0"/>
 
 In [browsers that support the CSS `clamp()` function](https://caniuse.com/#feat=mdn-css_types_clamp), font sizes can be controlled with greater specificity.
 

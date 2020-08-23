@@ -1,6 +1,6 @@
 # Interactive Elements
 
-## Dialogs
+## Dialogs <Badge text="New in 4.0.0"/>
 
 Use the `<dialog>` element for a dialog box or other interactive component, such as an alert.
 
