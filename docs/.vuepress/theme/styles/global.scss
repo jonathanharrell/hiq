@@ -1,3 +1,5 @@
+@import './sass-variables';
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,10 +32,11 @@ p a code {
   margin: 0 auto;
   padding: 0.5rem 2.5rem;
 
-  @media (max-width: 959px) {
+  @media (max-width: $narrow) {
     padding: 2rem;
   }
-  @media (max-width: 419px) {
+
+  @media (max-width: $mobileNarrow) {
     padding: 1.5rem;
   }
 }
@@ -80,7 +83,7 @@ dialog p {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: $narrow) {
 
   .properties-table .name,
   .utilities-table .name {

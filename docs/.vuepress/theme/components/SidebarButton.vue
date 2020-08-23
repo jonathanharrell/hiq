@@ -23,7 +23,7 @@
         height: 1.25rem;
     }
 
-    @media (max-width: 719px) {
+    @media (max-width: $mobile) {
         .sidebar-button {
             display: block;
         }

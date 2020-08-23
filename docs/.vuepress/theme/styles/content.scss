@@ -1,13 +1,15 @@
+@import './sass-variables';
+
 .content__default {
   max-width: var(--hiq-max-container-width);
   margin: 0 auto;
   padding: 1rem 2.5rem 2rem;
 
-  @media (max-width: 419px) {
+  @media (max-width: $mobileNarrow) {
     padding: 1.5rem;
   }
 
-  @media (max-width: 959px) {
+  @media (max-width: $narrow) {
     padding: 2rem;
   }
 
@@ -68,7 +70,7 @@
   }
 
   div[class*='language-'] {
-    @media (max-width: 419px) {
+    @media (max-width: $mobileNarrow) {
       margin: 0.85rem -1.5rem;
       border-radius: 0;
     }

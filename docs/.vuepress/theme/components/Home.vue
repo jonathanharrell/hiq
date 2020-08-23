@@ -130,7 +130,7 @@
         color: var(--hiq-color-gray-4);
     }
 
-    @media (max-width: 719px) {
+    @media (max-width: $mobile) {
         .home .features {
             flex-direction: column;
         }
@@ -141,7 +141,7 @@
         }
     }
 
-    @media (max-width: 419px) {
+    @media (max-width: $mobileNarrow) {
         .home {
             padding-right: 1.5rem;
             padding-left: 1.5rem;

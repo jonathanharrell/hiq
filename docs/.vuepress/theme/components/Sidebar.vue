@@ -26,21 +26,30 @@
     import { isActive } from '../util'
 
     export default {
-        components: {SidebarGroup, SidebarLink, NavLinks},
+        components: {
+            SidebarGroup,
+            SidebarLink,
+            NavLinks
+        },
+
         props: ['items'],
+
         data () {
             return {
                 openGroupIndex: 0
             }
         },
+
         created () {
             this.refreshIndex()
         },
+
         watch: {
             '$route' () {
                 this.refreshIndex()
             }
         },
+
         methods: {
             refreshIndex () {
                 const index = resolveOpenGroupIndex(
@@ -51,9 +60,11 @@
                     this.openGroupIndex = index
                 }
             },
+
             toggleGroup (index) {
                 this.openGroupIndex = index === this.openGroupIndex ? -1 : index
             },
+
             isActive (page) {
                 return isActive(this.$route, page.path)
             }
@@ -71,7 +82,9 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    @import "../styles/sass-variables";
+
     .sidebar-mask {
         display: none;
         position: fixed;
@@ -137,7 +150,7 @@
         display: none;
     }
 
-    @media (max-width: 959px) {
+    @media (max-width: $narrow) {
         .sidebar {
             width: var(--mobile-sidebar-width);
         }
@@ -159,7 +172,7 @@
         }
     }
 
-    @media (max-width: 719px) {
+    @media (max-width: $mobile) {
         .sidebar {
             top: 0;
             padding-top: var(--navbar-height);

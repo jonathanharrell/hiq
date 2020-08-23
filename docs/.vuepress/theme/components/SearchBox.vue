@@ -148,13 +148,15 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/sass-variables";
+
     .search-box {
         display: flex;
         align-items: center;
         position: relative;
         margin-left: 1.5rem;
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             margin-left: auto;
         }
     }
@@ -173,7 +175,7 @@
         transition: all 0.2s ease;
         cursor: text;
 
-        @media (max-width: 959px) {
+        @media (max-width: $narrow) {
             position: relative;
             width: 0;
             border-color: transparent;
@@ -184,13 +186,13 @@
             border-color: var(--hiq-color-primary);
             cursor: auto;
 
-            @media (max-width: 959px) {
+            @media (max-width: $narrow) {
                 width: 10rem;
                 left: 0;
                 cursor: text;
             }
 
-            @media (max-width: 419px) {
+            @media (max-width: $mobileNarrow) {
                 width: 10rem;
             }
         }
@@ -207,7 +209,7 @@
         background-color: white;
         list-style-type: none;
 
-        @media (max-width: 419px) {
+        @media (max-width: $mobileNarrow) {
             width: calc(100vw - 3rem);
         }
 

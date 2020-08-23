@@ -127,16 +127,18 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/sass-variables";
+
     .page {
         margin-top: var(--navbar-height);
         padding-bottom: 2rem;
         padding-left: var(--sidebar-width);
 
-        @media (max-width: 959px) {
+        @media (max-width: $narrow) {
             padding-left: var(--mobile-sidebar-width);
         }
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             padding-left: 0;
         }
     }

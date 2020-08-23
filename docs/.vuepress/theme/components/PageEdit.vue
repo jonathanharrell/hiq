@@ -126,6 +126,8 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/sass-variables";
+
     .page-edit {
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -136,7 +138,7 @@
         float: right;
         font-size: var(--hiq-font-size-small);
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             float: none;
             font-size: var(--hiq-font-size-small);
             text-align: left;

@@ -78,6 +78,8 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/sass-variables";
+
     .algolia-search-wrapper {
         & > span {
             vertical-align: middle;
@@ -91,13 +93,13 @@
     .algolia-docsearch-suggestion--wrapper {
         padding: 0;
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             padding: 5px 7px 5px 5px !important;
         }
     }
 
     .algolia-docsearch-suggestion--content {
-        @media (min-width: 719px) {
+        @media (min-width: 720px) {
             display: table-cell;
             float: none;
             width: 100%;
@@ -128,12 +130,12 @@
         border-color: var(--hiq-color-gray-6);
         background-color: var(--hiq-color-gray-6);
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             padding: 0 !important;
             background-color: white !important;
         }
 
-        @media (min-width: 719px) {
+        @media (min-width: 720px) {
             display: table-cell;
             float: none;
             width: 150px;
@@ -148,7 +150,7 @@
     .algolia-docsearch-suggestion--subcategory-column-text {
         color: var(--hiq-color-gray-4);
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             display: inline-block;
             width: 5px;
             margin: -3px 3px 0;
@@ -181,12 +183,12 @@
         background-color: white;
         text-align: left;
 
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             min-width: calc(100vw - 4rem) !important;
             max-width: calc(100vw - 4rem) !important;
         }
 
-        @media (min-width: 719px) {
+        @media (min-width: 720px) {
             min-width: 515px !important;
         }
 

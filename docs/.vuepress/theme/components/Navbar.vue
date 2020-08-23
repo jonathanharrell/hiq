@@ -1,21 +1,29 @@
 <template>
     <header class="navbar">
         <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
-        <router-link
+        <RouterLink
             :to="$localePath"
             class="home-link"
         >
             <img
-                class="logo can-hide"
-                v-if="$site.themeConfig.logo"
+                class="logo"
                 :src="$withBase($site.themeConfig.logo)"
                 :alt="$siteTitle"
             >
-        </router-link>
-        <div class="links">
+        </RouterLink>
+
+        <div
+            class="links"
+            :style="linksWrapMaxWidth ? {
+                'max-width': linksWrapMaxWidth + 'px'
+            } : {}"
+        >
             <NavLinks class="can-hide" />
-            <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
-            <SearchBox v-else-if="$site.themeConfig.search !== false" />
+            <AlgoliaSearchBox
+                v-if="isAlgoliaSearch"
+                :options="algolia"
+            />
+            <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
         </div>
     </header>
 </template>
@@ -30,8 +38,14 @@
         components: {
             SidebarButton,
             NavLinks,
-            SearchBox,
-            AlgoliaSearchBox
+            AlgoliaSearchBox,
+            SearchBox
+        },
+
+        data () {
+            return {
+                linksWrapMaxWidth: null
+            }
         },
 
         computed: {
@@ -42,11 +56,38 @@
             isAlgoliaSearch () {
                 return this.algolia && this.algolia.apiKey && this.algolia.indexName
             }
+        },
+
+        mounted () {
+            const MOBILE_DESKTOP_BREAKPOINT = 719 // refer to config.styl
+            const NAVBAR_VERTICAL_PADDING = parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'))
+
+            const handleLinksWrapWidth = () => {
+                if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
+                    this.linksWrapMaxWidth = null
+                } else {
+                    this.linksWrapMaxWidth = this.$el.offsetWidth - NAVBAR_VERTICAL_PADDING
+                        - (this.$refs.siteName && this.$refs.siteName.offsetWidth || 0)
+                }
+            }
+
+            handleLinksWrapWidth()
+
+            window.addEventListener('resize', handleLinksWrapWidth, false)
         }
+    }
+
+    function css (el, property) {
+        // NOTE: Known bug, will return 'auto' if style value is 'auto'
+        const win = el.ownerDocument.defaultView
+        // null means not to return pseudo styles
+        return win.getComputedStyle(el, null)[property]
     }
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/sass-variables";
+
     .navbar {
         display: flex;
         align-items: center;
@@ -62,13 +103,22 @@
         background-color: white;
     }
 
-    /deep/ .logo {
-        width: 2.5rem;
-        height: 2.5rem;
+    .logo {
+        width: 2rem;
+        height: 2rem;
+
+        @media (min-width: 720px) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
     }
 
     .home-link {
         margin-right: 0.5rem;
+
+        @media (max-width: $mobile) {
+            margin-left: 1.5rem;
+        }
     }
 
     .links {
@@ -140,7 +190,7 @@
     }
 
     .can-hide {
-        @media (max-width: 719px) {
+        @media (max-width: $mobile) {
             display: none !important;
         }
     }

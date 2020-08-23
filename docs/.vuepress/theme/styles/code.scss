@@ -1,3 +1,5 @@
+@import './sass-variables';
+
 div[class*='language-'] {
   position: relative;
   margin: 1rem 0 2rem;
@@ -88,7 +90,7 @@ div[class*='language-'] {
   }
 
   pre {
-    @media (max-width: 419px) {
+    @media (max-width: $mobileNarrow) {
       border-right: 0;
       border-left: 0;
       border-radius: 0;
@@ -96,7 +98,7 @@ div[class*='language-'] {
   }
 
   + div[class*='language-'] {
-    @media (min-width: 419px) {
+    @media (min-width: 420px) {
       margin-top: -1.25rem;
     }
   }

@@ -45,7 +45,7 @@
         margin: 0;
     }
 
-    @media (max-width: 419px) {
+    @media (max-width: $mobileNarrow) {
         .code-example {
             margin-right: -1.5rem;
             margin-left: -1.5rem;
