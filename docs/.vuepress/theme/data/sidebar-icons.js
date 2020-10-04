@@ -10,18 +10,18 @@ import {
     TargetIcon,
     ToggleLeftIcon,
     TypeIcon
-} from 'vue-feather-icons'
+} from 'vue-feather-icons';
 
 export default {
     'Getting Started': PlayIcon,
-    'Theming': TargetIcon,
-    'Layout': LayoutIcon,
-    'Typography': TypeIcon,
-    'Buttons': PlayCircleIcon,
-    'Code': CodeIcon,
-    'Media': FilmIcon,
-    'Tables': ColumnsIcon,
+    Theming: TargetIcon,
+    Layout: LayoutIcon,
+    Typography: TypeIcon,
+    Buttons: PlayCircleIcon,
+    Code: CodeIcon,
+    Media: FilmIcon,
+    Tables: ColumnsIcon,
     'Forms & Inputs': ToggleLeftIcon,
     'Meters & Progress': MoreHorizontalIcon,
     'Interactive Elements': MousePointerIcon
-}
+};

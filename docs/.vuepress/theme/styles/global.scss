@@ -24,7 +24,6 @@ h3 {
 
 p a code {
   font-weight: var(--hiq-font-weight-normal);
-  color: var(--hiq-color-primary);
 }
 
 .wrapper {
@@ -77,14 +76,12 @@ dialog p {
 }
 
 @supports (color: var(--hiq-color-primary)) {
-
   .browser-not-supported {
     display: none;
   }
 }
 
 @media (max-width: $narrow) {
-
   .properties-table .name,
   .utilities-table .name {
     width: 40%;
@@ -94,4 +91,13 @@ dialog p {
   .utilities-table .name code {
     white-space: unset;
   }
+}
+
+th {
+  font-size: var(--hiq-font-size-6);
+  font-weight: var(--hiq-font-weight-semibold);
+}
+
+::selection {
+  background-color: var(--hiq-color-gray-4);
 }

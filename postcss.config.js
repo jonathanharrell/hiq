@@ -8,4 +8,4 @@ module.exports = {
         require('postcss-custom-media'),
         require('postcss-discard-comments')
     ]
-};
+}

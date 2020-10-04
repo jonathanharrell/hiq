@@ -7,8 +7,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr :id="selector.name" v-for="selector in selectors">
-                <td class="name"><code>{{ selector.name }}</code></td>
+            <tr
+                v-for="selector in selectors"
+                :id="`${selector.name.replace(':--', '')}-selector`"
+                :key="selector.name"
+            >
+                <td class="name">
+                    <code>{{ selector.name }}</code>
+                </td>
                 <td class="description">{{ selector.description }}</td>
             </tr>
         </tbody>
@@ -16,13 +22,13 @@
 </template>
 
 <script>
-    import selectors from '../data/custom-selectors'
+    import selectors from '../data/custom-selectors';
 
     export default {
-        data () {
+        data() {
             return {
                 selectors
-            }
+            };
         }
-    }
+    };
 </script>

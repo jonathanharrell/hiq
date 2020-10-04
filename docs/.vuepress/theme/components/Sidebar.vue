@@ -2,15 +2,15 @@
     <div class="sidebar">
         <NavLinks />
         <slot name="top" />
-        <ul class="sidebar-links" v-if="items.length">
-            <li v-for="(item, i) in items" :key="i">
+        <ul v-if="items.length" class="sidebar-links">
+            <li v-for="(item, index) in items" :key="index">
                 <SidebarGroup
                     v-if="item.type === 'group'"
                     :item="item"
-                    :first="i === 0"
-                    :open="i === openGroupIndex"
+                    :first="index === 0"
+                    :open="index === openGroupIndex"
                     :collapsable="item.collapsable"
-                    @toggle="toggleGroup(i)"
+                    @toggle="toggleGroup(index)"
                 />
                 <SidebarLink v-else :item="item" />
             </li>
@@ -20,10 +20,10 @@
 </template>
 
 <script>
-    import SidebarGroup from './SidebarGroup.vue'
-    import SidebarLink from './SidebarLink.vue'
-    import NavLinks from './NavLinks.vue'
-    import { isActive } from '../util'
+    import SidebarGroup from './SidebarGroup.vue';
+    import SidebarLink from './SidebarLink.vue';
+    import NavLinks from './NavLinks.vue';
+    import { isActive } from '../util';
 
     export default {
         components: {
@@ -32,58 +32,166 @@
             NavLinks
         },
 
-        props: ['items'],
-
-        data () {
-            return {
-                openGroupIndex: 0
+        props: {
+            items: {
+                type: Array,
+                default: () => []
             }
         },
 
-        created () {
-            this.refreshIndex()
+        data() {
+            return {
+                openGroupIndex: 0
+            };
         },
 
         watch: {
-            '$route' () {
-                this.refreshIndex()
+            $route() {
+                this.refreshIndex();
             }
         },
 
+        created() {
+            this.refreshIndex();
+        },
+
         methods: {
-            refreshIndex () {
-                const index = resolveOpenGroupIndex(
-                    this.$route,
-                    this.items
-                )
-                if (index > -1) {
-                    this.openGroupIndex = index
-                }
+            refreshIndex() {
+                const index = resolveOpenGroupIndex(this.$route, this.items);
+                if (index > -1) this.openGroupIndex = index;
             },
 
-            toggleGroup (index) {
-                this.openGroupIndex = index === this.openGroupIndex ? -1 : index
+            toggleGroup(index) {
+                this.openGroupIndex =
+                    index === this.openGroupIndex ? -1 : index;
             },
 
-            isActive (page) {
-                return isActive(this.$route, page.path)
+            isActive(page) {
+                return isActive(this.$route, page.path);
             }
         }
-    }
+    };
 
-    function resolveOpenGroupIndex (route, items) {
+    function resolveOpenGroupIndex(route, items) {
         for (let i = 0; i < items.length; i++) {
-            const item = items[i]
-            if (item.type === 'group' && item.children.some(c => isActive(route, c.path))) {
-                return i
+            const item = items[i];
+
+            if (
+                item.type === 'group' &&
+                item.children.some(child => isActive(route, child.path))
+            ) {
+                return i;
             }
         }
-        return -1
+
+        return -1;
     }
 </script>
 
+<style lang="scss" scoped>
+    @import '../styles/sass-variables';
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: var(--mobile-sidebar-width);
+        overflow-y: auto;
+        margin: 0;
+        padding-top: var(--navbar-height);
+        border-right: 1px solid var(--hiq-color-gray-6);
+        background-color: var(--hiq-body-background-color);
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
+
+        @media (min-width: $mobileUp) {
+            top: var(--navbar-height);
+            padding: 2rem;
+            border: 0;
+            background-color: var(--hiq-color-gray-8);
+            transform: none;
+            transition: none;
+        }
+
+        @media (min-width: $narrowUp) {
+            width: var(--sidebar-width);
+        }
+
+        .theme-container.sidebar-open & {
+            display: block;
+            transform: translateX(0);
+
+            @media (min-width: $mobileUp) {
+                transform: none;
+            }
+        }
+
+        .theme-container.no-sidebar & {
+            @media (min-width: $mobileUp) {
+                display: none;
+            }
+        }
+
+        .theme-container.no-navbar & {
+            padding-top: 0;
+
+            @media (min-width: $mobileUp) {
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    /deep/ ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    /deep/ .nav-links {
+        display: block;
+        padding: 0.5rem 0 0.75rem 0;
+        border-bottom: 1px solid var(--hiq-color-gray-6);
+
+        @media (min-width: $mobileUp) {
+            display: none;
+        }
+
+        a {
+            font-weight: var(--hiq-font-weight-semibold);
+            color: var(--hiq-text-color);
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: var(--hiq-link-color);
+            }
+        }
+
+        .nav-item,
+        .repo-link {
+            display: block;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            line-height: 1.25rem;
+        }
+    }
+
+    /deep/ .version-number {
+        display: none;
+    }
+
+    .sidebar-links {
+        padding: 1rem 0;
+
+        @media (min-width: $mobileUp) {
+            padding: 0;
+        }
+    }
+</style>
+
 <style lang="scss">
-    @import "../styles/sass-variables";
+    @import '../styles/sass-variables';
 
     .sidebar-mask {
         display: none;
@@ -93,111 +201,9 @@
         z-index: 9;
         width: 100vw;
         height: 100vh;
-    }
 
-    .theme-container.sidebar-open .sidebar-mask {
-        display: block;
-    }
-
-    .sidebar {
-        position: fixed;
-        top: var(--navbar-height);
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        width: var(--sidebar-width);
-        overflow-y: auto;
-        margin: 0;
-        border-right: 1px solid var(--hiq-color-gray-6);
-        background-color: white;
-    }
-
-    .theme-container.sidebar-open .sidebar {
-        top: 0;
-    }
-
-    .sidebar ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-
-    .sidebar .nav-links {
-        display: none;
-        padding: 0.5rem 0 0.75rem 0;
-        border-bottom: 1px solid var(--hiq-color-gray-6);
-    }
-
-    .sidebar .nav-links a {
-        font-weight: var(--hiq-font-weight-semibold);
-        color: var(--hiq-text-color);
-    }
-
-    .sidebar .nav-links a:hover,
-    .sidebar .nav-links a:focus,
-    .sidebar .nav-links a:active {
-        color: var(--hiq-link-color);
-    }
-
-    .sidebar .nav-links .nav-item,
-    .sidebar .nav-links .repo-link {
-        display: block;
-        padding: 0.5rem 0 0.5rem 1.5rem;
-        line-height: 1.25rem;
-    }
-
-    .sidebar .version-number {
-        display: none;
-    }
-
-    @media (max-width: $narrow) {
-        .sidebar {
-            width: var(--mobile-sidebar-width);
-        }
-    }
-
-    @media (min-width: 720px) {
-        .sidebar {
-            padding: 2rem;
-            border: 0;
-            background-color: var(--hiq-color-gray-8);
-        }
-
-        .sidebar-heading {
-            display: none;
-        }
-
-        .theme-container.no-sidebar .sidebar {
-            display: none;
-        }
-    }
-
-    @media (max-width: $mobile) {
-        .sidebar {
-            top: 0;
-            padding-top: var(--navbar-height);
-            transform: translateX(-100%);
-            transition: transform 0.2s ease;
-        }
-
-        .theme-container.sidebar-open .sidebar {
-            transform: translateX(0);
-        }
-
-        .theme-container.no-navbar .sidebar {
-            padding-top: 0;
-        }
-
-        .sidebar .nav-links {
+        .theme-container.sidebar-open & {
             display: block;
-        }
-
-        .sidebar .nav-links .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after {
-            top: calc(1rem - 2px);
-        }
-
-        .sidebar .sidebar-links {
-            padding: 1rem 0;
         }
     }
 </style>

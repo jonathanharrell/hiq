@@ -1,4 +1,5 @@
 .custom-block {
+  border-radius: var(--hiq-border-radius);
 
   &.tip,
   &.warning,
@@ -23,6 +24,11 @@
     background-color: hsla(46, 97%, 65%, 0.25);
     color: hsl(46, 97%, 25%);
 
+    [data-theme='dark'] & {
+      background-color: var(--hiq-color-gray-8);
+      color: var(--hiq-color-gray-4);
+    }
+
     .custom-block-title {
       color: hsl(46, 97%, 40%);
     }
@@ -36,6 +42,11 @@
     border-color: var(--hiq-color-danger);
     background-color: hsla(352, 95%, 61%, 0.25);;
     color: hsl(352, 95%, 25%);
+
+    [data-theme='dark'] & {
+      background-color: var(--hiq-color-gray-8);
+      color: var(--hiq-color-gray-4);
+    }
 
     .custom-block-title {
       color: hsl(352, 95%, 40%);

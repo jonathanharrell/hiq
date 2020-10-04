@@ -8,13 +8,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="property in properties">
+            <tr v-for="property in properties" :key="property.name">
                 <td v-if="colors">
-                    <span class="color-swatch" :style="{ backgroundColor: property.default }"></span>
+                    <span
+                        class="color-swatch"
+                        :style="{ backgroundColor: property.default }"
+                    />
                 </td>
                 <td class="name">
-                    <code>{{ property.name }}</code><br/>
-                    <code v-if="property.local" style="--code-background-color: var(--hiq-selection-color);">{{ property.local }}</code>
+                    <code>{{ property.name }}</code>
+                    <br />
+                    <code
+                        v-if="property.local"
+                        style="--code-background-color: var(--hiq-selection-color);"
+                        >{{ property.local }}</code
+                    >
                 </td>
                 <td class="description">{{ property.description }}</td>
             </tr>
@@ -23,19 +31,28 @@
 </template>
 
 <script>
-    import propertiesConfig from '../data/custom-properties'
+    import propertiesConfig from '../data/custom-properties';
 
     export default {
-        props: ['category'],
+        props: {
+            category: {
+                type: String,
+                default: ''
+            }
+        },
 
         computed: {
-            properties () {
-                return propertiesConfig.filter(property => property.category === this.category)
+            properties() {
+                return propertiesConfig.filter(
+                    property => property.category === this.category
+                );
             },
 
-            colors () {
-                return this.properties.every(property => property.type === 'color')
+            colors() {
+                return this.properties.every(
+                    property => property.type === 'color'
+                );
             }
         }
-    }
+    };
 </script>

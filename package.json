@@ -1,88 +1,96 @@
 {
-  "name": "hiq",
-  "version": "0.0.0-automated",
-  "description": "A lightweight, progressive, high-IQ PostCSS framework.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jonathanharrell/hiq.git"
-  },
-  "homepage": "https://github.com/jonathanharrell/hiq#readme",
-  "bugs": {
-    "url": "https://github.com/jonathanharrell/hiq/issues"
-  },
-  "author": "Jonathan Harrell <harr041@gmail.com> (www.jonathan-harrell.com)",
-  "contributors": [
-    "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
-  ],
-  "license": "MIT",
-  "main": "css/hiq.css",
-  "files": [
-    "css/**/*.css",
-    "dist",
-    "index.html",
-    "postcss.config.js"
-  ],
-  "scripts": {
-    "commit": "git-cz",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "lint": "stylelint css/*.css",
-    "minify": "minify dist/hiq.css --output dist/hiq.min.css",
-    "postcss": "postcss css/hiq.css -o dist/hiq.css",
-    "watch": "npm run lint && npm run postcss -- --watch",
-    "semantic-release": "semantic-release"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "name": "hiq",
+    "version": "0.0.0-automated",
+    "description": "A lightweight, progressive, high-IQ PostCSS framework.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonathanharrell/hiq.git"
+    },
+    "homepage": "https://github.com/jonathanharrell/hiq#readme",
+    "bugs": {
+        "url": "https://github.com/jonathanharrell/hiq/issues"
+    },
+    "author": "Jonathan Harrell <harr041@gmail.com> (www.jonathan-harrell.com)",
+    "contributors": [
+        "Mattia Astorino <astorino.design@gmail.com> (www.equinsuocha.io)"
+    ],
+    "license": "MIT",
+    "main": "css/hiq.css",
+    "files": [
+        "css/**/*.css",
+        "dist",
+        "index.html",
+        "postcss.config.js"
+    ],
+    "scripts": {
+        "commit": "git-cz",
+        "docs:build": "vuepress build docs",
+        "docs:dev": "vuepress dev docs",
+        "docs:index": "node docs/indexer",
+        "docs:lint": "eslint -c docs/.vuepress/.eslintrc.js docs/.vuepress/**/**.vue",
+        "lint": "stylelint css/*.css",
+        "minify": "minify dist/hiq.css --output dist/hiq.min.css",
+        "postcss": "postcss css/hiq.css -o dist/hiq.css",
+        "watch": "npm run lint && npm run postcss -- --watch",
+        "semantic-release": "semantic-release"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint && npm run docs:lint",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "stylelint": {
+        "extends": "stylelint-config-whq",
+        "rules": {
+            "at-rule-no-unknown": null,
+            "comment-empty-line-before": null,
+            "plugin/no-unsupported-browser-features": null
+        }
+    },
+    "devDependencies": {
+        "@commitlint/cli": "9.1.1",
+        "@commitlint/config-conventional": "9.1.1",
+        "ajv": "6.12.3",
+        "commitizen": "4.1.2",
+        "dotenv": "8.2.0",
+        "eslint": "7.7.0",
+        "eslint-config-vuepress": "2.2.0",
+        "husky": "4.2.5",
+        "minifier": "0.8.1",
+        "node-sass": "4.14.1",
+        "sass-loader": "9.0.3",
+        "semantic-release": "17.1.1",
+        "stylelint": "13.6.1",
+        "stylelint-config-whq": "2.3.0",
+        "vuepress": "1.5.2"
+    },
+    "dependencies": {
+        "algoliasearch": "4.5.1",
+        "autocomplete.js": "0.29.0",
+        "autoprefixer": "9.8.5",
+        "cheerio": "1.0.0-rc.3",
+        "focus-visible": "5.1.0",
+        "lodash": "4.17.20",
+        "postcss": "7.0.32",
+        "postcss-cli": "7.1.1",
+        "postcss-custom-media": "7.0.8",
+        "postcss-custom-selectors": "5.1.2",
+        "postcss-discard-comments": "4.0.2",
+        "postcss-easy-import": "3.0.0",
+        "postcss-mixins": "6.2.3",
+        "postcss-nested": "4.2.3",
+        "vue-feather-icons": "5.1.0",
+        "vue-instantsearch": "3.2.0"
     }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-whq",
-    "rules": {
-      "at-rule-no-unknown": null,
-      "comment-empty-line-before": null,
-      "plugin/no-unsupported-browser-features": null
-    }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "9.1.1",
-    "@commitlint/config-conventional": "9.1.1",
-    "ajv": "6.12.3",
-    "commitizen": "4.1.2",
-    "husky": "4.2.5",
-    "minifier": "0.8.1",
-    "node-sass": "4.14.1",
-    "sass-loader": "9.0.3",
-    "semantic-release": "17.1.1",
-    "stylelint": "13.6.1",
-    "stylelint-config-whq": "2.3.0",
-    "vuepress": "1.5.2"
-  },
-  "dependencies": {
-    "autocomplete.js": "0.29.0",
-    "autoprefixer": "9.8.5",
-    "focus-visible": "5.1.0",
-    "lodash": "4.17.20",
-    "postcss": "7.0.32",
-    "postcss-cli": "7.1.1",
-    "postcss-custom-media": "7.0.8",
-    "postcss-custom-selectors": "5.1.2",
-    "postcss-discard-comments": "4.0.2",
-    "postcss-easy-import": "3.0.0",
-    "postcss-mixins": "6.2.3",
-    "postcss-nested": "4.2.3",
-    "vue-feather-icons": "5.1.0"
-  }
 }

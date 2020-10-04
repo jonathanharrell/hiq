@@ -1,6 +1,10 @@
 <template>
     <div class="browser-bugs">
-        <div class="warning custom-block" v-for="(bug, index) in bugs" :key="index">
+        <div
+            v-for="(bug, index) in bugs"
+            :key="index"
+            class="warning custom-block"
+        >
             <p class="custom-block-title">WARNING</p>
             <p>NOTE: {{ bug.description }}</p>
         </div>
@@ -8,15 +12,22 @@
 </template>
 
 <script>
-    import browserBugs from '../data/browser-bugs'
+    import browserBugs from '../data/browser-bugs';
 
     export default {
-        props: ['category'],
+        props: {
+            category: {
+                type: String,
+                default: ''
+            }
+        },
 
         computed: {
-            bugs () {
-                return browserBugs.filter(bug => bug.category === this.category)
+            bugs() {
+                return browserBugs.filter(
+                    bug => bug.category === this.category
+                );
             }
         }
-    }
+    };
 </script>

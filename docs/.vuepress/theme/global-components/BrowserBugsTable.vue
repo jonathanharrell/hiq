@@ -7,7 +7,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr :id="bug.description" v-for="bug in browserBugs">
+            <tr
+                v-for="bug in browserBugs"
+                :id="bug.description"
+                :key="bug.description"
+            >
                 <td>{{ bug.description }}</td>
                 <td>{{ bug.browsers }}</td>
             </tr>
@@ -16,13 +20,13 @@
 </template>
 
 <script>
-    import browserBugs from '../data/browser-bugs'
+    import browserBugs from '../data/browser-bugs';
 
     export default {
-        data () {
+        data() {
             return {
                 browserBugs
-            }
+            };
         }
-    }
+    };
 </script>

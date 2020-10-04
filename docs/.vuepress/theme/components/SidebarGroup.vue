@@ -2,11 +2,19 @@
     <div class="sidebar-group" :class="{ first, collapsable }">
         <p class="sidebar-heading" :class="{ open }" @click="$emit('toggle')">
             <span>{{ item.title }}</span>
-            <span class="arrow" v-if="collapsable" :class="open ? 'down' : 'right'"></span>
+            <span
+                v-if="collapsable"
+                class="arrow"
+                :class="open ? 'down' : 'right'"
+            ></span>
         </p>
         <DropdownTransition>
-            <ul class="sidebar-group-items" ref="items" v-if="open || !collapsable">
-                <li v-for="child in item.children">
+            <ul
+                v-if="open || !collapsable"
+                ref="items"
+                class="sidebar-group-items"
+            >
+                <li v-for="(child, index) in item.children" :key="index">
                     <SidebarLink :item="child" />
                 </li>
             </ul>
@@ -15,33 +23,54 @@
 </template>
 
 <script>
-    import SidebarLink from './SidebarLink.vue'
-    import DropdownTransition from './DropdownTransition.vue'
+    import SidebarLink from './SidebarLink.vue';
+    import DropdownTransition from './DropdownTransition.vue';
 
     export default {
         name: 'SidebarGroup',
 
-        props: ['item', 'first', 'open', 'collapsable'],
-
         components: {
             SidebarLink,
             DropdownTransition
+        },
+
+        props: {
+            item: {
+                type: Object,
+                default: () => {}
+            },
+
+            first: {
+                type: Boolean
+            },
+
+            open: {
+                type: Boolean
+            },
+
+            collapsable: {
+                type: Boolean
+            }
         }
-    }
+    };
 </script>
 
-<style>
-    .sidebar-group:not(.first) {
-        margin-top: 1rem;
-    }
+<style lang="scss">
+    @import '../styles/sass-variables';
 
-    .sidebar-group:not(.collapsable) .sidebar-heading {
-        color: inherit;
-        cursor: auto;
-    }
+    .sidebar-group {
+        &:not(.first) {
+            margin-top: 1rem;
+        }
 
-    .sidebar-group .sidebar-group {
-        padding-left: 0.5rem;
+        &:not(.collapsable) .sidebar-heading {
+            color: inherit;
+            cursor: auto;
+        }
+
+        .sidebar-group {
+            padding-left: 0.5rem;
+        }
     }
 
     .sidebar-heading {
@@ -52,21 +81,25 @@
         color: var(--hiq-text-color);
         transition: color 0.15s ease;
         cursor: pointer;
-    }
 
-    .sidebar-heading.open,
-    .sidebar-heading:hover {
-        color: inherit;
-    }
+        @media (min-width: $mobileUp) {
+            display: none;
+        }
 
-    .sidebar-heading .arrow {
-        position: relative;
-        top: -0.12rem;
-        left: 0.5rem;
-    }
+        &.open,
+        &:hover {
+            color: inherit;
+        }
 
-    .sidebar-heading .open .arrow {
-        top: -0.18rem;
+        .arrow {
+            position: relative;
+            top: -0.12rem;
+            left: 0.5rem;
+        }
+
+        .open .arrow {
+            top: -0.18rem;
+        }
     }
 
     .sidebar-group-items {

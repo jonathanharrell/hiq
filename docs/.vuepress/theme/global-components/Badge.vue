@@ -1,23 +1,34 @@
 <script>
-export default {
-    functional: true,
-    props: {
-        type: {
-            type: String,
-            default: 'tip'
+    export default {
+        functional: true,
+
+        props: {
+            type: {
+                type: String,
+                default: 'tip'
+            },
+
+            text: {
+                type: String,
+                default: ''
+            },
+
+            vertical: {
+                type: String,
+                default: 'top'
+            }
         },
-        text: String,
-        vertical: {
-            type: String,
-            default: 'top'
+
+        render(createElement, { props, slots }) {
+            return createElement(
+                'span',
+                {
+                    class: ['badge', props.type, props.vertical]
+                },
+                props.text || slots().default
+            );
         }
-    },
-    render(h, { props, slots }) {
-        return h('span', {
-            class: ['badge', props.type, props.vertical]
-        }, props.text || slots().default)
-    }
-}
+    };
 </script>
 
 <style lang="scss" scoped>
@@ -27,9 +38,9 @@ export default {
         margin-right: 5px;
         padding: 0 6px;
         border-radius: 3px;
+        background-color: #42b983;
         font-size: 14px;
         line-height: 18px;
-        background-color: #42b983;
         color: white;
 
         &.middle {
@@ -46,7 +57,7 @@ export default {
         }
 
         &.error {
-            background-color: #DA5961;
+            background-color: #da5961;
         }
 
         &.warning,

@@ -1,12 +1,12 @@
 <template>
-    <transition
+    <Transition
         name="dropdown"
         @enter="setHeight"
         @after-enter="unsetHeight"
         @before-leave="setHeight"
     >
-        <slot/>
-    </transition>
+        <slot />
+    </Transition>
 </template>
 
 <script>
@@ -14,16 +14,16 @@
         name: 'DropdownTransition',
 
         methods: {
-            setHeight (items) {
+            setHeight(items) {
                 // explicitly set height so that it can be transitioned
-                items.style.height = items.scrollHeight + 'px'
+                items.style.height = items.scrollHeight + 'px';
             },
 
-            unsetHeight (items) {
-                items.style.height = ''
+            unsetHeight(items) {
+                items.style.height = '';
             }
         }
-    }
+    };
 </script>
 
 <style scoped>

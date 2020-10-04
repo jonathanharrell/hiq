@@ -7,10 +7,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr :id="mixin.name" v-for="mixin in mixins">
+            <tr
+                v-for="mixin in mixins"
+                :id="`${mixin.name}-mixin`"
+                :key="mixin.name"
+            >
                 <td class="mixin-class">
                     <code class="mixin">{{ mixin.name }}</code>
-                    <br/><code class="class" v-if="mixin.class">.{{ mixin.class }}</code>
+                    <br />
+                    <code v-if="mixin.class" class="class"
+                        >.{{ mixin.class }}</code
+                    >
                 </td>
                 <td class="description">{{ mixin.description }}</td>
             </tr>
@@ -19,18 +26,18 @@
 </template>
 
 <script>
-    import mixins from '../data/mixins'
+    import mixins from '../data/mixins';
 
     export default {
-        data () {
+        data() {
             return {
                 mixins
-            }
+            };
         }
-    }
+    };
 </script>
 
-<style>
+<style scoped>
     .class {
         opacity: 0.5;
     }

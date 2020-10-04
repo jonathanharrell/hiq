@@ -1,154 +1,237 @@
 <template>
     <div class="search-box">
-        <input
-            @input="query = $event.target.value"
-            aria-label="Search"
-            :value="query"
-            autocomplete="off"
-            spellcheck="false"
-            @focus="focused = true"
-            @blur="focused = false"
-            @keyup.enter="go(focusIndex)"
-            @keyup.up="onUp"
-            @keyup.down="onDown"
-            @keydown.esc="query = ''"
+        <AisInstantSearch
+            :search-client="searchClient"
+            :index-name="algolia.indexName"
         >
-        <ul class="suggestions"
-            v-if="showSuggestions"
-            :class="{ 'align-right': alignRight }"
-            @mouseleave="unfocus"
-        >
-            <li
-                class="suggestion" v-for="(s, i) in suggestions"
-                :class="{ focused: i === focusIndex }"
-                @mousedown="go(i)"
-                @mouseenter="focus(i)"
-            >
-                <a :href="s.path" @click.prevent> <span class="page-title">{{ s.title || s.path }}</span>
-                    <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span> </a>
-            </li>
-        </ul>
+            <AisConfigure :hits-per-page.camel="5" :distinct="true" />
+            <AisSearchBox>
+                <div slot-scope="{ refine }">
+                    <input
+                        ref="input"
+                        v-model="query"
+                        autocomplete="off"
+                        aria-label="Search"
+                        spellcheck="false"
+                        @input="refine($event.currentTarget.value)"
+                        @focus="focused = true"
+                        @blur="focused = false"
+                        @keyup.enter="go(focusIndex)"
+                        @keyup.up="onUp"
+                        @keyup.down="onDown"
+                        @keydown.esc="query = ''"
+                    />
+                </div>
+            </AisSearchBox>
+            <AisHits v-if="query">
+                <ul
+                    slot-scope="{ items }"
+                    class="suggestions"
+                    :class="{ 'align-right': alignRight }"
+                    @mouseleave="unfocus"
+                >
+                    <li v-if="!items.length" class="suggestion">
+                        <p class="no-results">No results found for query:</p>
+                        <p class="result-text">
+                            <q>{{ query }}</q>
+                        </p>
+                    </li>
+                    <li
+                        v-for="(item, index) in items"
+                        :key="item.objectID"
+                        ref="suggestions"
+                        class="suggestion"
+                        :class="{ focused: index === focusIndex }"
+                        @mousedown="go(index)"
+                        @mouseenter="focus(index)"
+                    >
+                        <a :href="item.url" @click.prevent>
+                            <template v-if="item.type === 'page'">
+                                <p class="result-text">{{ item.pageTitle }}</p>
+                            </template>
+                            <template v-if="item.type === 'heading'">
+                                <p class="result-text">
+                                    <AisSnippet :hit="item" attribute="text" />
+                                </p>
+                                <p class="result-sub-text">
+                                    {{ item.pageTitle }}
+                                </p>
+                            </template>
+                            <template v-if="item.type === 'paragraph'">
+                                <AisSnippet :hit="item" attribute="text" />
+                                <p class="result-sub-text">
+                                    <AisHighlight
+                                        :hit="item"
+                                        attribute="pageTitle"
+                                    />
+                                    >
+                                    <AisHighlight
+                                        :hit="item"
+                                        attribute="heading"
+                                    />
+                                </p>
+                            </template>
+                            <!--                            <template v-if="item.type === 'customProperty'">-->
+                            <!--                                <AisHighlight :hit="item" attribute="heading" />-->
+                            <!--                                <p class="result-sub-text">-->
+                            <!--                                    {{ item.text }}-->
+                            <!--                                </p>-->
+                            <!--                                <p class="result-sub-text">-->
+                            <!--                                    Custom Property ({{ item.propertyType }})-->
+                            <!--                                </p>-->
+                            <!--                            </template>-->
+                            <!--                            <template v-if="item.type === 'customSelector'">-->
+                            <!--                                <AisHighlight :hit="item" attribute="heading" />-->
+                            <!--                                <p class="result-sub-text">-->
+                            <!--                                    {{ item.text }}-->
+                            <!--                                </p>-->
+                            <!--                                <p class="result-sub-text">-->
+                            <!--                                    Custom Selector-->
+                            <!--                                </p>-->
+                            <!--                            </template>-->
+                            <!--                            <template v-if="item.type === 'mixin'">-->
+                            <!--                                <AisHighlight :hit="item" attribute="heading" />-->
+                            <!--                                <p class="result-sub-text">-->
+                            <!--                                    {{ item.text }}-->
+                            <!--                                </p>-->
+                            <!--                                <p class="result-sub-text">-->
+                            <!--                                    Mixin-->
+                            <!--                                </p>-->
+                            <!--                            </template>-->
+                        </a>
+                    </li>
+                </ul>
+            </AisHits>
+        </AisInstantSearch>
     </div>
 </template>
 
 <script>
+    import algoliasearch from 'algoliasearch/lite';
+    import {
+        AisConfigure,
+        AisHighlight,
+        AisHits,
+        AisInstantSearch,
+        AisSearchBox,
+        AisSnippet
+    } from 'vue-instantsearch';
+
     export default {
-        data () {
+        components: {
+            AisConfigure,
+            AisHighlight,
+            AisHits,
+            AisInstantSearch,
+            AisSearchBox,
+            AisSnippet
+        },
+
+        data() {
             return {
                 query: '',
                 focused: false,
                 focusIndex: 0
-            }
+            };
         },
 
         computed: {
-            showSuggestions () {
+            algolia() {
                 return (
-                    this.focused &&
-                    this.suggestions &&
-                    this.suggestions.length
-                )
+                    this.$themeLocaleConfig.algolia ||
+                    this.$site.themeConfig.algolia ||
+                    {}
+                );
             },
 
-            suggestions () {
-                const query = this.query.trim().toLowerCase()
-                if (!query) {
-                    return
-                }
+            searchClient() {
+                return algoliasearch(this.algolia.appId, this.algolia.apiKey);
+            },
 
-                const {pages, themeConfig} = this.$site
-                const max = themeConfig.searchMaxSuggestions || 5
-                const localePath = this.$localePath
-                const matches = item => (
-                    item.title &&
-                    item.title.toLowerCase().indexOf(query) > -1
-                )
-                const res = []
-                for (let i = 0; i < pages.length; i++) {
-                    if (res.length >= max) break
-                    const p = pages[i]
-                    // filter out results that do not match current locale
-                    if (this.getPageLocalePath(p) !== localePath) {
-                        continue
-                    }
-                    if (matches(p)) {
-                        res.push(p)
-                    } else if (p.headers) {
-                        for (let j = 0; j < p.headers.length; j++) {
-                            if (res.length >= max) break
-                            const h = p.headers[j]
-                            if (matches(h)) {
-                                res.push(Object.assign({}, p, {
-                                    path: p.path + '#' + h.slug,
-                                    header: h
-                                }))
-                            }
-                        }
-                    }
-                }
-                return res
+            showSuggestions() {
+                return (
+                    this.focused && this.suggestions && this.suggestions.length
+                );
             },
 
             // make suggestions align right when there are not enough items
-            alignRight () {
-                const navCount = (this.$site.themeConfig.nav || []).length
-                const repo = this.$site.repo ? 1 : 0
-                return navCount + repo <= 2
+            alignRight() {
+                const navCount = (this.$site.themeConfig.nav || []).length;
+                const repo = this.$site.repo ? 1 : 0;
+                return navCount + repo <= 2;
             }
         },
 
+        mounted() {
+            document.addEventListener('click', this.handleClick);
+            document.addEventListener('keydown', event => {
+                if (event.key === '/') {
+                    if (document.activeElement === this.$refs.input) return;
+                    this.$refs.input.focus();
+                    event.preventDefault();
+                }
+            });
+        },
+
+        beforeDestroy() {
+            document.removeEventListener('click', this.handleClick);
+        },
+
         methods: {
-            getPageLocalePath (page) {
-                for (const localePath in this.$site.locales || {}) {
-                    if (localePath !== '/' && page.path.indexOf(localePath) === 0) {
-                        return localePath
-                    }
-                }
-                return '/'
-            },
-
-            onUp () {
-                if (this.showSuggestions) {
-                    if (this.focusIndex > 0) {
-                        this.focusIndex--
-                    } else {
-                        this.focusIndex = this.suggestions.length - 1
-                    }
+            handleClick(event) {
+                if (
+                    !this.$el.contains(event.target) &&
+                    this.$el !== event.target
+                ) {
+                    this.query = '';
                 }
             },
 
-            onDown () {
-                if (this.showSuggestions) {
-                    if (this.focusIndex < this.suggestions.length - 1) {
-                        this.focusIndex++
-                    } else {
-                        this.focusIndex = 0
-                    }
+            onUp() {
+                if (!this.$refs.suggestions) return;
+
+                if (this.focusIndex > 0) {
+                    this.focusIndex--;
+                } else {
+                    this.focusIndex = this.$refs.suggestions.length - 1;
                 }
             },
 
-            go (i) {
-                if (!this.showSuggestions) {
-                    return
+            onDown() {
+                if (!this.$refs.suggestions) return;
+
+                if (this.focusIndex < this.$refs.suggestions.length - 1) {
+                    this.focusIndex++;
+                } else {
+                    this.focusIndex = 0;
                 }
-                this.$router.push(this.suggestions[i].path)
-                this.query = ''
-                this.focusIndex = 0
             },
 
-            focus (i) {
-                this.focusIndex = i
+            go(index) {
+                const suggestion = this.$refs.suggestions[index];
+                const link = suggestion.querySelector('a').href;
+                const url = new URL(link);
+                const path = url.pathname + url.hash;
+
+                this.$router.push(path).catch(() => {});
+
+                this.query = '';
+                this.focusIndex = 0;
             },
 
-            unfocus () {
-                this.focusIndex = -1
+            focus(index) {
+                this.focusIndex = index;
+            },
+
+            unfocus() {
+                this.focusIndex = -1;
             }
         }
-    }
+    };
 </script>
 
 <style lang="scss" scoped>
-    @import "../styles/sass-variables";
+    @import '../styles/sass-variables';
 
     .search-box {
         display: flex;
@@ -163,17 +246,24 @@
 
     input {
         width: 10rem;
-        padding: 0 0.5rem 0 2rem;
+        padding: 0 0.5rem 0 2.25rem;
         border: 1px solid var(--hiq-color-gray-6);
         border-radius: 2rem;
-        background: white url(../search.svg) 0.6rem 0.5rem no-repeat;
-        background-size: 1rem;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg data-v-2d16cd4a='' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle data-v-2d16cd4a='' cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline data-v-2d16cd4a='' x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 0.5rem 0.35rem;
+        background-size: 1.25rem;
         outline: none;
         font-size: 16px;
         line-height: 2rem;
-        color: var(--hiq-color-gray-5);
+        color: var(--hiq-input-text-color);
         transition: all 0.2s ease;
         cursor: text;
+
+        [data-theme='dark'] & {
+            background-image: url("data:image/svg+xml,%3Csvg data-v-2d16cd4a='' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle data-v-2d16cd4a='' cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline data-v-2d16cd4a='' x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+        }
 
         @media (max-width: $narrow) {
             position: relative;
@@ -187,8 +277,8 @@
             cursor: auto;
 
             @media (max-width: $narrow) {
-                width: 10rem;
                 left: 0;
+                width: 10rem;
                 cursor: text;
             }
 
@@ -206,7 +296,7 @@
         padding: 0.4rem;
         border: 1px solid var(--hiq-color-gray-6);
         border-radius: 6px;
-        background-color: white;
+        background-color: var(--hiq-body-background-color);
         list-style-type: none;
 
         @media (max-width: $mobileNarrow) {
@@ -222,27 +312,30 @@
         padding: 0.4rem 0.6rem;
         border-radius: 4px;
         line-height: 1.4;
-        cursor: pointer;
 
         a {
-            color: var(--hiq-color-gray-4);
-
-            .page-title {
-                font-weight: var(--hiq-font-weight-semibold);
-
-                + .header {
-                    margin-left: 0.25rem;
-                    font-size: var(--hiq-font-size-small);
-                }
-            }
+            display: block;
+            color: var(--hiq-color-gray-4) !important;
+            cursor: pointer;
         }
 
         &.focused {
             background-color: var(--hiq-color-gray-7);
-
-            a {
-                color: var(--hiq-color-primary);
-            }
         }
+    }
+
+    /deep/ p {
+        margin-bottom: 0;
+    }
+
+    .result-text {
+        font-size: var(--hiq-font-size-5);
+        font-weight: var(--hiq-font-weight-semibold);
+    }
+
+    .result-sub-text {
+        margin-top: 0.25rem;
+        font-size: var(--hiq-font-size-6);
+        color: var(--hiq-color-gray-5);
     }
 </style>

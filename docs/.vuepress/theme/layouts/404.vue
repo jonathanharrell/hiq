@@ -3,7 +3,7 @@
         <div class="content">
             <h1>404</h1>
             <blockquote>{{ getMsg() }}</blockquote>
-            <router-link to="/">Take me home.</router-link>
+            <RouterLink to="/">Take me home.</RouterLink>
         </div>
     </div>
 </template>
@@ -14,15 +14,15 @@
         `How did we get here?`,
         `That's a Four-Oh-Four.`,
         `Looks like we've got some broken links.`
-    ]
+    ];
 
     export default {
         methods: {
-            getMsg () {
-                return msgs[Math.floor(Math.random() * msgs.length)]
+            getMsg() {
+                return msgs[Math.floor(Math.random() * msgs.length)];
             }
         }
-    }
+    };
 </script>
 
 <style src="../../../../dist/hiq.css"></style>
@@ -35,5 +35,9 @@
         margin: 0 auto;
         padding: 2rem 2.5rem 2rem;
         text-align: center;
+    }
+
+    a {
+        text-decoration: underline;
     }
 </style>

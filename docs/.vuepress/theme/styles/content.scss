@@ -13,6 +13,19 @@
     padding: 2rem;
   }
 
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
   p.demo {
     padding: 1rem 1.5rem;
     border: 1px solid var(--hiq-color-gray-6);
@@ -52,7 +65,11 @@
     margin: 2rem 0 3rem;
   }
 
-  img {
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
   }
 
@@ -78,7 +95,6 @@
 }
 
 .theme-container.no-navbar .content__default {
-
   > h1,
   > h2,
   > h3,
@@ -103,6 +119,8 @@ a.header-anchor {
   box-shadow: none !important;
   opacity: 0;
   font-size: 0.85em;
+  text-decoration: none !important;
+  color: var(--hiq-color-gray-5) !important;
 }
 
 h1:hover .header-anchor,

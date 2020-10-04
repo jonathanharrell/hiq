@@ -1,48 +1,73 @@
 <template>
     <div class="home">
         <div class="warning custom-block browser-not-supported">
-            <p class="custom-block-title">WARNING</p><p>Your browser does not support custom properties, which are required for this page to display correctly.</p>
+            <p class="custom-block-title">WARNING</p>
+            <p>
+                Your browser does not support custom properties, which are
+                required for this page to display correctly.
+            </p>
         </div>
         <div class="hero">
-            <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
+            <img
+                v-if="data.heroImage"
+                :src="$withBase(data.heroImage)"
+                alt="hero"
+            />
             <h1>{{ data.heroText || $title || 'Hello' }}</h1>
             <p class="description">
-                {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+                {{
+                    data.tagline ||
+                        $description ||
+                        'Welcome to your VuePress site'
+                }}
             </p>
-            <p class="action" v-if="data.actionText && data.actionLink">
-                <NavLink role="button" class="action-button" :item="actionLink" />
+            <p v-if="data.actionText && data.actionLink" class="action">
+                <NavLink
+                    role="button"
+                    class="action-button"
+                    :item="actionLink"
+                />
             </p>
         </div>
-        <div class="features" v-if="data.features && data.features.length">
-            <div class="feature" v-for="feature in data.features">
+        <div v-if="data.features && data.features.length" class="features">
+            <div
+                v-for="feature in data.features"
+                :key="feature.title"
+                class="feature"
+            >
                 <h2>{{ feature.title }}</h2>
                 <p>{{ feature.details }}</p>
             </div>
         </div>
         <Content custom />
         <div class="footer">
-            MIT Licensed | Copyright © 2017-present <a href="https://www.jonathan-harrell.com" target="_blank">Jonathan Harrell</a>
+            MIT Licensed | Copyright © 2017-present
+            <a href="https://www.jonathan-harrell.com" target="_blank"
+                >Jonathan Harrell</a
+            >
         </div>
     </div>
 </template>
 
 <script>
-    import NavLink from './NavLink.vue'
+    import NavLink from './NavLink.vue';
 
     export default {
-        components: {NavLink},
+        components: { NavLink },
+
         computed: {
-            data () {
-                return this.$page.frontmatter
+            data() {
+                return this.$page.frontmatter;
             },
-            actionLink () {
+
+            actionLink() {
                 return {
                     link: this.data.actionLink,
                     text: this.data.actionText
-                }
+                };
             }
         }
-    }
+    };
 </script>
 
 <style>
