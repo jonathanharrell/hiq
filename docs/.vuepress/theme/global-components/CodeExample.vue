@@ -35,8 +35,9 @@
         }
 
         button:not(:last-child),
+        .button:not(:last-child),
         [role='button']:not(:last-child) {
-            margin: 0 0.35rem 0.35rem 0;
+            margin: 0 0.25rem 0.5rem 0;
         }
 
         p:last-of-type,

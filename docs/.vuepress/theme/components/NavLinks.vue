@@ -149,11 +149,12 @@
         background-color: transparent;
         font-size: var(--hiq-font-size-small);
         font-weight: var(--hiq-font-weight-medium);
-        color: var(--hiq-color-gray-5);
+        color: var(--hiq-text-color);
 
         @media (min-width: $mobileUp) {
             margin-left: 1rem;
             padding: 0 0.35rem;
+            color: var(--hiq-color-gray-5);
         }
 
         &:hover,
@@ -164,7 +165,7 @@
 
         svg {
             margin-left: 1.25rem;
-            width: 1.5rem;
+            width: 1.25rem;
 
             @media (min-width: $mobileUp) {
                 width: unset;

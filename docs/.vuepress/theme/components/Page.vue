@@ -106,7 +106,6 @@
     @import '../styles/sass-variables';
 
     .page {
-        margin-top: var(--navbar-height);
         padding-bottom: 2rem;
         padding-left: 0;
 

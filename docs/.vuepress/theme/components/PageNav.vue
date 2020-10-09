@@ -118,4 +118,8 @@
         padding: 1rem 0;
         border-top: 1px solid var(--hiq-color-gray-6);
     }
+
+    .next {
+        margin-left: auto;
+    }
 </style>

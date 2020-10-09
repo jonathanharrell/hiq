@@ -1,0 +1,8 @@
+<svg width="39" height="39" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <rect fill="#0074FF" width="39" height="39" rx="4"/>
+        <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M24 26l6-6-6-6M16 14l-6 6 6 6"/>
+        </g>
+    </g>
+</svg>

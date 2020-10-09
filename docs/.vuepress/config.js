@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'HiQ',
+    title: 'HiQ. A high-IQ CSS framework.',
     description:
         'Jump-start your styling with a lightweight, easily customizable framework that is built with CSS custom properties and modern best practices.',
     head: [

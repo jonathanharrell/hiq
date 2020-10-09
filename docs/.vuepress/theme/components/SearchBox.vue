@@ -250,7 +250,7 @@
         border: 1px solid var(--hiq-color-gray-6);
         border-radius: 2rem;
         background-color: transparent;
-        background-image: url("data:image/svg+xml,%3Csvg data-v-2d16cd4a='' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle data-v-2d16cd4a='' cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline data-v-2d16cd4a='' x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg data-v-2d16cd4a='' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='none' stroke='%238f96a3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle data-v-2d16cd4a='' cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline data-v-2d16cd4a='' x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: 0.5rem 0.35rem;
         background-size: 1.25rem;
@@ -262,7 +262,7 @@
         cursor: text;
 
         [data-theme='dark'] & {
-            background-image: url("data:image/svg+xml,%3Csvg data-v-2d16cd4a='' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle data-v-2d16cd4a='' cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline data-v-2d16cd4a='' x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg data-v-2d16cd4a='' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='none' stroke='%235c6370' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle data-v-2d16cd4a='' cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline data-v-2d16cd4a='' x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
         }
 
         @media (max-width: $narrow) {
@@ -297,6 +297,7 @@
         border: 1px solid var(--hiq-color-gray-6);
         border-radius: 6px;
         background-color: var(--hiq-body-background-color);
+        color: var(--hiq-color-gray-3);
         list-style-type: none;
 
         @media (max-width: $mobileNarrow) {
@@ -315,7 +316,7 @@
 
         a {
             display: block;
-            color: var(--hiq-color-gray-4) !important;
+            color: var(--hiq-color-gray-3) !important;
             cursor: pointer;
         }
 

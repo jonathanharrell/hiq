@@ -99,6 +99,7 @@
         z-index: 10;
         width: var(--mobile-sidebar-width);
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         margin: 0;
         padding-top: var(--navbar-height);
         border-right: 1px solid var(--hiq-color-gray-6);

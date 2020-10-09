@@ -13,7 +13,7 @@
     padding: 2rem;
   }
 
-  a {
+  a:not(.button):not([role='button']) {
     text-decoration: underline;
 
     &:hover,

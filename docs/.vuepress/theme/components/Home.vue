@@ -8,183 +8,208 @@
             </p>
         </div>
         <div class="hero">
-            <img
-                v-if="data.heroImage"
-                :src="$withBase(data.heroImage)"
-                alt="hero"
-            />
-            <h1>{{ data.heroText || $title || 'Hello' }}</h1>
-            <p class="description">
-                {{
-                    data.tagline ||
-                        $description ||
-                        'Welcome to your VuePress site'
-                }}
-            </p>
-            <p v-if="data.actionText && data.actionLink" class="action">
-                <NavLink
-                    role="button"
-                    class="action-button"
-                    :item="actionLink"
-                />
-            </p>
-        </div>
-        <div v-if="data.features && data.features.length" class="features">
-            <div
-                v-for="feature in data.features"
-                :key="feature.title"
-                class="feature"
-            >
-                <h2>{{ feature.title }}</h2>
-                <p>{{ feature.details }}</p>
+            <HomeBackground />
+            <div class="content__hero">
+                <h1 class="title">
+                    <span>HiQ.</span>
+                    A high-IQ CSS framework.
+                </h1>
+                <p class="description">
+                    {{ $description }}
+                </p>
+                <div class="actions">
+                    <NavLink
+                        class="button action-button"
+                        :item="{ link: '/guide/', text: 'Get started' }"
+                    />
+                    <a
+                        href="https://hiq-theme-builder.netlify.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary action-button"
+                    >
+                        Build theme
+                    </a>
+                </div>
             </div>
         </div>
         <Content custom />
         <div class="footer">
-            MIT Licensed | Copyright © 2017-present
-            <a href="https://www.jonathan-harrell.com" target="_blank"
-                >Jonathan Harrell</a
-            >
+            <span>
+                Copyright © 2017-present by
+                <a href="https://www.jonathan-harrell.com" target="_blank">
+                    Jonathan Harrell
+                </a>
+            </span>
+            <span class="license">MIT Licensed</span>
         </div>
     </div>
 </template>
 
 <script>
     import NavLink from './NavLink.vue';
+    import HomeBackground from './HomeBackground.vue';
 
     export default {
-        components: { NavLink },
+        components: { NavLink, HomeBackground },
 
         computed: {
             data() {
                 return this.$page.frontmatter;
-            },
-
-            actionLink() {
-                return {
-                    link: this.data.actionLink,
-                    text: this.data.actionText
-                };
             }
         }
     };
 </script>
 
-<style>
+<style lang="scss" scoped>
+    @import '../styles/sass-variables';
+
     .home {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: var(--navbar-height) 2rem 0;
+        --hiq-max-container-width: 60rem;
     }
 
-    .home .hero {
-        text-align: center;
-    }
-
-    .home .hero img {
-        display: block;
-        max-height: 280px;
-        margin: 3rem auto 1.5rem;
-    }
-
-    .home .hero h1,
-    .home .hero .description,
-    .home .hero .action {
-        margin: 1.8rem auto;
-    }
-
-    .home .hero h1 {
-        font-weight: var(--hiq-font-weight-medium);
-    }
-
-    .home .hero .description {
-        max-width: 30rem;
-        font-size: var(--hiq-font-size-large);
-        line-height: 1.3;
-        color: var(--hiq-color-gray-5);
-    }
-
-    .home .hero .action-button {
-        display: inline-block;
-        height: auto;
-        padding: 0.75rem 1.5rem;
-        font-size: var(--hiq-font-size-large);
-    }
-
-    .home .features {
+    .hero {
         display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        align-content: stretch;
-        justify-content: space-between;
-        margin-top: 2.5rem;
-        padding: 2.5rem 0 1rem;
-        border-top: 1px solid var(--hiq-color-gray-6);
-    }
-
-    .home .feature {
-        flex-grow: 1;
-        flex-basis: 30%;
-        max-width: 30%;
-        margin-bottom: 0.5rem;
-    }
-
-    .home .feature h2 {
-        margin-bottom: 0.5rem;
-        border-bottom: 0;
-        font-size: var(--hiq-font-size-4);
-        font-weight: var(--hiq-font-weight-medium);
-    }
-
-    .home .feature p {
-        color: var(--hiq-color-gray-4);
-    }
-
-    .home .footer {
-        padding: 2.5rem;
-        border-top: 1px solid var(--hiq-color-gray-6);
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 3rem 1.5rem;
+        background-color: var(--hiq-color-gray-8);
+        box-shadow: inset 0 2px 8px 0 rgba(0, 0, 0, 0.1);
         text-align: center;
-        color: var(--hiq-color-gray-5);
-    }
 
-    .home .footer a {
-        color: var(--hiq-color-gray-5);
-    }
-
-    .home .footer a:hover {
-        color: var(--hiq-color-gray-4);
-    }
-
-    @media (max-width: $mobile) {
-        .home .features {
-            flex-direction: column;
+        @media (min-width: $mobileNarrowUp) {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
         }
 
-        .home .feature {
-            max-width: 100%;
+        @media (min-width: $mobileUp) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        @media (min-width: $narrowUp) {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            min-width: 55rem;
+            max-width: 75rem;
+            height: auto;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .content__hero {
+        position: relative;
+        max-width: var(--hiq-max-container-width);
+        margin: 0 auto;
+
+        @media (min-width: $mobileUp) {
             padding: 0 2.5rem;
         }
     }
 
-    @media (max-width: $mobileNarrow) {
-        .home {
-            padding-right: 1.5rem;
-            padding-left: 1.5rem;
+    .title {
+        font-size: 2.5rem;
+        font-weight: var(--hiq-font-weight-bold);
+
+        @media (min-width: $mobileUp) {
+            font-size: 3.375rem;
         }
 
-        .home .hero img {
-            max-height: 210px;
-            margin: 2rem auto 1.2rem;
+        span {
+            color: var(--hiq-color-primary);
+        }
+    }
+
+    .description {
+        margin-top: 0.75rem;
+        font-size: var(--hiq-font-size-large);
+        line-height: 1.5;
+        color: var(--hiq-color-gray-4);
+    }
+
+    .actions {
+        margin-top: 1.5rem;
+    }
+
+    .action-button {
+        height: auto;
+        margin: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: var(--hiq-font-size-large);
+        box-shadow: hsla(0, 0, 0, 0.25) 0 1px 3px, hsla(0, 0, 0, 0.06) 0 1px 2px;
+    }
+
+    .button-secondary {
+        border-color: var(--hiq-body-background-color);
+        background-color: var(--hiq-body-background-color);
+        color: var(--hiq-color-primary) !important;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: var(--hiq-color-gray-7) !important;
+            background-color: var(--hiq-color-gray-7) !important;
+        }
+    }
+
+    /deep/ .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-gap: 1.5rem 2rem;
+        justify-content: space-between;
+        padding: 1rem 0;
+
+        @media (min-width: $mobileUp) {
+            padding: 2rem 0;
         }
 
-        .home .hero h1,
-        .home .hero .description,
-        .home .hero .action {
-            margin: 1.2rem auto;
+        @media (min-width: $narrowUp) {
+            padding: 3rem 0;
+        }
+    }
+
+    /deep/ .feature {
+        img {
+            width: 2.25rem;
+            height: 2.25rem;
+            margin: 0 0 1.25rem 0;
         }
 
-        .home .hero .action-button {
-            padding: 0.6rem 1.2rem;
+        h2 {
+            margin-bottom: 0.75rem;
+            font-size: var(--hiq-font-size-4);
+            font-weight: var(--hiq-font-weight-medium);
+        }
+
+        p {
+            color: var(--hiq-color-gray-4);
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.75rem 1.5rem;
+        border-top: 1px solid var(--hiq-color-gray-6);
+        color: var(--hiq-color-gray-5);
+
+        a {
+            color: var(--hiq-color-gray-5);
+
+            &:hover {
+                color: var(--hiq-color-gray-4);
+            }
         }
     }
 </style>

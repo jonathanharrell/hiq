@@ -99,5 +99,7 @@ th {
 }
 
 ::selection {
-  background-color: var(--hiq-color-gray-4);
+  [data-theme='dark'] & {
+    background-color: var(--hiq-color-gray-4);
+  }
 }

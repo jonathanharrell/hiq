@@ -88,7 +88,7 @@ These can be included anywhere, before or after HiQ!
 
 Ideally, you would include your custom properties within a `variables.css` file.
 
-```css{4}
+```css
 @import 'node_modules/hiq/dist/hiq.min.css';
 
 /* your own custom property definitions */
