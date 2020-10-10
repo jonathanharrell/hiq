@@ -1,16 +1,18 @@
 <template>
-    <header class="navbar">
+    <header class="navbar" aria-label="Site Header">
         <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
-        <RouterLink :to="$localePath" class="home-link">
+        <RouterLink :to="$localePath" class="home-link" rel="home">
             <img
                 class="logo"
                 :src="$withBase($site.themeConfig.logo)"
                 :alt="$siteTitle"
+                aria-hidden="true"
             />
+            <span class="is-visually-hidden">Home page</span>
         </RouterLink>
         <div class="links">
-            <NavLinks />
-            <SearchBox />
+            <NavLinks @alert="$event => $emit('alert', $event)" />
+            <SearchBox @alert="$event => $emit('alert', $event)" />
         </div>
     </header>
 </template>
@@ -84,6 +86,13 @@
     /deep/ .primary-links {
         display: flex;
         flex: 1;
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
         a {
             border-bottom: 2px solid transparent;

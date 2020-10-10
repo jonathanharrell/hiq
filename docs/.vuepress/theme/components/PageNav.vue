@@ -3,14 +3,16 @@
         <p class="inner">
             <span v-if="prev" class="prev">
                 <RouterLink class="prev" :to="prev.path">
-                    ←
+                    <span class="is-visually-hidden">Previous page - </span>
+                    <span aria-hidden="true">←</span>
                     {{ prev.title || prev.path }}
                 </RouterLink>
             </span>
             <span v-if="next" class="next">
                 <RouterLink :to="next.path">
+                    <span class="is-visually-hidden">Next page - </span>
                     {{ next.title || next.path }}
-                    →
+                    <span aria-hidden="true">→</span>
                 </RouterLink>
             </span>
         </p>

@@ -1,11 +1,11 @@
 <template>
-    <div class="page">
+    <main id="main" class="page" tabindex="-1" aria-label="Main Content">
         <slot name="top" />
         <Content />
         <PageEdit />
         <PageNav v-bind="{ sidebarItems }" />
         <slot name="bottom" />
-    </div>
+    </main>
 </template>
 
 <script>

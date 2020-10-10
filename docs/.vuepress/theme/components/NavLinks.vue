@@ -1,11 +1,16 @@
 <template>
-    <div class="nav-links">
+    <div class="nav-links" aria-labelledby="site-links-label">
+        <h2 id="site-links-label" class="is-visually-hidden">
+            Site Links
+        </h2>
         <nav v-if="userLinks.length" class="primary-links">
-            <div v-for="item in userLinks" :key="item.link" class="nav-item">
-                <NavLink :item="item" />
-            </div>
+            <ul>
+                <li v-for="item in userLinks" :key="item.link" class="nav-item">
+                    <NavLink :item="item" />
+                </li>
+            </ul>
         </nav>
-        <nav class="secondary-links">
+        <div class="secondary-links">
             <a
                 v-if="repoLink"
                 :href="repoLink"
@@ -18,6 +23,7 @@
             <a
                 v-if="version"
                 :href="`${repoLink}/releases`"
+                :aria-label="`${version} - View releases`"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="View releases"
@@ -37,7 +43,7 @@
                 <MoonIcon v-if="theme === 'dark'" />
                 <span>Toggle theme</span>
             </button>
-        </nav>
+        </div>
     </div>
 </template>
 
@@ -121,6 +127,8 @@
 
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
+
+                this.$emit('alert', `Theme changed to ${newTheme}`);
             }
         }
     };
@@ -169,6 +177,7 @@
 
             @media (min-width: $mobileUp) {
                 width: unset;
+                margin-left: 0;
             }
         }
 

@@ -13,24 +13,15 @@ if (process.env.NODE_ENV !== 'production') {
 init();
 
 async function init() {
-    const guideRecords = generateGuideRecords();
-    // const customPropertyRecords = generateCustomPropertyRecords();
-    // const customSelectorRecords = generateCustomSelectorRecords();
-    // const mixinRecords = generateMixinRecords();
-
     const client = algoliasearch(
         process.env.ALGOLIA_APPLICATION_ID,
         process.env.ALGOLIA_ADMIN_API_KEY
     );
 
-    const index = client.initIndex('hiq_test_index');
+    const index = client.initIndex('hiq_docs');
 
-    await indexRecords(index, [
-        ...guideRecords,
-        // ...customPropertyRecords,
-        // ...customSelectorRecords,
-        // ...mixinRecords
-    ]);
+    const guideRecords = generateGuideRecords();
+    await indexRecords(index, guideRecords);
 }
 
 function generateGuideRecords() {
@@ -156,43 +147,4 @@ function parseHTML(html) {
     } catch(error) {
         console.error(error);
     }
-}
-
-function generateCustomPropertyRecords() {
-    return customProperties.map(property => {
-        const propertyType = property.type.charAt(0).toUpperCase() + property.type.substr(1).toLowerCase();
-
-        return {
-            type: 'customProperty',
-            heading: property.name,
-            text: property.description,
-            pageTitle: 'Custom Properties',
-            propertyType,
-            url: `/reference/#${property.name.replace('--', '')}`
-        }
-    });
-}
-
-function generateCustomSelectorRecords() {
-    return customSelectors.map(selector => {
-        return {
-            type: 'customSelector',
-            heading: selector.name,
-            text: selector.description,
-            pageTitle: 'Custom Selectors',
-            url: `/reference/utilities.html#${selector.name.replace(':--', '')}-selector`
-        }
-    });
-}
-
-function generateMixinRecords() {
-    return mixins.map(mixin => {
-        return {
-            type: 'mixin',
-            heading: mixin.name,
-            text: mixin.description,
-            pageTitle: 'Mixins',
-            url: `/reference/utilities.html#${mixin.name.replace(':--', '')}-mixin`
-        }
-    });
 }

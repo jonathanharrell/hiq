@@ -101,9 +101,4 @@
             top: -0.18rem;
         }
     }
-
-    .sidebar-group-items {
-        overflow: hidden;
-        transition: height 0.1s ease-out;
-    }
 </style>

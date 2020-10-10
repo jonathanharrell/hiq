@@ -5,7 +5,22 @@
         @touchstart="onTouchStart"
         @touchend="onTouchEnd"
     >
-        <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
+        <div role="region" aria-live="assertive" class="is-visually-hidden">
+            {{ alertText }}
+        </div>
+        <a
+            id="skip-link"
+            href="#main"
+            class="button skip-link"
+            @click="skipSiteNav"
+        >
+            Skip site navigation
+        </a>
+        <Navbar
+            v-if="shouldShowNavbar"
+            @toggle-sidebar="toggleSidebar"
+            @alert="$event => (alertText = $event)"
+        />
         <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
             <slot slot="top" name="sidebar-top" />
@@ -42,7 +57,8 @@
 
         data() {
             return {
-                isSidebarOpen: false
+                isSidebarOpen: false,
+                alertText: ''
             };
         },
 
@@ -101,6 +117,17 @@
             }
         },
 
+        watch: {
+            $page: async function(value, oldValue) {
+                if (value.regularPath !== oldValue.regularPath) {
+                    console.log('change');
+                    await this.$nextTick();
+                    const main = document.getElementById('main');
+                    if (main) main.focus();
+                }
+            }
+        },
+
         mounted() {
             window.addEventListener('scroll', this.onScroll);
 
@@ -121,6 +148,11 @@
         },
 
         methods: {
+            skipSiteNav() {
+                const main = document.getElementById('main');
+                if (main) main.focus();
+            },
+
             toggleSidebar(to) {
                 this.isSidebarOpen =
                     typeof to === 'boolean' ? to : !this.isSidebarOpen;
@@ -159,3 +191,19 @@
 <style src="../styles/arrows.scss" lang="scss"></style>
 <style src="../styles/nprogress.scss" lang="scss"></style>
 <style src="../styles/syntax.scss" lang="scss"></style>
+
+<style lang="scss" scoped>
+    .skip-link {
+        position: fixed;
+        top: -100%;
+        left: 1rem;
+        z-index: 30;
+        border-color: var(--hiq-color-gray-6) !important;
+        background-color: var(--hiq-color-gray-6) !important;
+        color: var(--hiq-text-color) !important;
+
+        &:focus {
+            top: 1rem;
+        }
+    }
+</style>

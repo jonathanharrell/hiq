@@ -75,8 +75,10 @@ dialog p {
   margin-bottom: 1rem;
 }
 
-@supports (color: var(--hiq-color-primary)) {
-  .browser-not-supported {
+.browser-not-supported {
+  margin: 0 !important;
+
+  @supports (color: var(--hiq-color-primary)) {
     display: none;
   }
 }

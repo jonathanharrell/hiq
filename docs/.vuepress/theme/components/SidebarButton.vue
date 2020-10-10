@@ -1,11 +1,17 @@
 <template>
-    <button class="sidebar-button" @click="$emit('toggle-sidebar')">
+    <button
+        class="sidebar-button"
+        aria-hidden="true"
+        @click="$emit('toggle-sidebar')"
+    >
+        <span class="is-visually-hidden">
+            Site menu
+        </span>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
             class="icon"
             role="img"
-            aria-hidden="true"
         >
             <path
                 fill="currentColor"

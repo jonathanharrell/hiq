@@ -6,12 +6,33 @@
         >
             <AisConfigure :hits-per-page.camel="5" :distinct="true" />
             <AisSearchBox>
-                <div slot-scope="{ refine }">
+                <div
+                    slot-scope="{ refine }"
+                    :aria-expanded="query ? 'true' : 'false'"
+                    role="combobox"
+                    aria-owns="search-listbox"
+                    aria-haspopup="listbox"
+                >
+                    <label
+                        id="search-label"
+                        for="search-input"
+                        class="is-visually-hidden"
+                    >
+                        Search documentation
+                    </label>
                     <input
+                        id="search-input"
                         ref="input"
                         v-model="query"
+                        :aria-activedescendant="
+                            focusIndex > -1
+                                ? `suggestion-${focusIndex}`
+                                : undefined
+                        "
                         autocomplete="off"
                         aria-label="Search"
+                        aria-autocomplete="list"
+                        aria-controls="search-listbox"
                         spellcheck="false"
                         @input="refine($event.currentTarget.value)"
                         @focus="focused = true"
@@ -19,15 +40,21 @@
                         @keyup.enter="go(focusIndex)"
                         @keyup.up="onUp"
                         @keyup.down="onDown"
+                        @keyup.left="unfocus"
+                        @keyup.right="unfocus"
                         @keydown.esc="query = ''"
+                        @keydown.tab="query = ''"
                     />
                 </div>
             </AisSearchBox>
             <AisHits v-if="query">
                 <ul
+                    id="search-listbox"
                     slot-scope="{ items }"
-                    class="suggestions"
                     :class="{ 'align-right': alignRight }"
+                    role="listbox"
+                    class="suggestions"
+                    aria-labelledby="search-label"
                     @mouseleave="unfocus"
                 >
                     <li v-if="!items.length" class="suggestion">
@@ -38,10 +65,13 @@
                     </li>
                     <li
                         v-for="(item, index) in items"
+                        :id="`suggestion-${index}`"
                         :key="item.objectID"
                         ref="suggestions"
-                        class="suggestion"
                         :class="{ focused: index === focusIndex }"
+                        :aria-selected="index === focusIndex"
+                        role="option"
+                        class="suggestion"
                         @mousedown="go(index)"
                         @mouseenter="focus(index)"
                     >
@@ -131,7 +161,7 @@
             return {
                 query: '',
                 focused: false,
-                focusIndex: 0
+                focusIndex: -1
             };
         },
 
@@ -148,17 +178,18 @@
                 return algoliasearch(this.algolia.appId, this.algolia.apiKey);
             },
 
-            showSuggestions() {
-                return (
-                    this.focused && this.suggestions && this.suggestions.length
-                );
-            },
-
             // make suggestions align right when there are not enough items
             alignRight() {
                 const navCount = (this.$site.themeConfig.nav || []).length;
                 const repo = this.$site.repo ? 1 : 0;
                 return navCount + repo <= 2;
+            }
+        },
+
+        watch: {
+            query(value) {
+                this.focusIndex = -1;
+                this.$emit('alert', `Searched for query ${value}`);
             }
         },
 
@@ -216,7 +247,7 @@
                 this.$router.push(path).catch(() => {});
 
                 this.query = '';
-                this.focusIndex = 0;
+                this.unfocus();
             },
 
             focus(index) {

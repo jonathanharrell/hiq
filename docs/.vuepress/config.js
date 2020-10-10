@@ -82,7 +82,14 @@ module.exports = {
         algolia: {
             apiKey: '1cfc22c0bbdbe634c2a9fb3e76c1f00f',
             appId: 'G1GBQM2KE5',
-            indexName: 'hiq_test_index'
+            indexName: 'hiq_docs'
+        }
+    },
+    markdown: {
+        anchor: {
+            permalinkAttrs: () => ({
+                'aria-label': 'Copy link to this section'
+            })
         }
     },
     plugins: [

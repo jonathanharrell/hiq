@@ -1,48 +1,57 @@
 <template>
     <div class="home">
         <div class="warning custom-block browser-not-supported">
-            <p class="custom-block-title">WARNING</p>
+            <p class="custom-block-title">Warning</p>
             <p>
                 Your browser does not support custom properties, which are
                 required for this page to display correctly.
             </p>
         </div>
-        <div class="hero">
-            <HomeBackground />
-            <div class="content__hero">
-                <h1 class="title">
-                    <span>HiQ.</span>
-                    A high-IQ CSS framework.
-                </h1>
-                <p class="description">
-                    {{ $description }}
-                </p>
-                <div class="actions">
-                    <NavLink
-                        class="button action-button"
-                        :item="{ link: '/guide/', text: 'Get started' }"
-                    />
-                    <a
-                        href="https://hiq-theme-builder.netlify.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button button-secondary action-button"
-                    >
-                        Build theme
-                    </a>
+        <main id="main" tabindex="-1" aria-label="Main Content">
+            <section class="hero">
+                <HomeBackground />
+                <div class="content__hero">
+                    <h1 class="title">
+                        <span>HiQ.</span>
+                        A high-IQ CSS framework.
+                    </h1>
+                    <p class="description">
+                        {{ $description }}
+                    </p>
+                    <div class="actions">
+                        <NavLink
+                            class="button action-button"
+                            :item="{ link: '/guide/', text: 'Get started' }"
+                        />
+                        <a
+                            href="https://hiq-theme-builder.netlify.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary action-button"
+                        >
+                            Build theme
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <Content custom />
-        <div class="footer">
+            </section>
+            <Content custom />
+        </main>
+        <footer role="contentinfo" class="footer">
             <span>
                 Copyright © 2017-present by
                 <a href="https://www.jonathan-harrell.com" target="_blank">
                     Jonathan Harrell
                 </a>
             </span>
-            <span class="license">MIT Licensed</span>
-        </div>
+            <a
+                class="license"
+                href="https://github.com/jonathanharrell/hiq/blob/master/license.md"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                MIT Licensed
+            </a>
+        </footer>
     </div>
 </template>
 
@@ -65,13 +74,25 @@
     @import '../styles/sass-variables';
 
     .home {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - var(--navbar-height));
+
         --hiq-max-container-width: 60rem;
+    }
+
+    main {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
     }
 
     .hero {
         display: flex;
+        flex: 0 0 auto;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         position: relative;
         overflow: hidden;
         padding: 3rem 1.5rem;
@@ -85,6 +106,7 @@
         }
 
         @media (min-width: $mobileUp) {
+            min-height: 40vh;
             padding-top: 6rem;
             padding-bottom: 6rem;
         }
@@ -161,6 +183,10 @@
         }
     }
 
+    .content__default {
+        flex: 1;
+    }
+
     /deep/ .features {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -173,7 +199,7 @@
         }
 
         @media (min-width: $narrowUp) {
-            padding: 3rem 0;
+            padding: 4rem 0;
         }
     }
 

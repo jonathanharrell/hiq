@@ -2,19 +2,24 @@
     <div class="sidebar">
         <NavLinks />
         <slot name="top" />
-        <ul v-if="items.length" class="sidebar-links">
-            <li v-for="(item, index) in items" :key="index">
-                <SidebarGroup
-                    v-if="item.type === 'group'"
-                    :item="item"
-                    :first="index === 0"
-                    :open="index === openGroupIndex"
-                    :collapsable="item.collapsable"
-                    @toggle="toggleGroup(index)"
-                />
-                <SidebarLink v-else :item="item" />
-            </li>
-        </ul>
+        <nav aria-labelledby="sidebar-link-label">
+            <h2 id="sidebar-links-label" class="is-visually-hidden">
+                Sidebar Links
+            </h2>
+            <ul v-if="items.length" class="sidebar-links">
+                <li v-for="(item, index) in items" :key="index">
+                    <SidebarGroup
+                        v-if="item.type === 'group'"
+                        :item="item"
+                        :first="index === 0"
+                        :open="index === openGroupIndex"
+                        :collapsable="item.collapsable"
+                        @toggle="toggleGroup(index)"
+                    />
+                    <SidebarLink v-else :item="item" />
+                </li>
+            </ul>
+        </nav>
         <slot name="bottom" />
     </div>
 </template>
