@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import browserBugs from '../data/browser-bugs';
+    import browserBugs from '../data/browser-bugs.json';
 
     export default {
         props: {

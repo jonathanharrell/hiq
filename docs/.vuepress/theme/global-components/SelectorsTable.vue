@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import selectors from '../data/custom-selectors';
+    import selectors from '../data/custom-selectors.json';
 
     export default {
         data() {

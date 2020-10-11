@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import propertiesConfig from '../data/custom-properties';
+    import propertiesConfig from '../data/custom-properties.json';
 
     export default {
         props: {
