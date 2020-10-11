@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
     title: 'HiQ. A high-IQ CSS framework.',
     description:
@@ -80,8 +82,8 @@ module.exports = {
             '/reference/': genReferenceSidebarConfig('Reference')
         },
         algolia: {
-            apiKey: '1cfc22c0bbdbe634c2a9fb3e76c1f00f',
-            appId: 'G1GBQM2KE5',
+            apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+            appId: process.env.ALGOLIA_APPLICATION_ID,
             indexName: 'hiq_docs'
         }
     },
