@@ -4,4 +4,6 @@ dialog {
 
   border: 0;
   border-radius: var(--dialog-border-radius);
+  background-color: var(--hiq-body-background-color, white);
+  color: var(--hiq-text-color);
 }

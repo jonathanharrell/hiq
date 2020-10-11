@@ -7,16 +7,26 @@
     "rules": {
         "at-rule-empty-line-before": null,
         "at-rule-no-unknown": null,
-        "declaration-empty-line-before": ["never"],
-        "rule-empty-line-before": ["always", {
-            "ignore": [
-                "after-comment",
-                "first-nested"
-            ]
-        }],
-        "no-eol-whitespace": [true, {
-            "ignore": ["empty-lines"]
-        }],
+        "declaration-empty-line-before": [
+            "never"
+        ],
+        "rule-empty-line-before": [
+            "always",
+            {
+                "ignore": [
+                    "after-comment",
+                    "first-nested"
+                ]
+            }
+        ],
+        "no-eol-whitespace": [
+            true,
+            {
+                "ignore": [
+                    "empty-lines"
+                ]
+            }
+        ],
         "order/order": [
             "custom-properties",
             "declarations"
@@ -125,17 +135,20 @@
             "content",
             "quotes"
         ],
-        "property-no-unknown": [true, {
-            "ignoreProperties": [
-                "min-font-size",
-                "max-font-size",
-                "lower-font-range",
-                "upper-font-range",
-                "min-letter-spacing",
-                "max-letter-spacing",
-                "lower-letter-spacing-range",
-                "upper-letter-spacing-range"
-            ]
-        }]
+        "property-no-unknown": [
+            true,
+            {
+                "ignoreProperties": [
+                    "min-font-size",
+                    "max-font-size",
+                    "lower-font-range",
+                    "upper-font-range",
+                    "min-letter-spacing",
+                    "max-letter-spacing",
+                    "lower-letter-spacing-range",
+                    "upper-letter-spacing-range"
+                ]
+            }
+        ]
     }
 }

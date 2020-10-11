@@ -15,7 +15,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: docs/.vuepress/dist
-          BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build
+          BUILD_SCRIPT: npm install && npm run postcss && npm run minify && npm run docs:build && npm run docs:index
           CI: true
 
   release:

@@ -1,0 +1,10 @@
+<svg width="39" height="39" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <rect fill="#0074FF" width="39" height="39" rx="4"/>
+        <g transform="translate(10 10)" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <circle cx="10" cy="10" r="10"/>
+            <circle cx="10" cy="10" r="6"/>
+            <circle cx="10" cy="10" r="2"/>
+        </g>
+    </g>
+</svg>
