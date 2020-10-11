@@ -85,6 +85,8 @@
         display: flex;
         flex: 1;
         flex-direction: column;
+        margin-top: calc(var(--navbar-height) * -1);
+        padding-top: var(--navbar-height);
     }
 
     .hero {
