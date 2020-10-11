@@ -120,7 +120,6 @@
         watch: {
             $page: async function(value, oldValue) {
                 if (value.regularPath !== oldValue.regularPath) {
-                    console.log('change');
                     await this.$nextTick();
                     const main = document.getElementById('main');
                     if (main) main.focus();

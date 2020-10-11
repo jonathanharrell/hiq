@@ -95,6 +95,7 @@ module.exports = {
         }
     },
     plugins: [
+        '@vuepress/active-header-links',
         [
             'vuepress-plugin-container',
             {
