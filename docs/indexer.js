@@ -2,9 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 const algoliasearch = require('algoliasearch');
-const customProperties = require('./.vuepress/theme/data/custom-properties');
-const customSelectors = require('./.vuepress/theme/data/custom-selectors');
-const mixins = require('./.vuepress/theme/data/mixins');
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
