@@ -1,4 +1,6 @@
 export default () => {
+    if (typeof window === 'undefined') return;
+
     const darkTheme =
         window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
