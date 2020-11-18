@@ -70,7 +70,7 @@
         "minifier": "0.8.1",
         "node-sass": "4.14.1",
         "sass-loader": "9.0.3",
-        "semantic-release": "17.1.1",
+        "semantic-release": "17.2.3",
         "stylelint": "13.6.1",
         "stylelint-config-whq": "2.3.0",
         "vuepress": "1.5.2"
