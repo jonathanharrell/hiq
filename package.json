@@ -81,7 +81,7 @@
         "autoprefixer": "9.8.5",
         "cheerio": "1.0.0-rc.3",
         "focus-visible": "5.1.0",
-        "lodash": "4.17.20",
+        "lodash": "4.17.21",
         "postcss": "7.0.32",
         "postcss-cli": "7.1.1",
         "postcss-custom-media": "7.0.8",
