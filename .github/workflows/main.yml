@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: JamesIves/github-pages-deploy-action@master
+      - uses: JamesIves/github-pages-deploy-action@main
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
