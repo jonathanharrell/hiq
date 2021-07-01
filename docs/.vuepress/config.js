@@ -54,7 +54,6 @@ module.exports = {
         ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }]
     ],
     base: '/hiq/',
-    ga: 'UA-106163304-3',
     serviceWorker: true,
     themeConfig: {
         repo: 'jonathanharrell/hiq',
@@ -121,6 +120,12 @@ module.exports = {
                 defaultTitle: {
                     '/': 'WARNING'
                 }
+            }
+        ],
+        [
+            '@vuepress/google-analytics',
+            {
+                ga: 'UA-106163304-3'
             }
         ]
     ]
