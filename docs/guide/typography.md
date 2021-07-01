@@ -179,14 +179,14 @@ Simply include these two custom media query definitions as you would custom prop
 
 ```css
 /* matches value of --hiq-unitless-lower-font-range */
-@custom-media --lower-font-range (min-width: 460px);
+@custom-media --hiq-lower-font-range (min-width: 460px);
 
 /* matches value of --hiq-unitless-upper-font-range */
-@custom-media --upper-font-range (min-width: 900px);
+@custom-media --hiq-upper-font-range (min-width: 900px);
 ```
 
 ::: tip
-We recommend setting the `--upper-font-range` to the same value as your max computed container size.
+We recommend setting the `--hiq-upper-font-range` to the same value as your max computed container size.
 :::
 
 Here's a full example:
