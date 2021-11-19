@@ -11,7 +11,7 @@ All you need to do is set these custom properties to your own values. This can b
 Define custom properties on the root element to affect the global scope. These can be defined before or after the import of HiQ itself.
 
 ```css
-@import 'node_modules/hiq/dist/hiq.min.css';
+@import '~hiq/dist/hiq.min.css';
 
 :root {
   --hiq-button-background-color: lightgray;
@@ -114,11 +114,11 @@ Here are some example media queries:
 
 .my-component {
   width: 100%;
-  
+
   @media (--tablet) {
     width: 50%;
   }
-  
+
   @media (--desktop) {
     width: 25%;
   }

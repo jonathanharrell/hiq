@@ -80,7 +80,7 @@
       display: block;
       position: absolute;
       top: 50%;
-      left: calc(var(--checkbox-width) / 2);
+      left: calc(var(--checkbox-width) / 2 - 1px);
       width: var(--checkbox-check-width);
       height: var(--checkbox-check-height);
       border: solid var(--checkbox-check-color);

@@ -14,6 +14,11 @@
     border-color: var(--hiq-color-primary);
     background-color: hsla(210, 100%, 50%, 0.25);
 
+    [data-theme='dark'] & {
+      background-color: var(--hiq-color-gray-8);
+      color: var(--hiq-color-gray-4);
+    }
+
     code {
       background-color: hsla(210, 100%, 50%, 0.15);
     }

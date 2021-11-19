@@ -17,7 +17,7 @@ There are a few different ways you can include HiQ in your project.
 Import the compiled minified version in your CSS:
 
 ```css
-@import 'node_modules/hiq/dist/hiq.min.css';
+@import '~hiq/dist/hiq.min.css';
 ```
 
 ### Advanced
@@ -25,7 +25,7 @@ Import the compiled minified version in your CSS:
 Import the source version and process your CSS using PostCSS. This will give you access to the utility mixins that HiQ provides. Note that source files use the `.css` file extension.
 
 ```css
-@import 'node_modules/hiq/css/hiq.css';
+@import '~hiq/css/hiq.css';
 ```
 
 To take full advantage of the PostCSS features in HiQ, you will need to configure your `postcss.config.js` to include these plugins (already installed with HiQ):
@@ -56,18 +56,18 @@ For more information on using PostCSS read the [PostCSS documentation](https://g
 Any of the HiQ CSS files can be imported independently. For example, if you want only the button styles, import the buttons file, after the basic utility files:
 
 ```css
-@import 'node_modules/hiq/css/utility/*.css';
-@import 'node_modules/hiq/css/elements/buttons.css';
+@import '~hiq/css/utility/*.css';
+@import '~hiq/css/elements/buttons.css';
 ```
 
 If you go with this approach, we recommend importing at least the base styles first and then including additional files after that. The base files will give you the typographic scale and basic structural styles. This is not required, however.
 
 ```css
-@import 'node_modules/hiq/css/utility/*.css';
-@import 'node_modules/hiq/css/base/*.css';
-@import 'node_modules/hiq/css/typography/*.css';
+@import '~hiq/css/utility/*.css';
+@import '~hiq/css/base/*.css';
+@import '~hiq/css/typography/*.css';
 
-@import 'node_modules/hiq/css/base/buttons.css';
+@import '~hiq/css/base/buttons.css';
 ```
 
 ## Theming
@@ -77,7 +77,7 @@ HiQ is built with custom properties and is easy to theme according to your own b
 These can be included anywhere, before or after HiQ!
 
 ```css
-@import 'node_modules/hiq/dist/hiq.min.css';
+@import '~hiq/dist/hiq.min.css';
 
 :root {
   --hiq-button-border-color: lightgray;
@@ -89,7 +89,7 @@ These can be included anywhere, before or after HiQ!
 Ideally, you would include your custom properties within a `variables.css` file.
 
 ```css
-@import 'node_modules/hiq/dist/hiq.min.css';
+@import '~hiq/dist/hiq.min.css';
 
 /* your own custom property definitions */
 @import 'variables.css';

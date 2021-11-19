@@ -74,11 +74,14 @@
     @import '../styles/sass-variables';
 
     .home {
+        --hiq-max-container-width: 60rem;
+
         display: flex;
         flex-direction: column;
-        height: calc(100vh - var(--navbar-height));
 
-        --hiq-max-container-width: 60rem;
+        @media (min-width: $narrowUp) {
+            height: calc(100vh - var(--navbar-height));
+        }
     }
 
     main {
