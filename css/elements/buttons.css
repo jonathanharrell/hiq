@@ -15,6 +15,9 @@
   --button-hover-border-color: var(--hiq-button-hover-border-color, hsl(210, 100%, 40%));
   --button-hover-background-color: var(--hiq-button-hover-background-color, hsl(210, 100%, 40%));
   --button-hover-text-color: var(--hiq-button-hover-text-color, white);
+  --button-focus-border-color: var(--hiq-button-focus-border-color, var(--hiq-button-hover-border-color, hsl(210, 100%, 40%)));
+  --button-focus-background-color: var(--hiq-button-focus-background-color, var(--hiq-button-hover-background-color, hsl(210, 100%, 40%)));
+  --button-focus-text-color: var(--hiq-button-focus-text-color, var(--hiq-button-hover-text-color, white));
   --button-active-border-color: var(--hiq-button-active-border-color, hsl(210, 100%, 30%));
   --button-active-background-color: var(--hiq-button-active-background-color, hsl(210, 100%, 30%));
   --button-active-text-color: var(--hiq-button-active-text-color, white);
@@ -45,9 +48,7 @@
   cursor: pointer;
 
   &:hover,
-  &:focus,
-  &:visited:hover,
-  &:visited:focus {
+  &:visited:hover {
     border-color: var(--button-hover-border-color);
     background-color: var(--button-hover-background-color);
     color: var(--button-hover-text-color);
@@ -56,6 +57,13 @@
   &:focus,
   &:active {
     outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+  }
+
+  &:focus,
+  &:visited:focus {
+    border-color: var(--button-focus-border-color);
+    background-color: var(--button-focus-background-color);
+    color: var(--button-focus-text-color);
   }
 
   &:active,

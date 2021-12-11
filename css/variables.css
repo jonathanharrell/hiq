@@ -165,6 +165,11 @@
   --hiq-button-hover-background-color: hsl(210, 100%, 40%);
   --hiq-button-hover-text-color: white;
 
+  /* hover colors */
+  --hiq-button-focus-border-color: var(--hiq-button-hover-border-color);
+  --hiq-button-focus-background-color: var(--hiq-button-hover-background-color);
+  --hiq-button-focus-text-color: var(--hiq-button-hover-text-color);
+
   /* active colors */
   --hiq-button-active-border-color: hsl(210, 100%, 30%);
   --hiq-button-active-background-color: hsl(210, 100%, 30%);
