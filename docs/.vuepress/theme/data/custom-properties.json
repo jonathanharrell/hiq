@@ -619,6 +619,27 @@
         "description": "Sets the text color for hovered buttons."
     },
     {
+        "name": "--hiq-button-focus-border-color",
+        "local": "--button-focus-border-color",
+        "type": "color",
+        "category": "buttons",
+        "description": "Sets the border color for focused buttons."
+    },
+    {
+        "name": "--hiq-button-focus-background-color",
+        "local": "--button-focus-background-color",
+        "type": "color",
+        "category": "buttons",
+        "description": "Sets the background color for focused buttons."
+    },
+    {
+        "name": "--hiq-button-focus-text-color",
+        "local": "--button-focus-text-color",
+        "type": "color",
+        "category": "buttons",
+        "description": "Sets the text color for focused buttons."
+    },
+    {
         "name": "--hiq-button-active-border-color",
         "local": "--button-active-border-color",
         "type": "color",
