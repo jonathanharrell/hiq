@@ -85,7 +85,7 @@
     },
     "dependencies": {
         "focus-visible": "5.1.0",
-        "postcss": "7.0.36",
+        "postcss": "8.2.13",
         "postcss-cli": "7.1.1",
         "postcss-custom-media": "7.0.8",
         "postcss-custom-selectors": "5.1.2",
