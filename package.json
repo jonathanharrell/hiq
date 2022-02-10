@@ -74,7 +74,7 @@
         "husky": "4.2.5",
         "lodash": "4.17.21",
         "minifier": "0.8.1",
-        "node-sass": "4.14.1",
+        "node-sass": "7.0.0",
         "sass-loader": "9.0.3",
         "semantic-release": "17.2.3",
         "stylelint": "13.6.1",
