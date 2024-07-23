@@ -144,7 +144,7 @@
         AisHits,
         AisInstantSearch,
         AisSearchBox,
-        AisSnippet
+        AisSnippet,
     } from 'vue-instantsearch';
 
     export default {
@@ -154,14 +154,14 @@
             AisHits,
             AisInstantSearch,
             AisSearchBox,
-            AisSnippet
+            AisSnippet,
         },
 
         data() {
             return {
                 query: '',
                 focused: false,
-                focusIndex: -1
+                focusIndex: -1,
             };
         },
 
@@ -183,19 +183,19 @@
                 const navCount = (this.$site.themeConfig.nav || []).length;
                 const repo = this.$site.repo ? 1 : 0;
                 return navCount + repo <= 2;
-            }
+            },
         },
 
         watch: {
             query(value) {
                 this.focusIndex = -1;
                 this.$emit('alert', `Searched for query ${value}`);
-            }
+            },
         },
 
         mounted() {
             document.addEventListener('click', this.handleClick);
-            document.addEventListener('keydown', event => {
+            document.addEventListener('keydown', (event) => {
                 if (event.key === '/') {
                     if (document.activeElement === this.$refs.input) return;
                     this.$refs.input.focus();
@@ -256,8 +256,8 @@
 
             unfocus() {
                 this.focusIndex = -1;
-            }
-        }
+            },
+        },
     };
 </script>
 

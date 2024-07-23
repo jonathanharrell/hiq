@@ -65,8 +65,8 @@
         computed: {
             data() {
                 return this.$page.frontmatter;
-            }
-        }
+            },
+        },
     };
 </script>
 

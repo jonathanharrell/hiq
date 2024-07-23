@@ -18,16 +18,16 @@
         props: {
             category: {
                 type: String,
-                default: ''
-            }
+                default: '',
+            },
         },
 
         computed: {
             bugs() {
                 return browserBugs.filter(
-                    bug => bug.category === this.category
+                    (bug) => bug.category === this.category
                 );
-            }
-        }
+            },
+        },
     };
 </script>

@@ -19,7 +19,7 @@
         <Navbar
             v-if="shouldShowNavbar"
             @toggle-sidebar="toggleSidebar"
-            @alert="$event => (alertText = $event)"
+            @alert="($event) => (alertText = $event)"
         />
         <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -52,13 +52,13 @@
             Home,
             Page,
             Sidebar,
-            Navbar
+            Navbar,
         },
 
         data() {
             return {
                 isSidebarOpen: false,
-                alertText: ''
+                alertText: '',
             };
         },
 
@@ -110,21 +110,21 @@
                     {
                         'no-navbar': !this.shouldShowNavbar,
                         'sidebar-open': this.isSidebarOpen,
-                        'no-sidebar': !this.shouldShowSidebar
+                        'no-sidebar': !this.shouldShowSidebar,
                     },
-                    userPageClass
+                    userPageClass,
                 ];
-            }
+            },
         },
 
         watch: {
-            $page: async function(value, oldValue) {
+            $page: async function (value, oldValue) {
                 if (value.regularPath !== oldValue.regularPath) {
                     await this.$nextTick();
                     const main = document.getElementById('main');
                     if (main) main.focus();
                 }
-            }
+            },
         },
 
         mounted() {
@@ -161,7 +161,7 @@
             onTouchStart(event) {
                 this.touchStart = {
                     x: event.changedTouches[0].clientX,
-                    y: event.changedTouches[0].clientY
+                    y: event.changedTouches[0].clientY,
                 };
             },
 
@@ -176,8 +176,8 @@
                         this.toggleSidebar(false);
                     }
                 }
-            }
-        }
+            },
+        },
     };
 </script>
 

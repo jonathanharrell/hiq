@@ -25,8 +25,8 @@
     export default {
         data() {
             return {
-                browserBugs
+                browserBugs,
             };
-        }
+        },
     };
 </script>

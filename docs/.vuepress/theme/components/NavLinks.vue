@@ -1,8 +1,6 @@
 <template>
     <div class="nav-links" aria-labelledby="site-links-label">
-        <h2 id="site-links-label" class="is-visually-hidden">
-            Site Links
-        </h2>
+        <h2 id="site-links-label" class="is-visually-hidden">Site Links</h2>
         <nav v-if="userLinks.length" class="primary-links">
             <ul>
                 <li v-for="item in userLinks" :key="item.link" class="nav-item">
@@ -34,9 +32,9 @@
             <button
                 v-if="theme"
                 class="theme-toggle"
-                :title="
-                    `Change theme to ${theme === 'light' ? 'dark' : 'light'}`
-                "
+                :title="`Change theme to ${
+                    theme === 'light' ? 'dark' : 'light'
+                }`"
                 @click="toggleTheme"
             >
                 <SunIcon v-if="theme === 'light'" />
@@ -56,13 +54,13 @@
         components: {
             SunIcon,
             MoonIcon,
-            NavLink
+            NavLink,
         },
 
         data() {
             return {
                 version: '...',
-                theme: undefined
+                theme: undefined,
             };
         },
 
@@ -72,9 +70,9 @@
             },
 
             userLinks() {
-                return (this.nav || []).map(link => {
+                return (this.nav || []).map((link) => {
                     return Object.assign(resolveNavLinkItem(link), {
-                        items: (link.items || []).map(resolveNavLinkItem)
+                        items: (link.items || []).map(resolveNavLinkItem),
                     });
                 });
             },
@@ -86,7 +84,7 @@
 
             repoLabel() {
                 return 'Github';
-            }
+            },
         },
 
         mounted() {
@@ -129,8 +127,8 @@
                 localStorage.setItem('theme', newTheme);
 
                 this.$emit('alert', `Theme changed to ${newTheme}`);
-            }
-        }
+            },
+        },
     };
 </script>
 

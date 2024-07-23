@@ -31,27 +31,27 @@
 
         components: {
             SidebarLink,
-            DropdownTransition
+            DropdownTransition,
         },
 
         props: {
             item: {
                 type: Object,
-                default: () => {}
+                default: () => {},
             },
 
             first: {
-                type: Boolean
+                type: Boolean,
             },
 
             open: {
-                type: Boolean
+                type: Boolean,
             },
 
             collapsable: {
-                type: Boolean
-            }
-        }
+                type: Boolean,
+            },
+        },
     };
 </script>
 

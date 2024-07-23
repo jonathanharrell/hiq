@@ -29,7 +29,11 @@
                         <code v-html="renderName(property.name)"></code><br />
                         <code
                             v-if="property.local"
-                            style="--code-background-color: var(--hiq-selection-color);"
+                            style="
+                                --code-background-color: var(
+                                    --hiq-selection-color
+                                );
+                            "
                             v-html="renderLocalName(property.local)"
                         ></code>
                     </td>
@@ -37,9 +41,7 @@
                 </tr>
             </tbody>
         </table>
-        <p v-else>
-            There are no properties matching your query
-        </p>
+        <p v-else>There are no properties matching your query</p>
     </div>
 </template>
 
@@ -49,13 +51,13 @@
     export default {
         data() {
             return {
-                query: ''
+                query: '',
             };
         },
 
         computed: {
             properties() {
-                return propertiesConfig.filter(property => {
+                return propertiesConfig.filter((property) => {
                     return (
                         property.name
                             .toLowerCase()
@@ -66,7 +68,7 @@
                                 .includes(this.query.toLowerCase()))
                     );
                 });
-            }
+            },
         },
 
         methods: {
@@ -90,8 +92,8 @@
                 }
 
                 return local;
-            }
-        }
+            },
+        },
     };
 </script>
 

@@ -30,8 +30,8 @@
         props: {
             sidebarItems: {
                 type: Array,
-                default: () => []
-            }
+                default: () => [],
+            },
         },
 
         computed: {
@@ -41,8 +41,8 @@
 
             next() {
                 return resolvePageLink(LINK_TYPES.NEXT, this);
-            }
-        }
+            },
+        },
     };
 
     function resolvePrev(page, items) {
@@ -57,13 +57,13 @@
         NEXT: {
             resolveLink: resolveNext,
             getThemeLinkConfig: ({ nextLinks }) => nextLinks,
-            getPageLinkConfig: ({ frontmatter }) => frontmatter.next
+            getPageLinkConfig: ({ frontmatter }) => frontmatter.next,
         },
         PREV: {
             resolveLink: resolvePrev,
             getThemeLinkConfig: ({ prevLinks }) => prevLinks,
-            getPageLinkConfig: ({ frontmatter }) => frontmatter.prev
-        }
+            getPageLinkConfig: ({ frontmatter }) => frontmatter.prev,
+        },
     };
 
     function resolvePageLink(
