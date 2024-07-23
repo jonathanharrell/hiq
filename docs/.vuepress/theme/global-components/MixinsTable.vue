@@ -31,9 +31,9 @@
     export default {
         data() {
             return {
-                mixins
+                mixins,
             };
-        }
+        },
     };
 </script>
 

@@ -27,8 +27,8 @@
     export default {
         data() {
             return {
-                selectors
+                selectors,
             };
-        }
+        },
     };
 </script>

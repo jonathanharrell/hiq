@@ -20,7 +20,9 @@
                     <br />
                     <code
                         v-if="property.local"
-                        style="--code-background-color: var(--hiq-selection-color);"
+                        style="
+                            --code-background-color: var(--hiq-selection-color);
+                        "
                         >{{ property.local }}</code
                     >
                 </td>
@@ -37,22 +39,22 @@
         props: {
             category: {
                 type: String,
-                default: ''
-            }
+                default: '',
+            },
         },
 
         computed: {
             properties() {
                 return propertiesConfig.filter(
-                    property => property.category === this.category
+                    (property) => property.category === this.category
                 );
             },
 
             colors() {
                 return this.properties.every(
-                    property => property.type === 'color'
+                    (property) => property.type === 'color'
                 );
-            }
-        }
+            },
+        },
     };
 </script>

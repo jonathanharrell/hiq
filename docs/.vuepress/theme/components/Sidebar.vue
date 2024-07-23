@@ -34,26 +34,26 @@
         components: {
             SidebarGroup,
             SidebarLink,
-            NavLinks
+            NavLinks,
         },
 
         props: {
             items: {
                 type: Array,
-                default: () => []
-            }
+                default: () => [],
+            },
         },
 
         data() {
             return {
-                openGroupIndex: 0
+                openGroupIndex: 0,
             };
         },
 
         watch: {
             $route() {
                 this.refreshIndex();
-            }
+            },
         },
 
         created() {
@@ -73,8 +73,8 @@
 
             isActive(page) {
                 return isActive(this.$route, page.path);
-            }
-        }
+            },
+        },
     };
 
     function resolveOpenGroupIndex(route, items) {
@@ -83,7 +83,7 @@
 
             if (
                 item.type === 'group' &&
-                item.children.some(child => isActive(route, child.path))
+                item.children.some((child) => isActive(route, child.path))
             ) {
                 return i;
             }

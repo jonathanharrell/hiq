@@ -46,7 +46,7 @@
                     repo,
                     docsDir = '',
                     docsBranch = 'master',
-                    docsRepo = repo
+                    docsRepo = repo,
                 } = this.$site.themeConfig;
 
                 if (showEditLink && docsRepo && this.$page.relativePath) {
@@ -68,7 +68,7 @@
                     this.$site.themeConfig.editLinkText ||
                     `Edit this page`
                 );
-            }
+            },
         },
 
         methods: {
@@ -82,8 +82,8 @@
                     (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '') +
                     path
                 );
-            }
-        }
+            },
+        },
     };
 </script>
 

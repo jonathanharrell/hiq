@@ -5,29 +5,29 @@
         props: {
             type: {
                 type: String,
-                default: 'tip'
+                default: 'tip',
             },
 
             text: {
                 type: String,
-                default: ''
+                default: '',
             },
 
             vertical: {
                 type: String,
-                default: 'top'
-            }
+                default: 'top',
+            },
         },
 
         render(createElement, { props, slots }) {
             return createElement(
                 'span',
                 {
-                    class: ['badge', props.type, props.vertical]
+                    class: ['badge', props.type, props.vertical],
                 },
                 props.text || slots().default
             );
-        }
+        },
     };
 </script>
 

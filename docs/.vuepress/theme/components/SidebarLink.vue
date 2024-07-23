@@ -8,8 +8,8 @@
         props: {
             item: {
                 type: Object,
-                default: () => {}
-            }
+                default: () => {},
+            },
         },
 
         render(
@@ -25,7 +25,7 @@
             const active =
                 item.type === 'auto'
                     ? selfActive ||
-                      item.children.some(c =>
+                      item.children.some((c) =>
                           isActive($route, item.basePath + '#' + c.slug)
                       )
                     : selfActive;
@@ -54,7 +54,7 @@
                         item.basePath,
                         $route,
                         maxDepth
-                    )
+                    ),
                 ];
             } else if (
                 (active || displayAllHeaders) &&
@@ -71,12 +71,12 @@
                         item.path,
                         $route,
                         maxDepth
-                    )
+                    ),
                 ];
             } else {
                 return link;
             }
-        }
+        },
     };
 
     function renderLink(createElement, to, text, active) {
@@ -86,20 +86,20 @@
                 props: {
                     to,
                     activeClass: '',
-                    exactActiveClass: ''
+                    exactActiveClass: '',
                 },
                 class: {
                     active,
-                    'sidebar-link': true
-                }
+                    'sidebar-link': true,
+                },
             },
             [
                 createElement(getLinkIcon(text), {
                     attrs: {
-                        size: '18'
-                    }
+                        size: '18',
+                    },
                 }),
-                text
+                text,
             ]
         );
     }
@@ -121,7 +121,7 @@
         return createElement(
             'ul',
             { class: 'sidebar-sub-headers' },
-            children.map(child => {
+            children.map((child) => {
                 const active = isActive(route, path + '#' + child.slug);
 
                 return createElement('li', { class: 'sidebar-sub-header' }, [
@@ -138,7 +138,7 @@
                         route,
                         maxDepth,
                         depth + 1
-                    )
+                    ),
                 ]);
             })
         );

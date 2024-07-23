@@ -16,14 +16,14 @@
     export default {
         components: {
             PageEdit,
-            PageNav
+            PageNav,
         },
 
         props: {
             sidebarItems: {
                 type: Array,
-                default: () => []
-            }
+                default: () => [],
+            },
         },
 
         computed: {
@@ -59,7 +59,7 @@
                     editLinks,
                     docsDir = '',
                     docsBranch = 'master',
-                    docsRepo = repo
+                    docsRepo = repo,
                 } = this.$site.themeConfig;
 
                 let path = normalize(this.$page.path);
@@ -84,7 +84,7 @@
                     this.$site.themeConfig.editLinkText ||
                     `Edit this page`
                 );
-            }
+            },
         },
 
         methods: {
@@ -97,8 +97,8 @@
                     (docsDir ? '/' + docsDir.replace(endingSlashRE, '') : '') +
                     path
                 );
-            }
-        }
+            },
+        },
     };
 </script>
 

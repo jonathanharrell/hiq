@@ -11,8 +11,8 @@
             <span class="is-visually-hidden">Home page</span>
         </RouterLink>
         <div class="links">
-            <NavLinks @alert="$event => $emit('alert', $event)" />
-            <SearchBox @alert="$event => $emit('alert', $event)" />
+            <NavLinks @alert="($event) => $emit('alert', $event)" />
+            <SearchBox @alert="($event) => $emit('alert', $event)" />
         </div>
     </header>
 </template>
@@ -26,8 +26,8 @@
         components: {
             SidebarButton,
             NavLinks,
-            SearchBox
-        }
+            SearchBox,
+        },
     };
 </script>
 

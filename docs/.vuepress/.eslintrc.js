@@ -1,6 +1,7 @@
 module.exports = {
     extends: ['vuepress'],
     rules: {
-        // override rules
+        "vue/multi-word-component-names": "off",
+        "vue/no-v-html": "off"
     }
 };

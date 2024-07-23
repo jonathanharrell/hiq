@@ -21,8 +21,8 @@
 
             unsetHeight(items) {
                 items.style.height = '';
-            }
-        }
+            },
+        },
     };
 </script>
 
