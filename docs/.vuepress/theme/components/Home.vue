@@ -24,7 +24,7 @@
                             :item="{ link: '/guide/', text: 'Get started' }"
                         />
                         <a
-                            href="https://hiq-theme-builder.netlify.com/"
+                            href="https://hiq-theme-builder.netlify.app/"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="button button-secondary action-button"

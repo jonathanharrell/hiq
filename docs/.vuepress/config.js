@@ -73,7 +73,7 @@ module.exports = {
             },
             {
                 text: 'Theme Builder',
-                link: 'https://hiq-theme-builder.netlify.com/'
+                link: 'https://hiq-theme-builder.netlify.app/'
             }
         ],
         sidebar: {
