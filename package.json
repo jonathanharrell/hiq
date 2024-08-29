@@ -247,7 +247,7 @@
         "vue-feather-icons": "5.1.0",
         "vue-instantsearch": "3.2.0",
         "vuepress": "1.9.10",
-        "webpack": "^4.42.0"
+        "webpack": "^5.94.0"
     },
     "dependencies": {
         "focus-visible": "5.1.0",
