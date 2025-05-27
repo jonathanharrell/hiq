@@ -7,10 +7,14 @@ In the age of Flexbox, CSS grid, and other exciting layout features, there is le
 
 ## Install
 
-Start using HiQ by using npm to install the package or use the Github repository to get the latest development version.
+Start using HiQ by using npm to install the package or use the cdn below or use the Github repository to get the latest development version.
 
 ```bash
 npm install hiq
+```
+
+```bash
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hiq@latest/dist/hiq.min.css">
 ```
 
 ## Usage
