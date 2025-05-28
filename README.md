@@ -13,7 +13,7 @@ Start using HiQ by using npm to install the package or use the cdn below or use 
 npm install hiq
 ```
 
-```bash
+```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hiq@latest/dist/hiq.min.css">
 ```
 
