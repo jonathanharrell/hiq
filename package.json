@@ -235,7 +235,7 @@
         "eslint-config-vuepress": "2.2.0",
         "eslint-plugin-vue": "9.27.0",
         "husky": "4.3.8",
-        "lodash": "4.17.21",
+        "lodash": "4.17.23",
         "minifier": "0.8.1",
         "node-sass": "8.0.0",
         "sass-loader": "^10.0.0",
